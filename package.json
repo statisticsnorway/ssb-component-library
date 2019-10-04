@@ -1,0 +1,50 @@
+{
+  "name": "ssb-component-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "webpack --mode production --config webpack.config.js --progress",
+    "start": "start-storybook -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/statisticsnorway/ssb-component-library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/statisticsnorway/ssb-component-library/issues"
+  },
+  "homepage": "https://github.com/statisticsnorway/ssb-component-library#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-centered": "^5.2.1",
+    "@storybook/addon-links": "^5.2.1",
+    "@storybook/addons": "^5.2.1",
+    "@storybook/react": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-prismjs": "^1.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "brotli-webpack-plugin": "^1.1.0",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "path": "^0.12.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.1.2",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "prismjs": "^1.17.1"
+  }
+}
