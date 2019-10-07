@@ -7,30 +7,32 @@ const TerserPlugin = require('terser-webpack-plugin');
 const babelConf = path.resolve(__dirname, './babel.config.js');
 
 module.exports = {
-    mode: 'production',
-    entry: ['./src/index.js'],
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, './build'),
-    },
-    resolve: {
-        extensions: ['.jsx', '.js']
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: [/node_modules/, '/tests/', '/.storybook/', '/storybook-static/'],
-                use: [
-					{
-                        loader: 'babel-loader',
-						options: {
-							configFile: babelConf,
-						},
+	mode: 'production',
+	entry: {
+		main: path.resolve(__dirname, './src/index.js'),
+		styles: path.resolve(__dirname, './src/main.scss'),
+	},
+	output: {
+		filename: '[name].js',
+		path: path.resolve(__dirname, './dist'),
+		chunkFilename: '[name]-[hash].js',
+	},
+	resolve: {
+		extensions: ['.jsx', '.js']
+	},
+	module: {
+		rules: [
+			{
+				test: /\.(js|jsx)$/,
+				exclude: [/node_modules/, '/tests/', '/.storybook/', '/storybook-static/'],
+				use: [{
+					loader: 'babel-loader',
+					options: {
+						configFile: babelConf,
 					},
-				],
-            },
-            {
+				}],
+			},
+			{
 				test: /\.(s*)css$/i,
 				use: [
 					'style-loader',
@@ -42,8 +44,8 @@ module.exports = {
 						},
 					},
 				],
-            },
-            {
+			},
+			{
 				test: /\.(png|jpe?g|gif)$/,
 				use: [
 					{
@@ -64,9 +66,9 @@ module.exports = {
 					},
 				},
 			},
-        ],
-    },
-    plugins: [
+		],
+	},
+	plugins: [
 		new BrotliPlugin({
 			asset: '[path].br[query]',
 			test: /\.(js|css|html|svg)$/,
@@ -75,8 +77,8 @@ module.exports = {
 			minRatio: 0.8,
 			deleteOriginalAssets: false,
 		}),
-    ],
-    optimization: {
+	],
+	optimization: {
 		nodeEnv: 'production',
 		minimize: true,
 		minimizer: [
