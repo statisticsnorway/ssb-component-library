@@ -6,4 +6,4 @@ import Text from './index';
 storiesOf('Text', module).addDecorator(centered)
   .add('Default', () => (
     <Text>Here</Text>
-  ))
+  ));
