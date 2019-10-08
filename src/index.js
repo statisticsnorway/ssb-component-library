@@ -11,3 +11,5 @@ export { default as Tabs } from './components/Tabs';
 export { default as Text } from './components/Text';
 export { default as Title } from './components/Title';
 export { default as WordExplanation } from './components/WordExplanation';
+export { default as Checkbox } from './components/Checkbox';
+export { default as CheckboxGroup } from './components/CheckboxGroup';
