@@ -1,21 +1,33 @@
 # SSB Component Library
+The SSB component library is developed mainly for developers at SSB.
+Visit the [docs](https://github.com/statisticsnorway/design-system) to see all available components and how to use them.
 
-- [Run project locally](#run-project-locally)
-- [How to start working on a feature](#how-to-start-working-on-a-feature)
-- [Deploy to site](#deploy-to-site)
-- [Developing a component](#developing-a-component)
-    - [Components](#components)
-    - [Storybook](#storybook)
-    - [Testing](#testing)
-    - [Styling](#styling)
+- [Installing library](#installing-library)
+- [Contributing](#contributing)
+    - [Run project locally](#run-project-locally)
+    - [How to start working on a feature](#how-to-start-working-on-a-feature)
+    - [Deploy to site](#deploy-to-site)
+    - [Development](#development)
+        - [Components](#components)
+        - [Storybook](#storybook)
+        - [Testing](#testing)
+        - [Styling](#styling)
 ----
 
+## Installing library
+If you want to use the component library in your project, simply install it from npm.
+
+``npm install @statisticsnorway/ssb-component-library --save``
+
+## Contributing
 ### Run project locally
 ```
 ... clone repository ...
 $ npm install
 $ npm start
 ```
+
+This will open [storybook](#storybook) where you can develop components in an isolated environment. 
 
 ### How to start working on a feature
 ```
@@ -50,15 +62,15 @@ to check properties being passed to components. _All_ components with props avai
 #### Storybook
 [Storybook](https://storybook.js.org/) is an open source tool for developing UI components in an isolated environment.
 It is also a useful tool for demoing components by themselves or put together into a user scenario.
-To add a component to the storybook build, create a file named like `ComponentName.stories.jsx`.
+To add a component to the storybook build, create a file named like `componentName.story.jsx`.
 Import some needed modules, the component you are creating the story for, and add it like this:
 ```jsx harmony
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
-import Button from './Button';
+import Button from './index';
 
-storiesOf('Atoms|Button', module)
+storiesOf('Button', module)
   .addDecorator(centered)
   .add('Primary button', () => (
     <div>

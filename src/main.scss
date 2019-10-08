@@ -8,18 +8,17 @@
 @import './style/text';
 
 // Component imports
-@import './components/Button';
-@import './components/Divider';
-@import './components/Dropdown';
-@import './components/Input';
-@import './components/LeadParagraph';
-@import './components/Link';
-@import './components/Number';
-@import './components/Pagination';
-@import './components/Paragraph';
-@import './components/Tabs';
-@import './components/Text';
-@import './components/RadioButton';
-@import './components/RadioGroup';
-@import './components/Checkbox';
-@import './components/CheckboxGroup';
+@import './components/Divider/index';
+@import './components/Dropdown/index';
+@import './components/Input/index';
+@import './components/LeadParagraph/index';
+@import './components/Link/index';
+@import './components/Number/index';
+@import './components/Pagination/index';
+@import './components/Paragraph/index';
+@import './components/Tabs/index';
+@import './components/Text/index';
+@import './components/RadioButton/index';
+@import './components/RadioGroup/index';
+@import './components/Checkbox/index';
+@import './components/CheckboxGroup/index';

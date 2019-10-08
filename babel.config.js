@@ -10,6 +10,7 @@ module.exports = api => {
 			}],
 		],
 		plugins: [
+			['babel-plugin-styled-components'],
 			['@babel/plugin-transform-modules-commonjs', {}],
 			['prismjs', {
 				languages: ['javascript', 'html', 'css', 'jsx'],
