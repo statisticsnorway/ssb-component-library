@@ -1,28 +1,10 @@
-/* global __dirname, require, module*/
-
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const sass = require('sass');
 const BrotliPlugin = require('brotli-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const isDevelopment = process.env.NODE_ENV === 'development'
-
-let plugins = [
-	require('autoprefixer'),
-	new MiniCssExtractPlugin({
-		filename: 'bundle.css',
-		chunkFilename: '[id].css',
-	}),
-	new BrotliPlugin({
-		asset: '[path].br[query]',
-		test: /\.(js|css|html|svg)$/,
-		compressionOptions: { level: 11 },
-		threshold: 10240,
-		minRatio: 0.8,
-		deleteOriginalAssets: false,
-	}),
-];
+const babelConf = path.resolve(__dirname, './babel.config.js');
 
 module.exports = {
 	mode: 'production',
@@ -31,13 +13,12 @@ module.exports = {
 		styles: path.resolve(__dirname, './src/main.scss'),
 	},
 	output: {
-		filename: 'index.js',
+		filename: '[name].js',
 		path: path.resolve(__dirname, './dist'),
-		libraryTarget: 'umd',
 		chunkFilename: '[name]-[hash].js',
 	},
 	resolve: {
-		extensions: ['.jsx', '.js', '.scss']
+		extensions: ['.jsx', '.js']
 	},
 	module: {
 		rules: [
@@ -47,28 +28,21 @@ module.exports = {
 				use: [{
 					loader: 'babel-loader',
 					options: {
-						configFile: path.resolve(__dirname, './babel.config.js'),
+						configFile: babelConf,
 					},
 				}],
 			},
 			{
-				test: /\.s(c)ss$/,
+				test: /\.(s*)css$/i,
 				use: [
-					isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-					{
-						loader: 'css-loader',
-						options: {
-							modules: true,
-							sourceMap: isDevelopment,
-						},
-					},
+					'style-loader',
+					'css-loader',
 					{
 						loader: 'sass-loader',
 						options: {
-							implementation: require('sass')
-						}
+							implementation: sass,
+						},
 					},
-					{ loader: 'postcss-loader' },
 				],
 			},
 			{
@@ -94,7 +68,16 @@ module.exports = {
 			},
 		],
 	},
-	plugins: plugins,
+	plugins: [
+		new BrotliPlugin({
+			asset: '[path].br[query]',
+			test: /\.(js|css|html|svg)$/,
+			compressionOptions: { level: 11 },
+			threshold: 10240,
+			minRatio: 0.8,
+			deleteOriginalAssets: false,
+		}),
+	],
 	optimization: {
 		nodeEnv: 'production',
 		minimize: true,
