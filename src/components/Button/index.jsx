@@ -8,14 +8,11 @@ const Button = ({
 }) => (
 	<ButtonWrapper
 		type={type}
-		className={
-			`${primary ? 'primary' : 'secondary'}`
-		}
+		className={`${primary ? 'primary' : 'secondary'}`}
 		onClick={onClick}
 		disabled={disabled}
 		primary={primary}
-	>	{icon}
-
+	> {icon}
 		<span className="button-text">{text}</span>
 	</ButtonWrapper>
 );
@@ -34,7 +31,7 @@ const ButtonWrapper = styled.button`
   &:hover {
   	background: ${props => (props.primary ? ssbGreen5 : ssbGreen4)};
   	color: ${ssbWhite};
-	}
+  }
 	
   &:active { background: ${props => (props.primary ? ssbDark5 : ssbGreen5)}; }
   &:hover, &:active { cursor: pointer; }
@@ -44,10 +41,9 @@ const ButtonWrapper = styled.button`
   	color: ${props.primary ? ssbWhite : ssbDark2};
   	
   	&:hover {
-  		background: ${props.primary ? ssbDark2 : ssbWhite};
-  		color: ${props.primary ? ssbWhite : ssbDark2};
+	  background: ${props.primary ? ssbDark2 : ssbWhite};
+	  color: ${props.primary ? ssbWhite : ssbDark2};
   `)}
-}
 `;
 
 Button.defaultProps = {

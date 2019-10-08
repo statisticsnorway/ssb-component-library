@@ -6,6 +6,6 @@ import RadioButton from './index';
 storiesOf('Atoms|RadioButton', module).addDecorator(centered)
 	.add('Default', () => (
 		<div>
-			<RadioButton value="item" >Item</RadioButton>
+			<RadioButton value="item">Item</RadioButton>
 		</div>
 	));

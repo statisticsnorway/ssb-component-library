@@ -10,6 +10,7 @@
     "start": "cross-env ENV=development start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:js": "eslint src/**/*.jsx",
+    "lint:css": "stylelint src/**/*.jsx",
     "deploy": "npm publish"
   },
   "repository": {
@@ -60,6 +61,10 @@
     "sass": "^1.23.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
+    "stylelint": "^11.0.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.8.0",
     "terser-webpack-plugin": "^2.1.2",
     "uuid": "^3.3.3",
     "webpack": "^4.41.0",

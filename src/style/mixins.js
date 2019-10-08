@@ -11,4 +11,4 @@ const robotoCondenced = `
 export {
 	roboto,
 	robotoCondenced,
-}
+};
