@@ -49,17 +49,17 @@ const Dropdown = ({
 		<DropdownWrapper>
 			{header && <label htmlFor={id}>{header}</label>}
 			<div className="dropdown-interactive-area" ref={node} onClick={() => setOpen(!isOpen)}>
-				<div className="input-container">
-					<input
-						className={isOpen ? 'focused' : ''}
-						id={id}
-						onChange={e => filterItems(e)}
-						disabled={!searchable}
-						placeholder={selectedOption.title ? selectedOption.title : placeholder}
-						value={inputFieldValue}
-					/>
-					<ChevronDown className="chevron-icon" size={18} />
-				</div>
+				<InputWrapper>
+						<input
+							className={isOpen ? 'focused' : ''}
+							id={id}
+							onChange={e => filterItems(e)}
+							disabled={!searchable}
+							placeholder={selectedOption.title ? selectedOption.title : placeholder}
+							value={inputFieldValue}
+						/>
+						<ChevronDown className="chevron-icon" size={18} />
+				</InputWrapper>
 				{isOpen && (
 					<OptionListWrapper>
 							{availableOptions.map(it => (
@@ -94,47 +94,48 @@ const DropdownWrapper = styled.div`
   
   .dropdown-interactive-area {
     cursor: pointer;
-    position: relative;
-    
-    .input-container {
-			input {
-				border: 1px solid ${ssbDark6};
-				cursor: pointer;
-				font-size: 16px;
-				height: 36px;
-				padding: 4px 34px 4px 10px;
-				background-color: ${ssbWhite};
-				font-family: 'Roboto', sans-serif;
-				width: 100%;
-	
-				&::placeholder {
-					color: ${ssbDark6};
-				}
-	
-				&:hover {
-					border: 1px solid ${ssbGreen4};
-				}
-	
-				&:focus, &.focused {
-					border: 1px solid ${ssbGreen4};
-					outline: ${ssbGreen4} auto 1px;
-				}
-			}
-			
-			.chevron-icon {
-				color: ${ssbGreen4};
-				position: absolute;
-				top: 10px;
-				right: 10px;
-			}
-    }    
+    position: relative;        
   }
-}
+`;
+
+const InputWrapper = styled.div`
+	input {
+		border: 1px solid ${ssbDark6};
+		cursor: pointer;
+		font-size: 16px;
+		height: 36px;
+		padding: 4px 34px 4px 10px;
+		background-color: ${ssbWhite};
+		font-family: 'Roboto', sans-serif;
+		width: 100%;
+
+		&::placeholder {
+			color: ${ssbDark6};
+		}
+
+		&:hover {
+			border: 1px solid ${ssbGreen4};
+		}
+
+		&:focus, &.focused {
+			border: 1px solid ${ssbGreen4};
+			outline: ${ssbGreen4} auto 1px;
+		}
+	}
+	
+	.chevron-icon {
+		color: ${ssbGreen4};
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+			
 `;
 
 const OptionListWrapper = styled.ul`
   background: ${ssbWhite};
 	border: 1px solid #2b2b2b;
+	font-family: 'Roboto', sans-serif;
 	left: 0;
 	list-style: none;
 	margin: 0;
@@ -143,7 +144,6 @@ const OptionListWrapper = styled.ul`
 	top: 36px;
 	z-index: 9999;
 	width: 100%;
-	font-family: 'Roboto', sans-serif;
 	
 	height: 235px;
 	overflow-y: scroll;
