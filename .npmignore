@@ -1,4 +1,8 @@
 .storybook
+.babelrc
+.eslintrc
+.eslintignore
+.stylelintrc
 src/
 babel.config.js
 webpack.config.js

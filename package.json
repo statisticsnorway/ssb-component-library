@@ -1,8 +1,8 @@
 {
   "name": "@statisticsnorway/ssb-component-library",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Component library for SSB (Statistics Norway)",
-  "main": "dist/index.js",
+  "main": "lib/prod.js",
   "scripts": {
     "build:prod": "cross-env ENV=production rollup -c",
     "start": "cross-env ENV=development start-storybook -p 6006",

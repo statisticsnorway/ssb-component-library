@@ -12,8 +12,12 @@ export default [{
 	output: {
 		file: outputFile,
 		format: 'cjs',
-		name: 'bundle',
+		name: 'dist/bundle.js',
 	},
+	external: [
+		'react',
+		'react-proptypes',
+	],
 	plugins: [
 		resolve({ extension: ['.jsx', '.js'] }),
 		replace({
@@ -21,8 +25,6 @@ export default [{
 		}),
 		babel({
 			exclude: 'node_modules/**',
-			presets: ['@babel/preset-env', '@babel/preset-react'],
-			plugins: ['babel-plugin-styled-components'],
 		}),
 		commonjs({
 			include: ['node_modules/**'],

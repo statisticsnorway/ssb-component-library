@@ -5,5 +5,13 @@
     }],
     "@babel/preset-react"
   ],
-  "plugins": ["babel-plugin-styled-components"]
+  "plugins": [
+    "babel-plugin-styled-components",
+    ["prismjs", {
+      "languages": ["javascript", "html", "css", "jsx"],
+      "plugins": ["line-numbers"],
+      "theme": "coy",
+      "css": true
+  }]
+  ]
 }
