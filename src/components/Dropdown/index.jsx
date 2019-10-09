@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
-import { ssbDark4, ssbDark6, ssbGreen2, ssbGreen4, ssbWhite } from '../../style/colors'
-import { ChevronDown } from 'react-feather'
+import { ChevronDown } from 'react-feather';
+import { ssbDark4, ssbDark6, ssbGreen2, ssbGreen4, ssbWhite } from '../../style/colors';
 
 const Dropdown = ({
 	header, items, onSelect, open, placeholder, searchable, selectedItem,
@@ -50,34 +50,34 @@ const Dropdown = ({
 			{header && <label htmlFor={id}>{header}</label>}
 			<div className="dropdown-interactive-area" ref={node} onClick={() => setOpen(!isOpen)}>
 				<InputWrapper>
-						<input
-							className={isOpen ? 'focused' : ''}
-							id={id}
-							onChange={e => filterItems(e)}
-							disabled={!searchable}
-							placeholder={selectedOption.title ? selectedOption.title : placeholder}
-							value={inputFieldValue}
-						/>
-						<ChevronDown className="chevron-icon" size={18} />
+					<input
+						className={isOpen ? 'focused' : ''}
+						id={id}
+						onChange={e => filterItems(e)}
+						disabled={!searchable}
+						placeholder={selectedOption.title ? selectedOption.title : placeholder}
+						value={inputFieldValue}
+					/>
+					<ChevronDown className="chevron-icon" size={18} />
 				</InputWrapper>
 				{isOpen && (
 					<OptionListWrapper>
-							{availableOptions.map(it => (
-								<li
-									className={`option-list-element ${selectedOption.id === it.id && 'selected'}`}
-									key={it.id}
-								>
-									<option
-										onClick={() => handleSelection(it)}
-										value={it.id}
-										id={it.id}
-									>{it.title}
-									</option>
-								</li>
-							))}
+						{availableOptions.map(it => (
+							<li
+								className={`option-list-element ${selectedOption.id === it.id && 'selected'}`}
+								key={it.id}
+							>
+								<option
+									onClick={() => handleSelection(it)}
+									value={it.id}
+									id={it.id}
+								>{it.title}
+								</option>
+							</li>
+						))}
 					</OptionListWrapper>
 				)}
-				</div>
+			</div>
 		</DropdownWrapper>
 	);
 };
