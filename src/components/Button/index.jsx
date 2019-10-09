@@ -41,8 +41,8 @@ const ButtonWrapper = styled.button`
   	color: ${props.primary ? ssbWhite : ssbDark2};
   	
   	&:hover {
-	  background: ${props.primary ? ssbDark2 : ssbWhite};
-	  color: ${props.primary ? ssbWhite : ssbDark2};
+			background: ${props.primary ? ssbDark2 : ssbWhite};
+			color: ${props.primary ? ssbWhite : ssbDark2};
   `)}
 `;
 
