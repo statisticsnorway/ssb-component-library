@@ -6,9 +6,9 @@ const Text = ({ children, negative, small }) => (
 );
 
 Text.propTypes = {
-    children: PropTypes.node,
-    negative: PropTypes.bool,
-    small: PropTypes.bool,
+	children: PropTypes.node,
+	negative: PropTypes.bool,
+	small: PropTypes.bool,
 };
 
 export default Text;
