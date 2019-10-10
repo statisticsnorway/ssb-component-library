@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import RadioButton from '../RadioButton/index.jsx';
+import styled from 'styled-components';
+import RadioButton from '../RadioButton';
 
 const RadioGroup = ({
 	header, items, onChange, selectedValue,
@@ -12,7 +13,7 @@ const RadioGroup = ({
 	}, [selected]);
 
 	return (
-		<div className="radio-group-wrapper">
+		<RadioGroupWrapper>
 			{header && <h5>{header}</h5>}
 			{items.map((it, index) => (
 				<RadioButton
@@ -25,9 +26,18 @@ const RadioGroup = ({
 				>{it.label}
 				</RadioButton>
 			))}
-		</div>
+		</RadioGroupWrapper>
 	);
 };
+
+const RadioGroupWrapper = styled.div`
+	display: inline-block;
+
+	h5 {
+	margin-bottom: 10px;
+	padding-left: 10px;
+	}
+`;
 
 RadioGroup.defaultProps = {
 	onChange: () => {},
