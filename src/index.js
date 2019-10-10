@@ -1,3 +1,5 @@
+import './style/globalStyle';
+
 export { default as Button } from './components/Button/index.jsx';
 export { default as Checkbox } from './components/Checkbox/index.jsx';
 export { default as CheckboxGroup } from './components/CheckboxGroup/index.jsx';
