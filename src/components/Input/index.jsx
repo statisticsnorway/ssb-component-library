@@ -17,7 +17,7 @@ const Input = ({
 	};
 
 	return (
-		<Wrapper className={`input-field-wrapper ${error ? ' with-error' : ''}`}>
+		<Wrapper>
 			<InputLabel negative={negative} htmlFor={id}>{label}</InputLabel>
 			<InputWrapper>
 				<InputField
@@ -49,6 +49,7 @@ const Input = ({
 };
 
 const Wrapper = styled.div`
+	${roboto};
 	cursor: text;
   display: flex;
   flex-direction: column;
@@ -111,7 +112,6 @@ const ErrorMessage = styled.span`
 	color: ${props => props.negative ? negativeRed : ssbRed4};
 	font-size: 14px;
 	margin-top: 10px;
-	${roboto}
 `;
 
 Input.defaultProps = {
