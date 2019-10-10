@@ -63,7 +63,7 @@ const ButtonText = styled.span`
 const ActiveIndicator = styled.div`
 	background: ${ssbGreen3};
 	bottom: 0;
-	height: ${props => props.active ? '5px' : 0};
+	height: ${props => (props.active ? '5px' : 0)};
 	left: 0;
 	position: absolute;
 	transition: height .2s;

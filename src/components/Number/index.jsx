@@ -18,8 +18,8 @@ const Number = ({
 
 const NumberWrapper = styled.div`
 	${robotoCondenced};
-	color: ${ ssbDark5 };
-	font-size: ${props => props.size === 'small' ? '50px' : props.size === 'medium' ? '100px' : '150px'};
+	color: ${ssbDark5};
+	font-size: ${props => (props.size === 'small' ? '50px' : props.size === 'medium' ? '100px' : '150px')};
 	font-weight: bold;
 `;
 
