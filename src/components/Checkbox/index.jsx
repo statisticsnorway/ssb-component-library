@@ -6,35 +6,58 @@ import { ssbDark5, ssbGreen1, ssbGreen4, ssbWhite } from '../../style/colors';
 const Checkbox = ({
 	index, children, callback, selected, value, disabled,
 }) => (
-	<CheckboxWrapper>
-		<div tabIndex={index + 1} className={`checkbox-button-wrapper${disabled ? ' disabled' : ''}`}>
-			<label htmlFor={value}>
-				{children}
-				<input
-					id={value}
-					value={value}
-					type="checkbox"
-					checked={selected}
-					onChange={() => callback(value)}
-				/>
-				<span className="check-mark" />
-			</label>
-		</div>
+	<CheckboxWrapper
+		disabled={disabled}
+		tabIndex={index + 1}
+	>
+		<label htmlFor={value}>
+			{children}
+			<input
+				id={value}
+				checked={selected}
+				onChange={() => callback(value)}
+				type="checkbox"
+				value={value}
+			/>
+			<CheckMark
+				disabled={disabled}
+				selected={selected}
+			/>
+		</label>
 	</CheckboxWrapper>
 );
 
 const CheckboxWrapper = styled.div`
-	cursor: pointer;
+  color: ${props => (props.disabled ? '#a2baba' : '')};
+  cursor: ${props => (props.disabled ? 'default' : 'pointer')};
   display: block;
   min-width: 200px;
   outline: none;
   padding: 10px 10px 10px 45px;
+  pointer-events: ${props => (props.disabled ? 'none' : '')};
   position: relative;
-  user-select: none;  
+  user-select: none; 
   
-  .check-mark {
-    background-color: ${ssbWhite};
-    border: 1px solid ${ssbDark5};
+  &:hover, &:focus {
+    background: ${ssbGreen1};
+  }
+  
+  input {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+  }
+
+  label {
+    cursor: pointer;
+  }
+  
+`;
+
+const CheckMark = styled.span`
+    background: ${props => (props.selected ? ssbDark5 : ssbWhite)};
+    border: 1px solid;
+    border-color: ${props => (props.disabled ? '#a2baba' : ssbDark5)};
     border-radius: 2px;
     height: 20px;
     left: 10px;
@@ -43,61 +66,27 @@ const CheckboxWrapper = styled.div`
     width: 20px;
 
     &:after {
-      content: '';
-      display: none;
-      position: absolute;
-
-      left: 6px;
-      top: 2px;
-      width: 6px;
-      height: 12px;
       border: solid ${ssbWhite};
       border-width: 0 3px 3px 0;
+      content: '';
+      display: ${props => (props.selected ? 'block' : 'none')};
+      height: 12px;
+      left: 6px;
+      position: absolute;
+      top: 2px;
       transform: rotate(45deg);
-    }
-  }
-  
-  &.disabled {
-    cursor: default;
-    pointer-events: none;
-    color: #a2baba;
-
-    .check-mark {
-      border: 1px solid #a2baba;
-    }
-  }
-  
-  &:hover, &:focus {
-    background: ${ssbGreen1};
-
-    .check-mark {
-      border: 2px solid ${ssbGreen4};
-
-      &:after {
-        left: 5px;
-        top: 1px;
-      }
-    }
-  }
-  
-  input {
-    cursor: pointer;
-    opacity: 0;
-    position: absolute;
-
-    &:checked ~ .check-mark {
-      background: ${ssbDark5};
+      width: 6px;
     }
 
-    &:checked ~ .check-mark:after {
-      display: block;
-    }
-  }
+    &:hover, &:focus ${CheckboxWrapper} {
+        border: 2px solid ${ssbGreen4};
 
-  label {
-    cursor: pointer;
-  }
-  
+        &:after {
+            left: 5px;
+            top: 1px;
+        }
+    }
+
 `;
 
 Checkbox.defaultProps = {
@@ -108,13 +97,13 @@ Checkbox.defaultProps = {
 Checkbox.propTypes = {
 	callback: PropTypes.func,
 	children: PropTypes.node,
+	disabled: PropTypes.bool,
 	index: PropTypes.number,
 	selected: PropTypes.bool,
 	value: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.number,
 	]).isRequired,
-	disabled: PropTypes.bool,
 };
 
 export default Checkbox;
