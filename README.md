@@ -6,7 +6,7 @@ Visit the [docs](https://github.com/statisticsnorway/design-system) to see all a
 - [Contributing](#contributing)
     - [Run project locally](#run-project-locally)
     - [How to start working on a feature](#how-to-start-working-on-a-feature)
-    - [Deploy to site](#deploy-to-site)
+    - [Publish to NPM](#publish-to-npm)
     - [Development](#development)
         - [Components](#components)
         - [Storybook](#storybook)
@@ -17,7 +17,7 @@ Visit the [docs](https://github.com/statisticsnorway/design-system) to see all a
 ## Installing library
 If you want to use the component library in your project, simply install it from npm.
 
-``npm install @statisticsnorway/ssb-component-library --save``
+``$ npm install @statisticsnorway/ssb-component-library --save``
 
 ## Contributing
 ### Run project locally
@@ -42,12 +42,13 @@ $ git push -u origin add-feature-x
 ... create pull-request to master ...
 ```
 
-### Deploy to site
-The project is published with [Github Pages](https://pages.github.com/).
-To publish a new build, navigate to master branch and make sure you have the latest updates. 
-Build the latest version with `npm run build` and makes sure the build doesn't fail.
-When build is done, publish by running `gh-pages -d build`. The branch named `gh-pages` should
-update and start the build process. 
+### Publish to NPM
+Publishing should only be done, or at least be administered by one of the core developers of this project.
+To publish a new version to npm, run a build with ``npm run build:prod``. Make sure there are no errors.
+It is also recommended to look through the components in storybook.
+
+If everything looks good, bump up the version number in package.json and run ``npm publish``.
+This requires that you are logged into an NPM user with access to this module.
 
 ## Development
 
@@ -88,23 +89,4 @@ To run the tests, simply run `npm test`. To run tests without using any cache, r
 If you need to replace outdated screenshots, run `npm run clear-tests`.
 
 #### Styling
-Styling is done with with the [Sass](https://sass-lang.com/) language, using the 
-[SCSS](https://sass-lang.com/documentation/syntax) syntax. Each component should have its own stylesheet, and there are 
-a couple of global stylesheets as well. [Variables](./src/style/_variables.scss) stores global variables, like colors 
-approved by the style guide. Please refrain from using custom colors. Using variables makes it much easier if they 
-change at any point. 
-
-There are media queries for responsive design. They look like this: 
-```scss
-$mobile: 'screen and (min-width: 768px)';
-$tablet: 'screen and (min-width: 992px)';
-$desktop: 'screen and (min-width: 1200px)';
-```
-
-Use them like this in your components: 
-```scss
-@media #{$mobile} {
-  // mobile style
-}
-```
-Go from smallest to largest to ensure that styles are being overwritten in the correct order. 
+Styling is done with [styled-components](https://www.styled-components.com/), which means that we write CSS in JS. 
