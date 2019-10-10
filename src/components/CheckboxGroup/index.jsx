@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Checkbox from '../Checkbox';
 import styled from 'styled-components';
+import Checkbox from '../Checkbox';
 import Title from '../Title';
 
 const CheckboxGroup = ({
@@ -42,7 +42,7 @@ const CheckboxGroup = ({
 };
 
 const CheckboxGroupWrapper = styled.div`
-	cdisplay: inline-block;
+	display: inline-block;
 
 	fieldset {
 	  border: 0;
