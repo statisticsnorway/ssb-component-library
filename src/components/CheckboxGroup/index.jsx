@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../Checkbox';
+import styled from 'styled-components';
 import Title from '../Title';
 
 const CheckboxGroup = ({
@@ -23,7 +24,7 @@ const CheckboxGroup = ({
 	};
 
 	return (
-		<div className="checkbox-group-wrapper">
+		<CheckboxGroupWrapper>
 			{header && <Title size={5}>{header}</Title>}
 			{items.map((it, index) => (
 				<Checkbox
@@ -36,9 +37,23 @@ const CheckboxGroup = ({
 				>{it.label}
 				</Checkbox>
 			))}
-		</div>
+		</CheckboxGroupWrapper>
 	);
 };
+
+const CheckboxGroupWrapper = styled.div`
+	cdisplay: inline-block;
+
+	fieldset {
+	  border: 0;
+	}
+  
+	h5 {
+	  margin-bottom: 10px;
+	  padding-left: 10px;
+	}
+  
+`;
 
 CheckboxGroup.defaultProps = {
 	onChange: () => {},
