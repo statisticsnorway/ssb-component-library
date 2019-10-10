@@ -16,6 +16,18 @@ const items = [
 	}, {
 		title: 'Automobiles',
 		id: 'item4',
+	}, {
+		title: 'Banan',
+		id: 'item5',
+	}, {
+		title: 'Appelsin',
+		id: 'item6',
+	}, {
+		title: 'Fersken',
+		id: 'item7',
+	}, {
+		title: 'Mandarin',
+		id: 'item8',
 	},
 ];
 
