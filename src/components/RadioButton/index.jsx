@@ -11,10 +11,8 @@ const RadioButton = ({
 		onClick={() => callback(value)}
 		disabled={disabled}
 	>
-		<LabelWrapper
-			htmlFor={value}
-			disabled={disabled}
-		> {children}
+		<label htmlFor={value}>
+			{children}
 			<input
 				id={value}
 				value={value}
@@ -23,12 +21,21 @@ const RadioButton = ({
 				onChange={() => callback(value)}
 			/>
 			<span className="radio-mark" />
-		</LabelWrapper>
+		</label>
 	</RadioButtonWrapper>
 );
 
-const LabelWrapper = styled.label`
-	cursor: pointer;
+const RadioButtonWrapper = styled.div`
+	cursor: ${props => (props.disabled ? 'default' : 'pointer')};
+	display: block;
+	min-width: 200px;
+	outline: none;
+	padding: 10px 10px 10px 45px;
+	pointer-events: ${props => (props.disabled ? 'none' : '')};
+	position: relative;
+	user-select: none;
+	color: ${props => (props.disabled ? '#a2baba' : '')};
+
 	.radio-mark {
 		background-color: ${ssbWhite};
 		border: 1px solid;
@@ -54,6 +61,15 @@ const LabelWrapper = styled.label`
 		}
 	}
 
+	&:hover, &:focus {
+		background: ${ssbGreen1};
+
+		.radio-mark {
+			border: 2px solid ${ssbGreen4};
+			&:after { left: 2px; top: 2px; }
+		}
+	}
+
 	input {
 		cursor: pointer;
 		opacity: 0;
@@ -62,26 +78,9 @@ const LabelWrapper = styled.label`
 		&:checked ~ .radio-mark { background: ${ssbWhite}; }
 		&:checked ~ .radio-mark:after { display: block; }
 	}
-`;
 
-const RadioButtonWrapper = styled.div`
-	cursor: ${props => (props.disabled ? 'default' : 'pointer')};
-	display: block;
-	min-width: 200px;
-	outline: none;
-	padding: 10px 10px 10px 45px;
-	pointer-events: ${props => (props.disabled ? 'none' : '')};
-	position: relative;
-	user-select: none;
-	color: ${props => (props.disabled ? '#a2baba' : '')};
-
-	&:hover, &:focus {
-		background: ${ssbGreen1};
-
-		.radio-mark {
-			border: 2px solid ${ssbGreen4};
-			&:after { left: 2px; top: 2px; }
-		}
+	label {
+		cursor: pointer;
 	}
 	
 	
