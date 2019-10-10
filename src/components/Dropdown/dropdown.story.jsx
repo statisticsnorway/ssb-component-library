@@ -31,7 +31,7 @@ const items = [
 	},
 ];
 
-storiesOf('Atoms|Dropdown', module).addDecorator(centered)
+storiesOf('Dropdown', module).addDecorator(centered)
 	.add('Standard', () => (
 		<Dropdown header="Menu header" items={items} />
 	))

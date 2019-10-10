@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Divider from './index';
 
-storiesOf('Atoms|Divider', module)
+storiesOf('Divider', module)
 	.add('Dark', () => (
 		<div style={{ alignItems: 'center', display: 'flex', height: '100%', position: 'absolute', width: '100%' }}>
 			<Divider dark />

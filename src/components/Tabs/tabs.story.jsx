@@ -19,7 +19,7 @@ const items = [
 	},
 ];
 
-storiesOf('Atoms|Tabs', module).addDecorator(centered)
+storiesOf('Tabs', module).addDecorator(centered)
 	.add('Tabs', () => (
 		<Tabs items={items} />
 	));

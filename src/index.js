@@ -1,4 +1,4 @@
-import './style/globalStyle';
+import './style/globalStyle.js';
 
 export { default as Button } from './components/Button/index.jsx';
 export { default as Checkbox } from './components/Checkbox/index.jsx';
