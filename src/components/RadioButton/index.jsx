@@ -6,9 +6,15 @@ import { ssbGreen1, ssbGreen4, ssbWhite, ssbDark5 } from '../../style/colors';
 const RadioButton = ({
 	index, children, callback, selected, value, disabled,
 }) => (
-	<RadioButtonWrapper tabIndex={index + 1} className={`radio-button-wrapper${disabled ? ' disabled' : ''}`} onClick={() => callback(value)}>
-		<LabelWrapper htmlFor={value}>
-			{children}
+	<RadioButtonWrapper
+		tabIndex={index + 1}
+		onClick={() => callback(value)}
+		disabled={disabled}
+	>
+		<LabelWrapper
+			htmlFor={value}
+			disabled={disabled}
+		> {children}
 			<input
 				id={value}
 				value={value}
@@ -22,10 +28,13 @@ const RadioButton = ({
 );
 
 const LabelWrapper = styled.label`
+	cursor: pointer;
 	.radio-mark {
 		background-color: ${ssbWhite};
-		border: 1px solid ${ssbDark5};
+		border: 1px solid;
+		border-color: ${props => (props.disabled ? '#a2baba' : ssbDark5)};
 		border-radius: 50%;
+		
 		height: 20px;
 		left: 10px;
 		position: absolute;
@@ -50,53 +59,32 @@ const LabelWrapper = styled.label`
 		opacity: 0;
 		position: absolute;
 
-		&:checked ~ .radio-mark {
-			background: ${ssbWhite};
-		}
-
-		&:checked ~ .radio-mark:after {
-			display: block;
-		}
+		&:checked ~ .radio-mark { background: ${ssbWhite}; }
+		&:checked ~ .radio-mark:after { display: block; }
 	}
-
-	label {
-		cursor: pointer;
-	}
-
-	
 `;
 
 const RadioButtonWrapper = styled.div`
-	cursor: pointer;
+	cursor: ${props => (props.disabled ? 'default' : 'pointer')};
 	display: block;
 	min-width: 200px;
 	outline: none;
 	padding: 10px 10px 10px 45px;
+	pointer-events: ${props => (props.disabled ? 'none' : '')};
 	position: relative;
 	user-select: none;
+	color: ${props => (props.disabled ? '#a2baba' : '')};
 
 	&:hover, &:focus {
 		background: ${ssbGreen1};
 
 		.radio-mark {
 			border: 2px solid ${ssbGreen4};
-
-			&:after {
-			left: 2px;
-			top: 2px;
-			}
+			&:after { left: 2px; top: 2px; }
 		}
 	}
 	
-	&.disabled {
-		color: #a2baba;
-		cursor: default;
-		pointer-events: none;
-
-		.radio-mark {
-			border: 1px solid #a2baba;
-		}
-	}
+	
 `;
 
 RadioButton.defaultProps = {
