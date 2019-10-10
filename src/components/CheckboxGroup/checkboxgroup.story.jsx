@@ -17,7 +17,7 @@ const checkboxItems = [
 	},
 ];
 
-storiesOf('Molecules|CheckboxGroup', module).addDecorator(centered)
+storiesOf('CheckboxGroup', module).addDecorator(centered)
 	.add('Default', () => (
 		<div>
 			<CheckboxGroup header="Header" items={checkboxItems} />

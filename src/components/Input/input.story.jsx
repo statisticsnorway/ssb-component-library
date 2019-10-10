@@ -12,7 +12,7 @@ const handleSubmit = e => {
 	console.log(e);
 };
 
-storiesOf('Atoms|Input', module).addDecorator(centered)
+storiesOf('Input', module).addDecorator(centered)
 	.add('Default', () => (
 		<div style={{ width: '280px' }}>
 			<Input value={someValue} handleChange={handleChange} />

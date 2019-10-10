@@ -27,7 +27,7 @@ const items = [
 ];
 
 
-storiesOf('Atoms|Pagination', module).addDecorator(centered)
+storiesOf('Pagination', module).addDecorator(centered)
 	.add('Default', () => (
 		<div>
 			<Pagination items={items} selectedPage={items[4]} />

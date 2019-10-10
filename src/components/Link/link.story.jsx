@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered/react';
 import { ArrowRight } from 'react-feather';
 import Link from './index';
 
-storiesOf('Atoms|Link', module).addDecorator(centered)
+storiesOf('Link', module).addDecorator(centered)
 	.add('Default', () => (
 		<div>
 			<Link href=" ">A regular link</Link>
