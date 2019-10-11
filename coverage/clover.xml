@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1570793705715" clover="3.2.0">
-  <project timestamp="1570793705715" name="All files">
-    <metrics statements="254" coveredstatements="12" conditionals="204" coveredconditionals="22" methods="105" coveredmethods="7" elements="563" coveredelements="41" complexity="0" loc="254" ncloc="254" packages="17" files="17" classes="17"/>
+<coverage generated="1570794444557" clover="3.2.0">
+  <project timestamp="1570794444557" name="All files">
+    <metrics statements="255" coveredstatements="16" conditionals="206" coveredconditionals="24" methods="106" coveredmethods="9" elements="567" coveredelements="49" complexity="0" loc="255" ncloc="255" packages="17" files="17" classes="17"/>
     <package name="Button">
       <metrics statements="12" coveredstatements="12" conditionals="22" coveredconditionals="22" methods="8" coveredmethods="7"/>
       <file name="index.jsx" path="/Users/difee/dev/work/ssb-component-library/src/components/Button/index.jsx">
@@ -146,12 +146,13 @@
       </file>
     </package>
     <package name="LeadParagraph">
-      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="index.jsx" path="/Users/difee/dev/work/ssb-component-library/src/components/LeadParagraph/index.jsx">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
       </file>
     </package>
     <package name="Link">
