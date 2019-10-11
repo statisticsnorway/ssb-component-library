@@ -6,7 +6,7 @@ import WordExplanation from './index';
 const placeholderText = `This is the explanation of the word
 written in one or more paragraphs depending on the amount of space needed`;
 
-storiesOf('Atoms|WordExplanation', module).addDecorator(centered)
+storiesOf('WordExplanation', module).addDecorator(centered)
 	.add('As a wrapper', () => (
 		<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			Morbi laoreet rhoncus lorem, eu finibus diam interdum sed.

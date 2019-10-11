@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 // Global imports
 @import './style/variables';
@@ -9,11 +9,5 @@
 
 // Component imports
 @import './components/Divider/index';
-@import './components/LeadParagraph/index';
 @import './components/Link/index';
-@import './components/Number/index';
-@import './components/Paragraph/index';
-@import './components/Tabs/index';
 @import './components/Text/index';
-@import './components/Checkbox/index';
-@import './components/CheckboxGroup/index';

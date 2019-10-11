@@ -17,6 +17,7 @@ export default [{
 	external: [
 		'react',
 		'react-proptypes',
+		'styled-components',
 	],
 	plugins: [
 		resolve({ extension: ['.jsx', '.js'] }),

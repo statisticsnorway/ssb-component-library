@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ssbDark5, ssbDark2, ssbGreen4, ssbGreen5, ssbWhite } from '../../style/colors';
+import { roboto } from '../../style/mixins';
 
 const Button = ({
 	disabled, icon, onClick, primary, text, type,
@@ -13,7 +14,7 @@ const Button = ({
 		disabled={disabled}
 		primary={primary}
 	> {icon}
-		<span className="button-text">{text}</span>
+		<ButtonText className="button-text">{text}</ButtonText>
 	</ButtonWrapper>
 );
 
@@ -44,6 +45,18 @@ const ButtonWrapper = styled.button`
 			background: ${props.primary ? ssbDark2 : ssbWhite};
 			color: ${props.primary ? ssbWhite : ssbDark2};
   `)}
+`;
+
+const ButtonText = styled.span`
+	${roboto};
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
 `;
 
 Button.defaultProps = {

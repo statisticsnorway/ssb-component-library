@@ -1,6 +1,6 @@
 {
   "name": "@statisticsnorway/ssb-component-library",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Component library for SSB (Statistics Norway)",
   "main": "lib/prod.js",
   "scripts": {
@@ -23,18 +23,19 @@
   "sideEffects": false,
   "homepage": "https://statisticsnorway.github.io/design-system/",
   "peerDependencies": {
-    "react": "^16.10.2"
+    "react": "^16.10.2",
+    "styled-components": ">= 4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.2",
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-actions": "^5.2.1",
-    "@storybook/addon-centered": "^5.2.1",
-    "@storybook/addon-links": "^5.2.1",
-    "@storybook/addons": "^5.2.1",
-    "@storybook/react": "^5.2.1",
+    "@babel/cli": "^7.6.3",
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@storybook/addon-actions": "^5.2.3",
+    "@storybook/addon-centered": "^5.2.3",
+    "@storybook/addon-links": "^5.2.3",
+    "@storybook/addons": "^5.2.3",
+    "@storybook/react": "^5.2.3",
     "autoprefixer": "^9.6.4",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",

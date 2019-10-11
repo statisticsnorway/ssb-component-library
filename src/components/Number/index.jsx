@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { ssbDark5 } from '../../style/colors';
+import { robotoCondenced } from '../../style/mixins';
 
 const formatNumber = num => num.toString()
 	.replace(/\D+/g, '') // remove everything that is not a number
@@ -8,10 +11,17 @@ const formatNumber = num => num.toString()
 const Number = ({
 	size, number,
 }) => (
-	<div className={`number-component ${size}`}>
+	<NumberWrapper size={size}>
 		{formatNumber(number)}
-	</div>
+	</NumberWrapper>
 );
+
+const NumberWrapper = styled.div`
+	${robotoCondenced};
+	color: ${ssbDark5};
+	font-size: ${props => (props.size === 'small' ? '50px' : props.size === 'medium' ? '100px' : '150px')};
+	font-weight: bold;
+`;
 
 Number.defaultProps = {
 	size: 'small',

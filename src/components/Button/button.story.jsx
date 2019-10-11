@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered/react';
 import { ChevronDown, Play } from 'react-feather';
 import Button from './index';
 
-storiesOf('Atoms|Button', module).addDecorator(centered)
+storiesOf('Button', module).addDecorator(centered)
 	.add('Primary', () => (
 		<div style={{ display: 'flex' }}>
 			<Button text="Primary" primary />

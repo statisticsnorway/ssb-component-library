@@ -17,7 +17,7 @@ const radioItems = [
 	},
 ];
 
-storiesOf('Molecules|RadioGroup', module).addDecorator(centered)
+storiesOf('RadioGroup', module).addDecorator(centered)
 	.add('Default', () => (
 		<div>
 			<RadioGroup header="Header" items={radioItems} />

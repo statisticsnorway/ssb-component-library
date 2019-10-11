@@ -17,7 +17,7 @@ const Input = ({
 	};
 
 	return (
-		<Wrapper className={`input-field-wrapper ${error ? ' with-error' : ''}`}>
+		<Wrapper>
 			<InputLabel negative={negative} htmlFor={id}>{label}</InputLabel>
 			<InputWrapper>
 				<InputField
@@ -32,12 +32,12 @@ const Input = ({
 				/>
 				{searchField && (
 					<IconWrapper onClick={() => submitCallback(inputValue)}>
-						<Search style={{color: negative ? ssbGreen2 : ssbGreen4}} className="search-icon" size={18} />
+						<Search style={{ color: negative ? ssbGreen2 : ssbGreen4 }} className="search-icon" size={18} />
 					</IconWrapper>
 				)}
 				{error && (
 					<IconWrapper>
-						<AlertTriangle style={{color: negative ? negativeRed : ssbRed4}} className="alert-icon" size={18} />
+						<AlertTriangle style={{ color: negative ? negativeRed : ssbRed4 }} className="alert-icon" size={18} />
 					</IconWrapper>
 				)}
 			</InputWrapper>
@@ -49,6 +49,7 @@ const Input = ({
 };
 
 const Wrapper = styled.div`
+	${roboto};
 	cursor: text;
   display: flex;
   flex-direction: column;
@@ -61,18 +62,18 @@ const InputWrapper = styled.div`
 `;
 
 const InputField = styled.input`
-	background: ${props => props.negative ? 'transparent' : ssbWhite};
-	border: ${props => props.error ? `2px solid ${props.negative ? negativeRed : ssbRed4}`
-		: (props.negative ? `1px solid ${ssbWhite}` : `1px solid ${ssbDark5}`)};
-	color: ${props => props.negative ? ssbWhite : 'inherit'};
+	background: ${props => (props.negative ? 'transparent' : ssbWhite)};
+	border: ${props => (props.error ? `2px solid ${props.negative ? negativeRed : ssbRed4}`
+		: (props.negative ? `1px solid ${ssbWhite}` : `1px solid ${ssbDark5}`))};
+	color: ${props => (props.negative ? ssbWhite : 'inherit')};
 	font-size: 16px;
 	height: 36px;
-	padding: ${props => props.searchField ? '4px 36px 4px 10px' : '4px 10px'};
+	padding: ${props => (props.searchField ? '4px 36px 4px 10px' : '4px 10px')};
 	text-overflow: ellipsis;
 	width: 100%;
 	
 	&:disabled {
-	border: 1px solid ${props => props.negative ? ssbWhite : ssbDark5};
+	border: 1px solid ${props => (props.negative ? ssbWhite : ssbDark5)};
 	cursor: not-allowed;
 	}
 	
@@ -84,13 +85,13 @@ const InputField = styled.input`
 	${Wrapper}:hover & {
 		${props => !props.error && `border: 2px solid ${props.negative ? ssbGreen2 : ssbGreen4};`};
 		&:disabled {
-			border: 1px solid ${props => props.negative ? ssbWhite : ssbDark5};
+			border: 1px solid ${props => (props.negative ? ssbWhite : ssbDark5)};
 		}
 	}
 `;
 
 const InputLabel = styled.label`
-	color: ${props => props.negative ? ssbWhite : ssbDark6};
+	color: ${props => (props.negative ? ssbWhite : ssbDark6)};
 	cursor: text;
 	font-size: 14px;
 	margin-bottom: 5px;
@@ -108,10 +109,9 @@ const IconWrapper = styled.div`
 `;
 
 const ErrorMessage = styled.span`
-	color: ${props => props.negative ? negativeRed : ssbRed4};
+	color: ${props => (props.negative ? negativeRed : ssbRed4)};
 	font-size: 14px;
 	margin-top: 10px;
-	${roboto}
 `;
 
 Input.defaultProps = {
