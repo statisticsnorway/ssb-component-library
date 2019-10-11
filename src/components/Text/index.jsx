@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ssbDark5, ssbDark6, ssbWhite } from '../../style/colors';
+import { openSans } from '../../style/mixins';
 
 const Text = ({ children, className, negative, small }) => (
 	<TextWrapper
@@ -13,11 +14,10 @@ const Text = ({ children, className, negative, small }) => (
 );
 
 const TextWrapper = styled.span`
+	${openSans};
 	background-color: ${props => (props.negative ? ssbDark5 : '')};
 	color: ${props => (props.negative ? ssbWhite : ssbDark6)};
-  font-family: 'Open Sans', sans-serif;
   font-size: ${props => (props.small ? '14px' : '16px')};
-  font-stretch: normal;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
