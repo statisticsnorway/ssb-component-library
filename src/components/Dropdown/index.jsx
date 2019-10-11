@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import uuid from 'uuid/v4';
 import { ChevronDown } from 'react-feather';
-import { ssbDark4, ssbDark6, ssbGreen2, ssbGreen4, ssbWhite } from '../../style/colors';
+import { ssbDark3, ssbDark4, ssbDark6, ssbGreen2, ssbGreen4, ssbWhite } from '../../style/colors';
+import { roboto } from '../../style/mixins';
 
 const Dropdown = ({
 	header, items, onSelect, open, placeholder, searchable, selectedItem,
@@ -48,9 +49,8 @@ const Dropdown = ({
 	return (
 		<DropdownWrapper>
 			{header && <label htmlFor={id}>{header}</label>}
-			<div className="dropdown-interactive-area" ref={node} onClick={() => setOpen(!isOpen)}>
-				<InputWrapper>
-					<input
+			<InteractiveArea className="dropdown-interactive-area" ref={node} onClick={() => setOpen(!isOpen)}>
+					<InputWrapper
 						className={isOpen ? 'focused' : ''}
 						id={id}
 						onChange={e => filterItems(e)}
@@ -59,7 +59,6 @@ const Dropdown = ({
 						value={inputFieldValue}
 					/>
 					<ChevronDown className="chevron-icon" size={18} />
-				</InputWrapper>
 				{isOpen && (
 					<OptionListWrapper>
 						{availableOptions.map(it => (
@@ -77,51 +76,31 @@ const Dropdown = ({
 						))}
 					</OptionListWrapper>
 				)}
-			</div>
+			</InteractiveArea>
 		</DropdownWrapper>
 	);
 };
 
 const DropdownWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  transition: all .25s ease-in-out;
+	${roboto};
+	display: flex;
+	flex-direction: column;
+	transition: all .25s ease-in-out;
   
-  label {
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
+	label {
+		margin-bottom: 5px;
+		font-size: 14px;
+	}
   
-  .dropdown-interactive-area {
-    cursor: pointer;
-    position: relative;        
-  }
+	.dropdown-interactive-area {
+		cursor: pointer;
+		position: relative;        
+	}
 `;
 
-const InputWrapper = styled.div`
-	input {
-		border: 1px solid ${ssbDark6};
-		cursor: pointer;
-		font-size: 16px;
-		height: 36px;
-		padding: 4px 34px 4px 10px;
-		background-color: ${ssbWhite};
-		font-family: 'Roboto', sans-serif;
-		width: 100%;
-
-		&::placeholder {
-			color: ${ssbDark6};
-		}
-
-		&:hover {
-			border: 1px solid ${ssbGreen4};
-		}
-
-		&:focus, &.focused {
-			border: 1px solid ${ssbGreen4};
-			outline: ${ssbGreen4} auto 1px;
-		}
-	}
+const InteractiveArea = styled.div`
+	cursor: pointer;
+	position: relative;
 	
 	.chevron-icon {
 		color: ${ssbGreen4};
@@ -129,37 +108,61 @@ const InputWrapper = styled.div`
 		top: 10px;
 		right: 10px;
 	}
-			
+`;
+
+const InputWrapper = styled.input`
+	border: 1px solid ${ssbDark6};
+	cursor: pointer;
+	font-size: 16px;
+	height: 36px;
+	padding: 4px 34px 4px 10px;
+	background-color: ${ssbWhite};
+	width: 100%;
+
+	&::placeholder {
+		color: ${ssbDark6};
+	}
+
+	&:hover {
+		border: 1px solid ${ssbGreen4};
+	}
+
+	&:focus, &.focused {
+		border: 1px solid ${ssbGreen4};
+		outline: ${ssbGreen4} auto 1px;
+	}
 `;
 
 const OptionListWrapper = styled.ul`
-  background: ${ssbWhite};
-	border: 1px solid #2b2b2b;
+	background: ${ssbWhite};
+	border: 1px solid ${ssbDark6};
 	font-family: 'Roboto', sans-serif;
+	height: 235px;
 	left: 0;
 	list-style: none;
 	margin: 0;
+	overflow-y: scroll;
 	padding-left: 0;
 	position: absolute;
+	scrollbar-color: ${ssbDark3} ${ssbWhite};
+	scrollbar-width: thin;
 	top: 36px;
 	z-index: 9999;
 	width: 100%;
 	
-	height: 235px;
-	overflow-y: scroll;
-	scrollbar-color: #6f9090 ${ssbWhite};
-	scrollbar-width: thin;	
-	
 	::-webkit-scrollbar {
 		width: 6px;
 	}
+	
 	::-webkit-scrollbar-track {
 		background: ${ssbWhite}; 
 	}
+	
 	::-webkit-scrollbar-thumb { 
-		background: #6f9090; 
+		background: ${ssbDark3};
 		border-radius: 3px;
 	}
+	
 	::-webkit-scrollbar-thumb:hover {
 		background: ${ssbDark4}; 
 	}

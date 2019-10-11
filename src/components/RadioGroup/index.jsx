@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import RadioButton from '../RadioButton';
+import { roboto } from '../../style/mixins';
 
 const RadioGroup = ({
 	header, items, onChange, selectedValue,
@@ -31,11 +32,12 @@ const RadioGroup = ({
 };
 
 const RadioGroupWrapper = styled.div`
+	${roboto};
 	display: inline-block;
 
 	h5 {
-	margin-bottom: 10px;
-	padding-left: 10px;
+		margin-bottom: 10px;
+		padding-left: 10px;
 	}
 `;
 

@@ -84,6 +84,7 @@ const InputField = styled.input`
 	
 	${Wrapper}:hover & {
 		${props => !props.error && `border: 2px solid ${props.negative ? ssbGreen2 : ssbGreen4};`};
+		
 		&:disabled {
 			border: 1px solid ${props => (props.negative ? ssbWhite : ssbDark5)};
 		}

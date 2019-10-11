@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Checkbox from '../Checkbox';
 import Title from '../Title';
+import { roboto } from '../../style/mixins';
 
 const CheckboxGroup = ({
 	header, items, onChange, selectedValues,
@@ -42,6 +43,7 @@ const CheckboxGroup = ({
 };
 
 const CheckboxGroupWrapper = styled.div`
+	${roboto};
 	display: inline-block;
 
 	fieldset {
