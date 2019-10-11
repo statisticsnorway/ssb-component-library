@@ -11,9 +11,9 @@ const RadioButton = ({
 		onClick={() => callback(value)}
 		tabIndex={index + 1}
 	>
-		<label htmlFor={value}>
+		<LabelWrapper htmlFor={value}>
 			{children}
-			<input
+			<InputWrapper
 				checked={selected}
 				id={value}
 				onChange={() => callback(value)}
@@ -24,9 +24,20 @@ const RadioButton = ({
 				disabled={disabled}
 				selected={selected}
 			/>
-		</label>
+		</LabelWrapper>
 	</RadioButtonWrapper>
 );
+
+const InputWrapper = styled.input`
+	cursor: pointer;
+	opacity: 0;
+	position: absolute;
+	
+`;
+
+const LabelWrapper = styled.label`
+	cursor: pointer;	
+`;
 
 const RadioButtonWrapper = styled.div`
 	color: ${props => (props.disabled ? '#a2baba' : '')};
@@ -41,18 +52,7 @@ const RadioButtonWrapper = styled.div`
 
 	&:hover, &:focus {
 		background: ${ssbGreen1};
-	}
-
-	input {
-		cursor: pointer;
-		opacity: 0;
-		position: absolute;
-	}
-
-	label {
-		cursor: pointer;
-	}
-	
+	}	
 `;
 
 const RadioMark = styled.span`
