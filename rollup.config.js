@@ -12,7 +12,6 @@ export default [{
 	output: {
 		file: outputFile,
 		format: 'cjs',
-		name: 'dist/bundle.js',
 	},
 	external: [
 		'react',

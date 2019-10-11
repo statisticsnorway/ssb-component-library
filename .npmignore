@@ -1,10 +1,12 @@
 .storybook
+coverage/
+src/
 .babelrc
 .eslintrc
 .eslintignore
 .stylelintrc
-src/
 babel.config.js
+jest.config.js
 webpack.config.js
 postcss.config.js
 rollup.config.js
