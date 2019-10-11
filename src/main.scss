@@ -1,13 +1,7 @@
-//@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-//@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
-//@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
 // Global imports
 @import './style/variables';
 @import './style/grid';
-@import './style/text';
 
 // Component imports
 @import './components/Divider/index';
-@import './components/Link/index';
 @import './components/Text/index';
