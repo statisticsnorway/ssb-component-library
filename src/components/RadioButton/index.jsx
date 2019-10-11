@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ssbGreen1, ssbGreen4, ssbWhite, ssbDark5 } from '../../style/colors';
+import { roboto } from '../../style/mixins';
 
 const RadioButton = ({
 	index, children, callback, selected, value, disabled,
@@ -32,10 +33,10 @@ const InputWrapper = styled.input`
 	cursor: pointer;
 	opacity: 0;
 	position: absolute;
-	
 `;
 
 const LabelWrapper = styled.label`
+	${roboto};
 	cursor: pointer;	
 `;
 
@@ -48,7 +49,7 @@ const RadioButtonWrapper = styled.div`
 	padding: 10px 10px 10px 45px;
 	pointer-events: ${props => (props.disabled ? 'none' : '')};
 	position: relative;
-	user-select: none;	
+	user-select: none;
 
 	&:hover, &:focus {
 		background: ${ssbGreen1};
@@ -57,9 +58,8 @@ const RadioButtonWrapper = styled.div`
 
 const RadioMark = styled.span`
 	background-color: ${ssbWhite};
-	border: 1px solid;
-	border-color: ${props => (props.disabled ? '#a2baba' : ssbDark5)};
-	border-radius: 50%;	
+	border: 1px solid ${props => (props.disabled ? '#a2baba' : ssbDark5)};
+	border-radius: 50%;
 	height: 20px;
 	left: 10px;
 	position: absolute;
@@ -80,6 +80,7 @@ const RadioMark = styled.span`
 	
 	&:hover, &:focus ${RadioButtonWrapper}{
 		border: 2px solid ${ssbGreen4};
+
 		&:after { left: 2px; top: 2px; }
 	}
 `;
