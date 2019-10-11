@@ -19,10 +19,8 @@ const Title = ({ children, className, negative, size }) => (
 );
 
 const TitleWrapper = styled.div`
-	h1, h2, h3, h4, h5, h6 {
-		color: ${props => (props.negative ? ssbWhite : ssbDark6)};
-	}
-	
+	color: ${props => (props.negative ? ssbWhite : ssbDark6)};
+
 	h1 {
 		${robotoCondenced};
 		font-size: 56px;

@@ -15,7 +15,6 @@ const Text = ({ children, className, negative, small }) => (
 
 const TextWrapper = styled.span`
 	${openSans};
-	background-color: ${props => (props.negative ? ssbDark5 : '')};
 	color: ${props => (props.negative ? ssbWhite : ssbDark6)};
   font-size: ${props => (props.small ? '14px' : '16px')};
   font-style: normal;
@@ -31,7 +30,7 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
-	children: PropTypes.node,
+	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
 	negative: PropTypes.bool,
 	small: PropTypes.bool,
