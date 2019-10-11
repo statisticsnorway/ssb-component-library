@@ -13,12 +13,12 @@ const Divider = ({ className, dark, light }) => (
 
 const DividerWrapper = styled.hr`
 	border-top: 1px solid;
-	border-top-color: ${props => (props.dark ? ssbDark5 : ssbDark2)};	
+	border-top-color: ${props => (props.dark ? ssbDark5 : ssbDark2)};
 	display: block;
-  height: 2px;
-  margin: 0;
-  position: relative;
-  width: 100%;
+	height: 2px;
+	margin: 0;
+	position: relative;
+	width: 100%;
 `;
 
 Divider.defaultProps = {
