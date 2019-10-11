@@ -7,25 +7,29 @@ const RadioButton = ({
 	index, children, callback, selected, value, disabled,
 }) => (
 	<RadioButtonWrapper
-		tabIndex={index + 1}
-		onClick={() => callback(value)}
 		disabled={disabled}
+		onClick={() => callback(value)}
+		tabIndex={index + 1}
 	>
 		<label htmlFor={value}>
 			{children}
 			<input
-				id={value}
-				value={value}
-				type="radio"
 				checked={selected}
+				id={value}
 				onChange={() => callback(value)}
+				type="radio"
+				value={value}
 			/>
-			<span className="radio-mark" />
+			<RadioMark
+				disabled={disabled}
+				selected={selected}
+			/>
 		</label>
 	</RadioButtonWrapper>
 );
 
 const RadioButtonWrapper = styled.div`
+	color: ${props => (props.disabled ? '#a2baba' : '')};
 	cursor: ${props => (props.disabled ? 'default' : 'pointer')};
 	display: block;
 	min-width: 200px;
@@ -33,75 +37,69 @@ const RadioButtonWrapper = styled.div`
 	padding: 10px 10px 10px 45px;
 	pointer-events: ${props => (props.disabled ? 'none' : '')};
 	position: relative;
-	user-select: none;
-	color: ${props => (props.disabled ? '#a2baba' : '')};
-
-	.radio-mark {
-		background-color: ${ssbWhite};
-		border: 1px solid;
-		border-color: ${props => (props.disabled ? '#a2baba' : ssbDark5)};
-		border-radius: 50%;
-		
-		height: 20px;
-		left: 10px;
-		position: absolute;
-		top: 10px;
-		width: 20px;
-
-		&:after {
-			border-radius: 50%;
-			background: ${ssbDark5};
-			content: '';
-			display: none;
-			height: 12px;
-			left: 3px;
-			position: absolute;
-			top: 3px;
-			width: 12px;
-		}
-	}
+	user-select: none;	
 
 	&:hover, &:focus {
 		background: ${ssbGreen1};
-
-		.radio-mark {
-			border: 2px solid ${ssbGreen4};
-			&:after { left: 2px; top: 2px; }
-		}
 	}
 
 	input {
 		cursor: pointer;
 		opacity: 0;
 		position: absolute;
-
-		&:checked ~ .radio-mark { background: ${ssbWhite}; }
-		&:checked ~ .radio-mark:after { display: block; }
 	}
 
 	label {
 		cursor: pointer;
 	}
 	
+`;
+
+const RadioMark = styled.span`
+	background-color: ${ssbWhite};
+	border: 1px solid;
+	border-color: ${props => (props.disabled ? '#a2baba' : ssbDark5)};
+	border-radius: 50%;	
+	height: 20px;
+	left: 10px;
+	position: absolute;
+	top: 10px;
+	width: 20px;
+
+	&:after {
+		border-radius: 50%;
+		background: ${ssbDark5};
+		content: '';
+		display: ${props => (props.selected ? 'block' : 'none')};
+		height: 12px;
+		left: 3px;
+		position: absolute;
+		top: 3px;
+		width: 12px;
+	}
 	
+	&:hover, &:focus ${RadioButtonWrapper}{
+		border: 2px solid ${ssbGreen4};
+		&:after { left: 2px; top: 2px; }
+	}
 `;
 
 RadioButton.defaultProps = {
 	callback: () => {},
-	index: 1,
 	disabled: false,
+	index: 1,
 };
 
 RadioButton.propTypes = {
 	callback: PropTypes.func,
 	children: PropTypes.node.isRequired,
+	disabled: PropTypes.bool,
 	index: PropTypes.number,
 	selected: PropTypes.bool,
 	value: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.number,
 	]).isRequired,
-	disabled: PropTypes.bool,
 };
 
 export default RadioButton;
