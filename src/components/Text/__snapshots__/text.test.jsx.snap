@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component Matches the snapshot 1`] = `
+.c0 {
+  font-family: 'Open Sans',sans-serif;
+  font-stretch: normal;
+  color: #162327;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  line-height: 1.7;
+}
+
+<span
+  className="c0"
+>
+  Default text here
+</span>
+`;

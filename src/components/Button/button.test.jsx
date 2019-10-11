@@ -1,20 +1,29 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components'
 import Button from './index';
+import { ssbDark2, ssbGreen4, ssbWhite } from '../../style/colors';
 
 describe('Button component', () => {
 	test('Matches the snapshot', () => {
-		const button = shallow(<Button text="Button" />);
-		expect(button).toMatchSnapshot();
+		const component = renderer.create(<Button text="Button" />).toJSON();
+		expect(component).toMatchSnapshot();
 	});
 
-	test('Adds class if "danger" is true', () => {
-		const button = shallow(<Button text="Button" danger />);
-		expect(button.find('button').hasClass('danger')).toEqual(true);
+	test('Changes background if it is a primary button', () => {
+		const component = renderer.create(<Button text="Button" primary />).toJSON();
+		expect(component).toHaveStyleRule('background', ssbGreen4);
 	});
 
-	test('Changes class if it is a primary button', () => {
-		const button = shallow(<Button text="Button" primary />);
-		expect(button.find('button').hasClass('primary')).toEqual(true);
+	test('Primary button changes background if disabled', () => {
+		const component = renderer.create(<Button text="Button" primary disabled />).toJSON();
+		expect(component).toHaveStyleRule('background', ssbDark2);
+		expect(component).toHaveStyleRule('color', ssbWhite);
+	});
+
+	test('Regular button changes background if disabled', () => {
+		const component = renderer.create(<Button text="Button" disabled />).toJSON();
+		expect(component).toHaveStyleRule('background', ssbWhite);
+		expect(component).toHaveStyleRule('color', ssbDark2);
 	});
 });
