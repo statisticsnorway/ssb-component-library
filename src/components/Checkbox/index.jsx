@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ssbDark5, ssbGreen1, ssbGreen4, ssbWhite } from '../../style/colors';
+import { roboto } from '../../style/mixins';
 
 const Checkbox = ({
 	index, children, callback, selected, value, disabled,
@@ -28,6 +29,7 @@ const Checkbox = ({
 );
 
 const CheckboxWrapper = styled.div`
+	${roboto};
   color: ${props => (props.disabled ? '#a2baba' : '')};
   cursor: ${props => (props.disabled ? 'default' : 'pointer')};
   display: block;
@@ -36,8 +38,8 @@ const CheckboxWrapper = styled.div`
   padding: 10px 10px 10px 45px;
   pointer-events: ${props => (props.disabled ? 'none' : '')};
   position: relative;
-  user-select: none; 
-  
+  user-select: none;
+
   &:hover, &:focus {
     background: ${ssbGreen1};
   }

@@ -8,7 +8,7 @@
     "start": "cross-env ENV=development start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:js": "eslint src/**/*.jsx",
-    "lint:css": "stylelint src/**/*.jsx",
+    "lint:css": "stylelint src/**/index.jsx",
     "deploy": "npm publish"
   },
   "repository": {

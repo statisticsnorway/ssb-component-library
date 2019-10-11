@@ -7,6 +7,7 @@ const ssbBlue3 = '#3396d2';
 const ssbRed4 = '#c4351c';
 const negativeRed = '#f8a67d';
 const ssbDark2 = '#a2baba';
+const ssbDark3 = '#6f9090';
 const ssbDark4 = '#4b7272';
 const ssbDark5 = '#274247';
 const ssbDark6 = '#162327';
@@ -24,10 +25,11 @@ export {
 	ssbRed4,
 	negativeRed,
 	ssbDark2,
+	ssbDark3,
 	ssbDark4,
 	ssbDark5,
 	ssbDark6,
 	ssbWhite,
 	iceColdGrey,
 	ssbPurple,
-}
+};
