@@ -32,7 +32,7 @@ const Wrapper = styled.a`
 	display: inline-flex;
 	font-size: ${props => (props.type === 'regular' ? '16px' : '18px')};
 	font-weight: ${props => (props.type === 'regular' ? 'normal' : 'bold')};
-	padding: 2px 2px ${props => props.hasIcon ? '0' : '1px'};
+	padding: 2px 2px ${props => (props.hasIcon ? '0' : '1px')};
 	position: relative;
 	text-decoration: none;
 	transition: background-size 0.2s ease-in, color 0.1s;
@@ -44,7 +44,7 @@ const Wrapper = styled.a`
 `;
 
 const LinkText = styled.span`
-	color: ${props => props.blackText ? ssbDark6 : ssbGreen4};
+	color: ${props => (props.blackText ? ssbDark6 : ssbGreen4)};
 	transition: color 0.1s;
 	
 	${Wrapper}:hover & {
