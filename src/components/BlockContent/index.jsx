@@ -32,9 +32,11 @@ const GreenLine = styled.div`
 	width: 100%;
 `;
 
+const shadowColor = '#667b7f';
+
 const PageNumber = styled.div`
 	${roboto};
-	color: #667b7f;
+	color: ${shadowColor};
 	font-size: 30px;
 	margin-top: -35px;
 	
