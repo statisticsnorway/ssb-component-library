@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import uuid from 'uuid/v4'
 import { ChevronLeft, ChevronRight } from 'react-feather';
 import { ssbGreen4, ssbWhite } from '../../style/colors';
 import { roboto } from '../../style/mixins';
@@ -58,7 +59,7 @@ const Pagination = ({
 					<NavButton
 						selected={item === selected}
 						onClick={() => handleSelection(item)}
-						key={item.path}
+						key={uuid}
 					>{item.text}
 					</NavButton>
 				)
