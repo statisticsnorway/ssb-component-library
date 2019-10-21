@@ -1,34 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Link from '../Link/index.jsx';
-import { openSans } from '../../style/mixins';
+import Link from '../Link/index';
 
 const Breadcrumb = ({ items, className }) => (
-	<BreadcrumbWrapper className={className}>
-		{items.map(item => (
+	<div className={`ssb-breadcrumbs ${className || ''}`}>
+		{items.map((item, index) => (
 			item.link ? (
-				<div>
+				<div key={item.text}>
 					<Link href={item.link}>{item.text}</Link>
 					&nbsp;/&nbsp;
 				</div>
 			) : (
-				<CurrentCrumb>{item.text}</CurrentCrumb>
+				<div key={item.text} className="current-page">{item.text}</div>
 			)
 		))}
-	</BreadcrumbWrapper>
+	</div>
 );
-
-const BreadcrumbWrapper = styled.div`
-    ${openSans};
-    display: flex;
-    flex-wrap: wrap;
-`;
-
-const CurrentCrumb = styled.div`
-    ${openSans};
-    padding: 2px 2px 1px;
-`;
 
 Breadcrumb.propTypes = {
 	className: PropTypes.string,
