@@ -4,6 +4,7 @@ $header-font-size: 18px;
 $icon-padding: 8px;
 
 .ssb-link {
+  @include open-sans;
   align-items: center;
   background-image: linear-gradient(120deg, $ssb-green-4 0%, $ssb-green-4 100%);
   background-position: 0 100%;
@@ -13,10 +14,7 @@ $icon-padding: 8px;
   color: $ssb-green-4;
   cursor: pointer;
   display: inline-flex;
-  font-family: 'Open Sans', sans-serif;
   font-size: $default-font-size;
-  font-stretch: normal;
-  font-weight: normal;
   padding: 2px 2px 1px;
   position: relative;
   text-decoration: none;

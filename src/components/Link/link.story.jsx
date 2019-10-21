@@ -29,10 +29,10 @@ storiesOf('Link', module).addDecorator(centered)
 	))
 	.add('Negative', () => (
 		<div style={negativeStyle}>
-			<p><Link href=" " className="negative">A regular link</Link></p>
-			<Link href=" " icon={<ArrowRight size={20} />} className="negative">A regular link with icon</Link>
-			<p><Link href=" " linkType="profiled" className="negative">A profiled link</Link></p>
-			<Link href=" " linkType="profiled" icon={<ArrowRight />} className="negative">A profiled link with icon</Link>
-			<p><Link href=" " linkType="header" className="negative">A header link</Link></p>
+			<p><Link href=" " negative>A regular link - Negative</Link></p>
+			<Link href=" " icon={<ArrowRight size={20} />} negative>A regular link with icon - Negative</Link>
+			<p><Link href=" " linkType="profiled" negative>A profiled link - Negative</Link></p>
+			<Link href=" " linkType="profiled" icon={<ArrowRight />} negative>A profiled link with icon - Negative</Link>
+			<p><Link href=" " linkType="header" negative>A header link - Negative</Link></p>
 		</div>
 	));
