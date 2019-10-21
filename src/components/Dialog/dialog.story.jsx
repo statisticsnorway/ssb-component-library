@@ -12,18 +12,17 @@ storiesOf('Dialog', module).addDecorator(centered)
 	.add('Info', () => (
 		<div>
 			<Dialog
-				text={placeholderText}
 				title="This article has been moved"
-			/>
-			<br />
+			>{placeholderText}
+			</Dialog>
 		</div>
 	))
 	.add('Warning', () => (
 		<div>
 			<Dialog
-				text={placeholderText}
 				title="Be aware of the dog"
 				type="warning"
-			/>
+			>{placeholderText}
+			</Dialog>
 		</div>
 	));
