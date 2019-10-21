@@ -21,7 +21,7 @@ Dialog.defaultProps = {
 };
 
 Dialog.propTypes = {
-	children: PropTypes.node,
+	children: PropTypes.node.isRequired,
 	title: PropTypes.string.isRequired,
 	type: PropTypes.oneOf([
 		'info',

@@ -32,4 +32,5 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children   | Required node | Content within the wrapper |
-| pageNumber | Optional number or string | Optional rendering of a page number |
+| title | Required string | Bold text as a title |
+| type | 'info' or 'warning | Changes color and icon |
