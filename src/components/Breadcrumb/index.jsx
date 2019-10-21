@@ -4,7 +4,7 @@ import Link from '../Link/index';
 
 const Breadcrumb = ({ items, className }) => (
 	<div className={`ssb-breadcrumbs ${className || ''}`}>
-		{items.map((item, index) => (
+		{items.map(item => (
 			item.link ? (
 				<div key={item.text}>
 					<Link href={item.link}>{item.text}</Link>
