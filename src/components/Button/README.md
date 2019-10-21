@@ -15,15 +15,17 @@ Button
     Click me!
 </button>
 
-<button >Disabled</button>
+<button disabled="true">Disabled</button>
 ```
 
 #### React
 
 ```jsx harmony
-<Button>
-  Click me!
-</Button> 
+<Button>Click me!</Button>
+
+<Button primary>Click me!</Button>
+
+<Button disabled>Disabled</Button>
 ```
 
 Available props:
