@@ -1,6 +1,7 @@
 import './main.scss';
 import './style/globalStyle.js';
 
+export { default as Breadcrumb } from './components/Breadcrumb/index.jsx';
 export { default as Button } from './components/Button/index.jsx';
 export { default as Checkbox } from './components/Checkbox/index.jsx';
 export { default as CheckboxGroup } from './components/CheckboxGroup/index.jsx';

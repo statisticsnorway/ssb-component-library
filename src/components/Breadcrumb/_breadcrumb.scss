@@ -1,0 +1,11 @@
+.ssb-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Open Sans', sans-serif;
+  font-stretch: normal;
+
+  .current-page {
+    padding: 2px 2px 1px;
+  }
+
+}
