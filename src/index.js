@@ -1,3 +1,4 @@
+import './main.scss';
 import './style/globalStyle.js';
 
 export { default as Breadcrumb } from './components/Breadcrumb/index.jsx';
