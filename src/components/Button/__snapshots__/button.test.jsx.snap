@@ -1,71 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button component Matches the snapshot 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #fff;
-  border: border:1px solid #00824d;
-  border-radius: 2px;
-  color: #00824d;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-right: 20px;
-  padding: 10px 20px;
-}
-
-.c0:hover {
-  background: #00824d;
-  color: #fff;
-}
-
-.c0:active {
-  background: #075745;
-}
-
-.c0:hover,
-.c0:active {
-  cursor: pointer;
-}
-
-.c0:disabled {
-  cursor: not-allowed;
-}
-
-.c1 {
-  font-family: 'Roboto',sans-serif;
-  font-stretch: normal;
-  font-family: 'Roboto',sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  -webkit-letter-spacing: normal;
-  -moz-letter-spacing: normal;
-  -ms-letter-spacing: normal;
-  letter-spacing: normal;
-  text-align: center;
-}
-
 <button
-  className="c0 secondary"
+  className="ssb-btn secondary-btn"
   disabled={false}
   onClick={[Function]}
   type="button"
 >
    
-  <span
-    className="c1 button-text"
-  >
-    Button
-  </span>
+  Button
 </button>
 `;
