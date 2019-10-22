@@ -15,7 +15,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				year="2018"
 				size="large"
-				icon={<Home size="280" />}
+				icon={<Home />}
 			/>
 		</div>
 	))
@@ -27,7 +27,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				year="2018"
 				size="medium"
-				icon={<Home size="210" />}
+				icon={<Home />}
 			/>
 		</div>
 	))
@@ -39,7 +39,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				year="2018"
 				size="small"
-				icon={<Home size="140" />}
+				icon={<Home />}
 			/>
 		</div>
 	));
