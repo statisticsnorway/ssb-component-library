@@ -7,17 +7,19 @@ import Button from './index';
 storiesOf('Button', module).addDecorator(centered)
 	.add('Primary', () => (
 		<div style={{ display: 'flex' }}>
-			<Button text="Primary" primary />
-			<Button text="Primary" primary icon={<ChevronDown size="18" />} />
-			<Button primary icon={<Play size="18" />} />
-			<Button text="Disabled" primary disabled />
+			<Button primary>Primary</Button>
+			<Button primary>
+				<ChevronDown size="18" /> Primary
+			</Button>
+			<Button primary><Play size="18" /></Button>
+			<Button primary disabled>Disabled</Button>
 		</div>
 	))
 	.add('Secondary', () => (
 		<div style={{ display: 'flex' }}>
-			<Button text="Secondary" />
-			<Button text="Primary" icon={<ChevronDown size="18" />} />
-			<Button icon={<Play size="18" />} />
-			<Button text="Disabled" disabled />
+			<Button>Secondary</Button>
+			<Button><ChevronDown size="18" /> Secondary</Button>
+			<Button><Play size="18" /></Button>
+			<Button disabled>Disabled</Button>
 		</div>
 	));
