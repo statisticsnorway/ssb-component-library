@@ -11,5 +11,5 @@ storiesOf('Text', module).addDecorator(centered)
 		<Text small>Small text here</Text>
 	))
 	.add('Negative', () => (
-		<Text className="p-2" negative>Negative text here</Text>
+		<Text negative>Negative text here</Text>
 	));
