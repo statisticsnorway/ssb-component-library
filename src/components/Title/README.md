@@ -10,7 +10,7 @@ Title
 ```html
 <div class="ssb-title"><h1>Title</h1></div>
 
-<div class="ssb-number"><h2>Title</h2></div>
+<div class="ssb-title"><h2>Title</h2></div>
 ```
 
 #### React

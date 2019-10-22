@@ -7,10 +7,10 @@ const KeyFigures = ({	icon, number, numberDescription, size, title, year }) => (
 	<div className="ssb-key-figures">
 		<div className={`kf-icon ${size}`}>{icon}</div>
 		<div>
-			<Title noMargin size={4}>{title}</Title>
+			<Title className="no-margin" size={4}>{title}</Title>
 			<div>{year}</div>
 			<Number size={size} number={number} />
-			<Title noMargin size={4}>{numberDescription}</Title>
+			<Title className="no-margin" size={4}>{numberDescription}</Title>
 		</div>
 	</div>
 );
