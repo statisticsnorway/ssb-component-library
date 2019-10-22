@@ -44,6 +44,14 @@
         width: 6px;
       }
     }
+
+    &:disabled + .checkbox-label {
+      color: $ssb-dark-2;
+
+      &:before {
+        border: 1px solid $ssb-dark-2;
+      }
+    }
   }
 
   .checkbox-label {
@@ -63,11 +71,5 @@
       top: 10px;
       width: 20px;
     }
-  }
-
-  &.disabled {
-    color: $ssb-dark-2;
-    cursor: default;
-    pointer-events: none;
   }
 }
