@@ -16,14 +16,16 @@
   }
 
   &:hover {
+
     .animate-background {
       height: 100%;
     }
   }
 
   .info-box-wrapper {
-    width: 300px;
+    @include open-sans;
     position: fixed;
+    width: 300px;
   }
 
   .info-box {
@@ -32,8 +34,8 @@
     padding: 18px 24px 18px 18px;
 
     .close-button {
-      right: 10px;
       position: absolute;
+      right: 10px;
       top: 4px;
     }
 

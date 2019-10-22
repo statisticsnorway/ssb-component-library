@@ -10,7 +10,7 @@
     "clean-test": "cross-env ENV=test jest --no-cache --updateSnapshot --coverage",
     "clear-tests": "jest --clear-cache -- -u",
     "lint:js": "eslint src/**/*.jsx",
-    "lint:css": "stylelint src/**/index.jsx",
+    "lint:css": "stylelint src/components/**/*.scss",
     "deploy": "npm publish"
   },
   "repository": {
@@ -72,8 +72,6 @@
     "style-loader": "^1.0.0",
     "stylelint": "^11.0.0",
     "stylelint-config-recommended": "^3.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.8.0",
     "uuid": "^3.3.3",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9"
