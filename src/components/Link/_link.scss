@@ -18,7 +18,7 @@ $icon-padding: 8px;
   padding: 2px 2px 1px;
   position: relative;
   text-decoration: none;
-  transition: background-size 0.2s ease-in, color 0.1s;
+  transition: background-size .2s ease-in, color .1s;
 
   &.header {
     font-size: $header-font-size;
@@ -48,6 +48,7 @@ $icon-padding: 8px;
     }
 
     &.header {
+
       .link-text {
         color: $ssb-white;
       }
@@ -87,7 +88,7 @@ $icon-padding: 8px;
 
   .link-text {
     color: $ssb-green-4;
-    transition: color 0.1s;
+    transition: color .1s;
 
     &:hover {
       color: $ssb-white;
