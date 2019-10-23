@@ -10,7 +10,7 @@ FormError.defaultProps = {
 };
 
 FormError.propTypes = {
-	errorMessage: PropTypes.node.isRequired,
+	errorMessage: PropTypes.string.isRequired,
 	negative: PropTypes.bool,
 };
 
