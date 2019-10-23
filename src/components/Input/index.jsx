@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { AlertTriangle, Search } from 'react-feather';
-import FormError from '../FormError';
+import FormError from '../FormError/index.jsx';
 
 const Input = ({
 	disabled, error, errorMessage, handleChange, id, label, negative, searchField, submitCallback, type, value,
