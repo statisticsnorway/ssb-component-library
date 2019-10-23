@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from '../Link/index';
+import Link from '../Link/index.jsx';
 
 const Breadcrumb = ({ items, className }) => (
 	<div className={`ssb-breadcrumbs ${className || ''}`}>

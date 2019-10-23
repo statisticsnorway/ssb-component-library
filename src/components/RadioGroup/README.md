@@ -11,11 +11,11 @@ RadioGroup
 <div class="ssb-radio-group">
     <div class="ssb-title no-margin"><h5>Title</h5></div>
     <div class="ssb-radio">
-        <input id="option1" value="option1" />
+        <input type="radio" id="option1" value="option1" />
         <label class="radio-label" for="option1">Insert label</label>
     </div>
     <div class="ssb-radio">
-        <input id="option2" value="option2" />
+        <input type="radio" id="option2" value="option2" />
         <label class="radio-label" for="option2">Insert label</label>
     </div>
 </div>
@@ -45,7 +45,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| header   | string | Renders a h5 title |
+| header | string | Renders a h5 title |
 | items | arrayOf(label, value) | Required items for rendering radio buttons |
 | onChange | func | Callback function when a value is changed |
 | selectedValue | string | Pre selected value |
