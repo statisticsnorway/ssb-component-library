@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '../Link/index';
 
-const Breadcrumb = ({ items, className }) => (
-	<div className={`ssb-breadcrumbs ${className || ''}`}>
+const Breadcrumb = ({ items }) => (
+	<div className="ssb-breadcrumbs">
 		{items.map(item => (
 			item.link ? (
 				<div key={item.text}>
@@ -18,7 +18,6 @@ const Breadcrumb = ({ items, className }) => (
 );
 
 Breadcrumb.propTypes = {
-	className: PropTypes.string,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		link: PropTypes.string,
 		text: PropTypes.string.isRequired,
