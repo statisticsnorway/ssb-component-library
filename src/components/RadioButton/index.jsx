@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RadioButton = ({
-	index, children, callback, disabled, selected, value
+	index, children, callback, disabled, selected, value,
 }) => (
 	<div className="ssb-radio" tabIndex={index + 1}>
 		<input

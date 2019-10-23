@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Checkbox from '../Checkbox/index.jsx';
 import Title from '../Title/index.jsx';
-import { roboto } from '../../style/mixins';
 
 const CheckboxGroup = ({
 	header, items, onChange, selectedValues,
@@ -25,8 +23,8 @@ const CheckboxGroup = ({
 	};
 
 	return (
-		<CheckboxGroupWrapper>
-			{header && <Title size={5}>{header}</Title>}
+		<div className="ssb-checkbox-group">
+			{header && <Title className="checkbox-group-header no-margin" size={5}>{header}</Title>}
 			{items.map((it, index) => (
 				<Checkbox
 					key={it.value}
@@ -38,24 +36,9 @@ const CheckboxGroup = ({
 				>{it.label}
 				</Checkbox>
 			))}
-		</CheckboxGroupWrapper>
+		</div>
 	);
 };
-
-const CheckboxGroupWrapper = styled.div`
-	${roboto};
-	display: inline-block;
-
-	fieldset {
-	  border: 0;
-	}
-  
-	h5 {
-	  margin-bottom: 10px;
-	  padding-left: 10px;
-	}
-  
-`;
 
 CheckboxGroup.defaultProps = {
 	onChange: () => {},

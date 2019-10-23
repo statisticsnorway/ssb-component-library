@@ -12,7 +12,7 @@ const RadioGroup = ({ header, items, onChange, selectedValue }) => {
 
 	return (
 		<div className="ssb-radio-group">
-			<Title className="radio-group-header no-margin" size={5}>{header}</Title>
+			{header && <Title className="radio-group-header no-margin" size={5}>{header}</Title>}
 			{items.map((it, index) => (
 				<RadioButton
 					key={it.value}
