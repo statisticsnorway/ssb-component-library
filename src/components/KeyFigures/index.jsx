@@ -1,32 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Number from '../Number/index.jsx';
-import { ssbDark5 } from '../../style/colors';
 import Title from '../Title';
-import { roboto } from '../../style/mixins';
 
 const KeyFigures = ({	icon, number, numberDescription, size, title, year }) => (
-	<Wrapper>
-		<IconContainer>{icon}</IconContainer>
+	<div className="ssb-key-figures">
+		<div className={`kf-icon ${size}`}>{icon}</div>
 		<div>
-			<Title noMargin size={4}>{title}</Title>
+			<Title className="no-margin" size={4}>{title}</Title>
 			<div>{year}</div>
 			<Number size={size} number={number} />
-			<Title noMargin size={4}>{numberDescription}</Title>
+			<Title className="no-margin" size={4}>{numberDescription}</Title>
 		</div>
-	</Wrapper>
+	</div>
 );
-
-const Wrapper = styled.div`
-	${roboto};
-	display: inline-grid;
-	grid-auto-flow: column;
-`;
-
-const IconContainer = styled.div`
-	color: ${ssbDark5};
-`;
 
 KeyFigures.defaultProps = {};
 
