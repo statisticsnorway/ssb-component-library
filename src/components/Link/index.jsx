@@ -1,20 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 const Link = ({
 	children, className, href, icon, isExternal, linkType, negative,
-}) => (
-	<a
-		className={`ssb-link ${linkType || ''} ${icon ? 'with-icon' : ''} ${negative ? 'negative' : ''} ${className || ''}`}
-		href={href}
-		target={isExternal ? '_blank' : ''}
-		rel={isExternal ? 'noopener noreferrer' : ''}
-	>{icon}
-		<span className="link-text">{children}</span>
-	</a>
-);
+}) => {
+	const classNames = classnames('ssb-link', className, {
+		profiled: linkType === 'profiled',
+		header: linkType === 'header',
+		negative,
+		'with-icon': icon,
+	});
+
+	return (
+		<a
+			className={classNames}
+			href={href}
+			target={isExternal ? '_blank' : ''}
+			rel={isExternal ? 'noopener noreferrer' : ''}
+		>{icon}
+			<span className="link-text">{children}</span>
+		</a>
+	);
+};
 
 Link.defaultProps = {
+	className: '',
 	isExternal: false,
 	negative: false,
 };
