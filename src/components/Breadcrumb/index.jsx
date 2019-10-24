@@ -11,7 +11,7 @@ const Breadcrumb = ({ items }) => (
 					&nbsp;/&nbsp;
 				</div>
 			) : (
-				<div key={item.text} className="current-page">{item.text}</div>
+				<span key={item.text}>{item.text}</span>
 			)
 		))}
 	</div>

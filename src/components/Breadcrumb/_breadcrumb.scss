@@ -1,11 +1,8 @@
 .ssb-breadcrumbs {
+  @include open-sans;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
   font-stretch: normal;
-
-  .current-page {
-    padding: 2px 2px 1px;
-  }
-
 }
