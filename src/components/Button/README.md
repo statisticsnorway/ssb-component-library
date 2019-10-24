@@ -10,7 +10,7 @@ Button
 ```html
 <button class="ssb-button">Click me!</button>
 
-<button class="ssb-button primary-button">
+<button class="ssb-button primary-btn">
     <SomeIcon />
     Click me!
 </button>
