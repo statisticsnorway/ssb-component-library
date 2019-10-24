@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
-import { ChevronDown, Home } from 'react-feather';
+import { ChevronDown } from 'react-feather';
 import Dropdown from './index';
 
 const items = [
