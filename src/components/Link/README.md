@@ -50,9 +50,9 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| children   | Required node | Content within the wrapper |
-| href | Required string|  |
-| icon | Optional node |  |
-| isExternal | Optional boolean |  |
-| linkType | Optional oneOf | One of 'regular', 'profiled' or 'header'  |
-| negative | Optional boolean | Styling for dark theme |
+| children   | Required node | Something that renders to wrap the link around |
+| href | Required string| Destination for navigation |
+| icon | Optional node | Renders an icon  |
+| isExternal | Optional boolean | Will make the link open in new tab. Defaults to false |
+| linkType | Optional oneOf |Changes the style. Can be 'regular', 'profiled', or 'header'. Defaults to 'regular' |
+| negative | Optional boolean | Will change component style. Defaults to false |

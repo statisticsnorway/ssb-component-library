@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import Title from '../Title/index.jsx';
 import RadioButton from '../RadioButton/index.jsx';
-import { roboto } from '../../style/mixins';
 
-const RadioGroup = ({
-	header, items, onChange, selectedValue,
-}) => {
+const RadioGroup = ({ header, items, onChange, selectedValue }) => {
 	const [selected, updateSelected] = useState(selectedValue);
 
 	useEffect(() => {
@@ -14,8 +11,8 @@ const RadioGroup = ({
 	}, [selected]);
 
 	return (
-		<RadioGroupWrapper>
-			{header && <h5>{header}</h5>}
+		<div className="ssb-radio-group">
+			{header && <Title className="radio-group-header no-margin" size={5}>{header}</Title>}
 			{items.map((it, index) => (
 				<RadioButton
 					key={it.value}
@@ -27,19 +24,9 @@ const RadioGroup = ({
 				>{it.label}
 				</RadioButton>
 			))}
-		</RadioGroupWrapper>
+		</div>
 	);
 };
-
-const RadioGroupWrapper = styled.div`
-	${roboto};
-	display: inline-block;
-
-	h5 {
-		margin-bottom: 10px;
-		padding-left: 10px;
-	}
-`;
 
 RadioGroup.defaultProps = {
 	onChange: () => {},
@@ -56,10 +43,3 @@ RadioGroup.propTypes = {
 };
 
 export default RadioGroup;
-
-/*
-options:
-	items: required options for radio group
-	onChange: optional callback
-	selectedValue: optional selection on init
- */

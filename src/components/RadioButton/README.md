@@ -1,30 +1,30 @@
-Checkbox
+RadioButton
 ========
 
-> A clickable box selector
+> A clickable radio selector
 
 ### Usage
 
 #### HTML
 
 ```html
-<div class="ssb-checkbox">
+<div class="ssb-radio">
     <input id="option1" value="option1" />
-    <label class="checkbox-label" for="option1">Insert label</label>
+    <label class="radio-label" for="option1">Insert label</label>
 </div>
 ```
 
 #### React
 
 ```jsx harmony
-<Checkbox
+<RadioButton
   callback={() => callbackFunction()}
   disabled={false}
   index="1"
   selected={false}
   value="option1"
 >Item 1
-</Checkbox>
+</RadioButton>
 ```
 
 Available props:

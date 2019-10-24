@@ -21,7 +21,7 @@ export default [{
 	],
 	plugins: [
 		scss({
-			output: 'lib/bundle.css',
+			output: NODE_ENV === 'development' ? 'bundled-styles.scss' : 'lib/bundle.css',
 		}),
 		resolve({ extension: ['.jsx', '.js'] }),
 		replace({

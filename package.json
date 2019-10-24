@@ -1,10 +1,11 @@
 {
   "name": "@statisticsnorway/ssb-component-library",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Component library for SSB (Statistics Norway)",
   "main": "lib/prod.js",
   "scripts": {
     "build:prod": "cross-env ENV=production rollup -c",
+    "build:dev": "cross-env ENV=development rollup -c",
     "start": "cross-env ENV=development start-storybook -p 6006",
     "test": "cross-env ENV=test jest --coverage",
     "clean-test": "cross-env ENV=test jest --no-cache --updateSnapshot --coverage",

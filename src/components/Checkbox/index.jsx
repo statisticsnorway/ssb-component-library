@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Checkbox = ({
-	index, children, callback, selected, value, disabled,
+	index, children, callback, disabled, selected, value,
 }) => (
 	<div className="ssb-checkbox" tabIndex={index + 1}>
 		<input
