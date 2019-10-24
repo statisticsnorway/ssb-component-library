@@ -5,8 +5,6 @@ src/
 .eslintrc
 .eslintignore
 .stylelintrc
-babel.config.js
+bundled-styles.scss
 jest.config.js
-webpack.config.js
-postcss.config.js
 rollup.config.js

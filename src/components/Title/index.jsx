@@ -1,18 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Title = ({ children, className, negative, size }) => (
-	<div
-		className={`ssb-title${negative ? ' negative' : ''}`}
-	>
-		{size === 1 && <h1 className={className}>{children}</h1>}
-		{size === 2 && <h2 className={className}>{children}</h2>}
-		{size === 3 && <h3 className={className}>{children}</h3>}
-		{size === 4 && <h4 className={className}>{children}</h4>}
-		{size === 5 && <h5 className={className}>{children}</h5>}
-		{size === 6 && <h6 className={className}>{children}</h6>}
-	</div>
-);
+const Title = ({ children, className, negative, size }) => {
+	switch (size) {
+	case 1:
+		return <h1 className={`ssb-title ${className ? className : ''}${negative ? ' negative' : ''}`}>{children}</h1>;
+	case 2:
+		return <h2 className={`ssb-title ${className ? className : ''}${negative ? ' negative' : ''}`}>{children}</h2>;
+	case 3:
+		return <h3 className={`ssb-title ${className ? className : ''}${negative ? ' negative' : ''}`}>{children}</h3>;
+	case 4:
+		return <h4 className={`ssb-title ${className ? className : ''}${negative ? ' negative' : ''}`}>{children}</h4>;
+	case 5:
+		return <h5 className={`ssb-title ${className ? className : ''}${negative ? ' negative' : ''}`}>{children}</h5>;
+	case 6:
+		return <h6 className={`ssb-title ${className ? className : ''}${negative ? ' negative' : ''}`}>{children}</h6>;
+	}
+};
 
 Title.defaultProps = {
 	negative: false,
