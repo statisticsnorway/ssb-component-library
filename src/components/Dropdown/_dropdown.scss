@@ -69,15 +69,21 @@
 
       .option-list-element {
         cursor: pointer;
+        padding: 10px;
 
         option {
           overflow: hidden;
-          padding: 10px;
           text-overflow: ellipsis;
+
+          &:hover {
+            background: $ssb-green-2;
+          }
         }
 
         &:hover {
           background: $ssb-green-2;
+          border-left: 5px solid $ssb-green-4;
+          padding-left: 5px;
         }
 
         &.selected {
