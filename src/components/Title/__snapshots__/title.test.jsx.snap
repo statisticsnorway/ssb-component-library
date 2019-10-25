@@ -1,63 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text component Matches the snapshot 1`] = `
-.c0 {
-  color: #162327;
-}
-
-.c0 h1 {
-  font-family: 'Roboto Condensed',sans-serif;
-  font-stretch: condensed;
-  font-size: 56px;
-  font-weight: bold;
-  line-height: 1.4;
-}
-
-.c0 h2 {
-  font-family: 'Roboto Condensed',sans-serif;
-  font-stretch: condensed;
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 1.5;
-}
-
-.c0 h3 {
-  font-family: 'Roboto Condensed',sans-serif;
-  font-stretch: condensed;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 1.6;
-}
-
-.c0 h4 {
-  font-family: 'Roboto',sans-serif;
-  font-stretch: normal;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1.7;
-}
-
-.c0 h5 {
-  font-family: 'Roboto',sans-serif;
-  font-stretch: normal;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 1.7;
-}
-
-.c0 h6 {
-  font-family: 'Roboto',sans-serif;
-  font-stretch: normal;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1.7;
-}
-
-<div
-  className="c0"
+<h1
+  className="ssb-title "
 >
-  <h1>
-    Default title here
-  </h1>
-</div>
+  Default title here
+</h1>
 `;
