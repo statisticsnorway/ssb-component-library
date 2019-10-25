@@ -12,7 +12,8 @@
     "clear-tests": "jest --clear-cache -- -u",
     "lint:js": "eslint src/**/*.jsx",
     "lint:css": "stylelint src/components/**/*.scss",
-    "deploy": "npm publish"
+    "deploy": "npm publish",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
