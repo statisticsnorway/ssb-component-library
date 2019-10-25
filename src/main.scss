@@ -7,6 +7,7 @@
 @import './style/grid';
 
 // Component imports
+@import './components/Accordion/accordion';
 @import './components/BlockContent/block-content';
 @import './components/Breadcrumb/breadcrumb';
 @import './components/Button/button';
@@ -19,6 +20,7 @@
 @import './components/Input/input';
 @import './components/KeyFigures/key-figures';
 @import './components/Link/link';
+@import './components/NestedAccordion/nested-accordion';
 @import './components/Number/number';
 @import './components/RadioButton/radio-button';
 @import './components/RadioGroup/radio-group';
