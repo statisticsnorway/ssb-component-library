@@ -1,16 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LeadParagraph component Matches the snapshot 1`] = `
-.c0 {
-  font-family: 'Open Sans',sans-serif;
-  font-stretch: normal;
-  color: #162327;
-  font-size: 20px;
-  line-height: 1.7;
-}
-
 <p
-  className="c0"
+  className=""
 >
   Leading paragraph
 </p>
