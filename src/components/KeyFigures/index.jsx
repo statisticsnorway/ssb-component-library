@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Number from '../Number/index.jsx';
-import Title from '../Title';
+import Title from '../Title/index.jsx';
 
 const KeyFigures = ({	icon, number, numberDescription, size, title, year }) => (
 	<div className="ssb-key-figures">
