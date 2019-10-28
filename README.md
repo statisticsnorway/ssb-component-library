@@ -1,8 +1,9 @@
 # SSB Component Library
 The SSB component library is developed mainly for developers at SSB.
 Visit the [docs](https://github.com/statisticsnorway/design-system) to see all available components and how to use them.
-
-- [Installing library](#installing-library)
+- [Usage](#usage)
+    - [Installing library](#installing-library)
+    - [Use components](#use-components)
 - [Contributing](#contributing)
     - [Run project locally](#run-project-locally)
     - [How to start working on a feature](#how-to-start-working-on-a-feature)
@@ -13,11 +14,31 @@ Visit the [docs](https://github.com/statisticsnorway/design-system) to see all a
         - [Testing](#testing)
         - [Styling](#styling)
 ----
-
-## Installing library
+## Usage
+### Installing library
 If you want to use the component library in your project, simply install it from npm.
 
 ``$ npm install @statisticsnorway/ssb-component-library --save``
+
+### Use components
+Every component is developed to support being used as React components or as styled HTML.
+Regardless of which way you use it, you need to import the stylesheet at the top of your project. You can do this either in the
+top javascript file, or in the top scss file.
+ 
+If your project uses React, just use the module as you usually would use an external react component.
+```jsx harmony
+import { Button } from '@statisticsnorway/ssb-component-library';
+
+<Button onClick={callback} primary>Click me!</Button>
+```
+
+If you only use HTML and CSS, look at the documentation for the specific component to make sure you get the class names right.
+````html
+<button class="ssb-button primary-btn">Click me</button>
+````
+
+You can find all available components [here](src/components) with the needed descriptions of how to use.
+You can also find this at the [website](https://statisticsnorway.github.io/design-system/#/components) (only in Norwegian for now).
 
 ## Contributing
 ### Run project locally
@@ -58,7 +79,11 @@ Components should be written as functions, as opposed to classes, and if a local
 take use of the [Hooks API](https://reactjs.org/docs/hooks-intro.html).
 
 As a way to ensure that our components are being used they way we intended, we use [PropTypes](https://www.npmjs.com/package/prop-types)
-to check properties being passed to components. _All_ components with props available should have this. 
+to check properties being passed to components. _All_ components with props available should have this.
+
+One of the requirements for the components is that they should be able to render with the desired design using only HTML.
+Please develop components with that in mind. Some projects will only extract the stylesheet and apply the class names to receive styling,
+while handling interactions on their own. Always develop with this in mind.
 
 #### Storybook
 [Storybook](https://storybook.js.org/) is an open source tool for developing UI components in an isolated environment.
@@ -89,4 +114,6 @@ To run the tests, simply run `npm test`. To run tests without using any cache, r
 If you need to replace outdated screenshots, run `npm run clear-tests`.
 
 #### Styling
-Styling is done with [styled-components](https://www.styled-components.com/), which means that we write CSS in JS. 
+Styling is done with SCSS. You should familiarise yourself just a bit with the [stylelint](./.stylelintrc) configuration,
+but it's pretty manageable. Just make sure you stick to the color variables specified in the [variables document](./src/style/_variables.scss)
+to make maintenance and potential changes easier. 
