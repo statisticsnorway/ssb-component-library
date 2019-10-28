@@ -13,7 +13,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				number="789 398"
 				title={title}
 				numberDescription="husholdninger"
-				year="2018"
+				time="2018"
 				size="large"
 				icon={<Home />}
 			/>
@@ -25,7 +25,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				number="789 398"
 				title={title}
 				numberDescription="husholdninger"
-				year="2018"
+				time="2018"
 				size="medium"
 				icon={<Home />}
 			/>
@@ -37,7 +37,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				number="789 398"
 				title={title}
 				numberDescription="husholdninger"
-				year="2018"
+				time="2018"
 				size="small"
 				icon={<Home />}
 			/>
