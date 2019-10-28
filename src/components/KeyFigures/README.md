@@ -22,7 +22,7 @@ KeyFigures
   <div class="kf-icon small"><i /></div>
   <div>
     <div class="ssb-title"><h4>Title</h4></div>
-    <div>2019</div>
+    <div class="kf-time">2019</div>
     <div class="ssb-number small">12 345</div>
     <div class="ssb-title"><h4>husholdninger</h4></div>
   </div>
@@ -38,7 +38,7 @@ KeyFigures
   numberDescription="husholdninger"
   size="small"
   title="Title"
-  year="2019"
+  time="2019"
 />
 ```
 
@@ -51,4 +51,4 @@ Available props:
 | numberDescription | string | Subtitle |
 | size | 'small', 'medium' or 'large' | Change size of number and icon |
 | title | string | Displays title |
-| year | string or number | Displays a year between title and number |
+| time | string or number | Displays a year between title and number |
