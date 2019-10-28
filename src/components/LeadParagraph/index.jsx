@@ -1,17 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { ssbDark6, ssbWhite } from '../../style/colors';
-import { openSans } from '../../style/mixins';
 
-const LeadParagraph = ({ children, negative }) => <Wrapper negative={negative}>{ children }</Wrapper>;
-
-const Wrapper = styled.p`
-	${openSans};
-	color: ${props => (props.negative ? ssbWhite : ssbDark6)};
-	font-size: 20px;
-	line-height: 1.7;
-`;
+const LeadParagraph = ({ children, negative }) => <p className={`ssb-lead-paragraph ${negative ? 'negative' : ''}`}>{ children }</p>;
 
 LeadParagraph.propTypes = {
 	children: PropTypes.node,
