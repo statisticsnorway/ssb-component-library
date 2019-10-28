@@ -1,127 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination component Matches the snapshot 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: 'Roboto',sans-serif;
-  font-stretch: normal;
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: 1px solid transparent;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 30px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 80px;
-}
-
-.c1 .icon {
-  color: #00824d;
-}
-
-.c1:hover {
-  border: 1px solid #00824d;
-  border-radius: 2px;
-  color: #00824d;
-  font-weight: bold;
-}
-
-.c2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #00824d;
-  border-radius: 2px;
-  color: #fff;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 30px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0 10px;
-  width: 30px;
-}
-
-.c2:hover {
-  border: 1px solid #00824d;
-  border-radius: 2px;
-  font-weight: inherit;
-}
-
-.c3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #fff;
-  border-radius: 2px;
-  color: #00824d;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 30px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0 10px;
-  width: 30px;
-}
-
-.c3:hover {
-  border: 1px solid #00824d;
-  border-radius: 2px;
-  font-weight: bold;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0 10px;
-  width: 30px;
-}
-
 <nav
-  className="c0"
+  className="Pagination__PaginationWrapper-t7si0g-0 hEdbGl"
 >
   <div
-    className="c1"
+    className="Pagination__DirectionButton-t7si0g-1 fXdkih"
     onClick={[Function]}
   >
     <svg
@@ -145,31 +29,31 @@ exports[`Pagination component Matches the snapshot 1`] = `
     </span>
   </div>
   <div
-    className="c2"
+    className="Pagination__NavButton-t7si0g-2 cGTCea"
     onClick={[Function]}
     selected={true}
   >
     1
   </div>
   <div
-    className="c3"
+    className="Pagination__NavButton-t7si0g-2 khMUa"
     onClick={[Function]}
     selected={false}
   />
   <div
-    className="c4"
+    className="Pagination__DottedIndicator-t7si0g-3 fTxHcT"
   >
     ...
   </div>
   <div
-    className="c3"
+    className="Pagination__NavButton-t7si0g-2 khMUa"
     onClick={[Function]}
     selected={false}
   >
     20
   </div>
   <div
-    className="c1"
+    className="Pagination__DirectionButton-t7si0g-1 fXdkih"
     onClick={[Function]}
   >
     <span>

@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 
 const Link = ({
 	children, className, href, icon, isExternal, linkType, negative,
 }) => {
-	const classNames = classnames('ssb-link', className, {
-		profiled: linkType === 'profiled',
-		header: linkType === 'header',
-		negative,
-		'with-icon': icon,
-	});
+
+	const classNames = `
+		ssb-link
+		${linkType}${negative ? ' negative' : ''}
+		${icon ? ' with-icon' : ''}
+		${className ? ' ' + className : ''}
+	`;
 
 	return (
 		<a

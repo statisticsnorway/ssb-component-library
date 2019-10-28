@@ -6,6 +6,17 @@
     "@babel/preset-react"
   ],
   "plugins": [
+    ["module-resolver",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ],
+        "root": [
+          "./src"
+        ]
+      }
+    ],
     "babel-plugin-styled-components",
     ["prismjs", {
       "languages": ["javascript", "html", "css", "jsx"],

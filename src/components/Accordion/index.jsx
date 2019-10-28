@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { PlusCircle, MinusCircle } from 'react-feather';
-import Title from '../Title/index.jsx';
+import Title from '../Title';
 
 const Accordion = ({
 	children, header, openByDefault, primary, subHeader,
