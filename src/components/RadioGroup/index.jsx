@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Title from '../Title/index.jsx';
-import RadioButton from '../RadioButton/index.jsx';
+import Title from '../Title';
+import RadioButton from '../RadioButton';
 
 const RadioGroup = ({ header, items, onChange, selectedValue }) => {
 	const [selected, updateSelected] = useState(selectedValue);

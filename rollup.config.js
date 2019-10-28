@@ -16,8 +16,9 @@ export default [{
 	},
 	external: [
 		'react',
-		'react-proptypes',
+		'prop-types',
 		'styled-components',
+		'uuid/v4',
 	],
 	plugins: [
 		scss({
@@ -32,6 +33,7 @@ export default [{
 		}),
 		commonjs({
 			include: ['node_modules/**'],
+			extensions: ['js', '.jsx'],
 			namedExports: {
 				'node_modules/react/index.js': [
 					'cloneElement',

@@ -4,6 +4,7 @@ src/
 .babelrc
 .eslintrc
 .eslintignore
+.idea
 .stylelintrc
 bundled-styles.scss
 jest.config.js

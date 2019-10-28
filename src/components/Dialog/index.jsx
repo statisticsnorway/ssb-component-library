@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { AlertCircle, AlertTriangle } from 'react-feather';
-import Paragraph from '../Paragraph/index.jsx';
+import Paragraph from '../Paragraph';
 
 const Dialog = ({children, title, type}) => (
 	<div className={`ssb-dialog ${type}`}>
