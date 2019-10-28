@@ -54,10 +54,10 @@
       @include roboto;
       background: $ssb-white;
       border: 1px solid $ssb-dark-6;
-      height: 235px;
       left: 0;
       list-style: none;
       margin: 0;
+      max-height: 235px;
       overflow-y: auto;
       padding-left: 0;
       position: absolute;
