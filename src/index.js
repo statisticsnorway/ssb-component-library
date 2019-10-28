@@ -8,6 +8,7 @@ export { default as CheckboxGroup } from './components/CheckboxGroup/index.jsx';
 export { default as Divider } from './components/Divider/index.jsx';
 export { default as Dropdown } from './components/Dropdown/index.jsx';
 export { default as Input } from './components/Input/index.jsx';
+export { default as KeyFigures } from './components/KeyFigures/index.jsx';
 export { default as LeadParagraph } from './components/LeadParagraph/index.jsx';
 export { default as Link } from './components/Link/index.jsx';
 export { default as Number } from './components/Number/index.jsx';
