@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import uuid from 'uuid/v4'
 import { ChevronLeft, ChevronRight } from 'react-feather';
-import { ssbGreen4, ssbWhite } from '../../style/colors';
-import { roboto } from '../../style/mixins';
 
 const Pagination = ({
 	items, onSelect, selectedPage,
@@ -43,101 +39,48 @@ const Pagination = ({
 	};
 
 	return (
-		<PaginationWrapper>
-			<DirectionButton onClick={() => handleSelection(items[items.indexOf(selected) - 1])}>
-				<ChevronLeft className="icon" size={18} />
-				<span>Forrige</span>
-			</DirectionButton>
-			<NavButton
-				selected={items[0] === selected}
-				onClick={() => handleSelection(items[0])}
-			>{items[0].text}
-			</NavButton>
-			{showLeftDots && <DottedIndicator>...</DottedIndicator>}
+		<nav className="ssb-pagination">
+			<div className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) - 1])}>
+				<ChevronLeft className="chevron-icon" size={18} />
+				Forrige
+			</div>
+			<div className={`nav-button-square ${items[0] === selected && 'selected'}`} onClick={() => handleSelection(items[0])}>
+				{items[0].text}
+			</div>
+			{showLeftDots && <div className="dotted-indicator">...</div>}
 			{currentButtons && currentButtons.map(item => (
 				item !== items[0] && item !== items[items.length - 1] && (
-					<NavButton
-						selected={item === selected}
+					<div
+						className={`nav-button-square ${item === selected && 'selected'}`}
 						onClick={() => handleSelection(item)}
-						key={uuid}
+						key={`${item.path}`}
 					>{item.text}
-					</NavButton>
+					</div>
 				)
 			))}
-			{showRightDots && <DottedIndicator>...</DottedIndicator>}
-			<NavButton
-				selected={items[items.length - 1] === selected}
+			{showRightDots && <div className="dotted-indicator">...</div>}
+			<div
+				className={`nav-button-square ${items[items.length - 1] === selected && 'selected'}`}
 				onClick={() => handleSelection(items[items.length - 1])}
 			>{items[items.length - 1].text}
-			</NavButton>
-			<DirectionButton onClick={() => handleSelection(items[items.indexOf(selected) + 1])}>
+			</div>
+			<div className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) + 1])}>
 				<span>Neste</span>
-				<ChevronRight className="icon" size={18} />
-			</DirectionButton>
-		</PaginationWrapper>
+				<ChevronRight className="chevron-icon" size={18} />
+			</div>
+		</nav>
 	);
 };
-
-const PaginationWrapper = styled.nav`
-	align-items: center;
-  display: flex;
-  ${roboto}
-`;
-
-const DirectionButton = styled.div`
-	align-items: center;
-	border: 1px solid transparent;
-	cursor: pointer;
-	display: flex;
-	height: 30px;
-	justify-content: center;
-	width: 80px;
-	
-	.icon {
-		color: ${ssbGreen4};
-	}
-	
-	&:hover {
-		border: 1px solid ${ssbGreen4};
-		border-radius: 2px;
-		color: ${ssbGreen4};
-		font-weight: bold;
-	}
-`;
-
-const NavButton = styled.div`
-	align-items: center;
-	background: ${props => (props.selected ? ssbGreen4 : ssbWhite)};
-	border-radius: 2px;
-	color: ${props => (props.selected ? ssbWhite : ssbGreen4)};
-	cursor: pointer;
-	display: flex;
-	height: 30px;
-	justify-content: center;
-	margin: 0 10px;
-	width: 30px;
-	
-	&:hover {
-		border: 1px solid ${ssbGreen4};
-		border-radius: 2px;
-		font-weight: ${props => (props.selected ? 'inherit' : 'bold')};
-    }
-`;
-
-const DottedIndicator = styled.div`
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	margin: 0 10px;
-	width: 30px;
-`;
 
 Pagination.defaultProps = {
 	onSelect: () => {},
 };
 
 Pagination.propTypes = {
-	items: PropTypes.arrayOf(PropTypes.object).isRequired,
+	items: PropTypes.arrayOf(PropTypes.shape({
+		text: PropTypes.string,
+		path: PropTypes.string
+	})).isRequired,
 	onSelect: PropTypes.func,
 	selectedPage: PropTypes.object,
 };
