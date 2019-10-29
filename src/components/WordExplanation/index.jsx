@@ -24,7 +24,7 @@ const WordExplanation = ({
 			// Center for mobile devices
 			setPosition({ x: (window.innerWidth - infoContainer.current.clientWidth) / 2, y: y + topMargin });
 		}
-		if (open && window.innerWidth > 768) {
+		else {
 			if (x + infoBoxWidth > window.innerWidth) {
 				// Detect if box will go outside of screen
 				const adjustment = x + infoBoxWidth - window.innerWidth;
