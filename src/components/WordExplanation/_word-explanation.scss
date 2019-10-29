@@ -1,4 +1,4 @@
-.word-explanation-wrap {
+.ssb-word-explanation {
   cursor: pointer;
   position: relative;
   text-decoration: dotted underline;
@@ -21,31 +21,38 @@
       height: 100%;
     }
   }
+}
 
-  .info-box-wrapper {
-    @include open-sans;
-    position: fixed;
-    width: 300px;
-  }
+.ssb-we-popup {
+  @include open-sans;
+  font-size: 14px;
+  position: fixed;
+  width: 270px;
 
-  .info-box {
-    background: $ssb-green-5;
+  .content-box {
+    background: $ssb-dark-5;
     color: $ssb-white;
     padding: 18px 24px 18px 18px;
 
-    .close-button {
-      position: absolute;
-      right: 10px;
-      top: 4px;
+    .ssb-we-closing {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      width: 100%;
+
+      span {
+        margin-left: 4px;
+      }
     }
 
     .info-text {
       color: $ssb-white;
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 
-  .arrow {
+  .ssb-we-arrow {
     display: flex;
     justify-content: center;
     left: -50%;
@@ -62,6 +69,6 @@
   }
 
   rect {
-    fill: $ssb-green-5;
+    fill: $ssb-dark-5;
   }
 }
