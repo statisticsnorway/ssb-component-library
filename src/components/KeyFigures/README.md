@@ -11,20 +11,20 @@ KeyFigures
 <div class="ssb-key-figures">
   <div class="kf-icon large"><i /></div>
   <div>
-    <div class="ssb-title"><h4>Title</h4></div>
+    <h4 class="ssb-title kf-title">Title</h4>
     <div>2019</div>
     <div class="ssb-number large">12 345</div>
-    <div class="ssb-title"><h4>husholdninger</h4></div>
+    <h4 class="ssb-title kf-title">husholdninger</h4>
   </div>
 </div>
 
 <div class="ssb-key-figures">
   <div class="kf-icon small"><i /></div>
   <div>
-    <div class="ssb-title"><h4>Title</h4></div>
+    <h4 class="ssb-title kf-title">Title</h4>
     <div class="kf-time">2019</div>
     <div class="ssb-number small">12 345</div>
-    <div class="ssb-title"><h4>husholdninger</h4></div>
+    <h4 class="ssb-title kf-title">husholdninger</h4>
   </div>
 </div>
 ```
