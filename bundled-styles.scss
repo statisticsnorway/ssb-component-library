@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap");
 .no-margin {
   margin: 0; }
 
@@ -3253,6 +3253,7 @@ html {
   cursor: pointer;
   display: inline-flex;
   font-size: 16px;
+  line-height: 1.3;
   padding: 2px 2px 1px;
   position: relative;
   text-decoration: none;
@@ -3568,7 +3569,7 @@ html {
   font-stretch: normal;
   font-weight: normal;
   font-size: 14px;
-  position: fixed;
+  position: absolute;
   width: 270px; }
   .ssb-we-popup .content-box {
     background: #274247;
