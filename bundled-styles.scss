@@ -3546,12 +3546,12 @@ html {
     font-weight: bold;
     line-height: 1.7; }
 
-.word-explanation-wrap {
+.ssb-word-explanation {
   cursor: pointer;
   position: relative;
   text-decoration: dotted underline;
   text-decoration-color: #00824d; }
-  .word-explanation-wrap .animate-background {
+  .ssb-word-explanation .animate-background {
     background: #b6e8b8;
     bottom: 0;
     height: 0;
@@ -3560,36 +3560,42 @@ html {
     transition: height .2s;
     width: 100%;
     z-index: -1; }
-  .word-explanation-wrap:hover .animate-background {
+  .ssb-word-explanation:hover .animate-background {
     height: 100%; }
-  .word-explanation-wrap .info-box-wrapper {
-    font-family: 'Open Sans', sans-serif;
-    font-stretch: normal;
-    font-weight: normal;
-    position: fixed;
-    width: 300px; }
-  .word-explanation-wrap .info-box {
-    background: #075745;
+
+.ssb-we-popup {
+  font-family: 'Open Sans', sans-serif;
+  font-stretch: normal;
+  font-weight: normal;
+  font-size: 14px;
+  position: fixed;
+  width: 270px; }
+  .ssb-we-popup .content-box {
+    background: #274247;
     color: #fff;
     padding: 18px 24px 18px 18px; }
-    .word-explanation-wrap .info-box .close-button {
-      position: absolute;
-      right: 10px;
-      top: 4px; }
-    .word-explanation-wrap .info-box .info-text {
+    .ssb-we-popup .content-box .ssb-we-closing {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      width: 100%; }
+      .ssb-we-popup .content-box .ssb-we-closing span {
+        margin-left: 4px; }
+    .ssb-we-popup .content-box .info-text {
       color: #fff;
-      font-size: 12px; }
-  .word-explanation-wrap .arrow {
+      font-size: 14px; }
+  .ssb-we-popup .ssb-we-arrow {
     display: flex;
     justify-content: center;
     left: -50%;
     position: absolute;
     right: -50%;
     top: -6px; }
-    .word-explanation-wrap .arrow svg {
+    .ssb-we-popup .ssb-we-arrow svg {
       display: flex;
       justify-content: center;
       top: 26px;
       transform: rotate(45deg); }
-  .word-explanation-wrap rect {
-    fill: #075745; }
+  .ssb-we-popup rect {
+    fill: #274247; }
