@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component Matches the snapshot 1`] = `
+<nav
+  className="ssb-pagination"
+>
+  <div
+    className="direction-button"
+    onClick={[Function]}
+  >
+    <svg
+      className="chevron-icon"
+      fill="none"
+      height={18}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width={18}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polyline
+        points="15 18 9 12 15 6"
+      />
+    </svg>
+    Forrige
+  </div>
+  <div
+    className="nav-button-square selected"
+    onClick={[Function]}
+  >
+    1
+  </div>
+  <div
+    className="nav-button-square false"
+    onClick={[Function]}
+  />
+  <div
+    className="dotted-indicator"
+  >
+    ...
+  </div>
+  <div
+    className="nav-button-square false"
+    onClick={[Function]}
+  >
+    20
+  </div>
+  <div
+    className="direction-button"
+    onClick={[Function]}
+  >
+    <span>
+      Neste
+    </span>
+    <svg
+      className="chevron-icon"
+      fill="none"
+      height={18}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width={18}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polyline
+        points="9 18 15 12 9 6"
+      />
+    </svg>
+  </div>
+</nav>
+`;

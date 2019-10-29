@@ -17,7 +17,6 @@
         ]
       }
     ],
-    "babel-plugin-styled-components",
     ["prismjs", {
       "languages": ["javascript", "html", "css", "jsx"],
       "plugins": ["line-numbers"],
