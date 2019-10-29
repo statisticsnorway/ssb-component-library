@@ -17,7 +17,6 @@ export default [{
 	external: [
 		'react',
 		'prop-types',
-		'styled-components',
 		'uuid/v4',
 	],
 	plugins: [

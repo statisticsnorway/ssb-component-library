@@ -1,5 +1,4 @@
 import './main.scss';
-import './style/globalStyle';
 
 export { default as Accordion } from './components/Accordion';
 export { default as BlockContent } from './components/BlockContent';

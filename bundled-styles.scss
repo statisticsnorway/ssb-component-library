@@ -3073,10 +3073,10 @@ html {
       font-weight: normal;
       background: #fff;
       border: 1px solid #162327;
-      height: 235px;
       left: 0;
       list-style: none;
       margin: 0;
+      max-height: 235px;
       overflow-y: auto;
       padding-left: 0;
       position: absolute;
@@ -3225,6 +3225,9 @@ html {
     font-stretch: normal;
     font-weight: normal;
     font-size: 16px; }
+  .ssb-key-figures .kf-title {
+    line-height: normal;
+    margin: 0; }
 
 .ssb-lead-paragraph {
   font-family: 'Open Sans', sans-serif;
@@ -3331,6 +3334,52 @@ html {
     font-size: 100px; }
   .ssb-number.large {
     font-size: 150px; }
+
+.ssb-pagination {
+  font-family: 'Roboto', sans-serif;
+  font-stretch: normal;
+  font-weight: normal;
+  align-items: center;
+  display: flex; }
+  .ssb-pagination .nav-button-square {
+    align-items: center;
+    border-radius: 2px;
+    color: #00824d;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    margin: 0 10px;
+    width: 30px; }
+    .ssb-pagination .nav-button-square.selected {
+      background: #00824d;
+      color: #fff;
+      font-weight: bold; }
+    .ssb-pagination .nav-button-square:hover {
+      border: 1px solid #00824d;
+      border-radius: 2px;
+      font-weight: bold; }
+  .ssb-pagination .dotted-indicator {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    width: 30px; }
+  .ssb-pagination .direction-button {
+    align-items: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    width: 80px; }
+    .ssb-pagination .direction-button .chevron-icon {
+      color: #00824d; }
+    .ssb-pagination .direction-button:hover {
+      border: 1px solid #00824d;
+      border-radius: 2px;
+      color: #00824d;
+      font-weight: bold; }
 
 .ssb-paragraph {
   font-family: 'Open Sans', sans-serif;
