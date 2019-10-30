@@ -20,7 +20,7 @@ storiesOf('Input', module).addDecorator(centered)
 	))
 	.add('Search field', () => (
 		<div style={{ width: '280px' }}>
-			<Input label="Input field Search" labelScreenReaderOnly searchField submitCallback={handleSubmit} placeholder="Search text" />
+			<Input ariaLabel="Input field Search" searchField submitCallback={handleSubmit} placeholder="Search text" />
 		</div>
 	))
 	.add('With value', () => (

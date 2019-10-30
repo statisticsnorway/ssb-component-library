@@ -5,7 +5,7 @@ import { AlertTriangle, Search } from 'react-feather';
 import FormError from '../FormError';
 
 const Input = ({
-	disabled, error, errorMessage, handleChange, id, label, labelScreenReaderOnly, negative, placeholder, searchField, submitCallback, type, value,
+	ariaLabel, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value,
 }) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || uuid();
@@ -16,7 +16,7 @@ const Input = ({
 
 	return (
 		<div className={`ssb-input ${negative ? 'negative' : ''} ${error ? 'error' : ''}`}>
-			{label && <label className={`${labelScreenReaderOnly ? 'screen-reader-only' : ''}`} htmlFor={inputId}>{label}</label>}
+			{label && <label htmlFor={inputId}>{label}</label>}
 			<div className="input-wrapper">
 				<input
 					id={inputId}
@@ -25,6 +25,7 @@ const Input = ({
 					value={inputValue}
 					onChange={e => handleInputChange(e)}
 					placeholder={placeholder}
+					aria-label={ariaLabel}
 				/>
 				{searchField && (
 					<div className="icon-wrapper" onClick={() => submitCallback(inputValue)}>
@@ -48,7 +49,6 @@ Input.defaultProps = {
 	disabled: false,
 	error: false,
 	handleChange: () => {},
-	labelScreenReaderOnly: false,
 	negative: false,
 	searchField: false,
 	submitCallback: () => {},
@@ -56,13 +56,13 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
+	ariaLabel: PropTypes.string,
 	disabled: PropTypes.bool,
 	error: PropTypes.bool,
 	errorMessage: PropTypes.string,
 	handleChange: PropTypes.func,
 	id: PropTypes.string,
 	label: PropTypes.string,
-	labelScreenReaderOnly: PropTypes.bool,
 	negative: PropTypes.bool,
 	placeholder: PropTypes.string,
 	searchField: PropTypes.bool,

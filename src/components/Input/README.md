@@ -47,8 +47,7 @@ Input
 />
 
 <Input
-  label="Input field Search"
-  labelScreenReaderOnly
+  ariaLabel="Input field Search"
   searchField
   submitCallback={handleSubmit}
   value={someValue}
@@ -65,13 +64,13 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| ariaLabel | string | Defines a string value that labels input element, use if label is not visible |
 | disabled | bool | Toggles disabled state |
 | error | bool | Changes design and inserts error icon |
 | errorMessage | string | Error message to be displayed |
 | handleChange | func | Callback every time a letter is entered or removed |
 | id | string | ID to connect label and input field |
 | label | string | Label text |
-| labelScreenReaderOnly | bool | Add class "screen-reader-only" to label element |
 | negative | bool | Changes design |
 | placeholder | string | Placeholder text |
 | searchField | bool | Inserts a search icon |

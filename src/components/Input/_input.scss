@@ -27,11 +27,6 @@
     font-size: 14px;
     margin-bottom: 5px;
     user-select: none;
-
-    &.screen-reader-only {
-      position: absolute;
-      left: -9999px;
-    }
   }
 
   input {
