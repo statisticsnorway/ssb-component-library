@@ -9,6 +9,7 @@ export { default as CheckboxGroup } from './components/CheckboxGroup';
 export { default as Dialog } from './components/Dialog';
 export { default as Divider } from './components/Divider';
 export { default as Dropdown } from './components/Dropdown';
+export { default as FactBox } from './components/FactBox';
 export { default as Input } from './components/Input';
 export { default as KeyFigures } from './components/KeyFigures';
 export { default as LeadParagraph } from './components/LeadParagraph';
