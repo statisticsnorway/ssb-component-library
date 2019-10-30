@@ -25,6 +25,8 @@
 
   .ssb-we-popup {
     @include open-sans;
+    animation: fadein .2s;
+    display: none;
     font-size: 14px;
     left: 50%;
     margin-left: -135px;
@@ -46,6 +48,7 @@
     }
 
     &.open {
+      display: inline-block;
       opacity: 1;
     }
 

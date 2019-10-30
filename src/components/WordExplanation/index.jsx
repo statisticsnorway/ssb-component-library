@@ -32,6 +32,7 @@ const WordExplanation = ({
 		<div ref={node} onClick={() => setOpen(!open)} className="ssb-word-explanation">
 			{children}<FileText size="12" />
 			<div className="animate-background" />
+			{open && (
 				<div className={`ssb-we-popup ${open && 'open'}`} ref={infoContainer}>
 					<div className="content-box">
 						<span className="info-text">{explanation}</span>
@@ -40,6 +41,8 @@ const WordExplanation = ({
 						</div>
 					</div>
 				</div>
+			)}
+
 		</div>
 	);
 };
