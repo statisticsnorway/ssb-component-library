@@ -16,9 +16,9 @@ Input
 </div>
 
 <div class="ssb-input">
-  <label for="input1">Insert label</label>
+  <label class="screen-reader-only" for="input1">Insert label</label>
   <div class="input-wrapper">
-    <input id="input1" value="option1" />
+    <input id="input1" placeholder="Search text"/>
     <div class="icon-wrapper">
       <icon>search</icon>
     </div>
@@ -41,11 +41,14 @@ Input
 
 ```jsx harmony
 <Input
+  label="Input field"
   handleChange={handleChange}
   value={someValue}
 />
 
 <Input
+  label="Input field Search"
+  labelScreenReaderOnly
   searchField
   submitCallback={handleSubmit}
   value={someValue}
@@ -54,6 +57,7 @@ Input
 <Input
   error
   errorMessage="Dette er feil"
+  label="Input field Search"
 />
 ```
 
@@ -67,7 +71,9 @@ Available props:
 | handleChange | func | Callback every time a letter is entered or removed |
 | id | string | ID to connect label and input field |
 | label | string | Label text |
+| labelScreenReaderOnly | bool | Add class "screen-reader-only" to label element |
 | negative | bool | Changes design |
+| placeholder | string | Placeholder text |
 | searchField | bool | Inserts a search icon |
 | submitCallback | func | Callback for when clicking search icon |
 | type | string | Optional parameters like 'url', 'email' etc. |

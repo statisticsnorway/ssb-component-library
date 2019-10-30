@@ -15,27 +15,27 @@ const handleSubmit = e => {
 storiesOf('Input', module).addDecorator(centered)
 	.add('Default', () => (
 		<div style={{ width: '280px' }}>
-			<Input value={someValue} handleChange={handleChange} />
+			<Input label="Input field" value={someValue} handleChange={handleChange} />
 		</div>
 	))
 	.add('Search field', () => (
 		<div style={{ width: '280px' }}>
-			<Input searchField submitCallback={handleSubmit} />
+			<Input label="Input field Search" labelScreenReaderOnly searchField submitCallback={handleSubmit} placeholder="Search text" />
 		</div>
 	))
 	.add('With value', () => (
 		<div style={{ width: '280px' }}>
-			<Input value="Already filled" />
+			<Input label="Input field" value="Already filled" />
 		</div>
 	))
 	.add('Disabled', () => (
 		<div style={{ width: '280px' }}>
-			<Input disabled />
+			<Input label="Input field" disabled />
 		</div>
 	))
 	.add('Error', () => (
 		<div style={{ width: '280px' }}>
-			<Input error errorMessage="Beklager, dette er feil" />
+			<Input label="Input field" error errorMessage="Beklager, dette er feil" />
 		</div>
 	))
 	.add('Negative', () => (
@@ -49,8 +49,8 @@ storiesOf('Input', module).addDecorator(centered)
 			alignItems: 'center',
 		}}
 		>
-			<Input negative value={someValue} handleChange={handleChange} />
-			<Input negative searchField submitCallback={handleSubmit} />
-			<Input negative value={someValue} error errorMessage="Beklager, dette er feil" />
+			<Input label="Input field" negative value={someValue} handleChange={handleChange} />
+			<Input label="Input field" negative searchField submitCallback={handleSubmit} placeholder="Search text" />
+			<Input label="Input field" negative value={someValue} error errorMessage="Beklager, dette er feil" />
 		</div>
 	));

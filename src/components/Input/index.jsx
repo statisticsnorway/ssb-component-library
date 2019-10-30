@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { AlertTriangle, Search } from 'react-feather';
-import FormError from '../FormError/index.jsx';
+import FormError from '../FormError';
 
 const Input = ({
-	disabled, error, errorMessage, handleChange, id, label, negative, searchField, submitCallback, type, value,
+	disabled, error, errorMessage, handleChange, id, label, labelScreenReaderOnly, negative, placeholder, searchField, submitCallback, type, value,
 }) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || uuid();
@@ -16,7 +16,7 @@ const Input = ({
 
 	return (
 		<div className={`ssb-input ${negative ? 'negative' : ''} ${error ? 'error' : ''}`}>
-			<label htmlFor={inputId}>{label}</label>
+			{label && <label className={`${labelScreenReaderOnly ? 'screen-reader-only' : ''}`} htmlFor={inputId}>{label}</label>}
 			<div className="input-wrapper">
 				<input
 					id={inputId}
@@ -24,6 +24,7 @@ const Input = ({
 					type={type}
 					value={inputValue}
 					onChange={e => handleInputChange(e)}
+					placeholder={placeholder}
 				/>
 				{searchField && (
 					<div className="icon-wrapper" onClick={() => submitCallback(inputValue)}>
@@ -47,7 +48,7 @@ Input.defaultProps = {
 	disabled: false,
 	error: false,
 	handleChange: () => {},
-	label: 'Input field',
+	labelScreenReaderOnly: false,
 	negative: false,
 	searchField: false,
 	submitCallback: () => {},
@@ -61,7 +62,9 @@ Input.propTypes = {
 	handleChange: PropTypes.func,
 	id: PropTypes.string,
 	label: PropTypes.string,
+	labelScreenReaderOnly: PropTypes.bool,
 	negative: PropTypes.bool,
+	placeholder: PropTypes.string,
 	searchField: PropTypes.bool,
 	submitCallback: PropTypes.func,
 	type: PropTypes.string,
