@@ -16,9 +16,8 @@ Input
 </div>
 
 <div class="ssb-input">
-  <label class="screen-reader-only" for="input1">Insert label</label>
   <div class="input-wrapper">
-    <input id="input1" placeholder="Search text"/>
+    <input id="input1" aria-label="Input field Search" placeholder="Search text"/>
     <div class="icon-wrapper">
       <icon>search</icon>
     </div>
