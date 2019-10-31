@@ -21,7 +21,7 @@ export { default as Paragraph } from './components/Paragraph';
 export { default as ProfileBox } from './components/ProfileBox';
 export { default as RadioButton } from './components/RadioButton';
 export { default as RadioGroup } from './components/RadioGroup';
-export { default as ReferenceLink } from './components/ReferenceLink';
+export { default as ReferenceLink } from './components/References';
 export { default as Tabs } from './components/Tabs';
 export { default as Text } from './components/Text';
 export { default as Title } from './components/Title';
