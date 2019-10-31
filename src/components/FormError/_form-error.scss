@@ -1,9 +1,24 @@
 .ssb-form-error {
-  color: $ssb-red-4;
-  font-size: 14px;
-  margin-top: 10px;
+  @include roboto;
+  background: #fee6d9;
+  border-left: 4px solid $ssb-red-4;
+  display: flex;
+  padding: 24px 24px 24px 0;
+  width: 100%;
 
-  &.negative {
-    color: $negative-red;
+  .error-icon {
+    color: $ssb-red-4;
+    margin: 0 15px;
+  }
+
+  .error-title {
+    color: $ssb-red-4;
+    font-weight: bold;
+  }
+
+  ul {
+    margin-bottom: 0;
+    margin-top: 15px;
+    padding-left: 20px;
   }
 }

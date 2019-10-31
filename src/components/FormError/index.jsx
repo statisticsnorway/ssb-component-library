@@ -1,8 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { AlertOctagon } from 'react-feather';
 
-const FormError = ({ errorMessage, negative }) => (
-	<span className={`ssb-form-error ${negative ? 'negative' : ''}`}>{errorMessage}</span>
+const FormError = ({ className, errorMessages, title }) => (
+	<div className={`ssb-form-error ${className ? className : ''}`}>
+		<div className="error-icon"><AlertOctagon size={26} /></div>
+		<div>
+			<span className="error-title">{title}</span>
+			<ul>
+				{errorMessages.map(error => (
+					<li>
+						{error}
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
 );
 
 FormError.defaultProps = {
@@ -10,8 +23,9 @@ FormError.defaultProps = {
 };
 
 FormError.propTypes = {
-	errorMessage: PropTypes.string.isRequired,
-	negative: PropTypes.bool,
+	className: PropTypes.string,
+	errorMessages: PropTypes.array.isRequired,
+	title: PropTypes.string,
 };
 
 export default FormError;
