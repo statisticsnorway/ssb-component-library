@@ -7,8 +7,8 @@ const FormError = ({ className, errorMessages, title }) => (
 		<div>
 			<span className="error-title">{title}</span>
 			<ul>
-				{errorMessages.map(error => (
-					<li>
+				{errorMessages.map((error, index) => (
+					<li key={index}>
 						{error}
 					</li>
 				))}
