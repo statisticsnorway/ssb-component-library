@@ -1,23 +1,34 @@
 FormError
 ========
 
-> Text wrapper for error messages
+> Dialog box for form errors
 
 ### Usage
 
 #### HTML
 
 ```html
-<span class="ssb-form-error">Insert error message</span>
-<span class="ssb-form-error negative">Insert error message</span>
+<div class="ssb-form-error">
+  <span class="error-icon" />
+  <div>
+    <span class="error-title">Some fields are not right:</span>
+    <ul>
+      <li>error 1</li>
+      <li>error 2</li>
+      <li>error 3</li>
+    </ul>
+  </div>
+</div>
 ```
 
 #### React
 
 ```jsx harmony
+const errors = ['error 1', 'error 2', 'error 3'];
+
 <FormError
-  errorMessage="Insert error message"
-  negative={false}
+  errorMessages={errors}
+  title="Some fields are not right:"
 />
 ```
 
@@ -25,5 +36,6 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| errorMessage | string | Renders text |
-| negative | bool | Changes text color |
+| className | string | Optional class name |
+| errorMessages | array | Renders list items |
+| title | string | Renders a title |
