@@ -13,17 +13,11 @@ Dropdown
     <div class="dropdown-interactive-area">
         <input class="focused" id="input-dropdown" disabled="" placeholder="Select item" value="">
         <div class="dd-icon"><i /></div>
-        <ul class="list-of-options">
-            <li class="option-list-element false">
-                <option value="item1" id="item1">Apples</option>
-            </li>
-            <li class="option-list-element false">
-                <option value="item2" id="item2">Rainbows</option>
-            </li>
-            <li class="option-list-element false">
-                <option value="item3" id="item3">Ocean</option>
-            </li>
-        </ul>
+        <div class="list-of-options">
+            <div class="option-list-element" value="item1" id="item1">Apples</div>
+            <div class="option-list-element selected"" value="item2" id="item2">Rainbows</div>
+            <div class="option-list-element" value="item3" id="item3">Ocean</div>
+        </div>
     </div>
 </div>
 ```

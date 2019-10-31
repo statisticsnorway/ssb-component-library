@@ -56,21 +56,18 @@ const Dropdown = ({
 				/>
 				<div className="dd-icon">{icon}</div>
 				{isOpen && (
-					<ul className="list-of-options">
+					<div className="list-of-options">
 						{availableOptions.map(it => (
-							<li
-								className={`option-list-element ${selectedOption.id === it.id && 'selected'}`}
+							<div
+								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}`}
 								key={it.id}
-							>
-								<option
-									onClick={() => handleSelection(it)}
-									value={it.id}
-									id={it.id}
-								>{it.title}
-								</option>
-							</li>
+								onClick={() => handleSelection(it)}
+								value={it.id}
+								id={it.id}
+							>{it.title}
+							</div>
 						))}
-					</ul>
+					</div>
 				)}
 			</div>
 		</div>
