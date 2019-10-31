@@ -7,8 +7,21 @@
   width: 100%;
 
   .error-icon {
-    color: $ssb-red-4;
     margin: 0 15px;
+
+    &:before {
+      align-items: center;
+      background: $ssb-red-4;
+      border-radius: 2px;
+      color: $ssb-white;
+      content: "!";
+      display: inline-flex;
+      font-size: 18px;
+      font-weight: bold;
+      height: 26px;
+      justify-content: center;
+      width: 26px;
+    }
   }
 
   .error-title {

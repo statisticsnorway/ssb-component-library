@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AlertOctagon } from 'react-feather';
 
 const FormError = ({ className, errorMessages, title }) => (
-	<div className={`ssb-form-error ${className ? className : ''}`}>
-		<div className="error-icon"><AlertOctagon size={26} /></div>
+	<div className={`ssb-form-error ${className}`}>
+		<span className="error-icon" />
 		<div>
 			<span className="error-title">{title}</span>
 			<ul>
@@ -19,7 +18,8 @@ const FormError = ({ className, errorMessages, title }) => (
 );
 
 FormError.defaultProps = {
-	negative: false,
+	className: '',
+	title: '',
 };
 
 FormError.propTypes = {
