@@ -1,9 +1,37 @@
 .ssb-form-error {
-  color: $ssb-red-4;
-  font-size: 14px;
-  margin-top: 10px;
+  @include roboto;
+  background: $ssb-red-1;
+  border-left: 4px solid $ssb-red-4;
+  display: flex;
+  padding: 24px 24px 24px 0;
+  width: 100%;
 
-  &.negative {
-    color: $negative-red;
+  .error-icon {
+    margin: 0 15px;
+
+    &:before {
+      align-items: center;
+      background: $ssb-red-4;
+      border-radius: 2px;
+      color: $ssb-white;
+      content: "!";
+      display: inline-flex;
+      font-size: 18px;
+      font-weight: bold;
+      height: 26px;
+      justify-content: center;
+      width: 26px;
+    }
+  }
+
+  .error-title {
+    color: $ssb-red-4;
+    font-weight: bold;
+  }
+
+  ul {
+    margin-bottom: 0;
+    margin-top: 15px;
+    padding-left: 20px;
   }
 }

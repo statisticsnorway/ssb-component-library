@@ -1,17 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FormError = ({ errorMessage, negative }) => (
-	<span className={`ssb-form-error ${negative ? 'negative' : ''}`}>{errorMessage}</span>
+const FormError = ({ className, errorMessages, title }) => (
+	<div className={`ssb-form-error ${className}`}>
+		<span className="error-icon" />
+		<div>
+			<span className="error-title">{title}</span>
+			<ul>
+				{errorMessages.map((error, index) => (
+					<li key={index}>
+						{error}
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
 );
 
 FormError.defaultProps = {
-	negative: false,
+	className: '',
+	title: '',
 };
 
 FormError.propTypes = {
-	errorMessage: PropTypes.string.isRequired,
-	negative: PropTypes.bool,
+	className: PropTypes.string,
+	errorMessages: PropTypes.array.isRequired,
+	title: PropTypes.string,
 };
 
 export default FormError;
