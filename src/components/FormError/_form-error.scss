@@ -1,6 +1,6 @@
 .ssb-form-error {
   @include roboto;
-  background: #fee6d9;
+  background: $ssb-red-1;
   border-left: 4px solid $ssb-red-4;
   display: flex;
   padding: 24px 24px 24px 0;
