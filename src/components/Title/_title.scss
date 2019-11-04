@@ -9,7 +9,7 @@
 
     h1#{&} {
       @include roboto-condenced;
-      font-size: 56px;
+      font-size: 60px;
       font-weight: bold;
       line-height: 1.4;
     }
@@ -22,15 +22,15 @@
     }
 
     h3#{&} {
-      @include roboto-condenced;
-      font-size: 24px;
+      @include roboto;
+      font-size: 20px;
       font-weight: bold;
       line-height: 1.6;
     }
 
     h4#{&} {
       @include roboto;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       line-height: 1.7;
     }
