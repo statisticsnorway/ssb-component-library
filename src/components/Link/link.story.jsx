@@ -5,20 +5,21 @@ import { ArrowRight } from 'react-feather';
 import Link from './index';
 
 const negativeStyle = {
-	backgroundColor: '#162327',
+	backgroundColor: '#274247',
+	padding: '100px',
 };
 
 storiesOf('Link', module).addDecorator(centered)
 	.add('Default', () => (
 		<div>
 			<p><Link href=" ">A regular link</Link></p>
-			<Link href=" " icon={<ArrowRight size={20} />}>A regular link with icon</Link>
+			<Link href=" " icon={<ArrowRight size={16} />}>A regular link with icon</Link>
 		</div>
 	))
 	.add('Profiled', () => (
 		<div>
 			<p><Link href=" " linkType="profiled">A profiled link</Link></p>
-			<Link href=" " linkType="profiled" icon={<ArrowRight />}>A profiled link with icon</Link>
+			<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />}>A profiled link with icon</Link>
 		</div>
 	))
 	.add('Header', () => (
@@ -29,7 +30,7 @@ storiesOf('Link', module).addDecorator(centered)
 	.add('Negative', () => (
 		<div style={negativeStyle}>
 			<p><Link href=" " negative>A regular link - Negative</Link></p>
-			<Link href=" " icon={<ArrowRight size={20} />} negative>A regular link with icon - Negative</Link>
+			<Link href=" " icon={<ArrowRight size={16} />} negative>A regular link with icon - Negative</Link>
 			<p><Link href=" " linkType="profiled" negative>A profiled link - Negative</Link></p>
 			<Link href=" " linkType="profiled" icon={<ArrowRight />} negative>A profiled link with icon - Negative</Link>
 			<p><Link href=" " linkType="header" negative>A header link - Negative</Link></p>

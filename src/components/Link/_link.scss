@@ -1,6 +1,6 @@
 $default-font-size: 16px;
 $profiled-font-size: 18px;
-$header-font-size: 18px;
+$header-font-size: 20px;
 $icon-padding: 8px;
 
 .ssb-link {
@@ -22,6 +22,7 @@ $icon-padding: 8px;
   transition: background-size .2s ease-in, color .1s;
 
   &.header {
+    @include roboto;
     font-size: $header-font-size;
     font-weight: bold;
 
@@ -33,6 +34,7 @@ $icon-padding: 8px;
   &:hover {
     background-size: 100% 100%;
     color: $ssb-white;
+    text-decoration: none;
 
     .link-text {
       color: $ssb-white;
