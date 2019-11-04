@@ -76,3 +76,6 @@ Available props:
 | submitCallback | func | Callback for when clicking search icon |
 | type | string | Optional parameters like 'url', 'email' etc. |
 | value | string | Current value |
+
+__Dependencies__
+ - [InputError](../InputError)

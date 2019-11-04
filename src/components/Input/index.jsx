@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { AlertTriangle, Search } from 'react-feather';
-import FormError from '../FormError';
+import InputError from '../InputError';
 
 const Input = ({
 	ariaLabel, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value,
@@ -15,7 +15,7 @@ const Input = ({
 	};
 
 	return (
-		<div className={`ssb-input ${negative ? 'negative' : ''} ${error ? 'error' : ''}`}>
+		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}`}>
 			{label && <label htmlFor={inputId}>{label}</label>}
 			<div className="input-wrapper">
 				<input
@@ -26,6 +26,7 @@ const Input = ({
 					onChange={e => handleInputChange(e)}
 					placeholder={placeholder}
 					aria-label={ariaLabel}
+					className={``}
 				/>
 				{searchField && (
 					<div className="icon-wrapper" onClick={() => submitCallback(inputValue)}>
@@ -39,7 +40,7 @@ const Input = ({
 				)}
 			</div>
 			{error && (errorMessage && (
-				<FormError negative={negative} errorMessage={errorMessage} />
+				<InputError negative={negative} errorMessage={errorMessage} />
 			))}
 		</div>
 	);
