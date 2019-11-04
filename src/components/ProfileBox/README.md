@@ -29,3 +29,7 @@ Available props:
 | link | string | Destination for navigation |
 | text | string | Renders text |
 | title | string | Link text  |
+
+__Dependencies__
+ - [Link](../Link)
+ - [Paragraph](../Paragraph)

@@ -32,3 +32,6 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | items   | Required array of objects | 	A list of objects. Object key text is required, link is optional|
+
+__Dependencies__
+ - [Link](../Link)

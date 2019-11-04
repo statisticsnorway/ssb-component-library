@@ -36,9 +36,9 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| header | string | Displays header |
 | icon | node | Renders an icon |
 | items | arrayOf(title, id) |Required items for rendering dropdown |
-| header | string | Displays header |
 | onSelect | func | Callback function when a title is selected |
 | open | bool | Selected state of dropdown |
 | placeholder | string | Placeholder for dropdown |

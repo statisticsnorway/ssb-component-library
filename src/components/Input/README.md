@@ -65,17 +65,17 @@ Available props:
 | ---------- | ------------- | ----- |
 | ariaLabel | string | Defines a string value that labels input element, use if label is not visible |
 | disabled | bool | Toggles disabled state |
-| error | bool | Changes design and inserts error icon |
-| errorMessage | string | Error message to be displayed |
+| error | bool | Changes design |
+| errorMessage | string | Renders an error message underneath input field |
 | handleChange | func | Callback every time a letter is entered or removed |
 | id | string | ID to connect label and input field |
 | label | string | Label text |
 | negative | bool | Changes design |
 | placeholder | string | Placeholder text |
-| searchField | bool | Inserts a search icon |
-| submitCallback | func | Callback for when clicking search icon |
-| type | string | Optional parameters like 'url', 'email' etc. |
-| value | string | Current value |
+| searchField | bool | Ads search icon with click |
+| submitCallback | func | Callback for onSubmit |
+| type | string | Changes input type. Optional parameters like 'url', 'email' etc. |
+| value | string | Input value. Can be initiated with a value |
 
 __Dependencies__
  - [InputError](../InputError)

@@ -33,7 +33,7 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children | Required node | Button text or/and icon |
-| disabled | bool | Toggles disable state |
-| onClick | function | Callback function |
-| primary | bool | Changes design |
-| type | string | Changes button type |
+| disabled | bool | Decides if the button is disabled |
+| onClick | function | Callback for button click |
+| primary | bool | Changes style to represent a primary button |
+| type | string | Button type. Can be 'submit', 'reset', or 'button'. Defaults to 'button' |
