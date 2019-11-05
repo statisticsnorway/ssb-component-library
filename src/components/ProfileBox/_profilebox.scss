@@ -1,6 +1,46 @@
 .ssb-profile-box {
-  background: $ice-cold-grey;
-  display: inline-block;
-  flex-direction: column;
-  padding: $global-padding-size * 2;
+
+  .profile-content {
+    background: $ssb-white;
+    border: 1px solid $ssb-dark-2;
+    border-top: 5px solid $ssb-green-3;
+    cursor: pointer;
+    display: inline-block;
+    flex-direction: column;
+    padding: $global-padding-size * 2;
+    width: 100%;
+
+    &:hover {
+      border: 1px solid $ssb-green-3;
+      border-top: 5px solid $ssb-green-3;
+    }
+
+    &.centered {
+      align-items: center;
+      display: inline-flex;
+      text-align: center;
+    }
+  }
+
+  .download-section {
+    @include open-sans;
+    align-items: center;
+    border: 1px solid $ssb-dark-2;
+    cursor: pointer;
+    display: flex;
+    height: 60px;
+
+    &:hover {
+      border: 1px solid $ssb-green-3;
+    }
+
+    .download-icon {
+      color: $ssb-green-4;
+      margin: 0 18px;
+    }
+
+    span {
+      font-size: 16px;
+    }
+  }
 }

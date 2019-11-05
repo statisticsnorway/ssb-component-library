@@ -61,7 +61,7 @@
       overflow-y: auto;
       padding-left: 0;
       position: absolute;
-      scrollbar-color: $ssb-dark-3 $ssb-white;
+      scrollbar-color: $ssb-dark-2 $ssb-white;
       scrollbar-width: thin;
       top: 36px;
       z-index: 9999;
@@ -99,7 +99,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: $ssb-dark-3;
+      background: $ssb-dark-2;
       border-radius: 3px;
     }
 
