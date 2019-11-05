@@ -19,7 +19,7 @@ const References = ({
 );
 
 References.defaultProps = {
-	title: 'Kilder'
+	title: 'Kilder',
 };
 
 References.propTypes = {
