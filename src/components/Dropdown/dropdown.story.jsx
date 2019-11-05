@@ -15,7 +15,7 @@ const items = [
 		title: 'Ocean',
 		id: 'item3',
 	}, {
-		title: 'Automobiles',
+		title: 'Automobiles and other fun things to talk about',
 		id: 'item4',
 	}, {
 		title: 'Banan',
