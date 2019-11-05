@@ -1,7 +1,7 @@
 ProfileBox
 ========
 
-> Wrapper for Link and Text
+> Wrapper for a Profile Box
 
 ### Usage
 
@@ -9,27 +9,30 @@ ProfileBox
 
 ```html
 <div class="ssb-profile-box">
-    <a class="ssb-link header" href=" " target="" rel="">
-        <span class="link-text">This is a title link</span>
-    </a>
-    <p class="ssb-paragraph ">Explaining text about something.</p>
+  <a class="profile-content">
+    {fill with content}
+  </a>
+  /* Optional download field */
+  <a download href=" " class="download-section">
+    <i class="download-icon" size="20" />
+    <span>Last ned</span>
+  </a>
 </div>
 ```
 
 #### React
 
 ```jsx harmony
-<ProfileBox link=" " text="Explaining text about something." title="This is a title link" />
+<ProfileBox centered fileLocation=" " onClick={() => {}}>
+  fill with content
+</ProfileBox>
 ```
 
 Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| link | string | Destination for navigation |
-| text | string | Renders text |
-| title | string | Link text  |
-
-__Dependencies__
- - [Link](../Link)
- - [Paragraph](../Paragraph)
+| centered | bool | Centers text |
+| children | node | Required. Fills box with content |
+| fileLocation | string | Path to downloadable file. Ads the download field |
+| onClick | func | Callback function |

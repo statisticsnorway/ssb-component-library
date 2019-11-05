@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   transition: all .25s ease-in-out;
+  max-width: 480px;
+  min-width: 150px;
 
   label {
     font-size: 14px;
@@ -18,7 +20,7 @@
       height: 18px;
       position: absolute;
       right: 10px;
-      top: 10px;
+      top: 6px;
       width: 18px;
 
       & > * {
@@ -34,6 +36,7 @@
       font-size: 16px;
       height: 36px;
       padding: 4px 34px 4px 10px;
+      text-overflow: ellipsis;
       width: 100%;
 
       &::placeholder {
@@ -58,27 +61,29 @@
       list-style: none;
       margin: 0;
       max-height: 235px;
+      min-width: 150px;
       overflow-y: auto;
       padding-left: 0;
       position: absolute;
-      scrollbar-color: $ssb-dark-3 $ssb-white;
+      scrollbar-color: $ssb-dark-2 $ssb-white;
       scrollbar-width: thin;
       top: 36px;
       z-index: 9999;
       width: 100%;
 
       .option-list-element {
+        background: $ssb-white;
+        border-left: 5px solid transparent;
         cursor: pointer;
         display: block;
         overflow: hidden;
-        padding: 10px;
+        padding: 10px 10px 10px 5px;
         text-overflow: ellipsis;
+        transition: all .18s;
 
         &:hover {
           background: $ssb-green-2;
           border-left: 5px solid $ssb-green-4;
-          padding-left: 5px;
-
         }
 
         &.selected {
@@ -99,7 +104,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: $ssb-dark-3;
+      background: $ssb-dark-2;
       border-radius: 3px;
     }
 
