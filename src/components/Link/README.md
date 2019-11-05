@@ -51,6 +51,7 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children   | Required node | Something that renders to wrap the link around |
+| className   | string | Optional container class|
 | href | Required string| Destination for navigation |
 | icon | Optional node | Renders an icon  |
 | isExternal | Optional boolean | Will make the link open in new tab. Defaults to false |

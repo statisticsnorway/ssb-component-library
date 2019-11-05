@@ -52,3 +52,7 @@ Available props:
 | size | 'small', 'medium' or 'large' | Change size of number and icon |
 | title | string | Displays title |
 | time | string or number | Displays a year between title and number |
+
+__Dependencies__
+ - [Number](../Number)
+ - [Title](../Title)

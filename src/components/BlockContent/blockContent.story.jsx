@@ -7,8 +7,8 @@ import LeadParagraph from '../LeadParagraph';
 
 storiesOf('BlockContent', module).addDecorator(centered)
 	.add('Default', () => (
-		<div style={{width: '900px'}}>
-			<BlockContent pageNumber={'01'}>
+		<div style={{ width: '900px' }}>
+			<BlockContent pageNumber="01">
 				<Title noMargin size={1}>Overskrift</Title>
 				<LeadParagraph>Her er det så mye innhold at man bør innlede</LeadParagraph>
 			</BlockContent>

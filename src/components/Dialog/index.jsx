@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { AlertCircle, AlertTriangle } from 'react-feather';
 import Paragraph from '../Paragraph';
 
-const Dialog = ({children, title, type}) => (
+const Dialog = ({ children, title, type }) => (
 	<div className={`ssb-dialog ${type}`}>
 		<div className="icon-panel">
 			{type === 'warning' && <AlertTriangle size="36" />}

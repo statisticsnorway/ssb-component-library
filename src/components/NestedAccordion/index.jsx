@@ -7,7 +7,7 @@ const NestedAccordion = ({
 }) => {
 	const [isOpen, toggleOpen] = useState(openByDefault);
 	return (
-		<div className={`ssb-nested-accordion mt-3`}>
+		<div className="ssb-nested-accordion mt-3">
 			<div
 				className={`nested-accordion-header ${isOpen ? 'open' : 'closed'}`}
 				onClick={() => toggleOpen(!isOpen)}

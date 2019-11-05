@@ -26,4 +26,4 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children   | Required node | Content within the wrapper |
-| negative | Optional boolean | Styling for dark theme |
+| negative | Optional boolean | Toggles text color |

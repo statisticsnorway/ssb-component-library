@@ -79,7 +79,7 @@ Pagination.defaultProps = {
 Pagination.propTypes = {
 	items: PropTypes.arrayOf(PropTypes.shape({
 		text: PropTypes.string,
-		path: PropTypes.string
+		path: PropTypes.string,
 	})).isRequired,
 	onSelect: PropTypes.func,
 	selectedPage: PropTypes.object,

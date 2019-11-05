@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BlockContent = ({children, pageNumber}) => (
+const BlockContent = ({ children, pageNumber }) => (
 	<div className="ssb-block-content">
 		{pageNumber && <div className="page-number">{pageNumber}</div>}
 		{children}

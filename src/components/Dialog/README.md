@@ -34,3 +34,6 @@ Available props:
 | children   | Required node | Content within the wrapper |
 | title | Required string | Bold text as a title |
 | type | 'info' or 'warning | Changes color and icon |
+
+__Dependencies__
+ - [Paragraph](../Paragraph)

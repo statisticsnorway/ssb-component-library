@@ -4,13 +4,7 @@ import PropTypes from 'prop-types';
 const Link = ({
 	children, className, href, icon, isExternal, linkType, negative,
 }) => {
-
-	const classNames = `
-		ssb-link
-		${linkType}${negative ? ' negative' : ''}
-		${icon ? ' with-icon' : ''}
-		${className ? ' ' + className : ''}
-	`;
+	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
 
 	return (
 		<a

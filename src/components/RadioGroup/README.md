@@ -49,3 +49,7 @@ Available props:
 | items | arrayOf(label, value) | Required items for rendering radio buttons |
 | onChange | func | Callback function when a value is changed |
 | selectedValue | string | Pre selected value |
+
+__Dependencies__
+ - [RadioButton](../RadioButton)
+ - [Title](../Title)

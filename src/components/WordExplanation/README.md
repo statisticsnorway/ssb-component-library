@@ -30,5 +30,5 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| children | node | Body content |
-| explanation | string | Required explanation text for the popup |
+| children | node | Something to wrap the click event around |
+| explanation | required string | Text to be inside popup |
