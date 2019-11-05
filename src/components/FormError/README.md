@@ -36,6 +36,6 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| className | string | Optional class name |
+| className | string | Optional container class |
 | errorMessages | array | Renders list items |
 | title | string | Renders a title |

@@ -10,7 +10,7 @@ const negativeStyle = {
 
 storiesOf('Quote', module).addDecorator(centered)
 	.add('Default', () => (
-		<div style={{padding: '100px'}}>
+		<div style={{ padding: '100px' }}>
 			<Quote>
 				«Ser du etter en hytte med slik beliggenhet, må du regne med å måtte ut med en bra slump med penger hvis du ikke er så heldig å arve – selv om også dét kan være dyrt.»
 			</Quote>
@@ -18,7 +18,7 @@ storiesOf('Quote', module).addDecorator(centered)
 	))
 	.add('Negative', () => (
 		<div style={negativeStyle}>
-			<Quote	negative>
+			<Quote negative>
 				«Ser du etter en hytte med slik beliggenhet, må du regne med å måtte ut med en bra slump med penger hvis du ikke er så heldig å arve – selv om også dét kan være dyrt.»
 			</Quote>
 		</div>

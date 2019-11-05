@@ -25,7 +25,7 @@ Available props:
 
 | Name       | Type          | Description  |
 | ---------- | ------------- | ----- |
-| children | node | Child nodes |
+| children | Required node | Child nodes |
 | className | string | Optional container class |
 | negative | bool | Toggles text color |
 | size | 1, 2, 3, 4, 5 or 6 | Changes header element size |

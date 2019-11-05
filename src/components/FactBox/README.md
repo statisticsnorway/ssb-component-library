@@ -34,3 +34,6 @@ Available props:
 | header | string | Header text |
 | text | string or element | Content in fact box |
 | openByDefault | bool | Open when rendered. Defaults to false |
+
+__Dependencies__
+ - [Accordion](../Accordion)

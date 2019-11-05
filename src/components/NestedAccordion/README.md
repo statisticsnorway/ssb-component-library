@@ -1,23 +1,13 @@
-Accordion
+NestedAccordion
 ========
 
-> Expandable accordion
+> Nested accordion
 
 ### Usage
 
 #### HTML
 
 ```html
-<div class="ssb-accordion">
-  <div class="accordion-header closed" onclick="{toggle classname to 'open'}">
-    {plus icon}
-    <div class="ssb-title header-text no-margin"><h5>Title</h5></div>
-  </div>
-  <div class="accordion-body closed">
-    {insert content}
-  </div>
-</div>
-
 <div class="ssb-nested-accordion mt-3">
   <div class="nested-accordion-header closed" onclick="{toggle classname to 'open'}">
     {plus icon}
@@ -35,10 +25,6 @@ Toggle the all instances of the `closed` className to `open` when clicked.
 ```jsx harmony
 <Accordion primary header="This is a primary header">
   This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
-</Accordion>
-
-<Accordion primary header="This is a primary header">
-  This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
   <NestedAccordion header="A nested accordion header">
     This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
   </NestedAccordion>
@@ -52,9 +38,4 @@ Available props:
 | children | node | Accordion content |
 | header | string | Header text |
 | openByDefault | bool | Will set the open state on init |
-| primary | bool | 	Changes type and design of accordion |
-| subHeader | string | Renders the header with the sub header design |
-
-__Dependencies__
- - [Title](../Title)
 

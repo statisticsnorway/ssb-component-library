@@ -50,6 +50,6 @@ storiesOf('Pagination', module).addDecorator(centered)
 			<div className="nav-button-square">20</div>
 			<div className="direction-button">
 				Neste<ChevronRight className="chevron-icon" size={18} />
-				</div>
+			</div>
 		</div>
 	));
