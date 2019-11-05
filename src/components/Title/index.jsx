@@ -24,7 +24,7 @@ Title.defaultProps = {
 };
 
 Title.propTypes = {
-	children: PropTypes.node,
+	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
 	negative: PropTypes.bool,
 	size: PropTypes.oneOf([

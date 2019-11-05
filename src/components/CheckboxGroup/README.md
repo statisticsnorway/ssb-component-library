@@ -52,3 +52,4 @@ Available props:
 
 __Dependencies__
  - [Checkbox](../Checkbox)
+ - [Title](../Title)

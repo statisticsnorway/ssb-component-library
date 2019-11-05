@@ -45,6 +45,6 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| items | arraOf({text (string), path (string)}) | Required. Items for text label and path |
+| items | arrayOf(text (string), path (string)) | Required. Items for text label and path |
 | onSelect | func | Callback function |
 | selectedPage | object | Optional. Selected item on render |

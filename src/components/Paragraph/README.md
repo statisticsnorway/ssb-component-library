@@ -26,4 +26,4 @@ Available props:
 | ---------- | ------------- | ----- |
 | children   | Required node | Content within the wrapper |
 | className  | String| Optional container class |
-| negative | Optional boolean | Styling for dark theme |
+| negative | Optional boolean | Toggles text color |

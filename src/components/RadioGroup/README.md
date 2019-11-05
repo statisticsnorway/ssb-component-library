@@ -52,3 +52,4 @@ Available props:
 
 __Dependencies__
  - [RadioButton](../RadioButton)
+ - [Title](../Title)
