@@ -4,7 +4,7 @@ exports[`Pagination component Matches the snapshot 1`] = `
 <nav
   className="ssb-pagination"
 >
-  <div
+  <button
     className="direction-button"
     onClick={[Function]}
   >
@@ -25,14 +25,14 @@ exports[`Pagination component Matches the snapshot 1`] = `
       />
     </svg>
     Forrige
-  </div>
-  <div
+  </button>
+  <button
     className="nav-button-square selected"
     onClick={[Function]}
   >
     1
-  </div>
-  <div
+  </button>
+  <button
     className="nav-button-square false"
     onClick={[Function]}
   />
@@ -41,13 +41,13 @@ exports[`Pagination component Matches the snapshot 1`] = `
   >
     ...
   </div>
-  <div
+  <button
     className="nav-button-square false"
     onClick={[Function]}
   >
     20
-  </div>
-  <div
+  </button>
+  <button
     className="direction-button"
     onClick={[Function]}
   >
@@ -70,6 +70,6 @@ exports[`Pagination component Matches the snapshot 1`] = `
         points="9 18 15 12 9 6"
       />
     </svg>
-  </div>
+  </button>
 </nav>
 `;
