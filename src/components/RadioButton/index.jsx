@@ -20,7 +20,7 @@ const RadioButton = ({
 RadioButton.defaultProps = {
 	callback: () => {},
 	disabled: false,
-	index: 1,
+	index: 0,
 };
 
 RadioButton.propTypes = {

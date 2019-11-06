@@ -8,7 +8,7 @@ const FormError = ({ className, errorMessages, title }) => (
 			<span className="error-title">{title}</span>
 			<ul>
 				{errorMessages.map((error, index) => (
-					<li key={index}>
+					<li key={index}> {/* eslint-disable-line */}
 						{error}
 					</li>
 				))}

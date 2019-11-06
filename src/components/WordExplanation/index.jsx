@@ -29,7 +29,7 @@ const WordExplanation = ({
 	}, [open]);
 
 	return (
-		<div ref={node} onClick={() => setOpen(!open)} className="ssb-word-explanation">
+		<button ref={node} onClick={() => setOpen(!open)} className="ssb-word-explanation">
 			{children}<FileText size="12" />
 			<div className="animate-background" />
 			{open && (
@@ -43,7 +43,7 @@ const WordExplanation = ({
 				</div>
 			)}
 
-		</div>
+		</button>
 	);
 };
 

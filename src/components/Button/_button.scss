@@ -1,5 +1,6 @@
 .ssb-btn {
   @include roboto;
+  @include reset-button;
   align-items: center;
   background: $ssb-white;
   border: 1px solid $ssb-green-4;

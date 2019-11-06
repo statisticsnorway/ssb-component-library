@@ -8,14 +8,16 @@ const NestedAccordion = ({
 	const [isOpen, toggleOpen] = useState(openByDefault);
 	return (
 		<div className="ssb-nested-accordion mt-3">
-			<div
+			<button
 				className={`nested-accordion-header ${isOpen ? 'open' : 'closed'}`}
 				onClick={() => toggleOpen(!isOpen)}
 			>
-				{!isOpen && <Plus className="expand-icon" size="10" />}
-				{isOpen && <Minus className="expand-icon" size="10" />}
-				<span className="header-text">{header}</span>
-			</div>
+				<span className="button-grid">
+					{!isOpen && <Plus className="expand-icon" size="10" />}
+					{isOpen && <Minus className="expand-icon" size="10" />}
+					<span className="header-text">{header}</span>
+				</span>
+			</button>
 			<div className={`nested-accordion-body ${isOpen ? 'open' : 'closed'}`}>
 				{isOpen && children}
 			</div>

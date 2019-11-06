@@ -12,12 +12,12 @@ const Tabs = ({ activeOnInit, items, onClick }) => {
 	return (
 		<div className="ssb-tabs">
 			{items.map(item => (
-				<div
+				<button
 					className={`navigation-item ${activeItem === item.path ? 'active' : ''}`}
 					onClick={() => handleClick(item.path)}
 					key={item.path}
 				><span>{item.title}</span>
-				</div>
+				</button>
 			))}
 		</div>
 	);

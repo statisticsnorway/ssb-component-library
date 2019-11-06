@@ -7,6 +7,7 @@ $direction-button-width: 80px;
   display: flex;
 
   .nav-button-square {
+    @include reset-button;
     align-items: center;
     border-radius: 2px;
     color: $ssb-green-4;
@@ -39,6 +40,7 @@ $direction-button-width: 80px;
   }
 
   .direction-button {
+    @include reset-button;
     align-items: center;
     border: 1px solid transparent;
     cursor: pointer;
@@ -47,12 +49,16 @@ $direction-button-width: 80px;
     justify-content: center;
     width: $direction-button-width;
 
+    &:first-of-type {
+      text-align: right;
+    }
+
     .chevron-icon {
       color: $ssb-green-4;
     }
 
     &:hover {
-      border: 1px solid $ssb-green-4;
+      outline: 1px solid $ssb-green-4;
       border-radius: 2px;
       color: $ssb-green-4;
       font-weight: bold;

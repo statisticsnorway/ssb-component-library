@@ -9,8 +9,8 @@ const References = ({
 }) => (
 	<div className="ssb-references">
 		<Title size={5} className="no-margin">{title}</Title>
-		{referenceList.map(ref => (
-			<div>
+		{referenceList.map((ref, index) => (
+			<div key={index}> {/* eslint-disable-line */}
 				{ref.plainText && <Text className="no-margin">{ref.plainText}&nbsp;</Text>}
 				<Link href={ref.href}>{ref.label}</Link><br />
 			</div>
@@ -23,11 +23,13 @@ References.defaultProps = {
 };
 
 References.propTypes = {
-	referenceList: PropTypes.arrayOf({
-		href: PropTypes.string.isRequired,
-		label: PropTypes.string.isRequired,
-		plainText: PropTypes.string,
-	}),
+	referenceList: PropTypes.arrayOf(
+		PropTypes.shape({
+			href: PropTypes.string.isRequired,
+			label: PropTypes.string.isRequired,
+			plainText: PropTypes.string,
+		})
+	),
 	title: PropTypes.string,
 };
 

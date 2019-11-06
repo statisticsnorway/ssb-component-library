@@ -10,7 +10,7 @@ $ssb-red-3: #ed5935;
 $ssb-red-4: #cb3713;
 $negative-red: #f8a67d;
 $ssb-dark-2: #c3dcdc;
-$ssb-dark-3: #c3dcdc;
+$ssb-dark-3: #62919a;
 $ssb-dark-4: #2d6975;
 $ssb-dark-5: #274247;
 $ssb-dark-6: #162327;
@@ -54,4 +54,19 @@ $max-content-size: 1200px;
 
 .no-margin {
   margin: 0;
+}
+
+@mixin reset-button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-align: left;
+
+  &:focus {
+    outline: $ssb-purple-3 solid 2px;
+    outline-offset: 2px;
+  }
 }

@@ -1,5 +1,6 @@
 .ssb-key-figures {
   @include roboto;
+  column-gap: $global-padding-size * 2;
   display: inline-grid;
   grid-auto-flow: column;
 
@@ -39,12 +40,12 @@
         width: 100%;
       }
     }
-
   }
 
   .kf-time {
     @include open-sans;
     font-size: 16px;
+    margin-top: 6px;
   }
 
   .kf-title {

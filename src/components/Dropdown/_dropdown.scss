@@ -12,6 +12,7 @@
   }
 
   .dropdown-interactive-area {
+    @include reset-button;
     cursor: pointer;
     position: relative;
 
@@ -72,6 +73,7 @@
       width: 100%;
 
       .option-list-element {
+        @include reset-button;
         background: $ssb-white;
         border-left: 5px solid transparent;
         cursor: pointer;
@@ -80,6 +82,7 @@
         padding: 10px 10px 10px 5px;
         text-overflow: ellipsis;
         transition: all .18s;
+        width: 100%;
 
         &:hover {
           background: $ssb-green-2;
