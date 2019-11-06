@@ -26,7 +26,7 @@ const Input = ({
 					onChange={e => handleInputChange(e)}
 					placeholder={placeholder}
 					aria-label={ariaLabel}
-					className=""
+					className={searchField || error ? ' with-icon' : ''}
 				/>
 				{searchField && (
 					<div className="icon-wrapper" onClick={() => submitCallback(inputValue)}>

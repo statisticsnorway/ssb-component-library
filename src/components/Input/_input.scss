@@ -3,13 +3,15 @@
   cursor: text;
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  max-width: 400px;
   position: relative;
+  width: 100%;
 
   &:hover {
 
     input {
-      border: 2px solid $ssb-green-4;
+      border: 1px solid $ssb-green-4;
+      outline: 1px solid $ssb-green-4;
 
       &:disabled {
         border: 1px solid $ssb-dark-5;
@@ -49,8 +51,8 @@
     }
 
     &:focus {
-      border: 2px solid $ssb-green-4;
-      outline: none;
+      border: 1px solid $ssb-green-4;
+      outline: 1px solid $ssb-green-4;
     }
   }
 
@@ -75,7 +77,8 @@
     &:hover {
 
       input {
-        border: 2px solid $ssb-green-2;
+        border: 1px solid $ssb-green-2;
+        outline: 1px solid $ssb-green-2;
 
         &:disabled {
           border: 1px solid $ssb-white;
@@ -97,7 +100,8 @@
       }
 
       &:focus {
-        border: 2px solid $ssb-green-2;
+        border: 1px solid $ssb-green-2;
+        outline: 1px solid $ssb-green-2;
       }
     }
 
@@ -111,7 +115,8 @@
     &.error {
 
       input {
-        border: 2px solid $negative-red;
+        border: 1px solid $negative-red;
+        outline: 1px solid $negative-red;
       }
 
       .icon-wrapper {
@@ -126,7 +131,8 @@
   &.error {
 
     input {
-      border: 2px solid $ssb-red-4;
+      border: 1px solid $ssb-red-4;
+      outline: 1px solid $ssb-red-4;
     }
 
     .icon-wrapper {

@@ -21,7 +21,7 @@ FactBox.propTypes = {
 	openByDefault: PropTypes.bool,
 	text: PropTypes.oneOfType([
 		PropTypes.string,
-		PropTypes.element,
+		PropTypes.node,
 	]).isRequired,
 };
 
