@@ -11,7 +11,6 @@ const Accordion = ({
 		<div className={`ssb-accordion ${subHeader && 'with-sub-header'}`}>
 			<button
 				className={`accordion-header ${isOpen ? 'open' : 'closed'}`}
-				role="button"
 				tabIndex={tabIndex}
 				onClick={() => toggleOpen(!isOpen)}
 			>
