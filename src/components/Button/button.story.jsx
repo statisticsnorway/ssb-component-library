@@ -4,22 +4,42 @@ import centered from '@storybook/addon-centered/react';
 import { ChevronDown, Play } from 'react-feather';
 import Button from './index';
 
+const negativeStyle = {
+	backgroundColor: '#274247',
+	padding: '100px',
+	display: 'flex',
+};
+
 storiesOf('Button', module).addDecorator(centered)
 	.add('Primary', () => (
 		<div style={{ display: 'flex' }}>
-			<Button primary>Primary</Button>
-			<Button primary>
-				<ChevronDown size="18" /> Primary
-			</Button>
+			<Button primary>Primary button</Button>
+			<Button icon={<ChevronDown size="18" />} primary>Primary icon</Button>
 			<Button primary><Play size="18" /></Button>
-			<Button primary disabled>Disabled</Button>
+			<Button primary disabled>Disabled button</Button>
 		</div>
 	))
 	.add('Secondary', () => (
 		<div style={{ display: 'flex' }}>
-			<Button>Secondary</Button>
-			<Button><ChevronDown size="18" /> Secondary</Button>
+			<Button>Secondary button</Button>
+			<Button icon={<ChevronDown size="18" />}>Secondary icon</Button>
 			<Button><Play size="18" /></Button>
-			<Button disabled>Disabled</Button>
+			<Button disabled>Disabled button</Button>
+		</div>
+	))
+	.add('Primary - Negative', () => (
+		<div style={negativeStyle}>
+			<Button negative primary>Primary button</Button>
+			<Button icon={<ChevronDown size="18" />} negative primary>Primary icon</Button>
+			<Button negative primary><Play size="18" /></Button>
+			<Button negative primary disabled>Disabled button</Button>
+		</div>
+	))
+	.add('Secondary - Negative', () => (
+		<div style={negativeStyle}>
+			<Button negative>Secondary button</Button>
+			<Button icon={<ChevronDown size="18" />} negative>Secondary icon</Button>
+			<Button negative><Play size="18" /></Button>
+			<Button negative disabled>Disabled button</Button>
 		</div>
 	));

@@ -7,7 +7,6 @@ exports[`Button component Matches the snapshot 1`] = `
   onClick={[Function]}
   type="button"
 >
-   
   Button
 </button>
 `;

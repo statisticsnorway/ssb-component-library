@@ -21,16 +21,41 @@
   &:hover {
     background: $ssb-green-4;
     color: $ssb-white;
+    text-decoration: underline;
   }
 
-  &:active {
+  &:active, &:focus {
     background: $ssb-green-5;
+    color: $ssb-white;
   }
 
   &:disabled {
     background: $ssb-white;
+    border-color: $ssb-dark-2;
     color: $ssb-dark-2;
     cursor: not-allowed;
+  }
+
+  &.negative {
+    background: $ssb-dark-5;
+    color: $ssb-white;
+    border-color: $ssb-white;
+
+    &:hover  {
+      background: $ssb-white;
+      color: $ssb-dark-5;
+    }
+
+    &:active, &:focus  {
+      background: $ssb-green-2;
+      color: $ssb-dark-5;
+    }
+
+    &:disabled {
+      background: $ssb-dark-5;
+      border-color: $ssb-dark-4;
+      color: $ssb-dark-4;
+    }
   }
 
   &.primary-btn {
@@ -38,18 +63,36 @@
     border: none;
     color: $ssb-white;
 
-    &:hover {
+    &:hover, &:active, &:focus {
       background: $ssb-green-5;
-    }
-
-    &:active {
-      background: $ssb-dark-5;
+      text-decoration: underline;
     }
 
     &:disabled {
       background: $ssb-dark-2;
       color: $ssb-white;
       cursor: not-allowed;
+      font-weight: normal;
     }
+
+    &.negative {
+      background: $ssb-white;
+      color: $ssb-dark-5;
+
+      &:hover, &:active, &:focus  {
+        background: $ssb-green-2;
+      }
+
+      &:disabled {
+        background: $ssb-dark-4;
+        border-color: $ssb-dark-4;
+        color: $ssb-dark-5;
+      }
+    }
+  }
+
+  .sb-icon {
+    display: inline-flex;
+    margin-right: 5px;
   }
 }
