@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 
 const Dropdown = ({
-	header, icon, items, onSelect, open, placeholder, searchable, selectedItem,
+	header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
 }) => {
 	const id = uuid();
 	const node = useRef();
@@ -45,7 +45,7 @@ const Dropdown = ({
 	return (
 		<div className="ssb-dropdown">
 			{header && <label htmlFor={id}>{header}</label>}
-			<div className="dropdown-interactive-area" ref={node} onClick={() => setOpen(!isOpen)}>
+			<button className="dropdown-interactive-area" tabIndex={tabIndex} ref={node} onClick={() => setOpen(!isOpen)}>
 				<input
 					className={isOpen ? 'focused' : ''}
 					id={id}
@@ -58,18 +58,18 @@ const Dropdown = ({
 				{isOpen && (
 					<div className="list-of-options">
 						{availableOptions.map(it => (
-							<div
+							<button
 								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}`}
 								key={it.id}
 								onClick={() => handleSelection(it)}
 								value={it.id}
 								id={it.id}
 							>{it.title}
-							</div>
+							</button>
 						))}
 					</div>
 				)}
-			</div>
+			</button>
 		</div>
 	);
 };
@@ -95,6 +95,7 @@ Dropdown.propTypes = {
 	placeholder: PropTypes.string,
 	searchable: PropTypes.bool,
 	selectedItem: PropTypes.object,
+	tabIndex: PropTypes.number,
 };
 
 export default Dropdown;

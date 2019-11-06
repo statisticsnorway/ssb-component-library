@@ -40,34 +40,34 @@ const Pagination = ({
 
 	return (
 		<nav className="ssb-pagination">
-			<div className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) - 1])}>
+			<button className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) - 1])}>
 				<ChevronLeft className="chevron-icon" size={18} />
 				Forrige
-			</div>
-			<div className={`nav-button-square ${items[0] === selected && 'selected'}`} onClick={() => handleSelection(items[0])}>
+			</button>
+			<button className={`nav-button-square ${items[0] === selected && 'selected'}`} onClick={() => handleSelection(items[0])}>
 				{items[0].text}
-			</div>
+			</button>
 			{showLeftDots && <div className="dotted-indicator">...</div>}
 			{currentButtons && currentButtons.map(item => (
 				item !== items[0] && item !== items[items.length - 1] && (
-					<div
+					<button
 						className={`nav-button-square ${item === selected && 'selected'}`}
 						onClick={() => handleSelection(item)}
 						key={`${item.path}`}
 					>{item.text}
-					</div>
+					</button>
 				)
 			))}
 			{showRightDots && <div className="dotted-indicator">...</div>}
-			<div
+			<button
 				className={`nav-button-square ${items[items.length - 1] === selected && 'selected'}`}
 				onClick={() => handleSelection(items[items.length - 1])}
 			>{items[items.length - 1].text}
-			</div>
-			<div className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) + 1])}>
+			</button>
+			<button className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) + 1])}>
 				<span>Neste</span>
 				<ChevronRight className="chevron-icon" size={18} />
-			</div>
+			</button>
 		</nav>
 	);
 };

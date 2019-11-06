@@ -6,9 +6,9 @@ const ProfileBox = ({
 	centered, children, fileLocation, onClick,
 }) => (
 	<div className="ssb-profile-box">
-		<a className={`profile-content${centered ? ' centered' : ''}`} onClick={() => onClick}>
+		<button className={`profile-content${centered ? ' centered' : ''}`} onClick={() => onClick}>
 			{ children }
-		</a>
+		</button>
 		{fileLocation && (
 			<a download href={fileLocation} className="download-section">
 				<Download className="download-icon" size={20} />

@@ -15,6 +15,7 @@ const Title = ({ children, className, negative, size }) => {
 		return <h5 className={`ssb-title${className ? ` ${className}` : ''}${negative ? ' negative' : ''}`}>{children}</h5>;
 	case 6:
 		return <h6 className={`ssb-title${className ? ` ${className}` : ''}${negative ? ' negative' : ''}`}>{children}</h6>;
+	default: return <h1 className={`ssb-title${className ? ` ${className}` : ''}${negative ? ' negative' : ''}`}>{children}</h1>;
 	}
 };
 

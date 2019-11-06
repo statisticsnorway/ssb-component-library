@@ -4,6 +4,7 @@
   width: 100%;
 
   .nested-accordion-header {
+    @include reset-button;
     align-items: center;
     cursor: pointer;
     display: grid;

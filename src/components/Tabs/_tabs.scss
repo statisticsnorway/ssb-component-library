@@ -4,6 +4,7 @@
   flex-direction: row;
 
   .navigation-item {
+    @include reset-button;
     align-items: center;
     cursor: pointer;
     display: flex;
@@ -16,11 +17,6 @@
 
     &:hover {
       background: $ssb-green-2;
-    }
-
-    &:focus {
-      outline: $ssb-green-4 auto 5px;
-      outline-offset: -2px;
     }
 
     &:before {

@@ -8,7 +8,7 @@ import Title from '../Title';
 
 storiesOf('ProfileBox', module).addDecorator(centered)
 	.add('Default', () => (
-		<div style={{width: '300px'}}>
+		<div style={{ width: '300px' }}>
 			<ProfileBox>
 				<Title size={2}>Look at this</Title>
 				<Paragraph>Explain something about something with something clever.</Paragraph>

@@ -19,7 +19,7 @@ const Checkbox = ({
 
 Checkbox.defaultProps = {
 	callback: () => {},
-	index: 1,
+	index: 0,
 };
 
 Checkbox.propTypes = {

@@ -1,4 +1,5 @@
 .ssb-word-explanation {
+  @include reset-button;
   cursor: pointer;
   display: inline-block;
   position: relative;

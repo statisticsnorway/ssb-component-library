@@ -1,6 +1,7 @@
 .ssb-profile-box {
 
   .profile-content {
+    @include reset-button;
     background: $ssb-white;
     border: 1px solid $ssb-dark-2;
     border-top: 5px solid $ssb-green-3;
