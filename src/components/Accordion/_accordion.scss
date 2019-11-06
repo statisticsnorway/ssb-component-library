@@ -4,11 +4,14 @@
 
   .accordion-header {
     @include reset-button;
-    align-items: center;
-    cursor: pointer;
-    display: grid;
-    grid-column-gap: $global-padding-size;
-    grid-template-columns: 20px auto 1fr;
+
+    .button-grid {
+      align-items: center;
+      cursor: pointer;
+      display: grid;
+      grid-column-gap: $global-padding-size;
+      grid-template-columns: 20px auto 1fr;
+    }
 
     .expand-icon {
       color: $ssb-white;

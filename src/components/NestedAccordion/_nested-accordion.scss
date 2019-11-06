@@ -5,11 +5,14 @@
 
   .nested-accordion-header {
     @include reset-button;
-    align-items: center;
-    cursor: pointer;
-    display: grid;
-    grid-column-gap: 10px;
-    grid-template-columns: 10px 1fr;
+
+    .button-grid {
+      align-items: center;
+      cursor: pointer;
+      display: grid;
+      grid-column-gap: 10px;
+      grid-template-columns: 10px 1fr;
+    }
 
     .expand-icon {
       color: $ssb-green-3

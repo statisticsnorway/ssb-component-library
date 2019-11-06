@@ -9,17 +9,19 @@ const Accordion = ({
 	const [isOpen, toggleOpen] = useState(openByDefault);
 	return (
 		<div className={`ssb-accordion ${subHeader && 'with-sub-header'}`}>
-			<div
+			<button
 				className={`accordion-header ${isOpen ? 'open' : 'closed'}`}
 				role="button"
 				tabIndex={tabIndex}
 				onClick={() => toggleOpen(!isOpen)}
 			>
-				{!isOpen && <PlusCircle className="expand-icon" size={primary ? 20 : 15} />}
-				{isOpen && <MinusCircle className="expand-icon" size={primary ? 20 : 15} />}
-				{subHeader && <Title size={5} className="sub-header no-margin">{subHeader}</Title>}
-				<Title size={5} className="header-text no-margin">{header}</Title>
-			</div>
+				<span className="button-grid">
+					{!isOpen && <PlusCircle className="expand-icon" size={primary ? 20 : 15} />}
+					{isOpen && <MinusCircle className="expand-icon" size={primary ? 20 : 15} />}
+					{subHeader && <Title size={5} className="sub-header no-margin">{subHeader}</Title>}
+					<Title size={5} className="header-text no-margin">{header}</Title>
+				</span>
+			</button>
 			<div className={`accordion-body ${isOpen ? 'open' : 'closed'}`}>
 				{isOpen && children}
 			</div>
