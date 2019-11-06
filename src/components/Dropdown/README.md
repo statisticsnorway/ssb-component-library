@@ -15,7 +15,7 @@ Dropdown
         <div class="dd-icon"><i /></div>
         <div class="list-of-options">
             <div class="option-list-element" value="item1" id="item1">Apples</div>
-            <div class="option-list-element selected"" value="item2" id="item2">Rainbows</div>
+            <div class="option-list-element selected" value="item2" id="item2">Rainbows</div>
             <div class="option-list-element" value="item3" id="item3">Ocean</div>
         </div>
     </div>
