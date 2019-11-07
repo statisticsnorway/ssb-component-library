@@ -31,9 +31,10 @@ $icon-padding: 8px;
     }
   }
 
-  &:hover {
+  &:hover, &:focus {
     background-size: 100% 100%;
     color: $ssb-white;
+    outline: 0;
     text-decoration: none;
 
     .link-text {
@@ -64,10 +65,20 @@ $icon-padding: 8px;
       .link-text {
         color: $ssb-white;
       }
+
+      &:hover, &:focus {
+        color: $ssb-dark-5;
+
+        .link-text {
+          color: $ssb-dark-5;
+        }
+      }
+
     }
 
-    &:hover {
+    &:hover, &:focus {
       color: $ssb-dark-5;
+      outline: 0;
 
       .link-text {
         color: $ssb-dark-5;
@@ -87,14 +98,23 @@ $icon-padding: 8px;
     .link-text {
       color: $ssb-dark-6;
     }
+
+    &:hover, &:focus {
+      color: $ssb-white;
+
+      .link-text {
+        color: $ssb-white;
+      }
+    }
   }
 
   .link-text {
     color: $ssb-green-4;
     transition: color .1s;
 
-    &:hover {
+    &:hover, &:focus {
       color: $ssb-white;
+      outline: 0;
     }
   }
 }
