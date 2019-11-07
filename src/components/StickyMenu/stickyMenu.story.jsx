@@ -5,7 +5,7 @@ import StickyMenu from './index';
 
 storiesOf('StickyMenu', module).addDecorator(centered)
 	.add('Default', () => (
-		<div>
-			<StickyMenu subtitle="Kommunefakta" title="Rana (Nordland)" />
+		<div className="col-12" style={{ width: '1200px' }}>
+			<StickyMenu inputHeader="Bytt kommune:" subtitle="Kommunefakta" title="Stordal (Møre og Romsdal)" />
 		</div>
 	));

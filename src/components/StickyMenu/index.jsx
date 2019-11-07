@@ -1,31 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ChevronDown } from 'react-feather';
 import Input from '../Input';
 
 const StickyMenu = ({
-	subtitle, title,
+	inputHeader, subtitle, title,
 }) => (
 	<div className="ssb-sticky-menu">
-		<div className="container">
-			<div className="sm-left col-md-6 col-lg-8">
-				<div className="sm-left-content">
-					<div className="sm-subtitle">{subtitle}</div>
-					<div className="sm-title">{title}</div>
-				</div>
-			</div>
-			<div className="sm-right col-md-6 col-lg-4">
-				<div className="sm-searchbar-header">Bytt kommune:</div>
-				<div className="sm-searchbar">
-					<Input id="search" ariaLabel="Søk på kommune" searchField placeholder="Søk på kommune" />
-				</div>
+		<div className="content col-5">
+			<div>
+				<div className="subtitle">{subtitle}</div>
+				<div className="title">{title}</div>
 			</div>
 		</div>
+		<div className="content col-5">
+			<div className="input-header">{inputHeader}</div>
+			<Input ariaLabel="Søk på kommune" searchField placeholder="Søk på kommune" />
+		</div>
+		<div className="content col-2">
+			<div className="choose-chart">Velg i kart</div><ChevronDown className="chevron-down-icon" size={18} />
+		</div>
 	</div>
+
+
 );
 
 StickyMenu.defaultProps = {};
 
 StickyMenu.propTypes = {
+	inputHeader: PropTypes.string,
 	subtitle: PropTypes.string,
 	title: PropTypes.string,
 };
