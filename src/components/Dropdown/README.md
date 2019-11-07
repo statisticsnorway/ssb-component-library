@@ -12,7 +12,7 @@ Dropdown
     <label for="input-dropdown">Menu header</label>
     <div class="dropdown-interactive-area">
         <input class="focused" id="input-dropdown" disabled="" placeholder="Select item" value="">
-        <div class="dd-icon"><i /></div>
+        <div class="dd-icon">{chevron down icon}</div>
         <div class="list-of-options">
             <div class="option-list-element" value="item1" id="item1">Apples</div>
             <div class="option-list-element selected" value="item2" id="item2">Rainbows</div>
@@ -25,11 +25,11 @@ Dropdown
 #### React
 
 ```jsx harmony
-<Dropdown header="Menu header" icon={<ChevronDown />} items={items} />
+<Dropdown header="Menu header" items={items} />
 
-<Dropdown header="Menu header" icon={<ChevronDown />} selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />
+<Dropdown header="Menu header" selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />
 
-<Dropdown header="Menu header" icon={<ChevronDown />} searchable items={items} />
+<Dropdown header="Menu header" searchable items={items} />
 ```
 
 Available props:
@@ -37,7 +37,6 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | header | string | Displays header |
-| icon | node | Renders an icon |
 | items | arrayOf(title, id) |Required items for rendering dropdown |
 | onSelect | func | Callback function when a title is selected |
 | open | bool | Selected state of dropdown |

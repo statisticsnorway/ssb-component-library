@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import { ChevronDown } from 'react-feather';
 import uuid from 'uuid/v4';
 
 const Dropdown = ({
-	header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
+	header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
 }) => {
 	const id = uuid();
 	const node = useRef();
@@ -54,7 +55,7 @@ const Dropdown = ({
 					placeholder={selectedOption.title ? selectedOption.title : placeholder}
 					value={inputFieldValue}
 				/>
-				<div className="dd-icon">{icon}</div>
+				<div className="dd-icon"><ChevronDown size={18}/></div>
 				{isOpen && (
 					<div className="list-of-options">
 						{availableOptions.map(it => (
@@ -85,7 +86,6 @@ Dropdown.defaultProps = {
 
 Dropdown.propTypes = {
 	header: PropTypes.string,
-	icon: PropTypes.node,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		title: PropTypes.string,
 		id: PropTypes.string,

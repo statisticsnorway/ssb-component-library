@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
-import { ChevronDown } from 'react-feather';
 import Dropdown from './index';
 
 const items = [
@@ -34,11 +33,11 @@ const items = [
 
 storiesOf('Dropdown', module).addDecorator(centered)
 	.add('Standard', () => (
-		<Dropdown header="Menu header" icon={<ChevronDown />} items={items} />
+		<Dropdown header="Menu header" items={items} />
 	))
 	.add('Pre-selected value', () => (
-		<Dropdown header="Menu header" icon={<ChevronDown />} selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />
+		<Dropdown header="Menu header" selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />
 	))
 	.add('Searchable', () => (
-		<Dropdown header="Menu header" icon={<ChevronDown />} searchable items={items} placeholder="Search and select" />
+		<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" />
 	));
