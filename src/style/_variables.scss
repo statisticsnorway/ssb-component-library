@@ -47,6 +47,11 @@ $max-content-size: 1200px;
   font-weight: normal;
 }
 
+@mixin focus-ring {
+  outline: $ssb-purple-3 solid 2px;
+  outline-offset: 2px;
+}
+
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -66,7 +71,6 @@ $max-content-size: 1200px;
   text-align: left;
 
   &:focus {
-    outline: $ssb-purple-3 solid 2px;
-    outline-offset: 2px;
+    @include focus-ring;
   }
 }
