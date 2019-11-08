@@ -19,7 +19,7 @@ StickyMenu
         <div class="input-header">Bytt kommune:</div>
         <div class="ssb-input">
             <div class="input-wrapper">
-                <input id="d74facc4-c148-405e-b9de-d82a26d25be3" type="text" placeholder="Søk på kommune" aria-label="Søk på kommune" class="" value="">
+                <input id="input1" type="text" placeholder="Søk på kommune" aria-label="Søk på kommune" class="" value="">
                 <div class="icon-wrapper">
                     <ChevronDownIcon/>
                 </div>
@@ -36,14 +36,29 @@ StickyMenu
 #### React
 
 ```jsx harmony
-<StickyMenu ChooseChartLabel="Velg i kart" inputHeader="Bytt kommune:" subtitle="Kommunefakta" title="Stordal (Møre og Romsdal)" />
+<StickyMenu >
+	<div className="container">
+		<div className="row">
+			<div className="content col-5">
+			<div>
+				<div className="subtitle">Kommunefakta</div>
+				<div className="title">Stordal (Møre og Romsdal)</div>
+			</div>
+			</div>
+			<div className="content col-5">
+				<div className="input-header">Bytt kommune</div>
+				<Input ariaLabel="Søk på kommune" searchField placeholder="Søk på kommune" />
+			</div>
+			<div className="content col-2">
+				<div className="choose-chart">Velg i kart</div><ChevronDown className="chevron-down-icon" size={18} />
+			</div>
+		</div>
+	</div>
+</StickyMenu>
 ```
 
 Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| ChooseChartLabel  | string | Label for component choose in map |
-| inputHeader  | string | Header before input |
-| subtitle  | string | Subtitle for Stickymenu |
-| title  | string | Name of municipality |
+| children   | Required node | Content within the wrapper |

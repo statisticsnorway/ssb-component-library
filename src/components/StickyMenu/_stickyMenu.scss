@@ -1,21 +1,27 @@
 .ssb-sticky-menu {
   @include roboto;
+  align-items: center;
   background-color: $ssb-white;
-  border: solid 1px #e3e3e3;
+  border: solid 1px $ssb-dark-2;
   box-shadow: 0 2px 4px 1px rgba(200, 200, 200, 0.5);
   color: $ssb-dark-6;
   display: flex;
   line-height: normal;
-  max-width: 1400px;
   min-height: 98px;
+  position: sticky;
+  top: 0;
+  width: 100%;
 
   .chevron-down-icon {
     color: $ssb-green-4;
     margin-right: 2px;
   }
 
-  .content {
-    align-items: center;
+  .column {
+    display: flex;
+  }
+
+  .col-flex {
     display: flex;
   }
 
@@ -26,7 +32,8 @@
   .input-header {
     color: $ssb-dark-5;
     font-size: 18px;
-    font-weight: bold;
+	font-weight: bold;
+	white-space: nowrap;
   }
 
   .subtitle {
