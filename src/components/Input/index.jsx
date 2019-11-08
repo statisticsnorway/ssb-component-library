@@ -29,7 +29,7 @@ const Input = ({
 					className={searchField || error ? ' with-icon' : ''}
 				/>
 				{searchField && (
-					<button className="icon-wrapper" onClick={() => submitCallback(inputValue)}>
+					<button className="icon-wrapper search-icon" onClick={() => submitCallback(inputValue)}>
 						<Search size={18} />
 					</button>
 				)}
