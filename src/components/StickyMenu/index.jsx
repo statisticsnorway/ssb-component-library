@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ChevronDown } from 'react-feather';
-import Input from '../Input';
 
 const StickyMenu = ({
 	children,

@@ -9,26 +9,34 @@ StickyMenu
 
 ```html
 <div class="ssb-sticky-menu">
-    <div class="content col-5">
-        <div>
-            <div class="subtitle">Kommunefakta</div>
-            <div class="title">Stordal (Møre og Romsdal)</div>
-        </div>
-    </div>
-    <div class="content col-5">
-        <div class="input-header">Bytt kommune:</div>
-        <div class="ssb-input">
-            <div class="input-wrapper">
-                <input id="input1" type="text" placeholder="Søk på kommune" aria-label="Søk på kommune" class="" value="">
-                <div class="icon-wrapper">
-                    <ChevronDownIcon/>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="column col-md-12 col-lg-5">
+                <div className="col-12">
+                    <div class="subtitle">Kommunefakta</div>
+                    <div class="title">Stordal (Møre og Romsdal)</div>
                 </div>
             </div>
+            <div class="column col-md-6  col-lg-5">
+                <div class="col-flex flex-row align-items-center">
+                    <div class="input-header">Bytt kommune:</div>
+                    <div class="w-100">
+                        <div class="ssb-input">
+                            <div class="input-wrapper">
+                                <input id="input1" type="text" placeholder="Søk på kommune" aria-label="Søk på kommune" >
+                                <div class="icon-wrapper">
+                                    <SearchIcon/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-lg-2">
+                <div class="choose-chart">Velg i kart</div>
+                <ChevronDownIcon/>
+            </div>
         </div>
-    </div>
-    <div class="content col-2">
-        <div class="choose-chart">Velg i kart</div>
-        <SearchIcon/>
     </div>
 </div>
 ```
@@ -36,24 +44,8 @@ StickyMenu
 #### React
 
 ```jsx harmony
-<StickyMenu >
-	<div className="container">
-		<div className="row">
-			<div className="content col-5">
-			<div>
-				<div className="subtitle">Kommunefakta</div>
-				<div className="title">Stordal (Møre og Romsdal)</div>
-			</div>
-			</div>
-			<div className="content col-5">
-				<div className="input-header">Bytt kommune</div>
-				<Input ariaLabel="Søk på kommune" searchField placeholder="Søk på kommune" />
-			</div>
-			<div className="content col-2">
-				<div className="choose-chart">Velg i kart</div><ChevronDown className="chevron-down-icon" size={18} />
-			</div>
-		</div>
-	</div>
+<StickyMenu>
+    Insert content here
 </StickyMenu>
 ```
 

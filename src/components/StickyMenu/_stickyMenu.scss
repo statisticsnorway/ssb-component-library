@@ -3,11 +3,12 @@
   align-items: center;
   background-color: $ssb-white;
   border: solid 1px $ssb-dark-2;
-  box-shadow: 0 2px 4px 1px rgba(200, 200, 200, 0.5);
+  box-shadow: 0 2px 4px 1px rgba(200, 200, 200, .5);
   color: $ssb-dark-6;
   display: flex;
   line-height: normal;
-  min-height: 98px;
+  padding-bottom: 25px;
+  padding-top: 25px;
   position: sticky;
   top: 0;
   width: 100%;
@@ -22,17 +23,20 @@
   }
 
   .col-flex {
-    display: flex;
+	display: flex;
+	width: 100%;
   }
 
   input {
-    width: 280px;
+	min-width: 180px;
+	width: 100%;
   }
 
   .input-header {
     color: $ssb-dark-5;
     font-size: 18px;
 	font-weight: bold;
+	margin-right: 10px;
 	white-space: nowrap;
   }
 
