@@ -53,6 +53,7 @@
     &:focus {
       border: 1px solid $ssb-green-4;
       outline: 1px solid $ssb-green-4;
+      outline-offset: 0;
     }
   }
 
@@ -102,6 +103,7 @@
       &:focus {
         border: 1px solid $ssb-green-2;
         outline: 1px solid $ssb-green-2;
+        outline-offset: 0;
       }
     }
 
