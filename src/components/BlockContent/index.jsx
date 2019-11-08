@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BlockContent = ({ children, pageNumber }) => (
+const BlockContent = ({ children, sectionNumber }) => (
 	<div className="ssb-block-content">
-		{pageNumber && <div className="page-number">
-			{pageNumber.length === 1 || pageNumber < 10 && '0'}
-			{pageNumber}
+		{sectionNumber && <div className="section-number">
+			{sectionNumber.length === 1 || sectionNumber < 10 && '0'}
+			{sectionNumber}
 		</div>}
 		{children}
 	</div>
@@ -13,7 +13,7 @@ const BlockContent = ({ children, pageNumber }) => (
 
 BlockContent.propTypes = {
 	children: PropTypes.node.isRequired,
-	pageNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	sectionNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default BlockContent;
