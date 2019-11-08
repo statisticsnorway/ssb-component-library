@@ -4,6 +4,7 @@
   font-style: normal;
   letter-spacing: normal;
   line-height: 1.7;
+  max-width: $max-readable-width;
 
   &.small-text {
     font-size: 14px;
