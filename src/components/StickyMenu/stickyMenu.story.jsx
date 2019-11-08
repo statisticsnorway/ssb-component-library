@@ -6,6 +6,6 @@ import StickyMenu from './index';
 storiesOf('StickyMenu', module).addDecorator(centered)
 	.add('Default', () => (
 		<div className="col-12" style={{ width: '1200px' }}>
-			<StickyMenu inputHeader="Bytt kommune:" subtitle="Kommunefakta" title="Stordal (Møre og Romsdal)" />
+			<StickyMenu ChooseChartLabel="Velg i kart" inputHeader="Bytt kommune:" subtitle="Kommunefakta" title="Stordal (Møre og Romsdal)" />
 		</div>
 	));

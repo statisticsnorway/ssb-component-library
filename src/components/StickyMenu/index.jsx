@@ -4,7 +4,7 @@ import { ChevronDown } from 'react-feather';
 import Input from '../Input';
 
 const StickyMenu = ({
-	inputHeader, subtitle, title,
+	ChooseChartLabel, inputHeader, subtitle, title,
 }) => (
 	<div className="ssb-sticky-menu">
 		<div className="content col-5">
@@ -18,7 +18,7 @@ const StickyMenu = ({
 			<Input ariaLabel="Søk på kommune" searchField placeholder="Søk på kommune" />
 		</div>
 		<div className="content col-2">
-			<div className="choose-chart">Velg i kart</div><ChevronDown className="chevron-down-icon" size={18} />
+			<div className="choose-chart">{ChooseChartLabel}</div><ChevronDown className="chevron-down-icon" size={18} />
 		</div>
 	</div>
 
@@ -28,6 +28,7 @@ const StickyMenu = ({
 StickyMenu.defaultProps = {};
 
 StickyMenu.propTypes = {
+	ChooseChartLabel: PropTypes.string,
 	inputHeader: PropTypes.string,
 	subtitle: PropTypes.string,
 	title: PropTypes.string,
