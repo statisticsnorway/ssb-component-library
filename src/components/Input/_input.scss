@@ -53,6 +53,7 @@
     &:focus {
       border: 1px solid $ssb-green-4;
       outline: 1px solid $ssb-green-4;
+      outline-offset: 0;
     }
   }
 
@@ -102,6 +103,7 @@
       &:focus {
         border: 1px solid $ssb-green-2;
         outline: 1px solid $ssb-green-2;
+        outline-offset: 0;
       }
     }
 
@@ -109,6 +111,18 @@
 
       & > * {
         color: $ssb-green-2;
+      }
+
+      &.search-icon {
+        cursor: pointer;
+
+        &:hover, &:focus {
+          background: $ssb-white;
+
+          & > * {
+            color: $ssb-dark-5;
+          }
+        }
       }
     }
 
@@ -146,7 +160,6 @@
   .icon-wrapper {
     @include reset-button;
     align-items: center;
-    cursor: pointer;
     display: flex;
     height: 36px;
     justify-content: center;
@@ -155,6 +168,18 @@
 
     & > * {
       color: $ssb-green-4;
+    }
+
+    &.search-icon {
+      cursor: pointer;
+
+      &:hover, &:focus {
+        background: $ssb-green-4;
+
+        & > * {
+          color: $ssb-white;
+        }
+      }
     }
   }
 }
