@@ -2,6 +2,8 @@
   @include roboto;
   display: flex;
   flex-direction: row;
+  font-size: 18px;
+  font-weight: bold;
 
   .navigation-item {
     @include reset-button;
@@ -9,29 +11,34 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    margin-right: $global-padding-size * 2;
+    padding: 20px 0;
     position: relative;
     text-align: center;
     text-decoration: none;
     transition: background .2s;
 
-    &:hover {
-      background: $ssb-green-2;
-    }
-
     &:before {
-      background: $ssb-green-3;
+      background: $ssb-dark-5;
       bottom: 0;
       content: '';
       display: block;
       height: 0;
       left: 0;
       position: absolute;
-      transition: height .2s;
+      transition: all .2s;
       width: 100%;
     }
 
     &.active {
+
+      &:before {
+        background: $ssb-green-3;
+        height: 5px;
+      }
+    }
+
+    &:hover {
 
       &:before {
         height: 5px;

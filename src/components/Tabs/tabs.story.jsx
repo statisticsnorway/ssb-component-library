@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
-
+import Divider from '../Divider';
 import Tabs from './index';
 
 const items = [
@@ -21,5 +21,8 @@ const items = [
 
 storiesOf('Tabs', module).addDecorator(centered)
 	.add('Tabs', () => (
-		<Tabs items={items} />
+		<div>
+			<Tabs items={items} />
+			<Divider />
+		</div>
 	));
