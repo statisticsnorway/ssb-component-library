@@ -9,7 +9,7 @@ BlockContent
 
 ```html
 <div class="ssb-block-content">
-    <div class="page-number">1</div>
+    <div class="section-number">1</div>
     Insert content here
 </div>
 ```
@@ -17,7 +17,7 @@ BlockContent
 #### React
 
 ```jsx harmony
-<BlockContent pageNumber={1}>
+<BlockContent sectionNumber={1}>
   Insert content here
 </BlockContent> 
 ```
@@ -27,4 +27,4 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children   | Required node | Content within the wrapper |
-| pageNumber | Optional number or string | Optional rendering of a page number |
+| sectionNumber | Optional number or string | Optional rendering of a page number |

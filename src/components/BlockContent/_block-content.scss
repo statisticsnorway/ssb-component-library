@@ -4,12 +4,13 @@
   border-top: 4px solid $ssb-green-3;
   box-shadow: 0 2px 4px 1px rgba(200, 200, 200, .5);
   box-sizing: border-box;
+  margin-bottom: 80px;
   max-width: 1200px;
   padding: 100px;
   position: relative;
   width: 100%;
 
-  .page-number {
+  .section-number {
     @include roboto;
     color: $ssb-dark-3;
     font-size: 30px;
