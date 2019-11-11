@@ -7,6 +7,7 @@
     "build:prod": "cross-env ENV=production rollup -c",
     "start": "cross-env ENV=development start-storybook -p 6006",
     "test": "cross-env ENV=test jest --coverage",
+    "test:watch": "cross-env ENV=test jest --watch",
     "clean-test": "cross-env ENV=test jest --no-cache --updateSnapshot --coverage",
     "clear-tests": "jest --clear-cache -- -u",
     "lint:js": "eslint src/**/*.jsx",

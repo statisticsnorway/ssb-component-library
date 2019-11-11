@@ -4,6 +4,6 @@ exports[`Text component Matches the snapshot 1`] = `
 <h1
   className="ssb-title"
 >
-  Default title here
+  Title
 </h1>
 `;

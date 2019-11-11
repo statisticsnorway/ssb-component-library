@@ -4,6 +4,6 @@ exports[`Text component Matches the snapshot 1`] = `
 <span
   className="ssb-text-wrapper"
 >
-  Default text here
+  Text
 </span>
 `;

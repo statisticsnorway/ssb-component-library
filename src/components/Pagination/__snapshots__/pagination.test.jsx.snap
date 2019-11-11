@@ -8,22 +8,11 @@ exports[`Pagination component Matches the snapshot 1`] = `
     className="direction-button"
     onClick={[Function]}
   >
-    <svg
+    <ChevronLeft
       className="chevron-icon"
-      fill="none"
-      height={18}
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      width={18}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <polyline
-        points="15 18 9 12 15 6"
-      />
-    </svg>
+      color="currentColor"
+      size={18}
+    />
     Forrige
   </button>
   <button
@@ -34,6 +23,7 @@ exports[`Pagination component Matches the snapshot 1`] = `
   </button>
   <button
     className="nav-button-square false"
+    key="undefined"
     onClick={[Function]}
   />
   <div
@@ -54,22 +44,11 @@ exports[`Pagination component Matches the snapshot 1`] = `
     <span>
       Neste
     </span>
-    <svg
+    <ChevronRight
       className="chevron-icon"
-      fill="none"
-      height={18}
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      width={18}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <polyline
-        points="9 18 15 12 9 6"
-      />
-    </svg>
+      color="currentColor"
+      size={18}
+    />
   </button>
 </nav>
 `;

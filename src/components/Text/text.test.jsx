@@ -1,10 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import {shallow} from 'enzyme';
 import Text from './index';
 
 describe('Text component', () => {
 	test('Matches the snapshot', () => {
-		const component = renderer.create(<Text>Default text here</Text>).toJSON();
-		expect(component).toMatchSnapshot();
+		const wrapper = shallow(<Text>Text</Text>);
+		expect(wrapper).toMatchSnapshot();
+	});
+	test('Toggles className correctly', () => {
+		const wrapper = shallow(<Text small negative>Text</Text>);
+		expect(wrapper.find('.ssb-text-wrapper').hasClass('small-text')).toEqual(true);
+		expect(wrapper.find('.ssb-text-wrapper').hasClass('negative')).toEqual(true);
 	});
 });

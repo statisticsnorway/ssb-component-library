@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import {shallow} from 'enzyme';
 import Pagination from './index';
 
 const items = [
@@ -27,7 +27,23 @@ const items = [
 
 describe('Pagination component', () => {
 	test('Matches the snapshot', () => {
-		const component = renderer.create(<Pagination items={items} />).toJSON();
-		expect(component).toMatchSnapshot();
-	})
+		const wrapper = shallow(<Pagination selectedPage={items[0]} items={items} />);
+		expect(wrapper.find('.nav-button-square').first().hasClass('selected')).toEqual(true);
+	});
+	test('Sets correct pre selection', () => {
+		const wrapper = shallow(<Pagination items={items} />);
+	});
+	describe('Local states', () => {
+		test('', () => {
+			const setState = jest.fn();
+			const useStateSpy = jest.spyOn(React, 'useState');
+			useStateSpy.mockImplementation(init => [init, setState]);
+			const wrapper = shallow(<Pagination items={items} />);
+			// console.log(wrapper.debug());
+			console.log(wrapper.find('.direction-button').first().debug());
+			wrapper.find('.direction-button').first().props().onClick();
+			expect(setState).toHaveBeenCalledTimes(1);
+			// expect(wrapper.find('direction-button')).toMatchSnapshot();
+		});
+	});
 });
