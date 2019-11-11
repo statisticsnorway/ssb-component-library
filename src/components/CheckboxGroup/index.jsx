@@ -4,7 +4,7 @@ import Checkbox from '../Checkbox';
 import Title from '../Title';
 
 const CheckboxGroup = ({
-	header, items, onChange, selectedValues,
+	header, items, onChange, orientation, selectedValues,
 }) => {
 	const [selected, updateSelected] = useState(selectedValues);
 
@@ -25,23 +25,26 @@ const CheckboxGroup = ({
 	return (
 		<div className="ssb-checkbox-group">
 			{header && <Title className="checkbox-group-header no-margin" size={5}>{header}</Title>}
-			{items.map((it, index) => (
-				<Checkbox
-					key={it.value}
-					index={index}
-					selected={selected.includes(it.value)}
-					value={it.value}
-					callback={setSelected}
-					disabled={it.disabled}
-				>{it.label}
-				</Checkbox>
-			))}
+			<div className={`boxes flex-${orientation}`}>
+				{items.map((it, index) => (
+					<Checkbox
+						key={it.value}
+						index={index}
+						selected={selected.includes(it.value)}
+						value={it.value}
+						callback={setSelected}
+						disabled={it.disabled}
+					>{it.label}
+					</Checkbox>
+				))}
+			</div>
 		</div>
 	);
 };
 
 CheckboxGroup.defaultProps = {
 	onChange: () => {},
+	orientation: 'column',
 	selectedValues: [''],
 };
 
@@ -52,6 +55,10 @@ CheckboxGroup.propTypes = {
 		value: PropTypes.string,
 	})).isRequired,
 	onChange: PropTypes.func,
+	orientation: PropTypes.oneOf([
+		'column',
+		'row'
+	]),
 	selectedValues: PropTypes.array,
 };
 

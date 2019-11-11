@@ -18,8 +18,8 @@ const radioItems = [
 ];
 
 storiesOf('RadioGroup', module).addDecorator(centered)
-	.add('Default', () => (
-		<div>
-			<RadioGroup header="Header" items={radioItems} />
-		</div>
-	));
+	.add('Column', () => (
+		<RadioGroup header="Header" items={radioItems} />
+	)).add('Row', () => (
+	<RadioGroup header="Header" items={radioItems} orientation="row" />
+));
