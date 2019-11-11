@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Title from '../Title';
 import RadioButton from '../RadioButton';
 
-const RadioGroup = ({ header, items, onChange, selectedValue }) => {
+const RadioGroup = ({ header, items, onChange, orientation, selectedValue }) => {
 	const [selected, updateSelected] = useState(selectedValue);
 
 	useEffect(() => {
@@ -13,23 +13,26 @@ const RadioGroup = ({ header, items, onChange, selectedValue }) => {
 	return (
 		<div className="ssb-radio-group">
 			{header && <Title className="radio-group-header no-margin" size={5}>{header}</Title>}
-			{items.map((it, index) => (
-				<RadioButton
-					key={it.value}
-					index={index}
-					selected={it.value === selected}
-					value={it.value}
-					callback={updateSelected}
-					disabled={it.disabled}
-				>{it.label}
-				</RadioButton>
-			))}
+			<div className={`boxes flex-${orientation}`}>
+				{items.map((it, index) => (
+					<RadioButton
+						key={it.value}
+						index={index}
+						selected={it.value === selected}
+						value={it.value}
+						callback={updateSelected}
+						disabled={it.disabled}
+					>{it.label}
+					</RadioButton>
+				))}
+			</div>
 		</div>
 	);
 };
 
 RadioGroup.defaultProps = {
 	onChange: () => {},
+	orientation: 'column',
 };
 
 RadioGroup.propTypes = {
@@ -39,6 +42,10 @@ RadioGroup.propTypes = {
 		value: PropTypes.string,
 	})).isRequired,
 	onChange: PropTypes.func,
+	orientation: PropTypes.oneOf([
+		'column',
+		'row'
+	]),
 	selectedValue: PropTypes.string,
 };
 

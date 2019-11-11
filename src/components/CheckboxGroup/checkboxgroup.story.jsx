@@ -18,8 +18,9 @@ const checkboxItems = [
 ];
 
 storiesOf('CheckboxGroup', module).addDecorator(centered)
-	.add('Default', () => (
-		<div>
-			<CheckboxGroup header="Header" items={checkboxItems} />
-		</div>
+	.add('Column', () => (
+		<CheckboxGroup header="Header" items={checkboxItems} />
+	))
+	.add('Row', () => (
+		<CheckboxGroup header="Header" items={checkboxItems} orientation="row" />
 	));
