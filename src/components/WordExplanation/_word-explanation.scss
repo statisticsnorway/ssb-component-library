@@ -3,12 +3,14 @@
   cursor: pointer;
   display: inline-block;
   position: relative;
-  text-decoration: dotted underline;
-  text-decoration-color: $ssb-green-4;
+
+  .we-text-wrap {
+    border-bottom: 1px dotted $ssb-green-4;
+    display: inline-block;
+  }
 
   .we-logo {
-    margin-left: 2px;
-    margin-top: 10%;
+    margin: 2px;
     vertical-align: top;
   }
 

@@ -29,7 +29,7 @@ const WordExplanation = ({ explanation, children }) => {
 
 	return (
 		<button ref={node} onClick={() => setOpen(!open)} className="ssb-word-explanation">
-			{children}
+			<div className="we-text-wrap">{children}</div>
 			<img className="we-logo" src={icon} alt="Ordforklaring" />
 			<div className="we-animate-background" />
 			{open && (

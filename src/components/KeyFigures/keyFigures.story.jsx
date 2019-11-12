@@ -5,6 +5,8 @@ import { Home } from 'react-feather';
 import KeyFigures from './index';
 
 const title = 'Antall husholdninger';
+const placeholderText = `This is the explanation of the word
+written in one or more paragraphs depending on the amount of space needed`;
 
 storiesOf('KeyFigures', module).addDecorator(centered)
 	.add('Large', () => (
@@ -16,6 +18,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				time="2018"
 				size="large"
 				icon={<Home />}
+				wordExplanation={placeholderText}
 			/>
 		</div>
 	))
