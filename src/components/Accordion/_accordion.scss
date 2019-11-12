@@ -10,16 +10,19 @@
       cursor: pointer;
       display: grid;
       grid-column-gap: $global-padding-size;
-      grid-template-columns: 20px auto 1fr;
+      grid-template-columns: auto 20px;
     }
 
     .expand-icon {
-      color: $ssb-white;
-      fill: $ssb-green-3
+      color: $ssb-green-4;
+    }
+
+    .header-text {
+      color: $ssb-dark-6;
     }
 
     .sub-header {
-      color: $ssb-green-3;
+      color: $ssb-green-4;
     }
 
     &:hover {
@@ -29,34 +32,32 @@
       }
     }
 
-    &.open {
-
-      .header-text, .sub-header {
-        color: $ssb-green-4;
-      }
-
-      .expand-icon {
-        fill: $ssb-green-4;
-      }
-    }
   }
 
   &.with-sub-header {
 
+    .button-grid {
+      grid-template-columns: fit-content(100px) auto 20px;
+    }
+
     .accordion-header {
-      grid-template-columns: 20px auto;
 
       .header-text {
         grid-column-start: 2;
-        grid-row-start: 2;
+      }
+
+      .sub-header {
+        align-self: start;
+        grid-column-start: 1;
       }
     }
   }
 
   .accordion-body {
     @include open-sans;
+    color: $ssb-dark-6;
     font-size: 16px;
-    padding: $global-padding-size $global-padding-size $global-padding-size 30px;
+    padding: $global-padding-size 50px $global-padding-size $global-padding-size;
 
     &.closed {
       display: none;
