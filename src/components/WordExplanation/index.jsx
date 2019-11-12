@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { FileText, XCircle } from 'react-feather';
+import { XCircle } from 'react-feather';
+import icon from '../../media/icons/ordforklaring.svg';
 
-const WordExplanation = ({
-	explanation, children,
-}) => {
+const WordExplanation = ({ explanation, children }) => {
 	const node = useRef();
 	const infoContainer = useRef();
 	const [open, setOpen] = useState(false);
@@ -30,10 +29,11 @@ const WordExplanation = ({
 
 	return (
 		<button ref={node} onClick={() => setOpen(!open)} className="ssb-word-explanation">
-			{children}<FileText size="12" />
-			<div className="animate-background" />
+			{children}
+			<img className="we-logo" src={icon} alt="Ordforklaring" />
+			<div className="we-animate-background" />
 			{open && (
-				<div className={`ssb-we-popup ${open && 'open'}`} ref={infoContainer}>
+				<div className={`we-popup${open ? ' open' : ''}`} ref={infoContainer}>
 					<div className="content-box">
 						<span className="info-text">{explanation}</span>
 						<div className="ssb-we-closing">
