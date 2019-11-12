@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Number from '../Number';
-import Title from '../Title';
 import WordExplanation from '../WordExplanation';
 
 const KeyFigures = ({	icon, number, numberDescription, size, title, time, wordExplanation }) => (
@@ -16,7 +15,7 @@ const KeyFigures = ({	icon, number, numberDescription, size, title, time, wordEx
 			}
 			<div className="kf-time">{time}</div>
 			<Number size={size} number={number} />
-			<Title className="kf-title" size={4}>{numberDescription}</Title>
+			<span className="kf-title subtitle">{numberDescription}</span>
 		</div>
 	</div>
 );

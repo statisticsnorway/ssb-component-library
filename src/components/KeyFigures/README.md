@@ -14,7 +14,7 @@ KeyFigures
     <span class="ssb-title kf-title">Title</span>
     <div>2019</div>
     <div class="ssb-number large">12 345</div>
-    <h4 class="ssb-title kf-title">husholdninger</h4>
+    <span class="kf-title subtitle">husholdninger</span>
   </div>
 </div>
 
@@ -38,7 +38,7 @@ KeyFigures
     </div>
     <div class="kf-time">2019</div>
     <div class="ssb-number small">12 345</div>
-    <h4 class="ssb-title kf-title">husholdninger</h4>
+    <span class="kf-title subtitle">husholdninger</span>
   </div>
 </div>
 ```
@@ -71,5 +71,4 @@ Available props:
 
 __Dependencies__
  - [Number](../Number)
- - [Title](../Title)
  - [WordExplanation](../WordExplanation)
