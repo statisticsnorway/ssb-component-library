@@ -44,14 +44,14 @@ const Pagination = ({
 				<ChevronLeft className="chevron-icon" size={18} />
 				Forrige
 			</button>
-			<button className={`nav-button-square ${items[0] === selected && 'selected'}`} onClick={() => handleSelection(items[0])}>
+			<button className={`nav-button-square${items[0] === selected ? ' selected' : ''}`} onClick={() => handleSelection(items[0])}>
 				{items[0].text}
 			</button>
 			{showLeftDots && <div className="dotted-indicator">...</div>}
 			{currentButtons && currentButtons.map(item => (
 				item !== items[0] && item !== items[items.length - 1] && (
 					<button
-						className={`nav-button-square ${item === selected && 'selected'}`}
+						className={`nav-button-square ${item.text}${item === selected ? ' selected' : ''}`}
 						onClick={() => handleSelection(item)}
 						key={`${item.path}`}
 					>{item.text}
@@ -60,7 +60,7 @@ const Pagination = ({
 			))}
 			{showRightDots && <div className="dotted-indicator">...</div>}
 			<button
-				className={`nav-button-square ${items[items.length - 1] === selected && 'selected'}`}
+				className={`nav-button-square${items[items.length - 1] === selected ? ' selected' : ''}`}
 				onClick={() => handleSelection(items[items.length - 1])}
 			>{items[items.length - 1].text}
 			</button>

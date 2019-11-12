@@ -109,9 +109,13 @@ Every new instance of `storiesOf` creates a new menu item in the storybook. When
 a sub menu. 
 
 #### Testing
-Testing is done with [Jest](https://jestjs.io/en/). Write unit tests for all atoms aim for a 100% test coverage. 
+Testing is done with [Jest](https://jestjs.io/en/) and Enzyme. Write unit tests for all atoms aim for a 100% test coverage. 
 To run the tests, simply run `npm test`. To run tests without using any cache, run `npm run clean-test`.
 If you need to replace outdated screenshots, run `npm run clear-tests`.
+
+[Here is a cheat sheet for Jest](https://github.com/sapegin/jest-cheat-sheet).
+
+[Here is a cheat sheet for Enzyme](https://devhints.io/enzyme). 
 
 #### Styling
 Styling is done with SCSS. You should familiarise yourself just a bit with the [stylelint](./.stylelintrc) configuration,

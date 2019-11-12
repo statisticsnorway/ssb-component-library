@@ -21,5 +21,5 @@ storiesOf('RadioGroup', module).addDecorator(centered)
 	.add('Column', () => (
 		<RadioGroup header="Header" items={radioItems} />
 	)).add('Row', () => (
-	<RadioGroup header="Header" items={radioItems} orientation="row" />
-));
+		<RadioGroup header="Header" items={radioItems} orientation="row" />
+	));
