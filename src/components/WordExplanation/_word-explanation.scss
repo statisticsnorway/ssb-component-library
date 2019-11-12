@@ -3,10 +3,18 @@
   cursor: pointer;
   display: inline-block;
   position: relative;
-  text-decoration: dotted underline;
-  text-decoration-color: $ssb-green-4;
 
-  .animate-background {
+  .we-text-wrap {
+    border-bottom: 1px dotted $ssb-green-4;
+    display: inline-block;
+  }
+
+  .we-logo {
+    margin: 2px;
+    vertical-align: top;
+  }
+
+  .we-animate-background {
     background: $ssb-green-2;
     bottom: 0;
     height: 0;
@@ -19,12 +27,12 @@
 
   &:hover, &:focus {
 
-    .animate-background {
+    .we-animate-background {
       height: 100%;
     }
   }
 
-  .ssb-we-popup {
+  .we-popup {
     @include open-sans;
     animation: fadein .2s;
     display: none;
