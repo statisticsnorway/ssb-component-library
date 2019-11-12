@@ -1,5 +1,6 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { mount, shallow } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 import Pagination from './index';
 
 const items = [
@@ -26,24 +27,34 @@ const items = [
 ];
 
 describe('Pagination component', () => {
-	test('Matches the snapshot', () => {
+	test('Matches snapshot', () => {
+		const wrapper = shallow(<Pagination items={items} />);
+		expect(wrapper).toMatchSnapshot();
+	});
+	test('Sets correct default selection', () => {
 		const wrapper = shallow(<Pagination selectedPage={items[0]} items={items} />);
 		expect(wrapper.find('.nav-button-square').first().hasClass('selected')).toEqual(true);
 	});
 	test('Sets correct pre selection', () => {
 		const wrapper = shallow(<Pagination items={items} />);
 	});
-	describe('Local states', () => {
-		test('', () => {
-			const setState = jest.fn();
+	describe('handleSelection function', () => {
+		test('First direction button onClick', () => {
+			const callback = jest.fn();
 			const useStateSpy = jest.spyOn(React, 'useState');
-			useStateSpy.mockImplementation(init => [init, setState]);
-			const wrapper = shallow(<Pagination items={items} />);
-			// console.log(wrapper.debug());
-			console.log(wrapper.find('.direction-button').first().debug());
+			useStateSpy.mockImplementation(init => [init, callback]);
+			const wrapper = shallow(<Pagination onSelect={callback} items={items} />);
 			wrapper.find('.direction-button').first().props().onClick();
-			expect(setState).toHaveBeenCalledTimes(1);
-			// expect(wrapper.find('direction-button')).toMatchSnapshot();
+			expect(callback).toHaveBeenCalledTimes(1);
+		});
+		test('Clicking first item', () => {
+			const callback = jest.fn();
+			const useStateSpy = jest.spyOn(React, 'useState');
+			useStateSpy.mockImplementation(init => [init, callback]);
+			const wrapper = shallow(<Pagination onSelect={callback} selectedPage={items[4]} items={items} />);
+			wrapper.find('.nav-button-square').first().props().onClick();
+			expect(callback).toHaveBeenCalledTimes(1);
+			expect(wrapper.find('.nav-button-square').first().hasClass('selected')).toEqual(true);
 		});
 	});
 });
