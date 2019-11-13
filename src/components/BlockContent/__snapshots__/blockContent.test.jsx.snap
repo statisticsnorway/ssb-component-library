@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlockContent component Matches the snapshot 1`] = `
+<div
+  className="ssb-block-content"
+>
+  BlockContent
+</div>
+`;
+
+exports[`Button component Matches the snapshot 1`] = `
+<div
+  className="ssb-block-content"
+>
+  BlockContent
+</div>
+`;
