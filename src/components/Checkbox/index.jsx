@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 const Checkbox = ({
 	callback, children, disabled, selected, tabIndex, value,
 }) => (
-	<div className="ssb-checkbox" tabIndex={tabIndex}>
+	<div className="ssb-checkbox">
 		<input
+			tabIndex={tabIndex}
 			disabled={disabled}
 			id={value}
 			checked={selected}
