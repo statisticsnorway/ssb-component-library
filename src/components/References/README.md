@@ -54,4 +54,3 @@ Available props:
 __Dependencies__
  - [Link](../Link)
  - [Text](../Title)
- - [Title](../Title)

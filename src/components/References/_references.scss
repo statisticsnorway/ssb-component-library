@@ -1,4 +1,10 @@
 .ssb-references {
   display: inline-flex;
   flex-direction: column;
+
+  .reference-header {
+    @include roboto;
+    font-weight: bold;
+    font-size: 16px;
+  }
 }

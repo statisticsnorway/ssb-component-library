@@ -2,13 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '../Link';
 import Text from '../Text';
-import Title from '../Title';
 
 const References = ({
 	referenceList, title,
 }) => (
 	<div className="ssb-references">
-		<Title size={5} className="no-margin">{title}</Title>
+		<span className="reference-header">{title}</span>
 		{referenceList.map((ref, index) => (
 			<div key={index}> {/* eslint-disable-line */}
 				{ref.plainText && <Text className="no-margin">{ref.plainText}&nbsp;</Text>}
