@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import scss from 'rollup-plugin-scss';
+import svg from 'rollup-plugin-svg';
 import { uglify } from 'rollup-plugin-uglify';
 
 const NODE_ENV = process.env.ENV || 'development';
@@ -23,6 +24,7 @@ export default [{
 		scss({
 			output: NODE_ENV === 'development' ? 'bundled-styles.scss' : 'lib/bundle.css',
 		}),
+		svg(),
 		resolve({ extension: ['.jsx', '.js'] }),
 		replace({
 			'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
