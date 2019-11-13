@@ -9,23 +9,37 @@ Accordion
 
 ```html
 <div class="ssb-accordion">
-  <div class="accordion-header closed" onclick="{toggle classname to 'open'}">
-    {plus icon}
-    <div class="ssb-title header-text no-margin"><h5>Title</h5></div>
-  </div>
-  <div class="accordion-body closed">
-    {insert content}
-  </div>
+    <button class="accordion-header closed" onclick="{toggle classname to 'open'}>
+        <span class="button-grid">
+          <h5 class="ssb-title header-text no-margin">This is a accordion title</h5>
+          {20px ChevronDown icon, add class="expand-icon" }
+        </span>
+    </button>
+    <div class="accordion-body closed">
+        {insert content}
+    </div>
 </div>
 
-<div class="ssb-nested-accordion mt-3">
-  <div class="nested-accordion-header closed" onclick="{toggle classname to 'open'}">
-    {plus icon}
-    <span class="header-text">Title</span>
-  </div>
-  <div class="accordion-body closed">
-    {insert content}
-  </div>
+<div class="ssb-accordion mt-3">
+    <button class="accordion-header closed" onclick="{toggle classname to 'open'}">
+        <span class=" button-grid ">
+        	<h5 class="ssb-title header-text no-margin ">This is a accordion with nested accordions</h5>
+        	{20px ChevronDown icon, add class="expand-icon"}
+      	</span>
+    </button>
+    <div class="accordion-body open ">This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
+        <div class="ssb-nested-accordion mt-3 ">
+            <button class="nested-accordion-header closed " onclick="{toggle classname to 'open'}">
+                <span class=" button-grid ">
+                	{15px ChevronDown icon, add class="expand-icon"}
+                  <span class="header-text ">A nested accordion header</span>
+                </span>
+            </button>
+            <div class="nested-accordion-body closed">
+               {insert content}
+            </div>
+        </div>
+    </div>
 </div>
 ```
 Toggle the all instances of the `closed` className to `open` when clicked.
@@ -33,15 +47,19 @@ Toggle the all instances of the `closed` className to `open` when clicked.
 #### React
 
 ```jsx harmony
-<Accordion primary header="This is a primary header">
-  This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
+<Accordion header="This is a accordion title">
+    This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
 </Accordion>
 
-<Accordion primary header="This is a primary header">
-  This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
-  <NestedAccordion header="A nested accordion header">
+<Accordion subHeader="Tabell 1" header="This is a accordion title with a sub-header">
     This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
-  </NestedAccordion>
+</Accordion>
+
+<Accordion header="This is a accordion with nested accordions">
+    This is paragraph text which explains the accordion
+    <NestedAccordion header="A nested accordion header">
+        This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
+    </NestedAccordion>
 </Accordion>
 ```
 
@@ -52,7 +70,6 @@ Available props:
 | children | node | Accordion content |
 | header | string | Header text |
 | openByDefault | bool | Will set the open state on init |
-| primary | bool | 	Changes type and design of accordion |
 | subHeader | string | Renders the header with the sub header design |
 
 __Dependencies__
