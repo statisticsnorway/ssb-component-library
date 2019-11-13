@@ -4,7 +4,7 @@ import Accordion from './index';
 
 describe('Accordion component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Accordion>Accordion</Accordion>);
+		const wrapper = shallow(<Accordion header="This is a accordion title">Accordion</Accordion>);
 		expect(wrapper).toMatchSnapshot();
 	});
 	test('Toggles classNames correctly', () => {

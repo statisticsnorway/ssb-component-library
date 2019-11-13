@@ -16,7 +16,9 @@ exports[`Accordion component Matches the snapshot 1`] = `
         className="header-text no-margin"
         negative={false}
         size={5}
-      />
+      >
+        This is a accordion title
+      </Title>
       <ChevronDown
         className="expand-icon"
         color="currentColor"
