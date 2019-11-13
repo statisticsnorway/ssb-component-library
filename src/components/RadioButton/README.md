@@ -9,7 +9,7 @@ RadioButton
 
 ```html
 <div class="ssb-radio">
-    <input id="option1" value="option1" />
+    <input id="option1" value="option1" type="radio" />
     <label class="radio-label" for="option1">Insert label</label>
 </div>
 ```
@@ -20,7 +20,7 @@ RadioButton
 <RadioButton
   callback={() => callbackFunction()}
   disabled={false}
-  tabIndex="1"
+  tabIndex="0"
   selected={false}
   value="option1"
 >Item 1
