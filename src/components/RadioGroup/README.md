@@ -27,14 +27,8 @@ RadioGroup
 <RadioGroup
   header="Header"
   items={
-    {
-      label: 'Item 1',
-      value: 'item1',
-    },
-    {
-      label: 'Item 2',
-      value: 'item2',
-    },
+    { label: 'Item 1', value: 'item1' },
+    { label: 'Item 2', value: 'item2' },
   }
   onChange={() => callback}
   selectedValue="item2"

@@ -20,7 +20,7 @@ Checkbox
 <Checkbox
   callback={() => callbackFunction()}
   disabled={false}
-  index="1"
+  tabIndex="0"
   selected={false}
   value="option1"
 >Item 1
@@ -34,6 +34,6 @@ Available props:
 | callback   | func | Function to trigger when value changes |
 | children | node | Label for the checkbox |
 | disabled | bool | Toggles disabled state of input field |
-| index | number | Tab index for focus |
 | selected | bool | Selected state of checkbox |
+| tabIndex | number | Tab index for focus |
 | value | Required number or string | Input field value |
