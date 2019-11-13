@@ -3,7 +3,8 @@ import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import scss from 'rollup-plugin-scss';
-import url from 'rollup-plugin-url';
+import svgr from '@svgr/rollup';
+
 import { uglify } from 'rollup-plugin-uglify';
 
 const NODE_ENV = process.env.ENV || 'development';
@@ -11,7 +12,7 @@ const NODE_ENV = process.env.ENV || 'development';
 export default [{
 	input: './src/index.js',
 	output: {
-		file: 'lib/bundle.cjs.js',
+		file: 'lib/bundle.js',
 		format: 'cjs',
 	},
 	external: [
@@ -23,11 +24,7 @@ export default [{
 		scss({
 			output: 'lib/bundle.css',
 		}),
-		url({
-			destDir: './lib',
-			limit: 10 * 1024,
-			include: ['**/*.svg'],
-		}),
+		svgr(),
 		resolve({ extension: ['.jsx', '.js'] }),
 		replace({
 			'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
