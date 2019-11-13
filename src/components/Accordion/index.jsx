@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronDown, ChevronUp } from 'react-feather';
+import Divider from '../Divider';
 import Title from '../Title';
 
 const Accordion = ({

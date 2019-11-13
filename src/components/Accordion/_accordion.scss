@@ -1,6 +1,21 @@
 .ssb-accordion {
-  display: inline-grid;
+  display: grid;
   width: 100%;
+
+  &:before {
+    border-top: 1px solid $ssb-dark-2;
+    content: '';
+    height: 2px;
+    padding-bottom: $global-padding-size;
+  }
+
+  &:after {
+    border-bottom: 1px solid $ssb-dark-2;
+    content: '';
+    height: 2px;
+    margin-bottom: -1px;
+    padding-top: $global-padding-size;
+  }
 
   .accordion-header {
     @include reset-button;
