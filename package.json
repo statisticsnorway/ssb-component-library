@@ -4,7 +4,8 @@
   "description": "Component library for SSB (Statistics Norway)",
   "main": "lib/prod.js",
   "scripts": {
-    "build:prod": "cross-env ENV=production rollup -c",
+    "prebuild": "rimraf lib",
+    "build:prod": "npm run prebuild && cross-env ENV=production rollup -c",
     "start": "cross-env ENV=development start-storybook -p 6006",
     "test": "cross-env ENV=test jest --coverage",
     "test:watch": "cross-env ENV=test jest --watch",
@@ -69,6 +70,7 @@
     "rollup-plugin-scss": "^1.0.2",
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-uglify": "^6.0.3",
+    "rollup-plugin-url": "^3.0.0",
     "sass": "^1.23.3",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
