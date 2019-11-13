@@ -1,4 +1,5 @@
 .ssb-nested-accordion {
+  @include roboto;
   display: grid;
   min-width: 300px;
   width: 100%;
@@ -11,11 +12,16 @@
       cursor: pointer;
       display: grid;
       grid-column-gap: 10px;
-      grid-template-columns: 10px 1fr;
+      grid-template-columns: 15px 1fr;
     }
 
     .expand-icon {
-      color: $ssb-green-3
+      color: $ssb-green-4
+    }
+
+    .header-text {
+      color: $ssb-dark-6;
+      font-weight: bold;
     }
 
     &:hover {
@@ -30,14 +36,12 @@
       .header-text, .sub-header {
         color: $ssb-green-4;
       }
-
-      .expand-icon {
-        color: $ssb-green-4;
-      }
     }
   }
 
   .nested-accordion-body {
+    @include open-sans;
+    color: $ssb-dark-6;
     font-size: 16px;
     padding: 10px 10px 10px 20px;
 
