@@ -57,7 +57,7 @@ CheckboxGroup.propTypes = {
 	onChange: PropTypes.func,
 	orientation: PropTypes.oneOf([
 		'column',
-		'row'
+		'row',
 	]),
 	selectedValues: PropTypes.array,
 };
