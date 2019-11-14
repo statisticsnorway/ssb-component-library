@@ -55,7 +55,7 @@ const Dropdown = ({
 					placeholder={selectedOption.title ? selectedOption.title : placeholder}
 					value={inputFieldValue}
 				/>
-				<div className="dd-icon"><ChevronDown size={18}/></div>
+				<div className="dd-icon"><ChevronDown size={18} /></div>
 				{isOpen && (
 					<div className="list-of-options">
 						{availableOptions.map(it => (

@@ -9,7 +9,6 @@ describe('Dialog component', () => {
 	});
 	test('Change dialog type Toggles classNames correctly', () => {
 		const wrapper = shallow(<Dialog	title="Dialog Title" type="warning">Dialog</Dialog>);
-		console.log(wrapper.debug())
 		expect(wrapper.hasClass('warning')).toEqual(true);
 	});
 });

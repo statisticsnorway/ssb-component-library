@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown component Matches the snapshot 1`] = `
+<div
+  className="ssb-dropdown"
+>
+  <label
+    htmlFor={1}
+  >
+    Menu header
+  </label>
+  <button
+    className="dropdown-interactive-area"
+    onClick={[Function]}
+  >
+    <input
+      className=""
+      disabled={true}
+      id={1}
+      onChange={[Function]}
+      placeholder="-- Select --"
+      value=""
+    />
+    <div
+      className="dd-icon"
+    >
+      <ChevronDown
+        color="currentColor"
+        size={18}
+      />
+    </div>
+  </button>
+</div>
+`;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Divider = ({ className, dark, light }) => (
 	<hr
-		className={`ssb-divider ${className} ${dark ? 'type-dark' : ''} ${light ? 'type-light' : ''}`}
+		className={`ssb-divider${className ? ` ${className}` : ''}${dark ? ' type-dark' : ''}${light ? ' type-light' : ''}`}
 	/>
 );
 
