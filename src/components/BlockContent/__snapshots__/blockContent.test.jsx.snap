@@ -7,11 +7,3 @@ exports[`BlockContent component Matches the snapshot 1`] = `
   BlockContent
 </div>
 `;
-
-exports[`Button component Matches the snapshot 1`] = `
-<div
-  className="ssb-block-content"
->
-  BlockContent
-</div>
-`;
