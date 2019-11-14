@@ -44,7 +44,7 @@ RadioGroup.propTypes = {
 	onChange: PropTypes.func,
 	orientation: PropTypes.oneOf([
 		'column',
-		'row'
+		'row',
 	]),
 	selectedValue: PropTypes.string,
 };

@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 const BlockContent = ({ children, sectionNumber }) => (
 	<div className="ssb-block-content">
-		{sectionNumber && <div className="section-number">
-			{sectionNumber.length === 1 || sectionNumber < 10 && '0'}
-			{sectionNumber}
-		</div>}
+		{sectionNumber && (
+			<div className="section-number">
+				{(sectionNumber.length === 1 || sectionNumber < 10) && '0'}
+				{sectionNumber}
+			</div>
+		)}
 		{children}
 	</div>
 );
