@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component Matches the snapshot 1`] = `
+<div
+  className="ssb-checkbox"
+>
+  <input
+    id="item"
+    onChange={[Function]}
+    tabIndex={0}
+    type="checkbox"
+    value="item"
+  />
+  <label
+    className="checkbox-label"
+    htmlFor="item"
+  >
+    Item
+  </label>
+</div>
+`;

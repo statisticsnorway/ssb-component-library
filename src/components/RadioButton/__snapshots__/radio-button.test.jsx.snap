@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton component Matches the snapshot 1`] = `
+<div
+  className="ssb-radio"
+>
+  <input
+    disabled={false}
+    id="item"
+    onChange={[Function]}
+    tabIndex={0}
+    type="radio"
+    value="item"
+  />
+  <label
+    className="radio-label"
+    htmlFor="item"
+  >
+    Item
+  </label>
+</div>
+`;

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb component Matches the snapshot 1`] = `
+<div
+  className="ssb-breadcrumbs"
+>
+  <div
+    key="breadcrumb 1"
+  >
+    <Link
+      className=""
+      href=" "
+      isExternal={false}
+      negative={false}
+    >
+      breadcrumb 1
+    </Link>
+     / 
+  </div>
+  <div
+    key="breadcrumb 2"
+  >
+    <Link
+      className=""
+      href=" "
+      isExternal={false}
+      negative={false}
+    >
+      breadcrumb 2
+    </Link>
+     / 
+  </div>
+  <span
+    key="breadcrumb 3"
+  >
+    breadcrumb 3
+  </span>
+</div>
+`;

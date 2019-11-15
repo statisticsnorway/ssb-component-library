@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FactBox component Matches the snapshot 1`] = `
+<div
+  className="ssb-fact-box"
+>
+  <Accordion
+    header="fact box header"
+    openByDefault={false}
+    primary={true}
+    tabIndex={0}
+  >
+    fact box Text
+  </Accordion>
+</div>
+`;

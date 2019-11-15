@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog component Matches the snapshot 1`] = `
+<div
+  className="ssb-dialog info"
+>
+  <div
+    className="icon-panel"
+  >
+    <AlertCircle
+      color="currentColor"
+      size="36"
+    />
+  </div>
+  <div
+    className="dialog-content"
+  >
+    <span
+      className="dialog-title"
+    >
+      Dialog Title
+    </span>
+    <Paragraph>
+      Dialog
+    </Paragraph>
+  </div>
+</div>
+`;

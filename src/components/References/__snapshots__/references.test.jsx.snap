@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`References component Matches the snapshot 1`] = `
+<div
+  className="ssb-references"
+>
+  <span
+    className="reference-header"
+  >
+    Source
+  </span>
+  <div
+    key="0"
+  >
+     
+    <Link
+      className=""
+      href=" "
+      isExternal={false}
+      negative={false}
+    >
+      Link 1
+    </Link>
+    <br />
+  </div>
+  <div
+    key="1"
+  >
+     
+    <Link
+      className=""
+      href=" "
+      isExternal={false}
+      negative={false}
+    >
+      Link 2
+    </Link>
+    <br />
+  </div>
+  <div
+    key="2"
+  >
+     
+    <Text
+      className="no-margin"
+      negative={false}
+      small={false}
+    >
+      A paragraph
+       
+    </Text>
+    <Link
+      className=""
+      href=" "
+      isExternal={false}
+      negative={false}
+    >
+      Link 3
+    </Link>
+    <br />
+  </div>
+</div>
+`;

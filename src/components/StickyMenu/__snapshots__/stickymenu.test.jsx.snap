@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StickyMenu component Matches the snapshot 1`] = `
+<div
+  className="ssb-sticky-menu"
+>
+  StickyMenu
+</div>
+`;

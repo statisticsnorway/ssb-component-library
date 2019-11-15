@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputError component Matches the snapshot 1`] = `
+<span
+  className="ssb-input-error "
+>
+  Insert error message
+</span>
+`;
