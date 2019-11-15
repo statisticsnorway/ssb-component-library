@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxGroup component Matches the snapshot 1`] = `
+<div
+  className="ssb-checkbox-group"
+>
+  <Title
+    className="checkbox-group-header no-margin"
+    negative={false}
+    size={5}
+  >
+    Header
+  </Title>
+  <div
+    className="boxes flex-column"
+  >
+    <Checkbox
+      callback={[Function]}
+      index={0}
+      key="item1"
+      selected={false}
+      tabIndex={0}
+      value="item1"
+    >
+      Item 1
+    </Checkbox>
+    <Checkbox
+      callback={[Function]}
+      index={1}
+      key="item2"
+      selected={false}
+      tabIndex={0}
+      value="item2"
+    >
+      Item 2
+    </Checkbox>
+    <Checkbox
+      callback={[Function]}
+      disabled={true}
+      index={2}
+      key="item3"
+      selected={false}
+      tabIndex={0}
+      value="item3"
+    >
+      Item 3
+    </Checkbox>
+  </div>
+</div>
+`;
