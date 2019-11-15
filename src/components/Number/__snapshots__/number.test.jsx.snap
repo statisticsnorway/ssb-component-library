@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Number component Matches the snapshot 1`] = `
+<div
+  className="ssb-number small"
+>
+  59 24 391
+</div>
+`;

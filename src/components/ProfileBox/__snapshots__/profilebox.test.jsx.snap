@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileBox component Matches the snapshot 1`] = `
+<div
+  className="ssb-profile-box"
+>
+  <button
+    className="profile-content"
+    onClick={[Function]}
+  >
+    ProfileBox
+  </button>
+</div>
+`;

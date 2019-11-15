@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NestedAccordion component Matches the snapshot 1`] = `
+<div
+  className="ssb-nested-accordion mt-3"
+>
+  <button
+    className="nested-accordion-header closed"
+    onClick={[Function]}
+  >
+    <span
+      className="button-grid"
+    >
+      <ChevronDown
+        className="expand-icon"
+        color="currentColor"
+        size="15"
+      />
+      <span
+        className="header-text"
+      >
+        A nested accordion header
+      </span>
+    </span>
+  </button>
+  <div
+    className="nested-accordion-body closed"
+  />
+</div>
+`;
