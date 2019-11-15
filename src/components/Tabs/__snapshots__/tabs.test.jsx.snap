@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs component Matches the snapshot 1`] = `
+<div
+  className="ssb-tabs"
+>
+  <button
+    className="navigation-item "
+    key="get-started/"
+    onClick={[Function]}
+  >
+    <span>
+      Get Started
+    </span>
+  </button>
+  <button
+    className="navigation-item "
+    key="components/"
+    onClick={[Function]}
+  >
+    <span>
+      Components
+    </span>
+  </button>
+  <button
+    className="navigation-item "
+    key="templates/"
+    onClick={[Function]}
+  >
+    <span>
+      Templates
+    </span>
+  </button>
+</div>
+`;
