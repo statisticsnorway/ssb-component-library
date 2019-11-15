@@ -6,6 +6,5 @@ src/
 .eslintignore
 .idea
 .stylelintrc
-bundled-styles.scss
 jest.config.js
 rollup.config.js

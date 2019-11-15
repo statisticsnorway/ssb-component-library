@@ -27,7 +27,7 @@ References.propTypes = {
 			href: PropTypes.string.isRequired,
 			label: PropTypes.string.isRequired,
 			plainText: PropTypes.string,
-		})
+		}),
 	),
 	title: PropTypes.string,
 };

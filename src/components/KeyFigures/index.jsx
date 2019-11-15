@@ -7,12 +7,13 @@ const KeyFigures = ({	icon, number, numberDescription, size, title, time, wordEx
 	<div className="ssb-key-figures">
 		<div className={`kf-icon ${size}`}>{icon}</div>
 		<div>
-			{wordExplanation ?
-				<WordExplanation explanation={'fsf'}>
-					<span className="kf-title">{title}</span>
-				</WordExplanation>
-				: <span className="kf-title">{title}</span>
-			}
+			{wordExplanation
+				? (
+					<WordExplanation explanation={wordExplanation}>
+						<span className="kf-title">{title}</span>
+					</WordExplanation>
+				)
+				: <span className="kf-title">{title}</span>}
 			<div className="kf-time">{time}</div>
 			<Number size={size} number={number} />
 			<span className="kf-title subtitle">{numberDescription}</span>
