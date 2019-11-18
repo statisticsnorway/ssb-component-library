@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import Input from './index';
 import InputError from '../InputError';
 
@@ -20,6 +20,11 @@ describe('Input component', () => {
 		const wrapper = shallow(<Input negative error />);
 		expect(wrapper.find('.ssb-input').hasClass('negative')).toEqual(true);
 		expect(wrapper.find('.ssb-input').hasClass('error')).toEqual(true);
+	});
+
+	test('Type is customizable', () => {
+		const wrapper = mount(<Input type="email" />);
+		expect(wrapper.find('input').props().type).toEqual('email');
 	});
 
 	test('Searchable input renders search icon', () => {
