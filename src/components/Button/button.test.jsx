@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import Button from './index';
 
 describe('Button component', () => {
@@ -15,5 +15,13 @@ describe('Button component', () => {
 	test('Renders icon', () => {
 		const wrapper = shallow(<Button icon={<i />}>Button</Button>);
 		expect(wrapper.find('.ssb-btn').containsMatchingElement(<i />)).toEqual(true);
+	});
+	test('Sends callback', () => {
+		const onClick = jest.fn();
+		const wrapper = mount(<Button onClick={onClick}>Tests</Button>);
+		wrapper.find('button').simulate('click');
+		expect(onClick).toBeCalledTimes(1);
+		wrapper.find('button').simulate('click');
+		expect(onClick).toBeCalledTimes(2);
 	});
 });
