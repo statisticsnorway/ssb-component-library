@@ -18,9 +18,9 @@ describe('Button component', () => {
 	});
 	test('Sends callback', () => {
 		const onClick = jest.fn();
-		const wrapper = mount(<Button onClick={onClick}>Tests</Button>);
+		const wrapper = shallow(<Button onClick={onClick}>Tests</Button>);
 		wrapper.find('button').simulate('click');
-		expect(onClick).toBeCalledTimes(1);
+		expect(onClick).toBeCalled();
 		wrapper.find('button').simulate('click');
 		expect(onClick).toBeCalledTimes(2);
 	});

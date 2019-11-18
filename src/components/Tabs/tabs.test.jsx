@@ -24,9 +24,9 @@ describe('Tabs component', () => {
 	});
 	test('Sends callback', () => {
 		const onClick = jest.fn();
-		const wrapper = mount(<Tabs onClick={onClick} items={items}/>);
+		const wrapper = shallow(<Tabs onClick={onClick} items={items}/>);
 		wrapper.find('.navigation-item').first().simulate('click');
-		expect(onClick).toBeCalledTimes(1);
+		expect(onClick).toBeCalled();
 	});
 	test('Sets correct init state', () => {
 		const wrapper = shallow(<Tabs items={items} activeOnInit={items[2].path}/>);
