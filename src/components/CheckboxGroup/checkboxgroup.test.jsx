@@ -1,6 +1,7 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import CheckboxGroup from './index';
+import Checkbox from '../Checkbox';
 
 const items = [
 	{
@@ -20,5 +21,12 @@ describe('CheckboxGroup component', () => {
 	test('Matches the snapshot', () => {
 		const wrapper = shallow(<CheckboxGroup header="Header" items={items} />);
 		expect(wrapper).toMatchSnapshot();
+	});
+
+	test('OnChange in child triggers parent', () => {
+		const onChange = jest.fn();
+		const wrapper = mount(<CheckboxGroup header="Header" onChange={onChange} items={items} />);
+		wrapper.find(Checkbox).first().find('input').simulate('change', {target: {checked: true}});
+		expect(onChange).toBeCalled();
 	});
 });
