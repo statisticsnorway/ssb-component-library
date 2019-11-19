@@ -52,4 +52,5 @@ describe('Input component', () => {
 		const wrapper = shallow(<Input error errorMessage="An error" />);
 		expect(wrapper.find(InputError)).toHaveLength(1);
 	})
+
 });
