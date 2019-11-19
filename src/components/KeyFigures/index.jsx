@@ -28,7 +28,7 @@ KeyFigures.propTypes = {
 	number: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.number,
-	]),
+	]).isRequired,
 	numberDescription: PropTypes.string,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 	title: PropTypes.string,

@@ -31,26 +31,46 @@ describe('Pagination component', () => {
 		const wrapper = shallow(<Pagination items={items} />);
 		expect(wrapper).toMatchSnapshot();
 	});
+
 	test('Sets correct default selection', () => {
 		const wrapper = shallow(<Pagination selectedPage={items[0]} items={items} />);
 		expect(wrapper.find('.nav-button-square').first().hasClass('selected')).toEqual(true);
 	});
+
 	test('Sets correct pre selection', () => {
 		const wrapper = shallow(<Pagination items={items} />);
 	});
+
 	describe('handleSelection function', () => {
-		test('First direction button onClick', () => {
-			const callback = jest.fn();
-			const useStateSpy = jest.spyOn(React, 'useState');
+		let callback;
+		let useStateSpy;
+
+		beforeEach(() => {
+			callback = jest.fn();
+			useStateSpy = jest.spyOn(React, 'useState');
 			useStateSpy.mockImplementation(init => [init, callback]);
+		});
+
+		test('First direction button onClick', () => {
 			const wrapper = shallow(<Pagination onSelect={callback} items={items} />);
 			wrapper.find('.direction-button').first().props().onClick();
 			expect(callback).toHaveBeenCalledTimes(1);
 		});
+
+		test('Next direction button', () => {
+			const wrapper = shallow(<Pagination onSelect={callback} items={items} />);
+			wrapper.find('.direction-button').last().props().onClick();
+			expect(callback).toHaveBeenCalledTimes(1);
+		});
+
+		test('Last nav button', () => {
+			const wrapper = shallow(<Pagination onSelect={callback} items={items} />);
+			wrapper.find('.nav-button-square').last().props().onClick();
+			expect(callback).toHaveBeenCalledTimes(1);
+			expect(wrapper.find('.nav-button-square').last().hasClass('selected')).toEqual(true);
+		});
+
 		test('Clicking first item', () => {
-			const callback = jest.fn();
-			const useStateSpy = jest.spyOn(React, 'useState');
-			useStateSpy.mockImplementation(init => [init, callback]);
 			const wrapper = shallow(<Pagination onSelect={callback} selectedPage={items[4]} items={items} />);
 			wrapper.find('.nav-button-square').first().props().onClick();
 			expect(callback).toHaveBeenCalledTimes(1);

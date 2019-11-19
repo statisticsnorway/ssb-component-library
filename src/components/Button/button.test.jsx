@@ -16,4 +16,12 @@ describe('Button component', () => {
 		const wrapper = shallow(<Button icon={<i />}>Button</Button>);
 		expect(wrapper.find('.ssb-btn').containsMatchingElement(<i />)).toEqual(true);
 	});
+	test('Sends callback', () => {
+		const onClick = jest.fn();
+		const wrapper = shallow(<Button onClick={onClick}>Tests</Button>);
+		wrapper.find('button').simulate('click');
+		expect(onClick).toBeCalled();
+		wrapper.find('button').simulate('click');
+		expect(onClick).toBeCalledTimes(2);
+	});
 });

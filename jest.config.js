@@ -14,8 +14,9 @@ module.exports = {
 	],
 	moduleFileExtensions: ['js', 'jsx'],
 	moduleNameMapper: {
-		'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/config/jest/fileMock.js',
+		'\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/src/media/fileMock.js',
 		'\\.(css|scss)$': '<rootDir>/src/main.scss',
+		'\\.svg$': '<rootDir>/svgTransform.js',
 	},
 	modulePaths: [
 		'<rootDir>/src/scripts/atoms',
