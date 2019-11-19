@@ -10,23 +10,26 @@
   font-size: 16px;
   font-weight: bold;
   height: fit-content;
+  line-height: normal;
   margin-right: 20px;
+  min-height: 40px;
   padding: 10px 20px;
   text-align: center;
+  text-underline-position: under;
   transition: background .18s, color .18s;
 
   &:hover, &:active {
     cursor: pointer;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: $ssb-green-4;
     color: $ssb-white;
     text-decoration: underline;
   }
 
-  &:active, &:focus {
-    background: $ssb-green-5;
+  &:active {
+    background: $ssb-dark-5;
     color: $ssb-white;
   }
 
@@ -39,16 +42,16 @@
 
   &.negative {
     background: $ssb-dark-5;
-    color: $ssb-white;
-    border-color: $ssb-white;
+    color: $ssb-green-2;
+    border-color: $ssb-green-2;
 
-    &:hover  {
-      background: $ssb-white;
+    &:hover, &:focus {
+      background: $ssb-green-2;
       color: $ssb-dark-5;
     }
 
-    &:active, &:focus  {
-      background: $ssb-green-2;
+    &:active {
+      background: $ssb-white;
       color: $ssb-dark-5;
     }
 
@@ -65,7 +68,7 @@
     color: $ssb-white;
 
     &:hover, &:active, &:focus {
-      background: $ssb-green-5;
+      background: $ssb-dark-5;
       text-decoration: underline;
     }
 
@@ -77,11 +80,11 @@
     }
 
     &.negative {
-      background: $ssb-white;
+      background: $ssb-green-2;
       color: $ssb-dark-5;
 
       &:hover, &:active, &:focus  {
-        background: $ssb-green-2;
+        background: $ssb-white;
       }
 
       &:disabled {
