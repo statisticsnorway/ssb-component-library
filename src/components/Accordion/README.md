@@ -20,6 +20,32 @@ Accordion
     </div>
 </div>
 
+<div class="ssb-accordion with-sub-header">
+    <button class="accordion-header closed" onclick="{toggle classname to 'open'}>
+        <span class="button-grid">
+			<h5 class="ssb-title sub-header no-margin">Tabell 1</h5>
+			<h5 class="ssb-title header-text no-margin">This is a accordion title with a sub-header</h5>
+			{20px ChevronDown icon, add class="expand-icon" }
+		</span>
+    </button>
+    <div class="accordion-body closed">
+        {insert content}
+    </div>
+</div>
+
+<div class="ssb-accordion without-borders">
+    <button class="accordion-header closed" onclick="{toggle classname to 'open'}>
+        <span class="button-grid">
+          <h5 class="ssb-title header-text no-margin">This is a accordion without border</h5>
+          {20px ChevronDown icon, add class="expand-icon" }
+        </span>
+    </button>
+    <div class="accordion-body closed">
+        {insert content}
+    </div>
+</div>
+
+
 <div class="ssb-accordion mt-3">
     <button class="accordion-header closed" onclick="{toggle classname to 'open'}">
         <span class=" button-grid ">
@@ -77,6 +103,7 @@ Available props:
 | header | string | Header text |
 | openByDefault | bool | Will set the open state on init |
 | subHeader | string | Renders the header with the sub header design |
+| withoutBorders | bool | Default false, Accordion without border on top and bottom if value is true |
 
 __Dependencies__
  - [Title](../Title)

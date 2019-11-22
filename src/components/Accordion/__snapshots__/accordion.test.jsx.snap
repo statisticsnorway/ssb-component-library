@@ -2,7 +2,7 @@
 
 exports[`Accordion component Matches the snapshot 1`] = `
 <div
-  className="ssb-accordion undefined"
+  className="ssb-accordion"
 >
   <button
     className="accordion-header closed"
