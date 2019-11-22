@@ -7,8 +7,8 @@ exports[`FactBox component Matches the snapshot 1`] = `
   <Accordion
     header="fact box header"
     openByDefault={false}
-    primary={true}
     tabIndex={0}
+    withoutBorders={true}
   >
     fact box Text
   </Accordion>
