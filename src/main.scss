@@ -5,6 +5,7 @@
 // Global imports
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import './style/variables';
+@import 'fonts/feather.css';
 
 // Component imports
 @import './components/Accordion/accordion';
@@ -32,7 +33,7 @@
 @import './components/RadioButton/radio-button';
 @import './components/RadioGroup/radio-group';
 @import 'components/References/references';
-@import 'components/StickyMenu/stickyMenu';
+@import 'components/StickyMenu/sticky-menu';
 @import './components/Tabs/tabs';
 @import './components/Text/text';
 @import './components/Title/title';

@@ -10,7 +10,10 @@ NestedAccordion
 ```html
 <div class="ssb-nested-accordion mt-3">
   <div class="nested-accordion-header closed" onclick="{toggle classname to 'open'}">
-    {plus icon}
+    <!-- If open -->
+    <i class="expand-icon feather-chevron-up" />
+    <!-- If closed -->
+    <i class="expand-icon feather-chevron-down" />
     <span class="header-text">Title</span>
   </div>
   <div class="accordion-body closed">

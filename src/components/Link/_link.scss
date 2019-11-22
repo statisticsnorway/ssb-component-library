@@ -62,6 +62,10 @@ $icon-padding: 8px;
       padding: 2px 2px 0;
       border-bottom: none;
 
+      i {
+        font-size: 20px;
+      }
+
       .link-text {
         color: $ssb-white;
       }
@@ -94,6 +98,10 @@ $icon-padding: 8px;
   &.with-icon {
     padding: 2px 2px 0;
     border-bottom: none;
+
+    i {
+      font-size: 16px;
+    }
 
     .link-text {
       color: $ssb-dark-6;

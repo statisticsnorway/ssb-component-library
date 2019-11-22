@@ -21,14 +21,9 @@ exports[`Dropdown component Matches the snapshot 1`] = `
       placeholder="-- Select --"
       value=""
     />
-    <div
-      className="dd-icon"
-    >
-      <ChevronDown
-        color="currentColor"
-        size={18}
-      />
-    </div>
+    <i
+      className="dd-icon feather-chevron-down"
+    />
   </button>
 </div>
 `;

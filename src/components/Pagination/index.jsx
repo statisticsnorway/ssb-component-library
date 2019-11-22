@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronLeft, ChevronRight } from 'react-feather';
 
 const Pagination = ({
 	items, onSelect, selectedPage,
@@ -41,7 +40,7 @@ const Pagination = ({
 	return (
 		<nav className="ssb-pagination">
 			<button className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) - 1])}>
-				<ChevronLeft className="chevron-icon" size={18} />
+				<i className="chevron-icon feather-chevron-left" />
 				Forrige
 			</button>
 			<button className={`nav-button-square${items[0] === selected ? ' selected' : ''}`} onClick={() => handleSelection(items[0])}>
@@ -66,7 +65,7 @@ const Pagination = ({
 			</button>
 			<button className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) + 1])}>
 				<span>Neste</span>
-				<ChevronRight className="chevron-icon" size={18} />
+				<i className="chevron-icon feather-chevron-right" />
 			</button>
 		</nav>
 	);

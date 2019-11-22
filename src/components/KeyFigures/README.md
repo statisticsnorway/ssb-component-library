@@ -9,7 +9,7 @@ KeyFigures
 
 ```html
 <div class="ssb-key-figures">
-  <div class="kf-icon large"><i /></div>
+  <div class="kf-icon large"><!-- Insert icon --></div>
   <div>
     <span class="ssb-title kf-title">Title</span>
     <div>2019</div>
@@ -19,19 +19,19 @@ KeyFigures
 </div>
 
 <div class="ssb-key-figures">
-  <div class="kf-icon small"><i /></div>
+  <div class="kf-icon small"><!-- Insert icon --></div>
   <div>   
     <div class="ssb-word-explanation">
       <div class="we-text-wrap">
         <div class="ssb-title kf-title">Explain this</div>
       </div>
-      <i>Ordforklaring icon</i>
+      <!-- Insert dedicated custom icon -->
       <div class="we-animate-background"></div>
       <div class="ssb-we-popup {open or closed}">
         <div class="content-box">
           <span class="info-text">{insert explanation}</span>
           <div class="ssb-we-closing">
-            <XCircle size="14" /><span>Lukk</span>
+            <i class="icon feather-x-circle" /><span>Lukk</span>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@ KeyFigures
 
 ```jsx harmony
 <KeyFigures
-  icon={<Icon />}
+  icon={/* Insert icon */}
   number="12345"
   numberDescription="husholdninger"
   size="small"

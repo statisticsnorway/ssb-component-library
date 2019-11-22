@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronDown, ChevronUp } from 'react-feather';
 import Title from '../Title';
 
 const Accordion = ({
@@ -17,8 +16,8 @@ const Accordion = ({
 				<span className="button-grid">
 					{subHeader && <Title size={5} className="sub-header no-margin">{subHeader}</Title>}
 					<Title size={5} className="header-text no-margin">{header}</Title>
-					{!isOpen && <ChevronDown className="expand-icon" size={20} />}
-					{isOpen && <ChevronUp className="expand-icon" size={20} />}
+					{!isOpen && <i className="expand-icon feather-chevron-down" />}
+					{isOpen && <i className="expand-icon feather-chevron-up" />}
 				</span>
 			</button>
 			<div className={`accordion-body ${isOpen ? 'open' : 'closed'}`}>

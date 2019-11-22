@@ -8,9 +8,19 @@ Dialog
 #### HTML
 
 ```html
-<div class="ssb-dialog">
+<div class="ssb-dialog info">
     <div class="icon-panel">
-        <Icon />
+        <i class="feather-alert-circle" />
+    </div>
+    <div class="dialog-content">
+        <span class="dialog-title">A fitting title</span>
+        <p>Insert content here</p>
+    </div>
+</div>
+
+<div class="ssb-dialog warning">
+    <div class="icon-panel">
+        <i class="feather-alert-triangle" />
     </div>
     <div class="dialog-content">
         <span class="dialog-title">A fitting title</span>
