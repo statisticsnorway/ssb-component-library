@@ -4,11 +4,11 @@ import { ChevronDown, ChevronUp } from 'react-feather';
 import Title from '../Title';
 
 const Accordion = ({
-	children, header, openByDefault, subHeader, tabIndex,
+	children, header, openByDefault, subHeader, tabIndex, withoutBorders,
 }) => {
 	const [isOpen, toggleOpen] = useState(openByDefault);
 	return (
-		<div className={`ssb-accordion ${subHeader && 'with-sub-header'}`}>
+		<div className={`ssb-accordion${subHeader ? ' with-sub-header' : ''}${withoutBorders ? ' without-borders' : ''}`}>
 			<button
 				className={`accordion-header ${isOpen ? 'open' : 'closed'}`}
 				tabIndex={tabIndex}
@@ -39,6 +39,7 @@ Accordion.propTypes = {
 	openByDefault: PropTypes.bool,
 	subHeader: PropTypes.string,
 	tabIndex: PropTypes.number,
+	withoutBorders: PropTypes.bool,
 };
 
 export default Accordion;

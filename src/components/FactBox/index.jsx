@@ -6,7 +6,7 @@ const FactBox = ({
 	header, openByDefault, text,
 }) => (
 	<div className="ssb-fact-box">
-		<Accordion primary header={header} openByDefault={openByDefault}>
+		<Accordion header={header} openByDefault={openByDefault} withoutBorders>
 			{text}
 		</Accordion>
 	</div>

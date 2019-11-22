@@ -37,6 +37,15 @@ storiesOf('Accordion', module)
 			</div>
 		</div>
 	))
+	.add('Without borders', () => (
+		<div style={{ display: 'flex', marginTop: '10%' }}>
+			<div className="col-lg-6">
+				<Accordion withoutBorders header="This is a accordion title without borders">
+					This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
+				</Accordion>
+			</div>
+		</div>
+	))
 	.add('Multiple w/ sub-header', () => (
 		<div style={{ display: 'flex', marginTop: '10%' }}>
 			<div className="col-lg-6">
