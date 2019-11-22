@@ -19,7 +19,7 @@ Input
   <div class="input-wrapper">
     <input id="input1" aria-label="Input field Search" placeholder="Search text"/>
     <div class="icon-wrapper">
-      <icon>search</icon>
+      <i class="feather-search" />
     </div>
   </div>
 </div>
@@ -29,7 +29,7 @@ Input
   <div class="input-wrapper">
     <input id="input1" value="option1" />
     <div class="icon-wrapper">
-      <icon>alert</icon>
+      <i class="feather-alert-triangle" />
     </div>
   </div>
   <span class="ssb-form-error">Insert error message</span>

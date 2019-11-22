@@ -13,7 +13,7 @@ Link
 </a>
 
 <a class="ssb-link with-icon" href=" " target="" rel="">
-    <SomeIcon/>
+   <i class="feather-arrow-right" />
   <span class="link-text">A regular link with icon</span>
 </a>
 
@@ -35,7 +35,7 @@ Link
 ```jsx harmony
 <Link href="">A regular link</Link>
 
-<Link href="" icon={<ArrowRight size={20} />}>A regular link with icon</Link>
+<Link href="" icon={<i className="feather-arrow-right" />}>A regular link with icon</Link>
 
 <Link href="" linkType="profiled">A profiled link</Link>
 

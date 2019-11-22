@@ -10,7 +10,7 @@ Pagination
 ```html
 <div class="ssb-pagination">
   <div class="direction-button">
-    <i class="chevron-icon">{chevron left icon}</i>Forrige
+    <i class="chevron-icon feather-chevron-left" />Forrige
   </div>
   <div class="nav-button-square selected" onclick="{select this}">1</div>
   <div class="nav-button-square" onclick="{select this}">2</div>
@@ -23,7 +23,7 @@ Pagination
   <div class="dotted-indicator">...</div>
   <div class="nav-button-square" onclick="{select this}">20</div>
   <div class="direction-button">
-    Neste<i class="chevron-icon">{chevron right icon}</i>
+    Neste<i class="chevron-icon feather-chevron-left" />
   </div>
 </div>
 ```

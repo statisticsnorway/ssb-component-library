@@ -7,9 +7,8 @@ exports[`Dialog component Matches the snapshot 1`] = `
   <div
     className="icon-panel"
   >
-    <AlertCircle
-      color="currentColor"
-      size="36"
+    <i
+      className="feather-alert-circle"
     />
   </div>
   <div

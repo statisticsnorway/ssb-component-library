@@ -9,7 +9,7 @@ Accordion
 
 ```html
 <div class="ssb-accordion">
-    <button class="accordion-header closed" onclick="{toggle classname to 'open'}>
+    <button class="accordion-header closed" onclick={toggle classname to 'open'}>
         <span class="button-grid">
           <h5 class="ssb-title header-text no-margin">This is a accordion title</h5>
           {20px ChevronDown icon, add class="expand-icon" }
@@ -24,15 +24,21 @@ Accordion
     <button class="accordion-header closed" onclick="{toggle classname to 'open'}">
         <span class=" button-grid ">
         	<h5 class="ssb-title header-text no-margin ">This is a accordion with nested accordions</h5>
-        	{20px ChevronDown icon, add class="expand-icon"}
+            <!-- If open -->
+            <i class="expand-icon feather-chevron-up" />
+            <!-- If closed -->
+            <i class="expand-icon feather-chevron-down" />
       	</span>
     </button>
     <div class="accordion-body open ">This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
         <div class="ssb-nested-accordion mt-3 ">
             <button class="nested-accordion-header closed " onclick="{toggle classname to 'open'}">
                 <span class=" button-grid ">
-                	{15px ChevronDown icon, add class="expand-icon"}
-                  <span class="header-text ">A nested accordion header</span>
+                    <!-- If open -->
+                    <i class="expand-icon feather-chevron-up" />
+                    <!-- If closed -->
+                    <i class="expand-icon feather-chevron-down" />
+                    <span class="header-text ">A nested accordion header</span>
                 </span>
             </button>
             <div class="nested-accordion-body closed">

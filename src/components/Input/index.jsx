@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
-import { AlertTriangle, Search } from 'react-feather';
 import InputError from '../InputError';
 
 const Input = ({
@@ -30,12 +29,12 @@ const Input = ({
 				/>
 				{searchField && (
 					<button className="icon-wrapper search-icon" onClick={() => submitCallback(inputValue)}>
-						<Search size={18} />
+						<i className="feather-search" />
 					</button>
 				)}
 				{error && (
 					<div className="icon-wrapper">
-						<AlertTriangle size={18} />
+						<i className="feather-alert-triangle" />
 					</div>
 				)}
 			</div>

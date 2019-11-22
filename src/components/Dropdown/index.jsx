@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronDown } from 'react-feather';
 import uuid from 'uuid/v4';
 
 const Dropdown = ({
@@ -55,7 +54,7 @@ const Dropdown = ({
 					placeholder={selectedOption.title ? selectedOption.title : placeholder}
 					value={inputFieldValue}
 				/>
-				<div className="dd-icon"><ChevronDown size={18} /></div>
+				<i className="dd-icon feather-chevron-down" />
 				{isOpen && (
 					<div className="list-of-options">
 						{availableOptions.map(it => (

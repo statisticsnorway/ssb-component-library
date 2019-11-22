@@ -12,7 +12,7 @@ Dropdown
     <label for="input-dropdown">Menu header</label>
     <div class="dropdown-interactive-area">
         <input class="focused" id="input-dropdown" disabled="" placeholder="Select item" value="">
-        <div class="dd-icon">{chevron down icon}</div>
+        <i class="dd-icon feather-chevron-down" />
         <div class="list-of-options">
             <div class="option-list-element" value="item1" id="item1">Apples</div>
             <div class="option-list-element selected" value="item2" id="item2">Rainbows</div>

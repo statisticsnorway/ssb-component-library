@@ -1,7 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import Link from './index';
-import { ArrowRight } from 'react-feather'
 
 describe('Link component', () => {
 	test('Matches the snapshot', () => {
@@ -16,9 +15,9 @@ describe('Link component', () => {
 		expect(wrapper.props().rel).toEqual('noopener noreferrer');
 	});
 	test('render icon', () => {
-		const wrapper = shallow(<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />}>A profiled link with icon</Link>);
+		const wrapper = shallow(<Link href=" " linkType="profiled" icon={<i className="feather-arrow-right" />}>A profiled link with icon</Link>);
 		expect(wrapper.hasClass('with-icon')).toEqual(true);
-		expect(wrapper.containsMatchingElement(<ArrowRight size={20} color="currentColor" />)).toEqual(true);
+		expect(wrapper.containsMatchingElement(<i className="feather-arrow-right" />)).toEqual(true);
 	});
 
 });

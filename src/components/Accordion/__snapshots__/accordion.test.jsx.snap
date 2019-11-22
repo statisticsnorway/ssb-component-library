@@ -19,10 +19,8 @@ exports[`Accordion component Matches the snapshot 1`] = `
       >
         This is a accordion title
       </Title>
-      <ChevronDown
-        className="expand-icon"
-        color="currentColor"
-        size={20}
+      <i
+        className="expand-icon feather-chevron-down"
       />
     </span>
   </button>

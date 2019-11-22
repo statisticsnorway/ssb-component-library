@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
-import { ChevronDown } from 'react-feather';
 import StickyMenu from './index';
 import Input from '../Input';
 
@@ -26,7 +25,8 @@ storiesOf('StickyMenu', module).addDecorator(centered)
 							</div>
 						</div>
 						<div className="column col-md-6 col-lg-2">
-							<div className="choose-chart">Velg i kart</div><ChevronDown className="chevron-down-icon" size={18} />
+							<div className="choose-chart">Velg i kart</div>
+							<i className="chevron-down-icon feather-chevron-down" />
 						</div>
 					</div>
 				</div>

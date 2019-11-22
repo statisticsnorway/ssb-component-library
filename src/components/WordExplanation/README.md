@@ -10,13 +10,13 @@ Toggle the class "open" using javascript
 ```html
 <div class="ssb-word-explanation">
   <div class="we-text-wrap">Explain this</div>
-  <i>Ordforklaring icon</i>
+  <!-- Insert dedicated custom icon -->
   <div class="we-animate-background"></div>
   <div class="ssb-we-popup {open or closed}">
     <div class="content-box">
       <span class="info-text">{insert explanation}</span>
       <div class="ssb-we-closing">
-        <XCircle size="14" /><span>Lukk</span>
+        <i class="icon feather-x-circle" /><span>Lukk</span>
       </div>
     </div>
   </div>
