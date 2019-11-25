@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
+import { ChevronLeft, ChevronRight } from 'react-feather';
 import Pagination from './index';
 
 const items = [
@@ -35,7 +36,7 @@ storiesOf('Pagination', module).addDecorator(centered)
 	.add('Html', () => (
 		<div className="ssb-pagination">
 			<div className="direction-button">
-				<i className="chevron-icon feather-chevron-left" />Forrige
+				<ChevronLeft size={18} className="chevron-icon" />Forrige
 			</div>
 			<div className="nav-button-square selected">1</div>
 			<div className="nav-button-square">2</div>
@@ -48,7 +49,7 @@ storiesOf('Pagination', module).addDecorator(centered)
 			<div className="dotted-indicator">...</div>
 			<div className="nav-button-square">20</div>
 			<div className="direction-button">
-				Neste<i className="chevron-icon feather-chevron-left" />
+				Neste<ChevronRight size={18} className="chevron-icon" />
 			</div>
 		</div>
 	));

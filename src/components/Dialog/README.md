@@ -10,7 +10,7 @@ Dialog
 ```html
 <div class="ssb-dialog info">
     <div class="icon-panel">
-        <i class="feather-alert-circle" />
+        <i class="icon">{feather.alertCircle 40px}</i>
     </div>
     <div class="dialog-content">
         <span class="dialog-title">A fitting title</span>
@@ -20,7 +20,7 @@ Dialog
 
 <div class="ssb-dialog warning">
     <div class="icon-panel">
-        <i class="feather-alert-triangle" />
+        <i class="icon">{feather.alertTriangle 40px}</i>
     </div>
     <div class="dialog-content">
         <span class="dialog-title">A fitting title</span>

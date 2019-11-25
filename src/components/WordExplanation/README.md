@@ -16,7 +16,8 @@ Toggle the class "open" using javascript
     <div class="content-box">
       <span class="info-text">{insert explanation}</span>
       <div class="ssb-we-closing">
-        <i class="icon feather-x-circle" /><span>Lukk</span>
+        <i class="icon">{feather.xCircle 14px}</i>
+        <span>Lukk</span>
       </div>
     </div>
   </div>

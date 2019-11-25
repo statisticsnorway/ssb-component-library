@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { XCircle } from 'react-feather';
 import Ordforklaring from '../../media/icons/ordforklaring.svg';
 
 const WordExplanation = ({ explanation, children }) => {
@@ -36,7 +37,7 @@ const WordExplanation = ({ explanation, children }) => {
 					<div className="content-box">
 						<span className="info-text">{explanation}</span>
 						<div className="ssb-we-closing">
-							<i className="icon feather-x-circle" /><span>Lukk</span>
+							<XCircle size={14} className="icon" /><span>Lukk</span>
 						</div>
 					</div>
 				</div>

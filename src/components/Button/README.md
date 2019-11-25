@@ -12,7 +12,7 @@ Button
 
 <button class="ssb-btn primary-btn">
     <div class="sb-icon">
-        <i class="feather-chevron-down" />
+        <i>{feather.chevronDown 18px}</i>
     </div>Primary icon
 </button>
 
@@ -26,12 +26,11 @@ Button
 ```jsx harmony
 <Button>Secondary button</Button>
 
-<Button icon={<i class="feather-chevron-down" />} primary>Primary icon</Button>
+<Button icon={<ChevronDown />} primary>Primary icon</Button>
 
 <Button primary>Primary button</Button>
 
 <Button negative primary>Primary negative button</Button>
-
 
 <Button disabled>Disabled button</Button>
 ```

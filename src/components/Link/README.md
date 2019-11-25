@@ -13,15 +13,17 @@ Link
 </a>
 
 <a class="ssb-link with-icon" href=" " target="" rel="">
-   <i class="feather-arrow-right" />
+   <i>{feather.arrowRight 16px}</i>
   <span class="link-text">A regular link with icon</span>
 </a>
 
 <a class="ssb-link profiled" href=" " target="" rel="">
+    <i>{feather.arrowRight 20px}</i>
     <span class="link-text">A profiled link</span>
 </a>
 
 <a class="ssb-link header" href=" " target="" rel="">
+    <i>{feather.arrowRight 20px}</i>
     <span class="link-text">A header link</span>
 </a>
 
@@ -35,11 +37,11 @@ Link
 ```jsx harmony
 <Link href="">A regular link</Link>
 
-<Link href="" icon={<i className="feather-arrow-right" />}>A regular link with icon</Link>
+<Link href="" icon={<ArrowRight size={16} />}>A regular link with icon</Link>
 
-<Link href="" linkType="profiled">A profiled link</Link>
+<Link href="" linkType="profiled" icon={<ArrowRight size={20}}>A profiled link</Link>
 
-<Link href="" linkType="header">A header link</Link>
+<Link href="" linkType="header" icon={<ArrowRight size={20}}>A header link</Link>
 
 <Link href="" negative>A regular link - Negative</Link>
 
