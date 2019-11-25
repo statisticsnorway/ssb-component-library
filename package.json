@@ -1,6 +1,6 @@
 {
   "name": "@statisticsnorway/ssb-component-library",
-  "version": "1.1.20",
+  "version": "1.1.22",
   "description": "Component library for SSB (Statistics Norway)",
   "main": "lib/bundle.js",
   "scripts": {
@@ -84,6 +84,7 @@
     "bootstrap": "^4.3.1",
     "node-sass": "^4.13.0",
     "prismjs": "^1.17.1",
+    "react-feather": "^2.0.3",
     "react-test-renderer": "^16.11.0"
   },
   "directories": {
@@ -91,7 +92,7 @@
   },
   "files": [
     "src/**/*.scss",
-    "src/fonts"
+    "src/fonts/*"
   ],
   "eslintConfig": {
     "extends": "react-app"

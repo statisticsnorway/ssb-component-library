@@ -11,9 +11,9 @@ NestedAccordion
 <div class="ssb-nested-accordion mt-3">
   <div class="nested-accordion-header closed" onclick="{toggle classname to 'open'}">
     <!-- If open -->
-    <i class="expand-icon feather-chevron-up" />
+    <i class="expand-icon">{feather.chevronUp 16px}</i>
     <!-- If closed -->
-    <i class="expand-icon feather-chevron-down" />
+    <i class="expand-icon">{feather.chevronDown 16px}</i>
     <span class="header-text">Title</span>
   </div>
   <div class="accordion-body closed">

@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import { Home } from 'react-feather';
 import KeyFigures from './index';
 import WordExplanation from '../WordExplanation';
 
@@ -14,7 +15,7 @@ describe('KeyFigures component', () => {
 				numberDescription="husholdninger"
 				time="2018"
 				size="large"
-				icon={<i className="feather-home" />}
+				icon={<Home className="feather-home" />}
 				wordExplanation={'Explain something'}
 			/>
 		);

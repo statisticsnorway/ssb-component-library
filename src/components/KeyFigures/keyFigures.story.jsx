@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
+import { Home } from 'react-feather';
 import KeyFigures from './index';
 
 const title = 'Antall husholdninger';
@@ -16,7 +17,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				time="2018"
 				size="large"
-				icon={<i className="feather-home" />}
+				icon={<Home />}
 				wordExplanation={placeholderText}
 			/>
 		</div>
@@ -29,7 +30,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				time="2018"
 				size="medium"
-				icon={<i className="feather-home" />}
+				icon={<Home />}
 			/>
 		</div>
 	))
@@ -41,7 +42,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				time="2018"
 				size="small"
-				icon={<i className="feather-home" />}
+				icon={<Home />}
 			/>
 		</div>
 	));

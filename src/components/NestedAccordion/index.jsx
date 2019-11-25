@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { ChevronDown, ChevronUp } from 'react-feather';
 
 const NestedAccordion = ({
 	children, header, openByDefault,
@@ -12,8 +13,8 @@ const NestedAccordion = ({
 				onClick={() => toggleOpen(!isOpen)}
 			>
 				<span className="button-grid">
-					{!isOpen && <i className="expand-icon feather-chevron-down" />}
-					{isOpen && <i className="expand-icon feather-chevron-up" />}
+					{!isOpen && <ChevronDown className="expand-icon" size={16} />}
+					{isOpen && <ChevronUp className="expand-icon" size={16} />}
 					<span className="header-text">{header}</span>
 				</span>
 			</button>

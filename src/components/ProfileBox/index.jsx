@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Download } from 'react-feather';
 
 const ProfileBox = ({
 	centered, children, fileLocation, onClick,
@@ -10,7 +11,7 @@ const ProfileBox = ({
 		</button>
 		{fileLocation && (
 			<a download href={fileLocation} className="download-section">
-				<i className="feather-download" />
+				<Download className="download-icon" />
 				<span>Last ned</span>
 			</a>
 		)}

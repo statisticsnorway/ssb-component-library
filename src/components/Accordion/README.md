@@ -12,7 +12,7 @@ Accordion
     <button class="accordion-header closed" onclick={toggle classname to 'open'}>
         <span class="button-grid">
           <h5 class="ssb-title header-text no-margin">This is a accordion title</h5>
-          {20px ChevronDown icon, add class="expand-icon" }
+          <i class="expand-icon">{feather.chevronDown 20px}</i>
         </span>
     </button>
     <div class="accordion-body closed">
@@ -25,7 +25,7 @@ Accordion
         <span class="button-grid">
 			<h5 class="ssb-title sub-header no-margin">Tabell 1</h5>
 			<h5 class="ssb-title header-text no-margin">This is a accordion title with a sub-header</h5>
-			{20px ChevronDown icon, add class="expand-icon" }
+			<i class="expand-icon">{feather.chevronDown 20px}</i>
 		</span>
     </button>
     <div class="accordion-body closed">
@@ -37,7 +37,7 @@ Accordion
     <button class="accordion-header closed" onclick="{toggle classname to 'open'}>
         <span class="button-grid">
           <h5 class="ssb-title header-text no-margin">This is a accordion without border</h5>
-          {20px ChevronDown icon, add class="expand-icon" }
+          <i class="expand-icon">{feather.chevronDown 20px}</i>
         </span>
     </button>
     <div class="accordion-body closed">
@@ -51,9 +51,9 @@ Accordion
         <span class=" button-grid ">
         	<h5 class="ssb-title header-text no-margin ">This is a accordion with nested accordions</h5>
             <!-- If open -->
-            <i class="expand-icon feather-chevron-up" />
+            <i class="expand-icon">{feather.chevronDown 20px}</i>
             <!-- If closed -->
-            <i class="expand-icon feather-chevron-down" />
+            <i class="expand-icon">{feather.chevronDown 20px}</i>
       	</span>
     </button>
     <div class="accordion-body open ">This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
@@ -61,9 +61,9 @@ Accordion
             <button class="nested-accordion-header closed " onclick="{toggle classname to 'open'}">
                 <span class=" button-grid ">
                     <!-- If open -->
-                    <i class="expand-icon feather-chevron-up" />
+                    <i class="expand-icon">{feather.chevronDown 16px}</i>
                     <!-- If closed -->
-                    <i class="expand-icon feather-chevron-down" />
+                    <i class="expand-icon">{feather.chevronDown 16px}</i>
                     <span class="header-text ">A nested accordion header</span>
                 </span>
             </button>

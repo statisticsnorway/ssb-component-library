@@ -14,7 +14,7 @@ ProfileBox
   </a>
   /* Optional download field */
   <a download href=" " class="download-section">
-    <i class="feather-download" />
+    {feather.download}
     <span>Last ned</span>
   </a>
 </div>
