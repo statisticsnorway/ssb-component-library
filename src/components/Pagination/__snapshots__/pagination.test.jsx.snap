@@ -8,8 +8,10 @@ exports[`Pagination component Matches snapshot 1`] = `
     className="direction-button"
     onClick={[Function]}
   >
-    <i
-      className="chevron-icon feather-chevron-left"
+    <ChevronLeft
+      className="chevron-icon"
+      color="currentColor"
+      size={18}
     />
     Forrige
   </button>
@@ -42,8 +44,10 @@ exports[`Pagination component Matches snapshot 1`] = `
     <span>
       Neste
     </span>
-    <i
-      className="chevron-icon feather-chevron-right"
+    <ChevronRight
+      className="chevron-icon"
+      color="currentColor"
+      size={18}
     />
   </button>
 </nav>

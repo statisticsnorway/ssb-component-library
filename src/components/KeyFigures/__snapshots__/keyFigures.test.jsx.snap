@@ -7,8 +7,10 @@ exports[`KeyFigures component Matches the snapshot 1`] = `
   <div
     className="kf-icon large"
   >
-    <i
+    <Home
       className="feather-home"
+      color="currentColor"
+      size="24"
     />
   </div>
   <div>

@@ -11,8 +11,10 @@ exports[`NestedAccordion component Matches the snapshot 1`] = `
     <span
       className="button-grid"
     >
-      <i
-        className="expand-icon feather-chevron-down"
+      <ChevronDown
+        className="expand-icon"
+        color="currentColor"
+        size={16}
       />
       <span
         className="header-text"
