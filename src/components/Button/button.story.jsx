@@ -13,29 +13,29 @@ const negativeStyle = {
 storiesOf('Button', module).addDecorator(centered)
 	.add('Primary', () => (
 		<div style={{ display: 'flex' }}>
-			<Button primary>Primary button</Button>
-			<Button icon={<ChevronDown size={18} />} primary>Primary icon</Button>
+			<Button className="mr-4" primary>Primary button</Button>
+			<Button className="mr-4" icon={<ChevronDown size={18} />} primary>Primary icon</Button>
 			<Button primary disabled>Disabled button</Button>
 		</div>
 	))
 	.add('Secondary', () => (
 		<div style={{ display: 'flex' }}>
-			<Button>Secondary button</Button>
-			<Button icon={<ChevronDown size={18} />}>Secondary icon</Button>
+			<Button className="mr-4">Secondary button</Button>
+			<Button className="mr-4" icon={<ChevronDown size={18} />}>Secondary icon</Button>
 			<Button disabled>Disabled button</Button>
 		</div>
 	))
 	.add('Primary - Negative', () => (
 		<div style={negativeStyle}>
-			<Button negative primary>Primary button</Button>
-			<Button icon={<ChevronDown size={18} />} negative primary>Primary icon</Button>
+			<Button className="mr-4" negative primary>Primary button</Button>
+			<Button className="mr-4" icon={<ChevronDown size={18} />} negative primary>Primary icon</Button>
 			<Button negative primary disabled>Disabled button</Button>
 		</div>
 	))
 	.add('Secondary - Negative', () => (
 		<div style={negativeStyle}>
-			<Button negative>Secondary button</Button>
-			<Button icon={<ChevronDown size={18} />} negative>Secondary icon</Button>
+			<Button className="mr-4" negative>Secondary button</Button>
+			<Button className="mr-4" icon={<ChevronDown size={18} />} negative>Secondary icon</Button>
 			<Button negative disabled>Disabled button</Button>
 		</div>
 	));

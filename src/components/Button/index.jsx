@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({
-	children, disabled, icon, negative, onClick, primary, type,
+	children, className, disabled, icon, negative, onClick, primary, type,
 }) => (
 	<button
 		type={type}
-		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'}`}
+		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'} ${className ? className : ''}`}
 		onClick={onClick}
 		disabled={disabled}
 	>
@@ -25,6 +25,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 	disabled: PropTypes.bool,
 	icon: PropTypes.node,
 	negative: PropTypes.bool,

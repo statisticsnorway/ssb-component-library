@@ -27,6 +27,7 @@
     input {
       background-color: $ssb-white;
       border: 1px solid $ssb-dark-6;
+      box-sizing: border-box;
       cursor: pointer;
       font-size: 16px;
       height: 39px;
@@ -62,25 +63,24 @@
       position: absolute;
       scrollbar-color: $ssb-dark-2 $ssb-white;
       scrollbar-width: thin;
-      top: 36px;
+      top: 38px;
       z-index: 9999;
       width: 100%;
 
       .option-list-element {
         @include reset-button;
         background: $ssb-white;
-        border-left: 5px solid transparent;
         cursor: pointer;
         display: block;
         overflow: hidden;
-        padding: 10px 10px 10px 5px;
+        padding: 12px;
         text-overflow: ellipsis;
         transition: all .18s;
         width: 100%;
 
         &:hover, &:focus {
-          background: $ssb-green-2;
-          border-left: 5px solid $ssb-green-4;
+          background: $ssb-dark-5;
+          color: $white;
           z-index: 2;
         }
 

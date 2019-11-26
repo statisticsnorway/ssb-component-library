@@ -3,17 +3,16 @@
   @include reset-button;
   align-items: center;
   background: $ssb-white;
-  border: 1px solid $ssb-green-4;
+  border: 2px solid $ssb-green-4;
   border-radius: 2px;
   color: $ssb-green-4;
   display: flex;
   font-size: 16px;
   font-weight: bold;
   height: fit-content;
-  line-height: normal;
-  margin-right: 20px;
+  line-height: 1.25;
   min-height: 40px;
-  padding: 10px 20px;
+  padding: 12px 20px;
   text-align: center;
   text-underline-position: under;
   transition: background .18s, color .18s;
@@ -30,6 +29,7 @@
 
   &:active {
     background: $ssb-dark-5;
+    border: 2px solid $ssb-dark-5;
     color: $ssb-white;
   }
 
@@ -64,16 +64,18 @@
 
   &.primary-btn {
     background: $ssb-green-4;
-    border: none;
+    border: 2px solid $ssb-green-4;
     color: $ssb-white;
 
     &:hover, &:active, &:focus {
       background: $ssb-dark-5;
+      border: 2px solid $ssb-dark-5;
       text-decoration: underline;
     }
 
     &:disabled {
       background: $ssb-dark-2;
+      border: 2px solid $ssb-dark-2;
       color: $ssb-white;
       cursor: not-allowed;
       font-weight: normal;
@@ -81,10 +83,12 @@
 
     &.negative {
       background: $ssb-green-2;
+      border: 2px solid $ssb-green-2;
       color: $ssb-dark-5;
 
       &:hover, &:active, &:focus  {
         background: $ssb-white;
+        border: 2px solid $ssb-white;
       }
 
       &:disabled {
