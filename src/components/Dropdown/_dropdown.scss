@@ -30,8 +30,8 @@
       box-sizing: border-box;
       cursor: pointer;
       font-size: 16px;
-      height: 39px;
-      padding: 4px 34px 4px 10px;
+      height: 40px;
+      padding: 4px 40px 4px 10px;
       text-overflow: ellipsis;
       width: 100%;
 
@@ -63,7 +63,7 @@
       position: absolute;
       scrollbar-color: $ssb-dark-2 $ssb-white;
       scrollbar-width: thin;
-      top: 38px;
+      top: 40px;
       z-index: 9999;
       width: 100%;
 
@@ -73,7 +73,7 @@
         cursor: pointer;
         display: block;
         overflow: hidden;
-        padding: 12px;
+        padding: 8px 12px;
         text-overflow: ellipsis;
         transition: all .18s;
         width: 100%;

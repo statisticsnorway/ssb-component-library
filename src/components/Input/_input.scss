@@ -27,7 +27,7 @@
     color: $ssb-dark-6;
     cursor: text;
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     user-select: none;
   }
 
@@ -36,13 +36,13 @@
     border: 1px solid $ssb-dark-5;
     color: $ssb-dark-6;
     font-size: 16px;
-    height: 36px;
+    height: 40px;
     padding: 4px 10px;
     text-overflow: ellipsis;
     width: 100%;
 
     &.with-icon {
-      padding: 4px 36px 4px 10px;
+      padding: 4px 40px 4px 10px;
     }
 
     &:disabled {
@@ -162,10 +162,10 @@
     align-items: center;
     display: flex;
     font-size: 18px;
-    height: 36px;
+    height: 40px;
     justify-content: center;
-    margin-left: -36px;
-    width: 36px;
+    margin-left: -40px;
+    width: 40px;
 
     & > * {
       color: $ssb-green-4;
