@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FormError = ({ className, errorMessages, title }) => (
-	<div className={`ssb-form-error ${className}`}>
+const FormError = ({ className, errorMessages, negative, title }) => (
+	<div className={`ssb-form-error${negative ? ' negative' : ''} ${className}`}>
 		<span className="error-icon" />
 		<div>
 			<span className="error-title">{title}</span>
@@ -25,6 +25,7 @@ FormError.defaultProps = {
 FormError.propTypes = {
 	className: PropTypes.string,
 	errorMessages: PropTypes.array.isRequired,
+	negative: PropTypes.bool,
 	title: PropTypes.string,
 };
 

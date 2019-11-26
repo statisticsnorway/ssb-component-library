@@ -11,7 +11,12 @@ const errorMessages = [
 
 storiesOf('FormError', module).addDecorator(centered)
 	.add('Default', () => (
-		<div style={{ width: '500px' }}>
+		<div style={{ width: '600px' }}>
 			<FormError errorMessages={errorMessages} title="Some fields are not right!" />
+		</div>
+	))
+	.add('Negative', () => (
+		<div style={{ background: '#274247', padding: '50px', width: '700px' }}>
+			<FormError negative errorMessages={errorMessages} title="Some fields are not right!" />
 		</div>
 	));
