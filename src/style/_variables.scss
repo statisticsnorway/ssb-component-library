@@ -18,6 +18,7 @@ $ssb-white: #fff;
 $ssb-purple-1: #f2f0ff;
 $ssb-purple-3: #9272fc;
 $ssb-blue-3: #3396d2;
+$scrollbar-color: #b0b0b0;
 
 $mobile: 'screen and (max-width: 768px)';
 $tablet: 'screen and (max-width: 992px)';
@@ -27,7 +28,7 @@ $desktop: 'screen and (min-width: 992px)';
 //@media #{$mobile} { @content }
 
 $input-field-height: 36px;
-$global-padding-size: 10px;
+$global-padding-size: 8px;
 $max-content-size: 1200px;
 $max-readable-width: 580px;
 

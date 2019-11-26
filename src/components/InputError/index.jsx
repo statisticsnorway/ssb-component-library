@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const InputError = ({ errorMessage, negative }) => (
-	<span className={`ssb-input-error ${negative ? 'negative' : ''}`}>{errorMessage}</span>
+	<div className={`ssb-input-error ${negative ? 'negative' : ''}`}>
+		<span>{errorMessage}</span>
+	</div>
 );
 
 InputError.defaultProps = {
