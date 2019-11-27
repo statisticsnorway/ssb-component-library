@@ -5,17 +5,19 @@ $direction-button-width: 80px;
   @include roboto;
   align-items: center;
   display: flex;
+  line-height: 1.25;
 
   .nav-button-square {
     @include reset-button;
     align-items: center;
+    border: 1px solid transparent;
     border-radius: 2px;
     color: $ssb-green-4;
     cursor: pointer;
     display: flex;
     height: 30px;
     justify-content: center;
-    margin: 0 $global-padding-size;
+    margin: 0 4px;
     width: 30px;
 
     &.selected {
@@ -35,7 +37,7 @@ $direction-button-width: 80px;
     align-items: center;
     display: flex;
     justify-content: center;
-    margin: 0 $global-padding-size;
+    margin: 0 4px;
     width: 30px;
   }
 
@@ -45,10 +47,11 @@ $direction-button-width: 80px;
     border: 1px solid transparent;
     cursor: pointer;
     display: flex;
-    font-size: 18px;
+    font-size: 16px;
     height: $direction-button-height;
     justify-content: center;
-    width: $direction-button-width;
+    padding: 4px 10px;
+    //width: $direction-button-width;
 
     &:first-of-type {
       text-align: right;
@@ -56,7 +59,7 @@ $direction-button-width: 80px;
 
     .chevron-icon {
       color: $ssb-green-4;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     &:hover {
@@ -64,6 +67,20 @@ $direction-button-width: 80px;
       color: $ssb-green-4;
       font-weight: bold;
       border: 1px solid $ssb-green-4;
+    }
+
+    &.previous {
+
+      .chevron-icon {
+        margin-right: 2px;
+      }
+    }
+
+    &.next {
+
+      .chevron-icon {
+        margin-left: 2px;
+      }
     }
   }
 }

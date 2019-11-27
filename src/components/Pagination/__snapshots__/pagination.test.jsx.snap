@@ -5,13 +5,15 @@ exports[`Pagination component Matches snapshot 1`] = `
   className="ssb-pagination"
 >
   <button
-    className="direction-button"
+    className="direction-button previous"
+    disabled={true}
     onClick={[Function]}
   >
+     
     <ChevronLeft
       className="chevron-icon"
       color="currentColor"
-      size={18}
+      size={16}
     />
     Forrige
   </button>
@@ -38,16 +40,18 @@ exports[`Pagination component Matches snapshot 1`] = `
     20
   </button>
   <button
-    className="direction-button"
+    className="direction-button next"
+    disabled={false}
     onClick={[Function]}
   >
+     
     <span>
       Neste
     </span>
     <ChevronRight
       className="chevron-icon"
       color="currentColor"
-      size={18}
+      size={16}
     />
   </button>
 </nav>

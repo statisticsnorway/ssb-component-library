@@ -7,10 +7,10 @@ exports[`Dialog component Matches the snapshot 1`] = `
   <div
     className="icon-panel"
   >
-    <AlertCircle
+    <Info
       className="icon"
       color="currentColor"
-      size={40}
+      size={45}
     />
   </div>
   <div
@@ -21,9 +21,11 @@ exports[`Dialog component Matches the snapshot 1`] = `
     >
       Dialog Title
     </span>
-    <Paragraph>
+    <div
+      className="content"
+    >
       Dialog
-    </Paragraph>
+    </div>
   </div>
 </div>
 `;

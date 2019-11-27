@@ -40,8 +40,11 @@ const Pagination = ({
 
 	return (
 		<nav className="ssb-pagination">
-			<button className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) - 1])}>
-				<ChevronLeft size={18} className="chevron-icon" />
+			<button
+				className="direction-button previous"
+				onClick={() => handleSelection(items[items.indexOf(selected) - 1])}
+				disabled={selected === items[0]}
+			>	<ChevronLeft size={16} className="chevron-icon" />
 				Forrige
 			</button>
 			<button className={`nav-button-square${items[0] === selected ? ' selected' : ''}`} onClick={() => handleSelection(items[0])}>
@@ -64,9 +67,12 @@ const Pagination = ({
 				onClick={() => handleSelection(items[items.length - 1])}
 			>{items[items.length - 1].text}
 			</button>
-			<button className="direction-button" onClick={() => handleSelection(items[items.indexOf(selected) + 1])}>
-				<span>Neste</span>
-				<ChevronRight size={18} className="chevron-icon" />
+			<button
+				className="direction-button next"
+				onClick={() => handleSelection(items[items.indexOf(selected) + 1])}
+				disabled={selected === items[items.length - 1]}
+			>	<span>Neste</span>
+				<ChevronRight size={16} className="chevron-icon" />
 			</button>
 		</nav>
 	);
