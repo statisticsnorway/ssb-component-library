@@ -30,7 +30,7 @@
       box-sizing: border-box;
       cursor: pointer;
       font-size: 16px;
-      height: 40px;
+      height: $input-field-height;
       padding: 4px 40px 4px 10px;
       text-overflow: ellipsis;
       width: 100%;
@@ -63,7 +63,7 @@
       position: absolute;
       scrollbar-color: $ssb-dark-2 $ssb-white;
       scrollbar-width: thin;
-      top: 40px;
+      top: $input-field-height;
       z-index: 9999;
       width: 100%;
 

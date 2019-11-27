@@ -28,9 +28,6 @@ Input
   <label for="input1">Insert label</label>
   <div class="input-wrapper">
     <input id="input1" value="option1" />
-    <div class="icon-wrapper">
-      <i>{feather.alertTriangle 18px}</i>
-    </div>
   </div>
   <span class="ssb-form-error">Insert error message</span>
 </div>

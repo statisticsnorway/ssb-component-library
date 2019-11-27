@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
-import { AlertTriangle, Search } from 'react-feather';
+import { Search } from 'react-feather';
 import InputError from '../InputError';
 
 const Input = ({
-	ariaLabel, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value,
+	ariaLabel, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value,
 }) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || uuid();
@@ -15,7 +15,7 @@ const Input = ({
 	};
 
 	return (
-		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}`}>
+		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''} ${className}`}>
 			{label && <label htmlFor={inputId}>{label}</label>}
 			<div className="input-wrapper">
 				<input
@@ -33,11 +33,6 @@ const Input = ({
 						<Search size={18} />
 					</button>
 				)}
-				{error && (
-					<div className="icon-wrapper">
-						<AlertTriangle size={18} />
-					</div>
-				)}
 			</div>
 			{error && (errorMessage && (
 				<InputError negative={negative} errorMessage={errorMessage} />
@@ -47,6 +42,7 @@ const Input = ({
 };
 
 Input.defaultProps = {
+	className: '',
 	disabled: false,
 	error: false,
 	handleChange: () => {},
@@ -58,6 +54,7 @@ Input.defaultProps = {
 
 Input.propTypes = {
 	ariaLabel: PropTypes.string,
+	className: PropTypes.string,
 	disabled: PropTypes.bool,
 	error: PropTypes.bool,
 	errorMessage: PropTypes.string,

@@ -1,3 +1,5 @@
+
+
 .ssb-input {
   @include roboto;
   cursor: text;
@@ -36,13 +38,13 @@
     border: 1px solid $ssb-dark-5;
     color: $ssb-dark-6;
     font-size: 16px;
-    height: 40px;
+    height: $input-field-height;
     padding: 4px 10px;
     text-overflow: ellipsis;
     width: 100%;
 
     &.with-icon {
-      padding: 4px 40px 4px 10px;
+      padding: 4px $input-field-height 4px 10px;
     }
 
     &:disabled {
@@ -162,10 +164,10 @@
     align-items: center;
     display: flex;
     font-size: 18px;
-    height: 40px;
+    height: $input-field-height;
     justify-content: center;
-    margin-left: -40px;
-    width: 40px;
+    margin-left: -$input-field-height;
+    width: $input-field-height;
 
     & > * {
       color: $ssb-green-4;
