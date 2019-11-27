@@ -6,7 +6,7 @@ const Button = ({
 }) => (
 	<button
 		type={type}
-		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'} ${className ? className : ''}`}
+		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'} ${className}`}
 		onClick={onClick}
 		disabled={disabled}
 	>
@@ -16,6 +16,7 @@ const Button = ({
 );
 
 Button.defaultProps = {
+	className: '',
 	disabled: false,
 	negative: false,
 	onClick: () => {},
