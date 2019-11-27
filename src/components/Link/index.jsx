@@ -12,7 +12,7 @@ const Link = ({
 			href={href}
 			target={isExternal ? '_blank' : ''}
 			rel={isExternal ? 'noopener noreferrer' : ''}
-		>{icon}
+		>{icon && <div className="icon-wrapper">{icon}</div>}
 			<span className="link-text">{children}</span>
 		</a>
 	);
