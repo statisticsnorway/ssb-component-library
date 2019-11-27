@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
-import { Home } from 'react-feather';
 import KeyFigures from './index';
+import HouseIcon from '../../media/house-icon.svg'
 
 const title = 'Antall husholdninger';
 const placeholderText = `This is the explanation of the word
@@ -17,7 +17,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				time="2018"
 				size="large"
-				icon={<Home />}
+				icon={<HouseIcon alt="house" />}
 				wordExplanation={placeholderText}
 			/>
 		</div>
@@ -30,7 +30,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				time="2018"
 				size="medium"
-				icon={<Home />}
+				icon={<HouseIcon alt="house" />}
 			/>
 		</div>
 	))
@@ -42,7 +42,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				time="2018"
 				size="small"
-				icon={<Home />}
+				icon={<HouseIcon alt="house" />}
 			/>
 		</div>
 	));

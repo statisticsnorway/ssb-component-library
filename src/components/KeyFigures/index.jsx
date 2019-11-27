@@ -4,7 +4,7 @@ import Number from '../Number';
 import WordExplanation from '../WordExplanation';
 
 const KeyFigures = ({	icon, number, numberDescription, size, title, time, wordExplanation }) => (
-	<div className="ssb-key-figures">
+	<div className={`ssb-key-figures ${size}`}>
 		<div className={`kf-icon ${size}`}>{icon}</div>
 		<div>
 			{wordExplanation
@@ -15,8 +15,10 @@ const KeyFigures = ({	icon, number, numberDescription, size, title, time, wordEx
 				)
 				: <span className="kf-title">{title}</span>}
 			<div className="kf-time">{time}</div>
-			<Number size={size}>{number}</Number>
-			<span className="kf-title subtitle">{numberDescription}</span>
+			<div className="number-section">
+				<Number size={size}>{number}</Number>
+				<span className="kf-title subtitle">{numberDescription}</span>
+			</div>
 		</div>
 	</div>
 );
