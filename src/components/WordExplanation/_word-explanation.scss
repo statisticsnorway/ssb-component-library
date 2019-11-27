@@ -7,6 +7,7 @@
   .we-text-wrap {
     border-bottom: 1px dotted $ssb-green-4;
     display: inline-block;
+    line-height: inherit;
   }
 
   .we-logo {
@@ -64,7 +65,7 @@
     .content-box {
       background: $ssb-dark-5;
       color: $ssb-white;
-      padding: 18px 24px 18px 18px;
+      padding: 20px;
 
       .ssb-we-closing {
         align-items: center;
@@ -75,7 +76,9 @@
         width: 100%;
 
         .icon {
-          font-size: 14px;
+          color: $ssb-dark-5;
+          fill: $ssb-green-2;
+          font-size: 16px;
         }
 
         span {

@@ -37,7 +37,7 @@ const WordExplanation = ({ explanation, children }) => {
 					<div className="content-box">
 						<span className="info-text">{explanation}</span>
 						<div className="ssb-we-closing">
-							<XCircle size={14} className="icon" /><span>Lukk</span>
+							<XCircle size={16} className="icon" /><span>Lukk</span>
 						</div>
 					</div>
 				</div>
