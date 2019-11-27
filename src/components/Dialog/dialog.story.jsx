@@ -2,6 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
 import Dialog from './index';
+import Link from '../Link';
+import Paragraph from '../Paragraph';
 
 const placeholderText = `
 Here you can write a informative text and inform the user of what has happened.
@@ -13,7 +15,7 @@ storiesOf('Dialog', module).addDecorator(centered)
 		<div>
 			<Dialog
 				title="This article has been moved"
-			>{placeholderText}
+			><Paragraph>{placeholderText}</Paragraph>
 			</Dialog>
 		</div>
 	))
@@ -22,7 +24,8 @@ storiesOf('Dialog', module).addDecorator(centered)
 			<Dialog
 				title="Be aware of the dog"
 				type="warning"
-			>{placeholderText}
+			><Paragraph>{placeholderText}</Paragraph>
+			<Link href="">Look here for more info</Link>
 			</Dialog>
 		</div>
 	));
