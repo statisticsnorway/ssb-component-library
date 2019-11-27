@@ -11,12 +11,15 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
-    margin-right: $global-padding-size * 2;
     padding: 20px 0;
     position: relative;
     text-align: center;
     text-decoration: none;
     transition: background .2s;
+
+    &:not(:last-of-type) {
+      margin-right: $global-padding-size * 2;
+    }
 
     &:before {
       background: $ssb-dark-5;
@@ -34,14 +37,14 @@
 
       &:before {
         background: $ssb-green-3;
-        height: 5px;
+        height: 4px;
       }
     }
 
     &:hover {
 
       &:before {
-        height: 5px;
+        height: 4px;
       }
     }
   }
