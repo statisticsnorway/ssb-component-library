@@ -16,6 +16,7 @@
   text-align: center;
   text-underline-position: under;
   transition: background .18s, color .18s;
+  white-space: nowrap;
 
   &:hover, &:active {
     cursor: pointer;
