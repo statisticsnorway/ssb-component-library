@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const formatNumber = num => num.toString()
-	.replace(/\D+/g, '') // remove everything that is not a number
-	.replace(/(\d)(?=(\d{3})+(?!\d))/g, ' '); // add spaces in desired format
-
 const Number = ({
-	size, number,
+	children, size,
 }) => (
 	<div className={`ssb-number ${size}`}>
-		{formatNumber(number)}
+		{children}
 	</div>
 );
 
@@ -18,11 +14,8 @@ Number.defaultProps = {
 };
 
 Number.propTypes = {
+	children: PropTypes.node,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
-	number: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.number,
-	]).isRequired,
 };
 
 export default Number;

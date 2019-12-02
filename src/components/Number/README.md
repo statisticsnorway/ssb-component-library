@@ -2,6 +2,7 @@ Number
 ========
 
 > A component for showing number in different size
+> The number should be properly formatted
 
 ### Usage
 
@@ -18,16 +19,16 @@ Number
 #### React
 
 ```jsx harmony
-<Number number="123" size="small" />
+<Number size="small">123</Number>
 
-<Number number="123456" size="medium" />
+<Number size="medium">123 456</Number>
 
-<Number number="123456789" size="large" />
+<Number size="large">123 456 789</Number>
 ```
 
 Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| size | 'small', 'medium' or 'large' | Change size on number|
-| number | Required 'string' or 'number' | Number content |
+| children | node | Renders a node |
+| size | 'small', 'medium' or 'large' | Change size on number |

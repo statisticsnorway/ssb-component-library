@@ -4,11 +4,11 @@ import Number from './index';
 
 describe('Number component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Number number="599246391" />);
+		const wrapper = shallow(<Number>599 246 391</Number>);
 		expect(wrapper).toMatchSnapshot();
 	});
 	test('Toggles classNames correctly', () => {
-		const wrapper = shallow(<Number number="599246391" size="small" />);
+		const wrapper = shallow(<Number size="small">599 246 391</Number>);
 		expect(wrapper.hasClass('small')).toEqual(true);
 	});
 
