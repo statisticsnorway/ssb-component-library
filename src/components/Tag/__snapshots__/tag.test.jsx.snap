@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag component Matches the snapshot 1`] = `
+<button
+  className="ssb-tag"
+  onClick={[Function]}
+>
+  Tag
+</button>
+`;
