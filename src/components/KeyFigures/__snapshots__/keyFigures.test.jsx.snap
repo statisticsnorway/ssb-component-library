@@ -2,7 +2,7 @@
 
 exports[`KeyFigures component Matches the snapshot 1`] = `
 <div
-  className="ssb-key-figures"
+  className="ssb-key-figures large"
 >
   <div
     className="kf-icon large"
@@ -28,16 +28,20 @@ exports[`KeyFigures component Matches the snapshot 1`] = `
     >
       2018
     </div>
-    <Number
-      size="large"
+    <div
+      className="number-section"
     >
-      789 398
-    </Number>
-    <span
-      className="kf-title subtitle"
-    >
-      husholdninger
-    </span>
+      <Number
+        size="large"
+      >
+        789 398
+      </Number>
+      <span
+        className="kf-title subtitle"
+      >
+        husholdninger
+      </span>
+    </div>
   </div>
 </div>
 `;

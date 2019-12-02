@@ -5,11 +5,15 @@ $small-number-size: 50px;
 .ssb-number {
   @include roboto-condenced;
   color: $ssb-dark-5;
-  line-height: 1;
+  line-height: normal;
+  white-space: nowrap;
 
   &.small {
     font-size: $small-number-size;
-    line-height: 1.1;
+
+    @media #{$mobile} {
+      font-size: 75px;
+    }
   }
 
   &.medium {

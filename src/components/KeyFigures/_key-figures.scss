@@ -1,5 +1,10 @@
+$large-size: 195px;
+$medium-size: 150px;
+$small-size: 108px;
+
 .ssb-key-figures {
   @include roboto;
+  color: $ssb-dark-5;
   column-gap: $global-padding-size * 2;
   display: inline-grid;
   grid-auto-flow: column;
@@ -8,44 +13,68 @@
     color: $ssb-dark-5;
     display: inline-flex;
 
-    &.large {
-      max-height: 230px;
-      max-width: 230px;
-      width: 230px;
+    & > * {
+      height: 100%;
+      width: 100%;
+    }
+  }
 
-      & > * {
-        height: 100%;
-        width: 100%;
-      }
+  &.large {
+
+    .kf-icon {
+      max-height: $large-size;
+      max-width: $large-size;
+      width: $large-size;
     }
 
-    &.medium {
-      max-height: 180px;
-      max-width: 180px;
-      width: 180px;
+    .subtitle {
+      margin-bottom: 32px;
+    }
+  }
 
-      & > * {
-        height: 100%;
-        width: 100%;
-      }
+  &.medium {
+
+    .kf-icon {
+      max-height: $medium-size;
+      max-width: $medium-size;
+      width: $medium-size;
     }
 
-    &.small {
-      max-height: 130px;
-      max-width: 130px;
-      width: 130px;
-
-      & > * {
-        height: 100%;
-        width: 100%;
-      }
+    .subtitle {
+      margin-bottom: 18px;
     }
+  }
+
+  &.small {
+
+    .kf-icon {
+      max-height: $small-size;
+      max-width: $small-size;
+      width: $small-size;
+    }
+
+    .subtitle {
+      margin-bottom: 8px;
+    }
+  }
+
+  @media #{$mobile} {
+
+    .kf-icon {
+      display: none;
+    }
+  }
+
+  .number-section {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .kf-time {
     @include open-sans;
     font-size: 16px;
-    margin-top: 6px;
+    margin-top: 4px;
   }
 
   .kf-title {
@@ -58,5 +87,12 @@
     &.subtitle {
       color: $ssb-dark-5;
     }
+  }
+
+  .no-number {
+    @include roboto;
+    color: $ssb-dark-3;
+    font-size: 20px;
+    font-weight: bold;
   }
 }
