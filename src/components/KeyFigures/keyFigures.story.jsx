@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
 import KeyFigures from './index';
-import HouseIcon from '../../media/house-icon.svg'
+import Divider from '../Divider';
+import HouseIcon from '../../media/house-icon.svg';
 
 const title = 'Antall husholdninger';
 const placeholderText = `This is the explanation of the word
@@ -35,14 +36,53 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 		</div>
 	))
 	.add('Small', () => (
+		<div style={{ width: '400px' }}>
+			<KeyFigures
+				number="789"
+				title="Antall plasser i helse- og omsorgsinstitusjoner"
+				numberDescription="plasser"
+				time="2018"
+				size="small"
+				icon={<HouseIcon alt="house" />}
+			/>
+		</div>
+	))
+	.add('Without icon', () => (
 		<div>
 			<KeyFigures
 				number="789 398"
 				title={title}
 				numberDescription="husholdninger"
 				time="2018"
+				size="large"
+				wordExplanation={placeholderText}
+			/>
+			<br />
+			<Divider />
+			<KeyFigures
+				number="789 398"
+				title={title}
+				numberDescription="husholdninger"
+				time="2018"
+				size="medium"
+			/>
+			<br />
+			<Divider />
+			<KeyFigures
+				number="789"
+				title="Antall plasser i helse- og omsorgsinstitusjoner"
+				numberDescription="plasser"
+				time="2018"
 				size="small"
-				icon={<HouseIcon alt="house" />}
 			/>
 		</div>
+	))
+	.add('Without number', () => (
+		<KeyFigures
+			title="Antall plasser i helse- og omsorgsinstitusjoner"
+			numberDescription="plasser"
+			time="2018"
+			size="small"
+			icon={<HouseIcon alt="house" />}
+		/>
 	));

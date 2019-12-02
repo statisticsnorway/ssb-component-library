@@ -5,7 +5,7 @@ import WordExplanation from '../WordExplanation';
 
 const KeyFigures = ({	icon, number, numberDescription, size, title, time, wordExplanation }) => (
 	<div className={`ssb-key-figures ${size}`}>
-		<div className={`kf-icon ${size}`}>{icon}</div>
+		{icon && <div className={`kf-icon ${size}`}>{icon}</div>}
 		<div>
 			{wordExplanation
 				? (
@@ -15,10 +15,14 @@ const KeyFigures = ({	icon, number, numberDescription, size, title, time, wordEx
 				)
 				: <span className="kf-title">{title}</span>}
 			<div className="kf-time">{time}</div>
-			<div className="number-section">
-				<Number size={size}>{number}</Number>
-				<span className="kf-title subtitle">{numberDescription}</span>
-			</div>
+			{number
+				? (
+					<div className="number-section">
+						<Number size={size}>{number}</Number>
+						<span className="kf-title subtitle">{numberDescription}</span>
+					</div>
+				)
+				: <span className="no-number">Tall ikke tilgjengelig</span>}
 		</div>
 	</div>
 );
@@ -30,7 +34,7 @@ KeyFigures.propTypes = {
 	number: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.number,
-	]).isRequired,
+	]),
 	numberDescription: PropTypes.string,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 	title: PropTypes.string,

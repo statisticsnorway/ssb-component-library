@@ -18,13 +18,17 @@ $small-size: 108px;
       width: 100%;
     }
   }
-  
+
   &.large {
 
     .kf-icon {
       max-height: $large-size;
       max-width: $large-size;
       width: $large-size;
+    }
+
+    .subtitle {
+      margin-bottom: 32px;
     }
   }
 
@@ -35,6 +39,10 @@ $small-size: 108px;
       max-width: $medium-size;
       width: $medium-size;
     }
+
+    .subtitle {
+      margin-bottom: 18px;
+    }
   }
 
   &.small {
@@ -43,6 +51,10 @@ $small-size: 108px;
       max-height: $small-size;
       max-width: $small-size;
       width: $small-size;
+    }
+
+    .subtitle {
+      margin-bottom: 8px;
     }
   }
 
@@ -62,7 +74,7 @@ $small-size: 108px;
   .kf-time {
     @include open-sans;
     font-size: 16px;
-    margin-top: 8px;
+    margin-top: 4px;
   }
 
   .kf-title {
@@ -74,7 +86,13 @@ $small-size: 108px;
 
     &.subtitle {
       color: $ssb-dark-5;
-      margin-bottom: 32px;
     }
+  }
+
+  .no-number {
+    @include roboto;
+    color: $ssb-dark-3;
+    font-size: 20px;
+    font-weight: bold;
   }
 }
