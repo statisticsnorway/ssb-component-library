@@ -8,13 +8,11 @@
   outline: none;
   position: relative;
   text-align: left;
-  transition: background .18s;
   user-select: none;
 
   &:hover, &:focus {
 
     .checkbox-label {
-      background: $ssb-green-2;
 
       &:before {
         border: 2px solid $ssb-green-4;
@@ -28,7 +26,6 @@
     position: absolute;
 
     &:focus + .checkbox-label {
-      background: $ssb-green-2;
 
       &:before {
         border: 2px solid $ssb-green-4;
@@ -47,9 +44,9 @@
         content: '';
         display: block;
         height: 12px;
-        left: 17px;
+        left: 11px;
         position: absolute;
-        top: 14px;
+        top: 9px;
         transform: rotate(45deg);
         width: 6px;
       }
@@ -71,7 +68,7 @@
     cursor: pointer;
     display: flex;
     margin-bottom: 0;
-    padding: $global-padding-size;
+    padding: 4px;
     position: relative;
 
     &:before {
