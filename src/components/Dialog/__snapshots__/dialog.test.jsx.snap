@@ -2,7 +2,7 @@
 
 exports[`Dialog component Matches the snapshot 1`] = `
 <div
-  className="ssb-dialog info"
+  className="ssb-dialog info "
 >
   <div
     className="icon-panel"
