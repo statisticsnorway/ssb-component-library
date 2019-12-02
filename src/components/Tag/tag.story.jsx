@@ -6,12 +6,12 @@ import Tag from './index';
 
 storiesOf('Tag', module).addDecorator(centered)
 	.add('Tag', () => (
-		<div style={{ display: 'flex' }}>
+		<div>
 			<Tag>Tag</Tag>
 		</div>
 	))
 	.add('Tag with icon', () => (
-		<div style={{ display: 'flex' }}>
+		<div>
 			<Tag icon={<Star size={18} />}>Tag with icon</Tag>
 		</div>
 	));

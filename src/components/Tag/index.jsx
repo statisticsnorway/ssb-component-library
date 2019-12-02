@@ -4,15 +4,13 @@ import PropTypes from 'prop-types';
 const Tag = ({
 	children, className, icon, onClick,
 }) => (
-	<span
+	<button
 		className={`ssb-tag${className ? ` ${className}` : ''}`}
 		onClick={onClick}
-		role="button"
-		tabIndex={0}
 	>
 		{icon && <div className="st-icon">{icon}</div>}
 		{children}
-	</span>
+	</button>
 );
 
 Tag.defaultProps = {

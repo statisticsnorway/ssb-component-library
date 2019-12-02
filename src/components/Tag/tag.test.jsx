@@ -7,6 +7,10 @@ describe('Tag component', () => {
 		const wrapper = shallow(<Tag>Tag</Tag>);
 		expect(wrapper).toMatchSnapshot();
 	});
+	test('Toggles classNames correctly', () => {
+		const wrapper = shallow(<Tag className="mr-4">Tag</Tag>);
+		expect(wrapper.find('.ssb-tag').hasClass('mr-4')).toEqual(true);
+	});
 	test('Renders icon', () => {
 		const wrapper = shallow(<Tag icon={<i />}>Tag</Tag>);
 		expect(wrapper.find('.ssb-tag').containsMatchingElement(<i />)).toEqual(true);
@@ -14,9 +18,9 @@ describe('Tag component', () => {
 	test('Sends callback', () => {
 		const onClick = jest.fn();
 		const wrapper = shallow(<Tag onClick={onClick}>Tests</Tag>);
-		wrapper.find('.ssb-tag').simulate('click');
+		wrapper.find('button').simulate('click');
 		expect(onClick).toBeCalled();
-		wrapper.find('.ssb-tag').simulate('click');
+		wrapper.find('button').simulate('click');
 		expect(onClick).toBeCalledTimes(2);
 	});
 });
