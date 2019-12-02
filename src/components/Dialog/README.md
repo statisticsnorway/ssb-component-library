@@ -9,23 +9,27 @@ Dialog
 
 ```html
 <div class="ssb-dialog info">
-    <div class="icon-panel">
-        <i class="icon">{feather.alertCircle 40px}</i>
+  <div class="icon-panel">
+    <i class="icon">{feather.alertCircle 40px}</i>
+  </div>
+  <div class="dialog-content">
+    <span class="dialog-title">A fitting title</span>
+    <div class="content">
+      Insert content here
     </div>
-    <div class="dialog-content">
-        <span class="dialog-title">A fitting title</span>
-        <p>Insert content here</p>
-    </div>
+  </div>
 </div>
 
 <div class="ssb-dialog warning">
-    <div class="icon-panel">
-        <i class="icon">{feather.alertTriangle 40px}</i>
+  <div class="icon-panel">
+    <i class="icon">{feather.alertTriangle 40px}</i>
+  </div>
+  <div class="dialog-content">
+    <span class="dialog-title">A fitting title</span>
+    <div class="content">
+      Insert content here
     </div>
-    <div class="dialog-content">
-        <span class="dialog-title">A fitting title</span>
-        <p>Insert content here</p>
-    </div>
+  </div>
 </div>
 ```
 

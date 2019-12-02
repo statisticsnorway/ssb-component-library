@@ -2,8 +2,10 @@
   @include open-sans;
   display: flex;
   margin: 20px;
-  max-width: 880px;
+  max-width: 1180px;
+  min-width: 100%;
   min-height: 95px;
+  width: 100%;
 
   .icon-panel {
     color: $ssb-white;

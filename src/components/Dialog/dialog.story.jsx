@@ -12,20 +12,16 @@ please attach a link to where the data can be found. `;
 
 storiesOf('Dialog', module).addDecorator(centered)
 	.add('Info', () => (
-		<div>
-			<Dialog
-				title="This article has been moved"
-			><Paragraph>{placeholderText}</Paragraph>
-			</Dialog>
-		</div>
+		<Dialog
+			title="This article has been moved"
+		><span>{placeholderText}</span>
+		</Dialog>
 	))
 	.add('Warning', () => (
-		<div>
-			<Dialog
-				title="Be aware of the dog"
-				type="warning"
-			>	<Paragraph>{placeholderText}</Paragraph>
-				<Link href=" ">Look here for more info</Link>
-			</Dialog>
-		</div>
+		<Dialog
+			title="Be aware of the dog"
+			type="warning"
+		>	<span>{placeholderText}</span>
+			<Link href=" ">Look here for more info</Link>
+		</Dialog>
 	));
