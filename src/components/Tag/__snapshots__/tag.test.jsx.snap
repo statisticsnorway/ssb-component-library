@@ -2,8 +2,10 @@
 
 exports[`Tag component Matches the snapshot 1`] = `
 <span
-  className="ssb-tag "
+  className="ssb-tag"
   onClick={[Function]}
+  role="button"
+  tabIndex={0}
 >
   Tag
 </span>
