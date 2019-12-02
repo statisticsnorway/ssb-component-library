@@ -24,8 +24,8 @@ storiesOf('Dialog', module).addDecorator(centered)
 			<Dialog
 				title="Be aware of the dog"
 				type="warning"
-			><Paragraph>{placeholderText}</Paragraph>
-			<Link href="">Look here for more info</Link>
+			>	<Paragraph>{placeholderText}</Paragraph>
+				<Link href=" ">Look here for more info</Link>
 			</Dialog>
 		</div>
 	));
