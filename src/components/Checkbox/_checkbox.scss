@@ -40,13 +40,13 @@
 
       &:after {
         border: solid $ssb-white;
-        border-width: 0 3px 3px 0;
+        border-width: 0 2px 2px 0;
         content: '';
         display: block;
-        height: 12px;
+        height: 10px;
         left: 11px;
         position: absolute;
-        top: 9px;
+        top: 8px;
         transform: rotate(45deg);
         width: 6px;
       }
