@@ -40,6 +40,10 @@
     border-color: $ssb-dark-2;
     color: $ssb-dark-2;
     cursor: not-allowed;
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
   }
 
   &.negative {
@@ -61,6 +65,10 @@
       background: $ssb-dark-5;
       border-color: $ssb-dark-4;
       color: $ssb-dark-4;
+
+      &:hover, &:focus {
+        text-decoration: none;
+      }
     }
   }
 
