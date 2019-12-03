@@ -19,7 +19,7 @@ export { default as NestedAccordion } from './components/NestedAccordion';
 export { default as Number } from './components/Number';
 export { default as Pagination } from './components/Pagination';
 export { default as Paragraph } from './components/Paragraph';
-export { default as ProfileBox } from './components/ProfileBox';
+export { default as Card } from './components/Card';
 export { default as Quote } from './components/Quote';
 export { default as RadioButton } from './components/RadioButton';
 export { default as RadioGroup } from './components/RadioGroup';

@@ -1,6 +1,6 @@
-.ssb-profile-box {
+.ssb-card {
 
-  .profile-content {
+  .card-content {
     @include focus-marker;
     @include reset-button;
     background: $ssb-white;

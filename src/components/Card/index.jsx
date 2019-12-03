@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Download } from 'react-feather';
 
-const ProfileBox = ({
+const Card = ({
 	centered, children, fileLocation, onClick,
 }) => (
-	<div className="ssb-profile-box">
-		<button className={`profile-content${centered ? ' centered' : ''}`} onClick={() => onClick}>
+	<div className="ssb-card">
+		<button className={`card-content${centered ? ' centered' : ''}`} onClick={() => onClick}>
 			{ children }
 		</button>
 		{fileLocation && (
@@ -18,16 +18,16 @@ const ProfileBox = ({
 	</div>
 );
 
-ProfileBox.defaultProps = {
+Card.defaultProps = {
 	centered: false,
 	onClick: () => {},
 };
 
-ProfileBox.propTypes = {
+Card.propTypes = {
 	centered: PropTypes.bool,
 	children: PropTypes.node.isRequired,
 	fileLocation: PropTypes.string,
 	onClick: PropTypes.func,
 };
 
-export default ProfileBox;
+export default Card;

@@ -1,4 +1,4 @@
-ProfileBox
+Card
 ========
 
 > Wrapper for a Profile Box
@@ -8,8 +8,8 @@ ProfileBox
 #### HTML
 
 ```html
-<div class="ssb-profile-box">
-  <a class="profile-content">
+<div class="ssb-card">
+  <a class="card-content">
     {fill with content}
   </a>
   /* Optional download field */
@@ -23,9 +23,9 @@ ProfileBox
 #### React
 
 ```jsx harmony
-<ProfileBox centered fileLocation=" " onClick={() => {}}>
+<Card centered fileLocation=" " onClick={() => {}}>
   fill with content
-</ProfileBox>
+</Card>
 ```
 
 Available props:
