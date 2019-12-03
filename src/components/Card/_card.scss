@@ -1,8 +1,23 @@
 .ssb-card {
 
-  .card-content {
+  .clickable {
     @include focus-marker;
     @include reset-button;
+
+    &.left-orientation {
+      display: flex;
+    }
+
+    &:hover {
+
+      .card-content {
+        border: 1px solid $ssb-green-3;
+        border-top: 5px solid $ssb-green-3;
+      }
+    }
+  }
+
+  .card-content {
     background: $ssb-white;
     border: 1px solid $ssb-dark-2;
     border-top: 5px solid $ssb-green-3;
@@ -11,11 +26,6 @@
     flex-direction: column;
     padding: $global-padding-size * 2;
     width: 100%;
-
-    &:hover {
-      border: 1px solid $ssb-green-3;
-      border-top: 5px solid $ssb-green-3;
-    }
 
     &.centered {
       align-items: center;
