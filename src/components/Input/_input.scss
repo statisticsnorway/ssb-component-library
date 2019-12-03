@@ -158,6 +158,7 @@
   }
 
   .icon-wrapper {
+    @include focus-marker;
     @include reset-button;
     align-items: center;
     display: flex;

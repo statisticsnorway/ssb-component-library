@@ -3,6 +3,7 @@
   width: 100%;
 
   .accordion-header {
+    @include focus-marker;
     @include reset-button;
 
     .button-grid {

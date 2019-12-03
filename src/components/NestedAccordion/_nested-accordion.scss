@@ -5,6 +5,7 @@
   width: 100%;
 
   .nested-accordion-header {
+    @include focus-marker;
     @include reset-button;
 
     .button-grid {

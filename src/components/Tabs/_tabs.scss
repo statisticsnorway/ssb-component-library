@@ -11,6 +11,7 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
+    outline: none;
     padding: 20px 0;
     position: relative;
     text-align: center;
@@ -41,7 +42,7 @@
       }
     }
 
-    &:hover {
+    &:hover, &:focus {
 
       &:before {
         height: 4px;

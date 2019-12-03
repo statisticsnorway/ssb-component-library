@@ -8,6 +8,7 @@ $direction-button-width: 80px;
   line-height: 1.25;
 
   .nav-button-square {
+    @include focus-marker;
     @include reset-button;
     align-items: center;
     border: 1px solid transparent;
@@ -42,6 +43,7 @@ $direction-button-width: 80px;
   }
 
   .direction-button {
+    @include focus-marker;
     @include reset-button;
     align-items: center;
     border: 1px solid transparent;

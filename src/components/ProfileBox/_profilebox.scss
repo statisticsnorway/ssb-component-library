@@ -1,6 +1,7 @@
 .ssb-profile-box {
 
   .profile-content {
+    @include focus-marker;
     @include reset-button;
     background: $ssb-white;
     border: 1px solid $ssb-dark-2;

@@ -12,6 +12,7 @@
   }
 
   .dropdown-interactive-area {
+    @include focus-marker;
     @include reset-button;
     cursor: pointer;
     position: relative;
@@ -68,6 +69,7 @@
       width: 100%;
 
       .option-list-element {
+        @include focus-marker;
         @include reset-button;
         background: $ssb-white;
         cursor: pointer;

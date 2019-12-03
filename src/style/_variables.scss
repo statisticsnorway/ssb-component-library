@@ -71,6 +71,9 @@ $max-readable-width: 580px;
   cursor: pointer;
   padding: 0;
   text-align: left;
+}
+
+@mixin focus-marker {
 
   &:focus {
     @include focus-ring;
