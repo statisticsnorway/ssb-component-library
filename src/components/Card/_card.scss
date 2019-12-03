@@ -4,8 +4,18 @@
     @include focus-marker;
     @include reset-button;
 
+    img {
+      max-width: 400px;
+    }
+
     &.left-orientation {
       display: flex;
+      flex-direction: row;
+    }
+
+    &.top-orientation {
+      display: flex;
+      flex-direction: column;
     }
 
     &:hover {
@@ -24,6 +34,7 @@
     cursor: pointer;
     display: inline-block;
     flex-direction: column;
+    max-width: 400px;
     padding: $global-padding-size * 2;
     width: 100%;
 

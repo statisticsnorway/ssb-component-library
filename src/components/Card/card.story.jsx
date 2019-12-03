@@ -17,13 +17,13 @@ storiesOf('Card', module).addDecorator(centered)
 	))
 	.add('With images', () => (
 		<div>
-			<Card imagePlacement="left" image={<img height="180px" src={testImage} alt="testImage" />}>
+			<Card imagePlacement="left" image={<img src={testImage} alt="testImage" />}>
 				<Title size={2}>Look at this</Title>
 				<Paragraph>Explain something about something with something clever.</Paragraph>
 				<Button primary>Handling</Button>
 			</Card>
 			<div>
-				<Card imagePlacement="top" image={<img height="180px" src={testImage} alt="testImage" />}>
+				<Card imagePlacement="top" image={<img src={testImage} alt="testImage" />}>
 					<Title size={2}>Look at this</Title>
 					<Paragraph>Explain something about something with something clever.</Paragraph>
 					<Button primary>Handling</Button>
