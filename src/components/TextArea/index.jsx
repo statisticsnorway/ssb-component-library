@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import InputError from '../InputError';
 import uuid from 'uuid/v4';
+import InputError from '../InputError';
 
 const TextArea = ({
 	ariaLabel, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, value,
@@ -39,8 +39,6 @@ TextArea.defaultProps = {
 	error: false,
 	handleChange: () => {},
 	negative: false,
-	submitCallback: () => {},
-	type: 'text',
 };
 
 TextArea.propTypes = {
