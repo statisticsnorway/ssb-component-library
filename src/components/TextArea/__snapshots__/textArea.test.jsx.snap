@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component Matches the snapshot 1`] = `
+<div
+  className="ssb-text-area "
+>
+  <div
+    className="text-area-wrapper"
+  >
+    <textarea
+      disabled={false}
+      id={1}
+      onChange={[Function]}
+    />
+  </div>
+</div>
+`;

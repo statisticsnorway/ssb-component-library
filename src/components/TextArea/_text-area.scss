@@ -1,15 +1,16 @@
-.ssb-input {
+.ssb-text-area {
   @include roboto;
   cursor: text;
   display: flex;
   flex-direction: column;
   max-width: 400px;
+  min-width: 200px;
   position: relative;
   width: 100%;
 
   &:hover {
 
-    input {
+    textarea {
       border: 1px solid $ssb-green-4;
       outline: 1px solid $ssb-green-4;
 
@@ -19,36 +20,15 @@
     }
   }
 
-  .input-wrapper {
-    display: flex;
-  }
-
-  label {
-    color: $ssb-dark-6;
-    cursor: text;
-    font-size: 14px;
-    margin-bottom: 4px;
-    user-select: none;
-  }
-
-  input {
+  textarea {
     background: $ssb-white;
     border: 1px solid $ssb-dark-5;
     color: $ssb-dark-6;
     font-size: 16px;
     height: $input-field-height;
+    min-height: $input-field-height;
     padding: 8px 12px;
-    text-overflow: ellipsis;
     width: 100%;
-
-    &.with-icon {
-      padding: 4px $input-field-height 4px 10px;
-    }
-
-    &:disabled {
-      border: 1px solid $ssb-dark-5;
-      cursor: not-allowed;
-    }
 
     &:focus {
       border: 1px solid $ssb-green-4;
@@ -59,7 +39,7 @@
 
   &.negative {
 
-    .input-wrapper {
+    .text-area-wrapper {
 
       ::placeholder {
         color: $ssb-white;
@@ -77,7 +57,7 @@
 
     &:hover {
 
-      input {
+      textarea {
         border: 1px solid $ssb-green-2;
         outline: 1px solid $ssb-green-2;
 
@@ -91,7 +71,7 @@
       color: $ssb-white;
     }
 
-    input {
+    textarea {
       background: transparent;
       border: 1px solid $ssb-white;
       color: $ssb-white;
@@ -107,37 +87,11 @@
       }
     }
 
-    .icon-wrapper {
-
-      & > * {
-        color: $ssb-green-2;
-      }
-
-      &.search-icon {
-        cursor: pointer;
-
-        &:hover, &:focus {
-          background: $ssb-white;
-
-          & > * {
-            color: $ssb-dark-5;
-          }
-        }
-      }
-    }
-
     &.error {
 
-      input {
+      textarea {
         border: 1px solid $ssb-red-3;
         outline: 1px solid $ssb-red-3;
-      }
-
-      .icon-wrapper {
-
-        & > * {
-          color: $ssb-red-3;
-        }
       }
     }
   }
@@ -147,41 +101,6 @@
     input {
       border: 1px solid $ssb-red-3;
       outline: 1px solid $ssb-red-3;
-    }
-
-    .icon-wrapper {
-
-      & > * {
-        color: $ssb-red-3;
-      }
-    }
-  }
-
-  .icon-wrapper {
-    @include focus-marker;
-    @include reset-button;
-    align-items: center;
-    display: flex;
-    font-size: 18px;
-    height: $input-field-height;
-    justify-content: center;
-    margin-left: -$input-field-height;
-    width: $input-field-height;
-
-    & > * {
-      color: $ssb-green-4;
-    }
-
-    &.search-icon {
-      cursor: pointer;
-
-      &:hover, &:focus {
-        background: $ssb-green-4;
-
-        & > * {
-          color: $ssb-white;
-        }
-      }
     }
   }
 }
