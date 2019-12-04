@@ -13,10 +13,10 @@ $small-size: 108px;
     color: $ssb-dark-5;
     display: inline-flex;
 
-    & > * {
-      height: 100%;
-      width: 100%;
-    }
+    //& > * {
+    //  height: 100%;
+    //  width: 100%;
+    //}
   }
 
   &.large {
