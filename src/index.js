@@ -28,5 +28,6 @@ export { default as StickyMenu } from './components/StickyMenu';
 export { default as Tabs } from './components/Tabs';
 export { default as Tag } from './components/Tag';
 export { default as Text } from './components/Text';
+export { default as TextArea } from './components/TextArea';
 export { default as Title } from './components/Title';
 export { default as WordExplanation } from './components/WordExplanation';
