@@ -32,12 +32,14 @@
   }
 
   input {
+    @include roboto;
     background: $ssb-white;
     border: 1px solid $ssb-dark-5;
+    box-sizing: border-box;
     color: $ssb-dark-6;
     font-size: 16px;
     height: $input-field-height;
-    padding: 8px 12px;
+    padding: 12px 12px;
     text-overflow: ellipsis;
     width: 100%;
 

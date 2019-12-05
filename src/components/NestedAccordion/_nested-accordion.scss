@@ -22,8 +22,11 @@
     }
 
     .header-text {
+      @include roboto;
       color: $ssb-dark-6;
+      font-size: 16px;
       font-weight: bold;
+      line-height: 1.25;
     }
 
     &:hover {
