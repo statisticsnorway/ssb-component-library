@@ -8,6 +8,7 @@
 
   label {
     font-size: 14px;
+    line-height: normal;
     margin-bottom: 5px;
   }
 
@@ -21,8 +22,8 @@
       color: $ssb-green-4;
       font-size: 18px;
       position: absolute;
-      right: 10px;
-      top: 10px;
+      right: 12px;
+      top: 12px;
     }
 
     input {
@@ -62,7 +63,7 @@
       overflow-y: auto;
       padding-left: 0;
       position: absolute;
-      scrollbar-color: $ssb-dark-2 $ssb-white;
+      scrollbar-color: $scrollbar-color $scrollbar-color; // Firefox experimental property
       scrollbar-width: thin;
       top: $input-field-height;
       z-index: 9999;
@@ -104,13 +105,8 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: $ssb-dark-2;
+      background: $scrollbar-color;
       border-radius: 3px;
     }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: $ssb-dark-4;
-    }
-
   }
 }
