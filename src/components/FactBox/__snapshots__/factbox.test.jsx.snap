@@ -2,7 +2,7 @@
 
 exports[`FactBox component Matches the snapshot 1`] = `
 <div
-  className="ssb-fact-box"
+  className="ssb-fact-box "
 >
   <Accordion
     header="fact box header"
