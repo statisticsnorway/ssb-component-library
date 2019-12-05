@@ -19,7 +19,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				time="2018"
 				size="large"
 				icon={<HouseIcon alt="house" />}
-				wordExplanation={placeholderText}
+				glossary={placeholderText}
 			/>
 		</div>
 	))
@@ -55,7 +55,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				numberDescription="husholdninger"
 				time="2018"
 				size="large"
-				wordExplanation={placeholderText}
+				glossary={placeholderText}
 			/>
 			<br />
 			<Divider />

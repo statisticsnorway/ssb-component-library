@@ -1,22 +1,24 @@
-.ssb-word-explanation {
+.ssb-glossary {
   @include focus-marker;
   @include reset-button;
   cursor: pointer;
   display: inline-block;
   position: relative;
 
-  .we-text-wrap {
+  .glossary-text-wrap {
     border-bottom: 1px dotted $ssb-green-4;
     display: inline-block;
     line-height: inherit;
   }
 
-  .we-logo {
+  .glossary-logo {
+    color: $ssb-green-3;
     margin: 2px;
+    transition: color .2s;
     vertical-align: top;
   }
 
-  .we-animate-background {
+  .glossary-animate-background {
     background: $ssb-green-2;
     bottom: 0;
     height: 0;
@@ -29,12 +31,16 @@
 
   &:hover, &:focus {
 
-    .we-animate-background {
+    .glossary-animate-background {
       height: 100%;
+    }
+
+    .glossary-logo {
+      color: $ssb-dark-6;
     }
   }
 
-  .we-popup {
+  .glossary-popup {
     @include open-sans;
     animation: fadein .2s;
     display: none;
@@ -68,7 +74,7 @@
       color: $ssb-white;
       padding: 20px;
 
-      .ssb-we-closing {
+      .ssb-glossary-closing {
         align-items: center;
         display: flex;
         justify-content: center;
