@@ -10,8 +10,9 @@
       align-items: center;
       cursor: pointer;
       display: grid;
-      grid-column-gap: $global-padding-size;
+      grid-column-gap: 28px;
       grid-template-columns: auto 20px;
+      margin-right: 12px;
     }
 
     .expand-icon * {
@@ -42,7 +43,7 @@
       border-top: 1px solid $ssb-dark-2;
       content: '';
       height: 2px;
-      padding-bottom: $global-padding-size;
+      padding-bottom: 20px;
     }
 
     &:after {
@@ -50,7 +51,7 @@
       content: '';
       height: 2px;
       margin-bottom: -1px;
-      padding-top: $global-padding-size;
+      padding-top: 20px;
     }
   }
 
@@ -77,7 +78,7 @@
     @include open-sans;
     color: $ssb-dark-6;
     font-size: 16px;
-    padding: $global-padding-size 50px $global-padding-size $global-padding-size;
+    padding: $global-padding-size 50px $global-padding-size 0;
 
     &.closed {
       display: none;
