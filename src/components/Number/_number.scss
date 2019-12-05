@@ -1,6 +1,6 @@
-$large-number-size: 150px;
+$large-number-size: 148px;
 $medium-number-size: 100px;
-$small-number-size: 50px;
+$small-number-size: 56px;
 
 .ssb-number {
   @include roboto-condenced;
@@ -12,15 +12,23 @@ $small-number-size: 50px;
     font-size: $small-number-size;
 
     @media #{$mobile} {
-      font-size: 75px;
+      font-size: 56px;
     }
   }
 
   &.medium {
     font-size: $medium-number-size;
+
+    @media #{$mobile} {
+      font-size: 56px;
+    }
   }
 
   &.large {
     font-size: $large-number-size;
+
+    @media #{$mobile} {
+      font-size: 77px;
+    }
   }
 }
