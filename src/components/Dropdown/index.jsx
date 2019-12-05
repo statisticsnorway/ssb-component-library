@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
-import { ChevronDown } from 'react-feather';
+import { ChevronDown, ChevronUp } from 'react-feather';
 
 const Dropdown = ({
 	header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
@@ -55,7 +55,7 @@ const Dropdown = ({
 					placeholder={selectedOption.title ? selectedOption.title : placeholder}
 					value={inputFieldValue}
 				/>
-				<ChevronDown className="dd-icon" size={20} />
+				{isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} /> }
 				{isOpen && (
 					<div className="list-of-options">
 						{availableOptions.map(it => (
