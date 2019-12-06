@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Accordion from '../Accordion';
 
 const FactBox = ({
-	header, openByDefault, text,
+	className, header, openByDefault, text,
 }) => (
-	<div className="ssb-fact-box">
+	<div className={`ssb-fact-box ${className}`}>
 		<Accordion header={header} openByDefault={openByDefault} withoutBorders>
 			{text}
 		</Accordion>
@@ -13,10 +13,12 @@ const FactBox = ({
 );
 
 FactBox.defaultProps = {
+	className: '',
 	openByDefault: false,
 };
 
 FactBox.propTypes = {
+	className: PropTypes.string,
 	header: PropTypes.string.isRequired,
 	openByDefault: PropTypes.bool,
 	text: PropTypes.oneOfType([

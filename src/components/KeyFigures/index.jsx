@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Number from '../Number';
-import WordExplanation from '../WordExplanation';
+import Glossary from '../Glossary';
 
-const KeyFigures = ({	icon, number, numberDescription, size, title, time, wordExplanation }) => (
+const KeyFigures = ({	icon, number, numberDescription, size, title, time, glossary }) => (
 	<div className={`ssb-key-figures ${size}`}>
 		{icon && <div className={`kf-icon ${size}`}>{icon}</div>}
 		<div>
-			{wordExplanation
+			{glossary
 				? (
-					<WordExplanation explanation={wordExplanation}>
+					<Glossary explanation={glossary}>
 						<span className="kf-title">{title}</span>
-					</WordExplanation>
+					</Glossary>
 				)
 				: <span className="kf-title">{title}</span>}
 			<div className="kf-time">{time}</div>
@@ -42,7 +42,7 @@ KeyFigures.propTypes = {
 		PropTypes.string,
 		PropTypes.number,
 	]),
-	wordExplanation: PropTypes.string,
+	glossary: PropTypes.string,
 };
 
 export default KeyFigures;

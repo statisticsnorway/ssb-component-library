@@ -24,7 +24,7 @@ exports[`Dropdown component Matches the snapshot 1`] = `
     <ChevronDown
       className="dd-icon"
       color="currentColor"
-      size={18}
+      size={24}
     />
   </button>
 </div>

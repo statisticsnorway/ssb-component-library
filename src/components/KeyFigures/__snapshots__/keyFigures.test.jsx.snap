@@ -14,7 +14,7 @@ exports[`KeyFigures component Matches the snapshot 1`] = `
     />
   </div>
   <div>
-    <WordExplanation
+    <Glossary
       explanation="Explain something"
     >
       <span
@@ -22,7 +22,7 @@ exports[`KeyFigures component Matches the snapshot 1`] = `
       >
         Antall husholdninger
       </span>
-    </WordExplanation>
+    </Glossary>
     <div
       className="kf-time"
     >

@@ -14,7 +14,6 @@ $small-size: 108px;
     display: inline-flex;
 
     & > * {
-      height: 100%;
       width: 100%;
     }
   }
@@ -29,6 +28,10 @@ $small-size: 108px;
 
     .subtitle {
       margin-bottom: 32px;
+
+      @media #{$mobile} {
+        margin-bottom: 14px;
+      }
     }
   }
 
@@ -42,6 +45,10 @@ $small-size: 108px;
 
     .subtitle {
       margin-bottom: 18px;
+
+      @media #{$mobile} {
+        margin-bottom: 8px;
+      }
     }
   }
 

@@ -44,9 +44,9 @@
         content: '';
         display: block;
         height: 10px;
-        left: 11px;
+        left: 6px;
         position: absolute;
-        top: 8px;
+        top: 2px;
         transform: rotate(45deg);
         width: 6px;
       }
@@ -67,18 +67,18 @@
     align-items: center;
     cursor: pointer;
     display: flex;
-    margin-bottom: 0;
-    padding: 4px;
+    margin-bottom: 12px;
     position: relative;
 
     &:before {
       background: $ssb-white;
       border: 1px solid $ssb-dark-5;
       border-radius: 2px;
+      box-sizing: border-box;
       content: '';
       display: block;
       height: 20px;
-      margin-right: $global-padding-size;
+      margin-right: 12px;
       width: 20px;
     }
   }

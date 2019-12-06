@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import { Home } from 'react-feather';
 import KeyFigures from './index';
-import WordExplanation from '../WordExplanation';
+import Glossary from '../Glossary';
 
 const title = 'Antall husholdninger';
 
@@ -16,21 +16,21 @@ describe('KeyFigures component', () => {
 				time="2018"
 				size="large"
 				icon={<Home className="feather-home" />}
-				wordExplanation={'Explain something'}
+				glossary={'Explain something'}
 			/>
 		);
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	test('Renders WordExplanation conditionally', () => {
+	test('Renders Glossary conditionally', () => {
 		const wrapper = shallow(
-			<KeyFigures number="789 398" wordExplanation={'Explain something'} />
+			<KeyFigures number="789 398" glossary={'Explain something'} />
 		);
-		expect(wrapper.find(WordExplanation)).toHaveLength(1);
+		expect(wrapper.find(Glossary)).toHaveLength(1);
 
 		const wrapper2 = shallow(
 			<KeyFigures number="789 398" />
 		);
-		expect(wrapper2.find(WordExplanation)).toHaveLength(0);
+		expect(wrapper2.find(Glossary)).toHaveLength(0);
 	});
 });

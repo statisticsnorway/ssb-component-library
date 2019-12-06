@@ -1,16 +1,17 @@
 .ssb-tabs {
-  @include roboto;
   display: flex;
   flex-direction: row;
-  font-size: 18px;
-  font-weight: bold;
 
   .navigation-item {
     @include reset-button;
+    @include roboto;
     align-items: center;
     cursor: pointer;
     display: flex;
+    font-size: 18px;
+    font-weight: bold;
     justify-content: center;
+    line-height: 1.25;
     outline: none;
     padding: 20px 0;
     position: relative;
