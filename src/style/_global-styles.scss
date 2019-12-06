@@ -3,6 +3,10 @@ body {
   color: $ssb-dark-6;
 }
 
+a {
+  text-decoration: none;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
