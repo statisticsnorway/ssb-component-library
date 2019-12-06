@@ -33,7 +33,7 @@
       cursor: pointer;
       font-size: 16px;
       height: $input-field-height;
-      padding: 4px 40px 4px 10px;
+      padding: 4px $input-field-height 4px 12px;
       text-overflow: ellipsis;
       width: 100%;
 
@@ -72,24 +72,29 @@
       .option-list-element {
         @include focus-marker;
         @include reset-button;
+        @include roboto;
         background: $ssb-white;
         cursor: pointer;
         display: block;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.25;
         overflow: hidden;
-        padding: 8px 12px;
+        padding: 12px;
         text-overflow: ellipsis;
         transition: all .18s;
         width: 100%;
 
         &:hover, &:focus {
           background: $ssb-dark-5;
-          color: $white;
+          color: $ssb-white;
           z-index: 2;
         }
 
         &.selected {
           background: $ssb-green-4;
           color: $ssb-white;
+          font-weight: bold;
         }
       }
 
