@@ -10,10 +10,10 @@ storiesOf('StickyMenu', module).addDecorator(centered)
 	.add('Default', () => (
 		<div style={{ width: '1400px' }}>
 			<StickyMenu>
-				<div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }} className="row align-items-center">
+				<div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
 					<div>
 						<Text small>Kommunefakta</Text>
-						<div className="title">Stordal (Møre og Romsdal)</div>
+						<div style={{ fontSize: '24px', fontWeight: 'bold' }}>Stordal (Møre og Romsdal)</div>
 					</div>
 					<div style={{ alignItems: 'center', display: 'flex' }}>
 						<div style={{ alignItems: 'center', display: 'flex' }}>
