@@ -34,7 +34,6 @@ storiesOf('Pagination', module).addDecorator(centered)
 		</div>
 	))
 	.add('Html', () => (
-		
 		<nav class="ssb-pagination">
 			<button class="direction-button previous">
 				<ChevronLeft size={18} className="chevron-icon" />Forrige

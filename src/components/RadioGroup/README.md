@@ -9,14 +9,21 @@ RadioGroup
 
 ```html
 <div class="ssb-radio-group">
-    <div class="ssb-title no-margin"><h5>Title</h5></div>
-    <div class="ssb-radio">
-        <input type="radio" id="option1" value="option1" />
-        <label class="radio-label" for="option1">Insert label</label>
-    </div>
-    <div class="ssb-radio">
-        <input type="radio" id="option2" value="option2" />
-        <label class="radio-label" for="option2">Insert label</label>
+	<div class="ssb-title no-margin"><h5>Title</h5></div>
+	<!-- Use flex-row If horizontal layout -->
+    <div class="boxes flex-column">
+        <div class="ssb-radio">
+            <input tabindex="0" id="item1" type="radio" value="item1">
+            <label class="radio-label" for="item1">Item 1</label>
+        </div>
+        <div class="ssb-radio">
+            <input tabindex="0" id="item2" type="radio" value="item2">
+            <label class="radio-label" for="item2">Item 2</label>
+        </div>
+        <div class="ssb-radio">
+            <input tabindex="0" id="item3" disabled="" type="radio" value="item3">
+            <label class="radio-label" for="item3">Item 3</label>
+        </div>
     </div>
 </div>
 ```
@@ -24,15 +31,24 @@ RadioGroup
 #### React
 
 ```jsx harmony
-<RadioGroup
-  header="Header"
-  items={
-    { label: 'Item 1', value: 'item1' },
-    { label: 'Item 2', value: 'item2' },
-  }
-  onChange={() => callback}
-  selectedValue="item2"
-/>
+const radioItems = [
+	{
+		label: 'Item 1',
+		value: 'item1',
+	}, {
+		label: 'Item 2',
+		value: 'item2',
+	}, {
+		label: 'Item 3',
+		value: 'item3',
+		disabled: 'true',
+	},
+];
+
+<RadioGroup header="Header" items={radioItems} onChange={() => callback} selectedValue="item2" />
+
+<RadioGroup header="Header" items={radioItems} onChange={() => callback} selectedValue="item2" orientation="row" />
+
 ```
 
 Available props:
@@ -42,6 +58,7 @@ Available props:
 | header | string | Renders a h5 title |
 | items | arrayOf(label, value) | Required items for rendering radio buttons |
 | onChange | func | Callback function when a value is changed |
+| orientation | 'column' or 'row' , default column| Vertical og horizontal layout|
 | selectedValue | string | Pre selected value |
 
 __Dependencies__
