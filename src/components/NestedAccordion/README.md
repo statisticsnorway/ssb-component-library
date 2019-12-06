@@ -9,16 +9,18 @@ NestedAccordion
 
 ```html
 <div class="ssb-nested-accordion mt-3">
-  <div class="nested-accordion-header closed" onclick="{toggle classname to 'open'}">
-    <!-- If open -->
-    <i class="expand-icon">{feather.chevronUp 16px}</i>
-    <!-- If closed -->
-    <i class="expand-icon">{feather.chevronDown 16px}</i>
-    <span class="header-text">Title</span>
-  </div>
-  <div class="accordion-body closed">
-    {insert content}
-  </div>
+    <button class="nested-accordion-header closed" onclick="{toggle classname to 'open'}">
+        <span class="button-grid">
+			<!-- If open -->
+			<i class="expand-icon">{feather.chevronUp 16px}</i>
+			<!-- If closed -->
+			<i class="expand-icon">{feather.chevronDown 16px}</i>
+			<span class="header-text">A nested accordion header</span>
+        </span>
+    </button>
+    <div class="accordion-body closed">
+		{insert content}
+	</div>
 </div>
 ```
 Toggle the all instances of the `closed` className to `open` when clicked.
