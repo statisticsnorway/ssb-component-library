@@ -10,13 +10,15 @@ Button
 ```html
 <button class="ssb-button">Secondary button</button>
 
+<button class="ssb-btn primary-btn">Primary button</button>
+
 <button class="ssb-btn primary-btn">
     <div class="sb-icon">
         <i>{feather.chevronDown 18px}</i>
     </div>Primary icon
 </button>
 
-<button class="ssb-btn negative secondary-btn">Secondary negative button</button>
+<button class="ssb-btn negative">Secondary negative button</button>
 
 <button disabled="true">Disabled button</button>
 ```
@@ -40,6 +42,7 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children | Required node | Button text or/and icon |
+| className | String | Optional container class |
 | disabled | bool | Decides if the button is disabled |
 | icon | node | Renders an icon |
 | negative | bool | Changes design |
