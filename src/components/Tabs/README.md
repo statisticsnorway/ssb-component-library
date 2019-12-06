@@ -9,15 +9,15 @@ Tabs
 
 ```html
 <div class="ssb-tabs">
-  <div class="navigation-item" onclick="insert function">
-    <span>Item 1</span>
-  </div>
-  <div class="navigation-item" onclick="insert function">
-    <span>Item 2</span>
-  </div>
-  <div class="navigation-item" onclick="insert function">
-    <span>Item 3</span>
-  </div>
+    <button class="navigation-item ">
+        <span>Item 1</span>
+    </button>
+    <button class="navigation-item ">
+        <span>Item 2</span>
+    </button>
+    <button class="navigation-item ">
+        <span>Item 3</span>
+    </button>
 </div>
 ```
 
