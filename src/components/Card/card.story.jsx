@@ -10,7 +10,7 @@ storiesOf('Card', module).addDecorator(centered)
 	.add('Default', () => (
 		<div style={{ width: '300px' }}>
 			<Card>
-				<Title size={2}>Look at this</Title>
+				<Title size={4} className="no-margin">Look at this</Title>
 				<Paragraph>Explain something about something with something clever.</Paragraph>
 				<Button primary>Handling</Button>
 			</Card>

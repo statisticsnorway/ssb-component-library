@@ -4,6 +4,10 @@ exports[`StickyMenu component Matches the snapshot 1`] = `
 <div
   className="ssb-sticky-menu"
 >
-  StickyMenu
+  <div
+    className="menu-content"
+  >
+    StickyMenu
+  </div>
 </div>
 `;

@@ -7,34 +7,29 @@ StickyMenu
 
 #### HTML
 
+We only provide the container making the header sticky.
+The content is just a suggestion.
 ```html
 <div class="ssb-sticky-menu">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="column col-md-12 col-lg-5">
-                <div className="col-12">
-                    <div class="subtitle">Kommunefakta</div>
-                    <div class="title">Stordal (Møre og Romsdal)</div>
-                </div>
+    <div class="menu-content">
+    <!-- Suggested content -->
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+            <div>
+                <span class="ssb-text-wrapper small-text">Kommunefakta</span>
+                <div style="font-size: 24px; font-weight: bold;">Stordal (Møre og Romsdal)</div>
             </div>
-            <div class="column col-md-6  col-lg-5">
-                <div class="col-flex flex-row align-items-center">
-                    <div class="input-header">Bytt kommune:</div>
-                    <div class="w-100">
-                        <div class="ssb-input">
-                            <div class="input-wrapper">
-                                <input id="input1" type="text" placeholder="Søk på kommune" aria-label="Søk på kommune" >
-                                <div class="icon-wrapper">
-                                    <SearchIcon/>
-                                </div>
-                            </div>
+            <div style="align-items: center; display: flex;">
+                <div style="align-items: center; display: flex;">
+                    <label for="kommune" class="input-header">Bytt kommune:</label>
+                    <div class="ssb-input">
+                        <div class="input-wrapper">
+                            <input id="kommune" type="text" placeholder="Søk på kommune" aria-label="Søk på kommune" class=" with-icon" value="" />
+                            <button class="icon-wrapper search-icon"><i>{feather.search 18px}</i></button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="column col-md-6 col-lg-2">
-                <div class="choose-chart">Velg i kart</div>
-                <ChevronDownIcon/>
+                <div class="choose-chart" style="margin-left: 30px;">Velg i kart</div>
+                {feather.chevronDown 18px}
             </div>
         </div>
     </div>
