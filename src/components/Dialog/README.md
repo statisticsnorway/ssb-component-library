@@ -36,7 +36,11 @@ Dialog
 #### React
 
 ```jsx harmony
-<Dialog type='warning' title="A fitting title">
+<Dialog title="A fitting title Info dialog">
+  Insert content here
+</Dialog> 
+
+<Dialog type='warning' title="A fitting title Warning dialog">
   Insert content here
 </Dialog> 
 ```
@@ -46,8 +50,9 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children   | Required node | Content within the wrapper |
+| className   | string | Optional container class|
 | title | Required string | Bold text as a title |
-| type | 'info' or 'warning | Changes color and icon |
+| type | 'info' or 'warning' | Changes color and icon |
 
 __Dependencies__
  - [Paragraph](../Paragraph)

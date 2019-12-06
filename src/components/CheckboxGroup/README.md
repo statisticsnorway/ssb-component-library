@@ -54,7 +54,7 @@ Available props:
 | header | string | Renders a h5 title |
 | items | arrayOf(label, value) | Required items for rendering radio buttons |
 | onChange | func | Callback function when a value is changed |
-| orientation | oneOf (column,row) , default column| Vertical og horizontal layout|
+| orientation | 'column' or 'row' , default column| Vertical og horizontal layout|
 | selectedValue | string | Pre selected value |
 
 __Dependencies__
