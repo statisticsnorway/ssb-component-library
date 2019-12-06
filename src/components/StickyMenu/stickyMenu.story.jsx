@@ -17,7 +17,7 @@ storiesOf('StickyMenu', module).addDecorator(centered)
 					</div>
 					<div style={{ alignItems: 'center', display: 'flex' }}>
 						<div style={{ alignItems: 'center', display: 'flex' }}>
-							<label htmlFor="kommune" className="input-header">Bytt kommune:</label>
+							<label htmlFor="kommune" className="input-header">Bytt kommune:</label>{/* eslint-disable-line */}
 							<Input id="kommune" ariaLabel="Søk på kommune" searchField placeholder="Søk på kommune" />
 						</div>
 						<div style={{ marginLeft: '30px' }} className="choose-chart">Velg i kart</div>
