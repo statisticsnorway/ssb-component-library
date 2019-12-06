@@ -8,23 +8,41 @@ Breadcrumb
 #### HTML
 
 ```html
-<div class="ssb-breadcrumbs ">
-  <a class="ssb-link" href="">
-    <span class="link-text">breadcrumb 1</span>
-  </a>&nbsp;/&nbsp;
-  <a class="ssb-link" href="">
-    <span class="link-text">breadcrumb 2</span>
-  </a>&nbsp;/&nbsp;
-  <span>breadcrumb 3</span>
+<div class="ssb-breadcrumbs">
+    <div>
+        <a class="ssb-link" href=" ">
+            <span class="link-text">breadcrumb 1</span>
+        </a>
+        &nbsp;/&nbsp;
+    </div>
+    <div>
+        <a class="ssb-link" href=" ">
+            <span class="link-text">breadcrumb 2</span>
+        </a>&nbsp;/&nbsp;
+    </div>
+    <span>breadcrumb 3</span>
 </div>
+
 ```
 
 #### React
 
 ```jsx harmony
-<div>
+const items = [
+	{
+		link: ' ',
+		text: 'breadcrumb 1',
+	},
+	{
+		link: ' ',
+		text: 'breadcrumb 2',
+	},
+	{
+		text: 'breadcrumb 3',
+	},
+];
+
   <Breadcrumb items={items} />
-</div>
 ```
 
 Available props:
