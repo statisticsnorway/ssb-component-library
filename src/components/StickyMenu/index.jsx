@@ -5,7 +5,7 @@ const StickyMenu = ({
 	children,
 }) => (
 	<div className="ssb-sticky-menu">
-		{children}
+		<div className="menu-content">{children}</div>
 	</div>
 );
 

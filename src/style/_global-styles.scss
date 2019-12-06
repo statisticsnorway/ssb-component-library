@@ -2,3 +2,13 @@ body {
   @include open-sans;
   color: $ssb-dark-6;
 }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
