@@ -34,22 +34,23 @@ storiesOf('Pagination', module).addDecorator(centered)
 		</div>
 	))
 	.add('Html', () => (
-		<div className="ssb-pagination">
-			<div className="direction-button">
+		
+		<nav class="ssb-pagination">
+			<button class="direction-button previous">
 				<ChevronLeft size={18} className="chevron-icon" />Forrige
-			</div>
-			<div className="nav-button-square selected">1</div>
-			<div className="nav-button-square">2</div>
-			<div className="nav-button-square">3</div>
-			<div className="nav-button-square">4</div>
-			<div className="nav-button-square">5</div>
-			<div className="nav-button-square">6</div>
-			<div className="nav-button-square">7</div>
-			<div className="nav-button-square">8</div>
-			<div className="dotted-indicator">...</div>
-			<div className="nav-button-square">20</div>
-			<div className="direction-button">
+			</button>
+			<button class="nav-button-square">1</button>
+			<button class="nav-button-square 2">2</button>
+			<button class="nav-button-square 3">3</button>
+			<button class="nav-button-square 4">4</button>
+			<button class="nav-button-square 5 selected">5</button>
+			<button class="nav-button-square 6">6</button>
+			<button class="nav-button-square 7">7</button>
+			<button class="nav-button-square 8">8</button>
+			<div class="dotted-indicator">...</div>
+			<button class="nav-button-square">20</button>
+			<button class="direction-button next">
 				Neste<ChevronRight size={18} className="chevron-icon" />
-			</div>
-		</div>
+			</button>
+		</nav>
 	));
