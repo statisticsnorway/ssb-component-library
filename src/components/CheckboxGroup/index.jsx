@@ -34,7 +34,7 @@ const CheckboxGroup = ({
 						value={it.value}
 						callback={setSelected}
 						disabled={it.disabled}
-					>{it.label}
+					>{it.label} {index}
 					</Checkbox>
 				))}
 			</div>

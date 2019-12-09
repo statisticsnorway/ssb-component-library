@@ -66,6 +66,8 @@
     margin-bottom: 12px;
     position: relative;
 
+    &:focus { background: $ssb-blue-3; }
+
     &:before {
       background: $ssb-white;
       border: 1px solid $ssb-dark-5;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Title from '../Title';
 import RadioButton from '../RadioButton';
 
-const RadioGroup = ({ header, items, onChange, orientation, selectedValue }) => {
+const RadioGroup = ({ groupName, header, items, onChange, orientation, selectedValue }) => {
 	const [selected, updateSelected] = useState(selectedValue);
 
 	useEffect(() => {
@@ -20,9 +20,10 @@ const RadioGroup = ({ header, items, onChange, orientation, selectedValue }) => 
 						index={index}
 						selected={it.value === selected}
 						value={it.value}
+						name={groupName || header}
 						callback={updateSelected}
 						disabled={it.disabled}
-					>{it.label}
+					>{it.label} {index}
 					</RadioButton>
 				))}
 			</div>
@@ -36,6 +37,7 @@ RadioGroup.defaultProps = {
 };
 
 RadioGroup.propTypes = {
+	groupName: PropTypes.string,
 	header: PropTypes.string,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		label: PropTypes.string,
