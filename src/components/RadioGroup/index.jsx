@@ -23,7 +23,7 @@ const RadioGroup = ({ groupName, header, items, onChange, orientation, selectedV
 						name={groupName || header}
 						callback={updateSelected}
 						disabled={it.disabled}
-					>{it.label} {index}
+					>{it.label}
 					</RadioButton>
 				))}
 			</div>
