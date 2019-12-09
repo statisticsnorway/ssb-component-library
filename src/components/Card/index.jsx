@@ -11,7 +11,8 @@ const Card = ({
 			onClick={() => onClick}
 		>
 			{image}
-			<div className={`card-content${centered ? ' centered' : ''}`}>
+			<div className={`card-content${centered ? ' centered' : ''}${image ? ' with-image' : ''}`}>
+
 				{ children }
 			</div>
 		</button>

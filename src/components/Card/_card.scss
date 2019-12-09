@@ -22,7 +22,10 @@
 
       .card-content {
         border: 1px solid $ssb-green-3;
-        border-top: 5px solid $ssb-green-3;
+
+        &:not(.with-image) {
+          border-top: 5px solid $ssb-green-3;
+        }
       }
     }
   }
@@ -36,12 +39,16 @@
     flex-direction: column;
     max-width: 400px;
     padding: 20px;
-    width: 100%;
+    width: auto;
 
     &.centered {
       align-items: center;
       display: inline-flex;
       text-align: center;
+    }
+
+    &.with-image {
+      border-top: 1px solid $ssb-dark-2;
     }
   }
 
