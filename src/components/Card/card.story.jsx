@@ -5,7 +5,7 @@ import Card from './index';
 import Button from '../Button';
 import Paragraph from '../Paragraph';
 import Title from '../Title';
-import testImage from '../../media/16x9.png'
+import testImage from '../../media/16x9.png';
 
 storiesOf('Card', module).addDecorator(centered)
 	.add('Default', () => (
