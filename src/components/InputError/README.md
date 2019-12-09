@@ -8,8 +8,8 @@ InputError
 #### HTML
 
 ```html
-<span class="ssb-input-error">Insert error message</span>
-<span class="ssb-input-error negative">Insert error message</span>
+<div class="ssb-input-error"><span>Insert error message</span></div>
+<div class="ssb-input-error negative"><span>Insert error message</span></div>
 ```
 
 #### React

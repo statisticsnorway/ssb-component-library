@@ -15,21 +15,30 @@ Input
   </div>
 </div>
 
-<div class="ssb-input">
-  <div class="input-wrapper">
-    <input id="input1" aria-label="Input field Search" placeholder="Search text"/>
-    <div class="icon-wrapper">
-      <i>{feather.search 18px}</i>
-    </div>
-  </div>
-</div>
-
-<div class="ssb-input error">
+<div class="ssb-input negative">
   <label for="input1">Insert label</label>
   <div class="input-wrapper">
     <input id="input1" value="option1" />
   </div>
-  <span class="ssb-form-error">Insert error message</span>
+</div>
+
+<div class="ssb-input ">
+    <div class="input-wrapper">
+        <input id="input1" type="text" placeholder="Search text" aria-label="Input field Search" class="with-icon" value="">
+        <button class="icon-wrapper search-icon">
+            <i>{feather.search 18px}</i>
+        </button>
+    </div>
+</div>
+
+<div class="ssb-input error ">
+    <label for="input1">Input field</label>
+    <div class="input-wrapper">
+        <input id="input1" type="text" class=" with-icon" value="">
+    </div>
+    <div class="ssb-input-error ">
+        <span>Insert error message</span>
+    </div>
 </div>
 ```
 
@@ -38,6 +47,13 @@ Input
 ```jsx harmony
 <Input
   label="Input field"
+  handleChange={handleChange}
+  value={someValue}
+/>
+
+<Input
+  label="Input field"
+  negative
   handleChange={handleChange}
   value={someValue}
 />
@@ -61,6 +77,7 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | ariaLabel | string | Defines a string value that labels input element, use if label is not visible |
+| className   | string | Optional container class|
 | disabled | bool | Toggles disabled state |
 | error | bool | Changes design |
 | errorMessage | string | Renders an error message underneath input field |

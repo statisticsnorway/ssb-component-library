@@ -13,17 +13,24 @@ Link
 </a>
 
 <a class="ssb-link with-icon" href=" " target="" rel="">
-   <i>{feather.arrowRight 16px}</i>
-  <span class="link-text">A regular link with icon</span>
+    <div class="icon-wrapper">
+        <i>{feather.arrowRight 16px}</i>
+    </div>
+    <span class="link-text">A regular link with icon</span>
 </a>
 
-<a class="ssb-link profiled" href=" " target="" rel="">
-    <i>{feather.arrowRight 20px}</i>
+<a class="ssb-link profiled mr-4" href=" " target="" rel="">
     <span class="link-text">A profiled link</span>
 </a>
 
+<a class="ssb-link profiled with-icon" href=" " target="" rel="">
+    <div class="icon-wrapper">
+        <i>{feather.arrowRight 20px}</i>
+    </div>
+    <span class="link-text">A profiled link with icon</span>
+</a>
+
 <a class="ssb-link header" href=" " target="" rel="">
-    <i>{feather.arrowRight 20px}</i>
     <span class="link-text">A header link</span>
 </a>
 
@@ -39,9 +46,11 @@ Link
 
 <Link href="" icon={<ArrowRight size={16} />}>A regular link with icon</Link>
 
-<Link href="" linkType="profiled" icon={<ArrowRight size={20}}>A profiled link</Link>
+<Link href="" linkType="profiled">A profiled link</Link>
 
-<Link href="" linkType="header" icon={<ArrowRight size={20}}>A header link</Link>
+<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />}>A profiled link with icon</Link>
+
+<Link href=" " linkType="header">A header link</Link>
 
 <Link href="" negative>A regular link - Negative</Link>
 

@@ -9,25 +9,30 @@ CheckboxGroup
 
 ```html
 <div class="ssb-checkbox-group">
-  <div class="ssb-title no-margin"><h5>Title</h5></div>
-  <div class="ssb-checkbox">
-    <input type="checkbox" id="option1" value="option1" />
-    <label class="checkbox-label" for="option1">Insert label</label>
-  </div>
-  <div class="ssb-checkbox">
-    <input type="checkbox" id="option2" value="option2" />
-    <label class="checkbox-label" for="option2">Insert label</label>
-  </div>
+	<h5 class="ssb-title checkbox-group-header no-margin">Header</h5>
+	<!-- Use flex-row If horizontal layout -->
+    <div class="boxes flex-column">
+        <div class="ssb-checkbox">
+            <input tabindex="0" id="item1" type="checkbox" value="item1">
+            <label class="checkbox-label" for="item1">Item 1</label>
+        </div>
+        <div class="ssb-checkbox">
+            <input tabindex="0" id="item2" type="checkbox" value="item2">
+            <label class="checkbox-label" for="item2">Item 2</label>
+        </div>
+        <div class="ssb-checkbox">
+            <input tabindex="0" disabled="" id="item3" type="checkbox" value="item3">
+            <label class="checkbox-label" for="item3">Item 3</label>
+        </div>
+    </div>
 </div>
 ```
 
 #### React
 
 ```jsx harmony
-<CheckboxGroup
-  header="Header"
-  items={
-    {
+const checkboxItems = [
+	{
       label: 'Item 1',
       value: 'item1',
     },
@@ -35,10 +40,11 @@ CheckboxGroup
       label: 'Item 2',
       value: 'item2',
     },
-  }
-  onChange={() => callback}
-  selectedValue="item2"
-/>
+];
+
+<CheckboxGroup header="Header" items={checkboxItems} onChange={() => callback} />
+
+<CheckboxGroup header="Header" items={checkboxItems} onChange={() => callback} orientation="row" />
 ```
 
 Available props:
@@ -48,6 +54,7 @@ Available props:
 | header | string | Renders a h5 title |
 | items | arrayOf(label, value) | Required items for rendering radio buttons |
 | onChange | func | Callback function when a value is changed |
+| orientation | 'column' or 'row' , default column| Vertical og horizontal layout|
 | selectedValue | string | Pre selected value |
 
 __Dependencies__

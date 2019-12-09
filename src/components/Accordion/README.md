@@ -9,9 +9,9 @@ Accordion
 
 ```html
 <div class="ssb-accordion">
-    <button class="accordion-header closed" onclick={toggle classname to 'open'}>
+    <button class="accordion-header closed" onclick="{toggle classname to 'open'}" tabindex="0">
         <span class="button-grid">
-          <h5 class="ssb-title header-text no-margin">This is a accordion title</h5>
+          <h5 class="ssb-title header-text no-margin">This is a standard accordion</h5>
           <i class="expand-icon">{feather.chevronDown 20px}</i>
         </span>
     </button>
@@ -21,10 +21,10 @@ Accordion
 </div>
 
 <div class="ssb-accordion with-sub-header">
-    <button class="accordion-header closed" onclick="{toggle classname to 'open'}>
+    <button class="accordion-header closed" onclick="{toggle classname to 'open'}" tabindex="0">
         <span class="button-grid">
 			<h5 class="ssb-title sub-header no-margin">Tabell 1</h5>
-			<h5 class="ssb-title header-text no-margin">This is a accordion title with a sub-header</h5>
+			<h5 class="ssb-title header-text no-margin">This is a accordion with a sub-header</h5>
 			<i class="expand-icon">{feather.chevronDown 20px}</i>
 		</span>
     </button>
@@ -34,7 +34,7 @@ Accordion
 </div>
 
 <div class="ssb-accordion without-borders">
-    <button class="accordion-header closed" onclick="{toggle classname to 'open'}>
+    <button class="accordion-header closed" onclick="{toggle classname to 'open'}" tabindex="0">
         <span class="button-grid">
           <h5 class="ssb-title header-text no-margin">This is a accordion without border</h5>
           <i class="expand-icon">{feather.chevronDown 20px}</i>
@@ -47,9 +47,9 @@ Accordion
 
 
 <div class="ssb-accordion mt-3">
-    <button class="accordion-header closed" onclick="{toggle classname to 'open'}">
+    <button class="accordion-header closed" onclick="{toggle classname to 'open'}" tabindex="0">
         <span class=" button-grid ">
-        	<h5 class="ssb-title header-text no-margin ">This is a accordion with nested accordions</h5>
+        	<h5 class="ssb-title header-text no-margin ">This is a nested accordion</h5>
             <!-- If open -->
             <i class="expand-icon">{feather.chevronDown 20px}</i>
             <!-- If closed -->
@@ -64,7 +64,7 @@ Accordion
                     <i class="expand-icon">{feather.chevronDown 16px}</i>
                     <!-- If closed -->
                     <i class="expand-icon">{feather.chevronDown 16px}</i>
-                    <span class="header-text ">A nested accordion header</span>
+                    <span class="header-text ">This is a nested accordion</span>
                 </span>
             </button>
             <div class="nested-accordion-body closed">
@@ -79,17 +79,21 @@ Toggle the all instances of the `closed` className to `open` when clicked.
 #### React
 
 ```jsx harmony
-<Accordion header="This is a accordion title">
+<Accordion header="Standard accordion">
     This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
 </Accordion>
 
-<Accordion subHeader="Tabell 1" header="This is a accordion title with a sub-header">
+<Accordion header="Standard accordion without border" withoutBorders>
     This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
 </Accordion>
 
-<Accordion header="This is a accordion with nested accordions">
+<Accordion subHeader="Tabell 1" header="This is a accordion with a sub-header">
+    This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
+</Accordion>
+
+<Accordion header="Nested accordions">
     This is paragraph text which explains the accordion
-    <NestedAccordion header="A nested accordion header">
+    <NestedAccordion header="Nested accordions">
         This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
     </NestedAccordion>
 </Accordion>

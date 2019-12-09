@@ -8,26 +8,26 @@ Pagination
 #### HTML
 
 ```html
-<div class="ssb-pagination">
-  <div class="direction-button">
-    <i class="chevron-icon">{feather.chevronLeft 18px}</i>
-    Forrige
-  </div>
-  <div class="nav-button-square selected" onclick="{select this}">1</div>
-  <div class="nav-button-square" onclick="{select this}">2</div>
-  <div class="nav-button-square" onclick="{select this}">3</div>
-  <div class="nav-button-square" onclick="{select this}">4</div>
-  <div class="nav-button-square" onclick="{select this}">5</div>
-  <div class="nav-button-square" onclick="{select this}">6</div>
-  <div class="nav-button-square" onclick="{select this}">7</div>
-  <div class="nav-button-square" onclick="{select this}">8</div>
-  <div class="dotted-indicator">...</div>
-  <div class="nav-button-square" onclick="{select this}">20</div>
-  <div class="direction-button">
-    Neste
-    <i class="chevron-icon">{feather.chevronRight 18px}</i>
-  </div>
-</div>
+<nav class="ssb-pagination">
+    <button class="direction-button previous">
+		<i class="chevron-icon">{feather.chevronLeft 18px}</i>
+		Forrige
+    </button>
+    <button class="nav-button-square">1</button>
+    <button class="nav-button-square 2">2</button>
+    <button class="nav-button-square 3">3</button>
+    <button class="nav-button-square 4">4</button>
+    <button class="nav-button-square 5 selected">5</button>
+    <button class="nav-button-square 6">6</button>
+    <button class="nav-button-square 7">7</button>
+    <button class="nav-button-square 8">8</button>
+    <div class="dotted-indicator">...</div>
+    <button class="nav-button-square">20</button>
+    <button class="direction-button next">
+        <span>Neste</span>
+        <i class="chevron-icon">{feather.chevronRight 18px}</i>
+    </button>
+</nav>
 ```
 
 #### React

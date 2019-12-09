@@ -9,18 +9,23 @@ References
 
 ```html
 <div class="ssb-references">
-  <h5 class="ssb-title no-margin">Sources</h5>
-  <a class="ssb-link" href=" " target="" rel="">
-    <span class="link-text">Source link</span>
-  </a>
-</div>
-
-<div class="ssb-references">
-  <h5 class="ssb-title no-margin">Sources</h5>
-  <span class="ssb-text-wrapper">Plain text</span>
-  <a class="ssb-link" href=" " target="" rel="">
-    <span class="link-text">Source link</span>
-  </a>
+    <span class="reference-header">Source</span>
+    <div>
+        <a class="ssb-link" href=" " target="" rel="">
+            <span class="link-text">Link 1</span>
+        </a>
+    </div>
+    <div>
+        <a class="ssb-link" href=" " target="" rel="">
+            <span class="link-text">Link 2</span>
+        </a>
+    </div>
+    <div>
+        <span class="ssb-text-wrapper">A paragraph&nbsp;</span>
+        <a class="ssb-link" href=" " target="" rel="">
+            <span class="link-text">Link 3</span>
+        </a>
+    </div>
 </div>
 ```
 
