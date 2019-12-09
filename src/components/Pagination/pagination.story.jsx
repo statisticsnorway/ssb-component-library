@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
-import { ChevronLeft, ChevronRight } from 'react-feather';
 import Pagination from './index';
 
 const items = [
@@ -31,25 +30,5 @@ storiesOf('Pagination', module).addDecorator(centered)
 	.add('Default', () => (
 		<div>
 			<Pagination items={items} selectedPage={items[4]} />
-		</div>
-	))
-	.add('Html', () => (
-		<div className="ssb-pagination">
-			<div className="direction-button">
-				<ChevronLeft size={18} className="chevron-icon" />Forrige
-			</div>
-			<div className="nav-button-square selected">1</div>
-			<div className="nav-button-square">2</div>
-			<div className="nav-button-square">3</div>
-			<div className="nav-button-square">4</div>
-			<div className="nav-button-square">5</div>
-			<div className="nav-button-square">6</div>
-			<div className="nav-button-square">7</div>
-			<div className="nav-button-square">8</div>
-			<div className="dotted-indicator">...</div>
-			<div className="nav-button-square">20</div>
-			<div className="direction-button">
-				Neste<ChevronRight size={18} className="chevron-icon" />
-			</div>
 		</div>
 	));

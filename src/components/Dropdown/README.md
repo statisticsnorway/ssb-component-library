@@ -10,21 +10,37 @@ Dropdown
 ```html
 <div class="ssb-dropdown">
     <label for="input-dropdown">Menu header</label>
-    <div class="dropdown-interactive-area">
+    <button class="dropdown-interactive-area">
         <input class="focused" id="input-dropdown" disabled="" placeholder="Select item" value="">
         <i class="dd-icon">{feather.chevronDown 18px}</i>
         <div class="list-of-options">
-            <div class="option-list-element" value="item1" id="item1">Apples</div>
-            <div class="option-list-element selected" value="item2" id="item2">Rainbows</div>
-            <div class="option-list-element" value="item3" id="item3">Ocean</div>
+            <button class="option-list-element" value="item1" id="item1">Apples</button>
+            <button class="option-list-element" value="item2" id="item2">Rainbows</button>
+            <button class="option-list-element" value="item3" id="item3">Ocean</button>
         </div>
-    </div>
+    </button>
 </div>
 ```
 
 #### React
 
 ```jsx harmony
+const items = [
+	{
+		title: 'Apples',
+		id: 'item1',
+	}, {
+		title: 'Rainbows',
+		id: 'item2',
+	}, {
+		title: 'Ocean',
+		id: 'item3',
+	}, {
+		title: 'Automobiles and other fun things to talk about',
+		id: 'item4',
+	}, 
+];
+
 <Dropdown header="Menu header" items={items} />
 
 <Dropdown header="Menu header" selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />
