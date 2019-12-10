@@ -46,10 +46,11 @@ const Dropdown = ({
 	return (
 		<div className="ssb-dropdown">
 			{header && <label htmlFor={id}>{header}</label>}
-			<button className="dropdown-interactive-area" tabIndex={tabIndex} ref={node} onClick={() => setOpen(!isOpen)}>
+			<div className="dropdown-interactive-area" tabIndex={tabIndex} ref={node}>
 				<input
 					className={isOpen ? 'focused' : ''}
 					id={id}
+					onFocus={() => setOpen(true)}
 					onChange={e => filterItems(e)}
 					disabled={!searchable}
 					placeholder={selectedOption.title ? selectedOption.title : placeholder}
@@ -63,14 +64,13 @@ const Dropdown = ({
 								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}`}
 								key={it.id}
 								onClick={() => handleSelection(it)}
-								value={it.id}
 								id={it.id}
 							>{it.title}
 							</button>
 						))}
 					</div>
 				)}
-			</button>
+			</div>
 		</div>
 	);
 };

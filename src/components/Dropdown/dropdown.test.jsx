@@ -35,7 +35,7 @@ describe('Dropdown component', () => {
 
 	test('Change classname to open on click', () => {
 		const wrapper = shallow(<Dropdown header="Menu header" items={items} />);
-		wrapper.find('.dropdown-interactive-area').simulate('click');
+		wrapper.find('input').simulate('focus');
 		expect(wrapper.find('input').hasClass('focused')).toEqual(true);
 		expect(wrapper.exists('.list-of-options')).toEqual(true);
 	});
@@ -43,7 +43,7 @@ describe('Dropdown component', () => {
 	test('Choose first item', () => {
 		const wrapper = shallow(<Dropdown header="Menu header" items={items} open />);
 		wrapper.find('.list-of-options').find('button').first().simulate('click');
-		expect(wrapper.find('.dropdown-interactive-area').find('input').props().placeholder).toEqual('Apples');
+		expect(wrapper.find('input').props().placeholder).toEqual('Apples');
 	});
 
 	test('Triggers filter function on search', () => {

@@ -9,15 +9,15 @@ exports[`Dropdown component Matches the snapshot 1`] = `
   >
     Menu header
   </label>
-  <button
+  <div
     className="dropdown-interactive-area"
-    onClick={[Function]}
   >
     <input
       className=""
       disabled={true}
       id={1}
       onChange={[Function]}
+      onFocus={[Function]}
       placeholder="-- Select --"
       value=""
     />
@@ -26,6 +26,6 @@ exports[`Dropdown component Matches the snapshot 1`] = `
       color="currentColor"
       size={24}
     />
-  </button>
+  </div>
 </div>
 `;

@@ -14,7 +14,6 @@
 
   .dropdown-interactive-area {
     @include focus-marker;
-    @include reset-button;
     cursor: pointer;
     position: relative;
 
