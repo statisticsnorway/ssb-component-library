@@ -23,8 +23,6 @@ exports[`CheckboxGroup component Matches the snapshot 1`] = `
       value="item1"
     >
       Item 1
-       
-      0
     </Checkbox>
     <Checkbox
       callback={[Function]}
@@ -35,8 +33,6 @@ exports[`CheckboxGroup component Matches the snapshot 1`] = `
       value="item2"
     >
       Item 2
-       
-      1
     </Checkbox>
     <Checkbox
       callback={[Function]}
@@ -48,8 +44,6 @@ exports[`CheckboxGroup component Matches the snapshot 1`] = `
       value="item3"
     >
       Item 3
-       
-      2
     </Checkbox>
   </div>
 </div>
