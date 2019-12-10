@@ -5,6 +5,7 @@
   transition: all .25s ease-in-out;
   max-width: 350px;
   min-width: 150px;
+  position: relative;
 
   label {
     font-size: 14px;
@@ -14,8 +15,14 @@
 
   .dropdown-interactive-area {
     @include focus-marker;
+    @include reset-button;
     cursor: pointer;
     position: relative;
+
+    button {
+      @include focus-marker;
+      @include reset-button;
+    }
 
     .dd-icon {
       color: $ssb-green-4;
@@ -49,6 +56,7 @@
         outline: $ssb-green-4 auto 1px;
       }
     }
+  }
 
     .list-of-options {
       @include roboto;
@@ -112,5 +120,5 @@
       background: $scrollbar-color;
       border-radius: 3px;
     }
-  }
+
 }
