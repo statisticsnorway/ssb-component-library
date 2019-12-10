@@ -22,6 +22,7 @@
     button {
       @include focus-marker;
       @include reset-button;
+      width: 100%;
     }
 
     .dd-icon {
