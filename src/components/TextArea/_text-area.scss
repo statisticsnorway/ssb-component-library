@@ -3,10 +3,9 @@
   cursor: text;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
   min-width: 200px;
   position: relative;
-  width: 100%;
+  //width: 100%;
 
   &:hover {
 
@@ -30,6 +29,7 @@
     height: $input-field-height;
     line-height: 1.25;
     min-height: $input-field-height;
+    min-width: 200px;
     padding: 11px 12px;
     width: 100%;
 
