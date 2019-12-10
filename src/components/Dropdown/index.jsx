@@ -28,7 +28,9 @@ const Dropdown = ({
 
 	const handleClickOutside = e => {
 		if (!node.current.contains(e.target)) {
-			setOpen(false);
+			setTimeout(() => {
+				setOpen(false);
+			}, 100);
 		}
 	};
 
@@ -46,16 +48,18 @@ const Dropdown = ({
 	return (
 		<div className="ssb-dropdown">
 			{header && <label htmlFor={id}>{header}</label>}
-			<button className="dropdown-interactive-area" tabIndex={tabIndex} ref={node} onClick={() => setOpen(!isOpen)}>
-				<input
-					className={isOpen ? 'focused' : ''}
-					id={id}
-					onChange={e => filterItems(e)}
-					disabled={!searchable}
-					placeholder={selectedOption.title ? selectedOption.title : placeholder}
-					value={inputFieldValue}
-				/>
-				{isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} /> }
+			<div className="dropdown-interactive-area">
+				<button tabIndex={tabIndex} ref={node} onClick={() => setOpen(!isOpen)}>
+					<input
+						className={isOpen ? 'focused' : ''}
+						id={id}
+						onChange={e => filterItems(e)}
+						disabled={!searchable}
+						placeholder={selectedOption.title ? selectedOption.title : placeholder}
+						value={inputFieldValue}
+					/>
+					{isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} /> }
+				</button>
 				{isOpen && (
 					<div className="list-of-options">
 						{availableOptions.map(it => (
@@ -63,14 +67,13 @@ const Dropdown = ({
 								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}`}
 								key={it.id}
 								onClick={() => handleSelection(it)}
-								value={it.id}
 								id={it.id}
 							>{it.title}
 							</button>
 						))}
 					</div>
 				)}
-			</button>
+			</div>
 		</div>
 	);
 };

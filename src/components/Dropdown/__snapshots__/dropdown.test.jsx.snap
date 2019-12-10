@@ -9,23 +9,26 @@ exports[`Dropdown component Matches the snapshot 1`] = `
   >
     Menu header
   </label>
-  <button
+  <div
     className="dropdown-interactive-area"
-    onClick={[Function]}
   >
-    <input
-      className=""
-      disabled={true}
-      id={1}
-      onChange={[Function]}
-      placeholder="-- Select --"
-      value=""
-    />
-    <ChevronDown
-      className="dd-icon"
-      color="currentColor"
-      size={24}
-    />
-  </button>
+    <button
+      onClick={[Function]}
+    >
+      <input
+        className=""
+        disabled={true}
+        id={1}
+        onChange={[Function]}
+        placeholder="-- Select --"
+        value=""
+      />
+      <ChevronDown
+        className="dd-icon"
+        color="currentColor"
+        size={24}
+      />
+    </button>
+  </div>
 </div>
 `;

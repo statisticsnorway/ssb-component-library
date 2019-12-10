@@ -6,19 +6,24 @@ Dropdown
 ### Usage
 
 #### HTML
-
+This component needs some javascript functionality to work.
 ```html
 <div class="ssb-dropdown">
     <label for="input-dropdown">Menu header</label>
-    <button class="dropdown-interactive-area">
-        <input class="focused" id="input-dropdown" disabled="" placeholder="Select item" value="">
-        <i class="dd-icon">{feather.chevronDown 18px}</i>
+    <div class="dropdown-interactive-area">
+        <button onclick="toggle the open class">
+            <input class="focused" id="input-dropdown" disabled="" placeholder="Select item" value="">
+            <!-- If closed -->
+            <i class="dd-icon">{feather.chevronDown 18px}</i>
+            <!-- If open -->
+            <i class="dd-icon">{feather.chevronUp 18px}</i>
+        </button>
         <div class="list-of-options">
-            <button class="option-list-element" value="item1" id="item1">Apples</button>
-            <button class="option-list-element" value="item2" id="item2">Rainbows</button>
-            <button class="option-list-element" value="item3" id="item3">Ocean</button>
+            <button class="option-list-element" value="item1" id="item1" onclick="select item and close">Apples</button>
+            <button class="option-list-element" value="item2" id="item2" onclick="select item and close">Rainbows</button>
+            <button class="option-list-element" value="item3" id="item3" onclick="select item and close">Ocean</button>
         </div>
-    </button>
+    </div>
 </div>
 ```
 
