@@ -1,26 +1,54 @@
 .ssb-card {
 
-  .card-content {
+  .clickable {
     @include focus-marker;
     @include reset-button;
+
+    img {
+      max-width: 400px;
+    }
+
+    &.left-orientation {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &.top-orientation {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &:hover {
+
+      .card-content {
+        border: 1px solid $ssb-green-3;
+
+        &:not(.with-image) {
+          border-top: 5px solid $ssb-green-3;
+        }
+      }
+    }
+  }
+
+  .card-content {
     background: $ssb-white;
     border: 1px solid $ssb-dark-2;
     border-top: 5px solid $ssb-green-3;
     cursor: pointer;
     display: inline-block;
     flex-direction: column;
+    max-width: 400px;
     padding: 20px;
-    width: 100%;
-
-    &:hover {
-      border: 1px solid $ssb-green-3;
-      border-top: 5px solid $ssb-green-3;
-    }
+    width: auto;
 
     &.centered {
       align-items: center;
       display: inline-flex;
       text-align: center;
+    }
+
+    &.with-image {
+      border-top: 1px solid $ssb-dark-2;
     }
   }
 

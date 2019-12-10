@@ -5,15 +5,32 @@ import Card from './index';
 import Button from '../Button';
 import Paragraph from '../Paragraph';
 import Title from '../Title';
+import testImage from '../../media/16x9.png';
 
 storiesOf('Card', module).addDecorator(centered)
 	.add('Default', () => (
 		<div style={{ width: '300px' }}>
-			<Card>
+			<Card imagePlacement="left">
 				<Title size={4} className="no-margin">Look at this</Title>
 				<Paragraph>Explain something about something with something clever.</Paragraph>
 				<Button primary>Handling</Button>
 			</Card>
+		</div>
+	))
+	.add('With images', () => (
+		<div>
+			<Card imagePlacement="left" image={<img src={testImage} alt="testImage" />}>
+				<Title size={2}>Look at this</Title>
+				<Paragraph>Explain something about something with something clever.</Paragraph>
+				<Button primary>Handling</Button>
+			</Card>
+			<div>
+				<Card imagePlacement="top" image={<img src={testImage} alt="testImage" />}>
+					<Title size={2}>Look at this</Title>
+					<Paragraph>Explain something about something with something clever.</Paragraph>
+					<Button primary>Handling</Button>
+				</Card>
+			</div>
 		</div>
 	))
 	.add('Three boxes', () => (

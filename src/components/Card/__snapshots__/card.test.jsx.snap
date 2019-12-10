@@ -5,10 +5,14 @@ exports[`Card component Matches the snapshot 1`] = `
   className="ssb-card"
 >
   <button
-    className="card-content"
+    className="clickable top-orientation"
     onClick={[Function]}
   >
-    ProfileBox
+    <div
+      className="card-content"
+    >
+      ProfileBox
+    </div>
   </button>
 </div>
 `;
