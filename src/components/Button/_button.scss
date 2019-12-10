@@ -89,6 +89,10 @@
       color: $ssb-white;
       cursor: not-allowed;
       font-weight: normal;
+
+      &:hover, &:focus {
+        text-decoration: none;
+      }
     }
 
     &.negative {
