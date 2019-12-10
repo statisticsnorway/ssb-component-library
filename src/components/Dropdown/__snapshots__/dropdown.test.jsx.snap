@@ -12,20 +12,23 @@ exports[`Dropdown component Matches the snapshot 1`] = `
   <div
     className="dropdown-interactive-area"
   >
-    <input
-      className=""
-      disabled={true}
-      id={1}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="-- Select --"
-      value=""
-    />
-    <ChevronDown
-      className="dd-icon"
-      color="currentColor"
-      size={24}
-    />
+    <button
+      onClick={[Function]}
+    >
+      <input
+        className=""
+        disabled={true}
+        id={1}
+        onChange={[Function]}
+        placeholder="-- Select --"
+        value=""
+      />
+      <ChevronDown
+        className="dd-icon"
+        color="currentColor"
+        size={24}
+      />
+    </button>
   </div>
 </div>
 `;

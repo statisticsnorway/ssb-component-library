@@ -35,7 +35,7 @@ describe('Dropdown component', () => {
 
 	test('Change classname to open on click', () => {
 		const wrapper = shallow(<Dropdown header="Menu header" items={items} />);
-		wrapper.find('input').simulate('focus');
+		wrapper.find('button').first().simulate('click');
 		expect(wrapper.find('input').hasClass('focused')).toEqual(true);
 		expect(wrapper.exists('.list-of-options')).toEqual(true);
 	});
