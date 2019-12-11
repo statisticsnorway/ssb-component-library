@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Title from '../Title';
 import RadioButton from '../RadioButton';
 
 const RadioGroup = ({ groupName, header, items, onChange, orientation, selectedValue }) => {

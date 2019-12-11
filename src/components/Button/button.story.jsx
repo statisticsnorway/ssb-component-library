@@ -9,7 +9,7 @@ const negativeStyle = {
 	padding: '100px',
 	display: 'grid',
 	gridTemplateColumns: 'repeat(3, auto)',
-	gridColumnGap: '20px'
+	gridColumnGap: '20px',
 };
 
 storiesOf('Button', module).addDecorator(centered)

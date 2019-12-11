@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../Checkbox';
-import Title from '../Title';
 
 const CheckboxGroup = ({
 	header, items, onChange, orientation, selectedValues,
