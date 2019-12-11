@@ -8,7 +8,7 @@ NestedAccordion
 #### HTML
 
 ```html
-<div class="ssb-nested-accordion mt-3">
+<div class="ssb-nested-accordion">
     <button class="nested-accordion-header closed" onclick="{toggle classname to 'open'}">
         <span class="button-grid">
 			<!-- If open -->
