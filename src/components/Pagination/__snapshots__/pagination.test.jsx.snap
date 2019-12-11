@@ -15,7 +15,9 @@ exports[`Pagination component Matches snapshot 1`] = `
       color="currentColor"
       size={16}
     />
-    Forrige
+    <span>
+      Previous
+    </span>
   </button>
   <button
     className="nav-button-square selected"
@@ -46,7 +48,7 @@ exports[`Pagination component Matches snapshot 1`] = `
   >
      
     <span>
-      Neste
+      Next
     </span>
     <ChevronRight
       className="chevron-icon"
