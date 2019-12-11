@@ -11,7 +11,7 @@ Accordion
 <div class="ssb-accordion">
     <button class="accordion-header closed" onclick="{toggle classname to 'open'}" tabindex="0">
         <span class="button-grid">
-          <h5 class="ssb-title header-text no-margin">This is a standard accordion</h5>
+          <span class="header-text">This is a standard accordion</span>
           <i class="expand-icon">{feather.chevronDown 20px}</i>
         </span>
     </button>
@@ -23,8 +23,8 @@ Accordion
 <div class="ssb-accordion with-sub-header">
     <button class="accordion-header closed" onclick="{toggle classname to 'open'}" tabindex="0">
         <span class="button-grid">
-			<h5 class="ssb-title sub-header no-margin">Tabell 1</h5>
-			<h5 class="ssb-title header-text no-margin">This is a accordion with a sub-header</h5>
+			<span class="sub-header">Tabell 1</span>
+			<span class="header-text">This is a accordion with a sub-header</span>
 			<i class="expand-icon">{feather.chevronDown 20px}</i>
 		</span>
     </button>
@@ -36,7 +36,7 @@ Accordion
 <div class="ssb-accordion without-borders">
     <button class="accordion-header closed" onclick="{toggle classname to 'open'}" tabindex="0">
         <span class="button-grid">
-          <h5 class="ssb-title header-text no-margin">This is a accordion without border</h5>
+          <span class="header-text">This is a accordion without border</span>
           <i class="expand-icon">{feather.chevronDown 20px}</i>
         </span>
     </button>
@@ -46,10 +46,10 @@ Accordion
 </div>
 
 
-<div class="ssb-accordion mt-3">
+<div class="ssb-accordion">
     <button class="accordion-header closed" onclick="{toggle classname to 'open'}" tabindex="0">
         <span class=" button-grid ">
-        	<h5 class="ssb-title header-text no-margin ">This is a nested accordion</h5>
+        	<span class="header-text">This is a nested accordion</span>
             <!-- If open -->
             <i class="expand-icon">{feather.chevronDown 20px}</i>
             <!-- If closed -->
@@ -57,7 +57,7 @@ Accordion
       	</span>
     </button>
     <div class="accordion-body open ">This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
-        <div class="ssb-nested-accordion mt-3 ">
+        <div class="ssb-nested-accordion">
             <button class="nested-accordion-header closed " onclick="{toggle classname to 'open'}">
                 <span class=" button-grid ">
                     <!-- If open -->

@@ -9,7 +9,7 @@ RadioGroup
 
 ```html
 <div class="ssb-radio-group">
-	<div class="ssb-title no-margin"><h5>Title</h5></div>
+	<div class="radio-group-header">Header</div>
 	<!-- Use flex-row If horizontal layout -->
     <div class="boxes flex-column">
         <div class="ssb-radio">

@@ -49,7 +49,7 @@ const Dropdown = ({
 		<div className="ssb-dropdown">
 			{header && <label htmlFor={id}>{header}</label>}
 			<div className="dropdown-interactive-area">
-				<button tabIndex={tabIndex} ref={node} onClick={() => setOpen(!isOpen)}>
+				<button aria-label="open or close dropdown" tabIndex={tabIndex} ref={node} onClick={() => setOpen(!isOpen)}>
 					<input
 						className={isOpen ? 'focused' : ''}
 						id={id}

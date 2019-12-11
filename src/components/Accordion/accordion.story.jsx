@@ -25,7 +25,7 @@ storiesOf('Accordion', module).addDecorator(centered)
 	.add('With nested accordions', () => (
 		<div style={{ display: 'flex', width: '500px' }}>
 			<Accordion header="This is a accordion with nested accordions">
-				<div style={{ marginBottom: '10px' }}>{mockText}</div>
+				<div>{mockText}</div>
 				<NestedAccordion header="A nested accordion header">
 					This is paragraph text which explains the accordion, the rest of the text is just to fill it out and show the space it takes.
 				</NestedAccordion>

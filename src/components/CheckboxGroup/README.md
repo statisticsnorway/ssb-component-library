@@ -9,7 +9,7 @@ CheckboxGroup
 
 ```html
 <div class="ssb-checkbox-group">
-	<h5 class="ssb-title checkbox-group-header no-margin">Header</h5>
+	<div class="checkbox-group-header">Header</div>
 	<!-- Use flex-row If horizontal layout -->
     <div class="boxes flex-column">
         <div class="ssb-checkbox">

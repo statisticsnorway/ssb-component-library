@@ -13,6 +13,7 @@ exports[`Dropdown component Matches the snapshot 1`] = `
     className="dropdown-interactive-area"
   >
     <button
+      aria-label="open or close dropdown"
       onClick={[Function]}
     >
       <input
