@@ -20,7 +20,20 @@
   }
 
   .input-wrapper {
-    display: flex;
+	display: flex;
+	
+	::placeholder {
+		color: $ssb-dark-4;
+		opacity: 1;
+	}
+
+	:-ms-input-placeholder {
+		color: $ssb-dark-4;
+	}
+
+	::-ms-input-placeholder {
+		color: $ssb-dark-4;
+	}
   }
 
   label {

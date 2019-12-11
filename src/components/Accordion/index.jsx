@@ -15,8 +15,8 @@ const Accordion = ({
 				onClick={() => toggleOpen(!isOpen)}
 			>
 				<span className="button-grid">
-					{subHeader && <Title size={5} className="sub-header no-margin">{subHeader}</Title>}
-					<Title size={5} className="header-text no-margin">{header}</Title>
+					{subHeader && <span className="sub-header">{subHeader}</span>}
+					<span className="header-text">{header}</span>
 					{!isOpen && <ChevronDown className="expand-icon" size={20} />}
 					{isOpen && <ChevronUp className="expand-icon" size={20} />}
 				</span>
