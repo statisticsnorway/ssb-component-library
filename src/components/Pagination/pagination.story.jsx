@@ -29,6 +29,6 @@ const items = [
 storiesOf('Pagination', module).addDecorator(centered)
 	.add('Default', () => (
 		<div>
-			<Pagination items={items} selectedPage={items[4]} />
+			<Pagination items={items} labelNext="Neste" labelPrevious="Forrige" selectedPage={items[4]} />
 		</div>
 	));

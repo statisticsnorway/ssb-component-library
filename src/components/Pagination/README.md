@@ -11,7 +11,7 @@ Pagination
 <nav class="ssb-pagination">
     <button class="direction-button previous">
 		<i class="chevron-icon">{feather.chevronLeft 18px}</i>
-		Forrige
+		<span>Forrige</span>
     </button>
     <button class="nav-button-square">1</button>
     <button class="nav-button-square 2">2</button>
@@ -48,5 +48,7 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | items | arrayOf(text (string), path (string)) | Required. Items for text label and path |
+| labelNext | string | Label for direction-button next , default is Next |
+| labelPrevious | string | Label for direction-button previous, default is Previous |
 | onSelect | func | Callback function |
 | selectedPage | object | Optional. Selected item on render |

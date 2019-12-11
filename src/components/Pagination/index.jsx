@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
 const Pagination = ({
-	items, onSelect, selectedPage,
+	items, labelNext, labelPrevious, onSelect, selectedPage,
 }) => {
 	const [selected, setSelected] = useState(selectedPage || items[0]);
 	const [currentButtons, updateCurrentButtons] = useState([{}]);
@@ -45,7 +45,7 @@ const Pagination = ({
 				onClick={() => handleSelection(items[items.indexOf(selected) - 1])}
 				disabled={selected === items[0]}
 			>	<ChevronLeft size={16} className="chevron-icon" />
-				Forrige
+				<span>{labelPrevious}</span>
 			</button>
 			<button className={`nav-button-square${items[0] === selected ? ' selected' : ''}`} onClick={() => handleSelection(items[0])}>
 				{items[0].text}
@@ -71,7 +71,7 @@ const Pagination = ({
 				className="direction-button next"
 				onClick={() => handleSelection(items[items.indexOf(selected) + 1])}
 				disabled={selected === items[items.length - 1]}
-			>	<span>Neste</span>
+			>	<span>{labelNext}</span>
 				<ChevronRight size={16} className="chevron-icon" />
 			</button>
 		</nav>
@@ -80,6 +80,8 @@ const Pagination = ({
 
 Pagination.defaultProps = {
 	onSelect: () => {},
+	labelNext: 'Next',
+	labelPrevious: 'Previous',
 };
 
 Pagination.propTypes = {
@@ -87,6 +89,8 @@ Pagination.propTypes = {
 		text: PropTypes.string,
 		path: PropTypes.string,
 	})).isRequired,
+	labelNext: PropTypes.string,
+	labelPrevious: PropTypes.string,
 	onSelect: PropTypes.func,
 	selectedPage: PropTypes.object,
 };
