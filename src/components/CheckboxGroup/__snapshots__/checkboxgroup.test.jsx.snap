@@ -4,13 +4,11 @@ exports[`CheckboxGroup component Matches the snapshot 1`] = `
 <div
   className="ssb-checkbox-group"
 >
-  <Title
-    className="checkbox-group-header no-margin"
-    negative={false}
-    size={5}
+  <div
+    className="checkbox-group-header"
   >
     Header
-  </Title>
+  </div>
   <div
     className="boxes flex-column"
   >

@@ -4,13 +4,11 @@ exports[`RadioGroup component Matches the snapshot 1`] = `
 <div
   className="ssb-radio-group"
 >
-  <Title
-    className="radio-group-header no-margin"
-    negative={false}
-    size={5}
+  <div
+    className="radio-group-header"
   >
     Header
-  </Title>
+  </div>
   <div
     className="boxes flex-column"
   >

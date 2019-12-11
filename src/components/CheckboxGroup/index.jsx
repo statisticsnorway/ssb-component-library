@@ -24,7 +24,7 @@ const CheckboxGroup = ({
 
 	return (
 		<div className="ssb-checkbox-group">
-			{header && <Title className="checkbox-group-header no-margin" size={5}>{header}</Title>}
+			{header && <div className="checkbox-group-header">{header}</div>}
 			<div className={`boxes flex-${orientation}`}>
 				{items.map((it, index) => (
 					<Checkbox
