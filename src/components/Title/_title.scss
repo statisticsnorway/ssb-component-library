@@ -12,28 +12,28 @@
       @include roboto-condenced;
       font-size: 56px;
       font-weight: bold;
-      line-height: 1.4;
+      line-height: 80px;
     }
 
     h2#{&} {
       @include roboto-condenced;
       font-size: 28px;
       font-weight: bold;
-      line-height: 1.5;
+      line-height: 40px;
     }
 
     h3#{&} {
-      @include roboto-condenced;
-      font-size: 24px;
+      @include roboto;
+      font-size: 20px;
       font-weight: bold;
-      line-height: 1.6;
+      line-height: 32px;
     }
 
     h4#{&} {
       @include roboto;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: bold;
-      line-height: 1.7;
+      line-height: 28px;
     }
 
     h5#{&} {
@@ -48,6 +48,21 @@
       font-size: 16px;
       font-weight: bold;
       line-height: 1.7;
+    }
+
+    @media #{$mobile} {
+
+      h1#{&} {
+        font-size: 44px;
+        line-height: 56px;
+      }
+
+      h2#{&} {
+        font-size: 28px;
+        line-height: 36px;
+      }
+
+      // No change for h3 and h4
     }
   }
 }
