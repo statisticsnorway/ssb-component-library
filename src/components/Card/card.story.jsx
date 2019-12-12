@@ -1,18 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
+import { Globe } from 'react-feather';
 import Card from './index';
 import Button from '../Button';
-import Paragraph from '../Paragraph';
+import Text from '../Text';
 import Title from '../Title';
 import testImage from '../../media/16x9.png';
 
 storiesOf('Card', module).addDecorator(centered)
 	.add('Default', () => (
-		<div style={{ width: '300px' }}>
-			<Card imagePlacement="left">
-				<Title size={4} className="no-margin">Look at this</Title>
-				<Paragraph>Explain something about something with something clever.</Paragraph>
+		<div>
+			<Card>
+				<Title size={2}>Look at this</Title>
+				<Text>Explain something about something with something clever.</Text>
 				<Button primary>Handling</Button>
 			</Card>
 		</div>
@@ -21,31 +22,33 @@ storiesOf('Card', module).addDecorator(centered)
 		<div>
 			<Card imagePlacement="left" image={<img src={testImage} alt="testImage" />}>
 				<Title size={2}>Look at this</Title>
-				<Paragraph>Explain something about something with something clever.</Paragraph>
+				<Text>Explain something about something with something clever.</Text>
 				<Button primary>Handling</Button>
 			</Card>
+			<br />
 			<div>
 				<Card imagePlacement="top" image={<img src={testImage} alt="testImage" />}>
 					<Title size={2}>Look at this</Title>
-					<Paragraph>Explain something about something with something clever.</Paragraph>
+					<Text>Explain something about something with something clever.</Text>
 					<Button primary>Handling</Button>
 				</Card>
 			</div>
 		</div>
 	))
 	.add('Three boxes', () => (
-		<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 250px)', gridColumnGap: '20px' }}>
+		<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto, 380px)', gridRowGap: '20px' }}>
 			<Card>
 				<Title size={2}>Look at this</Title>
-				<Paragraph>Explain something about something with something clever.</Paragraph>
+				<Text>Explain something about something with something clever.</Text>
 			</Card>
 			<Card centered>
+				<Globe size={120} style={{ marginBottom: '20px' }} />
 				<Title size={2}>Look at this</Title>
-				<Paragraph>This box has the <code>centered</code> prop set to true</Paragraph>
+				<Text>This box has the <code>centered</code> prop set to true</Text>
 			</Card>
 			<Card fileLocation="./not_a_file.md">
 				<Title size={2}>Look at this</Title>
-				<Paragraph>Explain something about something with something clever.</Paragraph>
+				<Text>Explain something about something with something clever.</Text>
 			</Card>
 		</div>
 	));
