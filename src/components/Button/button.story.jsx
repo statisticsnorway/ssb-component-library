@@ -7,19 +7,21 @@ import Button from './index';
 const negativeStyle = {
 	backgroundColor: '#274247',
 	padding: '100px',
-	display: 'flex',
+	display: 'grid',
+	gridTemplateColumns: 'repeat(3, auto)',
+	gridColumnGap: '20px',
 };
 
 storiesOf('Button', module).addDecorator(centered)
 	.add('Primary', () => (
-		<div style={{ display: 'flex' }}>
-			<Button className="mr-4" primary>Primary button</Button>
-			<Button className="mr-4" icon={<ChevronDown size={18} />} primary>Primary icon</Button>
+		<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, auto)', gridColumnGap: '20px' }}>
+			<Button primary>Primary button</Button>
+			<Button icon={<ChevronDown size={18} />} primary>Primary icon</Button>
 			<Button primary disabled>Disabled button</Button>
 		</div>
 	))
 	.add('Secondary', () => (
-		<div style={{ display: 'flex' }}>
+		<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, auto)', gridColumnGap: '20px' }}>
 			<Button className="mr-4">Secondary button</Button>
 			<Button className="mr-4" icon={<ChevronDown size={18} />}>Secondary icon</Button>
 			<Button disabled>Disabled button</Button>

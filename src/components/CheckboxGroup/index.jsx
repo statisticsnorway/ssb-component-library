@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../Checkbox';
-import Title from '../Title';
 
 const CheckboxGroup = ({
 	header, items, onChange, orientation, selectedValues,
@@ -24,7 +23,7 @@ const CheckboxGroup = ({
 
 	return (
 		<div className="ssb-checkbox-group">
-			{header && <Title className="checkbox-group-header no-margin" size={5}>{header}</Title>}
+			{header && <div className="checkbox-group-header">{header}</div>}
 			<div className={`boxes flex-${orientation}`}>
 				{items.map((it, index) => (
 					<Checkbox

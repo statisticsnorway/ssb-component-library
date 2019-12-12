@@ -12,13 +12,11 @@ exports[`Accordion component Matches the snapshot 1`] = `
     <span
       className="button-grid"
     >
-      <Title
-        className="header-text no-margin"
-        negative={false}
-        size={5}
+      <span
+        className="header-text"
       >
         This is a accordion title
-      </Title>
+      </span>
       <ChevronDown
         className="expand-icon"
         color="currentColor"

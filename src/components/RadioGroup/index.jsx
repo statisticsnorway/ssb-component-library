@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Title from '../Title';
 import RadioButton from '../RadioButton';
 
 const RadioGroup = ({ groupName, header, items, onChange, orientation, selectedValue }) => {
@@ -12,7 +11,7 @@ const RadioGroup = ({ groupName, header, items, onChange, orientation, selectedV
 
 	return (
 		<div className="ssb-radio-group">
-			{header && <Title className="radio-group-header no-margin" size={5}>{header}</Title>}
+			{header && <div className="radio-group-header">{header}</div>}
 			<div className={`boxes flex-${orientation}`}>
 				{items.map((it, index) => (
 					<RadioButton

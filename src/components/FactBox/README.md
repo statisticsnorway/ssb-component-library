@@ -12,7 +12,7 @@ FactBox
     <div class="ssb-accordion without-borders">
         <button class="accordion-header closed" onclick="{toggle classname to 'open'}" tabindex="0">
             <span class="button-grid">
-          		<h5 class="ssb-title header-text no-margin">This is a standard accordion</h5>
+          		<span class="header-text">This is a fact box header</span>
           		<i class="expand-icon">{feather.chevronDown 20px}</i>
         	</span>
         </button>

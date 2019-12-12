@@ -2,7 +2,7 @@
 
 exports[`NestedAccordion component Matches the snapshot 1`] = `
 <div
-  className="ssb-nested-accordion mt-3"
+  className="ssb-nested-accordion"
 >
   <button
     className="nested-accordion-header closed"

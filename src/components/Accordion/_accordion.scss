@@ -5,6 +5,8 @@
   .accordion-header {
     @include focus-marker;
     @include reset-button;
+    @include roboto-condenced;
+    font-size: 20px;
 
     .button-grid {
       align-items: center;
