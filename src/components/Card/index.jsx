@@ -8,7 +8,7 @@ const Card = ({
 	<div className="ssb-card">
 		<button
 			className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
-			onClick={() => onClick}
+			onClick={onClick}
 		>
 			{image}
 			<div className={`card-content${centered ? ' centered' : ''}${image ? ' with-image' : ''}`}>

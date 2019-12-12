@@ -1,0 +1,37 @@
+.ssb-image-link {
+  box-sizing: border-box;
+  color: $ssb-white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: flex-end;
+  padding: 64px 20px;
+  position: relative;
+  width: 380px;
+
+  .image-background {
+    height: 400px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 380px;
+    z-index: -1;
+  }
+
+  .il-type {
+    @include roboto;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .il-title {
+    @include roboto-condenced;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.43;
+    margin-bottom: 12px;
+  }
+}
