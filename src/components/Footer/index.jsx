@@ -23,10 +23,10 @@ const Footer = ({ children }) => (
 				<Link href="https://www.ssb.no/nettstedskart" isExternal negative>Nettstedskart</Link>
 			</div>
 			<div className="social-links">
-				<Link href=" " isExternal negative><Facebook /></Link>
-				<Link href=" " isExternal negative><Twitter /></Link>
-				<Link href=" " isExternal negative><Linkedin /></Link>
-				<Link href=" " isExternal negative><Rss /></Link>
+				<Link href=" " isExternal negative icon={<Facebook size={24}/>} />
+				<Link href=" " isExternal negative icon={<Twitter size={24}/>} />
+				<Link href=" " isExternal negative icon={<Linkedin size={24}/>} />
+				<Link href=" " isExternal negative icon={<Rss size={24}/>} />
 			</div>
 		</div>
 	</div>
