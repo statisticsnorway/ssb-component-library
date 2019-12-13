@@ -1,3 +1,4 @@
+.github/
 .storybook
 coverage/
 src/
@@ -8,3 +9,4 @@ src/
 .stylelintrc
 jest.config.js
 rollup.config.js
+svgTransform.js
