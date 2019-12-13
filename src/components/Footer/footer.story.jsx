@@ -10,7 +10,7 @@ storiesOf('Footer', module).addDecorator(centered)
 	.add('Default', () => (
 		<div style={{ width: '1200px' }}>
 			<Footer>
-				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, auto)'}}>
+				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, auto)' }}>
 					<div>
 						<Title size={5} negative>Category</Title>
 						<div style={{ display: 'flex', flexDirection: 'column' }}>

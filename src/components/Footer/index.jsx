@@ -8,9 +8,7 @@ import SsbLogo from '../../media/ssb-logo-white.svg';
 const Footer = ({ children }) => (
 	<div className="ssb-footer-wrapper">
 		<div className="top-row flex-row justify-space-between flex-wrap">
-			{console.log('@@@@@')}
 			<SsbLogo alt="ssb-logo" />
-			{console.log('@@@@@2')}
 			<Button negative onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}>
 				Til Toppen
 			</Button>
@@ -25,10 +23,10 @@ const Footer = ({ children }) => (
 				<Link href="https://www.ssb.no/nettstedskart" isExternal negative>Nettstedskart</Link>
 			</div>
 			<div className="social-links">
-				<Link href="https://www.facebook.com/statistisksentralbyra/" isExternal negative icon={<Facebook size={24}/>} />
-				<Link href="https://twitter.com/ssbnytt" isExternal negative icon={<Twitter size={24}/>} />
-				<Link href="https://www.linkedin.com/company/statistics-norway/" isExternal negative icon={<Linkedin size={24}/>} />
-				<Link href="https://www.ssb.no/informasjon/rss" isExternal negative icon={<Rss size={24}/>} />
+				<Link href="https://www.facebook.com/statistisksentralbyra/" isExternal negative icon={<Facebook size={24} />} />
+				<Link href="https://twitter.com/ssbnytt" isExternal negative icon={<Twitter size={24} />} />
+				<Link href="https://www.linkedin.com/company/statistics-norway/" isExternal negative icon={<Linkedin size={24} />} />
+				<Link href="https://www.ssb.no/informasjon/rss" isExternal negative icon={<Rss size={24} />} />
 			</div>
 		</div>
 	</div>
