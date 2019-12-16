@@ -41,6 +41,7 @@
       &:after {
         border: solid $ssb-white;
         border-width: 0 2px 2px 0;
+        box-sizing: initial;
         content: '';
         display: block;
         height: 10px;
