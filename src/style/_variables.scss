@@ -64,10 +64,6 @@ $max-readable-width: 580px;
   to   { opacity: 1; }
 }
 
-.no-margin {
-  margin: 0;
-}
-
 @mixin reset-button {
   background-color: transparent;
   border: none;

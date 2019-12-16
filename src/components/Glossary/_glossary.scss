@@ -52,6 +52,7 @@
     top: 34px;
     transition: opacity .18s;
     width: 270px;
+    z-index: 999;
 
     &:after {
       border-color: transparent transparent $ssb-dark-5 transparent;
