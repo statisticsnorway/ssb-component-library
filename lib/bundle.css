@@ -275,8 +275,9 @@ a {
   display: inline-block;
   flex-direction: column;
   max-width: 380px;
+  min-width: 250px;
   padding: 20px;
-  width: 380px; }
+  width: 100%; }
   .ssb-card .card-content.centered {
     align-items: center;
     display: inline-flex;
@@ -293,6 +294,7 @@ a {
   cursor: pointer;
   display: flex;
   height: 60px;
+  max-width: 380px;
   text-decoration: none; }
   .ssb-card .download-section:focus {
     outline: #9272fc solid 2px;
