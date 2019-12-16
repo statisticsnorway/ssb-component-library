@@ -7,9 +7,6 @@
   to {
     opacity: 1; } }
 
-.no-margin {
-  margin: 0; }
-
 body {
   font-family: 'Open Sans', sans-serif !important;
   font-stretch: normal;
@@ -35,6 +32,9 @@ a {
 
 .flex-wrap {
   flex-wrap: wrap; }
+
+.no-margin {
+  margin: 0 !important; }
 
 .ssb-accordion {
   display: grid;
@@ -335,6 +335,7 @@ a {
     .ssb-checkbox input[type=checkbox]:checked + .checkbox-label:after {
       border: solid #fff;
       border-width: 0 2px 2px 0;
+      box-sizing: initial;
       content: '';
       display: block;
       height: 10px;
@@ -671,7 +672,8 @@ a {
     position: absolute;
     top: 34px;
     transition: opacity .18s;
-    width: 270px; }
+    width: 270px;
+    z-index: 999; }
     .ssb-glossary .glossary-popup:after {
       border-color: transparent transparent #274247 transparent;
       border-style: solid;
