@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Matches the snapshot 1`] = `
+<div
+  className="ssb-footer-wrapper"
+>
+  <div
+    className="top-row flex-row justify-space-between flex-wrap"
+  >
+    <[object Object]
+      alt="ssb-logo"
+    />
+    <Button
+      className=""
+      disabled={false}
+      negative={true}
+      onClick={[Function]}
+      primary={false}
+      type="button"
+    >
+      Til Toppen
+    </Button>
+  </div>
+  <div
+    className="footer-content"
+  >
+    <div>
+      Content
+    </div>
+  </div>
+  <div
+    className="bottom-row flex-row justify-space-between flex-wrap"
+  >
+    <div
+      className="global-links"
+    >
+      <Link
+        className=""
+        href="https://www.ssb.no/"
+        isExternal={true}
+        negative={true}
+      >
+        Statistisk sentralbyrå © 2019
+      </Link>
+      <Link
+        className=""
+        href="https://www.ssb.no/a-aa"
+        isExternal={true}
+        negative={true}
+      >
+        A-Å
+      </Link>
+      <Link
+        className=""
+        href="https://www.ssb.no/nettstedskart"
+        isExternal={true}
+        negative={true}
+      >
+        Nettstedskart
+      </Link>
+    </div>
+    <div
+      className="social-links"
+    >
+      <Link
+        className=""
+        href="https://www.facebook.com/statistisksentralbyra/"
+        icon={
+          <Facebook
+            color="currentColor"
+            size={24}
+          />
+        }
+        isExternal={true}
+        negative={true}
+      />
+      <Link
+        className=""
+        href="https://twitter.com/ssbnytt"
+        icon={
+          <Twitter
+            color="currentColor"
+            size={24}
+          />
+        }
+        isExternal={true}
+        negative={true}
+      />
+      <Link
+        className=""
+        href="https://www.linkedin.com/company/statistics-norway/"
+        icon={
+          <Linkedin
+            color="currentColor"
+            size={24}
+          />
+        }
+        isExternal={true}
+        negative={true}
+      />
+      <Link
+        className=""
+        href="https://www.ssb.no/informasjon/rss"
+        icon={
+          <Rss
+            color="currentColor"
+            size={24}
+          />
+        }
+        isExternal={true}
+        negative={true}
+      />
+    </div>
+  </div>
+</div>
+`;
