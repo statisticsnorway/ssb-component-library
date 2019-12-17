@@ -11,7 +11,7 @@ storiesOf('StickyMenu', module).addDecorator(centered)
 	.add('Default', () => (
 		<div style={{ width: '1400px' }}>
 			<StickyMenu>
-				<div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+				<div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', padding: '25px 0 25px 0' }}>
 					<div>
 						<Text small>Kommunefakta</Text>
 						<div style={{ fontSize: '24px', fontWeight: 'bold' }}>Stordal (Møre og Romsdal)</div>
@@ -31,7 +31,7 @@ storiesOf('StickyMenu', module).addDecorator(centered)
 	.add('Mobile', () => (
 		<div style={{ width: '360px' }}>
 			<StickyMenu>
-				<div style={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between', width: 'auto', paddingLeft: '20px', paddingRight: '20px', paddingBottom: '16px' }}>
+				<div style={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between', width: 'auto', padding: '16px 20px 14px 20px' }}>
 					<div style={{ fontSize: '18px', fontWeight: 'bold' }}>Stordal (Møre og Romsdal)</div>
 					<div style={{ display: 'flex' }}>
 						<Search size={18} className="chevron-down-icon" style={{ marginRight: '4px', backgroundColor: '#00824d', color: '#ffffff', padding: '4px' }} />
@@ -39,7 +39,7 @@ storiesOf('StickyMenu', module).addDecorator(centered)
 					</div>
 				</div>
 				<Divider light />
-				<div style={{ width: 'auto', paddingTop: '12px', paddingLeft: '20px', paddingRight: '20px' }}>
+				<div style={{ width: 'auto', paddingTop: '12px', padding: '12px 20px 20px 20px' }}>
 					<div style={{ fontSize: '16px', fontWeight: 'bold', paddingBottom: '8px' }}>Bytt kommune:</div>
 					<Input id="kommune" ariaLabel="Søk på kommune" searchField placeholder="Søk på kommune" />
 				</div>
