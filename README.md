@@ -1,4 +1,6 @@
 # SSB Component Library
+[![npm version](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library.svg)](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library)
+
 The SSB component library is developed mainly for developers at SSB.
 Visit the [documentation page](https://github.com/statisticsnorway/design-system) to see all available components and how to use them.
 - [Usage](#usage)
