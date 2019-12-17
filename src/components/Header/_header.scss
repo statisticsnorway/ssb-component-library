@@ -1,0 +1,36 @@
+.ssb-header-wrapper {
+  box-sizing: border-box;
+  padding: 10px 112px 12px;
+  width: 100%;
+
+  .global-links {
+    float: right;
+    margin-bottom: 12px;
+
+    .link-list {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      margin: 0;
+
+      > * {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .header-content {
+    margin-bottom: 20px;
+    margin-top: 14px;
+  }
+
+  .top-row {
+    width: 100%;
+
+    .searchfield {
+      width: 285px;
+      align-self: flex-end;
+    }
+
+  }
+}
