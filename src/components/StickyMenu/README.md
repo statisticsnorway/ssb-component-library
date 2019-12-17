@@ -44,8 +44,8 @@ Mobile
         <div style="align-items: center; display: flex; justify-content: space-between; width: auto; padding: 16px 20px 14px;">
             <div style="font-size: 18px; font-weight: bold;">Stordal (Møre og Romsdal)</div>
             <div style="display: flex;">
-                <i>{feather.search 32px}</i>
-                <i>{feather.map 32px}</i>
+                <i>{feather.search 24px}</i>
+                <i>{feather.map 24px}</i>
             </div>
         </div>
         <hr class="ssb-divider type-light">
@@ -92,8 +92,8 @@ Mobile
     <div style={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between', width: 'auto', padding: '16px 20px 14px 20px' }}>
         <div style={{ fontSize: '18px', fontWeight: 'bold' }}>Stordal (Møre og Romsdal)</div>
         <div style={{ display: 'flex' }}>
-            <Search size={18} className="chevron-down-icon" style={{ marginRight: '4px', backgroundColor: '#00824d', color: '#ffffff', padding: '4px' }} />
-            <Map size={18} className="chevron-down-icon" style={{ padding: '4px' }} />
+            <Search size={24} className="chevron-down-icon" style={{ marginRight: '4px', backgroundColor: '#00824d', color: '#ffffff', padding: '4px' }} />
+            <Map size={24} className="chevron-down-icon" style={{ padding: '4px' }} />
         </div>
     </div>
     <Divider light />

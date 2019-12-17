@@ -34,8 +34,8 @@ storiesOf('StickyMenu', module).addDecorator(centered)
 				<div style={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between', width: 'auto', padding: '16px 20px 14px 20px' }}>
 					<div style={{ fontSize: '18px', fontWeight: 'bold' }}>Stordal (Møre og Romsdal)</div>
 					<div style={{ display: 'flex' }}>
-						<Search size={18} className="chevron-down-icon" style={{ marginRight: '4px', backgroundColor: '#00824d', color: '#ffffff', padding: '4px' }} />
-						<Map size={18} className="chevron-down-icon" style={{ padding: '4px' }} />
+						<Search size={24} className="chevron-down-icon" style={{ marginRight: '4px', backgroundColor: '#00824d', color: '#ffffff', padding: '4px' }} />
+						<Map size={24} className="chevron-down-icon" style={{ padding: '4px' }} />
 					</div>
 				</div>
 				<Divider light />
