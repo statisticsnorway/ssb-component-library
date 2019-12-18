@@ -37,10 +37,6 @@ describe('Pagination component', () => {
 		expect(wrapper.find('.nav-button-square').first().hasClass('selected')).toEqual(true);
 	});
 
-	test('Sets correct pre selection', () => {
-		const wrapper = shallow(<Pagination items={items} />);
-	});
-
 	describe('handleSelection function', () => {
 		let callback;
 		let useStateSpy;
