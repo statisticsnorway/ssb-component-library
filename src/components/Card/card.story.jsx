@@ -46,7 +46,7 @@ storiesOf('Card', module).addDecorator(centered)
 				<Title size={2}>Look at this</Title>
 				<Text>This box has the <code>centered</code> prop set to true</Text>
 			</Card>
-			<Card fileLocation="./not_a_file.md">
+			<Card fileLocation="./not_a_file.md" downloadText="Download">
 				<Title size={2}>Look at this</Title>
 				<Text>Explain something about something with something clever.</Text>
 			</Card>
