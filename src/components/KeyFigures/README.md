@@ -79,6 +79,7 @@ Available props:
 | icon | node | Renders an icon |
 | number | string or number | Large number to be displayed |
 | numberDescription | string | Subtitle |
+| noNumberText | string | Text if number not set, default "Tall ikke tilgjengelig" |
 | size | 'small', 'medium' or 'large' | Change size of number and icon |
 | title | string | Displays title |
 | time | string or number | Displays a year between title and number |

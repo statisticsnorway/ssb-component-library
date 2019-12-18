@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Number from '../Number';
 import Glossary from '../Glossary';
 
-const KeyFigures = ({	icon, number, numberDescription, size, title, time, glossary }) => (
+const KeyFigures = ({	icon, number, numberDescription, noNumberText, size, title, time, glossary }) => (
 	<div className={`ssb-key-figures ${size}`}>
 		{icon && <div className={`kf-icon ${size}`}>{icon}</div>}
 		<div>
@@ -22,12 +22,14 @@ const KeyFigures = ({	icon, number, numberDescription, size, title, time, glossa
 						<span className="kf-title subtitle">{numberDescription}</span>
 					</div>
 				)
-				: <span className="no-number">Tall ikke tilgjengelig</span>}
+				: <span className="no-number">{noNumberText}</span>}
 		</div>
 	</div>
 );
 
-KeyFigures.defaultProps = {};
+KeyFigures.defaultProps = {
+	noNumberText: 'Tall ikke tilgjengelig',
+};
 
 KeyFigures.propTypes = {
 	icon: PropTypes.node,
@@ -36,6 +38,7 @@ KeyFigures.propTypes = {
 		PropTypes.number,
 	]),
 	numberDescription: PropTypes.string,
+	noNumberText: PropTypes.string,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 	title: PropTypes.string,
 	time: PropTypes.oneOfType([
