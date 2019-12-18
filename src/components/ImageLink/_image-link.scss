@@ -1,6 +1,6 @@
 .ssb-image-link {
   box-sizing: border-box;
-  color: $ssb-white;
+  color: $ssb-white !important;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -33,5 +33,16 @@
     font-weight: bold;
     line-height: 1.43;
     margin-bottom: 12px;
+  }
+
+  &.horizontal {
+    height: 212px;
+    padding: 40px 20px;
+    width: 480px;
+
+    .image-background {
+      height: 212px;
+      width: 480px;
+    }
   }
 }
