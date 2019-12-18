@@ -9,7 +9,7 @@ written in one or more paragraphs depending on the amount of space needed`;
 
 storiesOf('Glossary', module).addDecorator(centered)
 	.add('As a wrapper', () => (
-		<Text>You can explain a single <Glossary explanation={placeholderText}>word</Glossary>
+		<Text>You can explain a single <Glossary explanation={placeholderText} closeText="Close">word</Glossary>
 			&nbsp;in a sentence.
 		</Text>
 	));

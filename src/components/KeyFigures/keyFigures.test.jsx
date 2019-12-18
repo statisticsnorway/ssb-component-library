@@ -33,4 +33,13 @@ describe('KeyFigures component', () => {
 		);
 		expect(wrapper2.find(Glossary)).toHaveLength(0);
 	});
+	test('Renders time and number', () => {
+		const wrapper = shallow(<KeyFigures number="789 398" time="2018" />);
+		expect(wrapper.find('.kf-time').render().text()).toBe('2018');
+		expect(wrapper.find('Number').render().text()).toBe('789 398');
+	});
+	test('Render no number text', () => {
+		const wrapper = shallow(<KeyFigures title="KeyFigure without number" time="2018" noNumberText="Ingen tall"/>);
+		expect(wrapper.find('.no-number').render().text()).toBe('Ingen tall');
+	});
 });

@@ -54,6 +54,7 @@ Available props:
 | ---------- | ------------- | ----- |
 | centered | bool | Centers text |
 | children | node | Required. Fills box with content |
+| downloadText | string | Text download link, default "Last ned" |
 | fileLocation | string | Path to downloadable file. Ads the download field |
 | image | element | Image element |
 | imageElement | oneOf(['left', 'top']) | Position of the image |
