@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Download } from 'react-feather';
 
 const Card = ({
-	centered, children, fileLocation, image, imagePlacement, onClick,
+	centered, children, downloadText, fileLocation, image, imagePlacement, onClick,
 }) => (
 	<div className="ssb-card">
 		<button
@@ -19,7 +19,7 @@ const Card = ({
 		{fileLocation && (
 			<a download href={fileLocation} className="download-section">
 				<Download className="download-icon" />
-				<span>Last ned</span>
+				<span>{downloadText}</span>
 			</a>
 		)}
 	</div>
@@ -27,6 +27,7 @@ const Card = ({
 
 Card.defaultProps = {
 	centered: false,
+	downloadText: 'Last ned',
 	imagePlacement: 'top',
 	onClick: () => {},
 };
@@ -34,6 +35,7 @@ Card.defaultProps = {
 Card.propTypes = {
 	centered: PropTypes.bool,
 	children: PropTypes.node.isRequired,
+	downloadText: PropTypes.string,
 	fileLocation: PropTypes.string,
 	image: PropTypes.element,
 	imagePlacement: PropTypes.oneOf(['left', 'top']),

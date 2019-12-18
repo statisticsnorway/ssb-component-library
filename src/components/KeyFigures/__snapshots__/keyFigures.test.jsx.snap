@@ -15,6 +15,7 @@ exports[`KeyFigures component Matches the snapshot 1`] = `
   </div>
   <div>
     <Glossary
+      closeText="Lukk"
       explanation="Explain something"
     >
       <span

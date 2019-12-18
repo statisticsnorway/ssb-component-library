@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { BookOpen, XCircle } from 'react-feather';
 
-const Glossary = ({ explanation, children }) => {
+const Glossary = ({ explanation, children, closeText }) => {
 	const node = useRef();
 	const infoContainer = useRef();
 	const [open, setOpen] = useState(false);
@@ -36,7 +36,7 @@ const Glossary = ({ explanation, children }) => {
 					<div className="content-box">
 						<span className="info-text">{explanation}</span>
 						<div className="ssb-glossary-closing">
-							<XCircle size={16} className="icon" /><span>Lukk</span>
+							<XCircle size={16} className="icon" /><span>{closeText}</span>
 						</div>
 					</div>
 				</div>
@@ -46,10 +46,13 @@ const Glossary = ({ explanation, children }) => {
 	);
 };
 
-Glossary.defaultProps = {};
+Glossary.defaultProps = {
+	closeText: 'Lukk',
+};
 
 Glossary.propTypes = {
 	children: PropTypes.node,
+	closeText: PropTypes.string,
 	explanation: PropTypes.string.isRequired,
 };
 
