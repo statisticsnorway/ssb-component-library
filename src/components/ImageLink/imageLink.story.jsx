@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
 import ImageLink from './index';
 import doge from './doge.png';
-import jokeDog from './jokeDog.png'
+import jokeDog from './jokeDog.png';
 
 const sup = (() => {
 	console.log('Image link clicked');

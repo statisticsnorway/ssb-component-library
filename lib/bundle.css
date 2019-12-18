@@ -708,9 +708,16 @@ a {
         color: #fff;
         font-size: 14px; }
 
+.ssb-header-wrapper {
+  box-sizing: border-box;
+  padding: 0 114px;
+  width: 100%; }
+  .ssb-header-wrapper .global-links > * {
+    margin-left: 20px; }
+
 .ssb-image-link {
   box-sizing: border-box;
-  color: #fff;
+  color: #fff !important;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -742,6 +749,13 @@ a {
     font-weight: bold;
     line-height: 1.43;
     margin-bottom: 12px; }
+  .ssb-image-link.horizontal {
+    height: 212px;
+    padding: 40px 20px;
+    width: 480px; }
+    .ssb-image-link.horizontal .image-background {
+      height: 212px;
+      width: 480px; }
 
 .ssb-input {
   font-family: 'Roboto', sans-serif !important;
@@ -762,11 +776,14 @@ a {
     display: flex; }
     .ssb-input .input-wrapper ::placeholder {
       color: #2d6975;
+      font-size: 14px;
       opacity: 1; }
     .ssb-input .input-wrapper :-ms-input-placeholder {
-      color: #2d6975; }
+      color: #2d6975;
+      font-size: 14px; }
     .ssb-input .input-wrapper ::-ms-input-placeholder {
-      color: #2d6975; }
+      color: #2d6975;
+      font-size: 14px; }
   .ssb-input label {
     color: #162327;
     cursor: text;
@@ -1331,8 +1348,6 @@ a {
   display: flex;
   justify-content: center;
   line-height: normal;
-  padding-bottom: 25px;
-  padding-top: 25px;
   position: sticky;
   top: 0;
   width: 100%; }
@@ -1352,9 +1367,6 @@ a {
     font-weight: bold;
     margin-right: 10px;
     white-space: nowrap; }
-  .ssb-sticky-menu .title {
-    font-size: 24px;
-    font-weight: bold; }
 
 .ssb-tabs {
   display: flex;

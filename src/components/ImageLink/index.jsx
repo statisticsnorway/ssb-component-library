@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ArrowRightCircle } from 'react-feather';
 
 const ImageLink = ({ image, link, onClick, orientation, title, type }) => (
-	<a className= {`ssb-image-link ${orientation}`} href={link} onClick={onClick}>
+	<a className={`ssb-image-link ${orientation}`} href={link} onClick={onClick}>
 		<div className="image-background">{image}</div>
 		<span className="il-type">{type}</span>
 		<span className="il-title">{title}</span>
@@ -13,7 +13,7 @@ const ImageLink = ({ image, link, onClick, orientation, title, type }) => (
 
 ImageLink.defaultProps = {
 	onClick: () => {},
-	orientation: 'vertical'
+	orientation: 'vertical',
 };
 
 ImageLink.propTypes = {
