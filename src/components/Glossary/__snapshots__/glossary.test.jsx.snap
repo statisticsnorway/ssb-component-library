@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Glossary Matches the snapshot 1`] = `
+<button
+  className="ssb-glossary"
+  onClick={[Function]}
+>
+  <div
+    className="glossary-text-wrap"
+  >
+    Glossary
+  </div>
+  <BookOpen
+    className="glossary-logo"
+    color="currentColor"
+    size={12}
+  />
+  <div
+    className="glossary-animate-background"
+  />
+</button>
+`;
