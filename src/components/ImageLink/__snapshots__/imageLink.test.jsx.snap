@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageLink component Matches the snapshot 1`] = `
+<a
+  className="ssb-image-link vertical"
+  onClick={[Function]}
+>
+  <div
+    className="image-background"
+  >
+    <img
+      alt="image"
+      src=""
+    />
+  </div>
+  <span
+    className="il-type"
+  >
+    Type
+  </span>
+  <span
+    className="il-title"
+  >
+    Tittel
+  </span>
+  <ArrowRightCircle
+    color="currentColor"
+    size={32}
+  />
+</a>
+`;
