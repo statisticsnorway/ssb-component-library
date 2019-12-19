@@ -99,7 +99,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				changes={{
 					changeDirection: 'up',
 					changeText: 'Opp 30 999 kroner',
-					changePeriode: 'fra året før',
+					changePeriod: 'fra året før',
 				}}
 			/>
 			<br />
@@ -116,7 +116,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				changes={{
 					changeDirection: 'same',
 					changeText: 'Ingen endring',
-					changePeriode: 'fra året før',
+					changePeriod: 'fra året før',
 				}}
 			/>
 			<br />
@@ -133,7 +133,7 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				changes={{
 					changeDirection: 'down',
 					changeText: 'Ned 1 prosentpoeng',
-					changePeriode: 'fra året før',
+					changePeriod: 'fra året før',
 				}}
 			/>
 		</div>

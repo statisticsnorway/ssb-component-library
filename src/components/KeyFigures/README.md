@@ -100,7 +100,7 @@ KeyFigures
     changes={{
         changeDirection: 'down',
         changeText: 'Ned 1 prosentpoeng',
-        changePeriode: 'fra året før',
+        changePeriod: 'fra året før',
     }}
 />
 ```
@@ -109,7 +109,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| changes | object (changeDirection [up, down or same], changeText, changePeriode)  | Renders changetext with icon |
+| changes | object (changeDirection [up, down or same], changeText, changePeriod)  | Renders changetext with icon |
 | icon | node | Renders an icon |
 | number | string or number | Large number to be displayed |
 | numberDescription | string | Subtitle |

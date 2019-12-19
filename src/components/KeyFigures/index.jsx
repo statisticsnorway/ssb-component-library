@@ -46,7 +46,7 @@ KeyFigures.propTypes = {
 	changes: PropTypes.shape({
 		changeDirection: PropTypes.oneOf(['up', 'down', 'same']),
 		changeText: PropTypes.string,
-		changePeriode: PropTypes.string,
+		changePeriod: PropTypes.string,
 	}),
 	icon: PropTypes.node,
 	number: PropTypes.oneOfType([

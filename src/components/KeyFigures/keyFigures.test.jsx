@@ -49,7 +49,7 @@ describe('KeyFigures component', () => {
 				changes={{
 				changeDirection: 'down',
 				changeText: 'Ned 1 prosentpoeng',
-				changePeriode: 'fra året før',
+				changePeriod: 'fra året før',
 			}}
 		/>);
 		// console.log(wrapper.debug());
