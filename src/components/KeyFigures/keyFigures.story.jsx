@@ -9,12 +9,6 @@ const title = 'Antall husholdninger';
 const placeholderText = `This is the explanation of the word
 written in one or more paragraphs depending on the amount of space needed`;
 
-const changes = {
-	changeDirection: 'same',
-	changeText: 'Opp 30 999 kroner',
-	changePeriode: 'fra året før',
-};
-
 storiesOf('KeyFigures', module).addDecorator(centered)
 	.add('Large', () => (
 		<div>
@@ -102,7 +96,11 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				size="large"
 				icon={<HouseIcon alt="house" />}
 				glossary={placeholderText}
-				changes={changes}
+				changes={{
+					changeDirection: 'up',
+					changeText: 'Opp 30 999 kroner',
+					changePeriode: 'fra året før',
+				}}
 			/>
 		</div>
 	));
