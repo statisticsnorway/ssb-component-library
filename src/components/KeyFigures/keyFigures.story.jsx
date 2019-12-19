@@ -102,5 +102,39 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 					changePeriode: 'fra året før',
 				}}
 			/>
+			<br />
+			<br />
+			<Divider />
+			<br />
+			<KeyFigures
+				number="789 398"
+				title={title}
+				numberDescription="husholdninger"
+				time="2018"
+				size="medium"
+				icon={<HouseIcon alt="house" />}
+				changes={{
+					changeDirection: 'same',
+					changeText: 'Ingen endring',
+					changePeriode: 'fra året før',
+				}}
+			/>
+			<br />
+			<br />
+			<Divider />
+			<br />
+			<KeyFigures
+				number="789"
+				title="Antall plasser i helse- og omsorgsinstitusjoner"
+				numberDescription="plasser"
+				time="2018"
+				size="small"
+				icon={<HouseIcon alt="house" />}
+				changes={{
+					changeDirection: 'down',
+					changeText: 'Ned 1 prosentpoeng',
+					changePeriode: 'fra året før',
+				}}
+			/>
 		</div>
 	));

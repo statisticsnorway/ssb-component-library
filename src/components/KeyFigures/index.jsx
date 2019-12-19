@@ -27,10 +27,10 @@ const KeyFigures = ({	changes, icon, number, numberDescription, noNumberText, si
 			{changes
 				&& (
 					<div className="kf-changes">
-						{changes.changeDirection === 'up' && (<ArrowUp className="expand-icon" size={20} />)}
-						{changes.changeDirection === 'down' && (<ArrowDown className="expand-icon" size={20} />)}
-						{changes.changeDirection === 'same' && (<Minus className="expand-icon" size={20} />)}
-						<span className="changes-text">{changes.changeText}</span>&nbsp;
+						{changes.changeDirection === 'up' && (<ArrowUp className="changes-icon" size={20} />)}
+						{changes.changeDirection === 'down' && (<ArrowDown className="changes-icon" size={20} />)}
+						{changes.changeDirection === 'same' && (<Minus className="changes-icon" size={20} />)}
+						<span className="changes-text">{changes.changeText}</span>
 						<span className="changes-periode">{changes.changePeriode}</span>
 					</div>
 				)}

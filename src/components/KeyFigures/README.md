@@ -56,6 +56,24 @@ KeyFigures
     </div>
   </div>
 </div>
+
+<!-- With changes -->
+<div class="ssb-key-figures large">
+    <div class="kf-icon large"><!-- Insert icon --></div>
+    <div>
+        <span class="kf-title">Title</span>
+        <div class="kf-time">2018</div>
+        <div class="number-section">
+            <div class="ssb-number large">789 398</div>
+            <span class="kf-title subtitle">husholdninger</span>
+        </div>
+        <div class="kf-changes">
+             <i class="changes-icon">{feather.[ chevronDown | chevronUp | Minus] 20px}</i>
+            <span class="changes-text">Opp 30 999 kroner</span>&nbsp;
+            <span class="changes-periode">fra året før</span>
+        </div>
+    </div>
+</div>
 ```
 
 #### React
@@ -70,12 +88,28 @@ KeyFigures
   time="2019"
   glossary="Some string that explains the title"
 />
+
+// With changes
+<KeyFigures
+    number="789"
+    title="Antall plasser i helse- og omsorgsinstitusjoner"
+    numberDescription="plasser"
+    time="2018"
+    size="small"
+    icon={<HouseIcon alt="house" />}
+    changes={{
+        changeDirection: 'down',
+        changeText: 'Ned 1 prosentpoeng',
+        changePeriode: 'fra året før',
+    }}
+/>
 ```
 
 Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| changes | object (changeDirection [up, down or same], changeText, changePeriode)  | Renders changetext with icon |
 | icon | node | Renders an icon |
 | number | string or number | Large number to be displayed |
 | numberDescription | string | Subtitle |

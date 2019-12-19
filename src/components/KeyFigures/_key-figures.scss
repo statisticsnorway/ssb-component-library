@@ -23,6 +23,10 @@ $small-size: 108px;
     display: flex;
     margin-top: 12px;
 
+    .changes-icon {
+      margin-right: 4px;
+    }
+
     .changes-text {
       font-weight: bold;
       font-size: 20px;
