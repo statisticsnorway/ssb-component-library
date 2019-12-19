@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ArrowDown, ArrowUp, Minus } from 'react-feather';
 import Number from '../Number';
 import Glossary from '../Glossary';
 
-const KeyFigures = ({	icon, number, numberDescription, noNumberText, size, title, time, glossary }) => (
+const KeyFigures = ({	changes, icon, number, numberDescription, noNumberText, size, title, time, glossary }) => (
 	<div className={`ssb-key-figures ${size}`}>
 		{icon && <div className={`kf-icon ${size}`}>{icon}</div>}
 		<div>
@@ -23,6 +24,16 @@ const KeyFigures = ({	icon, number, numberDescription, noNumberText, size, title
 					</div>
 				)
 				: <span className="no-number">{noNumberText}</span>}
+			{changes
+				&& (
+					<div className="kf-changes">
+						{changes.changeDirection === 'up' && (<ArrowUp className="expand-icon" size={20} />)}
+						{changes.changeDirection === 'down' && (<ArrowDown className="expand-icon" size={20} />)}
+						{changes.changeDirection === 'same' && (<Minus className="expand-icon" size={20} />)}
+						<span className="changes-text">{changes.changeText}</span>&nbsp;
+						<span className="changes-periode">{changes.changePeriode}</span>
+					</div>
+				)}
 		</div>
 	</div>
 );
@@ -32,6 +43,11 @@ KeyFigures.defaultProps = {
 };
 
 KeyFigures.propTypes = {
+	changes: PropTypes.shape({
+		changeDirection: PropTypes.oneOf(['up', 'down', 'same']),
+		changeText: PropTypes.string,
+		changePeriode: PropTypes.string,
+	}),
 	icon: PropTypes.node,
 	number: PropTypes.oneOfType([
 		PropTypes.string,

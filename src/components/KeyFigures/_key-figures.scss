@@ -18,6 +18,21 @@ $small-size: 108px;
     }
   }
 
+  .kf-changes {
+    align-items: center;
+    display: flex;
+    margin-top: 12px;
+
+    .changes-text {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .changes-periode {
+      font-size: 16px;
+    }
+  }
+
   &.large {
 
     .kf-icon {
