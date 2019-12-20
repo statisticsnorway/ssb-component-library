@@ -42,4 +42,19 @@ describe('KeyFigures component', () => {
 		const wrapper = shallow(<KeyFigures title="KeyFigure without number" time="2018" noNumberText="Ingen tall"/>);
 		expect(wrapper.find('.no-number').render().text()).toBe('Ingen tall');
 	});
+	test('Render changes', () => {
+		const wrapper = shallow(<KeyFigures
+			title="KeyFigure without number"
+			time="2018"
+				changes={{
+				changeDirection: 'down',
+				changeText: 'Ned 1 prosentpoeng',
+				changePeriod: 'fra året før',
+			}}
+		/>);
+		// console.log(wrapper.debug());
+		expect(wrapper.find('.kf-changes').exists()).toEqual(true);
+		expect(wrapper.find('ArrowDown').exists()).toEqual(true);
+		// expect(wrapper.find('.kf-changes').render().text()).toBe('Ingen tall');
+	});
 });

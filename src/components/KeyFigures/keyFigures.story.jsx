@@ -85,4 +85,56 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 			size="small"
 			icon={<HouseIcon alt="house" />}
 		/>
+	))
+	.add('With changes', () => (
+		<div>
+			<KeyFigures
+				number="789 398"
+				title={title}
+				numberDescription="husholdninger"
+				time="2018"
+				size="large"
+				icon={<HouseIcon alt="house" />}
+				glossary={placeholderText}
+				changes={{
+					changeDirection: 'up',
+					changeText: 'Opp 30 999 kroner',
+					changePeriod: 'fra året før',
+				}}
+			/>
+			<br />
+			<br />
+			<Divider />
+			<br />
+			<KeyFigures
+				number="789 398"
+				title={title}
+				numberDescription="husholdninger"
+				time="2018"
+				size="medium"
+				icon={<HouseIcon alt="house" />}
+				changes={{
+					changeDirection: 'same',
+					changeText: 'Ingen endring',
+					changePeriod: 'fra året før',
+				}}
+			/>
+			<br />
+			<br />
+			<Divider />
+			<br />
+			<KeyFigures
+				number="789"
+				title="Antall plasser i helse- og omsorgsinstitusjoner"
+				numberDescription="plasser"
+				time="2018"
+				size="small"
+				icon={<HouseIcon alt="house" />}
+				changes={{
+					changeDirection: 'down',
+					changeText: 'Ned 1 prosentpoeng',
+					changePeriod: 'fra året før',
+				}}
+			/>
+		</div>
 	));
