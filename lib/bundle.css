@@ -920,6 +920,17 @@ a {
     display: inline-flex; }
     .ssb-key-figures .kf-icon > * {
       width: 100%; }
+  .ssb-key-figures .kf-changes {
+    align-items: flex-end;
+    display: flex;
+    margin-top: 12px; }
+    .ssb-key-figures .kf-changes .changes-icon {
+      margin-right: 4px; }
+    .ssb-key-figures .kf-changes .changes-text {
+      font-weight: bold;
+      font-size: 20px; }
+    .ssb-key-figures .kf-changes .changes-period {
+      font-size: 16px; }
   .ssb-key-figures.large .kf-icon {
     max-height: 195px;
     max-width: 195px;
