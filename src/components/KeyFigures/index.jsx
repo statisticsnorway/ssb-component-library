@@ -30,7 +30,7 @@ const KeyFigures = ({	changes, icon, number, numberDescription, noNumberText, si
 						{changes.changeDirection === 'up' && (<ArrowUp className="changes-icon" size={20} />)}
 						{changes.changeDirection === 'down' && (<ArrowDown className="changes-icon" size={20} />)}
 						{changes.changeDirection === 'same' && (<Minus className="changes-icon" size={20} />)}
-						<span className="changes-text">{changes.changeText}</span>
+						<span className="changes-text">{changes.changeText}</span>&nbsp;
 						<span className="changes-periode">{changes.changePeriod}</span>
 					</div>
 				)}
