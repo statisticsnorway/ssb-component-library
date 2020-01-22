@@ -4,8 +4,8 @@ import { ArrowDown, ArrowUp, Minus } from 'react-feather';
 import Number from '../Number';
 import Glossary from '../Glossary';
 
-const KeyFigures = ({	changes, icon, number, numberDescription, noNumberText, size, title, time, glossary }) => (
-	<div className={`ssb-key-figures ${size}`}>
+const KeyFigures = ({	changes, icon, number, numberDescription, noNumberText, size, title, time, glossary, greenBox }) => (
+	<div className={`ssb-key-figures ${size}${greenBox ? ' green-box' : ''}`}>
 		{icon && <div className={`kf-icon ${size}`}>{icon}</div>}
 		<div>
 			{glossary
@@ -62,6 +62,7 @@ KeyFigures.propTypes = {
 		PropTypes.number,
 	]),
 	glossary: PropTypes.string,
+	greenBox: PropTypes.bool,
 };
 
 export default KeyFigures;

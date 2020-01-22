@@ -121,4 +121,27 @@ $small-size: 108px;
     font-size: 20px;
     font-weight: bold;
   }
+
+  &.green-box {
+    position: relative;
+    background: $ssb-green-1;
+    padding: 38px 40px;
+    border-radius: 2px;
+    width: 100%;
+
+    &:after {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(229, 254, 230, 0);
+      border-top-color: $ssb-green-1;
+      border-width: 42px;
+      margin-left: -42px;
+    }
+  }
 }

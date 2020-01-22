@@ -137,4 +137,24 @@ storiesOf('KeyFigures', module).addDecorator(centered)
 				}}
 			/>
 		</div>
+	))
+	.add('Greenbox variasjon medium', () => (
+		<KeyFigures
+			title="Valgdeltagelse ved stortingsvalg"
+			numberDescription="prosent"
+			number="78,2"
+			time="2018"
+			size="medium"
+			greenBox
+		/>
+	))
+	.add('Greenbox variasjon stor', () => (
+		<KeyFigures
+			title="Valgdeltagelse ved stortingsvalg"
+			numberDescription="prosent"
+			number="78,2"
+			time="2018"
+			size="large"
+			greenBox
+		/>
 	));

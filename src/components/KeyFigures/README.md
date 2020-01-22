@@ -74,6 +74,17 @@ KeyFigures
         </div>
     </div>
 </div>
+
+<!-- With green box display -->
+<div class="ssb-key-figures medium green-box">
+    <div>
+        <span class="kf-title">Valgdeltagelse ved stortingsvalg</span>
+        <div class="kf-time">2018</div>
+        <div class="number-section">
+            <div class="ssb-number medium">78,2</div><span class="kf-title subtitle">prosent</span>
+        </div>
+    </div>
+</div>
 ```
 
 #### React
@@ -103,6 +114,16 @@ KeyFigures
         changePeriod: 'fra året før',
     }}
 />
+
+//With green box
+<KeyFigures
+    title="Valgdeltagelse ved stortingsvalg"
+    numberDescription="prosent"
+    number="78,2"
+    time="2018"
+    size="large"
+    greenBox
+/>
 ```
 
 Available props:
@@ -118,6 +139,7 @@ Available props:
 | title | string | Displays title |
 | time | string or number | Displays a year between title and number |
 | glossary | string | Explanation for the title |
+| greenBox | bool | Display green box with arrow |
 
 __Dependencies__
  - [Number](../Number)

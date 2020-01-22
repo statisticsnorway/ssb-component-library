@@ -57,4 +57,8 @@ describe('KeyFigures component', () => {
 		expect(wrapper.find('ArrowDown').exists()).toEqual(true);
 		// expect(wrapper.find('.kf-changes').render().text()).toBe('Ingen tall');
 	});
+	test('Render green box variation', () => {
+		const wrapper = shallow(<KeyFigures title="Keyfigure with green box variation" time="2018" number="72,6" greenBox size="medium"/>);
+		expect(wrapper.find('.green-box').exists()).toEqual(true);
+	})
 });
