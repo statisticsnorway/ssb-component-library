@@ -985,6 +985,25 @@ a {
     color: #62919a;
     font-size: 20px;
     font-weight: bold; }
+  .ssb-key-figures.green-box {
+    position: relative;
+    background: #ecfeed;
+    padding: 38px 40px;
+    border-radius: 2px;
+    width: 100%; }
+    .ssb-key-figures.green-box:after {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(229, 254, 230, 0);
+      border-top-color: #ecfeed;
+      border-width: 42px;
+      margin-left: -42px; }
 
 .ssb-lead-paragraph {
   font-family: 'Open Sans', sans-serif !important;
