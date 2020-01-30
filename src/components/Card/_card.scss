@@ -91,7 +91,7 @@
           padding: 5px;
           width: fit-content;
 
-          .card-arrow-icon {
+          .arrow-icon {
             border: none;
             color: $ssb-white;
           }
@@ -131,6 +131,29 @@
       }
     }
 
+    &.profiled {
+      align-items: center;
+      display: inline-flex;
+      text-align: center;
+
+      .card-title {
+        font-size: 28px;
+      }
+
+      .card-icon {
+        margin-bottom: 20px;
+        max-height: 132px;
+        max-width: 132px;
+        width: 132px;
+      }
+    }
+
+    .arrow-icon {
+      color: $ssb-green-4;
+      display: block;
+      margin-top: 16px;
+    }
+
     .card-action {
       @include open-sans;
       align-items: center;
@@ -150,10 +173,11 @@
       }
     }
 
-    .arrow-icon {
-      color: $ssb-green-4;
-      display: block;
-      margin-top: 16px;
+    .card-icon {
+      margin-bottom: 16px;
+      max-height: 28px;
+      max-width: 28px;
+      width: 28px;
     }
 
     .card-subtitle {
@@ -190,7 +214,6 @@
 
     .download-icon {
       color: $ssb-green-4;
-      font-size: 20px;
       margin: 0 18px;
     }
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ArrowRight, Download } from 'react-feather';
 
 const Card = ({
-	centered, children, downloadText, fileLocation, href, hrefText, image, imagePlacement, subTitle, title,
+	cardType, centered, children, downloadText, fileLocation, href, hrefText, icon, image, imagePlacement, subTitle, title,
 }) => (
 	<div className="ssb-card">
 		<a
@@ -11,7 +11,8 @@ const Card = ({
 			className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
 		>
 			{image && <div className="card-image">{image}</div>}
-			<div className={`card-content${centered ? ' centered' : ''}${image ? ' with-image' : ''}`}>
+			<div className={`card-content${centered ? ' centered' : ''}${image ? ' with-image' : ''}${cardType ? ` ${cardType}` : ''}`}>
+				{icon && <div className="card-icon">{icon}</div>}
 				{subTitle && <div className="card-subtitle">{subTitle}</div>}
 				{title && <div className="card-title">{title}</div>}
 				{ children }
@@ -28,7 +29,7 @@ const Card = ({
 		</a>
 		{fileLocation && (
 			<a download href={fileLocation} className="download-section">
-				<Download className="download-icon" />
+				<Download className="download-icon" size={22} />
 				<span>{downloadText}</span>
 			</a>
 		)}
@@ -42,12 +43,17 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
+	cardType: PropTypes.oneOf([
+		'regular',
+		'profiled',
+	]),
 	centered: PropTypes.bool,
 	children: PropTypes.node.isRequired,
 	downloadText: PropTypes.string,
 	fileLocation: PropTypes.string,
 	href: PropTypes.string,
 	hrefText: PropTypes.string,
+	icon: PropTypes.element,
 	image: PropTypes.element,
 	imagePlacement: PropTypes.oneOf(['left', 'top']),
 	subTitle: PropTypes.string,

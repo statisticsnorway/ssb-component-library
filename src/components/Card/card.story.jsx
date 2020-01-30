@@ -4,7 +4,6 @@ import centered from '@storybook/addon-centered/react';
 import { Globe } from 'react-feather';
 import Card from './index';
 import Text from '../Text';
-import Title from '../Title';
 import testImage from '../../media/16x9.png';
 
 storiesOf('Card', module).addDecorator(centered)
@@ -17,6 +16,45 @@ storiesOf('Card', module).addDecorator(centered)
 			</div>
 			<br />
 			<Card title="Tittel" href=" " hrefText="Handling">
+				<Text>Explain something about something with something clever.</Text>
+			</Card>
+		</div>
+	))
+	.add('Default with icon', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ marginRight: '10px', display: 'flex' }}>
+				<Card title="Tittel" href=" " hrefText="Handling" icon={<Globe size={32} />} fileLocation="./not_a_file.md" downloadText="Download">
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<br />
+			<Card title="Tittel" href=" " icon={<Globe size={32} />}>
+				<Text>Explain something about something with something clever.</Text>
+			</Card>
+		</div>
+	))
+	.add('Profiled', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ marginRight: '10px', display: 'flex' }}>
+				<Card cardType="profiled" title="Tittel" href=" ">
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<br />
+			<Card cardType="profiled" title="Tittel" href=" " hrefText="Handling">
+				<Text>Explain something about something with something clever.</Text>
+			</Card>
+		</div>
+	))
+	.add('Profiled with icon', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ marginRight: '10px', display: 'flex' }}>
+				<Card cardType="profiled" title="Tittel" href=" " hrefText="Handling" icon={<Globe size={120} />}>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<br />
+			<Card cardType="profiled" title="Tittel" href=" " icon={<Globe size={120} />}>
 				<Text>Explain something about something with something clever.</Text>
 			</Card>
 		</div>
@@ -43,23 +81,6 @@ storiesOf('Card', module).addDecorator(centered)
 				subTitle="Artikkel / 11. mai 2019"
 				title="Tittel"
 			>
-				<Text>Explain something about something with something clever.</Text>
-			</Card>
-		</div>
-	))
-	.add('Three boxes', () => (
-		<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto, 380px)', gridRowGap: '20px' }}>
-			<Card href=" ">
-				<Title size={2}>Look at this</Title>
-				<Text>Explain something about something with something clever.</Text>
-			</Card>
-			<Card centered href=" ">
-				<Globe size={120} style={{ marginBottom: '20px' }} />
-				<Title size={2}>Look at this</Title>
-				<Text>This box has the <code>centered</code> prop set to true</Text>
-			</Card>
-			<Card href=" " fileLocation="./not_a_file.md" downloadText="Download">
-				<Title size={2}>Look at this</Title>
 				<Text>Explain something about something with something clever.</Text>
 			</Card>
 		</div>
