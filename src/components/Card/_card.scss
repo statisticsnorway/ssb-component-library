@@ -65,7 +65,7 @@
         border: 1px solid $ssb-green-4;
 
         &:not(.with-image) {
-          border-top: 5px solid $ssb-green-4;
+        border-top: 5px solid $ssb-green-4;
         }
 
         &.with-image {
@@ -115,12 +115,6 @@
     flex-direction: column;
     padding: 20px;
     width: 100%;
-
-    &.centered {
-      align-items: center;
-      display: inline-flex;
-      text-align: center;
-    }
 
     &.with-image {
       border-top: 1px solid $ssb-dark-2;

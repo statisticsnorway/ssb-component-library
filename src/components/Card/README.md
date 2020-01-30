@@ -117,7 +117,7 @@ Card
 </Card>
 
 // Profiled card with icon
-<Card cardType="profiled" title="Tittel" href=" " hrefText="Handling" icon={<Globe size={120} />} >
+<Card title="Tittel" href=" " hrefText="Handling" icon={<Globe size={120} />} profiled>
     <Text>Explain something about something with something clever.</Text>
 </Card>
 
@@ -137,8 +137,6 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| cardType | oneOf(['regular', 'profiled'])  | Card layout |
-| centered | bool | Centers text |
 | children | node | Required. Fills box with content |
 | downloadText | string | Text download link, default "Last ned" |
 | fileLocation | string | Path to downloadable file. Ads the download field |
@@ -146,6 +144,7 @@ Available props:
 | hrefText | string | Text after arrow |
 | icon | element | Icon element |
 | image | element | Image element |
-| imageElement | oneOf(['left', 'top']) | Position of the image |
+| imageElement | oneOf(['left', 'top']) | Position of the image, default "top"  |
+| profiled | bool | Profiled layout |
 | subTitle | string | Smaller text over title |
 | title | string | Card title |

@@ -36,12 +36,12 @@ storiesOf('Card', module).addDecorator(centered)
 	.add('Profiled', () => (
 		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
 			<div style={{ marginRight: '10px', display: 'flex' }}>
-				<Card cardType="profiled" title="Tittel" href=" ">
+				<Card title="Tittel" href=" " profiled>
 					<Text>Explain something about something with something clever.</Text>
 				</Card>
 			</div>
 			<br />
-			<Card cardType="profiled" title="Tittel" href=" " hrefText="Handling">
+			<Card title="Tittel" href=" " hrefText="Handling" profiled>
 				<Text>Explain something about something with something clever.</Text>
 			</Card>
 		</div>
@@ -49,12 +49,12 @@ storiesOf('Card', module).addDecorator(centered)
 	.add('Profiled with icon', () => (
 		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
 			<div style={{ marginRight: '10px', display: 'flex' }}>
-				<Card cardType="profiled" title="Tittel" href=" " hrefText="Handling" icon={<Globe size={120} />}>
+				<Card title="Tittel" href=" " hrefText="Handling" icon={<Globe size={120} />} profiled>
 					<Text>Explain something about something with something clever.</Text>
 				</Card>
 			</div>
 			<br />
-			<Card cardType="profiled" title="Tittel" href=" " icon={<Globe size={120} />}>
+			<Card title="Tittel" href=" " icon={<Globe size={120} />} profiled>
 				<Text>Explain something about something with something clever.</Text>
 			</Card>
 		</div>

@@ -6,6 +6,7 @@ exports[`Card component Matches the snapshot 1`] = `
 >
   <a
     className="clickable top-orientation"
+    href=""
   >
     <div
       className="card-content"
