@@ -275,38 +275,40 @@ a {
       flex-direction: column; }
       .ssb-card .clickable.top-orientation .card-content {
         max-width: 380px; }
-    .ssb-card .clickable:hover.left-orientation .card-content {
-      border-left: 5px solid #00824d; }
-      @media screen and (max-width: 767px) {
-        .ssb-card .clickable:hover.left-orientation .card-content {
-          border-left: 1px solid #00824d;
-          border-top: 5px solid #00824d; } }
-    .ssb-card .clickable:hover.top-orientation .card-content {
-      border-top: 5px solid #00824d; }
-    .ssb-card .clickable:hover .card-content {
-      border: 1px solid #00824d; }
-      .ssb-card .clickable:hover .card-content:not(.with-image) {
+    .ssb-card .clickable:hover {
+      text-decoration: none; }
+      .ssb-card .clickable:hover.left-orientation .card-content {
+        border-left: 5px solid #00824d; }
+        @media screen and (max-width: 767px) {
+          .ssb-card .clickable:hover.left-orientation .card-content {
+            border-left: 1px solid #00824d;
+            border-top: 5px solid #00824d; } }
+      .ssb-card .clickable:hover.top-orientation .card-content {
         border-top: 5px solid #00824d; }
-      .ssb-card .clickable:hover .card-content.with-image .card-title {
-        background-color: #00824d;
-        border-bottom: none;
-        color: #fff;
-        padding: 1px 2px; }
-      .ssb-card .clickable:hover .card-content .arrow-icon {
-        border: 2px solid #00824d;
-        border-radius: 50%;
-        padding: 2px; }
-      .ssb-card .clickable:hover .card-content .card-action {
-        align-items: center;
-        background-color: #00824d;
-        display: flex;
-        padding: 5px;
-        width: fit-content; }
-        .ssb-card .clickable:hover .card-content .card-action .arrow-icon {
-          border: none;
-          color: #fff; }
-        .ssb-card .clickable:hover .card-content .card-action .href-text {
-          color: #fff; }
+      .ssb-card .clickable:hover .card-content {
+        border: 1px solid #00824d; }
+        .ssb-card .clickable:hover .card-content:not(.with-image) {
+          border-top: 5px solid #00824d; }
+        .ssb-card .clickable:hover .card-content.with-image .card-title {
+          background-color: #00824d;
+          border-bottom: none;
+          color: #fff;
+          padding: 1px 2px; }
+        .ssb-card .clickable:hover .card-content .arrow-icon {
+          border: 2px solid #00824d;
+          border-radius: 50%;
+          padding: 2px; }
+        .ssb-card .clickable:hover .card-content .card-action {
+          align-items: center;
+          background-color: #00824d;
+          display: flex;
+          padding: 5px;
+          width: fit-content; }
+          .ssb-card .clickable:hover .card-content .card-action .arrow-icon {
+            border: none;
+            color: #fff; }
+          .ssb-card .clickable:hover .card-content .card-action .href-text {
+            color: #fff; }
   .ssb-card .card-content {
     background: #fff;
     border: 1px solid #c3dcdc;
@@ -1018,7 +1020,8 @@ a {
     max-width: 195px;
     width: 195px; }
   .ssb-key-figures.large .subtitle {
-    margin-bottom: 32px; }
+    margin-bottom: 32px;
+    margin-left: 4px; }
     @media screen and (max-width: 767px) {
       .ssb-key-figures.large .subtitle {
         margin-bottom: 14px; } }
@@ -1027,7 +1030,8 @@ a {
     max-width: 150px;
     width: 150px; }
   .ssb-key-figures.medium .subtitle {
-    margin-bottom: 18px; }
+    margin-bottom: 18px;
+    margin-left: 4px; }
     @media screen and (max-width: 767px) {
       .ssb-key-figures.medium .subtitle {
         margin-bottom: 8px; } }
@@ -1036,7 +1040,8 @@ a {
     max-width: 108px;
     width: 108px; }
   .ssb-key-figures.small .subtitle {
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    margin-left: 4px; }
   @media screen and (max-width: 767px) {
     .ssb-key-figures .kf-icon {
       display: none; } }
