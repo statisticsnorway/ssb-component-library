@@ -47,6 +47,7 @@ $small-size: 108px;
 
     .subtitle {
       margin-bottom: 32px;
+      margin-left: 4px;
 
       @media #{$mobile} {
         margin-bottom: 14px;
@@ -64,6 +65,7 @@ $small-size: 108px;
 
     .subtitle {
       margin-bottom: 18px;
+      margin-left: 4px;
 
       @media #{$mobile} {
         margin-bottom: 8px;
@@ -81,6 +83,7 @@ $small-size: 108px;
 
     .subtitle {
       margin-bottom: 8px;
+      margin-left: 4px;
     }
   }
 
