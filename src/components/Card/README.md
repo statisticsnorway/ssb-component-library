@@ -144,7 +144,7 @@ Available props:
 | hrefText | string | Text after arrow |
 | icon | element | Icon element |
 | image | element | Image element |
-| imageElement | oneOf(['left', 'top']) | Position of the image, default "top"  |
+| imagePlacement | oneOf(['left', 'top']) | Position of the image, default "top"  |
 | profiled | bool | Profiled layout |
 | subTitle | string | Smaller text over title |
 | title | string | Card title |
