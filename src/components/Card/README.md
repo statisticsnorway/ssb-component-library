@@ -12,7 +12,7 @@ Card
 <!-- Default card -->
 <div class="ssb-card">
     <a href=" " class="clickable top-orientation">
-        <div class="card-content"> <!-- add class 'centered' to center all content -->
+        <div class="card-content">
             <div class="card-title">Tittel</div>
             <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
             <i class="arrow-icon">{feather.arrowRight 22px}</i>

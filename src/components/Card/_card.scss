@@ -1,5 +1,6 @@
 .ssb-card {
   @include roboto;
+  display: flex;
 
   .clickable {
     @include focus-marker;
@@ -82,6 +83,7 @@
         .arrow-icon {
           border: 2px solid $ssb-green-4;
           border-radius: 50%;
+          box-sizing: initial;
           padding: 2px;
         }
 
