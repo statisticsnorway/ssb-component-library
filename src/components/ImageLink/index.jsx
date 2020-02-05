@@ -14,11 +14,11 @@ export function useHover() {
 			const element = hoverRef && hoverRef.current;
 
 			if (element) {
-				element.addEventListener("mouseover", handleMouseOver);
-				element.addEventListener("mouseout", handleMouseOut);
+				element.addEventListener('mouseover', handleMouseOver);
+				element.addEventListener('mouseout', handleMouseOut);
 				return () => {
-					element.removeEventListener("mouseover", handleMouseOver);
-					element.removeEventListener("mouseout", handleMouseOut);
+					element.removeEventListener('mouseover', handleMouseOver);
+					element.removeEventListener('mouseout', handleMouseOut);
 				};
 			}
 		},
