@@ -8,6 +8,7 @@ export function useHover() {
 	const hoverRef = useRef(null);
 
 	useEffect(
+		// eslint-disable-next-line consistent-return
 		() => {
 			const handleMouseOver = () => setValue(true);
 			const handleMouseOut = () => setValue(false);
