@@ -48,9 +48,16 @@
 
         .card-content {
           border-left: 5px solid $ssb-green-4;
+          padding-left: 16px;
           @media #{$mobile} {
             border-left: 1px solid $ssb-green-4;
             border-top: 5px solid $ssb-green-4;
+            padding-left: 20px;
+            padding-top: 15px;
+
+            &.with-image {
+              padding-top: 16px;
+            }
           }
         }
       }
@@ -59,6 +66,10 @@
 
         .card-content {
           border-top: 5px solid $ssb-green-4;
+
+          &.with-image {
+            padding-top: 16px;
+          }
         }
       }
 
@@ -75,7 +86,7 @@
             background-color: $ssb-green-4;
             border-bottom: none;
             color: $ssb-white;
-            padding: 1px 2px;
+            margin-bottom: 10px;
           }
         }
 
@@ -90,12 +101,13 @@
           align-items: center;
           background-color: $ssb-green-4;
           display: flex;
-          padding: 5px;
           width: fit-content;
 
           .arrow-icon {
             border: none;
             color: $ssb-white;
+            margin-top: 0;
+            padding: 0;
           }
 
           .href-text {
@@ -147,25 +159,26 @@
     .arrow-icon {
       color: $ssb-green-4;
       display: block;
-      margin-top: 16px;
+      margin-top: 12px;
+      padding: 4px;
     }
 
     .card-action {
       @include open-sans;
       align-items: center;
       display: flex;
-      margin-top: 16px;
+      margin-top: 12px;
 
       .arrow-icon {
         margin-top: 0;
-        margin-right: 5px;
-        padding-left: 0;
+        padding: 0;
       }
 
       .href-text {
         color: $ssb-dark-6;
         font-size: 16px;
         font-weight: bold;
+        padding: 4px;
       }
     }
 
