@@ -23,7 +23,8 @@ exports[`ImageLink component Matches the snapshot 1`] = `
   >
     Tittel
   </span>
-  <ArrowRightCircle
+  <ArrowRight
+    className="arrow-icon"
     color="currentColor"
     size={32}
   />
