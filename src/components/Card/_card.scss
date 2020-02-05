@@ -1,6 +1,5 @@
 .ssb-card {
   @include roboto;
-  display: flex;
 
   .clickable {
     @include focus-marker;
@@ -16,7 +15,7 @@
     }
 
     &.left-orientation {
-      display: flex;
+      display: inline-flex;
       flex-direction: row;
 
       .card-content {
@@ -34,7 +33,7 @@
     }
 
     &.top-orientation {
-      display: flex;
+      display: inline-flex;
       flex-direction: column;
 
       .card-content {
