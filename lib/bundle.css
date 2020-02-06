@@ -260,7 +260,7 @@ a {
         height: 214px;
         width: 380px; }
     .ssb-card .clickable.left-orientation {
-      display: flex;
+      display: inline-flex;
       flex-direction: row; }
       .ssb-card .clickable.left-orientation .card-content {
         height: 214px;
@@ -271,20 +271,27 @@ a {
           .ssb-card .clickable.left-orientation .card-content {
             max-width: 380px; } }
     .ssb-card .clickable.top-orientation {
-      display: flex;
+      display: inline-flex;
       flex-direction: column; }
       .ssb-card .clickable.top-orientation .card-content {
         max-width: 380px; }
     .ssb-card .clickable:hover {
       text-decoration: none; }
       .ssb-card .clickable:hover.left-orientation .card-content {
-        border-left: 5px solid #00824d; }
+        border-left: 5px solid #00824d;
+        padding-left: 16px; }
         @media screen and (max-width: 767px) {
           .ssb-card .clickable:hover.left-orientation .card-content {
             border-left: 1px solid #00824d;
-            border-top: 5px solid #00824d; } }
+            border-top: 5px solid #00824d;
+            padding-left: 20px;
+            padding-top: 15px; }
+            .ssb-card .clickable:hover.left-orientation .card-content.with-image {
+              padding-top: 16px; } }
       .ssb-card .clickable:hover.top-orientation .card-content {
         border-top: 5px solid #00824d; }
+        .ssb-card .clickable:hover.top-orientation .card-content.with-image {
+          padding-top: 16px; }
       .ssb-card .clickable:hover .card-content {
         border: 1px solid #00824d; }
         .ssb-card .clickable:hover .card-content:not(.with-image) {
@@ -293,20 +300,24 @@ a {
           background-color: #00824d;
           border-bottom: none;
           color: #fff;
-          padding: 1px 2px; }
+          margin-bottom: 10px; }
         .ssb-card .clickable:hover .card-content .arrow-icon {
           border: 2px solid #00824d;
           border-radius: 50%;
-          padding: 2px; }
+          box-sizing: initial;
+          margin-top: 13px;
+          margin-left: 1px;
+          padding: 1px; }
         .ssb-card .clickable:hover .card-content .card-action {
           align-items: center;
           background-color: #00824d;
           display: flex;
-          padding: 5px;
           width: fit-content; }
           .ssb-card .clickable:hover .card-content .card-action .arrow-icon {
             border: none;
-            color: #fff; }
+            color: #fff;
+            margin-top: 0;
+            padding: 0; }
           .ssb-card .clickable:hover .card-content .card-action .href-text {
             color: #fff; }
   .ssb-card .card-content {
@@ -338,22 +349,23 @@ a {
     .ssb-card .card-content .arrow-icon {
       color: #00824d;
       display: block;
-      margin-top: 16px; }
+      margin-top: 12px;
+      padding: 4px; }
     .ssb-card .card-content .card-action {
       font-family: 'Open Sans', sans-serif !important;
       font-stretch: normal;
       font-weight: normal;
       align-items: center;
       display: flex;
-      margin-top: 16px; }
+      margin-top: 12px; }
       .ssb-card .card-content .card-action .arrow-icon {
         margin-top: 0;
-        margin-right: 5px;
-        padding-left: 0; }
+        padding: 0; }
       .ssb-card .card-content .card-action .href-text {
         color: #162327;
         font-size: 16px;
-        font-weight: bold; }
+        font-weight: bold;
+        padding: 4px; }
     .ssb-card .card-content .card-icon {
       margin-bottom: 16px;
       max-height: 28px;
@@ -818,6 +830,11 @@ a {
     top: 0;
     width: 380px;
     z-index: -1; }
+    .ssb-image-link .image-background img {
+      transform: scale(1);
+      transition: transform .25s ease, -webkit-transform .25s ease; }
+  .ssb-image-link:hover .image-background img {
+    transform: scale(1.1); }
   .ssb-image-link .il-type {
     font-family: 'Roboto', sans-serif !important;
     font-stretch: normal;
