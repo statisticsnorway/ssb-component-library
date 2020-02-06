@@ -304,7 +304,7 @@ a {
         .ssb-card .clickable:hover .card-content .arrow-icon {
           border: 2px solid #00824d;
           border-radius: 50%;
-          box-sizing: initial;
+          margin-bottom: 1px;
           margin-top: 13px;
           margin-left: 1px;
           padding: 1px; }
@@ -347,6 +347,7 @@ a {
         max-width: 132px;
         width: 132px; }
     .ssb-card .card-content .arrow-icon {
+      box-sizing: initial;
       color: #00824d;
       display: block;
       margin-top: 12px;
