@@ -93,7 +93,7 @@
         .arrow-icon {
           border: 2px solid $ssb-green-4;
           border-radius: 50%;
-          box-sizing: initial;
+          margin-bottom: 1px;
           margin-top: 13px;
           margin-left: 1px;
           padding: 1px;
@@ -159,6 +159,7 @@
     }
 
     .arrow-icon {
+      box-sizing: initial;
       color: $ssb-green-4;
       display: block;
       margin-top: 12px;
