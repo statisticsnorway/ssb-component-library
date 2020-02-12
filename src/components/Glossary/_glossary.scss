@@ -1,9 +1,14 @@
 .ssb-glossary {
   @include focus-marker;
   @include reset-button;
+  background-image: linear-gradient(120deg, $ssb-green-2 0%, $ssb-green-2 100%);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 0;
   cursor: pointer;
   display: inline-block;
   position: relative;
+  transition: background-size .2s ease-in, color .1s;
 
   .glossary-text-wrap {
     border-bottom: 1px dotted $ssb-green-4;
@@ -18,22 +23,8 @@
     vertical-align: top;
   }
 
-  .glossary-animate-background {
-    background: $ssb-green-2;
-    bottom: 0;
-    height: 0;
-    left: 0;
-    position: absolute;
-    transition: height .2s;
-    width: 100%;
-    z-index: -1;
-  }
-
   &:hover, &:focus {
-
-    .glossary-animate-background {
-      height: 100%;
-    }
+    background-size: 100% 100%;
 
     .glossary-logo {
       color: $ssb-dark-6;
