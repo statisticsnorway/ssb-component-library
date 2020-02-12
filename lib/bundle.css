@@ -728,9 +728,14 @@ a {
   line-height: inherit;
   padding: 0;
   text-align: left;
+  background-image: linear-gradient(120deg, #b6e8b8 0%, #b6e8b8 100%);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 0;
   cursor: pointer;
   display: inline-block;
-  position: relative; }
+  position: relative;
+  transition: background-size .2s ease-in, color .1s; }
   .ssb-glossary:focus {
     outline: #9272fc solid 2px;
     outline-offset: 2px; }
@@ -743,19 +748,10 @@ a {
     margin: 2px;
     transition: color .2s;
     vertical-align: top; }
-  .ssb-glossary .glossary-animate-background {
-    background: #b6e8b8;
-    bottom: 0;
-    height: 0;
-    left: 0;
-    position: absolute;
-    transition: height .2s;
-    width: 100%;
-    z-index: -1; }
-  .ssb-glossary:hover .glossary-animate-background, .ssb-glossary:focus .glossary-animate-background {
-    height: 100%; }
-  .ssb-glossary:hover .glossary-logo, .ssb-glossary:focus .glossary-logo {
-    color: #162327; }
+  .ssb-glossary:hover, .ssb-glossary:focus {
+    background-size: 100% 100%; }
+    .ssb-glossary:hover .glossary-logo, .ssb-glossary:focus .glossary-logo {
+      color: #162327; }
   .ssb-glossary .glossary-popup {
     font-family: 'Open Sans', sans-serif !important;
     font-stretch: normal;
