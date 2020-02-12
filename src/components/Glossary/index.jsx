@@ -30,7 +30,6 @@ const Glossary = ({ explanation, children, closeText }) => {
 		<button ref={node} onClick={() => setOpen(!open)} className="ssb-glossary">
 			<div className="glossary-text-wrap">{children}</div>
 			<BookOpen size={12} className="glossary-logo" />
-			<div className="glossary-animate-background" />
 			{open && (
 				<div className={`glossary-popup${open ? ' open' : ''}`} ref={infoContainer}>
 					<div className="content-box">

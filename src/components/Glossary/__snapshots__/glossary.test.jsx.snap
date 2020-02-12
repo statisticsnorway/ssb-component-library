@@ -15,8 +15,5 @@ exports[`Glossary Matches the snapshot 1`] = `
     color="currentColor"
     size={12}
   />
-  <div
-    className="glossary-animate-background"
-  />
 </button>
 `;
