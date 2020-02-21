@@ -1,14 +1,13 @@
 .ssb-glossary {
   @include focus-marker;
   @include reset-button;
-  background-image: linear-gradient(120deg, $ssb-green-2 0%, $ssb-green-2 100%);
-  background-position: 0 100%;
+  background-image: linear-gradient(to right, $ssb-green-2 50%, $ssb-white 50%);
+  background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: 100% 0;
-  cursor: pointer;
+  background-size: 200% 100%;
   display: inline-block;
   position: relative;
-  transition: background-size .2s ease-in, color .1s;
+  transition: all .5s ease-out;
 
   .glossary-text-wrap {
     border-bottom: 1px dotted $ssb-green-4;
@@ -24,11 +23,16 @@
   }
 
   &:hover, &:focus {
-    background-size: 100% 100%;
+    background-position: left bottom;
 
     .glossary-logo {
       color: $ssb-dark-6;
     }
+
+    .glossary-text-wrap{
+      border-bottom: none;
+    }
+
   }
 
   .glossary-popup {
