@@ -261,7 +261,8 @@ a {
         width: 380px; }
     .ssb-card .clickable.left-orientation {
       display: inline-flex;
-      flex-direction: row; }
+      flex-direction: row;
+      width: 100%; }
       .ssb-card .clickable.left-orientation .card-content {
         height: 214px;
         width: 100%; }
@@ -269,12 +270,27 @@ a {
         .ssb-card .clickable.left-orientation {
           flex-direction: column; }
           .ssb-card .clickable.left-orientation .card-content {
-            max-width: 380px; } }
+            height: 100%;
+            max-width: 380px; }
+          .ssb-card .clickable.left-orientation .card-image {
+            width: 100%; }
+          .ssb-card .clickable.left-orientation img {
+            max-width: 380px;
+            width: 100%; } }
     .ssb-card .clickable.top-orientation {
       display: inline-flex;
       flex-direction: column; }
       .ssb-card .clickable.top-orientation .card-content {
-        max-width: 380px; }
+        max-width: 380px;
+        width: 100%; }
+      @media screen and (max-width: 767px) {
+        .ssb-card .clickable.top-orientation {
+          width: 100%; }
+          .ssb-card .clickable.top-orientation .card-image {
+            width: 100%; }
+          .ssb-card .clickable.top-orientation img {
+            max-width: 380px;
+            width: 100%; } }
     .ssb-card .clickable:hover {
       text-decoration: none; }
       .ssb-card .clickable:hover.left-orientation .card-content {
@@ -728,14 +744,13 @@ a {
   line-height: inherit;
   padding: 0;
   text-align: left;
-  background-image: linear-gradient(120deg, #b6e8b8 0%, #b6e8b8 100%);
-  background-position: 0 100%;
+  background-image: linear-gradient(to right, #b6e8b8 50%, #fff 50%);
+  background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: 100% 0;
-  cursor: pointer;
+  background-size: 200% 100%;
   display: inline-block;
   position: relative;
-  transition: background-size .2s ease-in, color .1s; }
+  transition: all .5s ease-out; }
   .ssb-glossary:focus {
     outline: #9272fc solid 2px;
     outline-offset: 2px; }
@@ -749,9 +764,11 @@ a {
     transition: color .2s;
     vertical-align: top; }
   .ssb-glossary:hover, .ssb-glossary:focus {
-    background-size: 100% 100%; }
+    background-position: left bottom; }
     .ssb-glossary:hover .glossary-logo, .ssb-glossary:focus .glossary-logo {
       color: #162327; }
+    .ssb-glossary:hover .glossary-text-wrap, .ssb-glossary:focus .glossary-text-wrap {
+      border-bottom: none; }
   .ssb-glossary .glossary-popup {
     font-family: 'Open Sans', sans-serif !important;
     font-stretch: normal;
