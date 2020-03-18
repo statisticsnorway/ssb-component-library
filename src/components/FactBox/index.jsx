@@ -5,7 +5,7 @@ import Accordion from '../Accordion';
 const FactBox = ({
 	className, header, openByDefault, text,
 }) => (
-	<div className={`ssb-fact-box ${className}`}>
+	<div className={`ssb-fact-box${className ? ` ${className}` : ''}`}>
 		<Accordion header={header} openByDefault={openByDefault} withoutBorders>
 			{text}
 		</Accordion>

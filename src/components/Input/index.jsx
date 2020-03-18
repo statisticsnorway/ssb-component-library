@@ -15,7 +15,7 @@ const Input = ({
 	};
 
 	return (
-		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''} ${className}`}>
+		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}${className ? ` ${className}` : ''}`}>
 			{label && <label htmlFor={inputId}>{label}</label>}
 			<div className="input-wrapper">
 				<input

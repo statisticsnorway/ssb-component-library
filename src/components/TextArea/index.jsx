@@ -14,7 +14,7 @@ const TextArea = ({
 	};
 
 	return (
-		<div className={`ssb-text-area${negative ? ' negative' : ''}${error ? ' error' : ''} ${className}`}>
+		<div className={`ssb-text-area${negative ? ' negative' : ''}${error ? ' error' : ''}${className ? ` ${className}` : ''}`}>
 			{label && <label htmlFor={inputId}>{label}</label>}
 			<div className="text-area-wrapper">
 				<textarea

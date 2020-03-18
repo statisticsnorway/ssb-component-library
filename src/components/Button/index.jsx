@@ -6,7 +6,7 @@ const Button = ({
 }) => (
 	<button
 		type={type}
-		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'} ${className}`}
+		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'}${className ? ` ${className}` : ''}`}
 		onClick={onClick}
 		disabled={disabled}
 	>

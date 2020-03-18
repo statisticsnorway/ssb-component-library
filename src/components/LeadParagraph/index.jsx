@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const LeadParagraph = ({ children, className, negative }) => (
-	<p className={`ssb-lead-paragraph${negative ? ' negative' : ''} ${className}`}>{ children }</p>
+	<p className={`ssb-lead-paragraph${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</p>
 );
 
 LeadParagraph.defaultProps = {
