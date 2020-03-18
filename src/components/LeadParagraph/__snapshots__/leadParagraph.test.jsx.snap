@@ -2,7 +2,7 @@
 
 exports[`LeadParagraph component Matches the snapshot 1`] = `
 <p
-  className="ssb-lead-paragraph "
+  className="ssb-lead-paragraph"
 >
   Leading paragraph
 </p>

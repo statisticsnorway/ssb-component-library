@@ -2,7 +2,7 @@
 
 exports[`FormError component Matches the snapshot 1`] = `
 <div
-  className="ssb-form-error "
+  className="ssb-form-error"
 >
   <span
     className="error-icon"

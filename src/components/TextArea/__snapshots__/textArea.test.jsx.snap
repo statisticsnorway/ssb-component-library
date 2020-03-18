@@ -2,7 +2,7 @@
 
 exports[`Input component Matches the snapshot 1`] = `
 <div
-  className="ssb-text-area "
+  className="ssb-text-area"
 >
   <div
     className="text-area-wrapper"
