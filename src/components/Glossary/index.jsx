@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { BookOpen, XCircle } from 'react-feather';
 
-const Glossary = ({ explanation, children, closeText }) => {
+const Glossary = ({ explanation, children, className, closeText }) => {
 	const node = useRef();
 	const infoContainer = useRef();
 	const [open, setOpen] = useState(false);
@@ -27,7 +27,7 @@ const Glossary = ({ explanation, children, closeText }) => {
 	}, [open]);
 
 	return (
-		<button ref={node} onClick={() => setOpen(!open)} className="ssb-glossary">
+		<button ref={node} onClick={() => setOpen(!open)} className={`ssb-glossary${className ? ` ${className}` : ''}`}>
 			<div className="glossary-text-wrap">{children}</div>
 			<BookOpen size={12} className="glossary-logo" />
 			{open && (
@@ -51,6 +51,7 @@ Glossary.defaultProps = {
 
 Glossary.propTypes = {
 	children: PropTypes.node,
+	className: PropTypes.string,
 	closeText: PropTypes.string,
 	explanation: PropTypes.string.isRequired,
 };

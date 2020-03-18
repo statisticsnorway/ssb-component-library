@@ -57,6 +57,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| className   | string | Optional container class|
 | header | string | Displays header |
 | items | arrayOf(title, id) |Required items for rendering dropdown |
 | onSelect | func | Callback function when a title is selected |

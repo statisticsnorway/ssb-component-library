@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Tabs = ({ activeOnInit, items, onClick }) => {
+const Tabs = ({ activeOnInit, className, items, onClick }) => {
 	const [activeItem, changeActive] = useState(activeOnInit);
 
 	const handleClick = e => {
@@ -10,7 +10,7 @@ const Tabs = ({ activeOnInit, items, onClick }) => {
 	};
 
 	return (
-		<div className="ssb-tabs">
+		<div className={`ssb-tabs${className ? ` ${className}` : ''}`}>
 			{items.map(item => (
 				<button
 					className={`navigation-item ${activeItem === item.path ? 'active' : ''}`}
@@ -30,6 +30,7 @@ Tabs.defaultProps = {
 
 Tabs.propTypes = {
 	activeOnInit: PropTypes.string,
+	className: PropTypes.string,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		title: PropTypes.string,
 		path: PropTypes.string,

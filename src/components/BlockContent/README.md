@@ -27,4 +27,5 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children   | Required node | Content within the wrapper |
+| className   | string | Optional container class|
 | sectionNumber | Optional number or string | Optional rendering of a page number |

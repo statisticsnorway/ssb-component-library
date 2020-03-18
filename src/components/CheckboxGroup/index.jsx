@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Checkbox from '../Checkbox';
 
 const CheckboxGroup = ({
-	header, items, onChange, orientation, selectedValues,
+	className, header, items, onChange, orientation, selectedValues,
 }) => {
 	const [selected, updateSelected] = useState(selectedValues);
 
@@ -22,7 +22,7 @@ const CheckboxGroup = ({
 	};
 
 	return (
-		<div className="ssb-checkbox-group">
+		<div className={`ssb-checkbox-group${className ? ` ${className}` : ''}`}>
 			{header && <div className="checkbox-group-header">{header}</div>}
 			<div className={`boxes flex-${orientation}`}>
 				{items.map((it, index) => (
@@ -48,6 +48,7 @@ CheckboxGroup.defaultProps = {
 };
 
 CheckboxGroup.propTypes = {
+	className: PropTypes.string,
 	header: PropTypes.string,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		label: PropTypes.string,

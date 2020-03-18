@@ -104,6 +104,7 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children | node | Accordion content |
+| className   | string | Optional container class|
 | header | string | Header text |
 | openByDefault | bool | Will set the open state on init |
 | subHeader | string | Renders the header with the sub header design |

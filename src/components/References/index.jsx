@@ -4,9 +4,9 @@ import Link from '../Link';
 import Text from '../Text';
 
 const References = ({
-	referenceList, title,
+	className, referenceList, title,
 }) => (
-	<div className="ssb-references">
+	<div className={`ssb-references${className ? ` ${className}` : ''}`}>
 		<span className="reference-header">{title}</span>
 		{referenceList.map((ref, index) => (
 			<div key={index}> {/* eslint-disable-line */}
@@ -22,6 +22,7 @@ References.defaultProps = {
 };
 
 References.propTypes = {
+	className: PropTypes.string,
 	referenceList: PropTypes.arrayOf(
 		PropTypes.shape({
 			href: PropTypes.string.isRequired,

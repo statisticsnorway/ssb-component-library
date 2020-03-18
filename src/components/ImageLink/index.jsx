@@ -30,10 +30,10 @@ export function useHover() {
 }
 
 
-const ImageLink = ({ image, link, onClick, orientation, title, type }) => {
+const ImageLink = ({ className, image, link, onClick, orientation, title, type }) => {
 	const [hoverRef, hovered] = useHover();
 	return (
-		<a className={`ssb-image-link ${orientation}`} href={link} onClick={onClick} ref={hoverRef}>
+		<a className={`ssb-image-link ${orientation}${className ? ` ${className}` : ''}`} href={link} onClick={onClick} ref={hoverRef}>
 			<div className="image-background">{image}</div>
 			<span className="il-type">{type}</span>
 			<span className="il-title">{title}</span>
@@ -48,6 +48,7 @@ ImageLink.defaultProps = {
 };
 
 ImageLink.propTypes = {
+	className: PropTypes.string,
 	image: PropTypes.element.isRequired,
 	link: PropTypes.string,
 	onClick: PropTypes.func,

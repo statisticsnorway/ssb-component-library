@@ -2,7 +2,7 @@
 
 exports[`InputError component Matches the snapshot 1`] = `
 <div
-  className="ssb-input-error "
+  className="ssb-input-error"
 >
   <span>
     Insert error message

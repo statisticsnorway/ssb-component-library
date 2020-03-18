@@ -31,4 +31,5 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children | node | Renders a node |
+| className   | string | Optional container class|
 | size | 'small', 'medium' or 'large' | Change size on number |

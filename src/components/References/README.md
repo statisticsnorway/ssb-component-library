@@ -53,6 +53,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| className   | string | Optional container class|
 | referenceList | arrayOf({ href, label, plainText }) | Required list of objects to render content |
 | title | string| Header text |
 

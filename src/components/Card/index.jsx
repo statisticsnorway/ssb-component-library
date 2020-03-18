@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { ArrowRight, Download } from 'react-feather';
 
 const Card = ({
-	children, downloadText, fileLocation, href, hrefText, icon, image, imagePlacement, profiled, subTitle, title,
+	children, className, downloadText, fileLocation, href, hrefText, icon, image, imagePlacement, profiled, subTitle, title,
 }) => (
-	<div className="ssb-card">
+	<div className={`ssb-card${className ? ` ${className}` : ''}`}>
 		<a
 			href={href}
 			className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
@@ -44,6 +44,7 @@ Card.defaultProps = {
 
 Card.propTypes = {
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 	downloadText: PropTypes.string,
 	fileLocation: PropTypes.string,
 	href: PropTypes.string.isRequired,

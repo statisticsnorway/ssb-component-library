@@ -47,5 +47,6 @@ Available props:
 | Name       | Type          | Description  |
 | ---------- | ------------- | ----- |
 | activeOnInit | string | Will set an item to be active on init |
+| className   | string | Optional container class|
 | items | arrayOf({title, path}) | Sets label and path of buttons |
 | onClick | func | Callback function |

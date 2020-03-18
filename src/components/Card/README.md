@@ -138,6 +138,7 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children | node | Required. Fills box with content |
+| className   | string | Optional container class|
 | downloadText | string | Text download link, default "Last ned" |
 | fileLocation | string | Path to downloadable file. Ads the download field |
 | href | string | Destination for navigation |

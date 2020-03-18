@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
 const Pagination = ({
-	items, labelNext, labelPrevious, onSelect, selectedPage,
+	className, items, labelNext, labelPrevious, onSelect, selectedPage,
 }) => {
 	const [selected, setSelected] = useState(selectedPage || items[0]);
 	const [currentButtons, updateCurrentButtons] = useState([{}]);
@@ -39,7 +39,7 @@ const Pagination = ({
 	};
 
 	return (
-		<nav className="ssb-pagination">
+		<nav className={`ssb-pagination${className ? ` ${className}` : ''}`}>
 			<button
 				className="direction-button previous"
 				onClick={() => handleSelection(items[items.indexOf(selected) - 1])}
@@ -85,6 +85,7 @@ Pagination.defaultProps = {
 };
 
 Pagination.propTypes = {
+	className: PropTypes.string,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		text: PropTypes.string,
 		path: PropTypes.string,
