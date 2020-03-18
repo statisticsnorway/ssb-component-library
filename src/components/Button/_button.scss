@@ -40,6 +40,7 @@
     border-color: $ssb-dark-2;
     color: $ssb-dark-2;
     cursor: not-allowed;
+    font-weight: normal;
 
     &:hover, &:focus {
       text-decoration: none;
@@ -65,6 +66,7 @@
       background: $ssb-dark-5;
       border-color: $ssb-dark-4;
       color: $ssb-dark-4;
+      font-weight: normal;
 
       &:hover, &:focus {
         text-decoration: none;
@@ -109,6 +111,7 @@
         background: $ssb-dark-4;
         border-color: $ssb-dark-4;
         color: $ssb-dark-5;
+        font-weight: normal;
       }
     }
   }
