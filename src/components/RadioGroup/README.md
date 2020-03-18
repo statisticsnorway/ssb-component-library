@@ -55,6 +55,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| className   | string | Optional container class|
 | header | string | Renders a h5 title |
 | items | arrayOf(label, value) | Required items for rendering radio buttons |
 | onChange | func | Callback function when a value is changed |

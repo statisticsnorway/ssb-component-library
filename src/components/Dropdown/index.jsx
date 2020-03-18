@@ -4,7 +4,7 @@ import uuid from 'uuid/v4';
 import { ChevronDown, ChevronUp } from 'react-feather';
 
 const Dropdown = ({
-	header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
+	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
 }) => {
 	const id = uuid();
 	const node = useRef();
@@ -46,7 +46,7 @@ const Dropdown = ({
 	}, [isOpen]);
 
 	return (
-		<div className="ssb-dropdown">
+		<div className={`ssb-dropdown${className ? ` ${className}` : ''}`}>
 			{header && <label htmlFor={id}>{header}</label>}
 			<div className="dropdown-interactive-area">
 				<button aria-label="open or close dropdown" tabIndex={tabIndex} ref={node} onClick={() => setOpen(!isOpen)}>
@@ -88,6 +88,7 @@ Dropdown.defaultProps = {
 };
 
 Dropdown.propTypes = {
+	className: PropTypes.string,
 	header: PropTypes.string,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		title: PropTypes.string,

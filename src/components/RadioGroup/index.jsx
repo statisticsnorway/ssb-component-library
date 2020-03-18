@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import RadioButton from '../RadioButton';
 
-const RadioGroup = ({ groupName, header, items, onChange, orientation, selectedValue }) => {
+const RadioGroup = ({ className, groupName, header, items, onChange, orientation, selectedValue }) => {
 	const [selected, updateSelected] = useState(selectedValue);
 
 	useEffect(() => {
@@ -10,7 +10,7 @@ const RadioGroup = ({ groupName, header, items, onChange, orientation, selectedV
 	}, [selected]);
 
 	return (
-		<div className="ssb-radio-group">
+		<div className={`ssb-radio-group${className ? ` ${className}` : ''}`}>
 			{header && <div className="radio-group-header">{header}</div>}
 			<div className={`boxes flex-${orientation}`}>
 				{items.map((it, index) => (
@@ -36,6 +36,7 @@ RadioGroup.defaultProps = {
 };
 
 RadioGroup.propTypes = {
+	className: PropTypes.string,
 	groupName: PropTypes.string,
 	header: PropTypes.string,
 	items: PropTypes.arrayOf(PropTypes.shape({

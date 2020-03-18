@@ -93,3 +93,4 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children | node | All rendered content |
+| className   | string | Optional container class|

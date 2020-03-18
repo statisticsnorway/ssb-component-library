@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Quote = ({
-	children, negative,
+	children, className, negative,
 }) => (
-	<span className={`ssb-quote${negative ? ' negative' : ''}`}>{ children }</span>
+	<span className={`ssb-quote${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</span>
 );
 
 Quote.defaultProps = {
@@ -13,6 +13,7 @@ Quote.defaultProps = {
 
 Quote.propTypes = {
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 	negative: PropTypes.bool,
 };
 

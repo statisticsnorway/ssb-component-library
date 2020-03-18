@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { ChevronDown, ChevronUp } from 'react-feather';
 
 const Accordion = ({
-	children, header, openByDefault, subHeader, tabIndex, withoutBorders,
+	children, className, header, openByDefault, subHeader, tabIndex, withoutBorders,
 }) => {
 	const [isOpen, toggleOpen] = useState(openByDefault);
 	return (
-		<div className={`ssb-accordion${subHeader ? ' with-sub-header' : ''}${withoutBorders ? ' without-borders' : ''}`}>
+		<div className={`ssb-accordion${subHeader ? ' with-sub-header' : ''}${withoutBorders ? ' without-borders' : ''}${className ? ` ${className}` : ''}`}>
 			<button
 				className={`accordion-header ${isOpen ? 'open' : 'closed'}`}
 				tabIndex={tabIndex}
@@ -34,6 +34,7 @@ Accordion.defaultProps = {
 
 Accordion.propTypes = {
 	children: PropTypes.node,
+	className: PropTypes.string,
 	header: PropTypes.string,
 	openByDefault: PropTypes.bool,
 	subHeader: PropTypes.string,

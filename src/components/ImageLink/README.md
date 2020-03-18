@@ -26,6 +26,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| className   | string | Optional container class|
 | image | required element | An image to be put as background |
 | link | string | Link to be navigated to |
 | onClick | func | Function callback to be used instead of link |

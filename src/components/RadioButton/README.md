@@ -33,6 +33,7 @@ Available props:
 | ---------- | ------------- | ----- |
 | callback   | func | Function to trigger when value changes |
 | children | node | Label for the checkbox |
+| className   | string | Optional container class|
 | disabled | bool | Toggles disabled state of input field |
 | selected | bool | Selected state of checkbox |
 | tabIndex | number | Tab index for focus |
