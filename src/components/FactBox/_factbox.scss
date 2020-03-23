@@ -1,6 +1,10 @@
 .ssb-fact-box {
-  border: 1px solid $ssb-green-4;
+  border: 1px solid $ssb-green-3;
   margin: 16px 0;
   padding: 20px 16px;
   width: 100%;
+
+  &:hover {
+    border: 1px solid $ssb-green-4;
+  }
 }
