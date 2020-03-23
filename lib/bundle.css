@@ -49,10 +49,11 @@ a {
     line-height: inherit;
     padding: 0;
     text-align: left;
-    font-family: 'Roboto Condensed', sans-serif !important;
-    font-stretch: condensed;
-    font-weight: bold;
-    font-size: 20px; }
+    font-family: 'Roboto', sans-serif !important;
+    font-stretch: normal;
+    font-weight: normal;
+    font-size: 20px;
+    font-weight: bold; }
     .ssb-accordion .accordion-header:focus {
       outline: #9272fc solid 2px;
       outline-offset: 2px; }
@@ -186,7 +187,8 @@ a {
     background: #fff;
     border-color: #c3dcdc;
     color: #c3dcdc;
-    cursor: not-allowed; }
+    cursor: not-allowed;
+    font-weight: normal; }
     .ssb-btn:disabled:hover, .ssb-btn:disabled:focus {
       text-decoration: none; }
   .ssb-btn.negative {
@@ -202,7 +204,8 @@ a {
     .ssb-btn.negative:disabled {
       background: #274247;
       border-color: #2d6975;
-      color: #2d6975; }
+      color: #2d6975;
+      font-weight: normal; }
       .ssb-btn.negative:disabled:hover, .ssb-btn.negative:disabled:focus {
         text-decoration: none; }
   .ssb-btn.primary-btn {
@@ -231,7 +234,8 @@ a {
       .ssb-btn.primary-btn.negative:disabled {
         background: #2d6975;
         border-color: #2d6975;
-        color: #274247; }
+        color: #274247;
+        font-weight: normal; }
   .ssb-btn .sb-icon {
     display: inline-flex;
     font-size: 18px;
@@ -671,10 +675,12 @@ a {
     border-radius: 3px; }
 
 .ssb-fact-box {
-  border: 1px solid #00824d;
+  border: 1px solid #1a9d49;
   margin: 16px 0;
   padding: 20px 16px;
   width: 100%; }
+  .ssb-fact-box:hover {
+    border: 1px solid #00824d; }
 
 .ssb-footer-wrapper {
   background: #274247;
