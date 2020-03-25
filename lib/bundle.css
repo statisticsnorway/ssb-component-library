@@ -762,7 +762,7 @@ a {
     outline-offset: 2px; }
   .ssb-glossary .glossary-text-wrap {
     border-bottom: 1px dotted #00824d;
-    display: inline-block;
+    display: inline;
     line-height: inherit; }
   .ssb-glossary .glossary-logo {
     color: #1a9d49;
@@ -1033,9 +1033,7 @@ a {
   font-stretch: normal;
   font-weight: normal;
   color: #274247;
-  column-gap: 16px;
-  display: inline-grid;
-  grid-auto-flow: column; }
+  display: flex; }
   .ssb-key-figures .kf-icon {
     color: #274247;
     display: inline-flex; }
@@ -1053,31 +1051,34 @@ a {
     .ssb-key-figures .kf-changes .changes-period {
       font-size: 16px; }
   .ssb-key-figures.large .kf-icon {
+    margin-right: 36px;
     max-height: 195px;
     max-width: 195px;
     width: 195px; }
   .ssb-key-figures.large .subtitle {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     margin-left: 4px; }
     @media screen and (max-width: 767px) {
       .ssb-key-figures.large .subtitle {
         margin-bottom: 14px; } }
   .ssb-key-figures.medium .kf-icon {
+    margin-right: 28px;
     max-height: 150px;
     max-width: 150px;
     width: 150px; }
   .ssb-key-figures.medium .subtitle {
-    margin-bottom: 18px;
+    margin-bottom: 19px;
     margin-left: 4px; }
     @media screen and (max-width: 767px) {
       .ssb-key-figures.medium .subtitle {
         margin-bottom: 8px; } }
   .ssb-key-figures.small .kf-icon {
+    margin-right: 20px;
     max-height: 108px;
     max-width: 108px;
     width: 108px; }
   .ssb-key-figures.small .subtitle {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     margin-left: 4px; }
   @media screen and (max-width: 767px) {
     .ssb-key-figures .kf-icon {
