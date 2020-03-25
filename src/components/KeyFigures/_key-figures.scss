@@ -5,9 +5,7 @@ $small-size: 108px;
 .ssb-key-figures {
   @include roboto;
   color: $ssb-dark-5;
-  column-gap: $global-padding-size * 2;
-  display: inline-grid;
-  grid-auto-flow: column;
+  display: flex;
 
   .kf-icon {
     color: $ssb-dark-5;
@@ -40,13 +38,14 @@ $small-size: 108px;
   &.large {
 
     .kf-icon {
+      margin-right: 36px;
       max-height: $large-size;
       max-width: $large-size;
       width: $large-size;
     }
 
     .subtitle {
-      margin-bottom: 32px;
+      margin-bottom: 30px;
       margin-left: 4px;
 
       @media #{$mobile} {
@@ -58,13 +57,14 @@ $small-size: 108px;
   &.medium {
 
     .kf-icon {
+      margin-right: 28px;
       max-height: $medium-size;
       max-width: $medium-size;
       width: $medium-size;
     }
 
     .subtitle {
-      margin-bottom: 18px;
+      margin-bottom: 19px;
       margin-left: 4px;
 
       @media #{$mobile} {
@@ -76,13 +76,14 @@ $small-size: 108px;
   &.small {
 
     .kf-icon {
+      margin-right: 20px;
       max-height: $small-size;
       max-width: $small-size;
       width: $small-size;
     }
 
     .subtitle {
-      margin-bottom: 8px;
+      margin-bottom: 9px;
       margin-left: 4px;
     }
   }
