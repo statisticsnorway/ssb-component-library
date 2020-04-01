@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { ChevronDown, ChevronUp } from 'react-feather';
+import { KEY_ARROW_DOWN, KEY_ARROW_UP } from '../../utils/keybindings';
 
 const Dropdown = ({
 	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
@@ -12,6 +13,11 @@ const Dropdown = ({
 	const [availableOptions, filterOptions] = useState(items);
 	const [selectedOption, selectItem] = useState(selectedItem || { title: '', id: '' });
 	const [inputFieldValue, updateInputValue] = useState('');
+	const [keyNavPosition, setKeyNavPosition] = useState(0);
+	const itemRefs = items.reduce((acc, item, idx) => {
+		acc[idx] = React.createRef();
+		return acc;
+	}, []);
 
 	const filterItems = event => {
 		updateInputValue(event.target.value);
@@ -34,6 +40,29 @@ const Dropdown = ({
 		}
 	};
 
+	const handleKeyboardNav = e => {
+		if (e.target === node.current) {
+			console.log('current cursor', keyNavPosition);
+			console.log('event type', e.keyCode);
+			if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
+				setKeyNavPosition(keyNavPosition - 1);
+				console.log('active idx', keyNavPosition - 1);
+			} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (items.length - 1))) {
+				setKeyNavPosition(keyNavPosition + 1);
+				console.log('active idx', keyNavPosition + 1);
+			}
+		}
+	};
+
+	useEffect(() => {
+	    if (itemRefs[keyNavPosition].current) {
+			itemRefs[keyNavPosition].current.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start',
+			});
+		}
+    }, [keyNavPosition]);
+
 	useEffect(() => {
 		if (isOpen) {
 			document.addEventListener('mousedown', handleClickOutside);
@@ -45,11 +74,19 @@ const Dropdown = ({
 		};
 	}, [isOpen]);
 
+	console.log('keyNav Index', keyNavPosition);
+
 	return (
 		<div className={`ssb-dropdown${className ? ` ${className}` : ''}`}>
 			{header && <label htmlFor={id}>{header}</label>}
 			<div className="dropdown-interactive-area">
-				<button aria-label="open or close dropdown" tabIndex={tabIndex} ref={node} onClick={() => setOpen(!isOpen)}>
+				<button
+					aria-label="open or close dropdown"
+					tabIndex={tabIndex}
+					ref={node}
+					onClick={() => setOpen(!isOpen)}
+					onKeyDown={handleKeyboardNav}
+				>
 					<input
 						className={isOpen ? 'focused' : ''}
 						id={id}
@@ -62,15 +99,24 @@ const Dropdown = ({
 				</button>
 				{isOpen && (
 					<div className="list-of-options">
-						{availableOptions.map(it => (
-							<button
-								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}`}
-								key={it.id}
-								onClick={() => handleSelection(it)}
-								id={it.id}
-							>{it.title}
-							</button>
-						))}
+						{availableOptions.map((it, idx) => {
+							const classNames = [
+								'option-list-element',
+								selectedOption.id === it.id ? 'selected' : '',
+								keyNavPosition === idx ? 'active' : '',
+							].join(' ');
+
+							console.log(idx, ' => ', classNames);
+							return (
+								<button
+									className={classNames}
+									key={it.id}
+									onClick={() => handleSelection(it)}
+									id={it.id}
+								>{it.title}
+								</button>
+							);
+						})}
 					</div>
 				)}
 			</div>
