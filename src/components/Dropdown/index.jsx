@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { ChevronDown, ChevronUp } from 'react-feather';
-import { KEY_ARROW_DOWN, KEY_ARROW_UP } from '../../utils/keybindings';
+import { KEY_ARROW_DOWN, KEY_ARROW_UP, KEY_ENTER } from '../../utils/keybindings';
 
 const Dropdown = ({
 	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
@@ -15,7 +15,7 @@ const Dropdown = ({
 	const [inputFieldValue, updateInputValue] = useState('');
 	const [keyNavPosition, setKeyNavPosition] = useState(0);
 	const itemRefs = items.reduce((acc, item, idx) => {
-		acc[idx] = React.createRef();
+		acc[idx] = useRef();
 		return acc;
 	}, []);
 
@@ -46,16 +46,22 @@ const Dropdown = ({
 				setKeyNavPosition(keyNavPosition - 1);
 			} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (items.length - 1))) {
 				setKeyNavPosition(keyNavPosition + 1);
+			} else if (e.keyCode === KEY_ENTER) {
+				e.preventDefault();
+				handleSelection(items[keyNavPosition]);
 			}
 		}
 	};
 
 	useEffect(() => {
 		if (itemRefs[keyNavPosition].current) {
+			console.log('should scroll to ', keyNavPosition, itemRefs[keyNavPosition]);
 			itemRefs[keyNavPosition].current.scrollIntoView({
 				behavior: 'smooth',
 				block: 'start',
 			});
+		} else {
+			console.log('itemRefs.current null', itemRefs[keyNavPosition]);
 		}
     }, [keyNavPosition]);
 
@@ -94,7 +100,7 @@ const Dropdown = ({
 					{isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} /> }
 				</button>
 				{isOpen && (
-					<div className="list-of-options">
+					<div className="list-of-options" id={`${id}--options`}>
 						{availableOptions.map((it, idx) => {
 							const classNames = [
 								'option-list-element',
@@ -105,10 +111,12 @@ const Dropdown = ({
 							console.log(idx, ' => ', classNames);
 							return (
 								<button
+									disabled={it.disabled}
 									className={classNames}
 									key={it.id}
 									onClick={() => handleSelection(it)}
 									id={it.id}
+									ref={itemRefs[idx]}
 								>{it.title}
 								</button>
 							);
@@ -135,6 +143,7 @@ Dropdown.propTypes = {
 	items: PropTypes.arrayOf(PropTypes.shape({
 		title: PropTypes.string,
 		id: PropTypes.string,
+		disabled: PropTypes.boolean,
 	})),
 	onSelect: PropTypes.func,
 	open: PropTypes.bool,
