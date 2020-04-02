@@ -64,6 +64,7 @@ const Dropdown = ({
 					<div className="list-of-options">
 						{availableOptions.map(it => (
 							<button
+								disabled={it.disabled}
 								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}`}
 								key={it.id}
 								onClick={() => handleSelection(it)}
@@ -93,6 +94,7 @@ Dropdown.propTypes = {
 	items: PropTypes.arrayOf(PropTypes.shape({
 		title: PropTypes.string,
 		id: PropTypes.string,
+		disabled: PropTypes.boolean,
 	})),
 	onSelect: PropTypes.func,
 	open: PropTypes.bool,

@@ -99,6 +99,18 @@
           z-index: 2;
         }
 
+        &:disabled {
+          background: $ssb-white;
+          color: $ssb-dark-2;
+          cursor: not-allowed;
+          font-weight: normal;
+
+          &:hover, &:focus {
+            text-decoration: none;
+            background: none;
+          }
+        }
+
         &.selected {
           background: $ssb-green-4;
           color: $ssb-white;
