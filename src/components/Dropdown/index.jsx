@@ -42,20 +42,16 @@ const Dropdown = ({
 
 	const handleKeyboardNav = e => {
 		if (e.target === node.current) {
-			console.log('current cursor', keyNavPosition);
-			console.log('event type', e.keyCode);
 			if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
 				setKeyNavPosition(keyNavPosition - 1);
-				console.log('active idx', keyNavPosition - 1);
 			} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (items.length - 1))) {
 				setKeyNavPosition(keyNavPosition + 1);
-				console.log('active idx', keyNavPosition + 1);
 			}
 		}
 	};
 
 	useEffect(() => {
-	    if (itemRefs[keyNavPosition].current) {
+		if (itemRefs[keyNavPosition].current) {
 			itemRefs[keyNavPosition].current.scrollIntoView({
 				behavior: 'smooth',
 				block: 'start',
