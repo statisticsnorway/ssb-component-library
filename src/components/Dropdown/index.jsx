@@ -109,7 +109,13 @@ const Dropdown = ({
 	return (
 		<div className={`ssb-dropdown${className ? ` ${className}` : ''}`}>
 			{header && <label htmlFor={id}>{header}</label>}
-			<div className="dropdown-interactive-area" ref={wrapper} onKeyDown={handleWrapperOpen}>
+			<div
+				className="dropdown-interactive-area"
+				ref={wrapper}
+				role="button"
+				tabIndex={0}
+				onKeyDown={handleWrapperOpen}
+			>
 				<button
 					aria-label="open or close dropdown"
 					tabIndex={tabIndex}
@@ -121,7 +127,7 @@ const Dropdown = ({
 						className={isOpen ? 'focused' : ''}
 						id={id}
 						onKeyDown={handleSearchSpecialKeys}
-                        onChange={filterItems}
+						onChange={filterItems}
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
