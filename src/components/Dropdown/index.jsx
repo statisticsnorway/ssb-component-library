@@ -8,6 +8,7 @@ const Dropdown = ({
 	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
 }) => {
 	const id = uuid();
+	const wrapper = useRef();
 	const node = useRef();
 	const [isOpen, setOpen] = useState(open);
 	const [availableOptions, filterAvailableOptions] = useState(items);
@@ -33,8 +34,10 @@ const Dropdown = ({
 		selectItem({ title: item.title, id: item.id });
 		onSelect(item);
 		setOpen(false);
-		filterAvailableOptions(items);
-		updateInputValue('');
+		if (searchable) {
+			filterAvailableOptions(items);
+			updateInputValue('');
+		}
 	};
 
 	const handleClickOutside = e => {
@@ -43,11 +46,6 @@ const Dropdown = ({
 				setOpen(false);
 			}, 100);
 		}
-	};
-
-	const handleMouseSelect = (e, item) => {
-		console.log(item, e.target);
-		handleSelection(item);
 	};
 
 	const handleKeyboardNav = e => {
@@ -77,6 +75,15 @@ const Dropdown = ({
 		}
 	};
 
+	const handleWrapperOpen = e => {
+		if (wrapper.current.contains(e.target)) {
+			e.preventDefault();
+			if (!isOpen) {
+				setOpen(true);
+			}
+		}
+	};
+
 	useEffect(() => {
 		if (itemRefs[keyNavPosition].current) {
 			itemRefs[keyNavPosition].current.scrollIntoView({
@@ -102,7 +109,7 @@ const Dropdown = ({
 	return (
 		<div className={`ssb-dropdown${className ? ` ${className}` : ''}`}>
 			{header && <label htmlFor={id}>{header}</label>}
-			<div className="dropdown-interactive-area">
+			<div className="dropdown-interactive-area" ref={wrapper} onKeyDown={handleWrapperOpen}>
 				<button
 					aria-label="open or close dropdown"
 					tabIndex={tabIndex}
