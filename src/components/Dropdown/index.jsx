@@ -30,7 +30,6 @@ const Dropdown = ({
 	};
 
 	const handleSelection = item => {
-		console.log('should select ', item);
 		selectItem({ title: item.title, id: item.id });
 		onSelect(item);
 		setOpen(false);
@@ -92,8 +91,6 @@ const Dropdown = ({
 			});
 		}
 	}, [keyNavPosition]);
-
-	console.log('keyNav', keyNavPosition);
 
 	useEffect(() => {
 		if (isOpen) {
