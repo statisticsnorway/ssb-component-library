@@ -165,7 +165,7 @@ const Dropdown = ({
 Dropdown.defaultProps = {
 	header: '',
 	items: [{ id: '', title: '' }],
-	onSelect: it => { console.log('*** selected ', it); },
+	onSelect: () => {},
 	open: false,
 	searchable: false,
 	placeholder: '-- Select --',
