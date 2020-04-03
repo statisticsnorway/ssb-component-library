@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { ChevronDown, ChevronUp } from 'react-feather';
-import { KEY_ARROW_DOWN, KEY_ARROW_UP, KEY_ENTER, KEY_ESCAPE } from '../../utils/keybindings';
+import { KEY_ARROW_DOWN, KEY_ARROW_UP, KEY_ENTER, KEY_ESCAPE, KEY_SPACE } from '../../utils/keybindings';
 
 const Dropdown = ({
 	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
@@ -10,7 +10,7 @@ const Dropdown = ({
 	const id = uuid();
 	const node = useRef();
 	const [isOpen, setOpen] = useState(open);
-	const [availableOptions, filterOptions] = useState(items);
+	const [availableOptions, filterAvailableOptions] = useState(items);
 	const [selectedOption, selectItem] = useState(selectedItem || { title: '', id: '' });
 	const [inputFieldValue, updateInputValue] = useState('');
 	const [keyNavPosition, setKeyNavPosition] = useState(0);
@@ -19,16 +19,21 @@ const Dropdown = ({
 		return acc;
 	}, []);
 
+	const filterOptions = value => {
+		updateInputValue(value);
+		filterAvailableOptions(items.filter(it => it.title.toLowerCase().includes(value.toLowerCase())));
+	};
+
 	const filterItems = event => {
-		updateInputValue(event.target.value);
-		filterOptions(items.filter(it => it.title.toLowerCase().includes(event.target.value.toLowerCase())));
+		filterOptions(event.target.value);
 	};
 
 	const handleSelection = item => {
+		console.log('should select ', item);
 		selectItem({ title: item.title, id: item.id });
 		onSelect(item);
 		setOpen(false);
-		filterOptions(items);
+		filterAvailableOptions(items);
 		updateInputValue('');
 	};
 
@@ -38,6 +43,11 @@ const Dropdown = ({
 				setOpen(false);
 			}, 100);
 		}
+	};
+
+	const handleMouseSelect = (e, item) => {
+		console.log(item, e.target);
+		handleSelection(item);
 	};
 
 	const handleKeyboardNav = e => {
@@ -50,8 +60,19 @@ const Dropdown = ({
 				e.preventDefault();
 				handleSelection(items[keyNavPosition]);
 			} else if (e.keyCode === KEY_ESCAPE) {
+				if (!searchable) {
+					e.preventDefault();
+					setOpen(false);
+				}
+			}
+		}
+	};
+
+	const handleSearchSpecialKeys = e => {
+		if (e.keyCode === KEY_SPACE) {
+			if (searchable) {
 				e.preventDefault();
-				setOpen(false);
+				filterOptions(`${e.target.value} `);
 			}
 		}
 	};
@@ -64,6 +85,8 @@ const Dropdown = ({
 			});
 		}
 	}, [keyNavPosition]);
+
+	console.log('keyNav', keyNavPosition);
 
 	useEffect(() => {
 		if (isOpen) {
@@ -90,7 +113,8 @@ const Dropdown = ({
 					<input
 						className={isOpen ? 'focused' : ''}
 						id={id}
-						onChange={e => filterItems(e)}
+						onKeyDown={handleSearchSpecialKeys}
+                        onChange={filterItems}
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
@@ -111,7 +135,7 @@ const Dropdown = ({
 									disabled={it.disabled}
 									className={classNames}
 									key={it.id}
-									onClick={() => handleSelection(it)}
+									onClick={() => { handleSelection(it); }}
 									id={it.id}
 									ref={itemRefs[idx]}
 								>{it.title}
@@ -128,7 +152,7 @@ const Dropdown = ({
 Dropdown.defaultProps = {
 	header: '',
 	items: [{ id: '', title: '' }],
-	onSelect: () => {},
+	onSelect: it => { console.log('*** selected ', it); },
 	open: false,
 	searchable: false,
 	placeholder: '-- Select --',

@@ -27,7 +27,7 @@ const items = [
 		title: 'Fersken',
 		id: 'item7',
 	}, {
-		title: 'Mandarin',
+		title: 'Mandarin orange',
 		id: 'item8',
 	},
 ];
