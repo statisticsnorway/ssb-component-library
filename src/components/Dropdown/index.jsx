@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { ChevronDown, ChevronUp } from 'react-feather';
-import { KEY_ARROW_DOWN, KEY_ARROW_UP, KEY_ENTER } from '../../utils/keybindings';
+import { KEY_ARROW_DOWN, KEY_ARROW_UP, KEY_ENTER, KEY_ESCAPE } from '../../utils/keybindings';
 
 const Dropdown = ({
 	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
@@ -49,21 +49,21 @@ const Dropdown = ({
 			} else if (e.keyCode === KEY_ENTER) {
 				e.preventDefault();
 				handleSelection(items[keyNavPosition]);
+			} else if (e.keyCode === KEY_ESCAPE) {
+				e.preventDefault();
+				setOpen(false);
 			}
 		}
 	};
 
 	useEffect(() => {
 		if (itemRefs[keyNavPosition].current) {
-			console.log('should scroll to ', keyNavPosition, itemRefs[keyNavPosition]);
 			itemRefs[keyNavPosition].current.scrollIntoView({
 				behavior: 'smooth',
 				block: 'start',
 			});
-		} else {
-			console.log('itemRefs.current null', itemRefs[keyNavPosition]);
 		}
-    }, [keyNavPosition]);
+	}, [keyNavPosition]);
 
 	useEffect(() => {
 		if (isOpen) {
@@ -75,8 +75,6 @@ const Dropdown = ({
 			document.removeEventListener('mousedown', handleClickOutside);
 		};
 	}, [isOpen]);
-
-	console.log('keyNav Index', keyNavPosition);
 
 	return (
 		<div className={`ssb-dropdown${className ? ` ${className}` : ''}`}>
@@ -108,7 +106,6 @@ const Dropdown = ({
 								keyNavPosition === idx ? 'active' : '',
 							].join(' ');
 
-							console.log(idx, ' => ', classNames);
 							return (
 								<button
 									disabled={it.disabled}

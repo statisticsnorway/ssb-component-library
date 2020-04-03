@@ -3,6 +3,25 @@ Dropdown
 
 > A component that allows a user to select a value from a series of options.
 
+### Behavior
+
+#### Keybindings
+
+- SPACE opens/closes the dropdown list
+- UP/DOWN arrows to move up/down the list
+- ENTER selects the current option
+
+#### Known Caveats
+
+- When the dropdown list is open and UP/DOWN arrows are used to navigate the list, there should be no scrolling so
+  long as one is still within the options that are currently in view. Scrolling must start only when an option beyond
+  the current viewport is accessed via UP/DOWN arrows.
+  
+  However, there is an [open issue in one of the libraries we use](https://github.com/joshwnj/react-visibility-sensor/pull/87)
+  to sense visibility of options. 
+  
+  Workaround: We always scroll to an option currently navigated to using the arrow keys.
+
 ### Usage
 
 #### HTML
@@ -40,6 +59,7 @@ const items = [
 	}, {
 		title: 'Ocean',
 		id: 'item3',
+        disabled: true,
 	}, {
 		title: 'Automobiles and other fun things to talk about',
 		id: 'item4',
@@ -59,7 +79,7 @@ Available props:
 | ---------- | ------------- | ----- |
 | className   | string | Optional container class|
 | header | string | Displays header |
-| items | arrayOf(title, id) |Required items for rendering dropdown |
+| items | arrayOf({ title, id, disabled }) |Required items for rendering dropdown (*disabled* : is optional) |
 | onSelect | func | Callback function when a title is selected |
 | open | bool | Selected state of dropdown |
 | placeholder | string | Placeholder for dropdown |

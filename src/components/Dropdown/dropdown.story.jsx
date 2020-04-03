@@ -19,6 +19,7 @@ const items = [
 	}, {
 		title: 'Banan',
 		id: 'item5',
+		disabled: true,
 	}, {
 		title: 'Appelsin',
 		id: 'item6',
