@@ -21,6 +21,9 @@ Dropdown
   to sense visibility of options. 
   
   Workaround: We always scroll to an option currently navigated to using the arrow keys.
+  
+- We notice that when using keyboard or mouse exclusively of each other navigation works fine, but not together 
+  (for example, mouse selection along with keyboard up/down navigation). 
 
 ### Usage
 
