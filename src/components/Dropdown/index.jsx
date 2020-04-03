@@ -8,17 +8,21 @@ const Dropdown = ({
 	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
 }) => {
 	const id = uuid();
+
+	// all the refs we need!
 	const wrapper = useRef();
 	const node = useRef();
+	const itemRefs = items.reduce((acc, item, idx) => {
+		acc[idx] = useRef();
+		return acc;
+	}, []);
+
 	const [isOpen, setOpen] = useState(open);
 	const [availableOptions, filterAvailableOptions] = useState(items);
 	const [selectedOption, selectItem] = useState(selectedItem || { title: '', id: '' });
 	const [inputFieldValue, updateInputValue] = useState('');
 	const [keyNavPosition, setKeyNavPosition] = useState(0);
-	const itemRefs = items.reduce((acc, item, idx) => {
-		acc[idx] = useRef();
-		return acc;
-	}, []);
+
 
 	const filterOptions = value => {
 		updateInputValue(value);
@@ -33,9 +37,19 @@ const Dropdown = ({
 		selectItem({ title: item.title, id: item.id });
 		onSelect(item);
 		setOpen(false);
+
+		if (items[keyNavPosition].id !== item.id) {
+			const idx = items.findIndex(it => it.id === item.id);
+			setKeyNavPosition(idx);
+		}
+
 		if (searchable) {
 			filterAvailableOptions(items);
 			updateInputValue('');
+		}
+
+		if (wrapper.current) {
+			wrapper.current.focus();
 		}
 	};
 
@@ -75,10 +89,11 @@ const Dropdown = ({
 	};
 
 	const handleWrapperOpen = e => {
-		if (wrapper.current.contains(e.target)) {
-			e.preventDefault();
+		if (wrapper.current === e.target) {
 			if (!isOpen) {
 				setOpen(true);
+				node.current.focus();
+				e.preventDefault();
 			}
 		}
 	};
@@ -112,6 +127,7 @@ const Dropdown = ({
 				role="button"
 				tabIndex={0}
 				onKeyDown={handleWrapperOpen}
+				onKeyPress={handleWrapperOpen}
 			>
 				<button
 					aria-label="open or close dropdown"

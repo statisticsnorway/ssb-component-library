@@ -12,6 +12,7 @@ exports[`Dropdown component Matches the snapshot 1`] = `
   <div
     className="dropdown-interactive-area"
     onKeyDown={[Function]}
+    onKeyPress={[Function]}
     role="button"
     tabIndex={0}
   >
