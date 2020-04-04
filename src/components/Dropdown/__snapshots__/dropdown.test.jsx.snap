@@ -11,15 +11,14 @@ exports[`Dropdown component Matches the snapshot 1`] = `
   </label>
   <div
     className="dropdown-interactive-area"
-    onKeyDown={[Function]}
     onKeyPress={[Function]}
     role="button"
-    tabIndex={0}
   >
     <button
       aria-label="open or close dropdown"
       onClick={[Function]}
       onKeyDown={[Function]}
+      tabIndex={0}
     >
       <input
         className=""

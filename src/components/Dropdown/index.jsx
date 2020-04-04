@@ -48,28 +48,36 @@ const Dropdown = ({
 			updateInputValue('');
 		}
 
-		if (wrapper.current) {
-			wrapper.current.focus();
+		if (node.current) {
+			node.current.focus();
 		}
 	};
 
 	const handleClickOutside = e => {
-		if (!node.current.contains(e.target)) {
+		if (!wrapper.current.contains(e.target)) {
 			setTimeout(() => {
 				setOpen(false);
+				if (searchable) {
+					updateInputValue('');
+				}
 			}, 100);
 		}
 	};
 
-	const handleKeyboardNav = e => {
-		if (e.target === node.current) {
+	const handleKeyboardNav = (e, elem = node) => {
+		if (e.target === elem.current) {
 			if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
 				setKeyNavPosition(keyNavPosition - 1);
 			} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (items.length - 1))) {
 				setKeyNavPosition(keyNavPosition + 1);
 			} else if (e.keyCode === KEY_ENTER) {
-				e.preventDefault();
-				handleSelection(items[keyNavPosition]);
+				if (isOpen) {
+					e.preventDefault();
+					handleSelection(items[keyNavPosition]);
+				} else {
+					e.preventDefault();
+					setOpen(true);
+				}
 			} else if (e.keyCode === KEY_ESCAPE) {
 				if (!searchable) {
 					e.preventDefault();
@@ -80,20 +88,17 @@ const Dropdown = ({
 	};
 
 	const handleSearchSpecialKeys = e => {
-		if (e.keyCode === KEY_SPACE) {
-			if (searchable) {
-				e.preventDefault();
-				filterOptions(`${e.target.value} `);
-			}
-		}
-	};
-
-	const handleWrapperOpen = e => {
-		if (wrapper.current === e.target) {
-			if (!isOpen) {
-				setOpen(true);
-				node.current.focus();
-				e.preventDefault();
+		if (e.keyCode === KEY_ESCAPE) {
+			setOpen(false);
+		} else {
+			setOpen(true);
+			if (e.keyCode === KEY_SPACE) {
+				if (searchable) {
+					e.preventDefault();
+					filterOptions(`${e.target.value} `);
+				}
+			} else {
+				filterOptions(e.target.value);
 			}
 		}
 	};
@@ -110,9 +115,8 @@ const Dropdown = ({
 	useEffect(() => {
 		if (isOpen) {
 			document.addEventListener('mousedown', handleClickOutside);
-		} else {
-			document.removeEventListener('mousedown', handleClickOutside);
 		}
+
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside);
 		};
@@ -125,14 +129,13 @@ const Dropdown = ({
 				className="dropdown-interactive-area"
 				ref={wrapper}
 				role="button"
-				tabIndex={0}
-				onKeyDown={handleWrapperOpen}
-				onKeyPress={handleWrapperOpen}
+				tabIndex={tabIndex}
+				onKeyPress={e => { handleKeyboardNav(e, wrapper); }}
 			>
 				<button
 					aria-label="open or close dropdown"
-					tabIndex={tabIndex}
 					ref={node}
+					tabIndex={0}
 					onClick={() => setOpen(!isOpen)}
 					onKeyDown={handleKeyboardNav}
 				>
