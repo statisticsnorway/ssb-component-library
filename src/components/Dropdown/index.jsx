@@ -71,6 +71,9 @@ const Dropdown = ({
 		}
 	};
 
+	// TODO : See if handleKeyboardNav and handleSearchSpecialKeys can be squashed
+	// 		  for DRY principle.
+
 	const handleKeyboardNav = (e, elem = node) => {
 		if (e.target === elem.current) {
 			if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
@@ -78,11 +81,10 @@ const Dropdown = ({
 			} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (items.length - 1))) {
 				setKeyNavPosition(keyNavPosition + 1);
 			} else if (e.keyCode === KEY_ENTER) {
+				e.preventDefault();
 				if (isOpen) {
-					e.preventDefault();
 					handleSelection(items[keyNavPosition]);
 				} else {
-					e.preventDefault();
 					setOpen(true);
 				}
 			} else if (e.keyCode === KEY_ESCAPE) {
