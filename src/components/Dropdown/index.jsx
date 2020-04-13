@@ -2,7 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { ChevronDown, ChevronUp } from 'react-feather';
-import { KEY_ARROW_DOWN, KEY_ARROW_UP, KEY_ENTER, KEY_ESCAPE, KEY_SPACE } from '../../utils/keybindings';
+import {
+	KEY_ARROW_DOWN,
+	KEY_ARROW_UP,
+	KEY_ENTER,
+	KEY_ESCAPE,
+	KEY_SPACE,
+	KEY_TAB,
+} from '../../utils/keybindings';
 
 const Dropdown = ({
 	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
@@ -90,6 +97,16 @@ const Dropdown = ({
 	const handleSearchSpecialKeys = e => {
 		if (e.keyCode === KEY_ESCAPE) {
 			setOpen(false);
+		} else if (e.keyCode === KEY_TAB) {
+			setOpen(false);
+			// wrapper.sibling.focus();
+		} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (availableOptions.length - 1))) {
+			setKeyNavPosition(keyNavPosition + 1);
+		} else if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
+			setKeyNavPosition(keyNavPosition - 1);
+		} else if ((e.keyCode === KEY_ENTER) && isOpen) {
+			e.preventDefault();
+			handleSelection(availableOptions[keyNavPosition]);
 		} else {
 			setOpen(true);
 			if (e.keyCode === KEY_SPACE) {
@@ -121,6 +138,14 @@ const Dropdown = ({
 			document.removeEventListener('mousedown', handleClickOutside);
 		};
 	}, [isOpen]);
+
+	useEffect(() => {
+		if (searchable && !inputFieldValue) {
+			setKeyNavPosition(0);
+		}
+	}, [inputFieldValue]);
+
+	console.log(keyNavPosition, items[keyNavPosition], availableOptions[keyNavPosition]);
 
 	return (
 		<div className={`ssb-dropdown${className ? ` ${className}` : ''}`}>
