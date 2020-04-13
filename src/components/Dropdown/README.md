@@ -10,6 +10,7 @@ Dropdown
 - SPACE opens/closes the dropdown list
 - UP/DOWN arrows to move up/down the list
 - ENTER selects the current option
+- TAB focuses into and out of the dropdown
 
 #### Known Caveats
 
@@ -22,9 +23,6 @@ Dropdown
   
   Workaround: We always scroll to an option currently navigated to using the arrow keys.
   
-- We notice that when using keyboard or mouse exclusively of each other navigation works fine, but not together 
-  (for example, mouse selection along with keyboard up/down navigation). 
-
 ### Usage
 
 #### HTML
