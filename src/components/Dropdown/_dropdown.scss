@@ -93,7 +93,7 @@
         transition: all .18s;
         width: 100%;
 
-        &:hover, &:focus {
+        &:hover, &:focus, &.active {
           background: $ssb-dark-5;
           color: $ssb-white;
           z-index: 2;
