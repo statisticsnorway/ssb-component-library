@@ -657,10 +657,18 @@ a {
       .ssb-dropdown .list-of-options .option-list-element:focus {
         outline: #9272fc solid 2px;
         outline-offset: 2px; }
-      .ssb-dropdown .list-of-options .option-list-element:hover, .ssb-dropdown .list-of-options .option-list-element:focus {
+      .ssb-dropdown .list-of-options .option-list-element:hover, .ssb-dropdown .list-of-options .option-list-element:focus, .ssb-dropdown .list-of-options .option-list-element.active {
         background: #274247;
         color: #fff;
         z-index: 2; }
+      .ssb-dropdown .list-of-options .option-list-element:disabled {
+        background: #fff;
+        color: #c3dcdc;
+        cursor: not-allowed;
+        font-weight: normal; }
+        .ssb-dropdown .list-of-options .option-list-element:disabled:hover, .ssb-dropdown .list-of-options .option-list-element:disabled:focus {
+          text-decoration: none;
+          background: none; }
       .ssb-dropdown .list-of-options .option-list-element.selected {
         background: #00824d;
         color: #fff;
