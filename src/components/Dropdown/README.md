@@ -86,3 +86,4 @@ Available props:
 | placeholder | string | Placeholder for dropdown |
 | searchable | bool | If true, dropdown is searchable |
 | selectedItem | object | Selected element in dropdown |
+| tabIndex | number | Tab index for focus |

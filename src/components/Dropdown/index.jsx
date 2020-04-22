@@ -147,8 +147,6 @@ const Dropdown = ({
 		}
 	}, [inputFieldValue]);
 
-	console.log(keyNavPosition, items[keyNavPosition], availableOptions[keyNavPosition]);
-
 	return (
 		<div className={`ssb-dropdown${className ? ` ${className}` : ''}`}>
 			{header && <label htmlFor={id}>{header}</label>}
