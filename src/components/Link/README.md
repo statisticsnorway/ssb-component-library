@@ -68,3 +68,4 @@ Available props:
 | isExternal | Optional boolean | Will make the link open in new tab. Defaults to false |
 | linkType | Optional oneOf |Changes the style. Can be 'regular', 'profiled', or 'header'. Defaults to 'regular' |
 | negative | Optional boolean | Will change component style. Defaults to false |
+| tabIndex | number | Tab index for focus |
