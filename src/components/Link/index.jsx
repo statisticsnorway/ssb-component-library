@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Link = ({
-	children, className, href, icon, isExternal, linkType, negative, tabIndex
+	children, className, href, icon, isExternal, linkType, negative, tabIndex,
 }) => {
 	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
 
