@@ -1,4 +1,4 @@
-.ssb-image-link {
+.ssb-picture-card {
   box-sizing: border-box;
   color: $ssb-white !important;
   cursor: pointer;
@@ -8,7 +8,8 @@
   justify-content: flex-end;
   padding: 64px 20px;
   position: relative;
-  width: 380px;
+  width: 280px;
+  background-image: linear-gradient(to top, rgba(39, 66, 71, 0.60) 25%, rgba(39, 66, 71, 0.30) 50%, rgba(39, 66, 71, 0.0) 75%);
 
   .image-background {
     height: 400px;
@@ -16,7 +17,7 @@
     overflow: hidden;
     position: absolute;
     top: 0;
-    width: 380px;
+    width: 280px;
     z-index: -1;
 
     img {
@@ -52,11 +53,11 @@
   &.horizontal {
     height: 212px;
     padding: 40px 20px;
-    width: 480px;
+    width: 380px;
 
     .image-background {
       height: 212px;
-      width: 480px;
+      width: 380px;
     }
   }
 }

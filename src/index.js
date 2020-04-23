@@ -14,7 +14,7 @@ export { default as Footer } from './components/Footer';
 export { default as FormError } from './components/FormError';
 export { default as Glossary } from './components/Glossary';
 export { default as Header } from './components/Header';
-export { default as ImageLink } from './components/ImageLink';
+export { default as PictureCard } from './components/PictureCard';
 export { default as Input } from './components/Input';
 export { default as KeyFigures } from './components/KeyFigures';
 export { default as LeadParagraph } from './components/LeadParagraph';
