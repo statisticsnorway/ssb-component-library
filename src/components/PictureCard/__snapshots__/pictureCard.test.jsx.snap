@@ -2,7 +2,7 @@
 
 exports[`ImageLink component Matches the snapshot 1`] = `
 <a
-  className="ssb-image-link vertical"
+  className="ssb-picture-card vertical"
   onClick={[Function]}
 >
   <div

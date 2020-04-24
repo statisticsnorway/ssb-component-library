@@ -30,10 +30,10 @@ export function useHover() {
 }
 
 
-const ImageLink = ({ className, image, link, onClick, orientation, title, type }) => {
+const PictureCard = ({ className, image, link, onClick, orientation, title, type }) => {
 	const [hoverRef, hovered] = useHover();
 	return (
-		<a className={`ssb-image-link ${orientation}${className ? ` ${className}` : ''}`} href={link} onClick={onClick} ref={hoverRef}>
+		<a className={`ssb-picture-card ${orientation}${className ? ` ${className}` : ''}`} href={link} onClick={onClick} ref={hoverRef}>
 			<div className="image-background">{image}</div>
 			<span className="il-type">{type}</span>
 			<span className="il-title">{title}</span>
@@ -42,12 +42,12 @@ const ImageLink = ({ className, image, link, onClick, orientation, title, type }
 	);
 };
 
-ImageLink.defaultProps = {
+PictureCard.defaultProps = {
 	onClick: () => {},
 	orientation: 'vertical',
 };
 
-ImageLink.propTypes = {
+PictureCard.propTypes = {
 	className: PropTypes.string,
 	image: PropTypes.element.isRequired,
 	link: PropTypes.string,
@@ -57,4 +57,4 @@ ImageLink.propTypes = {
 	type: PropTypes.string,
 };
 
-export default ImageLink;
+export default PictureCard;
