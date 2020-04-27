@@ -61,6 +61,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| ariaLabel | string | Defines a string value that describe the link if no link text |
 | children   | Required node | Something that renders to wrap the link around |
 | className   | string | Optional container class|
 | href | Required string| Destination for navigation |
