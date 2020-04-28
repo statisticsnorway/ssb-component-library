@@ -839,7 +839,7 @@ a {
   .ssb-header-wrapper .global-links > * {
     margin-left: 20px; }
 
-.ssb-image-link {
+.ssb-picture-card {
   box-sizing: border-box;
   color: #fff !important;
   cursor: pointer;
@@ -849,28 +849,29 @@ a {
   justify-content: flex-end;
   padding: 64px 20px;
   position: relative;
-  width: 380px; }
-  .ssb-image-link .image-background {
+  width: 280px;
+  background-image: linear-gradient(to top, rgba(39, 66, 71, 0.6) 25%, rgba(39, 66, 71, 0.3) 50%, rgba(39, 66, 71, 0) 75%); }
+  .ssb-picture-card .image-background {
     height: 400px;
     left: 0;
     overflow: hidden;
     position: absolute;
     top: 0;
-    width: 380px;
+    width: 280px;
     z-index: -1; }
-    .ssb-image-link .image-background img {
+    .ssb-picture-card .image-background img {
       transform: scale(1);
       transition: transform .25s ease, -webkit-transform .25s ease; }
-  .ssb-image-link:hover .image-background img {
+  .ssb-picture-card:hover .image-background img {
     transform: scale(1.1); }
-  .ssb-image-link .il-type {
+  .ssb-picture-card .il-type {
     font-family: 'Roboto', sans-serif !important;
     font-stretch: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 1.25;
     margin-bottom: 12px; }
-  .ssb-image-link .il-title {
+  .ssb-picture-card .il-title {
     font-family: 'Roboto Condensed', sans-serif !important;
     font-stretch: condensed;
     font-weight: bold;
@@ -878,13 +879,13 @@ a {
     font-weight: bold;
     line-height: 1.43;
     margin-bottom: 12px; }
-  .ssb-image-link.horizontal {
+  .ssb-picture-card.horizontal {
     height: 212px;
     padding: 40px 20px;
-    width: 480px; }
-    .ssb-image-link.horizontal .image-background {
+    width: 380px; }
+    .ssb-picture-card.horizontal .image-background {
       height: 212px;
-      width: 480px; }
+      width: 380px; }
 
 .ssb-input {
   font-family: 'Roboto', sans-serif !important;
