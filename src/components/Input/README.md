@@ -77,6 +77,7 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | ariaLabel | string | Defines a string value that labels input element, use if label is not visible |
+| ariaLabelSearchButton | string | Defines a string value that labels button element |
 | className   | string | Optional container class|
 | disabled | bool | Toggles disabled state |
 | error | bool | Changes design |
