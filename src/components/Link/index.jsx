@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Link = ({
-	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex,
+	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title,
 }) => {
 	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
 
@@ -14,6 +14,7 @@ const Link = ({
 			rel={isExternal ? 'noopener noreferrer' : ''}
 			tabIndex={tabIndex}
 			aria-label={ariaLabel}
+			title={title}
 		>{icon && <div className="icon-wrapper">{icon}</div>}
 			{children && <span className="link-text">{children}</span>}
 		</a>
@@ -40,6 +41,7 @@ Link.propTypes = {
 	]),
 	negative: PropTypes.bool,
 	tabIndex: PropTypes.number,
+	title: PropTypes.string,
 };
 
 export default Link;

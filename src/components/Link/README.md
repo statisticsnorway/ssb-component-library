@@ -70,3 +70,4 @@ Available props:
 | linkType | Optional oneOf |Changes the style. Can be 'regular', 'profiled', or 'header'. Defaults to 'regular' |
 | negative | Optional boolean | Will change component style. Defaults to false |
 | tabIndex | number | Tab index for focus |
+| title | string | The title attribute is used to provide additional information |
