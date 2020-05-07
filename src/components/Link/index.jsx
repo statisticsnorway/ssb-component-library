@@ -10,8 +10,8 @@ const Link = ({
 		<a
 			className={classNames}
 			href={href}
-			target={isExternal ? '_blank' : ''}
-			rel={isExternal ? 'noopener noreferrer' : ''}
+			target={isExternal ? '_blank' : undefined}
+			rel={isExternal ? 'noopener noreferrer' : undefined}
 			tabIndex={tabIndex}
 			aria-label={ariaLabel}
 			title={title}

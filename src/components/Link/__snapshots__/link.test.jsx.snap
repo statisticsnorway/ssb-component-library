@@ -4,8 +4,6 @@ exports[`Link component Matches the snapshot 1`] = `
 <a
   className="ssb-link"
   href=""
-  rel=""
-  target=""
 >
   <span
     className="link-text"
