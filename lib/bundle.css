@@ -1532,6 +1532,51 @@ a {
     margin-right: 10px;
     white-space: nowrap; }
 
+.ssb-table-link {
+  display: flex; }
+  .ssb-table-link a {
+    display: flex;
+    text-decoration: none; }
+    .ssb-table-link a:focus {
+      outline: #9272fc solid 2px;
+      outline-offset: 2px; }
+  .ssb-table-link .tl-icon {
+    color: #00824d;
+    display: inline-flex;
+    float: left;
+    height: 22px;
+    margin-right: 20px;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 22px; }
+  .ssb-table-link .tl-title {
+    font-family: 'Roboto', sans-serif !important;
+    font-stretch: normal;
+    font-weight: normal;
+    color: #00824d;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px; }
+  .ssb-table-link .tl-text {
+    font-family: 'Roboto', sans-serif !important;
+    font-stretch: normal;
+    font-weight: normal;
+    color: #162327;
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 4px; }
+  .ssb-table-link:hover .tl-icon, .ssb-table-link:focus .tl-icon {
+    border: 2px solid #00824d;
+    border-radius: 50%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 16px;
+    padding: 2px; }
+  .ssb-table-link:hover .tl-text, .ssb-table-link:focus .tl-text {
+    color: #00824d; }
+
 .ssb-tabs {
   display: flex;
   flex-direction: row; }
