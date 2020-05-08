@@ -1541,6 +1541,7 @@ a {
       outline: #9272fc solid 2px;
       outline-offset: 2px; }
   .ssb-table-link .tl-icon {
+    box-sizing: initial;
     color: #00824d;
     display: inline-flex;
     float: left;
