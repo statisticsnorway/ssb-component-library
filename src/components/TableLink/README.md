@@ -38,5 +38,5 @@ Available props:
 | href | Required string| Destination for navigation |
 | isExternal | Optional boolean | Will make the link open in new tab. Defaults to true |
 | tabIndex | number | Tab index for focus |
-| text | Required string | Text for tablelink |
+| text | Required string | Text for tablelink, above description |
 | title | Required string | The title attribute is used to provide additional information |
