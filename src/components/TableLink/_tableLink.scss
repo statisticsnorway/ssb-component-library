@@ -1,14 +1,9 @@
 .ssb-table-link {
   display: flex;
-
-  a {
-    @include focus-marker;
-    display: flex;
-    text-decoration: none;
-  }
+  @include focus-marker;
+  text-decoration: none;
 
   .tl-icon {
-    box-sizing: initial;
     color: $ssb-green-4;
     display: inline-flex;
     float: left;
@@ -19,15 +14,18 @@
     width: 22px;
   }
 
-  .tl-title {
+  .tl-info {
+    display: inline-block;
+  }
+
+  .tl-text {
     @include roboto;
     color: $ssb-green-4;
-    display: inline-block;
     font-weight: bold;
     font-size: 20px;
   }
 
-  .tl-text {
+  .tl-description {
     @include roboto;
     color: $ssb-dark-6;
     display: block;
@@ -48,7 +46,7 @@
       padding: 2px;
     }
 
-    .tl-text {
+    .tl-description {
       color: $ssb-green-4;
     }
   }
