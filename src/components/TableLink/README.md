@@ -8,25 +8,25 @@ TableLink
 #### HTML
 
 ```html
-<div className="ssb-table-link">
-    <a href="">
-        <div className="tl-icon">
-            <i>{feather.arrowRight 22px}</i>
-        </div>
-        <div className="tl-title">
+<a className="ssb-table-link" href="" target="_blank">
+    <div className="tl-icon">
+        <i>{feather.arrowRight 22px}</i>
+    </div>
+    <div className="tl-info">
+        <span className="tl-text">
             Tabell 1
-            <span className="tl-text">
-                Gjennomsnittspris i fritt salg på eid tomt i 100-meterbeltet. 2015-2108.
-            </span>
-        </div>
-    </a>
-</div>
+        </span>
+        <span className="tl-description">
+            Gjennomsnittspris i fritt salg på eid tomt i 100-meterbeltet. 2015-2108.
+        </span>
+    </div>
+</a>
 ```
 
 #### React
 
 ```jsx harmony
-<TableLink title="Tabell 1" href="" hrefText="Gjennomsnittspris i fritt salg på eid tomt i 100-meterbeltet. 2015-2108." />
+<TableLink text="Tabell 1" href="" description="Gjennomsnittspris i fritt salg på eid tomt i 100-meterbeltet. 2015-2108." />
 ```
 
 Available props:
@@ -34,9 +34,9 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | className   | string | Optional container class|
+| description | Required string | Description for tablelink |
 | href | Required string| Destination for navigation |
-| hrefText | Required string | Link text |
-| hrefTitle | string | The hrefTitle attribute is used to provide additional information |
-| isExternal | Optional boolean | Will make the link open in new tab. Defaults to false |
+| isExternal | Optional boolean | Will make the link open in new tab. Defaults to true |
 | tabIndex | number | Tab index for focus |
-| title | Required string | Title for tablelink |
+| text | Required string | Text for tablelink |
+| title | Required string | The title attribute is used to provide additional information |

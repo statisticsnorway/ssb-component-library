@@ -3,35 +3,36 @@ import PropTypes from 'prop-types';
 import { ArrowRight } from 'react-feather';
 
 const TableLink = ({
-	className, href, hrefText, hrefTitle, isExternal, tabIndex, title,
+	className, description, href, isExternal, tabIndex, text, title,
 }) => (
-	<div className={`ssb-table-link${className ? ` ${className}` : ''}`}>
-		<a href={href} tabIndex={tabIndex} target={isExternal ? '_blank' : undefined} title={hrefTitle}>
-			<div className="tl-icon">
-				<ArrowRight size={22} />
-			</div>
-			<div className="tl-title">
-				{title}
-				<span className="tl-text">
-					{hrefText}
-				</span>
-			</div>
-		</a>
-	</div>
+	<a
+		className={`ssb-table-link${className ? ` ${className}` : ''}`}
+		href={href}
+		tabIndex={tabIndex}
+		target={isExternal ? '_blank' : undefined}
+		title={title}
+	>
+		<div className="tl-icon">
+			<ArrowRight size={22} />
+		</div>
+		<div className="tl-info">
+			<span className="tl-text">{text}</span>
+			<span className="tl-description">{description}</span>
+		</div>
+	</a>
 );
 
 TableLink.defaultProps = {
-	isExternal: false,
-	title: 'Tabell',
+	isExternal: true,
 };
 
 TableLink.propTypes = {
 	className: PropTypes.string,
+	description: PropTypes.string.isRequired,
 	href: PropTypes.string.isRequired,
-	hrefText: PropTypes.string.isRequired,
-	hrefTitle: PropTypes.string,
 	isExternal: PropTypes.bool,
 	tabIndex: PropTypes.number,
+	text: PropTypes.string.isRequired,
 	title: PropTypes.string,
 };
 
