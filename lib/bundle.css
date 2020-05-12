@@ -1539,6 +1539,7 @@ a {
     outline: #9272fc solid 2px;
     outline-offset: 2px; }
   .ssb-table-link .tl-icon {
+    box-sizing: initial;
     color: #00824d;
     display: inline-flex;
     float: left;
@@ -1566,15 +1567,17 @@ a {
     font-size: 20px;
     line-height: 1.6;
     margin-top: 4px; }
-  .ssb-table-link:hover .tl-icon, .ssb-table-link:focus .tl-icon {
-    border: 2px solid #00824d;
-    border-radius: 50%;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 16px;
-    padding: 2px; }
-  .ssb-table-link:hover .tl-description, .ssb-table-link:focus .tl-description {
-    color: #00824d; }
+  .ssb-table-link:hover, .ssb-table-link:focus {
+    text-decoration: none; }
+    .ssb-table-link:hover .tl-icon, .ssb-table-link:focus .tl-icon {
+      border: 2px solid #00824d;
+      border-radius: 50%;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 16px;
+      padding: 2px; }
+    .ssb-table-link:hover .tl-description, .ssb-table-link:focus .tl-description {
+      color: #00824d; }
 
 .ssb-tabs {
   display: flex;

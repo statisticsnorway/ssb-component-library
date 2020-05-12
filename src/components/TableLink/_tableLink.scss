@@ -4,6 +4,7 @@
   text-decoration: none;
 
   .tl-icon {
+    box-sizing: initial;
     color: $ssb-green-4;
     display: inline-flex;
     float: left;
@@ -36,6 +37,7 @@
   }
 
   &:hover, &:focus {
+    text-decoration: none;
 
     .tl-icon {
       border: 2px solid $ssb-green-4;
