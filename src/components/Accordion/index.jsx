@@ -21,7 +21,7 @@ const Accordion = ({
 				</span>
 			</button>
 			<div className={`accordion-body ${isOpen ? 'open' : 'closed'}`}>
-				{isOpen && children}
+				{children}
 			</div>
 		</div>
 	);
