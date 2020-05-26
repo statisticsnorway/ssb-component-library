@@ -25,6 +25,8 @@ exports[`NestedAccordion component Matches the snapshot 1`] = `
   </button>
   <div
     className="nested-accordion-body closed"
-  />
+  >
+    Nestet accordion
+  </div>
 </div>
 `;
