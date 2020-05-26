@@ -30,16 +30,14 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 		<button ref={node} onClick={() => setOpen(!open)} className={`ssb-glossary${className ? ` ${className}` : ''}`}>
 			<div className="glossary-text-wrap">{children}</div>
 			<BookOpen size={12} className="glossary-logo" />
-			{(
-				<div className={`glossary-popup${open ? ' open' : ''}`} ref={infoContainer}>
-					<div className="content-box">
-						<span className="info-text">{explanation}</span>
-						<div className="ssb-glossary-closing">
-							<XCircle size={16} className="icon" /><span>{closeText}</span>
-						</div>
+			<div className={`glossary-popup${open ? ' open' : ''}`} ref={infoContainer}>
+				<div className="content-box">
+					<span className="info-text">{explanation}</span>
+					<div className="ssb-glossary-closing">
+						<XCircle size={16} className="icon" /><span>{closeText}</span>
 					</div>
 				</div>
-			)}
+			</div>
 		</button>
 	);
 };
