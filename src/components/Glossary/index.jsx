@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Manager, Reference, Popper } from 'react-popper';
 import { BookOpen, XCircle } from 'react-feather';
 
-const Glossary = ({ explanation, children }) => {
+const Glossary = ({ explanation, children, className, closeText }) => {
 	const node = useRef();
 	const [open, setOpen] = useState(false);
 
@@ -65,10 +65,14 @@ const Glossary = ({ explanation, children }) => {
 	);
 };
 
-Glossary.defaultProps = {};
+Glossary.defaultProps = {
+	closeText: 'Lukk',
+};
 
 Glossary.propTypes = {
 	children: PropTypes.node,
+	className: PropTypes.string,
+	closeText: PropTypes.string,
 	explanation: PropTypes.string.isRequired,
 };
 

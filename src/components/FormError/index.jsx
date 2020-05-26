@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FormError = ({ className, errorMessages, negative, title }) => (
-	<div className={`ssb-form-error${negative ? ' negative' : ''} ${className}`}>
+	<div className={`ssb-form-error${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>
 		<span className="error-icon" />
 		<div>
 			<span className="error-title">{title}</span>

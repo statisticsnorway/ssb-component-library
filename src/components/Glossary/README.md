@@ -41,4 +41,6 @@ Available props:
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | children | node | Something to wrap the click event around |
+| className   | string | Optional container class|
+| closeText | string | Close button text, default "Lukk"  |
 | explanation | required string | Text to be inside popup |

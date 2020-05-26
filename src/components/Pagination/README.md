@@ -47,6 +47,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| className   | string | Optional container class|
 | items | arrayOf(text (string), path (string)) | Required. Items for text label and path |
 | labelNext | string | Label for direction-button next , default is Next |
 | labelPrevious | string | Label for direction-button previous, default is Previous |

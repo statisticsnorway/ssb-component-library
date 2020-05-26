@@ -1,6 +1,6 @@
-.ssb-image-link {
+.ssb-picture-card {
   box-sizing: border-box;
-  color: $ssb-white;
+  color: $ssb-white !important;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,8 @@
   justify-content: flex-end;
   padding: 64px 20px;
   position: relative;
-  width: 380px;
+  width: 280px;
+  background-image: linear-gradient(to top, rgba(39, 66, 71, .6) 25%, rgba(39, 66, 71, .3) 50%, rgba(39, 66, 71, 0) 75%);
 
   .image-background {
     height: 400px;
@@ -16,8 +17,22 @@
     overflow: hidden;
     position: absolute;
     top: 0;
-    width: 380px;
+    width: 280px;
     z-index: -1;
+
+    img {
+      transform: scale(1);
+      transition: transform .25s ease, -webkit-transform .25s ease;
+    }
+
+  }
+
+  &:hover {
+
+    .image-background img {
+      transform: scale(1.1);
+    }
+
   }
 
   .il-type {
@@ -33,5 +48,16 @@
     font-weight: bold;
     line-height: 1.43;
     margin-bottom: 12px;
+  }
+
+  &.horizontal {
+    height: 212px;
+    padding: 40px 20px;
+    width: 380px;
+
+    .image-background {
+      height: 212px;
+      width: 380px;
+    }
   }
 }

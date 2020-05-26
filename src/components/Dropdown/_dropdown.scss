@@ -93,10 +93,22 @@
         transition: all .18s;
         width: 100%;
 
-        &:hover, &:focus {
+        &:hover, &:focus, &.active {
           background: $ssb-dark-5;
           color: $ssb-white;
           z-index: 2;
+        }
+
+        &:disabled {
+          background: $ssb-white;
+          color: $ssb-dark-2;
+          cursor: not-allowed;
+          font-weight: normal;
+
+          &:hover, &:focus {
+            text-decoration: none;
+            background: none;
+          }
         }
 
         &.selected {

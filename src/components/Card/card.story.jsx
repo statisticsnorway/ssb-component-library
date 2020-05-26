@@ -3,51 +3,84 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
 import { Globe } from 'react-feather';
 import Card from './index';
-import Button from '../Button';
 import Text from '../Text';
-import Title from '../Title';
 import testImage from '../../media/16x9.png';
 
 storiesOf('Card', module).addDecorator(centered)
 	.add('Default', () => (
-		<div>
-			<Card>
-				<Title size={2}>Look at this</Title>
-				<Text>Explain something about something with something clever.</Text>
-				<Button primary>Handling</Button>
-			</Card>
-		</div>
-	))
-	.add('With images', () => (
-		<div>
-			<Card imagePlacement="left" image={<img src={testImage} alt="testImage" />}>
-				<Title size={2}>Look at this</Title>
-				<Text>Explain something about something with something clever.</Text>
-				<Button primary>Handling</Button>
-			</Card>
-			<br />
-			<div>
-				<Card imagePlacement="top" image={<img src={testImage} alt="testImage" />}>
-					<Title size={2}>Look at this</Title>
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ marginRight: '10px', display: 'flex' }}>
+				<Card title="Tittel" href=" ">
 					<Text>Explain something about something with something clever.</Text>
-					<Button primary>Handling</Button>
 				</Card>
 			</div>
-		</div>
-	))
-	.add('Three boxes', () => (
-		<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto, 380px)', gridRowGap: '20px' }}>
-			<Card>
-				<Title size={2}>Look at this</Title>
+			<br />
+			<Card title="Tittel" href=" " hrefText="Handling">
 				<Text>Explain something about something with something clever.</Text>
 			</Card>
-			<Card centered>
-				<Globe size={120} style={{ marginBottom: '20px' }} />
-				<Title size={2}>Look at this</Title>
-				<Text>This box has the <code>centered</code> prop set to true</Text>
+		</div>
+	))
+	.add('Default with icon', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ marginRight: '10px', display: 'flex' }}>
+				<Card title="Tittel" href=" " hrefText="Handling" icon={<Globe size={32} />} fileLocation="./not_a_file.md" downloadText="Download">
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<br />
+			<Card title="Tittel" href=" " icon={<Globe size={32} />}>
+				<Text>Explain something about something with something clever.</Text>
 			</Card>
-			<Card fileLocation="./not_a_file.md">
-				<Title size={2}>Look at this</Title>
+		</div>
+	))
+	.add('Profiled', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ marginRight: '10px', display: 'flex' }}>
+				<Card title="Tittel" href=" " profiled>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<br />
+			<Card title="Tittel" href=" " hrefText="Handling" profiled>
+				<Text>Explain something about something with something clever.</Text>
+			</Card>
+		</div>
+	))
+	.add('Profiled with icon', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ marginRight: '10px', display: 'flex' }}>
+				<Card title="Tittel" href=" " hrefText="Handling" icon={<Globe size={120} />} profiled>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<br />
+			<Card title="Tittel" href=" " icon={<Globe size={120} />} profiled>
+				<Text>Explain something about something with something clever.</Text>
+			</Card>
+		</div>
+	))
+	.add('With images left', () => (
+		<div>
+			<Card
+				imagePlacement="left"
+				image={<img src={testImage} alt="testImage" />}
+				href=" "
+				subTitle="Artikkel / 11. mai 2019"
+				title="Tittel"
+			>
+				<Text>Explain something about something with something clever.</Text>
+			</Card>
+		</div>
+	))
+	.add('With images top', () => (
+		<div>
+			<Card
+				imagePlacement="top"
+				image={<img src={testImage} alt="testImage" />}
+				href=" "
+				subTitle="Artikkel / 11. mai 2019"
+				title="Tittel"
+			>
 				<Text>Explain something about something with something clever.</Text>
 			</Card>
 		</div>

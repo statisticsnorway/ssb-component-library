@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RadioButton = ({
-	callback, children, disabled, name, selected, tabIndex, value,
+	callback, children, className, disabled, name, selected, tabIndex, value,
 }) => (
-	<div className="ssb-radio">
+	<div className={`ssb-radio${className ? ` ${className}` : ''}`}>
 		<input
 			tabIndex={tabIndex}
 			checked={selected}
@@ -28,6 +28,7 @@ RadioButton.defaultProps = {
 RadioButton.propTypes = {
 	callback: PropTypes.func,
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 	disabled: PropTypes.bool,
 	name: PropTypes.string,
 	selected: PropTypes.bool,

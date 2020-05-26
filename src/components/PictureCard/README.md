@@ -1,4 +1,4 @@
-ImageLink
+PictureCard
 ========
 
 > Clickable image box with title
@@ -7,7 +7,7 @@ ImageLink
 
 #### HTML
 ```html
-<a class="ssb-image-link" href=" ">
+<a class="ssb-picture-card" href=" ">
     <div class="image-background"><img src="" alt="" /></div>
     <span class="il-type">Type</span>
     <span class="il-title">Title</span>
@@ -17,15 +17,16 @@ ImageLink
 
 #### React
 ```jsx harmony
-<ImageLink image={<img src={doge} alt="image" />} onClick={function} type="Type" title="Tittel" />
+<PictureCard image={<img src={doge} alt="image" />} onClick={function} type="Type" title="Tittel" />
 ```
 ```jsx harmony
-<ImageLink image={<img src={doge} alt="image" />} link="./" type="Type" title="Tittel" />
+<PictureCard image={<img src={doge} alt="image" />} link="./" type="Type" title="Tittel" />
 ```
 Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| className   | string | Optional container class|
 | image | required element | An image to be put as background |
 | link | string | Link to be navigated to |
 | onClick | func | Function callback to be used instead of link |

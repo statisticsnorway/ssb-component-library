@@ -33,4 +33,32 @@ describe('KeyFigures component', () => {
 		);
 		expect(wrapper2.find(Glossary)).toHaveLength(0);
 	});
+	test('Renders time and number', () => {
+		const wrapper = shallow(<KeyFigures number="789 398" time="2018" />);
+		expect(wrapper.find('.kf-time').render().text()).toBe('2018');
+		expect(wrapper.find('Number').render().text()).toBe('789 398');
+	});
+	test('Render no number text', () => {
+		const wrapper = shallow(<KeyFigures title="KeyFigure without number" time="2018" noNumberText="Ingen tall"/>);
+		expect(wrapper.find('.no-number').render().text()).toBe('Ingen tall');
+	});
+	test('Render changes', () => {
+		const wrapper = shallow(<KeyFigures
+			title="KeyFigure without number"
+			time="2018"
+				changes={{
+				changeDirection: 'down',
+				changeText: 'Ned 1 prosentpoeng',
+				changePeriod: 'fra året før',
+			}}
+		/>);
+		// console.log(wrapper.debug());
+		expect(wrapper.find('.kf-changes').exists()).toEqual(true);
+		expect(wrapper.find('ArrowDown').exists()).toEqual(true);
+		// expect(wrapper.find('.kf-changes').render().text()).toBe('Ingen tall');
+	});
+	test('Render green box variation', () => {
+		const wrapper = shallow(<KeyFigures title="Keyfigure with green box variation" time="2018" number="72,6" greenBox size="medium"/>);
+		expect(wrapper.find('.green-box').exists()).toEqual(true);
+	})
 });

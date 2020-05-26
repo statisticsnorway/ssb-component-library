@@ -19,6 +19,7 @@ const items = [
 	}, {
 		title: 'Banan',
 		id: 'item5',
+		disabled: true,
 	}, {
 		title: 'Appelsin',
 		id: 'item6',
@@ -26,7 +27,7 @@ const items = [
 		title: 'Fersken',
 		id: 'item7',
 	}, {
-		title: 'Mandarin',
+		title: 'Mandarin orange',
 		id: 'item8',
 	},
 ];

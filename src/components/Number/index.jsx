@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Number = ({
-	children, size,
+	children, className, size,
 }) => (
-	<div className={`ssb-number ${size}`}>
+	<div className={`ssb-number ${size}${className ? ` ${className}` : ''}`}>
 		{children}
 	</div>
 );
@@ -15,6 +15,7 @@ Number.defaultProps = {
 
 Number.propTypes = {
 	children: PropTypes.node,
+	className: PropTypes.string,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 

@@ -25,5 +25,6 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| className   | string | Optional container class|
 | errorMessage | string | Renders text |
 | negative | bool | Changes text color |

@@ -7,4 +7,10 @@ describe('RadioButton component', () => {
 		const wrapper = shallow(<RadioButton value="item">Item</RadioButton>);
 		expect(wrapper).toMatchSnapshot();
 	});
+	test('Callback is triggered', () => {
+		const callback = jest.fn();
+		const wrapper = shallow(<RadioButton callback={callback} value="item">Item</RadioButton>);
+		wrapper.find('input').simulate('change', { target: { checked: true}});
+		expect(callback).toBeCalled();
+	})
 });

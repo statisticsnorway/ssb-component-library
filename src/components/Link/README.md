@@ -61,6 +61,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| ariaLabel | string | Defines a string value that describe the link if no link text |
 | children   | Required node | Something that renders to wrap the link around |
 | className   | string | Optional container class|
 | href | Required string| Destination for navigation |
@@ -68,3 +69,5 @@ Available props:
 | isExternal | Optional boolean | Will make the link open in new tab. Defaults to false |
 | linkType | Optional oneOf |Changes the style. Can be 'regular', 'profiled', or 'header'. Defaults to 'regular' |
 | negative | Optional boolean | Will change component style. Defaults to false |
+| tabIndex | number | Tab index for focus |
+| title | string | The title attribute is used to provide additional information |

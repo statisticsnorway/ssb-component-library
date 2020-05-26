@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableLink component Matches the snapshot 1`] = `
+<a
+  className="ssb-table-link"
+  href=""
+  target="_blank"
+>
+  <div
+    className="tl-icon"
+  >
+    <ArrowRight
+      color="currentColor"
+      size={22}
+    />
+  </div>
+  <div
+    className="tl-info"
+  >
+    <span
+      className="tl-text"
+    >
+      Tabell 1
+    </span>
+    <span
+      className="tl-description"
+    >
+      TableLink
+    </span>
+  </div>
+</a>
+`;

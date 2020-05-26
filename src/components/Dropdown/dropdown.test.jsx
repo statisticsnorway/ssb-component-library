@@ -9,6 +9,7 @@ const items = [
 	}, {
 		title: 'Rainbows',
 		id: 'item2',
+		disabled: true,
 	}, {
 		title: 'Ocean',
 		id: 'item3',
@@ -44,6 +45,11 @@ describe('Dropdown component', () => {
 		const wrapper = shallow(<Dropdown header="Menu header" items={items} open />);
 		wrapper.find('.list-of-options').find('button').first().simulate('click');
 		expect(wrapper.find('input').props().placeholder).toEqual('Apples');
+	});
+
+	test('Verify disabled item', () => {
+		const wrapper = shallow(<Dropdown header="Menu header" items={items} open />);
+		expect(wrapper.find('.list-of-options').find('button').find({ id: 'item2' }).prop('disabled')).toBe(true);
 	});
 
 	test('Triggers filter function on search', () => {
