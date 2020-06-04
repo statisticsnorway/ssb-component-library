@@ -23,4 +23,8 @@ describe('Accordion component', () => {
 		expect(wrapper.hasClass('with-sub-header')).toEqual(true);
 		expect(wrapper.find('.sub-header').length).toBe(1);
 	});
+	test('Accordion with id', () => {
+		const wrapper = shallow(<Accordion id="test-id" header="This is a accordion title">This is paragraph text</Accordion>);
+		expect(wrapper.prop('id')).toEqual('test-id');
+	});
 });
