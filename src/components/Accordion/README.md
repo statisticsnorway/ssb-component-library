@@ -103,6 +103,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| id | string | Optional id | 
 | children | node | Accordion content |
 | className   | string | Optional container class|
 | header | string | Header text |
