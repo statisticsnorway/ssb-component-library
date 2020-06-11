@@ -40,11 +40,11 @@
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-centered": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-centered": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
     "@svgr/rollup": "^4.3.3",
     "@svgr/webpack": "^4.3.3",
     "babel-eslint": "^10.0.3",
@@ -87,7 +87,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "prismjs": "^1.17.1",
     "react-feather": "^2.0.3",
     "react-test-renderer": "^16.12.0"
