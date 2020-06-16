@@ -53,7 +53,8 @@ a {
     font-stretch: normal;
     font-weight: normal;
     font-size: 20px;
-    font-weight: bold; }
+    font-weight: bold;
+    padding: 20px 0; }
     .ssb-accordion .accordion-header:focus {
       outline: #9272fc solid 2px;
       outline-offset: 2px; }
@@ -76,14 +77,12 @@ a {
   .ssb-accordion:not(.without-borders):before {
     border-top: 1px solid #c3dcdc;
     content: '';
-    height: 2px;
-    padding-bottom: 20px; }
+    height: 2px; }
   .ssb-accordion:not(.without-borders):after {
     border-bottom: 1px solid #c3dcdc;
     content: '';
     height: 2px;
-    margin-bottom: -1px;
-    padding-top: 20px; }
+    margin-bottom: -1px; }
   .ssb-accordion.with-sub-header .button-grid {
     grid-template-columns: fit-content(100px) auto 20px; }
   .ssb-accordion.with-sub-header .accordion-header .header-text {
@@ -687,6 +686,10 @@ a {
   margin: 16px 0;
   padding: 20px 16px;
   width: 100%; }
+  .ssb-fact-box:focus-within {
+    outline: #9272fc solid 2px; }
+  .ssb-fact-box .accordion-header:focus {
+    outline: none; }
   .ssb-fact-box:hover {
     border: 1px solid #00824d; }
 
