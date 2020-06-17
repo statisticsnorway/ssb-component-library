@@ -36,7 +36,7 @@ storiesOf('Link', module).addDecorator(centered)
 			<p><Link href=" " linkType="header" negative>A header link - Negative</Link></p>
 		</div>
 	))
-	.add('Lange lenker', () => (
+	.add('Long links', () => (
 		<div style={{ width: '300px' }}>
 			<p><Link href=" ">A regular link - A very long link that will cross several lines</Link></p>
 			<Link href=" " icon={<ArrowRight size={16} />}>A regular link with icon - A very long link that will cross several lines</Link>
