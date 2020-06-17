@@ -24,7 +24,7 @@ $icon-padding: 8px;
   transition: background-size .2s ease-in, color .1s;
 
   .icon-wrapper {
-    display: grid;
+    display: flex;
     margin-right: 4px;
     margin-top: 5px;
   }
@@ -71,7 +71,7 @@ $icon-padding: 8px;
     &.with-icon {
       padding: 2px 2px 0;
       border-bottom: none;
-      display: flex;
+      display: inline-flex;
       align-items: flex-start;
 
       i {
@@ -111,7 +111,7 @@ $icon-padding: 8px;
   &.with-icon {
     padding: 2px 2px 0;
     border-bottom: none;
-    display: flex;
+    display: inline-flex;
     align-items: flex-start;
 
     i {
