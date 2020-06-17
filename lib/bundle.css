@@ -1175,7 +1175,7 @@ a {
   text-decoration: none;
   transition: background-size .2s ease-in, color .1s; }
   .ssb-link .icon-wrapper {
-    display: grid;
+    display: flex;
     margin-right: 4px;
     margin-top: 5px; }
   .ssb-link.header {
@@ -1207,7 +1207,7 @@ a {
     .ssb-link.negative.with-icon {
       padding: 2px 2px 0;
       border-bottom: none;
-      display: flex;
+      display: inline-flex;
       align-items: flex-start; }
       .ssb-link.negative.with-icon i {
         font-size: 20px; }
@@ -1229,7 +1229,7 @@ a {
   .ssb-link.with-icon {
     padding: 2px 2px 0;
     border-bottom: none;
-    display: flex;
+    display: inline-flex;
     align-items: flex-start; }
     .ssb-link.with-icon i {
       font-size: 16px; }
