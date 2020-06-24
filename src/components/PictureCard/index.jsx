@@ -29,23 +29,8 @@ export function useHover() {
 	return [hoverRef, value];
 }
 
-const PictureCard = ({ className, image, link, onClick, orientation, title, type }) => {
+const PictureCard = ({ className, imageSrc, link, onClick, orientation, title, type }) => {
 	const [hoverRef, hovered] = useHover();
-	const orig = (
-		<a
-			className={`ssb-picture-card ${orientation}${className ? ` ${className}` : ''}`}
-			href={link}
-			onClick={onClick}
-			ref={hoverRef}
-		>
-			<div className="image-background"><img src={image} /></div>
-			<span className="il-type">{type}</span>
-			<span className="il-title">{title}</span>
-			{hovered ? <ArrowRightCircle className="arrow-icon" size={32} />
-				: <ArrowRight className="arrow-icon" size={32} />}
-		</a>
-	);
-
 	return (
 		<a
 			className={`ssb-picture-card ${orientation} ${className || ''}`}
@@ -54,7 +39,7 @@ const PictureCard = ({ className, image, link, onClick, orientation, title, type
 			ref={hoverRef}
 		>
 			<div className="image-background">
-				<img src={image} alt="" />
+				<img src={imageSrc} alt="" />
 			</div>
 			<div className="overlay">
 				<span className="il-type">{type}</span>
@@ -81,7 +66,7 @@ PictureCard.defaultProps = {
 
 PictureCard.propTypes = {
 	className: PropTypes.string,
-	image: PropTypes.element.isRequired,
+	imageSrc: PropTypes.element.isRequired,
 	link: PropTypes.string,
 	onClick: PropTypes.func,
 	orientation: PropTypes.oneOf(['horizontal', 'vertical']),
