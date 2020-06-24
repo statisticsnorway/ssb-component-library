@@ -50,12 +50,6 @@ const PictureCard = ({ className, imageSrc, link, onClick, orientation, title, t
 			</div>
 		</a>
 	);
-
-	// return (
-	// 	<div>
-	// 		{v2}
-	// 	</div>
-	// );
 };
 
 PictureCard.defaultProps = {
