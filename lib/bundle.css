@@ -843,45 +843,46 @@ a {
     margin-left: 20px; }
 
 .ssb-picture-card {
-  box-sizing: border-box;
-  color: #fff !important;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  height: 400px;
-  justify-content: flex-end;
-  padding: 64px 20px;
+  overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: flex-end;
   width: 280px;
-  background-image: linear-gradient(to top, rgba(39, 66, 71, 0.6) 25%, rgba(39, 66, 71, 0.3) 50%, rgba(39, 66, 71, 0) 75%); }
-  .ssb-picture-card .image-background {
-    height: 400px;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
+  height: 400px;
+  color: #fff !important;
+  cursor: pointer; }
+  .ssb-picture-card .image-background img {
     top: 0;
-    width: 280px;
-    z-index: -1; }
-    .ssb-picture-card .image-background img {
-      transform: scale(1);
-      transition: transform .25s ease, -webkit-transform .25s ease; }
-  .ssb-picture-card:hover .image-background img {
+    left: 0;
+    position: absolute;
+    transform: scale(1);
+    transition: transform .25s ease, -webkit-transform .25s ease; }
+  .ssb-picture-card:hover img {
     transform: scale(1.1); }
-  .ssb-picture-card .il-type {
-    font-family: 'Roboto', sans-serif !important;
-    font-stretch: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 1.25;
-    margin-bottom: 12px; }
-  .ssb-picture-card .il-title {
-    font-family: 'Roboto Condensed', sans-serif !important;
-    font-stretch: condensed;
-    font-weight: bold;
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 1.43;
-    margin-bottom: 12px; }
+  .ssb-picture-card .overlay {
+    bottom: 0;
+    position: absolute;
+    padding: 80px 20px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 280px;
+    background-image: linear-gradient(0deg, rgba(39, 66, 71, 0.75), rgba(39, 66, 71, 0.5), transparent); }
+    .ssb-picture-card .overlay .il-type {
+      font-family: 'Roboto', sans-serif !important;
+      font-stretch: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 1.25;
+      margin-bottom: 12px; }
+    .ssb-picture-card .overlay .il-title {
+      font-family: 'Roboto Condensed', sans-serif !important;
+      font-stretch: condensed;
+      font-weight: bold;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1.43;
+      margin-bottom: 12px; }
   .ssb-picture-card.horizontal {
     height: 212px;
     padding: 40px 20px;
@@ -889,6 +890,10 @@ a {
     .ssb-picture-card.horizontal .image-background {
       height: 212px;
       width: 380px; }
+    .ssb-picture-card.horizontal .overlay {
+      width: 380px;
+      padding: 40px 20px;
+      left: 0; }
 
 .ssb-input {
   font-family: 'Roboto', sans-serif !important;
