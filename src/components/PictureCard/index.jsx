@@ -60,7 +60,7 @@ PictureCard.defaultProps = {
 
 PictureCard.propTypes = {
 	className: PropTypes.string,
-	imageSrc: PropTypes.element.isRequired,
+	imageSrc: PropTypes.string.isRequired,
 	altText: PropTypes.string.isRequired,
 	link: PropTypes.string,
 	onClick: PropTypes.func,
