@@ -8,9 +8,7 @@ exports[`ImageLink component Matches the snapshot 1`] = `
   <div
     className="image-background"
   >
-    <img
-      alt=""
-    />
+    <img />
   </div>
   <div
     className="overlay"
