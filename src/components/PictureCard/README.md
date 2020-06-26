@@ -17,17 +17,18 @@ PictureCard
 
 #### React
 ```jsx harmony
-<PictureCard image={<img src={doge} alt="image" />} onClick={function} type="Type" title="Tittel" />
+<PictureCard imageSrc={url} altText="alt text" onClick={function} type="Type" title="Tittel" />
 ```
 ```jsx harmony
-<PictureCard image={<img src={doge} alt="image" />} link="./" type="Type" title="Tittel" />
+<PictureCard imageSrc={url} altText="alt text" link="./" type="Type" title="Tittel" />
 ```
 Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
 | className   | string | Optional container class|
-| image | required element | An image to be put as background |
+| imageSrc | required (url) | URL of the image to be used |
+| altText | required string | alt text for screen readers |
 | link | string | Link to be navigated to |
 | onClick | func | Function callback to be used instead of link |
 | title | string | Title text |
