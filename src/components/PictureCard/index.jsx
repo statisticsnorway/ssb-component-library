@@ -29,7 +29,7 @@ export function useHover() {
 	return [hoverRef, value];
 }
 
-const PictureCard = ({ className, imageSrc, link, onClick, orientation, title, type }) => {
+const PictureCard = ({ className, imageSrc, altText, link, onClick, orientation, title, type }) => {
 	const [hoverRef, hovered] = useHover();
 	return (
 		<a
@@ -39,7 +39,7 @@ const PictureCard = ({ className, imageSrc, link, onClick, orientation, title, t
 			ref={hoverRef}
 		>
 			<div className="image-background">
-				<img src={imageSrc} alt="" />
+				<img src={imageSrc} alt={altText} />
 			</div>
 			<div className="overlay">
 				<span className="il-type">{type}</span>
@@ -60,7 +60,8 @@ PictureCard.defaultProps = {
 
 PictureCard.propTypes = {
 	className: PropTypes.string,
-	imageSrc: PropTypes.element.isRequired,
+	imageSrc: PropTypes.string.isRequired,
+	altText: PropTypes.string.isRequired,
 	link: PropTypes.string,
 	onClick: PropTypes.func,
 	orientation: PropTypes.oneOf(['horizontal', 'vertical']),
