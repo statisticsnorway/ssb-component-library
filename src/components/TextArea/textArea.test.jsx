@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import TextArea from './index';
 import InputError from '../InputError';
 
@@ -7,7 +7,7 @@ jest.mock('uuid/v4', () => jest.fn(() => 1));
 
 describe('Input component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<TextArea>Input</TextArea>);
+		const wrapper = shallow(<TextArea rows={5} cols={10}>Input</TextArea>);
 		expect(wrapper).toMatchSnapshot();
 	});
 
@@ -29,6 +29,14 @@ describe('Input component', () => {
 			target: { value: 'hello' }
 		});
 		expect(handleChange).toBeCalledWith('hello');
+	});
+
+	test('respects rows and cols', () => {
+		const wrapper = mount(<TextArea rows={5} cols={25} />);
+		const textArea = wrapper.find('textarea');
+
+		expect(textArea.props().rows).toEqual(5);
+		expect(textArea.props().cols).toEqual(25);
 	});
 
 	test('Renders an error message on error', () => {

@@ -8,9 +8,11 @@ exports[`Input component Matches the snapshot 1`] = `
     className="text-area-wrapper"
   >
     <textarea
+      cols={10}
       disabled={false}
       id={1}
       onChange={[Function]}
+      rows={5}
     />
   </div>
 </div>
