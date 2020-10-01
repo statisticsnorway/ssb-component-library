@@ -4,6 +4,8 @@ exports[`Highlight component Matches the snapshot 1`] = `
 <mark
   className="ssb-mark"
 >
+   
   «Highlight»
+   
 </mark>
 `;
