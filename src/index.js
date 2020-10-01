@@ -35,3 +35,4 @@ export { default as Tag } from './components/Tag';
 export { default as Text } from './components/Text';
 export { default as TextArea } from './components/TextArea';
 export { default as Title } from './components/Title';
+export { default as Highlight } from './components/Highlight';
