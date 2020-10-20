@@ -50,65 +50,58 @@
     }
 
   }
+}
 
-  .glossary-popup {
-    @include open-sans;
-    animation: fadein .2s;
-    display: none;
-    font-size: 14px;
+.ssb-glossary-popup {
+  @include open-sans;
+  animation: fadein .2s;
+  font-size: 14px;
+  left: 50%;
+  margin-top: 12px;
+  transition: opacity .18s;
+  width: 270px;
+  z-index: 999;
+
+  &:after {
+    border-color: transparent transparent $ssb-dark-5 transparent;
+    border-style: solid;
+    border-width: 12px;
+    content: '';
     left: 50%;
-    opacity: 0;
-    margin-top: 12px;
-    transition: opacity .18s;
-    width: 270px;
-    z-index: 999;
+    margin-left: -12px;
+    position: absolute;
+    top: -22px;
+  }
 
-    &:after {
-      border-color: transparent transparent $ssb-dark-5 transparent;
-      border-style: solid;
-      border-width: 12px;
-      content: '';
-      left: 50%;
-      margin-left: -12px;
-      position: absolute;
-      top: -22px;
+  .content-box {
+    background: $ssb-dark-5;
+    color: $ssb-white;
+    padding: 20px;
+
+    .ssb-glossary-closing {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      user-select: none;
+      width: 100%;
+
+      .icon {
+        color: $ssb-dark-5;
+        fill: $ssb-green-2;
+        font-size: 16px;
+      }
+
+      span {
+        line-height: 1.43;
+        margin-left: 2px;
+      }
     }
 
-    &.open {
-      display: inline-block;
-      opacity: 1;
-    }
-
-    .content-box {
-      background: $ssb-dark-5;
+    .info-text {
       color: $ssb-white;
-      padding: 20px;
-
-      .ssb-glossary-closing {
-        align-items: center;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        user-select: none;
-        width: 100%;
-
-        .icon {
-          color: $ssb-dark-5;
-          fill: $ssb-green-2;
-          font-size: 16px;
-        }
-
-        span {
-          line-height: 1.43;
-          margin-left: 2px;
-        }
-      }
-
-      .info-text {
-        color: $ssb-white;
-        font-size: 14px;
-      }
+      font-size: 14px;
     }
   }
 }
