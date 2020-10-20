@@ -31,10 +31,10 @@ export default [{
 			'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
 		}),
 		babel({
-			exclude: 'node_modules/**',
+			exclude: '/node_modules/',
 		}),
 		commonjs({
-			include: ['node_modules/**'],
+			include: ['/node_modules/'],
 			extensions: ['js', '.jsx'],
 			namedExports: {
 				'node_modules/react/index.js': [
