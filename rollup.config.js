@@ -4,6 +4,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import scss from 'rollup-plugin-scss';
 import svgr from '@svgr/rollup';
+import autoNamedExports from 'rollup-plugin-auto-named-exports';
 
 import { uglify } from 'rollup-plugin-uglify';
 
@@ -30,10 +31,10 @@ export default [{
 			'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
 		}),
 		babel({
-			exclude: '/node_modules/**',
+			exclude: 'node_modules/**',
 		}),
 		commonjs({
-			include: ['/node_modules/**'],
+			include: ['node_modules/**'],
 			extensions: ['js', '.jsx'],
 			namedExports: {
 				'node_modules/react/index.js': [
@@ -52,6 +53,7 @@ export default [{
 				],
 			},
 		}),
+		autoNamedExports(),
 		uglify(),
 	],
 }];
