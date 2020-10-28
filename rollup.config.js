@@ -50,6 +50,9 @@ export default [{
 					'isValidElementType',
 					'ForwardRef',
 				],
+				'node_modules/react-fast-compare/index.js': [
+					'isEqual',
+				],
 			},
 		}),
 		uglify(),

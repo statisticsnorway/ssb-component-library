@@ -6,12 +6,18 @@ Glossary
 ### Usage
 
 #### HTML
-Toggle the class "open" using javascript
+This component requires that the user handles the opening and positioning of the
+tooltip that contains the explanation of the word. 
+
 ```html
-<button class="ssb-glossary"><!-- click to toggle 'open' class -->
-  <div class="glossary-text-wrap">Explain this</div>
-  <i>{feather.openBook 12px}</i>
-  <div class="glossary-animate-background"></div>
+<div class="ssb-glossary">
+  <button class="glossary-button"><!-- click to open -->
+    <div class="glossary-text-wrap">Explain this</div>
+    <i class="glossary-logo">{feather.bookOpen 12px}</i>
+    <div class="glossary-animate-background"></div>
+  </button>
+
+  <!-- This contains the explanation and needs js for positioning -->
   <div class="ssb-glossary-popup {open or closed}">
     <div class="content-box">
       <span class="info-text">{insert explanation}</span>
@@ -21,7 +27,7 @@ Toggle the class "open" using javascript
       </div>
     </div>
   </div>
-</button>
+</div>
 ```
 
 #### React
