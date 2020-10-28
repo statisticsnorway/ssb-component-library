@@ -35,4 +35,13 @@ storiesOf('Link', module).addDecorator(centered)
 			<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />} negative>A profiled link with icon - Negative</Link>
 			<p><Link href=" " linkType="header" negative>A header link - Negative</Link></p>
 		</div>
+	))
+	.add('Long links', () => (
+		<div style={{ width: '300px' }}>
+			<p><Link href=" ">A regular link - A very long link that will cross several lines</Link></p>
+			<Link href=" " icon={<ArrowRight size={16} />}>A regular link with icon - A very long link that will cross several lines</Link>
+			<p><Link href=" " linkType="profiled">A profiled link - A very long link that will cross several lines</Link></p>
+			<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />}>A profiled link with icon - A very long link that will cross several lines</Link>
+			<p><Link href=" " linkType="header">A header link - A very long link that will cross several lines</Link></p>
+		</div>
 	));

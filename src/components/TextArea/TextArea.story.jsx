@@ -28,4 +28,15 @@ storiesOf('TextArea', module).addDecorator(centered)
 			<TextArea negative label="Label" handleChange={handleChange} value={someValue} />
 			<TextArea negative label="Label" handleChange={handleChange} value={someValue} error errorMessage="You made a mistake, fool! What the hell" />
 		</div>
+	))
+	.add('Rows/Cols', () => (
+		<div>
+			<TextArea
+				label="rows cols"
+				rows={20}
+				cols={50}
+				value={someValue}
+				handleChange={handleChange}
+			/>
+		</div>
 	));

@@ -50,6 +50,7 @@ Input.defaultProps = {
 	searchField: false,
 	submitCallback: () => {},
 	type: 'text',
+	ariaLabelSearchButton: 'search',
 };
 
 Input.propTypes = {

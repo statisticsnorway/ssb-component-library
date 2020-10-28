@@ -15,5 +15,30 @@ exports[`Glossary Matches the snapshot 1`] = `
     color="currentColor"
     size={12}
   />
+  <div
+    className="glossary-popup"
+  >
+    <div
+      className="content-box"
+    >
+      <span
+        className="info-text"
+      >
+        placeholderText
+      </span>
+      <div
+        className="ssb-glossary-closing"
+      >
+        <XCircle
+          className="icon"
+          color="currentColor"
+          size={16}
+        />
+        <span>
+          Lukk
+        </span>
+      </div>
+    </div>
+  </div>
 </button>
 `;

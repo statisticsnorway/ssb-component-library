@@ -1,6 +1,6 @@
 {
   "name": "@statisticsnorway/ssb-component-library",
-  "version": "2.0.21",
+  "version": "2.0.31",
   "description": "Component library for SSB (Statistics Norway)",
   "main": "lib/bundle.js",
   "scripts": {
@@ -71,7 +71,6 @@
     "prop-types": "^15.7.2",
     "react-dom": "^16.14.0",
     "rollup": "^1.32.1",
-    "rollup-plugin-auto-named-exports": "^1.0.0-beta.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",

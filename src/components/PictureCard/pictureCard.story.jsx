@@ -10,8 +10,8 @@ const sup = (() => {
 
 storiesOf('Picture Card', module).addDecorator(centered)
 	.add('Default', () => (
-		<PictureCard image={<img src={cardImage} alt="" />} onClick={sup} type="Type" title="Tittel" />
+		<PictureCard imageSrc={cardImage} altText="img alt" onClick={sup} type="Type" title="Tittel" />
 	))
 	.add('Horizontal', () => (
-		<PictureCard orientation="horizontal" image={<img src={cardImage} alt="" />} onClick={sup} type="Type" title="Tittel" />
+		<PictureCard orientation="horizontal" imageSrc={cardImage} altText="img alt" onClick={sup} type="Type" title="Tittel" />
 	));

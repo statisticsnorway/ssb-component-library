@@ -26,6 +26,8 @@ exports[`Accordion component Matches the snapshot 1`] = `
   </button>
   <div
     className="accordion-body closed"
-  />
+  >
+    Accordion
+  </div>
 </div>
 `;

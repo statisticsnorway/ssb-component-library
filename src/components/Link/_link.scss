@@ -13,9 +13,9 @@ $icon-padding: 8px;
   border-bottom: 1px solid $ssb-green-4;
   color: $ssb-green-4;
   cursor: pointer;
-  display: inline-flex;
+  display: inline;
   font-size: $default-font-size;
-  line-height: 1.25;
+  line-height: 1.7;
   margin-top: -3px;
   margin-bottom: -2px;
   padding: 0 1px 2px 1px;
@@ -26,6 +26,7 @@ $icon-padding: 8px;
   .icon-wrapper {
     display: flex;
     margin-right: 4px;
+    margin-top: 5px;
   }
 
   &.header {
@@ -70,6 +71,8 @@ $icon-padding: 8px;
     &.with-icon {
       padding: 2px 2px 0;
       border-bottom: none;
+      display: inline-flex;
+      align-items: flex-start;
 
       i {
         font-size: 20px;
@@ -108,6 +111,8 @@ $icon-padding: 8px;
   &.with-icon {
     padding: 2px 2px 0;
     border-bottom: none;
+    display: inline-flex;
+    align-items: flex-start;
 
     i {
       font-size: 16px;

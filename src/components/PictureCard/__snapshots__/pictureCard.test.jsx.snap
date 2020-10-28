@@ -2,31 +2,35 @@
 
 exports[`ImageLink component Matches the snapshot 1`] = `
 <a
-  className="ssb-picture-card vertical"
+  className="ssb-picture-card vertical "
   onClick={[Function]}
 >
   <div
     className="image-background"
   >
     <img
-      alt="image"
+      alt="img alt"
       src=""
     />
   </div>
-  <span
-    className="il-type"
+  <div
+    className="overlay"
   >
-    Type
-  </span>
-  <span
-    className="il-title"
-  >
-    Tittel
-  </span>
-  <ArrowRight
-    className="arrow-icon"
-    color="currentColor"
-    size={32}
-  />
+    <span
+      className="il-type"
+    >
+      Type
+    </span>
+    <span
+      className="il-title"
+    >
+      Tittel
+    </span>
+    <ArrowRight
+      className="arrow-icon"
+      color="currentColor"
+      size={32}
+    />
+  </div>
 </a>
 `;
