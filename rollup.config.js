@@ -4,7 +4,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import scss from 'rollup-plugin-scss';
 import svgr from '@svgr/rollup';
-import autoNamedExports from 'rollup-plugin-auto-named-exports';
 
 import { uglify } from 'rollup-plugin-uglify';
 
@@ -52,11 +51,10 @@ export default [{
 					'ForwardRef',
 				],
 				'node_modules/react-fast-compare/index.js': [
-					'usePopper',
+					'isEqual',
 				],
 			},
 		}),
-		autoNamedExports(),
 		uglify(),
 	],
 }];

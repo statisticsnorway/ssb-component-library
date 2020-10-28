@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import TooltipTrigger from 'react-popper-tooltip';
+import { TooltipTrigger } from 'react-popper-tooltip';
 import { BookOpen, XCircle } from 'react-feather';
 
 const Glossary = ({ children, tooltip, hideArrow, className, explanation, closeText, ...props }) => (
