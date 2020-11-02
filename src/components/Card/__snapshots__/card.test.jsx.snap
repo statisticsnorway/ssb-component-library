@@ -14,7 +14,6 @@ exports[`Card component Matches the snapshot 1`] = `
       ProfileBox
       <ArrowRight
         className="arrow-icon"
-        color="currentColor"
         size={22}
       />
     </div>

@@ -19,7 +19,6 @@ exports[`Accordion component Matches the snapshot 1`] = `
       </span>
       <ChevronDown
         className="expand-icon"
-        color="currentColor"
         size={20}
       />
     </span>

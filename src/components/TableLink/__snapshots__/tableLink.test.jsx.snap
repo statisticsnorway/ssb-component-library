@@ -10,7 +10,6 @@ exports[`TableLink component Matches the snapshot 1`] = `
     className="tl-icon"
   >
     <ArrowRight
-      color="currentColor"
       size={22}
     />
   </div>
