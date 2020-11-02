@@ -8,16 +8,17 @@ import testImage from '../../media/16x9.png';
 
 storiesOf('Card', module).addDecorator(centered)
 	.add('Default', () => (
-		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
-			<div style={{ marginRight: '10px', display: 'flex' }}>
+		<div style={{ width: '700px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ width: '380px', marginRight: '10px' }}>
 				<Card title="Tittel" href=" ">
 					<Text>Explain something about something with something clever.</Text>
 				</Card>
 			</div>
-			<br />
-			<Card title="Tittel" href=" " hrefText="Handling">
-				<Text>Explain something about something with something clever.</Text>
-			</Card>
+			<div style={{ width: '380px' }}>
+				<Card title="Tittel" href=" " hrefText="Handling">
+					<Text>Explain something about something with something clever. Men denne har mye mere tekst så den kommer til å bli lengre</Text>
+				</Card>
+			</div>
 		</div>
 	))
 	.add('Default with icon', () => (
@@ -73,7 +74,7 @@ storiesOf('Card', module).addDecorator(centered)
 		</div>
 	))
 	.add('With images top', () => (
-		<div>
+		<div style={{ width: '380px' }}>
 			<Card
 				imagePlacement="top"
 				image={<img src={testImage} alt="testImage" />}

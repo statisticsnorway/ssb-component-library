@@ -4,24 +4,28 @@
   .clickable {
     @include focus-marker;
     @include reset-button;
+    width: 100%;
 
     .card-image {
       display: flex;
 
       img {
-        height: 214px;
-        width: 380px;
+        height: auto;
+        width: 100%;
       }
     }
 
     &.left-orientation {
       display: inline-flex;
       flex-direction: row;
-      width: 100%;
 
       .card-content {
         height: 214px;
-        width: 100%;
+      }
+
+      .card-image img {
+        height: 214px;
+        width: auto;
       }
 
       @media #{$mobile} {
@@ -29,15 +33,10 @@
 
         .card-content {
           height: 100%;
-          max-width: 380px;
         }
 
-        .card-image {
-          width: 100%;
-        }
-
-        img  {
-          max-width: 380px;
+        .card-image img {
+          height: auto;
           width: 100%;
         }
       }
@@ -46,25 +45,6 @@
     &.top-orientation {
       display: inline-flex;
       flex-direction: column;
-
-      .card-content {
-        max-width: 380px;
-        width: 100%;
-      }
-
-      @media #{$mobile} {
-        width: 100%;
-
-        .card-image {
-          width: 100%;
-        }
-
-        img  {
-          max-width: 380px;
-          width: 100%;
-        }
-
-      }
     }
 
     &:hover {
@@ -239,7 +219,6 @@
     cursor: pointer;
     display: flex;
     height: 60px;
-    max-width: 380px;
     text-decoration: none;
 
     &:focus {
