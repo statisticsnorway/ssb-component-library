@@ -30,7 +30,6 @@ const Dropdown = ({
 	const [inputFieldValue, updateInputValue] = useState('');
 	const [keyNavPosition, setKeyNavPosition] = useState(0);
 
-
 	const filterOptions = value => {
 		updateInputValue(value);
 		filterAvailableOptions(items.filter(it => it.title.toLowerCase().includes(value.toLowerCase())));
