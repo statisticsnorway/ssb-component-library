@@ -9,7 +9,6 @@ exports[`Dialog component Matches the snapshot 1`] = `
   >
     <Info
       className="icon"
-      color="currentColor"
       size={45}
     />
   </div>

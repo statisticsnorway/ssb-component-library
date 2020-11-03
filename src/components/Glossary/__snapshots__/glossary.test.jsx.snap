@@ -12,7 +12,6 @@ exports[`Glossary Matches the snapshot 1`] = `
   </div>
   <BookOpen
     className="glossary-logo"
-    color="currentColor"
     size={12}
   />
   <div
@@ -31,7 +30,6 @@ exports[`Glossary Matches the snapshot 1`] = `
       >
         <XCircle
           className="icon"
-          color="currentColor"
           size={16}
         />
         <span>

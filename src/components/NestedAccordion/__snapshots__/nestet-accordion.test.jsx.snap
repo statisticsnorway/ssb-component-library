@@ -13,7 +13,6 @@ exports[`NestedAccordion component Matches the snapshot 1`] = `
     >
       <ChevronDown
         className="expand-icon"
-        color="currentColor"
         size={16}
       />
       <span

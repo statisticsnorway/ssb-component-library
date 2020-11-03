@@ -253,47 +253,35 @@ a {
     font-size: inherit;
     line-height: inherit;
     padding: 0;
-    text-align: left; }
+    text-align: left;
+    width: 100%; }
     .ssb-card .clickable:focus {
       outline: #9272fc solid 2px;
       outline-offset: 2px; }
     .ssb-card .clickable .card-image {
       display: flex; }
       .ssb-card .clickable .card-image img {
-        height: 214px;
-        width: 380px; }
+        height: auto;
+        width: 100%; }
     .ssb-card .clickable.left-orientation {
       display: inline-flex;
-      flex-direction: row;
-      width: 100%; }
+      flex-direction: row; }
       .ssb-card .clickable.left-orientation .card-content {
+        height: 214px; }
+      .ssb-card .clickable.left-orientation .card-image img {
         height: 214px;
-        width: 100%; }
+        width: auto; }
       @media screen and (max-width: 767px) {
         .ssb-card .clickable.left-orientation {
           flex-direction: column; }
           .ssb-card .clickable.left-orientation .card-content {
-            height: 100%;
-            max-width: 380px; }
-          .ssb-card .clickable.left-orientation .card-image {
-            width: 100%; }
-          .ssb-card .clickable.left-orientation img {
-            max-width: 380px;
+            height: 100%; }
+          .ssb-card .clickable.left-orientation .card-image img {
+            height: auto;
             width: 100%; } }
     .ssb-card .clickable.top-orientation {
       display: inline-flex;
       flex-direction: column; }
-      .ssb-card .clickable.top-orientation .card-content {
-        max-width: 380px;
-        width: 100%; }
-      @media screen and (max-width: 767px) {
-        .ssb-card .clickable.top-orientation {
-          width: 100%; }
-          .ssb-card .clickable.top-orientation .card-image {
-            width: 100%; }
-          .ssb-card .clickable.top-orientation img {
-            max-width: 380px;
-            width: 100%; } }
     .ssb-card .clickable:hover {
       text-decoration: none; }
       .ssb-card .clickable:hover.left-orientation .card-content {
@@ -411,7 +399,6 @@ a {
     cursor: pointer;
     display: flex;
     height: 60px;
-    max-width: 380px;
     text-decoration: none; }
     .ssb-card .download-section:focus {
       outline: #9272fc solid 2px;
@@ -1817,3 +1804,30 @@ a {
     h2.ssb-title {
       font-size: 28px;
       line-height: 36px; } }
+
+.ssb-mark {
+  font-family: 'Open Sans', sans-serif !important;
+  font-stretch: normal;
+  font-weight: normal;
+  background-color: #ecfeed;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1.6; }
+  .ssb-mark.negative {
+    background-color: #075745;
+    color: #fff; }
+
+mark::before, mark::after {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; }
+
+mark::before {
+  content: " [highlight start] "; }
+
+mark::after {
+  content: " [highlight end] "; }
