@@ -1,5 +1,6 @@
 .ssb-card {
   @include roboto;
+  width: 100%;
 
   .clickable {
     @include focus-marker;
