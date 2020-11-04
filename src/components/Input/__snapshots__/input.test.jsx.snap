@@ -13,6 +13,7 @@ exports[`Input component Matches the snapshot 1`] = `
       id={1}
       onChange={[Function]}
       type="text"
+      value=""
     />
   </div>
 </div>
