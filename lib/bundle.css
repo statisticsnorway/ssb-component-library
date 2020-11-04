@@ -243,7 +243,8 @@ a {
 .ssb-card {
   font-family: 'Roboto', sans-serif !important;
   font-stretch: normal;
-  font-weight: normal; }
+  font-weight: normal;
+  width: 100%; }
   .ssb-card .clickable {
     background-color: transparent;
     border: none;
