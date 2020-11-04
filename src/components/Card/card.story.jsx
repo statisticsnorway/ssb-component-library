@@ -23,41 +23,44 @@ storiesOf('Card', module).addDecorator(centered)
 	))
 	.add('Default with icon', () => (
 		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
-			<div style={{ marginRight: '10px', display: 'flex' }}>
+			<div style={{ marginRight: '10px', width: '400px' }}>
 				<Card title="Tittel" href=" " hrefText="Handling" icon={<Globe size={32} />} fileLocation="./not_a_file.md" downloadText="Download">
 					<Text>Explain something about something with something clever.</Text>
 				</Card>
 			</div>
-			<br />
-			<Card title="Tittel" href=" " icon={<Globe size={32} />}>
-				<Text>Explain something about something with something clever.</Text>
-			</Card>
+			<div style={{ width: '400px' }}>
+				<Card title="Tittel" href=" " icon={<Globe size={32} />}>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
 		</div>
 	))
 	.add('Profiled', () => (
 		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
-			<div style={{ marginRight: '10px', display: 'flex' }}>
+			<div style={{ marginRight: '10px', width: '400px' }}>
 				<Card title="Tittel" href=" " profiled>
 					<Text>Explain something about something with something clever.</Text>
 				</Card>
 			</div>
-			<br />
-			<Card title="Tittel" href=" " hrefText="Handling" profiled>
-				<Text>Explain something about something with something clever.</Text>
-			</Card>
+			<div style={{ width: '400px' }}>
+				<Card title="Tittel" href=" " hrefText="Handling" profiled>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
 		</div>
 	))
 	.add('Profiled with icon', () => (
 		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
-			<div style={{ marginRight: '10px', display: 'flex' }}>
+			<div style={{ marginRight: '10px', width: '400px' }}>
 				<Card title="Tittel" href=" " hrefText="Handling" icon={<Globe size={120} />} profiled>
 					<Text>Explain something about something with something clever.</Text>
 				</Card>
 			</div>
-			<br />
-			<Card title="Tittel" href=" " icon={<Globe size={120} />} profiled>
-				<Text>Explain something about something with something clever.</Text>
-			</Card>
+			<div style={{ width: '400px' }}>
+				<Card title="Tittel" href=" " icon={<Globe size={120} />} profiled>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
 		</div>
 	))
 	.add('With images left', () => (
