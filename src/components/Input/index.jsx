@@ -51,6 +51,7 @@ Input.defaultProps = {
 	submitCallback: () => {},
 	type: 'text',
 	ariaLabelSearchButton: 'search',
+	value: '',
 };
 
 Input.propTypes = {
