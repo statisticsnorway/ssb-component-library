@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryLink component Matches the snapshot 1`] = `
+<a
+  className="ssb-category-link"
+  href=""
+>
+  <div
+    className="div-wrapper"
+  >
+    <div
+      className="text-divs title-wrapper"
+    >
+      <span
+        className="link-title-text"
+      >
+        Category link with description
+      </span>
+    </div>
+    <div
+      className="text-divs sub-wrapper"
+    >
+      <span
+        className="link-sub-text"
+      >
+        Description goes here
+      </span>
+    </div>
+    <ArrowRight
+      className="arrow-icon"
+      size={24}
+    />
+  </div>
+</a>
+`;
