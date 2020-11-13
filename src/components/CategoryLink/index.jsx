@@ -16,15 +16,15 @@ const CategoryLink = ({
 			title={title}
 		>
 			{titleText && (
-			<div className="div-wrapper">
-				<div className="text-divs title-wrapper">
-					<span className="link-title-text">{titleText}</span>
+				<div className="div-wrapper">
+					<div className="text-divs title-wrapper">
+						<span className="link-title-text">{titleText}</span>
+					</div>
+					<div className="text-divs sub-wrapper">
+						<span className="link-sub-text">{subText}</span>
+					</div>
+					<ArrowRight className="arrow-icon" size={24} />
 				</div>
-				<div className="text-divs sub-wrapper">
-					<span className="link-sub-text">{subText}</span>
-				</div>
-				<ArrowRight className="arrow-icon" size={24} />
-			</div>
 			)}
 		</a>
 	);

@@ -1,58 +1,33 @@
-Link
+Category link
 ========
 
-> Different type of links
 ### Usage
 
 
 #### HTML
 
 ```html
-<a class="ssb-link" href=" " target="" rel="">
-    <span class="link-text">A regular link</span>
-</a>
 
-<a class="ssb-link with-icon" href=" " target="" rel="">
-    <div class="icon-wrapper">
-        <i>{feather.arrowRight 16px}</i>
+<a class="ssb-category-link" href=" ">
+    <div class="div-wrapper">
+        <div class="text-divs title-wrapper">
+            <span class="link-title-text">Category link with description</span>
+        </div>
+        <div class="text-divs sub-wrapper">
+            <span class="link-sub-text">Description goes here</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
     </div>
-    <span class="link-text">A regular link with icon</span>
 </a>
 
-<a class="ssb-link profiled mr-4" href=" " target="" rel="">
-    <span class="link-text">A profiled link</span>
-</a>
 
-<a class="ssb-link profiled with-icon" href=" " target="" rel="">
-    <div class="icon-wrapper">
-        <i>{feather.arrowRight 20px}</i>
-    </div>
-    <span class="link-text">A profiled link with icon</span>
-</a>
-
-<a class="ssb-link header" href=" " target="" rel="">
-    <span class="link-text">A header link</span>
-</a>
-
-<a class="ssb-link negative" href=" " target="" rel="">
-    <span class="link-text">A regular link - Negative</span>
-</a>
 ```
 
 #### React
 
 ```jsx harmony
-<Link href="">A regular link</Link>
-
-<Link href="" icon={<ArrowRight size={16} />}>A regular link with icon</Link>
-
-<Link href="" linkType="profiled">A profiled link</Link>
-
-<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />}>A profiled link with icon</Link>
-
-<Link href=" " linkType="header">A header link</Link>
-
-<Link href="" negative>A regular link - Negative</Link>
+<CategoryLink href=""  titleText="Category link with description" subText="Description goes here" />
 
 
 ```
@@ -61,13 +36,10 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| ariaLabel | string | Defines a string value that describe the link if no link text |
-| children   | Required node | Something that renders to wrap the link around |
+| ariaLabel | string | Defines a string value that describe the link |
 | className   | string | Optional container class|
 | href | Required string| Destination for navigation |
-| icon | Optional node | Renders an icon  |
-| isExternal | Optional boolean | Will make the link open in new tab. Defaults to false |
-| linkType | Optional oneOf |Changes the style. Can be 'regular', 'profiled', or 'header'. Defaults to 'regular' |
-| negative | Optional boolean | Will change component style. Defaults to false |
+| titleText | Required string | text string for the title of the link |
+| subText | string | text string below the title to describe the link |
 | tabIndex | number | Tab index for focus |
 | title | string | The title attribute is used to provide additional information |
