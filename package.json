@@ -1,6 +1,6 @@
 {
   "name": "@statisticsnorway/ssb-component-library",
-  "version": "2.0.33",
+  "version": "2.0.34",
   "description": "Component library for SSB (Statistics Norway)",
   "main": "lib/bundle.js",
   "scripts": {
