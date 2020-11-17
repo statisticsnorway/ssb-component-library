@@ -36,3 +36,4 @@ export { default as Text } from './components/Text';
 export { default as TextArea } from './components/TextArea';
 export { default as Title } from './components/Title';
 export { default as Highlight } from './components/Highlight';
+export { default as CategoryLink } from './components/CategoryLink';
