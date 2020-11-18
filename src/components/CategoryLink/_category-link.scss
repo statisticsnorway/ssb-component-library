@@ -6,31 +6,26 @@ $icon-padding: 8px;
 .ssb-category-link {
   @include open-sans;
   align-items: center;
+  background-color: $ssb-white;
   background-image: linear-gradient(120deg, $ssb-green-4 0%, $ssb-green-4 100%);
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 100% 0;
   border: 1px solid $ssb-dark-2;
-  border-bottom: 2px solid $ssb-green-4;
+  border-bottom: 3px solid $ssb-green-4;
   color: $ssb-green-4;
   cursor: pointer;
   display: block;
   font-size: $default-font-size;
   padding: 20px 40px;
   line-height: 1.7;
-  margin-top: -3px;
-  margin-bottom: -2px;
-  max-height: 104px;
   position: relative;
   text-decoration: none;
   transition: background-size .2s ease-in, color .1s;
   width: 100%;
-  height: 104px;
   box-sizing: border-box;
 
   @media #{$mobile} {
-    max-height: initial;
-    height: auto;
     padding: 20px 20px;
   }
 
@@ -50,7 +45,7 @@ $icon-padding: 8px;
 
   .arrow-icon {
     float: right;
-    margin-top: -46px;
+    margin-top: -44px;
   }
 
   .link-title-text {
