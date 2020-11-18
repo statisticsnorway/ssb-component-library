@@ -25,13 +25,11 @@ $icon-padding: 8px;
   text-decoration: none;
   transition: background-size .2s ease-in, color .1s;
   width: 100%;
-  min-width: 500px;
   height: 104px;
   box-sizing: border-box;
 
   @media #{$mobile} {
     max-height: initial;
-    min-width: initial;
     height: auto;
     padding: 20px 20px;
   }
