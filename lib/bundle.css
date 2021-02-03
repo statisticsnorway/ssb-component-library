@@ -1838,33 +1838,26 @@ mark::after {
   font-stretch: normal;
   font-weight: normal;
   align-items: center;
+  background-color: #fff;
   background-image: linear-gradient(120deg, #00824d 0%, #00824d 100%);
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 100% 0;
   border: 1px solid #c3dcdc;
-  border-bottom: 2px solid #00824d;
+  border-bottom: 3px solid #00824d;
   color: #00824d;
   cursor: pointer;
   display: block;
   font-size: 16px;
   padding: 20px 40px;
   line-height: 1.7;
-  margin-top: -3px;
-  margin-bottom: -2px;
-  max-height: 104px;
   position: relative;
   text-decoration: none;
   transition: background-size .2s ease-in, color .1s;
   width: 100%;
-  min-width: 500px;
-  height: 104px;
   box-sizing: border-box; }
   @media screen and (max-width: 767px) {
     .ssb-category-link {
-      max-height: initial;
-      min-width: initial;
-      height: auto;
       padding: 20px 20px; } }
   .ssb-category-link .div-wrapper:after {
     content: "";
@@ -1876,7 +1869,7 @@ mark::after {
     margin-top: 3px; }
   .ssb-category-link .arrow-icon {
     float: right;
-    margin-top: -46px; }
+    margin-top: -44px; }
   .ssb-category-link .link-title-text {
     font-family: 'Roboto', sans-serif !important;
     font-stretch: normal;
