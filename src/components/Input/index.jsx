@@ -33,7 +33,7 @@ const Input = ({
 					placeholder={placeholder}
 					aria-label={ariaLabel}
 					className={searchField || error ? ' with-icon' : ''}
-					onKeyDown={searchField ? e => handleKeyDown(e) : null}
+					onKeyDown={searchField ? e => handleKeyDown(e) : undefined}
 				/>
 				{searchField && (
 					<button aria-label={ariaLabelSearchButton} className="icon-wrapper search-icon" onClick={() => submitCallback(inputValue)}>
