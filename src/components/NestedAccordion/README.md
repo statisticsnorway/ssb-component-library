@@ -44,4 +44,5 @@ Available props:
 | className   | string | Optional container class|
 | header | string | Header text |
 | openByDefault | bool | Will set the open state on init |
+| onToggle | func | Callback with isOpen boolean that is triggered on open/close |
 

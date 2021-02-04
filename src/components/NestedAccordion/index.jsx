@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronDown, ChevronUp } from 'react-feather';
 
 const NestedAccordion = ({
-	children, className, header, openByDefault,
+	children, className, header, openByDefault, onToggle,
 }) => {
 	const [isOpen, toggleOpen] = useState(openByDefault);
+	const firstUpdate = useRef(true);
+	useEffect(() => {
+		if (firstUpdate.current) {
+			firstUpdate.current = false;
+			return;
+		}
+		onToggle(isOpen);
+	}, [isOpen]);
 	return (
 		<div className={`ssb-nested-accordion${className ? ` ${className}` : ''}`}>
 			<button
@@ -27,6 +35,7 @@ const NestedAccordion = ({
 
 NestedAccordion.defaultProps = {
 	openByDefault: false,
+	onToggle: () => { },
 };
 
 NestedAccordion.propTypes = {
@@ -34,6 +43,7 @@ NestedAccordion.propTypes = {
 	className: PropTypes.string,
 	header: PropTypes.string,
 	openByDefault: PropTypes.bool,
+	onToggle: PropTypes.func,
 };
 
 export default NestedAccordion;
