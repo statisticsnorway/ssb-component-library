@@ -14,6 +14,12 @@ const Input = ({
 		handleChange(e.target.value);
 	};
 
+	const handleKeyDown = e => {
+		if (e.key === 'Enter') {
+			submitCallback(inputValue);
+		}
+	};
+
 	return (
 		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}${className ? ` ${className}` : ''}`}>
 			{label && <label htmlFor={inputId}>{label}</label>}
@@ -27,6 +33,7 @@ const Input = ({
 					placeholder={placeholder}
 					aria-label={ariaLabel}
 					className={searchField || error ? ' with-icon' : ''}
+					onKeyDown={searchField ? e => handleKeyDown(e) : undefined}
 				/>
 				{searchField && (
 					<button aria-label={ariaLabelSearchButton} className="icon-wrapper search-icon" onClick={() => submitCallback(inputValue)}>
