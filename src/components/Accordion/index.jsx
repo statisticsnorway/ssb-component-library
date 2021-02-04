@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronDown, ChevronUp } from 'react-feather';
 
 const Accordion = ({
-	id, children, className, header, openByDefault, subHeader, tabIndex, withoutBorders,
+	id, children, className, header, openByDefault, subHeader, tabIndex, withoutBorders, onToggle,
 }) => {
 	const [isOpen, toggleOpen] = useState(openByDefault);
+	const firstUpdate = useRef(true);
+	useEffect(() => {
+		if (firstUpdate.current) {
+			firstUpdate.current = false;
+			return;
+		}
+		onToggle(isOpen);
+	}, [isOpen]);
 	return (
 		<div
 			id={id}
@@ -33,6 +41,7 @@ const Accordion = ({
 Accordion.defaultProps = {
 	openByDefault: false,
 	tabIndex: 0,
+	onToggle: () => {},
 };
 
 Accordion.propTypes = {
@@ -44,6 +53,7 @@ Accordion.propTypes = {
 	subHeader: PropTypes.string,
 	tabIndex: PropTypes.number,
 	withoutBorders: PropTypes.bool,
+	onToggle: PropTypes.func,
 };
 
 export default Accordion;

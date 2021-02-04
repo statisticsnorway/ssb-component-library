@@ -6,6 +6,7 @@ exports[`FactBox component Matches the snapshot 1`] = `
 >
   <Accordion
     header="fact box header"
+    onToggle={[Function]}
     openByDefault={false}
     tabIndex={0}
     withoutBorders={true}
