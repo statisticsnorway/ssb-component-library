@@ -110,6 +110,7 @@ Available props:
 | openByDefault | bool | Will set the open state on init |
 | subHeader | string | Renders the header with the sub header design |
 | withoutBorders | bool | Default false, Accordion without border on top and bottom if value is true |
+| onToggle | func | Callback with isOpen boolean that is triggered on open/close |
 
 __Dependencies__
  - [Title](../Title)
