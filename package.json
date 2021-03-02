@@ -43,7 +43,7 @@
     "@storybook/addon-actions": "^5.3.21",
     "@storybook/addon-centered": "^5.3.21",
     "@storybook/addon-links": "^5.3.21",
-    "@storybook/addons": "^5.3.21",
+    "@storybook/addons": "^6.1.20",
     "@storybook/react": "^5.3.21",
     "@svgr/rollup": "^4.3.3",
     "@svgr/webpack": "^4.3.3",
