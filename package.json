@@ -48,7 +48,7 @@
     "@svgr/rollup": "^4.3.3",
     "@svgr/webpack": "^4.3.3",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-prismjs": "^1.1.1",
