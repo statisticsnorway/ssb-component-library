@@ -42,7 +42,7 @@
     "@babel/preset-react": "^7.10.4",
     "@storybook/addon-actions": "^5.3.21",
     "@storybook/addon-centered": "^5.3.21",
-    "@storybook/addon-links": "^5.3.21",
+    "@storybook/addon-links": "^6.1.21",
     "@storybook/addons": "^6.1.20",
     "@storybook/react": "^5.3.21",
     "@svgr/rollup": "^5.5.0",
