@@ -5,11 +5,13 @@ import { ArrowRight } from 'react-feather';
 const TableLink = ({
 	className, description, href, isExternal, tabIndex, text, title,
 }) => (
+	// eslint-disable-next-line react/jsx-no-target-blank
 	<a
 		className={`ssb-table-link${className ? ` ${className}` : ''}`}
 		href={href}
 		tabIndex={tabIndex}
 		target={isExternal ? '_blank' : undefined}
+		rel={isExternal ? 'noopener noreferrer' : undefined}
 		title={title}
 	>
 		<div className="tl-icon">
