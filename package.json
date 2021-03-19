@@ -80,7 +80,7 @@
     "sass": "^1.26.11",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
-    "stylelint": "^11.0.0",
+    "stylelint": "^13.12.0",
     "stylelint-config-recommended": "^3.0.0",
     "uuid": "^3.4.0",
     "webpack": "^4.46.0",
