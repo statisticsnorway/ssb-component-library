@@ -23,7 +23,9 @@ const CategoryLink = ({
 					<div className="text-divs sub-wrapper">
 						<span className="link-sub-text">{subText}</span>
 					</div>
-					<ArrowRight className="arrow-icon" size={24} />
+					<div className="icon-wrapper">
+						<ArrowRight className="arrow-icon" size={24} />
+					</div>
 				</div>
 			)}
 		</a>

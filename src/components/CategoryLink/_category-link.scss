@@ -35,18 +35,40 @@ $icon-padding: 8px;
       clear: both;
   }
 
-  .text-divs {
-    width: 100%;
+  // .text-divs {
+  //   width: 100%;
+  // }
+
+  .div-wrapper {
+    display: grid;
+    grid-template-columns: auto 24px;
+    grid-template-rows: auto auto;
+
+  }
+
+  .icon-wrapper {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column: 2;
+    align-self: center;
+    align-content: center;
+  }
+
+  .title-wrapper {
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .sub-wrapper {
+    grid-column: 1;
+    grid-row: 2;
     margin-top: 3px;
   }
 
-  .arrow-icon {
-    float: right;
-    margin-top: -44px;
-  }
+  // .arrow-icon {
+  //   float: right;
+  //   margin-top: -44px;
+  // }
 
   .link-title-text {
     @include roboto;
