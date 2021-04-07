@@ -26,10 +26,14 @@ exports[`CategoryLink component Matches the snapshot 1`] = `
         Description goes here
       </span>
     </div>
-    <ArrowRight
-      className="arrow-icon"
-      size={24}
-    />
+    <div
+      className="icon-wrapper"
+    >
+      <ArrowRight
+        className="arrow-icon"
+        size={24}
+      />
+    </div>
   </div>
 </a>
 `;
