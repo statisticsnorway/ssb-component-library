@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import uuid from 'uuid/v4';
+import { v4 as uuid } from 'uuid';
 import { ChevronDown, ChevronUp } from 'react-feather';
 import {
 	KEY_ARROW_DOWN,

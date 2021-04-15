@@ -82,7 +82,7 @@
     "style-loader": "^1.2.1",
     "stylelint": "^11.0.0",
     "stylelint-config-recommended": "^3.0.0",
-    "uuid": "^3.4.0",
+    "uuid": "^8.3.2",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
