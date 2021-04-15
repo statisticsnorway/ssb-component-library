@@ -19,6 +19,7 @@ exports[`Dropdown component Matches the snapshot 1`] = `
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex={0}
+      type="button"
     >
       <input
         className=""

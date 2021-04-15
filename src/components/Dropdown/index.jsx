@@ -162,6 +162,7 @@ const Dropdown = ({
 					tabIndex={0}
 					onClick={() => setOpen(!isOpen)}
 					onKeyDown={handleKeyboardNav}
+					type="button"
 				>
 					<input
 						className={isOpen ? 'focused' : ''}
@@ -191,6 +192,7 @@ const Dropdown = ({
 									onClick={() => { handleSelection(it); }}
 									id={it.id}
 									ref={itemRefs[idx]}
+									type="button"
 								>{it.title}
 								</button>
 							);
