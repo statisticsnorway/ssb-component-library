@@ -7,6 +7,7 @@ const Link = ({
 	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
 
 	return (
+		// eslint-disable-next-line react/jsx-no-target-blank
 		<a
 			className={classNames}
 			href={href}

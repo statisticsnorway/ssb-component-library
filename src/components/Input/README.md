@@ -83,6 +83,8 @@ Available props:
 | error | bool | Changes design |
 | errorMessage | string | Renders an error message underneath input field |
 | handleChange | func | Callback every time a letter is entered or removed |
+| onFocus | func | Callback on focus |
+| onBlur | func | Callback on blur |
 | id | string | ID to connect label and input field |
 | label | string | Label text |
 | negative | bool | Changes design |

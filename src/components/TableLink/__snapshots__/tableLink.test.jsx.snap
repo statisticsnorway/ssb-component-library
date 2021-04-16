@@ -4,6 +4,7 @@ exports[`TableLink component Matches the snapshot 1`] = `
 <a
   className="ssb-table-link"
   href=""
+  rel="noopener noreferrer"
   target="_blank"
 >
   <div

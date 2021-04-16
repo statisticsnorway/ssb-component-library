@@ -1863,13 +1863,23 @@ mark::after {
     content: "";
     display: table;
     clear: both; }
-  .ssb-category-link .text-divs {
-    width: 100%; }
+  .ssb-category-link .div-wrapper {
+    display: grid;
+    grid-template-columns: auto 24px;
+    grid-template-rows: auto auto; }
+  .ssb-category-link .icon-wrapper {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column: 2;
+    align-self: center;
+    align-content: center; }
+  .ssb-category-link .title-wrapper {
+    grid-column: 1;
+    grid-row: 1; }
   .ssb-category-link .sub-wrapper {
+    grid-column: 1;
+    grid-row: 2;
     margin-top: 3px; }
-  .ssb-category-link .arrow-icon {
-    float: right;
-    margin-top: -44px; }
   .ssb-category-link .link-title-text {
     font-family: 'Roboto', sans-serif !important;
     font-stretch: normal;
