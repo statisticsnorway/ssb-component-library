@@ -41,4 +41,7 @@ storiesOf('Dropdown', module).addDecorator(centered)
 	))
 	.add('Searchable', () => (
 		<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" />
+	))
+	.add('Standard with error', () => (
+		<Dropdown header="Menu header" selectedItem={{ title: 'Choose fruit', id: '' }} items={items} error errorMessage="You must choose a fruit" />
 	));

@@ -10,9 +10,10 @@ import {
 	KEY_SPACE,
 	KEY_TAB,
 } from '../../utils/keybindings';
+import InputError from '../InputError';
 
 const Dropdown = ({
-	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
+	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage,
 }) => {
 	const id = uuid();
 
@@ -199,6 +200,9 @@ const Dropdown = ({
 						})}
 					</div>
 				)}
+				{error && (errorMessage && (
+					<InputError errorMessage={errorMessage} />
+				))}
 			</div>
 		</div>
 	);
@@ -215,6 +219,8 @@ Dropdown.defaultProps = {
 
 Dropdown.propTypes = {
 	className: PropTypes.string,
+	error: PropTypes.bool,
+	errorMessage: PropTypes.string,
 	header: PropTypes.string,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		title: PropTypes.string,
