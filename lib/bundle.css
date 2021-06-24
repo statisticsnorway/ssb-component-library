@@ -598,6 +598,9 @@ a {
       .ssb-dropdown .dropdown-interactive-area input:focus, .ssb-dropdown .dropdown-interactive-area input.focused {
         border: 1px solid #00824d;
         outline: #00824d auto 1px; }
+  .ssb-dropdown.error input {
+    border: 1px solid #ed5935;
+    outline: 1px solid #ed5935; }
   .ssb-dropdown .list-of-options {
     font-family: 'Roboto', sans-serif !important;
     font-stretch: normal;
@@ -914,7 +917,7 @@ a {
     color: #162327;
     cursor: text;
     font-size: 14px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     user-select: none; }
   .ssb-input input {
     font-family: 'Roboto', sans-serif !important;
@@ -1720,6 +1723,10 @@ a {
       border: 1px solid #00824d;
       outline: 1px solid #00824d;
       outline-offset: 0; }
+  .ssb-text-area label {
+    color: #162327;
+    font-size: 14px;
+    margin-bottom: 5px; }
   .ssb-text-area.negative .text-area-wrapper ::placeholder {
     color: #fff;
     opacity: 1; }
@@ -1747,7 +1754,7 @@ a {
   .ssb-text-area.negative.error textarea {
     border: 1px solid #ed5935;
     outline: 1px solid #ed5935; }
-  .ssb-text-area.error input {
+  .ssb-text-area.error textarea {
     border: 1px solid #ed5935;
     outline: 1px solid #ed5935; }
 
