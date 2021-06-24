@@ -59,6 +59,14 @@
     }
   }
 
+  &.error {
+
+    input {
+      border: 1px solid $ssb-red-3;
+      outline: 1px solid $ssb-red-3;
+    }
+  }
+
     .list-of-options {
       @include roboto;
       background: $ssb-white;
