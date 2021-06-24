@@ -1,6 +1,6 @@
 {
   "name": "@statisticsnorway/ssb-component-library",
-  "version": "2.0.44",
+  "version": "2.0.45",
   "description": "Component library for SSB (Statistics Norway)",
   "main": "lib/bundle.js",
   "scripts": {
@@ -40,7 +40,7 @@
     "@babel/core": "^7.13.8",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.12.13",
-    "@storybook/addon-actions": "^5.3.21",
+    "@storybook/addon-actions": "^6.3.0",
     "@storybook/addon-centered": "^5.3.21",
     "@storybook/addon-links": "^6.1.21",
     "@storybook/addons": "^6.1.21",
