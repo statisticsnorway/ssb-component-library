@@ -148,7 +148,7 @@ const Dropdown = ({
 	}, [inputFieldValue]);
 
 	return (
-		<div className={`ssb-dropdown${className ? ` ${className}` : ''}`}>
+		<div className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}`}>
 			{header && <label htmlFor={id}>{header}</label>}
 			<div
 				className="dropdown-interactive-area"
