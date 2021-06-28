@@ -13,7 +13,7 @@ import {
 import InputError from '../InputError';
 
 const Dropdown = ({
-	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage,
+	className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage,
 }) => {
 	const id = uuid();
 
@@ -147,6 +147,15 @@ const Dropdown = ({
 		}
 	}, [inputFieldValue]);
 
+	const renderIcon = () => {
+		if(icon){
+			return <div className="dd-icon">{icon}</div>
+		} else {
+			return isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} />
+		}
+	}
+
+
 	return (
 		<div className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}`}>
 			{header && <label htmlFor={id}>{header}</label>}
@@ -174,7 +183,7 @@ const Dropdown = ({
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
 					/>
-					{isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} /> }
+					{ renderIcon() }
 				</button>
 				{isOpen && (
 					<div className="list-of-options" id={`${id}--options`}>
