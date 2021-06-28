@@ -5,7 +5,7 @@ import { Search } from 'react-feather';
 import InputError from '../InputError';
 
 const Input = ({
-	ariaLabel, ariaLabelSearchButton, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur,
+	ariaLabel, ariaLabelSearchButton, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size
 }) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || uuid();
@@ -21,7 +21,7 @@ const Input = ({
 	};
 
 	return (
-		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}${className ? ` ${className}` : ''}`}>
+		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}${size === 'lg' ? ' input-lg' : ''}${className ? ` ${className}` : ''}`}>
 			{label && <label htmlFor={inputId}>{label}</label>}
 			<div className="input-wrapper">
 				<input
@@ -39,7 +39,7 @@ const Input = ({
 				/>
 				{searchField && (
 					<button aria-label={ariaLabelSearchButton} className="icon-wrapper search-icon" onClick={() => submitCallback(inputValue)}>
-						<Search size={18} />
+						<Search size={size === 'lg' ? '72' : '18'} />
 					</button>
 				)}
 			</div>
@@ -62,7 +62,7 @@ Input.defaultProps = {
 	submitCallback: () => {},
 	type: 'text',
 	ariaLabelSearchButton: 'search',
-	value: '',
+	value: ''
 };
 
 Input.propTypes = {
@@ -80,6 +80,7 @@ Input.propTypes = {
 	negative: PropTypes.bool,
 	placeholder: PropTypes.string,
 	searchField: PropTypes.bool,
+	size: PropTypes.string,
 	submitCallback: PropTypes.func,
 	type: PropTypes.string,
 	value: PropTypes.string,
