@@ -53,4 +53,18 @@ storiesOf('Input', module).addDecorator(centered)
 			<Input label="Input field" negative searchField submitCallback={handleSubmit} placeholder="Search text" />
 			<Input label="Input field" negative value={someValue} error errorMessage="Beklager, dette er feil" />
 		</div>
+	))
+	.add('Large input', () => (
+		<div style={{
+			width: '980px',
+			height: '240px',
+			background: '#ecfeed',
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'center',
+		}}
+		>
+			<Input searchField size="lg" value="Lønn" />
+		</div>
 	));

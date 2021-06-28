@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
+import { Search } from 'react-feather';
 import Dropdown from './index';
 
 const items = [
@@ -44,4 +45,7 @@ storiesOf('Dropdown', module).addDecorator(centered)
 	))
 	.add('Standard with error', () => (
 		<Dropdown header="Menu header" selectedItem={{ title: 'Choose fruit', id: '' }} items={items} error errorMessage="You must choose a fruit" />
+	))
+	.add('Custom icon', () => (
+		<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" icon={<Search />} />
 	));

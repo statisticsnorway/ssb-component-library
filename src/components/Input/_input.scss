@@ -73,6 +73,7 @@
       outline: 1px solid $ssb-green-4;
       outline-offset: 0;
     }
+
   }
 
   &.negative {
@@ -201,5 +202,24 @@
         }
       }
     }
+  }
+
+  &.input-lg {
+    max-width: 100%;
+
+    .search-icon {
+      margin-left: -73px;
+      height: 77px;
+      width: 77px;
+      padding: 17px;
+    }
+
+    input {
+      width: 100%;
+      padding: 38px 25px;
+      font-weight: bold;
+      font-size: 19px;
+    }
+
   }
 }
