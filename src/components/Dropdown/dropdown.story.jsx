@@ -47,5 +47,5 @@ storiesOf('Dropdown', module).addDecorator(centered)
 		<Dropdown header="Menu header" selectedItem={{ title: 'Choose fruit', id: '' }} items={items} error errorMessage="You must choose a fruit" />
 	))
 	.add('Custom icon', () => (
-		<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" icon={<Search />}/>
+		<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" icon={<Search />} />
 	));

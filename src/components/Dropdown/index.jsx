@@ -148,13 +148,11 @@ const Dropdown = ({
 	}, [inputFieldValue]);
 
 	const renderIcon = () => {
-		if(icon){
-			return <div className="dd-icon">{icon}</div>
-		} else {
-			return isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} />
+		if (icon) {
+			return <div className="dd-icon">{icon}</div>;
 		}
-	}
-
+		return isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} />;
+	};
 
 	return (
 		<div className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}`}>
@@ -231,6 +229,7 @@ Dropdown.propTypes = {
 	error: PropTypes.bool,
 	errorMessage: PropTypes.string,
 	header: PropTypes.string,
+	icon: PropTypes.object,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		title: PropTypes.string,
 		id: PropTypes.string,

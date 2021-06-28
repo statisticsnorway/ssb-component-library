@@ -5,7 +5,7 @@ import { Search } from 'react-feather';
 import InputError from '../InputError';
 
 const Input = ({
-	ariaLabel, ariaLabelSearchButton, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size
+	ariaLabel, ariaLabelSearchButton, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size,
 }) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || uuid();
@@ -62,7 +62,7 @@ Input.defaultProps = {
 	submitCallback: () => {},
 	type: 'text',
 	ariaLabelSearchButton: 'search',
-	value: ''
+	value: '',
 };
 
 Input.propTypes = {
