@@ -607,7 +607,7 @@ a {
       .ssb-dropdown .dropdown-interactive-area input:focus, .ssb-dropdown .dropdown-interactive-area input.focused {
         border: 1px solid #00824d;
         outline: #00824d auto 1px; }
-  .ssb-dropdown.error input {
+  .ssb-dropdown.error input, .ssb-dropdown.error button.opener {
     border: 1px solid #ed5935;
     outline: 1px solid #ed5935; }
   .ssb-dropdown .list-of-options {
