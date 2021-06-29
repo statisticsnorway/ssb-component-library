@@ -1011,6 +1011,18 @@ a {
         background: #00824d; }
         .ssb-input .icon-wrapper.search-icon:hover > *, .ssb-input .icon-wrapper.search-icon:focus > * {
           color: #fff; }
+  .ssb-input.input-lg {
+    max-width: 100%; }
+    .ssb-input.input-lg .search-icon {
+      margin-left: -73px;
+      height: 77px;
+      width: 77px;
+      padding: 17px; }
+    .ssb-input.input-lg input {
+      width: 100%;
+      padding: 38px 25px;
+      font-weight: bold;
+      font-size: 19px; }
 
 .ssb-input-error {
   font-family: 'Roboto', sans-serif !important;
