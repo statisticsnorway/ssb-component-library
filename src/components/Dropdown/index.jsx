@@ -166,18 +166,20 @@ const Dropdown = ({
 			>
 				{!searchable && (
 					<button
+						className={isOpen ? 'focused' : ''}
 						aria-label="open or close dropdown"
+						id={id}
 						ref={node}
 						tabIndex={0}
 						onClick={() => setOpen(!isOpen)}
 						onKeyDown={handleKeyboardNav}
 						type="button"
-
 					>{selectedOption.title ? selectedOption.title : placeholder}
 					</button>
 				) }
 				{searchable && (
 					<input
+						aria-label="Search or select in dropdown"
 						className={isOpen ? 'focused' : ''}
 						id={id}
 						onKeyDown={handleSearchSpecialKeys}

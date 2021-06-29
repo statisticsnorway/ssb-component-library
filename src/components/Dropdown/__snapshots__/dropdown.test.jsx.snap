@@ -16,25 +16,19 @@ exports[`Dropdown component Matches the snapshot 1`] = `
   >
     <button
       aria-label="open or close dropdown"
+      className=""
+      id={1}
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex={0}
       type="button"
     >
-      <input
-        className=""
-        disabled={true}
-        id={1}
-        onChange={[Function]}
-        onKeyDown={[Function]}
-        placeholder="-- Select --"
-        value=""
-      />
-      <ChevronDown
-        className="dd-icon"
-        size={24}
-      />
+      -- Select --
     </button>
+    <ChevronDown
+      className="dd-icon"
+      size={24}
+    />
   </div>
 </div>
 `;
