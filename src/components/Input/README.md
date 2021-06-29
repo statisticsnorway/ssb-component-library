@@ -90,6 +90,7 @@ Available props:
 | negative | bool | Changes design |
 | placeholder | string | Placeholder text |
 | searchField | bool | Ads search icon with click |
+| size | string | Set inputfield size. 'lg' is the only available option |
 | submitCallback | func | Callback for onSubmit |
 | type | string | Changes input type. Optional parameters like 'url', 'email' etc. |
 | value | string | Input value. Can be initiated with a value |
