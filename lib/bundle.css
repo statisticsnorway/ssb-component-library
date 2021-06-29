@@ -540,7 +540,7 @@ a {
   flex-direction: column;
   transition: all .25s ease-in-out;
   max-width: 350px;
-  min-width: 150px;
+  min-width: 230px;
   position: relative; }
   .ssb-dropdown label {
     font-size: 14px;
@@ -571,7 +571,15 @@ a {
       line-height: inherit;
       padding: 0;
       text-align: left;
-      width: 100%; }
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #162327;
+      box-sizing: border-box;
+      cursor: pointer;
+      font-size: 16px;
+      min-height: 44px;
+      padding: 4px 44px 4px 12px;
+      text-overflow: ellipsis; }
       .ssb-dropdown .dropdown-interactive-area button:focus {
         outline: #9272fc solid 2px;
         outline-offset: 2px; }
@@ -580,7 +588,8 @@ a {
       font-size: 24px;
       position: absolute;
       right: 12px;
-      top: 10px; }
+      top: 10px;
+      pointer-events: none; }
     .ssb-dropdown .dropdown-interactive-area input {
       background-color: #fff;
       border: 1px solid #162327;
@@ -1011,6 +1020,18 @@ a {
         background: #00824d; }
         .ssb-input .icon-wrapper.search-icon:hover > *, .ssb-input .icon-wrapper.search-icon:focus > * {
           color: #fff; }
+  .ssb-input.input-lg {
+    max-width: 100%; }
+    .ssb-input.input-lg .search-icon {
+      margin-left: -73px;
+      height: 77px;
+      width: 77px;
+      padding: 17px; }
+    .ssb-input.input-lg input {
+      width: 100%;
+      padding: 38px 25px;
+      font-weight: bold;
+      font-size: 19px; }
 
 .ssb-input-error {
   font-family: 'Roboto', sans-serif !important;
