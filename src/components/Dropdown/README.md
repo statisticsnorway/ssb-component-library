@@ -82,6 +82,7 @@ Available props:
 | error | bool | show error message if true |
 | errorMessage | string | Renders an error message underneath input field |
 | header | string | Displays header |
+| icon | object | Alternative icon  |
 | items | arrayOf({ title, id, disabled }) |Required items for rendering dropdown (*disabled* : is optional) |
 | onSelect | func | Callback function when a title is selected |
 | open | bool | Selected state of dropdown |
