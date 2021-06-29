@@ -164,25 +164,33 @@ const Dropdown = ({
 				tabIndex={tabIndex}
 				onKeyPress={e => { handleKeyboardNav(e, wrapper); }}
 			>
-				<button
-					aria-label="open or close dropdown"
-					ref={node}
-					tabIndex={0}
-					onClick={() => setOpen(!isOpen)}
-					onKeyDown={handleKeyboardNav}
-					type="button"
-				>
+				{!searchable && (
+					<button
+						className={isOpen ? 'focused opener' : 'opener'}
+						aria-label="open or close dropdown"
+						id={id}
+						ref={node}
+						tabIndex={0}
+						onClick={() => setOpen(!isOpen)}
+						onKeyDown={handleKeyboardNav}
+						type="button"
+					>{selectedOption.title ? selectedOption.title : placeholder}
+					</button>
+				) }
+				{searchable && (
 					<input
+						aria-label="Search or select in dropdown"
 						className={isOpen ? 'focused' : ''}
 						id={id}
 						onKeyDown={handleSearchSpecialKeys}
 						onChange={filterItems}
+						onFocus={() => setOpen(!isOpen)} // Bedre praksis enn onClick
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
 					/>
-					{ renderIcon() }
-				</button>
+				)}
+				{ renderIcon() }
 				{isOpen && (
 					<div className="list-of-options" id={`${id}--options`}>
 						{availableOptions.map((it, idx) => {

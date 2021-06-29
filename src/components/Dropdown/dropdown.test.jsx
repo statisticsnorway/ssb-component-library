@@ -26,7 +26,7 @@ describe('Dropdown component', () => {
 
 	test('Sets pre-selected value', () => {
 		const wrapper = shallow(<Dropdown header="Menu header" selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />);
-		expect(wrapper.find('.dropdown-interactive-area').find('input').props().placeholder).toEqual('Ocean');
+		expect(wrapper.find('.dropdown-interactive-area').find('button').text()).toEqual('Ocean');
 	});
 
 	test('Searchable dropdown', () => {
@@ -37,14 +37,14 @@ describe('Dropdown component', () => {
 	test('Change classname to open on click', () => {
 		const wrapper = shallow(<Dropdown header="Menu header" items={items} />);
 		wrapper.find('button').first().simulate('click');
-		expect(wrapper.find('input').hasClass('focused')).toEqual(true);
+		expect(wrapper.find('button').first().hasClass('focused')).toEqual(true);
 		expect(wrapper.exists('.list-of-options')).toEqual(true);
 	});
 
 	test('Choose first item', () => {
 		const wrapper = shallow(<Dropdown header="Menu header" items={items} open />);
 		wrapper.find('.list-of-options').find('button').first().simulate('click');
-		expect(wrapper.find('input').props().placeholder).toEqual('Apples');
+		expect(wrapper.find('.dropdown-interactive-area').find('button').text()).toEqual('Apples');
 	});
 
 	test('Verify disabled item', () => {
@@ -53,7 +53,7 @@ describe('Dropdown component', () => {
 	});
 
 	test('Triggers filter function on search', () => {
-		const wrapper = shallow(<Dropdown searchField items={items} open />);
+		const wrapper = shallow(<Dropdown searchField searchable items={items} open />);
 		expect(wrapper.find('.option-list-element')).toHaveLength(3);
 		wrapper.find('input').simulate('change', {target: {value: 'oc'}});
 		expect(wrapper.find('.option-list-element')).toHaveLength(1);
