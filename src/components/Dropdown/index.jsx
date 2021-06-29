@@ -166,7 +166,7 @@ const Dropdown = ({
 			>
 				{!searchable && (
 					<button
-						className={isOpen ? 'focused' : ''}
+						className={isOpen ? 'focused opener' : 'opener'}
 						aria-label="open or close dropdown"
 						id={id}
 						ref={node}
