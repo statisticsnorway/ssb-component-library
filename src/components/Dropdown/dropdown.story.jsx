@@ -40,6 +40,9 @@ storiesOf('Dropdown', module).addDecorator(centered)
 	.add('Pre-selected value', () => (
 		<Dropdown header="Menu header" selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />
 	))
+	.add('Opened by default', () => (
+		<Dropdown header="Menu header" items={items} open />
+	))
 	.add('Searchable', () => (
 		<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" />
 	))
