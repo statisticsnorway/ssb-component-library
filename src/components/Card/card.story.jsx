@@ -63,6 +63,20 @@ storiesOf('Card', module).addDecorator(centered)
 			</div>
 		</div>
 	))
+	.add('External with icon', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ marginRight: '10px', width: '400px' }}>
+				<Card title="Tittel" href=" " icon={<Globe size={120} />} profiled external>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<div style={{ width: '400px' }}>
+				<Card title="Tittel" href=" " icon={<Globe size={120} />} profiled external hrefText="Handling">
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+		</div>
+	))
 	.add('With images left', () => (
 		<div>
 			<Card

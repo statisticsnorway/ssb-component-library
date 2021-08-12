@@ -74,6 +74,10 @@
         .card-content {
           border-top: 5px solid $ssb-green-4;
 
+          &.external {
+            border-top: 1px solid $ssb-green-4;
+          }
+
           &.with-image {
             padding-top: 16px;
           }
@@ -165,6 +169,10 @@
       }
     }
 
+    &.external {
+      border-top: 1px solid $ssb-dark-2;
+    }
+
     .arrow-icon {
       box-sizing: initial;
       color: $ssb-green-4;
@@ -187,7 +195,6 @@
       .href-text {
         color: $ssb-dark-6;
         font-size: 16px;
-        font-weight: bold;
         padding: 4px;
       }
     }
