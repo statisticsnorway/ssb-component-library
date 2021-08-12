@@ -74,10 +74,6 @@
         .card-content {
           border-top: 5px solid $ssb-green-4;
 
-          &.external {
-            border-top: 1px solid $ssb-green-4;
-          }
-
           &.with-image {
             padding-top: 16px;
           }
@@ -167,10 +163,6 @@
         max-width: 132px;
         width: 132px;
       }
-    }
-
-    &.external {
-      border-top: 1px solid $ssb-dark-2;
     }
 
     .arrow-icon {

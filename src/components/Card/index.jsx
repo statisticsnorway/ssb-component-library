@@ -16,21 +16,12 @@ const Card = ({
 				{subTitle && <div className="card-subtitle">{subTitle}</div>}
 				{title && <div className="card-title">{title}</div>}
 				{ children }
-				{(!image && !hrefText && !external) && (
-					<ArrowRight className="arrow-icon" size={22} />
+				{(!image && !hrefText) && (
+					external ? <ExternalLink className="arrow-icon" size={22} /> : <ArrowRight className="arrow-icon" size={22} />
 				)}
-				{(!image && !hrefText && external) && (
-					<ExternalLink className="arrow-icon" size={22} />
-				)}
-				{(!image && hrefText && !external) && (
+				{(!image && hrefText) && (
 					<div className="card-action">
-						<ArrowRight className="arrow-icon" size={16} />
-						<div className="href-text">{hrefText}</div>
-					</div>
-				)}
-				{(!image && hrefText && external) && (
-					<div className="card-action">
-						<ExternalLink className="arrow-icon" size={16} />
+						{external ? <ExternalLink className="arrow-icon" size={16} /> : <ArrowRight className="arrow-icon" size={16} />}
 						<div className="href-text">{hrefText}</div>
 					</div>
 				)}

@@ -149,3 +149,4 @@ Available props:
 | profiled | bool | Profiled layout |
 | subTitle | string | Smaller text over title |
 | title | string | Card title |
+| external | bool | Change icon from ArrowRight to ExternalLink layout |
