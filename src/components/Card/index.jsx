@@ -6,9 +6,12 @@ const Card = ({
 	children, className, external, downloadText, fileLocation, href, hrefText, icon, image, imagePlacement, profiled, subTitle, title,
 }) => (
 	<div className={`ssb-card${className ? ` ${className}` : ''}`}>
+		{/* eslint-disable-next-line react/jsx-no-target-blank */}
 		<a
 			href={href}
 			className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
+			target={external ? '_blank' : undefined}
+			rel={external ? 'noreferrer' : undefined}
 		>
 			{image && <div className="card-image">{image}</div>}
 			<div className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}>
