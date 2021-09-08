@@ -32,3 +32,19 @@ jobs:
         npm run lint:css
       env:
         CI: true
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          architecture: x64
+      - run: npm ci
+      - run: npm run build:prod
+      - run: npm test
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          dry-run: true
