@@ -35,6 +35,7 @@ jobs:
 
   publish:
     needs: build
+    if: contains(github.base_ref, 'master')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
