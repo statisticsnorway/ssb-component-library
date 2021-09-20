@@ -2,11 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered/react';
 import useState from 'storybook-addon-state';
-import Input from './index';
+import Input from './indexUpdateOnValueChange';
 
 let someValue = '';
 const handleChange = e => {
-	someValue = e;
+	someValue = e.target.value;
 };
 
 const handleSubmit = e => {

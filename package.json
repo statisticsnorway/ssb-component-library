@@ -79,6 +79,7 @@
     "rollup-plugin-uglify": "^6.0.4",
     "sass": "^1.26.11",
     "sass-loader": "^8.0.2",
+    "storybook-addon-state": "^1.0.3",
     "style-loader": "^1.2.1",
     "stylelint": "^13.12.0",
     "stylelint-config-recommended": "^3.0.0",
