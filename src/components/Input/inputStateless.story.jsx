@@ -6,11 +6,11 @@ import Input from './index';
 
 let someValue = '';
 const handleChange = e => {
-	someValue = e;
+	someValue = e.target.value;
 };
 
 const handleSubmit = e => {
-	console.log(e);
+	console.log(e.target.value);
 };
 
 storiesOf('Input', module).addDecorator(centered)
@@ -22,8 +22,8 @@ storiesOf('Input', module).addDecorator(centered)
 		 */
 		const [appValue, setAppValue] = useState('appVal', '');
 
-		const updateValue = value => {
-			setAppValue(value);
+		const updateValue = e => {
+			setAppValue(e.target.value);
 		};
 
 		return (

@@ -9,10 +9,6 @@ const Input = ({
 }) => {
 	const inputId = id || uuid();
 
-	const handleInputChange = e => {
-		handleChange(e.target.value);
-	};
-
 	const handleKeyDown = e => {
 		if (e.key === 'Enter') {
 			submitCallback(value);
@@ -28,7 +24,7 @@ const Input = ({
 					disabled={disabled}
 					type={type}
 					value={value}
-					onChange={e => handleInputChange(e)}
+					onChange={handleChange}
 					onFocus={onFocus}
 					onBlur={onBlur}
 					placeholder={placeholder}

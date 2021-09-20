@@ -6,7 +6,7 @@ import Input from './indexUpdateOnValueChange';
 
 let someValue = '';
 const handleChange = e => {
-	someValue = e;
+	someValue = e.target.value;
 };
 
 const handleSubmit = e => {

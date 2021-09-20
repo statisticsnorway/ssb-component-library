@@ -16,7 +16,7 @@ const Input = ({
 
 	const handleInputChange = e => {
 		setValue(e.target.value);
-		handleChange(e.target.value);
+		handleChange(e);
 	};
 
 	const handleKeyDown = e => {
