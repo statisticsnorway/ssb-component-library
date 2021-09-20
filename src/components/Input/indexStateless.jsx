@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { Search } from 'react-feather';
