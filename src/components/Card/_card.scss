@@ -164,8 +164,8 @@
         width: 100%;
 
         & > * {
-          max-width: inherit;
           max-height: inherit;
+          max-width: inherit;
         }
       }
     }
