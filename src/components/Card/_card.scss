@@ -160,8 +160,13 @@
       .card-icon {
         margin-bottom: 20px;
         max-height: 132px;
-        max-width: 132px;
-        width: 132px;
+        max-width: 100%;
+        width: 100%;
+
+        & > * {
+          max-width: inherit;
+          max-height: inherit;
+        }
       }
     }
 
