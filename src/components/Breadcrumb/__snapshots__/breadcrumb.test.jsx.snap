@@ -12,6 +12,7 @@ exports[`Breadcrumb component Matches the snapshot 1`] = `
       href=" "
       isExternal={false}
       negative={false}
+      onClick={[Function]}
     >
       breadcrumb 1
     </Link>
@@ -25,6 +26,7 @@ exports[`Breadcrumb component Matches the snapshot 1`] = `
       href=" "
       isExternal={false}
       negative={false}
+      onClick={[Function]}
     >
       breadcrumb 2
     </Link>
