@@ -71,3 +71,4 @@ Available props:
 | negative | Optional boolean | Will change component style. Defaults to false |
 | tabIndex | number | Tab index for focus |
 | title | string | The title attribute is used to provide additional information |
+| onClick | function | Callback for anchor click |
