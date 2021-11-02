@@ -4,6 +4,7 @@ exports[`Link component Matches the snapshot 1`] = `
 <a
   className="ssb-link"
   href=""
+  onClick={[Function]}
 >
   <span
     className="link-text"
