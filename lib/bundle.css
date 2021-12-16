@@ -1993,7 +1993,7 @@ a {
   transition: background 0.2s;
 }
 .ssb-tabs .navigation-item:not(:last-of-type) {
-  margin-right: 16px;
+  margin-right: 40px;
 }
 .ssb-tabs .navigation-item:before {
   background: #274247;
