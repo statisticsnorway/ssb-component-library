@@ -20,7 +20,7 @@
     transition: background .2s;
 
     &:not(:last-of-type) {
-      margin-right: $global-padding-size * 2;
+      margin-right: 40px;
     }
 
     &:before {
