@@ -83,11 +83,14 @@ Available props:
 | error | bool | Changes design |
 | errorMessage | string | Renders an error message underneath input field |
 | handleChange | func | Callback every time a letter is entered or removed |
+| onFocus | func | Callback on focus |
+| onBlur | func | Callback on blur |
 | id | string | ID to connect label and input field |
 | label | string | Label text |
 | negative | bool | Changes design |
 | placeholder | string | Placeholder text |
 | searchField | bool | Ads search icon with click |
+| size | string | Set inputfield size. 'lg' is the only available option |
 | submitCallback | func | Callback for onSubmit |
 | type | string | Changes input type. Optional parameters like 'url', 'email' etc. |
 | value | string | Input value. Can be initiated with a value |

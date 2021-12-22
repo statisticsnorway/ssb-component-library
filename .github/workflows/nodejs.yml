@@ -5,18 +5,20 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        node-version: [12.x]
+        os: [ubuntu-latest]
+        node-version: [12, 14, 16]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+        architecture: x64
     - name: npm install, build, and test
       run: |
         npm ci
@@ -30,3 +32,21 @@ jobs:
         npm run lint:css
       env:
         CI: true
+
+  publish:
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          architecture: x64
+      - run: npm ci
+      - run: npm run build:prod
+      - run: npm test
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          dry-run: false

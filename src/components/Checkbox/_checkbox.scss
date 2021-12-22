@@ -33,6 +33,8 @@
     }
 
     &:checked + .checkbox-label {
+      -webkit-print-color-adjust: exact;
+      color-adjust: exact;
 
       &:before {
         background: $ssb-dark-5;

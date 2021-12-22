@@ -11,7 +11,9 @@ exports[`Input component Matches the snapshot 1`] = `
       cols={10}
       disabled={false}
       id={1}
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       rows={5}
     />
   </div>

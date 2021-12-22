@@ -5,7 +5,7 @@ import InputError from '../InputError';
 
 const TextArea = ({
 	ariaLabel, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, value,
-	rows, cols,
+	rows, cols, onBlur, onFocus,
 }) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || uuid();
@@ -23,6 +23,8 @@ const TextArea = ({
 					disabled={disabled}
 					value={inputValue}
 					onChange={e => handleInputChange(e)}
+					onFocus={onFocus}
+					onBlur={onBlur}
 					placeholder={placeholder}
 					aria-label={ariaLabel}
 					rows={rows}
@@ -41,6 +43,8 @@ TextArea.defaultProps = {
 	disabled: false,
 	error: false,
 	handleChange: () => {},
+	onFocus: () => {},
+	onBlur: () => {},
 	negative: false,
 };
 
@@ -51,6 +55,8 @@ TextArea.propTypes = {
 	error: PropTypes.bool,
 	errorMessage: PropTypes.string,
 	handleChange: PropTypes.func,
+	onFocus: PropTypes.func,
+	onBlur: PropTypes.func,
 	id: PropTypes.string,
 	label: PropTypes.string,
 	negative: PropTypes.bool,

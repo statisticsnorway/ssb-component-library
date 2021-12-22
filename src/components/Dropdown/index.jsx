@@ -10,9 +10,10 @@ import {
 	KEY_SPACE,
 	KEY_TAB,
 } from '../../utils/keybindings';
+import InputError from '../InputError';
 
 const Dropdown = ({
-	className, header, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex,
+	className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage,
 }) => {
 	const id = uuid();
 
@@ -146,8 +147,15 @@ const Dropdown = ({
 		}
 	}, [inputFieldValue]);
 
+	const renderIcon = () => {
+		if (icon) {
+			return <div className="dd-icon">{icon}</div>;
+		}
+		return isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} />;
+	};
+
 	return (
-		<div className={`ssb-dropdown${className ? ` ${className}` : ''}`}>
+		<div className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}`}>
 			{header && <label htmlFor={id}>{header}</label>}
 			<div
 				className="dropdown-interactive-area"
@@ -156,24 +164,33 @@ const Dropdown = ({
 				tabIndex={tabIndex}
 				onKeyPress={e => { handleKeyboardNav(e, wrapper); }}
 			>
-				<button
-					aria-label="open or close dropdown"
-					ref={node}
-					tabIndex={0}
-					onClick={() => setOpen(!isOpen)}
-					onKeyDown={handleKeyboardNav}
-				>
+				{!searchable && (
+					<button
+						className={isOpen ? 'focused opener' : 'opener'}
+						aria-label="open or close dropdown"
+						id={id}
+						ref={node}
+						tabIndex={0}
+						onClick={() => setOpen(!isOpen)}
+						onKeyDown={handleKeyboardNav}
+						type="button"
+					>{selectedOption.title ? selectedOption.title : placeholder}
+					</button>
+				) }
+				{searchable && (
 					<input
+						aria-label="Search or select in dropdown"
 						className={isOpen ? 'focused' : ''}
 						id={id}
 						onKeyDown={handleSearchSpecialKeys}
 						onChange={filterItems}
+						onFocus={() => setOpen(!isOpen)} // Bedre praksis enn onClick
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
 					/>
-					{isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} /> }
-				</button>
+				)}
+				{ renderIcon() }
 				{isOpen && (
 					<div className="list-of-options" id={`${id}--options`}>
 						{availableOptions.map((it, idx) => {
@@ -191,12 +208,16 @@ const Dropdown = ({
 									onClick={() => { handleSelection(it); }}
 									id={it.id}
 									ref={itemRefs[idx]}
+									type="button"
 								>{it.title}
 								</button>
 							);
 						})}
 					</div>
 				)}
+				{error && (errorMessage && (
+					<InputError errorMessage={errorMessage} />
+				))}
 			</div>
 		</div>
 	);
@@ -213,7 +234,10 @@ Dropdown.defaultProps = {
 
 Dropdown.propTypes = {
 	className: PropTypes.string,
+	error: PropTypes.bool,
+	errorMessage: PropTypes.string,
 	header: PropTypes.string,
+	icon: PropTypes.object,
 	items: PropTypes.arrayOf(PropTypes.shape({
 		title: PropTypes.string,
 		id: PropTypes.string,

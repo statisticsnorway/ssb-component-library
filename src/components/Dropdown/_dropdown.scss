@@ -4,7 +4,7 @@
   flex-direction: column;
   transition: all .25s ease-in-out;
   max-width: 350px;
-  min-width: 150px;
+  min-width: 230px;
   position: relative;
 
   label {
@@ -23,6 +23,14 @@
       @include focus-marker;
       @include reset-button;
       width: 100%;
+      background-color: $ssb-white;
+      border: 1px solid $ssb-dark-6;
+      box-sizing: border-box;
+      cursor: pointer;
+      font-size: 16px;
+      min-height: $input-field-height;
+      padding: 4px $input-field-height 4px 12px;
+      text-overflow: ellipsis;
     }
 
     .dd-icon {
@@ -31,6 +39,7 @@
       position: absolute;
       right: 12px;
       top: 10px;
+      pointer-events: none;
     }
 
     input {
@@ -56,6 +65,14 @@
         border: 1px solid $ssb-green-4;
         outline: $ssb-green-4 auto 1px;
       }
+    }
+  }
+
+  &.error {
+
+    input, button.opener {
+      border: 1px solid $ssb-red-3;
+      outline: 1px solid $ssb-red-3;
     }
   }
 
