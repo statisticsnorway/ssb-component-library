@@ -89,7 +89,7 @@
     "react-feather": "^2.0.9",
     "react-test-renderer": "^16.13.1",
     "sass": "^1.26.11",
-    "uuid": "^3.4.0"
+    "uuid": "^8.3.2"
   },
   "directories": {
     "lib": "lib"
