@@ -8,8 +8,8 @@ Divider
 #### HTML
 
 ```html
-<hr class="ssb-divider type-dark" />
-<hr class="ssb-divider type-light" />
+<hr class="ssb-divider type-dark" aria-hidden="true" />
+<hr class="ssb-divider type-light" aria-hidden="true" />
 ```
 
 #### React
