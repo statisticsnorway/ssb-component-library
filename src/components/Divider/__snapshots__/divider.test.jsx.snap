@@ -2,6 +2,7 @@
 
 exports[`Divider component Matches the snapshot 1`] = `
 <hr
+  aria-hidden="true"
   className="ssb-divider"
 />
 `;
