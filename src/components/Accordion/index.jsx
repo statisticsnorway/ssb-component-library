@@ -21,6 +21,7 @@ const Accordion = ({
 		>
 			<button
 				className={`accordion-header ${isOpen ? 'open' : 'closed'}`}
+				aria-expanded={isOpen ? 'true' : 'false'}
 				tabIndex={tabIndex}
 				onClick={() => toggleOpen(!isOpen)}
 			>
