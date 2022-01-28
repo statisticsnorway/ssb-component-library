@@ -5,6 +5,7 @@ exports[`NestedAccordion component Matches the snapshot 1`] = `
   className="ssb-nested-accordion"
 >
   <button
+    aria-expanded="false"
     className="nested-accordion-header closed"
     onClick={[Function]}
   >
