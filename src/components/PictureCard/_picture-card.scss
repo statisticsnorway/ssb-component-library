@@ -1,5 +1,4 @@
 .ssb-picture-card {
-  @include focus-marker;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -10,6 +9,7 @@
   cursor: pointer;
 
   .image-background {
+
     img {
       top: 0;
       left: 0;
@@ -20,9 +20,14 @@
   }
 
   &:hover {
+
     img {
       transform: scale(1.1);
     }
+  }
+
+  &:focus {
+    @include focus-ring;
   }
 
   .overlay {
