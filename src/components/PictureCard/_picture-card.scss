@@ -26,6 +26,10 @@
     }
   }
 
+  &:focus {
+    @include focus-ring;
+  }
+
   .overlay {
     bottom: 0;
     position: absolute;
