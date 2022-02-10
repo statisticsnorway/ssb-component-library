@@ -24,7 +24,7 @@ const Input = ({
 	return (
 		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}${size === 'lg' ? ' input-lg' : ''}${className ? ` ${className}` : ''}`}>
 			{label && <label htmlFor={inputId}>{label}</label>}
-			<div className="input-wrapper" role={role} aria-label={ariaLabelWrapper}>
+			<div className="input-wrapper" role={searchField ? 'search' : role} aria-label={ariaLabelWrapper}>
 				<input
 					id={inputId}
 					disabled={disabled}
