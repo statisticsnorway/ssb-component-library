@@ -5,7 +5,8 @@ import { Search } from 'react-feather';
 import InputError from '../InputError';
 
 const Input = ({
-	ariaLabel, ariaLabelSearchButton, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size,
+	role, wrapperAriaLabel, ariaLabel, ariaLabelSearchButton,
+	className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size,
 }) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || uuid();
@@ -23,7 +24,7 @@ const Input = ({
 	return (
 		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}${size === 'lg' ? ' input-lg' : ''}${className ? ` ${className}` : ''}`}>
 			{label && <label htmlFor={inputId}>{label}</label>}
-			<div className="input-wrapper">
+			<div className="input-wrapper" role={role} aria-label={wrapperAriaLabel}>
 				<input
 					id={inputId}
 					disabled={disabled}
@@ -66,6 +67,8 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
+	role: PropTypes.string,
+	wrapperAriaLabel: PropTypes.string,
 	ariaLabel: PropTypes.string,
 	ariaLabelSearchButton: PropTypes.string,
 	className: PropTypes.string,
