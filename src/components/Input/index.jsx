@@ -37,6 +37,7 @@ const Input = ({
 					aria-label={ariaLabel}
 					className={searchField || error ? ' with-icon' : ''}
 					onKeyDown={searchField ? e => handleKeyDown(e) : undefined}
+					aria-describedby={error && errorMessage ? `error_${inputId}` : undefined}
 				/>
 				{searchField && (
 					<button aria-label={ariaLabelSearchButton} className="icon-wrapper search-icon" onClick={() => submitCallback(inputValue)}>
@@ -45,7 +46,7 @@ const Input = ({
 				)}
 			</div>
 			{error && (errorMessage && (
-				<InputError negative={negative} errorMessage={errorMessage} />
+				<InputError negative={negative} errorMessage={errorMessage} id={`error_${inputId}`} />
 			))}
 		</div>
 	);
