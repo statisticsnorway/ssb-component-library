@@ -1047,6 +1047,10 @@ a {
 .ssb-picture-card:hover img {
   transform: scale(1.1);
 }
+.ssb-picture-card:focus {
+  outline: #9272fc solid 2px;
+  outline-offset: 2px;
+}
 .ssb-picture-card .overlay {
   bottom: 0;
   position: absolute;
