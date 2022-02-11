@@ -29,10 +29,11 @@ const TextArea = ({
 					aria-label={ariaLabel}
 					rows={rows}
 					cols={cols}
+					aria-describedby={error && errorMessage ? `error_${inputId}` : undefined}
 				/>
 			</div>
 			{error && (errorMessage && (
-				<InputError errorMessage={errorMessage} negative={negative} />
+				<InputError errorMessage={errorMessage} negative={negative} id={`error_${inputId}`} />
 			))}
 		</div>
 	);
