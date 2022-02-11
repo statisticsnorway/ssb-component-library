@@ -28,3 +28,4 @@ Available props:
 | className   | string | Optional container class|
 | errorMessage | string | Renders text |
 | negative | bool | Changes text color |
+| id | string | ID to connect input field and input error|

@@ -174,6 +174,8 @@ const Dropdown = ({
 						onClick={() => setOpen(!isOpen)}
 						onKeyDown={handleKeyboardNav}
 						type="button"
+						aria-expanded={isOpen ? 'true' : 'false'}
+						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
 					>{selectedOption.title ? selectedOption.title : placeholder}
 					</button>
 				) }
@@ -188,6 +190,7 @@ const Dropdown = ({
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
+						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
 					/>
 				)}
 				{ renderIcon() }
@@ -216,7 +219,7 @@ const Dropdown = ({
 					</div>
 				)}
 				{error && (errorMessage && (
-					<InputError errorMessage={errorMessage} />
+					<InputError errorMessage={errorMessage} id={`error_${id}`} />
 				))}
 			</div>
 		</div>

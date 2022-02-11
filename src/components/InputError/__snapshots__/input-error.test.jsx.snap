@@ -4,7 +4,9 @@ exports[`InputError component Matches the snapshot 1`] = `
 <div
   className="ssb-input-error"
 >
-  <span>
+  <span
+    aria-live="assertive"
+  >
     Insert error message
   </span>
 </div>

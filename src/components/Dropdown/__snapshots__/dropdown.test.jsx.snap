@@ -15,6 +15,7 @@ exports[`Dropdown component Matches the snapshot 1`] = `
     role="button"
   >
     <button
+      aria-expanded="false"
       aria-label="open or close dropdown"
       className="opener"
       id={1}
