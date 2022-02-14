@@ -79,6 +79,7 @@ Available props:
 | role | string | Defines a string value that assigns a role type to the input element wrapper |
 | ariaLabelWrapper | string | Defines a string value that labels the input element wrapper |
 | ariaLabel | string | Defines a string value that labels input element, use if label is not visible |
+| ariaLabelledBy | string |The ariaLabelledBy string identifies the id to the element (or elements) that labels the element it is applied to. |
 | ariaLabelSearchButton | string | Defines a string value that labels button element |
 | className   | string | Optional container class|
 | disabled | bool | Toggles disabled state |

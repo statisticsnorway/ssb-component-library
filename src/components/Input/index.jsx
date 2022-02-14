@@ -5,7 +5,7 @@ import { Search } from 'react-feather';
 import InputError from '../InputError';
 
 const Input = ({
-	role, ariaLabelWrapper, ariaLabel, ariaLabelSearchButton,
+	role, ariaLabelWrapper, ariaLabel, ariaLabelledBy, ariaLabelSearchButton,
 	className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size,
 }) => {
 	const [inputValue, setValue] = useState(value);
@@ -38,6 +38,7 @@ const Input = ({
 					className={searchField || error ? ' with-icon' : ''}
 					onKeyDown={searchField ? e => handleKeyDown(e) : undefined}
 					aria-describedby={error && errorMessage ? `error_${inputId}` : undefined}
+					aria-labelledby={ariaLabelledBy}
 				/>
 				{searchField && (
 					<button aria-label={ariaLabelSearchButton} className="icon-wrapper search-icon" onClick={() => submitCallback(inputValue)}>
@@ -71,6 +72,7 @@ Input.propTypes = {
 	role: PropTypes.string,
 	ariaLabelWrapper: PropTypes.string,
 	ariaLabel: PropTypes.string,
+	ariaLabelledBy: PropTypes.string,
 	ariaLabelSearchButton: PropTypes.string,
 	className: PropTypes.string,
 	disabled: PropTypes.bool,
