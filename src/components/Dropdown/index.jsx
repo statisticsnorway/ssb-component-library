@@ -13,7 +13,7 @@ import {
 import InputError from '../InputError';
 
 const Dropdown = ({
-	className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage,
+	className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage, ariaLabel,
 }) => {
 	const id = uuid();
 
@@ -156,18 +156,16 @@ const Dropdown = ({
 
 	return (
 		<div className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}`}>
-			{header && <label htmlFor={id}>{header}</label>}
+			{header && <span id="dropdown-label">{header}</span>}
 			<div
 				className="dropdown-interactive-area"
 				ref={wrapper}
-				role="button"
 				tabIndex={tabIndex}
 				onKeyPress={e => { handleKeyboardNav(e, wrapper); }}
 			>
 				{!searchable && (
 					<button
 						className={isOpen ? 'focused opener' : 'opener'}
-						aria-label="open or close dropdown"
 						id={id}
 						ref={node}
 						tabIndex={0}
@@ -176,47 +174,51 @@ const Dropdown = ({
 						type="button"
 						aria-expanded={isOpen ? 'true' : 'false'}
 						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
+						aria-haspopup="listbox"
+						aria-labelledby={header ? 'dropdown-label' : ''}
+						aria-label={!header && ariaLabel ? ariaLabel : undefined}
 					>{selectedOption.title ? selectedOption.title : placeholder}
 					</button>
 				) }
 				{searchable && (
 					<input
-						aria-label="Search or select in dropdown"
 						className={isOpen ? 'focused' : ''}
 						id={id}
 						onKeyDown={handleSearchSpecialKeys}
 						onChange={filterItems}
-						onFocus={() => setOpen(!isOpen)} // Bedre praksis enn onClick
+						onClick={() => setOpen(!isOpen)}
+						// onFocus={() => setOpen(!isOpen)} // Bedre praksis enn onClick
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
 						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
+						role="combobox"
+						aria-autocomplete="list"
+						aria-expanded={isOpen ? 'true' : 'false'}
+						aria-controls={`${id}--options`}
+						aria-labelledby={header ? 'dropdown-label' : ''}
+						aria-label={!header && ariaLabel ? ariaLabel : undefined}
 					/>
 				)}
 				{ renderIcon() }
 				{isOpen && (
-					<div className="list-of-options" id={`${id}--options`}>
-						{availableOptions.map((it, idx) => {
-							const classNames = [
-								'option-list-element',
-								selectedOption.id === it.id ? 'selected' : '',
-								keyNavPosition === idx ? 'active' : '',
-							].join(' ');
-
-							return (
-								<button
-									disabled={it.disabled}
-									className={classNames}
-									key={it.id}
-									onClick={() => { handleSelection(it); }}
-									id={it.id}
-									ref={itemRefs[idx]}
-									type="button"
-								>{it.title}
-								</button>
-							);
-						})}
-					</div>
+					<ul className="list-of-options" role="listbox">
+						{availableOptions.map((it, idx) => (
+							<li
+								key={it.id}
+								disabled={it.disabled}
+								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}${keyNavPosition === idx ? ' active' : ''}`}
+								onClick={() => { handleSelection(it); }}
+								id={it.id}
+								ref={itemRefs[idx]}
+								type="button"
+								role="option"
+								aria-selected={selectedOption.id === it.id ? 'true' : undefined}
+							>
+								{it.title}
+							</li>
+						))}
+					</ul>
 				)}
 				{error && (errorMessage && (
 					<InputError errorMessage={errorMessage} id={`error_${id}`} />
@@ -236,6 +238,7 @@ Dropdown.defaultProps = {
 };
 
 Dropdown.propTypes = {
+	ariaLabel: PropTypes.string,
 	className: PropTypes.string,
 	error: PropTypes.bool,
 	errorMessage: PropTypes.string,
