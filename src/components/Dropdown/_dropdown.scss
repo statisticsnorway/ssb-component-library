@@ -108,6 +108,7 @@
         padding: 12px;
         text-overflow: ellipsis;
         transition: all .18s;
+        box-sizing: border-box;
         width: 100%;
 
         &:hover, &:focus, &.active {
