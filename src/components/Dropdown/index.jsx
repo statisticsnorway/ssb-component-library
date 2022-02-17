@@ -77,8 +77,10 @@ const Dropdown = ({
 	const handleKeyboardNav = (e, elem = node) => {
 		if (e.target === elem.current) {
 			if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
+				e.preventDefault();
 				setKeyNavPosition(keyNavPosition - 1);
 			} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (items.length - 1))) {
+				e.preventDefault();
 				setKeyNavPosition(keyNavPosition + 1);
 			} else if (e.keyCode === KEY_ENTER) {
 				e.preventDefault();
@@ -126,7 +128,8 @@ const Dropdown = ({
 		if (itemRefs[keyNavPosition].current) {
 			itemRefs[keyNavPosition].current.scrollIntoView({
 				behavior: 'smooth',
-				block: 'start',
+				block: 'nearest',
+				inline: 'start',
 			});
 		}
 	}, [keyNavPosition]);
