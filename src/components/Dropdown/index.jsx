@@ -103,7 +103,6 @@ const Dropdown = ({
 			setOpen(false);
 		} else if (e.keyCode === KEY_TAB) {
 			setOpen(false);
-			// wrapper.sibling.focus();
 		} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (availableOptions.length - 1))) {
 			setKeyNavPosition(keyNavPosition + 1);
 		} else if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
@@ -164,7 +163,6 @@ const Dropdown = ({
 				className="dropdown-interactive-area"
 				ref={wrapper}
 				tabIndex={tabIndex}
-				onKeyPress={e => { handleKeyboardNav(e, wrapper); }}
 			>
 				{!searchable && (
 					<button
@@ -172,7 +170,7 @@ const Dropdown = ({
 						id={id}
 						ref={node}
 						tabIndex={0}
-						onClick={() => setOpen(!isOpen)}
+						onClick={() => { node.current.focus(); setOpen(!isOpen); }}
 						onKeyDown={handleKeyboardNav}
 						type="button"
 						aria-expanded={isOpen ? 'true' : 'false'}
