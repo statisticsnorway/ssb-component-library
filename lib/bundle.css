@@ -46,6 +46,18 @@ a {
   margin: 0 !important;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .ssb-accordion {
   display: grid;
   width: 100%;
@@ -671,7 +683,7 @@ a {
   min-width: 230px;
   position: relative;
 }
-.ssb-dropdown label {
+.ssb-dropdown #dropdown-label {
   font-size: 14px;
   line-height: normal;
   margin-bottom: 5px;
@@ -793,6 +805,7 @@ a {
   padding: 12px;
   text-overflow: ellipsis;
   transition: all 0.18s;
+  box-sizing: border-box;
   width: 100%;
 }
 .ssb-dropdown .list-of-options .option-list-element:focus {

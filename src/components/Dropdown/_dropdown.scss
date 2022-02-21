@@ -94,10 +94,6 @@
       z-index: 9999;
       width: 100%;
 
-      &.hidden {
-        display: none;
-      }
-
       .option-list-element {
         @include focus-marker;
         @include reset-button;

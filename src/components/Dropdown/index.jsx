@@ -184,7 +184,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
 						aria-haspopup="listbox"
 						aria-labelledby={!header && !ariaLabel ? `button_${id}` : `dropdown-label button_${id}`}
-					>{activeOption.title !== '' ? activeOption.title : placeholder}
+					>{selectedOption.title !== '' ? selectedOption.title : placeholder}
 					</button>
 				) }
 				{searchable && (
@@ -208,31 +208,33 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 					/>
 				)}
 				{ renderIcon() }
-				<ul
-					id={`list_of_options_${id}`}
-					className={`list-of-options${!isOpen ? ' hidden' : ''}`}
-					role="listbox"
-					aria-labelledby={!searchable && (header || ariaLabel) ? 'dropdown-label' : undefined}
-					aria-activedescendant={!searchable && activeOption.id !== '' ? activeOption.id : undefined}
-					tabIndex={-1}
-					ref={optionList}
-					onKeyDown={e => { handleKeyboardNav(e); }}
-				>
-					{availableOptions.map((it, idx) => (
-						<li
-							key={it.id}
-							disabled={it.disabled}
-							className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}${isOpen && keyNavPosition === idx ? ' active focused' : ''}`}
-							onClick={() => { handleSelection(it); }}
-							id={it.id}
-							ref={itemRefs[idx]}
-							role="option"
-							aria-selected={isOpen && keyNavPosition === idx ? 'true' : undefined}
-						>
-							{it.title}
-						</li>
-					))}
-				</ul>
+				{isOpen && (
+					<ul
+						id={`list_of_options_${id}`}
+						className={`list-of-options${!isOpen ? ' hidden' : ''}`}
+						role="listbox"
+						aria-labelledby={!searchable && (header || ariaLabel) ? 'dropdown-label' : undefined}
+						aria-activedescendant={!searchable && activeOption.id !== '' ? activeOption.id : undefined}
+						tabIndex={-1}
+						ref={optionList}
+						onKeyDown={e => { handleKeyboardNav(e); }}
+					>
+						{availableOptions.map((it, idx) => (
+							<li
+								key={it.id}
+								disabled={it.disabled}
+								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}${isOpen && keyNavPosition === idx ? ' active focused' : ''}`}
+								onClick={() => { handleSelection(it); }}
+								id={it.id}
+								ref={itemRefs[idx]}
+								role="option"
+								aria-selected={isOpen && keyNavPosition === idx ? 'true' : undefined}
+							>
+								{it.title}
+							</li>
+						))}
+					</ul>
+				)}
 				{error && (errorMessage && (
 					<InputError errorMessage={errorMessage} id={`error_${id}`} />
 				))}
