@@ -129,12 +129,13 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 			});
 			setActiveOption(items[keyNavPosition]);
 		}
-		console.log(`ID: ${id}`);
 	}, [keyNavPosition]);
 
 	useEffect(() => {
 		if (isOpen) {
-			optionList.current.focus();
+			if (!searchable) {
+				optionList.current.focus();
+			}
 			document.addEventListener('mousedown', handleClickOutside);
 		}
 
@@ -162,7 +163,9 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 
 	return (
 		<div id={id} className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}`}>
-			{header && <span id="dropdown-label">{header}</span>}
+			{!searchable && header && <span id="dropdown-label">{header}</span>}
+			{!searchable && !header && ariaLabel && <span className="sr-only" id="dropdown-label">{ariaLabel}</span>}
+			{searchable && header && <label htmlFor={`input_${id}`}>{header}</label>}
 			<div
 				className="dropdown-interactive-area"
 				ref={wrapper}
@@ -174,25 +177,23 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 						id={`button_${id}`}
 						ref={node}
 						tabIndex={0}
-						onClick={() => { node.current.focus(); setOpen(!isOpen); }}
+						onClick={() => { setOpen(!isOpen); }}
 						onKeyDown={e => { handleKeyboardNav(e); }}
 						type="button"
 						aria-expanded={isOpen ? 'true' : 'false'}
 						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
 						aria-haspopup="listbox"
-						aria-labelledby={header ? `dropdown-label button_${id}` : `button_${id}`}
-						aria-label={!header && ariaLabel ? ariaLabel : undefined}
+						aria-labelledby={!header && !ariaLabel ? `button_${id}` : `dropdown-label button_${id}`}
 					>{activeOption.title !== '' ? activeOption.title : placeholder}
 					</button>
 				) }
 				{searchable && (
 					<input
 						className={isOpen ? 'focused' : ''}
-						id={id}
+						id={`input_${id}`}
 						onKeyDown={handleSearchSpecialKeys}
 						onChange={filterItems}
-						onClick={() => setOpen(!isOpen)}
-						// onFocus={() => setOpen(!isOpen)} // Bedre praksis enn onClick
+						onFocus={() => setOpen(!isOpen)} // Bedre praksis enn onClick
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
@@ -200,17 +201,19 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 						role="combobox"
 						aria-autocomplete="list"
 						aria-expanded={isOpen ? 'true' : 'false'}
-						aria-controls={`${id}--options`}
-						aria-labelledby={header ? 'dropdown-label' : ''}
-						aria-label={!header && ariaLabel ? ariaLabel : undefined}
+						aria-controls={`list_of_options_${id}`}
+						aria-label={ariaLabel}
+						type="text"
+						aria-activedescendant={activeOption ? activeOption.id : undefined}
 					/>
 				)}
 				{ renderIcon() }
 				<ul
+					id={`list_of_options_${id}`}
 					className={`list-of-options${!isOpen ? ' hidden' : ''}`}
 					role="listbox"
-					aria-labelledby="dropdown-label"
-					aria-activedescendant={isOpen ? activeOption.id : items[0].id}
+					aria-labelledby={!searchable && (header || ariaLabel) ? 'dropdown-label' : undefined}
+					aria-activedescendant={!searchable && activeOption.id !== '' ? activeOption.id : undefined}
 					tabIndex={-1}
 					ref={optionList}
 					onKeyDown={e => { handleKeyboardNav(e); }}
