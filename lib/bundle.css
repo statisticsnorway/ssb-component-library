@@ -683,7 +683,7 @@ a {
   min-width: 230px;
   position: relative;
 }
-.ssb-dropdown #dropdown-label {
+.ssb-dropdown label, .ssb-dropdown #dropdown-label {
   font-size: 14px;
   line-height: normal;
   margin-bottom: 5px;
