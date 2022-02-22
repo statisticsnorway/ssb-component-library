@@ -40,7 +40,6 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 
 	const handleSelection = item => {
 		selectItem({ title: item.title, id: item.id });
-		setActiveOption({ title: item.title, id: item.id });
 		onSelect(item);
 		setOpen(false);
 
@@ -134,6 +133,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 	useEffect(() => {
 		if (isOpen) {
 			if (!searchable) {
+				// List must be in focus for the elements in the option-list to be read out to the screen reader
 				optionList.current.focus();
 			}
 			document.addEventListener('mousedown', handleClickOutside);
