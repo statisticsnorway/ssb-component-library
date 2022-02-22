@@ -30,43 +30,6 @@ exports[`Dropdown component Matches the snapshot 1`] = `
       className="dd-icon"
       size={24}
     />
-    <ul
-      aria-labelledby="dropdown-label"
-      className="list-of-options hidden"
-      id="list_of_options_dropdown"
-      onKeyDown={[Function]}
-      role="listbox"
-      tabIndex={-1}
-    >
-      <li
-        className="option-list-element"
-        id="item1"
-        key="item1"
-        onClick={[Function]}
-        role="option"
-      >
-        Apples
-      </li>
-      <li
-        className="option-list-element"
-        disabled={true}
-        id="item2"
-        key="item2"
-        onClick={[Function]}
-        role="option"
-      >
-        Rainbows
-      </li>
-      <li
-        className="option-list-element"
-        id="item3"
-        key="item3"
-        onClick={[Function]}
-        role="option"
-      >
-        Ocean
-      </li>
-    </ul>
   </div>
 </div>
 `;
