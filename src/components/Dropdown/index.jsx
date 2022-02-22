@@ -39,9 +39,11 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 	};
 
 	const handleSelection = item => {
-		selectItem({ title: item.title, id: item.id });
-		onSelect(item);
-		setOpen(false);
+		if (!item.disabled) {
+			selectItem({ title: item.title, id: item.id });
+			onSelect(item);
+			setOpen(false);
+		}
 
 		if (items[keyNavPosition].id !== item.id) {
 			const idx = items.findIndex(it => it.id === item.id);
@@ -228,13 +230,13 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 						{availableOptions.map((it, idx) => (
 							<li
 								key={it.id}
-								disabled={it.disabled}
-								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}${isOpen && keyNavPosition === idx ? ' active focused' : ''}`}
+								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}${isOpen && keyNavPosition === idx ? ' active' : ''}${it.disabled ? ' disabled' : ''}`}
 								onClick={() => { handleSelection(it); }}
 								id={it.id}
 								ref={itemRefs[idx]}
 								role="option"
 								aria-selected={isOpen && keyNavPosition === idx ? 'true' : undefined}
+								aria-disabled={it.disabled}
 							>
 								{it.title}
 							</li>
