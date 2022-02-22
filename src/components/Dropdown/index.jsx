@@ -161,11 +161,17 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 		return isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} />;
 	};
 
+	const renderHeader = () => {
+		if (!header && ariaLabel) {
+			return <span className="sr-only" id="dropdown-label">{ariaLabel}</span>;
+		}
+		return <span id="dropdown-label">{header}</span>;
+	};
+	const renderHeaderSearchable = () => header && <label htmlFor={`input_${id}`}>{header}</label>;
+
 	return (
 		<div id={id} className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}`}>
-			{!searchable && header && <span id="dropdown-label">{header}</span>}
-			{!searchable && !header && ariaLabel && <span className="sr-only" id="dropdown-label">{ariaLabel}</span>}
-			{searchable && header && <label htmlFor={`input_${id}`}>{header}</label>}
+			{searchable ? renderHeaderSearchable() : renderHeader() }
 			<div
 				className="dropdown-interactive-area"
 				ref={wrapper}
