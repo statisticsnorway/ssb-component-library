@@ -56,7 +56,7 @@
       width: 100%;
 
       &::placeholder {
-        color: $ssb-dark-6;
+        color: $ssb-dark-4;
       }
 
       &:hover, &:focus {
@@ -74,79 +74,115 @@
     }
   }
 
-    .list-of-options {
+  .list-of-options {
+    @include roboto;
+    background: $ssb-white;
+    border: 1px solid $ssb-dark-6;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    max-height: 235px;
+    min-width: 150px;
+    overflow-y: auto;
+    padding-left: 0;
+    position: absolute;
+    scrollbar-color: $scrollbar-color $scrollbar-color; // Firefox experimental property
+    scrollbar-width: thin;
+    top: $input-field-height;
+    z-index: 9999;
+    width: 100%;
+
+    .option-list-element {
       @include roboto;
       background: $ssb-white;
-      border: 1px solid $ssb-dark-6;
-      left: 0;
-      list-style: none;
-      margin: 0;
-      max-height: 235px;
-      min-width: 150px;
-      overflow-y: auto;
-      padding-left: 0;
-      position: absolute;
-      scrollbar-color: $scrollbar-color $scrollbar-color; // Firefox experimental property
-      scrollbar-width: thin;
-      top: $input-field-height;
-      z-index: 9999;
+      cursor: pointer;
+      display: block;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.25;
+      overflow: hidden;
+      padding: 12px;
+      text-overflow: ellipsis;
+      transition: all .18s;
+      box-sizing: border-box;
       width: 100%;
 
-      .option-list-element {
-        @include roboto;
+      &:hover, &:focus, &.active {
+        background: $ssb-dark-5;
+        color: $ssb-white;
+        z-index: 2;
+      }
+
+      &.disabled {
         background: $ssb-white;
-        cursor: pointer;
-        display: block;
-        font-size: 16px;
+        color: $ssb-dark-2;
+        cursor: not-allowed;
         font-weight: normal;
-        line-height: 1.25;
-        overflow: hidden;
-        padding: 12px;
-        text-overflow: ellipsis;
-        transition: all .18s;
-        box-sizing: border-box;
-        width: 100%;
+        pointer-events: none;
 
-        &:hover, &:focus, &.active {
-          background: $ssb-dark-5;
-          color: $ssb-white;
-          z-index: 2;
-        }
-
-        &.disabled {
-          background: $ssb-white;
-          color: $ssb-dark-2;
-          cursor: not-allowed;
-          font-weight: normal;
-          pointer-events: none;
-
-          &:hover, &:focus {
-            text-decoration: none;
-            background: none;
-          }
-        }
-
-        &.selected {
-          background: $ssb-green-4;
-          color: $ssb-white;
-          font-weight: bold;
+        &:hover, &:focus {
+          text-decoration: none;
+          background: none;
         }
       }
 
+      &.selected {
+        background: $ssb-green-4;
+        color: $ssb-white;
+        font-weight: bold;
+      }
     }
 
-    ::-webkit-scrollbar {
-      width: 6px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $ssb-white;
+    border-bottom: 1px solid $ssb-dark-6;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $scrollbar-color;
+    border-radius: 3px;
+  }
+
+  &.large {
+    max-width: 100%;
+    width: 100%;
+
+    .dropdown-interactive-area {
+
+     #button_dropdown {
+        max-width: 100%;
+        padding: 29px 40px;
+        font-size: 20px;
+      }
     }
 
-    ::-webkit-scrollbar-track {
-      background: $ssb-white;
-      border-bottom: 1px solid $ssb-dark-6;
+    .list-of-options{
+      max-width: 100%;
+      width: 100%;
+      top:auto;
+
+      .option-list-element{
+        max-width: 100%;
+        width: 100%;
+      }
     }
 
-    ::-webkit-scrollbar-thumb {
-      background: $scrollbar-color;
-      border-radius: 3px;
+    .dd-icon {
+      top: 1px;
+      padding:15px;
     }
+
+    input {
+      padding: 40px 40px;
+      font-size: 20px;
+    }
+
+  }
 
 }

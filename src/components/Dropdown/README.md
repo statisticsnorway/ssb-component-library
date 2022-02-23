@@ -110,3 +110,4 @@ Available props:
 | selectedItem | object | Selected element in dropdown |
 | tabIndex | number | Tab index for focus |
 | ariaLabel | string | Defines a string value that labels input or span to button element, use if not visible header |
+| largeSize | bool | Change width to 100% and size of font and icon |

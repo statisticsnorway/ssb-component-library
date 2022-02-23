@@ -20,23 +20,23 @@
   }
 
   .input-wrapper {
-	display: flex;
+	  display: flex;
 	
-	::placeholder {
-		color: $ssb-dark-4;
-        font-size: 14px;
-		opacity: 1;
-	}
+    ::placeholder {
+      color: $ssb-dark-4;
+      font-size: 14px;
+      opacity: 1;
+    }
 
-	:-ms-input-placeholder {
-		color: $ssb-dark-4;
-        font-size: 14px;
-	}
+    :-ms-input-placeholder {
+      color: $ssb-dark-4;
+      font-size: 14px;
+    }
 
-	::-ms-input-placeholder {
-		color: $ssb-dark-4;
-        font-size: 14px;
-	}
+    ::-ms-input-placeholder {
+      color: $ssb-dark-4;
+      font-size: 14px;
+    }
   }
 
   label {
@@ -208,7 +208,7 @@
     max-width: 100%;
 
     .search-icon {
-      margin-left: -73px;
+      margin-left: -78px;
       height: 77px;
       width: 77px;
       padding: 17px;
@@ -216,9 +216,14 @@
 
     input {
       width: 100%;
-      padding: 38px 25px;
+      padding: 38px 40px;
       font-weight: bold;
-      font-size: 19px;
+      font-size: 20px;
+
+      &::placeholder {
+        font-weight: normal;
+        font-size: 20px;
+      }
     }
 
   }
