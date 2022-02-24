@@ -736,7 +736,7 @@ a {
   width: 100%;
 }
 .ssb-dropdown .dropdown-interactive-area input::placeholder {
-  color: #162327;
+  color: #2d6975;
 }
 .ssb-dropdown .dropdown-interactive-area input:hover, .ssb-dropdown .dropdown-interactive-area input:focus {
   border: 1px solid #00824d;
@@ -814,6 +814,32 @@ a {
 .ssb-dropdown ::-webkit-scrollbar-thumb {
   background: #b0b0b0;
   border-radius: 3px;
+}
+.ssb-dropdown.large {
+  max-width: 100%;
+  width: 100%;
+}
+.ssb-dropdown.large .dropdown-interactive-area #button_dropdown {
+  max-width: 100%;
+  padding: 29px 40px;
+  font-size: 20px;
+}
+.ssb-dropdown.large .list-of-options {
+  max-width: 100%;
+  width: 100%;
+  top: auto;
+}
+.ssb-dropdown.large .list-of-options .option-list-element {
+  max-width: 100%;
+  width: 100%;
+}
+.ssb-dropdown.large .dd-icon {
+  top: 1px;
+  padding: 15px;
+}
+.ssb-dropdown.large input {
+  padding: 40px 40px;
+  font-size: 20px;
 }
 
 .ssb-fact-box {
@@ -1242,16 +1268,20 @@ a {
   max-width: 100%;
 }
 .ssb-input.input-lg .search-icon {
-  margin-left: -73px;
+  margin-left: -78px;
   height: 77px;
   width: 77px;
   padding: 17px;
 }
 .ssb-input.input-lg input {
   width: 100%;
-  padding: 38px 25px;
+  padding: 38px 40px;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 20px;
+}
+.ssb-input.input-lg input::placeholder {
+  font-weight: normal;
+  font-size: 20px;
 }
 
 .ssb-input-error {
