@@ -11,7 +11,7 @@ import {
 } from '../../utils/keybindings';
 import InputError from '../InputError';
 
-const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage, ariaLabel, id,
+const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage, ariaLabel, id, largeSize,
 }) => {
 	// all the refs we need!
 	const wrapper = useRef();
@@ -160,7 +160,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 		if (icon) {
 			return <div className="dd-icon">{icon}</div>;
 		}
-		return isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} />;
+		return isOpen ? <ChevronUp className="dd-icon" size={largeSize ? 50 : 24} /> : <ChevronDown className="dd-icon" size={largeSize ? 50 : 24} />;
 	};
 
 	const renderHeader = () => {
@@ -172,7 +172,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 	const renderHeaderSearchable = () => header && <label htmlFor={`input_${id}`}>{header}</label>;
 
 	return (
-		<div id={id} className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}`}>
+		<div id={id} className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}${largeSize ? ' large' : ''}`}>
 			{searchable ? renderHeaderSearchable() : renderHeader() }
 			<div
 				className="dropdown-interactive-area"
@@ -201,7 +201,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 						id={`input_${id}`}
 						onKeyDown={handleSearchSpecialKeys}
 						onChange={filterItems}
-						onFocus={() => setOpen(!isOpen)} // Bedre praksis enn onClick
+						onFocus={() => setOpen(!isOpen)}
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
@@ -280,6 +280,7 @@ Dropdown.propTypes = {
 	selectedItem: PropTypes.object,
 	tabIndex: PropTypes.number,
 	id: PropTypes.string,
+	largeSize: PropTypes.bool,
 };
 
 export default Dropdown;
