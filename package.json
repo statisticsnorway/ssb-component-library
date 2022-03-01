@@ -78,7 +78,7 @@
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-uglify": "^6.0.4",
     "sass-loader": "^8.0.2",
-    "style-loader": "^1.2.1",
+    "style-loader": "^2.0.0",
     "stylelint": "^13.12.0",
     "stylelint-config-recommended": "^3.0.0",
     "webpack": "^4.46.0",
