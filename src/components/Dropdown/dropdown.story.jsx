@@ -51,4 +51,32 @@ storiesOf('Dropdown', module).addDecorator(centered)
 	))
 	.add('Custom icon', () => (
 		<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" icon={<Search />} />
+	))
+	.add('Large Standard', () => (
+		<div style={{
+			width: '1000px',
+			height: '240px',
+			background: '#ecfeed',
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'center',
+		}}
+		>
+			<Dropdown header="Menu header" placeholder="Velg frukt" items={items} largeSize />
+		</div>
+	))
+	.add('Large Searchable', () => (
+		<div style={{
+			width: '1000px',
+			height: '240px',
+			background: '#ecfeed',
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'center',
+		}}
+		>
+			<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" largeSize />
+		</div>
 	));

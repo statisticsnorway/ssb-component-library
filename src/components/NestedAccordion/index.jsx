@@ -18,6 +18,7 @@ const NestedAccordion = ({
 		<div className={`ssb-nested-accordion${className ? ` ${className}` : ''}`}>
 			<button
 				className={`nested-accordion-header ${isOpen ? 'open' : 'closed'}`}
+				aria-expanded={isOpen ? 'true' : 'false'}
 				onClick={() => toggleOpen(!isOpen)}
 			>
 				<span className="button-grid">

@@ -5,6 +5,7 @@ exports[`Accordion component Matches the snapshot 1`] = `
   className="ssb-accordion"
 >
   <button
+    aria-expanded="false"
     className="accordion-header closed"
     onClick={[Function]}
     tabIndex={0}

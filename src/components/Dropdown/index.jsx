@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import uuid from 'uuid/v4';
 import { ChevronDown, ChevronUp } from 'react-feather';
 import {
 	KEY_ARROW_DOWN,
@@ -12,11 +11,8 @@ import {
 } from '../../utils/keybindings';
 import InputError from '../InputError';
 
-const Dropdown = ({
-	className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage,
+const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage, ariaLabel, id, largeSize,
 }) => {
-	const id = uuid();
-
 	// all the refs we need!
 	const wrapper = useRef();
 	const node = useRef();
@@ -24,10 +20,12 @@ const Dropdown = ({
 		acc[idx] = useRef();
 		return acc;
 	}, []);
+	const optionList = useRef();
 
 	const [isOpen, setOpen] = useState(open);
 	const [availableOptions, filterAvailableOptions] = useState(items);
 	const [selectedOption, selectItem] = useState(selectedItem || { title: '', id: '' });
+	const [activeOption, setActiveOption] = useState(selectedItem || { title: '', id: '' });
 	const [inputFieldValue, updateInputValue] = useState('');
 	const [keyNavPosition, setKeyNavPosition] = useState(0);
 
@@ -41,9 +39,11 @@ const Dropdown = ({
 	};
 
 	const handleSelection = item => {
-		selectItem({ title: item.title, id: item.id });
-		onSelect(item);
-		setOpen(false);
+		if (!item.disabled) {
+			selectItem({ title: item.title, id: item.id });
+			onSelect(item);
+			setOpen(false);
+		}
 
 		if (items[keyNavPosition].id !== item.id) {
 			const idx = items.findIndex(it => it.id === item.id);
@@ -74,24 +74,24 @@ const Dropdown = ({
 	// TODO : See if handleKeyboardNav and handleSearchSpecialKeys can be squashed
 	// 		  for DRY principle.
 
-	const handleKeyboardNav = (e, elem = node) => {
-		if (e.target === elem.current) {
-			if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
-				setKeyNavPosition(keyNavPosition - 1);
-			} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (items.length - 1))) {
-				setKeyNavPosition(keyNavPosition + 1);
-			} else if (e.keyCode === KEY_ENTER) {
+	const handleKeyboardNav = e => {
+		if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
+			e.preventDefault();
+			setKeyNavPosition(keyNavPosition - 1);
+		} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (items.length - 1))) {
+			e.preventDefault();
+			setKeyNavPosition(keyNavPosition + 1);
+		} else if (e.keyCode === KEY_ENTER) {
+			e.preventDefault();
+			if (isOpen) {
+				handleSelection(items[keyNavPosition]);
+			} else {
+				setOpen(true);
+			}
+		} else if (e.keyCode === KEY_ESCAPE) {
+			if (!searchable) {
 				e.preventDefault();
-				if (isOpen) {
-					handleSelection(items[keyNavPosition]);
-				} else {
-					setOpen(true);
-				}
-			} else if (e.keyCode === KEY_ESCAPE) {
-				if (!searchable) {
-					e.preventDefault();
-					setOpen(false);
-				}
+				setOpen(false);
 			}
 		}
 	};
@@ -101,7 +101,6 @@ const Dropdown = ({
 			setOpen(false);
 		} else if (e.keyCode === KEY_TAB) {
 			setOpen(false);
-			// wrapper.sibling.focus();
 		} else if ((e.keyCode === KEY_ARROW_DOWN) && (keyNavPosition < (availableOptions.length - 1))) {
 			setKeyNavPosition(keyNavPosition + 1);
 		} else if ((e.keyCode === KEY_ARROW_UP) && (keyNavPosition > 0)) {
@@ -123,17 +122,27 @@ const Dropdown = ({
 	};
 
 	useEffect(() => {
-		if (itemRefs[keyNavPosition].current) {
+		if (isOpen && itemRefs[keyNavPosition].current) {
 			itemRefs[keyNavPosition].current.scrollIntoView({
 				behavior: 'smooth',
-				block: 'start',
+				block: 'nearest',
+				inline: 'start',
 			});
+			setActiveOption(items[keyNavPosition]);
 		}
 	}, [keyNavPosition]);
 
 	useEffect(() => {
 		if (isOpen) {
+			if (!searchable) {
+				// List must be in focus for the elements in the option-list to be read out to the screen reader
+				optionList.current.focus();
+			}
 			document.addEventListener('mousedown', handleClickOutside);
+		}
+
+		if (isOpen && keyNavPosition === 0) {
+			setActiveOption(items[0]);
 		}
 
 		return () => {
@@ -151,72 +160,91 @@ const Dropdown = ({
 		if (icon) {
 			return <div className="dd-icon">{icon}</div>;
 		}
-		return isOpen ? <ChevronUp className="dd-icon" size={24} /> : <ChevronDown className="dd-icon" size={24} />;
+		return isOpen ? <ChevronUp className="dd-icon" size={largeSize ? 50 : 24} /> : <ChevronDown className="dd-icon" size={largeSize ? 50 : 24} />;
 	};
 
+	const renderHeader = () => {
+		if (!header && ariaLabel) {
+			return <span className="sr-only" id="dropdown-label">{ariaLabel}</span>;
+		}
+		return <span id="dropdown-label">{header}</span>;
+	};
+	const renderHeaderSearchable = () => header && <label htmlFor={`input_${id}`}>{header}</label>;
+
 	return (
-		<div className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}`}>
-			{header && <label htmlFor={id}>{header}</label>}
+		<div id={id} className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}${largeSize ? ' large' : ''}`}>
+			{searchable ? renderHeaderSearchable() : renderHeader() }
 			<div
 				className="dropdown-interactive-area"
 				ref={wrapper}
-				role="button"
 				tabIndex={tabIndex}
-				onKeyPress={e => { handleKeyboardNav(e, wrapper); }}
 			>
 				{!searchable && (
 					<button
 						className={isOpen ? 'focused opener' : 'opener'}
-						aria-label="open or close dropdown"
-						id={id}
+						id={`button_${id}`}
 						ref={node}
 						tabIndex={0}
-						onClick={() => setOpen(!isOpen)}
-						onKeyDown={handleKeyboardNav}
+						onClick={() => { setOpen(!isOpen); }}
+						onKeyDown={e => { handleKeyboardNav(e); }}
 						type="button"
-					>{selectedOption.title ? selectedOption.title : placeholder}
+						aria-expanded={isOpen ? 'true' : 'false'}
+						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
+						aria-haspopup="listbox"
+						aria-labelledby={!header && !ariaLabel ? `button_${id}` : `dropdown-label button_${id}`}
+					>{selectedOption.title !== '' ? selectedOption.title : placeholder}
 					</button>
 				) }
 				{searchable && (
 					<input
-						aria-label="Search or select in dropdown"
 						className={isOpen ? 'focused' : ''}
-						id={id}
+						id={`input_${id}`}
 						onKeyDown={handleSearchSpecialKeys}
 						onChange={filterItems}
-						onFocus={() => setOpen(!isOpen)} // Bedre praksis enn onClick
+						onFocus={() => setOpen(!isOpen)}
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
+						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
+						role="combobox"
+						aria-autocomplete="list"
+						aria-expanded={isOpen ? 'true' : 'false'}
+						aria-controls={`list_of_options_${id}`}
+						aria-label={ariaLabel}
+						type="text"
+						aria-activedescendant={activeOption ? activeOption.id : undefined}
 					/>
 				)}
 				{ renderIcon() }
 				{isOpen && (
-					<div className="list-of-options" id={`${id}--options`}>
-						{availableOptions.map((it, idx) => {
-							const classNames = [
-								'option-list-element',
-								selectedOption.id === it.id ? 'selected' : '',
-								keyNavPosition === idx ? 'active' : '',
-							].join(' ');
-
-							return (
-								<button
-									disabled={it.disabled}
-									className={classNames}
-									key={it.id}
-									onClick={() => { handleSelection(it); }}
-									id={it.id}
-									ref={itemRefs[idx]}
-									type="button"
-								>{it.title}
-								</button>
-							);
-						})}
-					</div>
+					<ul
+						id={`list_of_options_${id}`}
+						className={`list-of-options${!isOpen ? ' hidden' : ''}`}
+						role="listbox"
+						aria-labelledby={!searchable && (header || ariaLabel) ? 'dropdown-label' : undefined}
+						aria-activedescendant={!searchable && activeOption.id !== '' ? activeOption.id : undefined}
+						tabIndex={-1}
+						ref={optionList}
+						onKeyDown={e => { handleKeyboardNav(e); }}
+					>
+						{availableOptions.map((it, idx) => (
+							<li
+								key={it.id}
+								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}${isOpen && keyNavPosition === idx ? ' active' : ''}${it.disabled ? ' disabled' : ''}`}
+								onClick={() => { handleSelection(it); }}
+								id={it.id}
+								ref={itemRefs[idx]}
+								role="option"
+								aria-selected={isOpen && keyNavPosition === idx ? 'true' : undefined}
+								aria-disabled={it.disabled}
+							>
+								{it.title}
+							</li>
+						))}
+					</ul>
 				)}
 				{error && (errorMessage && (
-					<InputError errorMessage={errorMessage} />
+					<InputError errorMessage={errorMessage} id={`error_${id}`} />
 				))}
 			</div>
 		</div>
@@ -230,9 +258,11 @@ Dropdown.defaultProps = {
 	open: false,
 	searchable: false,
 	placeholder: '-- Select --',
+	id: 'dropdown',
 };
 
 Dropdown.propTypes = {
+	ariaLabel: PropTypes.string,
 	className: PropTypes.string,
 	error: PropTypes.bool,
 	errorMessage: PropTypes.string,
@@ -249,6 +279,8 @@ Dropdown.propTypes = {
 	searchable: PropTypes.bool,
 	selectedItem: PropTypes.object,
 	tabIndex: PropTypes.number,
+	id: PropTypes.string,
+	largeSize: PropTypes.bool,
 };
 
 export default Dropdown;

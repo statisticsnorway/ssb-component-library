@@ -25,25 +25,43 @@ Dropdown
   
 ### Usage
 
-#### HTML
+#### HTML standard dropdown
 This component needs some javascript functionality to work.
 ```html
-<div class="ssb-dropdown">
-    <label for="input-dropdown">Menu header</label>
-    <div class="dropdown-interactive-area">
-        <button onclick="toggle the open class">
-            <input class="focused" id="input-dropdown" disabled="" placeholder="Select item" value="">
-            <!-- If closed -->
-            <i class="dd-icon">{feather.chevronDown 18px}</i>
-            <!-- If open -->
-            <i class="dd-icon">{feather.chevronUp 18px}</i>
-        </button>
-        <div class="list-of-options">
-            <button class="option-list-element" value="item1" id="item1" onclick="select item and close">Apples</button>
-            <button class="option-list-element" value="item2" id="item2" onclick="select item and close">Rainbows</button>
-            <button class="option-list-element" value="item3" id="item3" onclick="select item and close">Ocean</button>
-        </div>
-    </div>
+<div id="dropdown" class="ssb-dropdown">
+   <span id="dropdown-label">Menu header</span>
+   <div class="dropdown-interactive-area">
+      <button class="opener" id="button_dropdown" tabindex="0" type="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="dropdown-label button_dropdown">-- Select --</button>
+      <!-- If closed -->
+      <i class="dd-icon">{feather.chevronDown 18px}</i>
+      <!-- If open -->
+      <i class="dd-icon">{feather.chevronUp 18px}</i>
+      <ul id="list_of_options_dropdown" class="list-of-options" role="listbox" aria-labelledby="dropdown-label" tabindex="-1" aria-activedescendant="item1">
+         <li class="option-list-element active focused" id="item1" role="option" aria-selected="true">Apples</li>
+         <li class="option-list-element" id="item2" role="option">Rainbows</li>
+         <li class="option-list-element" id="item3" role="option">Ocean</li>
+      </ul>
+   </div>
+</div>
+```
+
+#### HTML dropdown with search (combobox with autocomplete)
+This component needs some javascript functionality to work.
+```html
+<div id="dropdown" class="ssb-dropdown">
+   <label for="input_dropdown">Menu header</label>
+   <div class="dropdown-interactive-area">
+      <input class="focused" id="input_dropdown" placeholder="Search and select" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-controls="list_of_options_dropdown" type="text" aria-activedescendant="item1" value="">
+      <!-- If closed -->
+      <i class="dd-icon">{feather.chevronDown 18px}</i>
+      <!-- If open -->
+      <i class="dd-icon">{feather.chevronUp 18px}</i>
+      <ul id="list_of_options_dropdown" class="list-of-options" role="listbox" tabindex="-1">
+         <li class="option-list-element active focused" id="item1" role="option" aria-selected="true">Apples</li>
+         <li class="option-list-element" id="item2" role="option">Rainbows</li>
+         <li class="option-list-element" id="item3" role="option">Ocean</li>
+      </ul>
+   </div>
 </div>
 ```
 
@@ -78,6 +96,7 @@ Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| id | string | Optional id | 
 | className   | string | Optional container class|
 | error | bool | show error message if true |
 | errorMessage | string | Renders an error message underneath input field |
@@ -90,3 +109,5 @@ Available props:
 | searchable | bool | If true, dropdown is searchable |
 | selectedItem | object | Selected element in dropdown |
 | tabIndex | number | Tab index for focus |
+| ariaLabel | string | Defines a string value that labels input or span to button element, use if not visible header |
+| largeSize | bool | Change width to 100% and size of font and icon |

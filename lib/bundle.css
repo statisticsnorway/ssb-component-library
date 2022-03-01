@@ -46,6 +46,18 @@ a {
   margin: 0 !important;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .ssb-accordion {
   display: grid;
   width: 100%;
@@ -671,27 +683,14 @@ a {
   min-width: 230px;
   position: relative;
 }
-.ssb-dropdown label {
+.ssb-dropdown label, .ssb-dropdown #dropdown-label {
   font-size: 14px;
   line-height: normal;
   margin-bottom: 5px;
 }
 .ssb-dropdown .dropdown-interactive-area {
-  background-color: transparent;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  padding: 0;
-  text-align: left;
   cursor: pointer;
   position: relative;
-}
-.ssb-dropdown .dropdown-interactive-area:focus {
-  outline: #9272fc solid 2px;
-  outline-offset: 2px;
 }
 .ssb-dropdown .dropdown-interactive-area button {
   background-color: transparent;
@@ -713,9 +712,9 @@ a {
   padding: 4px 44px 4px 12px;
   text-overflow: ellipsis;
 }
-.ssb-dropdown .dropdown-interactive-area button:focus {
-  outline: #9272fc solid 2px;
-  outline-offset: 2px;
+.ssb-dropdown .dropdown-interactive-area button:hover, .ssb-dropdown .dropdown-interactive-area button:focus {
+  border: 1px solid #00824d;
+  outline: 1px solid #00824d;
 }
 .ssb-dropdown .dropdown-interactive-area .dd-icon {
   color: #00824d;
@@ -737,14 +736,11 @@ a {
   width: 100%;
 }
 .ssb-dropdown .dropdown-interactive-area input::placeholder {
-  color: #162327;
+  color: #2d6975;
 }
-.ssb-dropdown .dropdown-interactive-area input:hover {
+.ssb-dropdown .dropdown-interactive-area input:hover, .ssb-dropdown .dropdown-interactive-area input:focus {
   border: 1px solid #00824d;
-}
-.ssb-dropdown .dropdown-interactive-area input:focus, .ssb-dropdown .dropdown-interactive-area input.focused {
-  border: 1px solid #00824d;
-  outline: #00824d auto 1px;
+  outline: 1px solid #00824d;
 }
 .ssb-dropdown.error input, .ssb-dropdown.error button.opener {
   border: 1px solid #ed5935;
@@ -771,15 +767,6 @@ a {
   width: 100%;
 }
 .ssb-dropdown .list-of-options .option-list-element {
-  background-color: transparent;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  padding: 0;
-  text-align: left;
   font-family: "Roboto", sans-serif !important;
   font-stretch: normal;
   font-weight: normal;
@@ -793,24 +780,22 @@ a {
   padding: 12px;
   text-overflow: ellipsis;
   transition: all 0.18s;
+  box-sizing: border-box;
   width: 100%;
-}
-.ssb-dropdown .list-of-options .option-list-element:focus {
-  outline: #9272fc solid 2px;
-  outline-offset: 2px;
 }
 .ssb-dropdown .list-of-options .option-list-element:hover, .ssb-dropdown .list-of-options .option-list-element:focus, .ssb-dropdown .list-of-options .option-list-element.active {
   background: #274247;
   color: #fff;
   z-index: 2;
 }
-.ssb-dropdown .list-of-options .option-list-element:disabled {
+.ssb-dropdown .list-of-options .option-list-element.disabled {
   background: #fff;
   color: #c3dcdc;
   cursor: not-allowed;
   font-weight: normal;
+  pointer-events: none;
 }
-.ssb-dropdown .list-of-options .option-list-element:disabled:hover, .ssb-dropdown .list-of-options .option-list-element:disabled:focus {
+.ssb-dropdown .list-of-options .option-list-element.disabled:hover, .ssb-dropdown .list-of-options .option-list-element.disabled:focus {
   text-decoration: none;
   background: none;
 }
@@ -829,6 +814,33 @@ a {
 .ssb-dropdown ::-webkit-scrollbar-thumb {
   background: #b0b0b0;
   border-radius: 3px;
+}
+.ssb-dropdown.large {
+  max-width: 100%;
+  width: 100%;
+}
+.ssb-dropdown.large .dropdown-interactive-area #button_dropdown {
+  max-width: 100%;
+  padding: 29px 40px;
+  font-size: 20px;
+}
+.ssb-dropdown.large .list-of-options {
+  max-width: 100%;
+  width: 100%;
+  top: auto;
+}
+.ssb-dropdown.large .list-of-options .option-list-element {
+  max-width: 100%;
+  width: 100%;
+}
+.ssb-dropdown.large .dd-icon {
+  box-sizing: initial;
+  top: 1px;
+  padding: 15px;
+}
+.ssb-dropdown.large input {
+  padding: 40px 40px;
+  font-size: 20px;
 }
 
 .ssb-fact-box {
@@ -1047,6 +1059,10 @@ a {
 .ssb-picture-card:hover img {
   transform: scale(1.1);
 }
+.ssb-picture-card:focus {
+  outline: #9272fc solid 2px;
+  outline-offset: 2px;
+}
 .ssb-picture-card .overlay {
   bottom: 0;
   position: absolute;
@@ -1253,16 +1269,20 @@ a {
   max-width: 100%;
 }
 .ssb-input.input-lg .search-icon {
-  margin-left: -73px;
+  margin-left: -78px;
   height: 77px;
   width: 77px;
   padding: 17px;
 }
 .ssb-input.input-lg input {
   width: 100%;
-  padding: 38px 25px;
+  padding: 38px 40px;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 20px;
+}
+.ssb-input.input-lg input::placeholder {
+  font-weight: normal;
+  font-size: 20px;
 }
 
 .ssb-input-error {
@@ -1981,7 +2001,7 @@ a {
   align-items: center;
   cursor: pointer;
   display: flex;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   justify-content: center;
   line-height: 1.25;

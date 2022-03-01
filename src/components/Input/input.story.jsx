@@ -65,6 +65,6 @@ storiesOf('Input', module).addDecorator(centered)
 			alignItems: 'center',
 		}}
 		>
-			<Input searchField size="lg" value="Lønn" />
+			<Input searchField size="lg" placeholder="Søk" />
 		</div>
 	));
