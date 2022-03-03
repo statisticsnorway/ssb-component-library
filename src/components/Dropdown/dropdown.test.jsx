@@ -16,7 +16,7 @@ const items = [
 	},
 ];
 
-jest.mock('uuid/v4', () => jest.fn(() => 1));
+jest.mock('uuid', () => ({ v4: () => 1 }));
 
 describe('Dropdown component', () => {
 	test('Matches the snapshot', () => {
