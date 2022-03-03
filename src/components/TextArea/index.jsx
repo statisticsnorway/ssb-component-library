@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import uuid from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import InputError from '../InputError';
 
 const TextArea = ({
@@ -8,7 +8,7 @@ const TextArea = ({
 	rows, cols, onBlur, onFocus,
 }) => {
 	const [inputValue, setValue] = useState(value);
-	const inputId = id || uuid();
+	const inputId = id || uuidv4();
 	const handleInputChange = e => {
 		setValue(e.target.value);
 		handleChange(e.target.value);

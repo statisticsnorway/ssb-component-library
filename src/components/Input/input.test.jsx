@@ -3,7 +3,7 @@ import {mount, shallow} from 'enzyme';
 import Input from './index';
 import InputError from '../InputError';
 
-jest.mock('uuid/v4', () => jest.fn(() => 1));
+jest.mock('uuid', () => ({ v4: () => 1 }));
 
 describe('Input component', () => {
 	test('Matches the snapshot', () => {
