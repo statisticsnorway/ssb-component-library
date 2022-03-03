@@ -271,7 +271,7 @@ Dropdown.propTypes = {
 	items: PropTypes.arrayOf(PropTypes.shape({
 		title: PropTypes.string,
 		id: PropTypes.string,
-		disabled: PropTypes.boolean,
+		disabled: PropTypes.bool,
 	})),
 	onSelect: PropTypes.func,
 	open: PropTypes.bool,
