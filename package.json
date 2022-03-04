@@ -44,7 +44,7 @@
     "@storybook/addon-centered": "^5.3.21",
     "@storybook/addon-links": "^6.4.19",
     "@storybook/addons": "^6.4.19",
-    "@storybook/react": "^5.3.21",
+    "@storybook/react": "^6.4.19",
     "@svgr/rollup": "^6.2.1",
     "@svgr/webpack": "^4.3.3",
     "@babel/eslint-parser": "^7.17.0",
