@@ -17,7 +17,7 @@ export default [{
 	external: [
 		'react',
 		'prop-types',
-		'uuid/v4',
+		'uuid',
 	],
 	plugins: [
 		scss({
