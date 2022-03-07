@@ -1,5 +1,4 @@
 const path = require('path');
-const sass = require('sass');
 
 module.exports = {
     stories: ['../**/*.story.jsx'],
@@ -7,25 +6,21 @@ module.exports = {
         '@storybook/addon-actions',
         '@storybook/addon-links'
     ],
-    webpackFinal: async (config, { configType }) => {
-        
+    //staticDirs: ['../src/media'],
+    webpackFinal: config => {
         config.module.rules.push(
             {
 				include: path.resolve(__dirname, '../'),
 				test: /\.(s*)css$/i,
+                sideEffects: true,
 				use: [
 					'style-loader',
 					'css-loader',
-					{
-						loader: 'sass-loader',
-						options: {
-							implementation: sass,
-						},
-					},
+                    'sass-loader'
 				],
 			},
             {
-				test: /\.(png|jpg|gif|woff|ttf)$/,
+                test: /\.(png|jpg|gif|woff|ttf)$/,
 				use: [
 					'file-loader',
 				],
