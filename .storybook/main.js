@@ -2,9 +2,15 @@ const path = require('path');
 const sass = require('sass');
 
 module.exports = {
-	module: {
-		rules: [
-			{
+    stories: ['../**/*.story.jsx'],
+    addons: [
+        '@storybook/addon-actions',
+        '@storybook/addon-links'
+    ],
+    webpackFinal: async (config, { configType }) => {
+        
+        config.module.rules.push(
+            {
 				include: path.resolve(__dirname, '../'),
 				test: /\.(s*)css$/i,
 				use: [
@@ -18,7 +24,7 @@ module.exports = {
 					},
 				],
 			},
-			{
+            {
 				test: /\.(png|jpg|gif|woff|ttf)$/,
 				use: [
 					'file-loader',
@@ -27,11 +33,12 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				use: ['@svgr/webpack'],
-			},
-		],
-	},
-
-	resolve: {
+			}, 
+        );
+        return config;
+    },
+    resolve: {
 		extensions: ['.jsx', '.js'],
-	},
+	}
 };
+
