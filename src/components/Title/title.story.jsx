@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import Title from './index';
 
-storiesOf('Title', module).addDecorator(centered)
+storiesOf('Title', module)
 	.add('Default', () => (
 		<div>
 			<Title size={1}>This is a h1 title</Title>

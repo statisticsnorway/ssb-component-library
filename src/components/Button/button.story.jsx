@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import { ChevronDown } from 'react-feather';
 import Button from './index';
 
@@ -12,7 +11,7 @@ const negativeStyle = {
 	gridColumnGap: '20px',
 };
 
-storiesOf('Button', module).addDecorator(centered)
+storiesOf('Button', module)
 	.add('Primary', () => (
 		<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, auto)', gridColumnGap: '20px' }}>
 			<Button primary>Primary button</Button>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import Input from './index';
 
 let someValue = '';
@@ -12,7 +11,7 @@ const handleSubmit = e => {
 	console.log(e);
 };
 
-storiesOf('Input', module).addDecorator(centered)
+storiesOf('Input', module)
 	.add('Default', () => (
 		<div style={{ width: '280px' }}>
 			<Input label="Input field" value={someValue} handleChange={handleChange} />

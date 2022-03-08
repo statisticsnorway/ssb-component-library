@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import Breadcrumb from './index';
 
 const mockedItems = [
@@ -17,7 +16,7 @@ const mockedItems = [
 	},
 ];
 
-storiesOf('Breadcrumb', module).addDecorator(centered)
+storiesOf('Breadcrumb', module)
 	.add('Default', () => (
 		<div>
 			<Breadcrumb items={mockedItems} />

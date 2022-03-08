@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import Number from './index';
 
-storiesOf('Number', module).addDecorator(centered)
+storiesOf('Number', module)
 	.add('Small', () => (
 		<div>
 			<Number size="small">599 246 391</Number>

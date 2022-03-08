@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import { Globe } from 'react-feather';
 import Card from './index';
 import Text from '../Text';
 
-storiesOf('Card', module).addDecorator(centered)
+storiesOf('Card', module)
 	.add('Default', () => (
 		<div style={{ width: '700px', display: 'flex', justifyContent: 'center' }}>
 			<div style={{ width: '380px', marginRight: '10px' }}>

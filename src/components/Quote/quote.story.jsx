@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import Quote from './index';
 
 const negativeStyle = {
@@ -8,7 +7,7 @@ const negativeStyle = {
 	padding: '100px',
 };
 
-storiesOf('Quote', module).addDecorator(centered)
+storiesOf('Quote', module)
 	.add('Default', () => (
 		<div style={{ padding: '100px' }}>
 			<Quote>

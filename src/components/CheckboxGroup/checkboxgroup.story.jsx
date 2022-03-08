@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import CheckboxGroup from './index';
 
 const checkboxItems = [
@@ -17,7 +16,7 @@ const checkboxItems = [
 	},
 ];
 
-storiesOf('CheckboxGroup', module).addDecorator(centered)
+storiesOf('CheckboxGroup', module)
 	.add('Column', () => (
 		<CheckboxGroup header="Header" items={checkboxItems} />
 	))

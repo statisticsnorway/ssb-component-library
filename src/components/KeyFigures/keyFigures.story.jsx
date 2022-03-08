@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import KeyFigures from './index';
 import Divider from '../Divider';
 import HouseIcon from '../../media/house-icon.svg';
@@ -9,7 +8,7 @@ const title = 'Antall husholdninger';
 const placeholderText = `This is the explanation of the word
 written in one or more paragraphs depending on the amount of space needed`;
 
-storiesOf('KeyFigures', module).addDecorator(centered)
+storiesOf('KeyFigures', module)
 	.add('Large', () => (
 		<div>
 			<KeyFigures

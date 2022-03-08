@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import TextArea from './index';
 
 let someValue = '';
@@ -8,7 +7,7 @@ const handleChange = e => {
 	someValue = e;
 };
 
-storiesOf('TextArea', module).addDecorator(centered)
+storiesOf('TextArea', module)
 	.add('Default', () => (
 		<div style={{ width: '500px' }}>
 			<TextArea label="Label" placeholder="I can be resized..." handleChange={handleChange} value={someValue} />

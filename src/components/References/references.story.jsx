@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import References from './index';
 
 const referenceList = [
@@ -30,7 +29,7 @@ const referenceList2 = [
 	},
 ];
 
-storiesOf('References', module).addDecorator(centered)
+storiesOf('References', module)
 	.add('Regular', () => (
 		<References title="Source" referenceList={referenceList2} />
 	))

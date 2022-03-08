@@ -1,13 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import { ChevronDown, Map, Search } from 'react-feather';
 import StickyMenu from './index';
 import Input from '../Input';
 import Text from '../Text';
 import Divider from '../Divider';
 
-storiesOf('StickyMenu', module).addDecorator(centered)
+storiesOf('StickyMenu', module)
 	.add('Default', () => (
 		<div style={{ width: '1400px' }}>
 			<StickyMenu>

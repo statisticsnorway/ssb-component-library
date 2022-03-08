@@ -1,13 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import Accordion from './index';
 import NestedAccordion from '../NestedAccordion';
 
 const mockText = `This is paragraph text which explains the accordion,
  the rest of the text is just to fill it out and show the space it takes.`;
 
-storiesOf('Accordion', module).addDecorator(centered)
+storiesOf('Accordion', module)
 	.add('Default', () => (
 		<div style={{ display: 'flex', width: '500px' }}>
 			<Accordion header="This is a accordion title">

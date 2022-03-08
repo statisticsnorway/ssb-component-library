@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import { Search } from 'react-feather';
 import Dropdown from './index';
 
@@ -33,7 +32,7 @@ const items = [
 	},
 ];
 
-storiesOf('Dropdown', module).addDecorator(centered)
+storiesOf('Dropdown', module)
 	.add('Standard', () => (
 		<Dropdown header="Menu header" items={items} />
 	))
