@@ -38,6 +38,9 @@ module.exports = {
     },
     resolve: {
 		extensions: ['.jsx', '.js'],
-	}
+	},
+    features: {
+        postcss: false,
+    }
 };
 
