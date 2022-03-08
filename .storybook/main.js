@@ -6,8 +6,12 @@ module.exports = {
         '@storybook/addon-actions',
         '@storybook/addon-links'
     ],
-    //staticDirs: ['../src/media'],
+    staticDirs: ['../src/media'],
     webpackFinal: config => {
+        const fileLoaderRule = config.module.rules.find(
+            (rule) => rule.test && rule.test.test(".svg")
+        );
+        fileLoaderRule.exclude = /\.svg$/;
         config.module.rules.push(
             {
 				include: path.resolve(__dirname, '../'),
@@ -28,7 +32,7 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				use: ['@svgr/webpack'],
-			}, 
+			},
         );
         return config;
     },
