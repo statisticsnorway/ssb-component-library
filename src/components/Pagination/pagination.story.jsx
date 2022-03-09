@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import Pagination from './index';
 
 const items = [
@@ -26,7 +25,7 @@ const items = [
 	{	text: '20', path: '/20'	},
 ];
 
-storiesOf('Pagination', module).addDecorator(centered)
+storiesOf('Pagination', module)
 	.add('Default', () => (
 		<div>
 			<Pagination items={items} labelNext="Neste" labelPrevious="Forrige" selectedPage={items[4]} />

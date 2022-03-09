@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import { ChevronRight, Facebook, Linkedin, Rss, Twitter } from 'react-feather';
 import Footer from './index';
 import Link from '../Link';
@@ -8,7 +7,7 @@ import Title from '../Title';
 import SsbLogo from '../../media/ssb-logo-white.svg';
 import Button from '../Button';
 
-storiesOf('Footer', module).addDecorator(centered)
+storiesOf('Footer', module)
 	.add('Default', () => (
 		<div style={{ width: '1200px' }}>
 			<Footer>

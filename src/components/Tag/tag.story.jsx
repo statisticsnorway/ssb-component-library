@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import { Star } from 'react-feather';
 import Tag from './index';
 
-storiesOf('Tag', module).addDecorator(centered)
+storiesOf('Tag', module)
 	.add('Tag', () => (
 		<div>
 			<Tag>Tag</Tag>

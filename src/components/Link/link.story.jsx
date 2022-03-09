@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import { ArrowRight } from 'react-feather';
 import Link from './index';
 
@@ -9,7 +8,7 @@ const negativeStyle = {
 	padding: '100px',
 };
 
-storiesOf('Link', module).addDecorator(centered)
+storiesOf('Link', module)
 	.add('Default', () => (
 		<div>
 			<p>Check it out a <Link href=" "> regular link</Link> within a sentence!</p>

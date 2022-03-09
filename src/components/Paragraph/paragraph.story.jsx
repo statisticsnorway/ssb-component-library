@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import Paragraph from './index';
 
-storiesOf('Paragraph', module).addDecorator(centered)
+storiesOf('Paragraph', module)
 	.add('Standard', () => (
 		<div>
 			<Paragraph>

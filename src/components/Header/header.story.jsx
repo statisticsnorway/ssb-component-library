@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import Header from './index';
 import Tabs from '../Tabs';
 import Divider from '../Divider';
@@ -27,7 +26,7 @@ const items = [
 	},
 ];
 
-storiesOf('Header', module).addDecorator(centered)
+storiesOf('Header', module)
 	.add('Default', () => (
 		<div style={{ width: '1200px' }}>
 			<Header>

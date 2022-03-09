@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import FactBox from './index';
 
 const mockedHeader = 'This is a fact box header';
@@ -9,7 +8,7 @@ const mockedText = 'This is a normal paragraph text where the explanation of the
 
 const mockedContent = <span>Insert custom HTML if you want to display something else than just text</span>;
 
-storiesOf('FactBox', module).addDecorator(centered)
+storiesOf('FactBox', module)
 	.add('Default', () => (
 		<div style={{ width: '450px' }}>
 			<FactBox header={mockedHeader} text={mockedText} />

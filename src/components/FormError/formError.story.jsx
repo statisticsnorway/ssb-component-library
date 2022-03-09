@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import FormError from './index';
 
 const errorMessages = [
@@ -9,7 +8,7 @@ const errorMessages = [
 	'Feed the dog',
 ];
 
-storiesOf('FormError', module).addDecorator(centered)
+storiesOf('FormError', module)
 	.add('Default', () => (
 		<div style={{ width: '600px' }}>
 			<FormError errorMessages={errorMessages} title="Some fields are not right!" />

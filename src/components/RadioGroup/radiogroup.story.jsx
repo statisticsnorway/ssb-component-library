@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import RadioGroup from './index';
 
 const radioItems = [
@@ -17,7 +16,7 @@ const radioItems = [
 	},
 ];
 
-storiesOf('RadioGroup', module).addDecorator(centered)
+storiesOf('RadioGroup', module)
 	.add('Column', () => (
 		<RadioGroup header="Header" items={radioItems} />
 	)).add('Row', () => (

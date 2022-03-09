@@ -1,12 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import centered from '@storybook/addon-centered/react';
 import { Globe } from 'react-feather';
 import Card from './index';
 import Text from '../Text';
-import testImage from '../../media/16x9.png';
 
-storiesOf('Card', module).addDecorator(centered)
+storiesOf('Card', module)
 	.add('Default', () => (
 		<div style={{ width: '700px', display: 'flex', justifyContent: 'center' }}>
 			<div style={{ width: '380px', marginRight: '10px' }}>
@@ -81,7 +79,7 @@ storiesOf('Card', module).addDecorator(centered)
 		<div>
 			<Card
 				imagePlacement="left"
-				image={<img src={testImage} alt="testImage" />}
+				image={<img src="/16x9.png" alt="testImage" />}
 				href=" "
 				subTitle="Artikkel / 11. mai 2019"
 				title="Tittel"
@@ -94,7 +92,7 @@ storiesOf('Card', module).addDecorator(centered)
 		<div style={{ width: '380px' }}>
 			<Card
 				imagePlacement="top"
-				image={<img src={testImage} alt="testImage" />}
+				image={<img src="/16x9.png" alt="testImage" />}
 				href=" "
 				subTitle="Artikkel / 11. mai 2019"
 				title="Tittel"
