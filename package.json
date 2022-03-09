@@ -32,6 +32,9 @@
   },
   "sideEffects": false,
   "homepage": "https://statisticsnorway.github.io/design-system/",
+  "peerDependencies": {
+    "react": "^16.10.2 || ^17.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
