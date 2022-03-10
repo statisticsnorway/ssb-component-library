@@ -38,20 +38,19 @@
         color: $ssb-green-4;
       }
     }
-
   }
 
   &:not(.without-borders) {
 
-    &:before {
+    &::before {
       border-top: 1px solid $ssb-dark-2;
-      content: '';
+      content: "";
       height: 2px;
     }
 
-    &:after {
+    &::after {
       border-bottom: 1px solid $ssb-dark-2;
-      content: '';
+      content: "";
       height: 2px;
       margin-bottom: -1px;
     }

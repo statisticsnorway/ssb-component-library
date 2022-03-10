@@ -132,7 +132,6 @@
         font-weight: bold;
       }
     }
-
   }
 
   ::-webkit-scrollbar {
@@ -155,19 +154,19 @@
 
     .dropdown-interactive-area {
 
-     #button_dropdown {
+      button {
         max-width: 100%;
         padding: 29px 40px;
         font-size: 20px;
       }
     }
 
-    .list-of-options{
+    .list-of-options {
       max-width: 100%;
       width: 100%;
       top: auto;
 
-      .option-list-element{
+      .option-list-element {
         max-width: 100%;
         width: 100%;
       }
@@ -180,10 +179,8 @@
     }
 
     input {
-      padding: 40px 40px;
+      padding: 40px;
       font-size: 20px;
     }
-
   }
-
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ArrowDown, ArrowUp, Minus } from 'react-feather';
+import { ArrowDown, ArrowUp, Minus } from 'react-feather';
 import Number from '../Number';
 import Glossary from '../Glossary';
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronDown, ChevronUp } from 'react-feather';
+import { ChevronDown, ChevronUp } from 'react-feather';
 
 const Accordion = ({
 	id, children, className, header, openByDefault, subHeader, tabIndex, withoutBorders, onToggle,

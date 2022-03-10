@@ -17,19 +17,16 @@ exports[`FormError component Matches the snapshot 1`] = `
       <li
         key="0"
       >
-         
         Not a valid email
       </li>
       <li
         key="1"
       >
-         
         Select a country
       </li>
       <li
         key="2"
       >
-         
         Feed the dog
       </li>
     </ul>

@@ -133,7 +133,7 @@ $small-size: 108px;
     border-radius: 2px;
     width: 100%;
 
-    &:after {
+    &::after {
       top: 100%;
       left: 50%;
       border: solid transparent;
@@ -142,7 +142,7 @@ $small-size: 108px;
       width: 0;
       position: absolute;
       pointer-events: none;
-      border-color: rgba(229, 254, 230, 0);
+      border-color: rgb(229 254 230 / 0%);
       border-top-color: $ssb-green-1;
       border-width: 42px;
       margin-left: -42px;

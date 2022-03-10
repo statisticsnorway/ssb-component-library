@@ -10,7 +10,7 @@
   .error-icon {
     margin: 0 15px;
 
-    &:before {
+    &::before {
       align-items: center;
       background: $ssb-red-3;
       border-radius: 2px;

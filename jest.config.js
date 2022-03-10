@@ -26,4 +26,5 @@ module.exports = {
 	testMatch: ['**/*.test.jsx'],
 	transform: { '^.+\\.jsx?$': 'babel-jest' },
 	transformIgnorePatterns: ['<rootDir>/node_modules/'],
+	testEnvironment: 'jsdom',
 };

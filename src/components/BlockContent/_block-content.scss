@@ -2,7 +2,7 @@
   @include open-sans;
   background: $ssb-white;
   border-top: 4px solid $ssb-green-3;
-  box-shadow: 0 2px 4px 1px rgba(200, 200, 200, .5);
+  box-shadow: 0 2px 4px 1px rgb(200 200 200 / 50%);
   box-sizing: border-box;
   margin-bottom: 80px;
   max-width: 1200px;
@@ -16,9 +16,9 @@
     font-size: 30px;
     margin-top: -35px;
 
-    &:before {
+    &::before {
       background: $ssb-green-3;
-      content: '';
+      content: "";
       display: inline-block;
       height: 22px;
       margin-right: 10px;
