@@ -18,7 +18,7 @@ $icon-padding: 8px;
   line-height: 1.7;
   margin-top: -3px;
   margin-bottom: -2px;
-  padding: 0 1px 2px 1px;
+  padding: 0 1px 2px;
   position: relative;
   text-decoration: none;
   transition: background-size .2s ease-in, color .1s;
@@ -89,7 +89,6 @@ $icon-padding: 8px;
           color: $ssb-dark-5;
         }
       }
-
     }
 
     &:hover, &:focus {

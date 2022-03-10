@@ -1,5 +1,6 @@
 .ssb-table-link {
   display: flex;
+
   @include focus-marker;
   text-decoration: none;
 

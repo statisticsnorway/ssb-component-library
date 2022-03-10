@@ -29,10 +29,9 @@
       color: $ssb-dark-6;
     }
 
-    .glossary-text-wrap{
+    .glossary-text-wrap {
       border-bottom: none;
     }
-
   }
 
   .glossary-popup {
@@ -49,11 +48,11 @@
     width: 270px;
     z-index: 999;
 
-    &:after {
+    &::after {
       border-color: transparent transparent $ssb-dark-5 transparent;
       border-style: solid;
       border-width: 12px;
-      content: '';
+      content: "";
       left: 50%;
       margin-left: -12px;
       position: absolute;

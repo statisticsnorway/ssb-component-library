@@ -12,7 +12,6 @@ exports[`References component Matches the snapshot 1`] = `
   <div
     key="0"
   >
-     
     <Link
       className=""
       href=" "
@@ -27,7 +26,6 @@ exports[`References component Matches the snapshot 1`] = `
   <div
     key="1"
   >
-     
     <Link
       className=""
       href=" "
@@ -42,7 +40,6 @@ exports[`References component Matches the snapshot 1`] = `
   <div
     key="2"
   >
-     
     <Text
       className="no-margin"
       negative={false}

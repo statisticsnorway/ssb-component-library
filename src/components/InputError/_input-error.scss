@@ -15,11 +15,11 @@
     color: $ssb-dark-5;
   }
 
-  &:before {
+  &::before {
     border-color: transparent transparent $ssb-red-3 transparent;
     border-style: solid;
     border-width: 8px;
-    content: '';
+    content: "";
     position: absolute;
     top: -16px;
   }

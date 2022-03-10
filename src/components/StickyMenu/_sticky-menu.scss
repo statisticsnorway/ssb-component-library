@@ -3,7 +3,7 @@
   align-items: center;
   background-color: $ssb-white;
   border: solid 1px $ssb-dark-2;
-  box-shadow: 2px 2px 10px 0 rgba(206, 205, 205, .5);
+  box-shadow: 2px 2px 10px 0 rgb(206 205 205 / 50%);
   color: $ssb-dark-6;
   display: flex;
   justify-content: center;
@@ -24,16 +24,15 @@
   }
 
   input {
-	min-width: 180px;
-	width: 100%;
+    min-width: 180px;
+    width: 100%;
   }
 
   .input-header {
     color: $ssb-dark-5;
     font-size: 18px;
-	font-weight: bold;
-	margin-right: 10px;
-	white-space: nowrap;
+    font-weight: bold;
+    margin-right: 10px;
+    white-space: nowrap;
   }
-
 }

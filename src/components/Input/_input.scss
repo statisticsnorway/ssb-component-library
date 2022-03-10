@@ -20,22 +20,12 @@
   }
 
   .input-wrapper {
-	  display: flex;
-	
+    display: flex;
+
     ::placeholder {
       color: $ssb-dark-4;
       font-size: 14px;
       opacity: 1;
-    }
-
-    :-ms-input-placeholder {
-      color: $ssb-dark-4;
-      font-size: 14px;
-    }
-
-    ::-ms-input-placeholder {
-      color: $ssb-dark-4;
-      font-size: 14px;
     }
   }
 
@@ -55,7 +45,7 @@
     color: $ssb-dark-6;
     font-size: 16px;
     height: $input-field-height;
-    padding: 12px 12px;
+    padding: 12px;
     text-overflow: ellipsis;
     width: 100%;
 
@@ -73,7 +63,6 @@
       outline: 1px solid $ssb-green-4;
       outline-offset: 0;
     }
-
   }
 
   &.negative {
@@ -83,14 +72,6 @@
       ::placeholder {
         color: $ssb-white;
         opacity: 1;
-      }
-
-      :-ms-input-placeholder {
-        color: $ssb-white;
-      }
-
-      ::-ms-input-placeholder {
-        color: $ssb-white;
       }
     }
 
@@ -225,6 +206,5 @@
         font-size: 20px;
       }
     }
-
   }
 }
