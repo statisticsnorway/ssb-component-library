@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 const Highlight = ({
 	children, className, negative,
-}) => <mark className={`ssb-mark${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}> { children } </mark>;
+}) => (
+	<mark className={`ssb-mark${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}> { children } </mark>
+);
 
 Highlight.defaultProps = {
 	negative: false,

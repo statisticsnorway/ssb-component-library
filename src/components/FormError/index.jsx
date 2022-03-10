@@ -9,7 +9,9 @@ const FormError = ({ className, errorMessages, negative, title }) => (
 			<ul>
 				{errorMessages.map((error, index) => (
 					// eslint-disable-next-line react/no-array-index-key
-					<li key={index}>{error}</li>
+					<li key={index}>
+						{error}
+					</li>
 				))}
 			</ul>
 		</div>

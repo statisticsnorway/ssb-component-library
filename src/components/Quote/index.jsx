@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 const Quote = ({
 	children, className, negative,
-}) => <span className={`ssb-quote${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</span>;
+}) => (
+	<span className={`ssb-quote${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</span>
+);
 
 Quote.defaultProps = {
 	negative: false,
