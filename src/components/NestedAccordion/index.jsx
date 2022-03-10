@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronDown, ChevronUp } from 'react-feather';
 
-function NestedAccordion({
+const NestedAccordion = ({
 	children, className, header, openByDefault, onToggle,
-}) {
+}) => {
 	const [isOpen, toggleOpen] = useState(openByDefault);
 	const firstUpdate = useRef(true);
 	useEffect(() => {
@@ -32,7 +32,7 @@ function NestedAccordion({
 			</div>
 		</div>
 	);
-}
+};
 
 NestedAccordion.defaultProps = {
 	openByDefault: false,

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import InputError from '../InputError';
 
-function TextArea({
+const TextArea = ({
 	ariaLabel, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, value,
 	rows, cols, onBlur, onFocus,
-}) {
+}) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || uuidv4();
 	const handleInputChange = e => {
@@ -37,7 +37,7 @@ function TextArea({
 			))}
 		</div>
 	);
-}
+};
 
 TextArea.defaultProps = {
 	className: '',

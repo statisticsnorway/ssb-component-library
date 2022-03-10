@@ -4,28 +4,27 @@ import { ArrowDown, ArrowUp, Minus } from 'react-feather';
 import Number from '../Number';
 import Glossary from '../Glossary';
 
-function KeyFigures({	changes, className, icon, number, numberDescription, noNumberText, size, title, time, glossary, greenBox }) {
-	return (
-		<div className={`ssb-key-figures ${size}${greenBox ? ' green-box' : ''}${className ? ` ${className}` : ''}`}>
-			{icon && <div className={`kf-icon ${size}`}>{icon}</div>}
-			<div>
-				{glossary
-					? (
-						<Glossary explanation={glossary}>
-							<span className="kf-title">{title}</span>
-						</Glossary>
-					)
-					: <span className="kf-title">{title}</span>}
-				<div className="kf-time">{time}</div>
-				{number
-					? (
-						<div className="number-section">
-							<Number size={size}>{number}</Number>
-							<span className="kf-title subtitle">{numberDescription}</span>
-						</div>
-					)
-					: <span className="no-number">{noNumberText}</span>}
-				{changes
+const KeyFigures = ({	changes, className, icon, number, numberDescription, noNumberText, size, title, time, glossary, greenBox }) => (
+	<div className={`ssb-key-figures ${size}${greenBox ? ' green-box' : ''}${className ? ` ${className}` : ''}`}>
+		{icon && <div className={`kf-icon ${size}`}>{icon}</div>}
+		<div>
+			{glossary
+				? (
+					<Glossary explanation={glossary}>
+						<span className="kf-title">{title}</span>
+					</Glossary>
+				)
+				: <span className="kf-title">{title}</span>}
+			<div className="kf-time">{time}</div>
+			{number
+				? (
+					<div className="number-section">
+						<Number size={size}>{number}</Number>
+						<span className="kf-title subtitle">{numberDescription}</span>
+					</div>
+				)
+				: <span className="no-number">{noNumberText}</span>}
+			{changes
 				&& (
 					<div className="kf-changes">
 						{changes.changeDirection === 'up' && (<ArrowUp className="changes-icon" size={20} />)}
@@ -35,10 +34,9 @@ function KeyFigures({	changes, className, icon, number, numberDescription, noNum
 						<span className="changes-periode">{changes.changePeriod}</span>
 					</div>
 				)}
-			</div>
 		</div>
-	);
-}
+	</div>
+);
 
 KeyFigures.defaultProps = {
 	noNumberText: 'Tall ikke tilgjengelig',

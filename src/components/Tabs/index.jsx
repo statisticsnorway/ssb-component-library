@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function Tabs({ activeOnInit, className, items, onClick }) {
+const Tabs = ({ activeOnInit, className, items, onClick }) => {
 	const [activeItem, changeActive] = useState(activeOnInit);
 
 	const handleClick = e => {
@@ -21,7 +21,7 @@ function Tabs({ activeOnInit, className, items, onClick }) {
 			))}
 		</div>
 	);
-}
+};
 
 Tabs.defaultProps = {
 	activeOnInit: '',

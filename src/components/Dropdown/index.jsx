@@ -11,8 +11,8 @@ import {
 } from '../../utils/keybindings';
 import InputError from '../InputError';
 
-function Dropdown({ className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage, ariaLabel, id, largeSize,
-}) {
+const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage, ariaLabel, id, largeSize,
+}) => {
 	// all the refs we need!
 	const wrapper = useRef();
 	const node = useRef();
@@ -249,7 +249,7 @@ function Dropdown({ className, header, icon, items, onSelect, open, placeholder,
 			</div>
 		</div>
 	);
-}
+};
 
 Dropdown.defaultProps = {
 	header: '',

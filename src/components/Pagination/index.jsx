@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
-function Pagination({
+const Pagination = ({
 	className, items, labelNext, labelPrevious, onSelect, selectedPage,
-}) {
+}) => {
 	const [selected, setSelected] = useState(selectedPage || items[0]);
 	const [currentButtons, updateCurrentButtons] = useState([{}]);
 	const [showLeftDots, updateLeftDots] = useState(false);
@@ -76,7 +76,7 @@ function Pagination({
 			</button>
 		</nav>
 	);
-}
+};
 
 Pagination.defaultProps = {
 	onSelect: () => {},

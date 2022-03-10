@@ -2,17 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Accordion from '../Accordion';
 
-function FactBox({
+const FactBox = ({
 	className, header, openByDefault, text,
-}) {
-	return (
-		<div className={`ssb-fact-box${className ? ` ${className}` : ''}`}>
-			<Accordion header={header} openByDefault={openByDefault} withoutBorders>
-				{text}
-			</Accordion>
-		</div>
-	);
-}
+}) => (
+	<div className={`ssb-fact-box${className ? ` ${className}` : ''}`}>
+		<Accordion header={header} openByDefault={openByDefault} withoutBorders>
+			{text}
+		</Accordion>
+	</div>
+);
 
 FactBox.defaultProps = {
 	className: '',

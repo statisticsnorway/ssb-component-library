@@ -2,20 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AlertTriangle, Info } from 'react-feather';
 
-function Dialog({ children, className, title, type }) {
-	return (
-		<div className={`ssb-dialog ${type}${className ? ` ${className}` : ''}`}>
-			<div className="icon-panel">
-				{type === 'warning' && <AlertTriangle size={45} className="icon" />}
-				{type === 'info' && <Info size={45} className="icon" />}
-			</div>
-			<div className="dialog-content">
-				<span className="dialog-title">{title}</span>
-				<div className="content">{children}</div>
-			</div>
+const Dialog = ({ children, className, title, type }) => (
+	<div className={`ssb-dialog ${type}${className ? ` ${className}` : ''}`}>
+		<div className="icon-panel">
+			{type === 'warning' && <AlertTriangle size={45} className="icon" />}
+			{type === 'info' && <Info size={45} className="icon" />}
 		</div>
-	);
-}
+		<div className="dialog-content">
+			<span className="dialog-title">{title}</span>
+			<div className="content">{children}</div>
+		</div>
+	</div>
+);
 
 Dialog.defaultProps = {
 	className: '',

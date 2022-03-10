@@ -4,10 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { Search } from 'react-feather';
 import InputError from '../InputError';
 
-function Input({
+const Input = ({
 	role, ariaLabelWrapper, ariaLabel, ariaLabelledBy, ariaLabelSearchButton,
 	className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size,
-}) {
+}) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || uuidv4();
 	const handleInputChange = e => {
@@ -51,7 +51,7 @@ function Input({
 			))}
 		</div>
 	);
-}
+};
 
 Input.defaultProps = {
 	className: '',

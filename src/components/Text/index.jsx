@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Text({ children, className, negative, small }) {
-	return <span className={`ssb-text-wrapper${small ? ' small-text' : ''}${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</span>;
-}
+const Text = ({ children, className, negative, small }) => (
+	<span className={`ssb-text-wrapper${small ? ' small-text' : ''}${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</span>
+);
 
 Text.defaultProps = {
 	negative: false,

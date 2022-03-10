@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button({
+const Button = ({
 	children, className, disabled, icon, negative, onClick, primary, type,
-}) {
-	return (
-		<button
-			type={type}
-			className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'}${className ? ` ${className}` : ''}`}
-			onClick={onClick}
-			disabled={disabled}
-		>
-			{icon && <div className="sb-icon">{icon}</div>}
-			{children}
-		</button>
-	);
-}
+}) => (
+	<button
+		type={type}
+		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'}${className ? ` ${className}` : ''}`}
+		onClick={onClick}
+		disabled={disabled}
+	>
+		{icon && <div className="sb-icon">{icon}</div>}
+		{children}
+	</button>
+);
 
 Button.defaultProps = {
 	className: '',

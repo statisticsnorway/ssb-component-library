@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Number({
+const Number = ({
 	children, className, size,
-}) {
-	return (
-		<div className={`ssb-number ${size}${className ? ` ${className}` : ''}`}>
-			{children}
-		</div>
-	);
-}
+}) => (
+	<div className={`ssb-number ${size}${className ? ` ${className}` : ''}`}>
+		{children}
+	</div>
+);
 
 Number.defaultProps = {
 	size: 'small',

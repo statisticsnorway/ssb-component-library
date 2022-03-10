@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Header({ children, className }) {
-	return (
-		<div className={`ssb-header-wrapper${className ? ` ${className}` : ''}`}>
-			{children}
-		</div>
-	);
-}
+const Header = ({ children, className }) => (
+	<div className={`ssb-header-wrapper${className ? ` ${className}` : ''}`}>
+		{children}
+	</div>
+);
 
 Header.defaultProps = {};
 

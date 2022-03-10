@@ -2,9 +2,9 @@ import React from 'react';
 import { ArrowRight } from 'react-feather';
 import PropTypes from 'prop-types';
 
-function CategoryLink({
+const CategoryLink = ({
 	ariaLabel, titleText, subText, className, href, tabIndex, title,
-}) {
+}) => {
 	const classNames = `ssb-category-link${className ? ` ${className}` : ''}`;
 
 	return (
@@ -30,7 +30,7 @@ function CategoryLink({
 			)}
 		</a>
 	);
-}
+};
 
 CategoryLink.defaultProps = {
 	className: '',

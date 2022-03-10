@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import RadioButton from '../RadioButton';
 
-function RadioGroup({ className, groupName, header, items, onChange, orientation, selectedValue }) {
+const RadioGroup = ({ className, groupName, header, items, onChange, orientation, selectedValue }) => {
 	const [selected, updateSelected] = useState(selectedValue);
 
 	useEffect(() => {
@@ -28,7 +28,7 @@ function RadioGroup({ className, groupName, header, items, onChange, orientation
 			</div>
 		</div>
 	);
-}
+};
 
 RadioGroup.defaultProps = {
 	onChange: () => {},
