@@ -29,7 +29,7 @@ export function useHover() {
 	return [hoverRef, value];
 }
 
-const PictureCard = ({ className, imageSrc, altText, link, onClick, orientation, title, type }) => {
+function PictureCard({ className, imageSrc, altText, link, onClick, orientation, title, type }) {
 	const [hoverRef, hovered] = useHover();
 	return (
 		<a
@@ -50,7 +50,7 @@ const PictureCard = ({ className, imageSrc, altText, link, onClick, orientation,
 			</div>
 		</a>
 	);
-};
+}
 
 PictureCard.defaultProps = {
 	onClick: () => {

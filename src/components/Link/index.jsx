@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Link = ({
+function Link({
 	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title, onClick,
-}) => {
+}) {
 	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
 
 	return (
@@ -21,7 +21,7 @@ const Link = ({
 			{children && <span className="link-text">{children}</span>}
 		</a>
 	);
-};
+}
 
 Link.defaultProps = {
 	className: '',

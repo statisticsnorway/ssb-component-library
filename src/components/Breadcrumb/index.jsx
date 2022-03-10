@@ -2,20 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '../Link';
 
-const Breadcrumb = ({ className, items }) => (
-	<div className={`ssb-breadcrumbs${className ? ` ${className}` : ''}`}>
-		{items.map(item => (
-			item.link ? (
-				<div key={item.text}>
-					<Link href={item.link}>{item.text}</Link>
+function Breadcrumb({ className, items }) {
+	return (
+		<div className={`ssb-breadcrumbs${className ? ` ${className}` : ''}`}>
+			{items.map(item => (
+				item.link ? (
+					<div key={item.text}>
+						<Link href={item.link}>{item.text}</Link>
 					&nbsp;/&nbsp;
-				</div>
-			) : (
-				<span key={item.text}>{item.text}</span>
-			)
-		))}
-	</div>
-);
+					</div>
+				) : (
+					<span key={item.text}>{item.text}</span>
+				)
+			))}
+		</div>
+	);
+}
 
 Breadcrumb.propTypes = {
 	className: PropTypes.string,

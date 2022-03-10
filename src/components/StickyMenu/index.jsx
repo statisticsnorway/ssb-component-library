@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const StickyMenu = ({
+function StickyMenu({
 	children, className,
-}) => (
-	<div className={`ssb-sticky-menu${className ? ` ${className}` : ''}`}>
-		<div className="menu-content">{children}</div>
-	</div>
-);
+}) {
+	return (
+		<div className={`ssb-sticky-menu${className ? ` ${className}` : ''}`}>
+			<div className="menu-content">{children}</div>
+		</div>
+	);
+}
 
 StickyMenu.defaultProps = {};
 

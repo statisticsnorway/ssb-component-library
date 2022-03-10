@@ -1,22 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Checkbox = ({
+function Checkbox({
 	callback, children, className, disabled, selected, tabIndex, value,
-}) => (
-	<div className={`ssb-checkbox${className ? ` ${className}` : ''}`}>
-		<input
-			tabIndex={tabIndex}
-			disabled={disabled}
-			id={value}
-			checked={selected}
-			onChange={() => callback(value)}
-			type="checkbox"
-			value={value}
-		/>
-		<label className="checkbox-label" htmlFor={value}>{children}</label>
-	</div>
-);
+}) {
+	return (
+		<div className={`ssb-checkbox${className ? ` ${className}` : ''}`}>
+			<input
+				tabIndex={tabIndex}
+				disabled={disabled}
+				id={value}
+				checked={selected}
+				onChange={() => callback(value)}
+				type="checkbox"
+				value={value}
+			/>
+			<label className="checkbox-label" htmlFor={value}>{children}</label>
+		</div>
+	);
+}
 
 Checkbox.defaultProps = {
 	callback: () => {},

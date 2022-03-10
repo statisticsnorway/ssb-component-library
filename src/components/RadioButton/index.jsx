@@ -1,23 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RadioButton = ({
+function RadioButton({
 	callback, children, className, disabled, name, selected, tabIndex, value,
-}) => (
-	<div className={`ssb-radio${className ? ` ${className}` : ''}`}>
-		<input
-			tabIndex={tabIndex}
-			checked={selected}
-			id={value}
-			name={name}
-			disabled={disabled}
-			onChange={() => callback(value)}
-			type="radio"
-			value={value}
-		/>
-		<label className="radio-label" htmlFor={value}>{children}</label>
-	</div>
-);
+}) {
+	return (
+		<div className={`ssb-radio${className ? ` ${className}` : ''}`}>
+			<input
+				tabIndex={tabIndex}
+				checked={selected}
+				id={value}
+				name={name}
+				disabled={disabled}
+				onChange={() => callback(value)}
+				type="radio"
+				value={value}
+			/>
+			<label className="radio-label" htmlFor={value}>{children}</label>
+		</div>
+	);
+}
 
 RadioButton.defaultProps = {
 	callback: () => {},

@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FormError = ({ className, errorMessages, negative, title }) => (
-	<div className={`ssb-form-error${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>
-		<span className="error-icon" />
-		<div>
-			<span className="error-title">{title}</span>
-			<ul>
-				{errorMessages.map((error, index) => (
-					<li key={index}> {/* eslint-disable-line */}
-						{error}
-					</li>
-				))}
-			</ul>
+function FormError({ className, errorMessages, negative, title }) {
+	return (
+		<div className={`ssb-form-error${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>
+			<span className="error-icon" />
+			<div>
+				<span className="error-title">{title}</span>
+				<ul>
+					{errorMessages.map((error, index) => (
+						// eslint-disable-next-line react/no-array-index-key
+						<li key={index}>{error}</li>
+					))}
+				</ul>
+			</div>
 		</div>
-	</div>
-);
+	);
+}
 
 FormError.defaultProps = {
 	className: '',

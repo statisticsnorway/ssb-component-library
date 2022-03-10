@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Paragraph = ({ children, className, negative }) => <p className={`ssb-paragraph${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</p>;
+function Paragraph({ children, className, negative }) {
+	return <p className={`ssb-paragraph${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</p>;
+}
 
 Paragraph.propTypes = {
 	children: PropTypes.node,

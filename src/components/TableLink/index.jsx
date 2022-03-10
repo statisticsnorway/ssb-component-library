@@ -2,27 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight } from 'react-feather';
 
-const TableLink = ({
+function TableLink({
 	className, description, href, isExternal, tabIndex, text, title,
-}) => (
-	// eslint-disable-next-line react/jsx-no-target-blank
-	<a
-		className={`ssb-table-link${className ? ` ${className}` : ''}`}
-		href={href}
-		tabIndex={tabIndex}
-		target={isExternal ? '_blank' : undefined}
-		rel={isExternal ? 'noopener noreferrer' : undefined}
-		title={title}
-	>
-		<div className="tl-icon">
-			<ArrowRight size={22} />
-		</div>
-		<div className="tl-info">
-			<span className="tl-text">{text}</span>
-			<span className="tl-description">{description}</span>
-		</div>
-	</a>
-);
+}) {
+	return (
+		// eslint-disable-next-line react/jsx-no-target-blank
+		<a
+			className={`ssb-table-link${className ? ` ${className}` : ''}`}
+			href={href}
+			tabIndex={tabIndex}
+			target={isExternal ? '_blank' : undefined}
+			rel={isExternal ? 'noopener noreferrer' : undefined}
+			title={title}
+		>
+			<div className="tl-icon">
+				<ArrowRight size={22} />
+			</div>
+			<div className="tl-info">
+				<span className="tl-text">{text}</span>
+				<span className="tl-description">{description}</span>
+			</div>
+		</a>
+	);
+}
 
 TableLink.defaultProps = {
 	isExternal: true,

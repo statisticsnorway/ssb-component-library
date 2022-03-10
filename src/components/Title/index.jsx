@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Title = ({ children, className, negative, size }) => {
+function Title({ children, className, negative, size }) {
 	switch (size) {
 	case 1:
 		return <h1 className={`ssb-title${className ? ` ${className}` : ''}${negative ? ' negative' : ''}`}>{children}</h1>;
@@ -17,7 +17,7 @@ const Title = ({ children, className, negative, size }) => {
 		return <h6 className={`ssb-title${className ? ` ${className}` : ''}${negative ? ' negative' : ''}`}>{children}</h6>;
 	default: return <h1 className={`ssb-title${className ? ` ${className}` : ''}${negative ? ' negative' : ''}`}>{children}</h1>;
 	}
-};
+}
 
 Title.defaultProps = {
 	negative: false,

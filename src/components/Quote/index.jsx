@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Quote = ({
+function Quote({
 	children, className, negative,
-}) => (
-	<span className={`ssb-quote${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</span>
-);
+}) {
+	return <span className={`ssb-quote${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{ children }</span>;
+}
 
 Quote.defaultProps = {
 	negative: false,

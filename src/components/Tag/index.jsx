@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Tag = ({
+function Tag({
 	children, className, icon, onClick,
-}) => (
-	<button
-		className={`ssb-tag${className ? ` ${className}` : ''}`}
-		onClick={onClick}
-	>
-		{icon && <div className="st-icon">{icon}</div>}
-		{children}
-	</button>
-);
+}) {
+	return (
+		<button
+			className={`ssb-tag${className ? ` ${className}` : ''}`}
+			onClick={onClick}
+		>
+			{icon && <div className="st-icon">{icon}</div>}
+			{children}
+		</button>
+	);
+}
 
 Tag.defaultProps = {
 	className: '',

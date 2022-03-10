@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '../Checkbox';
 
-const CheckboxGroup = ({
+function CheckboxGroup({
 	className, header, items, onChange, orientation, selectedValues,
-}) => {
+}) {
 	const [selected, updateSelected] = useState(selectedValues);
 
 	useEffect(() => {
@@ -39,7 +39,7 @@ const CheckboxGroup = ({
 			</div>
 		</div>
 	);
-};
+}
 
 CheckboxGroup.defaultProps = {
 	onChange: () => {},

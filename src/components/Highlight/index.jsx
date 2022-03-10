@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Highlight = ({
+function Highlight({
 	children, className, negative,
-}) => (
-	<mark className={`ssb-mark${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}> { children } </mark>
-);
+}) {
+	return <mark className={`ssb-mark${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}> { children } </mark>;
+}
 
 Highlight.defaultProps = {
 	negative: false,
