@@ -3,46 +3,98 @@ import PropTypes from 'prop-types';
 import { ArrowRight, Download, ExternalLink } from 'react-feather';
 
 const Card = ({
-	children, className, external, downloadText, fileLocation, href, hrefText, icon, image, imagePlacement, profiled, subTitle, title,
-}) => (
-	<div className={`ssb-card${className ? ` ${className}` : ''}`}>
-		{/* eslint-disable-next-line react/jsx-no-target-blank */}
-		<a
-			href={href}
-			className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
-			target={external ? '_blank' : undefined}
-			rel={external ? 'noreferrer' : undefined}
-		>
-			{image && <div className="card-image">{image}</div>}
-			<div className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}>
-				{icon && <div className="card-icon">{icon}</div>}
-				{subTitle && <div className="card-subtitle">{subTitle}</div>}
-				{title && <div className="card-title">{title}</div>}
-				{ children }
-				{(!image && !hrefText) && (
-					external ? <ExternalLink className="arrow-icon" size={22} /> : <ArrowRight className="arrow-icon" size={22} />
-				)}
-				{(!image && hrefText) && (
-					<div className="card-action">
-						{external ? <ExternalLink className="arrow-icon" size={16} /> : <ArrowRight className="arrow-icon" size={16} />}
-						<div className="href-text">{hrefText}</div>
-					</div>
-				)}
-			</div>
-		</a>
-		{fileLocation && (
-			<a download href={fileLocation} className="download-section">
-				<Download className="download-icon" size={22} />
-				<span>{downloadText}</span>
+	children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, title,
+}) => {
+	const handleClick = e => {
+		window.open(href, external ? '_blank' : '_self');
+	};
+
+	function renderLink() {
+		if (external) {
+			return (
+				<a
+					className={hrefText ? 'href-text' : undefined}
+					href={href}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={!hrefText ? (title || '') : undefined}
+					aria-describedby={subTitle ? `subtitle_${id}` : undefined}
+				>
+					{hrefText || null}
+				</a>
+			);
+		}
+		return (
+			<a
+				className={hrefText ? 'href-text' : undefined}
+				href={href}
+				aria-label={!hrefText ? (title || '') : undefined}
+				aria-describedby={subTitle ? `subtitle_${id}` : undefined}
+			>
+				{hrefText || null}
 			</a>
-		)}
-	</div>
-);
+		);
+	}
+
+	function renderLinkEditorialCard() {
+		return (
+			<a
+				className="card-title"
+				href={href}
+				aria-describedby={subTitle ? `subtitle_${id}` : undefined}
+			>
+				{title}
+			</a>
+		);
+	}
+
+	return (
+		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
+			<div
+				className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
+				onClick={() => handleClick()}
+			>
+				{image && <div className="card-image">{image}</div>}
+				<div
+					className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}
+				>
+					{icon && <div className="card-icon">{icon}</div>}
+					{subTitle && <div id={`subtitle_${id}`} aria-hidden="true" className="card-subtitle">{subTitle}</div>}
+					{(image && title) && renderLinkEditorialCard()}
+					{(!image && title) && <div className="card-title">{title}</div>}
+					{children}
+					{(!image && !hrefText) && (
+						<div className="card-action">
+							{external ? <ExternalLink className="arrow-icon" size={22} aria-hidden="true" />
+								: <ArrowRight className="arrow-icon" size={22} aria-hidden="true" />}
+							{renderLink()}
+						</div>
+					)}
+
+					{(!image && hrefText) && (
+						<div className="card-action">
+							{external ? <ExternalLink className="arrow-icon" size={22} aria-hidden="true" />
+								: <ArrowRight className="arrow-icon" size={22} aria-hidden="true" />}
+							{renderLink()}
+						</div>
+					)}
+				</div>
+			</div>
+			{fileLocation && (
+				<a download href={fileLocation} className="download-section">
+					<Download className="download-icon" size={22} />
+					<span>{downloadText}</span>
+				</a>
+			)}
+		</div>
+	);
+};
 
 Card.defaultProps = {
 	downloadText: 'Last ned',
 	imagePlacement: 'top',
 	profiled: false,
+	id: 'ssb-card',
 };
 
 Card.propTypes = {
@@ -59,6 +111,7 @@ Card.propTypes = {
 	subTitle: PropTypes.string,
 	title: PropTypes.string,
 	external: PropTypes.bool,
+	id: PropTypes.string,
 };
 
 export default Card;

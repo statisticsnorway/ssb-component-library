@@ -139,6 +139,10 @@
     padding: 20px;
     width: 100%;
 
+    .card-title {
+      color: $ssb-dark-6;
+    }
+
     &.with-image {
       border-top: 1px solid $ssb-dark-2;
 
