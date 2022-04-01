@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight, Download, ExternalLink } from 'react-feather';
+import { KEY_ENTER } from '../../utils/keybindings';
 
 const Card = ({
-	children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, title,
+	children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, tabIndex, title,
 }) => {
-	const handleClick = e => {
+	const handleClick = () => {
 		window.open(href, external ? '_blank' : '_self');
+	};
+
+	const handleKeyboardNav = e => {
+		if (e.keyCode === KEY_ENTER) {
+			handleClick();
+		}
 	};
 
 	function renderLink() {
@@ -19,6 +26,7 @@ const Card = ({
 					rel="noopener noreferrer"
 					aria-label={!hrefText ? (title || '') : undefined}
 					aria-describedby={subTitle ? `subtitle_${id}` : undefined}
+					tabIndex={-1}
 				>
 					{hrefText || null}
 				</a>
@@ -30,6 +38,7 @@ const Card = ({
 				href={href}
 				aria-label={!hrefText ? (title || '') : undefined}
 				aria-describedby={subTitle ? `subtitle_${id}` : undefined}
+				tabIndex={-1}
 			>
 				{hrefText || null}
 			</a>
@@ -42,6 +51,7 @@ const Card = ({
 				className="card-title"
 				href={href}
 				aria-describedby={subTitle ? `subtitle_${id}` : undefined}
+				tabIndex={-1}
 			>
 				{title}
 			</a>
@@ -53,6 +63,8 @@ const Card = ({
 			<div
 				className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
 				onClick={() => handleClick()}
+				onKeyDown={e => { handleKeyboardNav(e); }}
+				tabIndex={tabIndex}
 			>
 				{image && <div className="card-image">{image}</div>}
 				<div
@@ -64,7 +76,7 @@ const Card = ({
 					{(!image && title) && <div className="card-title">{title}</div>}
 					{children}
 					{(!image && !hrefText) && (
-						<div className="card-action">
+						<div>
 							{external ? <ExternalLink className="arrow-icon" size={22} aria-hidden="true" />
 								: <ArrowRight className="arrow-icon" size={22} aria-hidden="true" />}
 							{renderLink()}
@@ -92,26 +104,28 @@ const Card = ({
 
 Card.defaultProps = {
 	downloadText: 'Last ned',
+	id: 'ssb-card',
 	imagePlacement: 'top',
 	profiled: false,
-	id: 'ssb-card',
+	tabIndex: 0,
 };
 
 Card.propTypes = {
 	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
 	downloadText: PropTypes.string,
+	external: PropTypes.bool,
 	fileLocation: PropTypes.string,
 	href: PropTypes.string.isRequired,
 	hrefText: PropTypes.string,
 	icon: PropTypes.element,
+	id: PropTypes.string,
 	image: PropTypes.element,
 	imagePlacement: PropTypes.oneOf(['left', 'top']),
 	profiled: PropTypes.bool,
 	subTitle: PropTypes.string,
+	tabIndex: PropTypes.number,
 	title: PropTypes.string,
-	external: PropTypes.bool,
-	id: PropTypes.string,
 };
 
 export default Card;
