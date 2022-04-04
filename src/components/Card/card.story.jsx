@@ -100,4 +100,25 @@ storiesOf('Card', module)
 				<Text>Explain something about something with something clever.</Text>
 			</Card>
 		</div>
+	))
+	.add('Card with ariaLabel and ariaDescribedBy', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ marginRight: '10px', width: '380px' }}>
+				<Card
+					imagePlacement="top"
+					image={<img src="/16x9.png" alt="testImage" />}
+					href=" "
+					subTitle="Artikkel / 11. mai 2019"
+					title="Tittel"
+					ariaLabel="Tittel - Artikkel 11. mai 2019"
+				>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<div style={{ width: '400px' }}>
+				<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Gå til url" ariaLabel="Gå til url" ariaDescribedBy="text">
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+		</div>
 	));

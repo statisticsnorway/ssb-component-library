@@ -11,7 +11,12 @@ exports[`Card component Matches the snapshot 1`] = `
     <div
       className="card-content"
     >
-      ProfileBox
+      <div
+        className="card-text"
+        id="1-text"
+      >
+        ProfileBox
+      </div>
       <ArrowRight
         className="arrow-icon"
         size={22}

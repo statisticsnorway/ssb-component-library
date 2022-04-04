@@ -14,7 +14,9 @@ Card
     <a href=" " class="clickable top-orientation">
         <div class="card-content">
             <div class="card-title">Tittel</div>
-            <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            <div id="ssb-card-text" class="card-text">
+                <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            </div>
             <i class="arrow-icon">{feather.arrowRight 22px}</i>
         </div>
     </a>
@@ -25,7 +27,9 @@ Card
     <a href=" " class="clickable top-orientation">
         <div class="card-content">
             <div class="card-title">Tittel</div>
-            <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            <div id="ssb-card-text" class="card-text">
+                <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            </div>
             <div class="card-action">
                 <i class="arrow-icon">{feather.arrowRight 22px}</i>
                 <div class="href-text">Handling</div>
@@ -42,7 +46,9 @@ Card
                 <!-- Insert icon -->
             </div>
             <div class="card-title">Tittel</div>
-            <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            <div id="ssb-card-text" class="card-text">
+                <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            </div>
             <div class="card-action">
                 <i class="arrow-icon">{feather.arrowRight 22px}</i>
                 <div class="href-text">Handling</div>
@@ -63,7 +69,9 @@ Card
                 <!-- Insert icon -->
             </div>
             <div class="card-title">Tittel</div>
-            <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            <div id="ssb-card-text" class="card-text">
+                <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            </div>
             <i class="arrow-icon">{feather.arrowRight 22px}</i>
         </div>
     </a>
@@ -76,9 +84,11 @@ Card
             <img src="" alt="" />
         </div>
         <div class="card-content with-image">
-            <div class="card-subtitle">Artikkel / 11. mai 2019</div>
+            <div id="ssb-card-subtitle" class="card-subtitle">Artikkel / 11. mai 2019</div>
             <div class="card-title">Tittel</div>
-            <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            <div id="ssb-card-text" class="card-text">
+                <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            </div>
         </div>
     </a>
 </div>
@@ -90,9 +100,29 @@ Card
             <img src="" alt="" />
         </div>
         <div class="card-content with-image">
-            <div class="card-subtitle">Artikkel / 11. mai 2019</div>
+            <div id="ssb-card-subtitle" class="card-subtitle">Artikkel / 11. mai 2019</div>
             <div class="card-title">Tittel</div>
-            <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            <div id="ssb-card-text" class="card-text">
+                <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<!-- External card with ariaLabel and ariaDescribedBy -->
+<div class="ssb-card">
+    <a href=" " class="clickable top-orientation" target="_blank" rel="noreferrer" aria-label="Gå til url" aria-describedby="ssb-card-text">
+        <div class="card-content profiled external">
+            <div class="card-icon">
+                <!-- Insert icon -->
+            </div>
+            <div id="ssb-card-text" class="card-text">
+                <span class="ssb-text-wrapper">Explain something about something with something clever.</span>
+            </div>
+            <div class="card-action">
+                <i class="externalLink-icon">{feather.externalLink 22px}</i>
+                <div class="href-text">Gå til url</div>
+            </div>
         </div>
     </a>
 </div>
@@ -131,22 +161,30 @@ Card
 >
     <Text>Explain something about something with something clever.</Text>
 </Card>
+
+// External card with ariaLabel and ariaDescribedBy
+<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Gå til url" ariaLabel="Gå til url" ariaDescribedBy="text">
+    <Text>Explain something about something with something clever.</Text>
+</Card>
 ```
 
 Available props:
 
-| Name       | Type           | Description  |
-| ---------- | ------------- | ----- |
-| children | node | Required. Fills box with content |
-| className   | string | Optional container class|
-| downloadText | string | Text download link, default "Last ned" |
-| fileLocation | string | Path to downloadable file. Ads the download field |
-| href | string | Destination for navigation |
-| hrefText | string | Text after arrow |
-| icon | element | Icon element |
-| image | element | Image element |
-| imagePlacement | oneOf(['left', 'top']) | Position of the image, default "top"  |
-| profiled | bool | Profiled layout |
-| subTitle | string | Smaller text over title |
-| title | string | Card title |
-| external | bool | Change icon from ArrowRight to ExternalLink |
+| Name           | Type                        | Description                                                 |
+|----------------|-----------------------------|-------------------------------------------------------------|
+| ariaLabel | string                      | Defines a string value that describe the Card.              |
+| ariaDescribedBy | oneOf(['subtitle', 'text']) | If use of ariaLabel you can add more description by ariaDescribedBy from subtitle or text |
+| children       | node                        | Required. Fills box with content                            |
+| className      | string                      | Optional container class                                    |
+| downloadText   | string                      | Text download link, default "Last ned"                      |
+| fileLocation   | string                      | Path to downloadable file. Ads the download field           |
+| href           | string                      | Destination for navigation                                  |
+| hrefText       | string                      | Text after arrow                                            |
+| icon           | element                     | Icon element                                                |
+| id             | string                      | Optional id (default is uuid)                               | 
+| image          | element                     | Image element                                               |
+| imagePlacement | oneOf(['left', 'top'])      | Position of the image, default "top"                        |
+| profiled       | bool                        | Profiled layout                                             |
+| subTitle       | string                      | Smaller text over title                                     |
+| title          | string                      | Card title                                                  |
+| external       | bool                        | Change icon from ArrowRight to ExternalLink                 |
