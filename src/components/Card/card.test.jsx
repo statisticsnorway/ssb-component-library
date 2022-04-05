@@ -4,6 +4,8 @@ import Card from './index';
 import { Globe } from 'react-feather'
 import Checkbox from '../Checkbox'
 
+jest.mock('uuid', () => ({ v4: () => 1 }));
+
 describe('Card component', () => {
 	test('Matches the snapshot', () => {
 		const wrapper = shallow(<Card href="">ProfileBox</Card>);
@@ -18,7 +20,7 @@ describe('Card component', () => {
 		expect(wrapper.find('a').containsMatchingElement(<img/>)).toEqual(true);
 	});
 	test('Show image orientation correctly', () => {
-		const wrapper = shallow(<Card href="" imagePlacement="left">ProfileBox</Card>);
+		const wrapper = shallow(<Card href="" image={<img src="testImage" alt="testImage" />} imagePlacement="left">ProfileBox</Card>);
 		expect(wrapper.find('a').hasClass('left-orientation')).toEqual(true);
 	});
 	test('Show download link if fileLocation', () => {
