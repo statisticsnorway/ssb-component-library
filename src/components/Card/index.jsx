@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight, Download, ExternalLink } from 'react-feather';
-import { v4 as uuidv4 } from 'uuid';
+import { useId } from '../../utils/useId';
 
 const Card = ({
 	ariaDescribedBy, ariaLabel, children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, title,
 }) => {
-	const cardId = id || uuidv4();
+	const cardId = id || useId();
 
 	return (
 		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
