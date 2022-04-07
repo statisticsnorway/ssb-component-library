@@ -3,10 +3,11 @@
 exports[`Dropdown component Matches the snapshot 1`] = `
 <div
   className="ssb-dropdown"
-  id="dropdown"
+  id="dropdown_1"
 >
   <span
-    id="dropdown-label"
+    className="dropdown-label"
+    id="label_1"
   >
     Menu header
   </span>
@@ -16,9 +17,9 @@ exports[`Dropdown component Matches the snapshot 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-labelledby="dropdown-label button_dropdown"
+      aria-labelledby="label_1 button_1"
       className="opener"
-      id="button_dropdown"
+      id="button_1"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex={0}

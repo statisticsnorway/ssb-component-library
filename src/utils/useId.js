@@ -16,5 +16,5 @@ export const useId = () => {
 		setNewId(uuidv4());
 	}, []);
 
-	return newId ?? '';
+	return newId || '';
 };
