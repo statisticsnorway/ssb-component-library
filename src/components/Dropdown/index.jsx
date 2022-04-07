@@ -10,6 +10,7 @@ import {
 	KEY_TAB,
 } from '../../utils/keybindings';
 import InputError from '../InputError';
+import { useId } from '../../utils/useId';
 
 const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder, searchable, selectedItem, tabIndex, error, errorMessage, ariaLabel, id, largeSize,
 }) => {
@@ -28,6 +29,8 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 	const [activeOption, setActiveOption] = useState(selectedItem || { title: '', id: '' });
 	const [inputFieldValue, updateInputValue] = useState('');
 	const [keyNavPosition, setKeyNavPosition] = useState(0);
+
+	const dropdownId = id || useId();
 
 	const filterOptions = value => {
 		updateInputValue(value);
@@ -165,14 +168,14 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 
 	const renderHeader = () => {
 		if (!header && ariaLabel) {
-			return <span className="sr-only" id="dropdown-label">{ariaLabel}</span>;
+			return <span className="dropdown-label sr-only" id={`label_${dropdownId}`}>{ariaLabel}</span>;
 		}
-		return <span id="dropdown-label">{header}</span>;
+		return <span id={`label_${dropdownId}`} className="dropdown-label">{header}</span>;
 	};
-	const renderHeaderSearchable = () => header && <label htmlFor={`input_${id}`}>{header}</label>;
+	const renderHeaderSearchable = () => header && <label htmlFor={`input_${dropdownId}`}>{header}</label>;
 
 	return (
-		<div id={id} className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}${largeSize ? ' large' : ''}`}>
+		<div id={`dropdown_${dropdownId}`} className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}${largeSize ? ' large' : ''}`}>
 			{searchable ? renderHeaderSearchable() : renderHeader() }
 			<div
 				className="dropdown-interactive-area"
@@ -182,34 +185,34 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 				{!searchable && (
 					<button
 						className={isOpen ? 'focused opener' : 'opener'}
-						id={`button_${id}`}
+						id={`button_${dropdownId}`}
 						ref={node}
 						tabIndex={0}
 						onClick={() => { setOpen(!isOpen); }}
 						onKeyDown={e => { handleKeyboardNav(e); }}
 						type="button"
 						aria-expanded={isOpen ? 'true' : 'false'}
-						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
+						aria-describedby={error && errorMessage ? `error_${dropdownId}` : undefined}
 						aria-haspopup="listbox"
-						aria-labelledby={!header && !ariaLabel ? `button_${id}` : `dropdown-label button_${id}`}
+						aria-labelledby={!header && !ariaLabel ? `button_${dropdownId}` : `label_${dropdownId} button_${dropdownId}`}
 					>{selectedOption.title !== '' ? selectedOption.title : placeholder}
 					</button>
 				) }
 				{searchable && (
 					<input
 						className={isOpen ? 'focused' : ''}
-						id={`input_${id}`}
+						id={`input_${dropdownId}`}
 						onKeyDown={handleSearchSpecialKeys}
 						onChange={filterItems}
 						onFocus={() => setOpen(!isOpen)}
 						disabled={!searchable}
 						placeholder={selectedOption.title ? selectedOption.title : placeholder}
 						value={inputFieldValue}
-						aria-describedby={error && errorMessage ? `error_${id}` : undefined}
+						aria-describedby={error && errorMessage ? `error_${dropdownId}` : undefined}
 						role="combobox"
 						aria-autocomplete="list"
 						aria-expanded={isOpen ? 'true' : 'false'}
-						aria-controls={`list_of_options_${id}`}
+						aria-controls={`list_of_options_${dropdownId}`}
 						aria-label={ariaLabel}
 						type="text"
 						aria-activedescendant={activeOption ? activeOption.id : undefined}
@@ -218,7 +221,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 				{ renderIcon() }
 				{isOpen && (
 					<ul
-						id={`list_of_options_${id}`}
+						id={`list_of_options_${dropdownId}`}
 						className={`list-of-options${!isOpen ? ' hidden' : ''}`}
 						role="listbox"
 						aria-labelledby={!searchable && (header || ariaLabel) ? 'dropdown-label' : undefined}
@@ -244,7 +247,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 					</ul>
 				)}
 				{error && (errorMessage && (
-					<InputError errorMessage={errorMessage} id={`error_${id}`} />
+					<InputError errorMessage={errorMessage} id={`error_${dropdownId}`} />
 				))}
 			</div>
 		</div>
@@ -258,7 +261,6 @@ Dropdown.defaultProps = {
 	open: false,
 	searchable: false,
 	placeholder: '-- Select --',
-	id: 'dropdown',
 };
 
 Dropdown.propTypes = {
