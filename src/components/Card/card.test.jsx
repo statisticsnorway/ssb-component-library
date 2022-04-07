@@ -1,10 +1,10 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import Card from './index';
-import { Globe } from 'react-feather'
-import Checkbox from '../Checkbox'
 
-jest.mock('uuid', () => ({ v4: () => 1 }));
+jest.mock("../../utils/useId", () => {
+	return { useId: () => 1};
+});
 
 describe('Card component', () => {
 	test('Matches the snapshot', () => {

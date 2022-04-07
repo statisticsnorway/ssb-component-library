@@ -3,7 +3,9 @@ import { shallow, mount } from 'enzyme';
 import TextArea from './index';
 import InputError from '../InputError';
 
-jest.mock('uuid', () => ({ v4: () => 1 }));
+jest.mock("../../utils/useId", () => {
+	return { useId: () => 1};
+});
 
 describe('Input component', () => {
 	test('Matches the snapshot', () => {

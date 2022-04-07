@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { v4 as uuidv4 } from 'uuid';
 import { Search } from 'react-feather';
+import { useId } from '../../utils/useId';
 import InputError from '../InputError';
 
 const Input = ({
@@ -9,7 +9,7 @@ const Input = ({
 	className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size,
 }) => {
 	const [inputValue, setValue] = useState(value);
-	const inputId = id || uuidv4();
+	const inputId = id || useId();
 	const handleInputChange = e => {
 		setValue(e.target.value);
 		handleChange(e.target.value);
