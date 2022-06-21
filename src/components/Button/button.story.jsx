@@ -21,9 +21,9 @@ storiesOf('Button', module)
 	))
 	.add('Primary with description', () => (
 		<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, auto)', gridColumnGap: '20px' }}>
-			<Button ariaLabel={'test description of primary button'} primary>Primary button</Button>
-			<Button ariaLabel={'test description of icon button'} icon={<ChevronDown size={18} />} primary>Primary icon</Button>
-			<Button ariaLabel={'test description of disabled button'} primary disabled>Disabled button</Button>
+			<Button ariaLabel="test description of primary button" primary>Primary button</Button>
+			<Button ariaLabel="test description of icon button" icon={<ChevronDown size={18} />} primary>Primary icon</Button>
+			<Button ariaLabel="test description of disabled button" primary disabled>Disabled button</Button>
 		</div>
 	))
 	.add('Secondary', () => (

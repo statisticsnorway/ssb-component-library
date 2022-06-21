@@ -23,7 +23,7 @@ Button.defaultProps = {
 	onClick: () => {},
 	primary: false,
 	type: 'button',
-	ariaLabel: ''
+	ariaLabel: '',
 };
 
 Button.propTypes = {
