@@ -12,6 +12,10 @@ describe('Button component', () => {
 		expect(wrapper.find('.ssb-btn').hasClass('negative')).toEqual(true);
 		expect(wrapper.find('.ssb-btn').hasClass('primary-btn')).toEqual(true);
 	});
+	test('Sets aria-label correctly', () => {
+		const wrapper = shallow(<Button primary ariaLabel={'test text'}>Button</Button>);
+		expect(wrapper.find('.ssb-btn').prop('aria-label')).toEqual('test text');
+	});
 	test('Renders icon', () => {
 		const wrapper = shallow(<Button icon={<i />}>Button</Button>);
 		expect(wrapper.find('.ssb-btn').containsMatchingElement(<i />)).toEqual(true);

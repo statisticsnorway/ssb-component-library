@@ -32,6 +32,8 @@ Button
 
 <Button primary>Primary button</Button>
 
+<Button primary ariaLabel={'Button with primariy role'}>Button with aria label</Button>
+
 <Button negative primary>Primary negative button</Button>
 
 <Button disabled>Disabled button</Button>
@@ -43,6 +45,7 @@ Available props:
 | ---------- | ------------- | ----- |
 | children | Required node | Button text or/and icon |
 | className | String | Optional container class |
+| ariaLabel | String | Optional aria-label text for screen readers |
 | disabled | bool | Decides if the button is disabled |
 | icon | node | Renders an icon |
 | negative | bool | Changes design |
