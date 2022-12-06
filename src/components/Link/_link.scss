@@ -146,13 +146,17 @@ $icon-padding: 8px;
     padding: 0 .5rem !important;
     display: inline-flex;
     align-items: center !important;
-    text-decoration: underline;
     border-bottom: none;
+    text-decoration: underline;
     text-underline-offset: .3em;
 
     .icon-wrapper {
       margin-top: 0;
     }
+  }
+
+  &.target-size-without-icon:hover {
+    text-decoration: none;
   }
 
   &.target-size-with-icon {

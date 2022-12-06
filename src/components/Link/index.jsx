@@ -4,17 +4,13 @@ import PropTypes from 'prop-types';
 const Link = ({
 	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title, onClick, UUTargetSize,
 }) => {
-	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}
-		${negative ? ' negative' : ''}
-		${icon ? ' with-icon' : ''}
-		${className ? ` ${className}` : ''}
-		${UUTargetSize && !icon ? ' target-size-without-icon' : ''}
-		${UUTargetSize && icon ? ' target-size-with-icon' : ''}`;
+	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${UUTargetSize && !icon ? ' target-size-without-icon' : ''}${UUTargetSize && icon ? ' target-size-with-icon' : ''}
+		${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
 
 	return (
 		// eslint-disable-next-line react/jsx-no-target-blank
 		<a
-			className={classNames}
+			className={classNames.replace(/\s\s+/g, ' ')}
 			href={href}
 			target={isExternal ? '_blank' : undefined}
 			rel={isExternal ? 'noopener noreferrer' : undefined}
