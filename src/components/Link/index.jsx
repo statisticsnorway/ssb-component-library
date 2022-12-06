@@ -2,9 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Link = ({
-	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title, onClick,
+	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title, onClick, UUTargetSize,
 }) => {
-	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
+	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}
+		${negative ? ' negative' : ''}
+		${icon ? ' with-icon' : ''}
+		${className ? ` ${className}` : ''}
+		${UUTargetSize && !icon ? ' target-size-without-icon' : ''}
+		${UUTargetSize && icon ? ' target-size-with-icon' : ''}`;
 
 	return (
 		// eslint-disable-next-line react/jsx-no-target-blank
@@ -46,6 +51,7 @@ Link.propTypes = {
 	tabIndex: PropTypes.number,
 	title: PropTypes.string,
 	onClick: PropTypes.func,
+	UUTargetSize: PropTypes.bool,
 };
 
 export default Link;

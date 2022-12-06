@@ -139,4 +139,33 @@ $icon-padding: 8px;
       outline: 0;
     }
   }
+
+  &.target-size-without-icon {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0 .5rem!important;
+    display: inline-flex;
+    align-items: center!important;
+    text-decoration: underline;
+    border-bottom: none;
+    text-underline-offset: .5em;
+  
+    .icon-wrapper {
+      margin-top: 0;
+    }
+  }
+  
+  &.target-size-with-icon {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0 .5rem!important;
+    display: inline-flex;
+    align-items: center!important;
+    border-bottom: none;
+  
+    .icon-wrapper {
+      margin-top: 0;
+    }
+  }
 }
+
