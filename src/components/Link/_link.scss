@@ -140,7 +140,7 @@ $icon-padding: 8px;
     }
   }
 
-  &.target-size-without-icon {
+  &.target-size {
     min-height: 44px;
     min-width: 44px;
     padding: 0 .5rem !important;
@@ -153,22 +153,13 @@ $icon-padding: 8px;
     .icon-wrapper {
       margin-top: 0;
     }
-  }
 
-  &.target-size-without-icon:hover {
-    text-decoration: none;
-  }
-
-  &.target-size-with-icon {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 0 .5rem !important;
-    display: inline-flex;
-    align-items: center !important;
-    border-bottom: none;
-
-    .icon-wrapper {
-      margin-top: 0;
+    &.target-size.with-icon {
+      text-decoration: none;
     }
+  }
+
+  &.target-size:hover {
+    text-decoration: none;
   }
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Link = ({
 	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title, onClick, UUTargetSize,
 }) => {
-	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${UUTargetSize && !icon ? ' target-size-without-icon' : ''}${UUTargetSize && icon ? ' target-size-with-icon' : ''}
+	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${UUTargetSize ? ' target-size' : ''}
 		${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
 
 	return (
