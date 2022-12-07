@@ -56,14 +56,14 @@ function linksWithUU() {
 			<p>*standalone link </p>
 			<Link
 				href=" "
-				UUTargetSize
+				standAlone
 			>A regular link
 			</Link>
 
 			<p>*standalone link w/ icon </p>
 			<Link
 				href=" "
-				UUTargetSize
+				standAlone
 				icon={<ArrowRight size={16} />}
 			>A regular link with icon
 			</Link>
@@ -71,7 +71,7 @@ function linksWithUU() {
 			<p>*profiled link </p>
 			<Link
 				href=" "
-				UUTargetSize
+				standAlone
 				linkType="profiled"
 			>A profiled link
 			</Link>
@@ -79,7 +79,7 @@ function linksWithUU() {
 			<p>*profiled link w/ icon </p>
 			<Link
 				href=" "
-				UUTargetSize
+				standAlone
 				icon={<ArrowRight size={16} />}
 				linkType="profiled"
 			>A profiled link with icon
@@ -88,18 +88,18 @@ function linksWithUU() {
 			<p>*header link </p>
 			<Link
 				href=" "
-				UUTargetSize
+				standAlone
 				linkType="header"
 			>A header link with icon
 			</Link>
 
 			<p>*negative Links</p>
 			<div style={negativeStyle}>
-				<p><Link href=" " negative UUTargetSize>A regular link - Negative</Link></p>
-				<Link href=" " icon={<ArrowRight size={16} />} negative UUTargetSize>A regular link with icon - Negative</Link>
-				<p><Link href=" " linkType="profiled" negative UUTargetSize>A profiled link - Negative</Link></p>
-				<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />} negative UUTargetSize>A profiled link with icon - Negative</Link>
-				<p><Link href=" " linkType="header" negative UUTargetSize>A header link - Negative</Link></p>
+				<p><Link href=" " negative standAlone>A regular link - Negative</Link></p>
+				<Link href=" " icon={<ArrowRight size={16} />} negative standAlone>A regular link with icon - Negative</Link>
+				<p><Link href=" " linkType="profiled" negative standAlone>A profiled link - Negative</Link></p>
+				<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />} negative standAlone>A profiled link with icon - Negative</Link>
+				<p><Link href=" " linkType="header" negative standAlone>A header link - Negative</Link></p>
 			</div>
 		</div>
 	);

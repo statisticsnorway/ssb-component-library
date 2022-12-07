@@ -140,7 +140,7 @@ $icon-padding: 8px;
     }
   }
 
-  &.target-size {
+  &.stand-alone {
     min-height: 44px;
     min-width: 44px;
     display: inline-flex;
@@ -153,12 +153,12 @@ $icon-padding: 8px;
       margin-top: 0;
     }
 
-    &.target-size.with-icon {
+    &.stand-alone.with-icon {
       text-decoration: none;
     }
   }
 
-  &.target-size:hover {
+  &.stand-alone:hover {
     text-decoration: none;
   }
 }

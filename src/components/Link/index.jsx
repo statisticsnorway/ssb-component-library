@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Link = ({
-	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title, onClick, UUTargetSize,
+	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title, onClick, standAlone,
 }) => {
-	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${UUTargetSize ? ' target-size' : ''}
+	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${standAlone ? ' stand-alone' : ''}
 		${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
 
 	return (
@@ -47,7 +47,7 @@ Link.propTypes = {
 	tabIndex: PropTypes.number,
 	title: PropTypes.string,
 	onClick: PropTypes.func,
-	UUTargetSize: PropTypes.bool,
+	standAlone: PropTypes.bool,
 };
 
 export default Link;
