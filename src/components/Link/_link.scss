@@ -139,4 +139,26 @@ $icon-padding: 8px;
       outline: 0;
     }
   }
+
+  &.stand-alone {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center !important;
+    border-bottom: none;
+    text-decoration: underline;
+    text-underline-offset: .3em;
+
+    .icon-wrapper {
+      margin-top: 0;
+    }
+
+    &.with-icon {
+      text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }

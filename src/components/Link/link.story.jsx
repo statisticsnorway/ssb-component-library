@@ -43,4 +43,64 @@ storiesOf('Link', module)
 			<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />}>A profiled link with icon - A very long link that will cross several lines</Link>
 			<p><Link href=" " linkType="header">A header link - A very long link that will cross several lines</Link></p>
 		</div>
+	))
+	.add('All link with Accessibilty added', () => (
+		linksWithUU()
 	));
+
+function linksWithUU() {
+	return (
+		<div>
+			<p>Check it out all <Link href=" "> UU links </Link> within a sentence!</p>
+
+			<p>*standalone link </p>
+			<Link
+				href=" "
+				standAlone
+			>A regular link
+			</Link>
+
+			<p>*standalone link w/ icon </p>
+			<Link
+				href=" "
+				standAlone
+				icon={<ArrowRight size={16} />}
+			>A regular link with icon
+			</Link>
+
+			<p>*profiled link </p>
+			<Link
+				href=" "
+				standAlone
+				linkType="profiled"
+			>A profiled link
+			</Link>
+
+			<p>*profiled link w/ icon </p>
+			<Link
+				href=" "
+				standAlone
+				icon={<ArrowRight size={16} />}
+				linkType="profiled"
+			>A profiled link with icon
+			</Link>
+
+			<p>*header link </p>
+			<Link
+				href=" "
+				standAlone
+				linkType="header"
+			>A header link with icon
+			</Link>
+
+			<p>*negative Links</p>
+			<div style={negativeStyle}>
+				<p><Link href=" " negative standAlone>A regular link - Negative</Link></p>
+				<Link href=" " icon={<ArrowRight size={16} />} negative standAlone>A regular link with icon - Negative</Link>
+				<p><Link href=" " linkType="profiled" negative standAlone>A profiled link - Negative</Link></p>
+				<Link href=" " linkType="profiled" icon={<ArrowRight size={20} />} negative standAlone>A profiled link with icon - Negative</Link>
+				<p><Link href=" " linkType="header" negative standAlone>A header link - Negative</Link></p>
+			</div>
+		</div>
+	);
+}

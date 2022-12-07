@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Link = ({
-	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title, onClick,
+	ariaLabel, children, className, href, icon, isExternal, linkType, negative, tabIndex, title, onClick, standAlone,
 }) => {
-	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
+	const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${standAlone ? ' stand-alone' : ''}
+		${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`;
 
 	return (
 		// eslint-disable-next-line react/jsx-no-target-blank
 		<a
-			className={classNames}
+			className={classNames.replace(/\s\s+/g, ' ').trim()}
 			href={href}
 			target={isExternal ? '_blank' : undefined}
 			rel={isExternal ? 'noopener noreferrer' : undefined}
@@ -46,6 +47,7 @@ Link.propTypes = {
 	tabIndex: PropTypes.number,
 	title: PropTypes.string,
 	onClick: PropTypes.func,
+	standAlone: PropTypes.bool,
 };
 
 export default Link;
