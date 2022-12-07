@@ -10,7 +10,7 @@ const Link = ({
 	return (
 		// eslint-disable-next-line react/jsx-no-target-blank
 		<a
-			className={classNames.replace(/\s\s+/g, ' ')}
+			className={classNames.replace(/\s\s+/g, ' ').trim()}
 			href={href}
 			target={isExternal ? '_blank' : undefined}
 			rel={isExternal ? 'noopener noreferrer' : undefined}
