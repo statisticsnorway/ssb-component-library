@@ -153,12 +153,12 @@ $icon-padding: 8px;
       margin-top: 0;
     }
 
-    &.stand-alone.with-icon {
+    &.with-icon {
       text-decoration: none;
     }
-  }
-
-  &.stand-alone:hover {
-    text-decoration: none;
+    
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
