@@ -9,9 +9,24 @@ const Card = ({
 }) => {
 	const cardId = id || useId();
 
+	const openLink = () => {
+		const link = document.createElement('a');
+		link.href = href;
+		if (external) {
+			link.target = '_blank';
+			link.rel = 'noreferrer';
+		}
+		link.click();
+	};
+
 	return (
 		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
-			<div className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}>
+			<div
+				className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
+				onClick={() => openLink()}
+				role="link"
+				tabIndex={0}
+			>
 
 				{image && <div className="card-image">{image}</div>}
 
@@ -20,7 +35,6 @@ const Card = ({
 					{icon && <div className="card-icon">{icon}</div>}
 					{subTitle && <div id={`${cardId}-subtitle`} className="card-subtitle">{subTitle}</div>}
 					{title && (
-						// eslint-disable-next-line react/jsx-no-target-blank
 						<a
 							href={href}
 							className="card-title"
@@ -68,47 +82,6 @@ const Card = ({
 			)}
 		</div>
 	);
-
-	// check if no title, use title=hrefText and describedBy
-	// title back to links
-	// external link icon circle around it ??
-
-	// return (
-	// 	<div className={`ssb-card${className ? ` ${className}` : ''}`}>
-	// 		{/* eslint-disable-next-line react/jsx-no-target-blank */}
-	// 		<a
-	// 			href={href}
-	// 			className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
-	// 			target={external ? '_blank' : undefined}
-	// 			rel={external ? 'noreferrer' : undefined}
-	// 			aria-label={ariaLabel || undefined}
-	// 			aria-describedby={ariaDescribedBy ? `${cardId}-${ariaDescribedBy}` : undefined}
-	// 		>
-	// 			{image && <div className="card-image">{image}</div>}
-	// 			<div className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}>
-	// 				{icon && <div className="card-icon">{icon}</div>}
-	// 				{subTitle && <div id={`${cardId}-subtitle`} className="card-subtitle">{subTitle}</div>}
-	// 				{title && <div className="card-title">{title}</div>}
-	// 				{ children && <div id={`${cardId}-text`} className="card-text">{children}</div> }
-	// 				{(!image && !hrefText) && (
-	// 					external ? <ExternalLink className="arrow-icon" size={22} /> : <ArrowRight className="arrow-icon" size={22} />
-	// 				)}
-	// 				{(!image && hrefText) && (
-	// 					<div className="card-action">
-	// 						{external ? <ExternalLink className="arrow-icon" size={16} /> : <ArrowRight className="arrow-icon" size={16} />}
-	// 						<div className="href-text">{hrefText}</div>
-	// 					</div>
-	// 				)}
-	// 			</div>
-	// 		</a>
-	// 		{fileLocation && (
-	// 			<a download href={fileLocation} className="download-section">
-	// 				<Download className="download-icon" size={22} />
-	// 				<span>{downloadText}</span>
-	// 			</a>
-	// 		)}
-	// 	</div>
-	// );
 };
 
 Card.defaultProps = {
