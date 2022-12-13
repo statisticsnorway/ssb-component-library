@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Globe } from 'react-feather';
 import Card from './index';
 import Text from '../Text';
-
+// ariaLabel="the title" ariaDescribedBy="text"
 storiesOf('Card', module)
 	.add('Default', () => (
 		<div style={{ width: '700px', display: 'flex', justifyContent: 'center' }}>
@@ -15,6 +15,11 @@ storiesOf('Card', module)
 			<div style={{ width: '380px' }}>
 				<Card title="Tittel" href=" " hrefText="Handling">
 					<Text>Explain something about something with something clever. Men denne har mye mere tekst så den kommer til å bli lengre</Text>
+				</Card>
+			</div>
+			<div style={{ width: '380px', marginLeft: '10px' }}>
+				<Card href=" " external hrefText="Handling" ariaLabel="the title" ariaDescribedBy="text">
+					<Text>Explain something about something without a title.</Text>
 				</Card>
 			</div>
 		</div>

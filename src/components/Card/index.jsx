@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight, Download, ExternalLink } from 'react-feather';
@@ -10,32 +11,55 @@ const Card = ({
 
 	return (
 		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
-			{/* eslint-disable-next-line react/jsx-no-target-blank */}
-			<a
-				href={href}
-				className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
-				target={external ? '_blank' : undefined}
-				rel={external ? 'noreferrer' : undefined}
-				aria-label={ariaLabel || undefined}
-				aria-describedby={ariaDescribedBy ? `${cardId}-${ariaDescribedBy}` : undefined}
-			>
+			<div className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}>
+
 				{image && <div className="card-image">{image}</div>}
+
 				<div className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}>
+
 					{icon && <div className="card-icon">{icon}</div>}
 					{subTitle && <div id={`${cardId}-subtitle`} className="card-subtitle">{subTitle}</div>}
-					{title && <div className="card-title">{title}</div>}
-					{ children && <div id={`${cardId}-text`} className="card-text">{children}</div> }
-					{(!image && !hrefText) && (
-						external ? <ExternalLink className="arrow-icon" size={22} /> : <ArrowRight className="arrow-icon" size={22} />
+					{title && (
+						// eslint-disable-next-line react/jsx-no-target-blank
+						<a
+							href={href}
+							className="card-title"
+							target={external ? '_blank' : undefined}
+							rel={external ? 'noreferrer' : undefined}
+							aria-label={ariaLabel || undefined}
+							aria-describedby={ariaDescribedBy ? `${cardId}-${ariaDescribedBy}` : undefined}
+						>{title}
+						</a>
 					)}
+
+					{ children && <div id={`${cardId}-text`} className="card-text">{children}</div> }
+
+					{(!image && !hrefText) && (
+						<a
+							href={href}
+							target={external ? '_blank' : undefined}
+							rel={external ? 'noreferrer' : undefined}
+						>
+							{external ? <ExternalLink className="arrow-icon" size={22} /> : <ArrowRight className="arrow-icon" size={22} />}
+						</a>
+					)}
+
 					{(!image && hrefText) && (
-						<div className="card-action">
+						<a
+							className="card-action"
+							href={href}
+							target={external ? '_blank' : undefined}
+							rel={external ? 'noreferrer' : undefined}
+							aria-label={!title ? hrefText : undefined}
+							aria-describedby={!title ? `${cardId}-${ariaDescribedBy}` : undefined}
+						>
 							{external ? <ExternalLink className="arrow-icon" size={16} /> : <ArrowRight className="arrow-icon" size={16} />}
 							<div className="href-text">{hrefText}</div>
-						</div>
+						</a>
 					)}
+
 				</div>
-			</a>
+			</div>
 			{fileLocation && (
 				<a download href={fileLocation} className="download-section">
 					<Download className="download-icon" size={22} />
@@ -44,6 +68,47 @@ const Card = ({
 			)}
 		</div>
 	);
+
+	// check if no title, use title=hrefText and describedBy
+	// title back to links
+	// external link icon circle around it ??
+
+	// return (
+	// 	<div className={`ssb-card${className ? ` ${className}` : ''}`}>
+	// 		{/* eslint-disable-next-line react/jsx-no-target-blank */}
+	// 		<a
+	// 			href={href}
+	// 			className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
+	// 			target={external ? '_blank' : undefined}
+	// 			rel={external ? 'noreferrer' : undefined}
+	// 			aria-label={ariaLabel || undefined}
+	// 			aria-describedby={ariaDescribedBy ? `${cardId}-${ariaDescribedBy}` : undefined}
+	// 		>
+	// 			{image && <div className="card-image">{image}</div>}
+	// 			<div className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}>
+	// 				{icon && <div className="card-icon">{icon}</div>}
+	// 				{subTitle && <div id={`${cardId}-subtitle`} className="card-subtitle">{subTitle}</div>}
+	// 				{title && <div className="card-title">{title}</div>}
+	// 				{ children && <div id={`${cardId}-text`} className="card-text">{children}</div> }
+	// 				{(!image && !hrefText) && (
+	// 					external ? <ExternalLink className="arrow-icon" size={22} /> : <ArrowRight className="arrow-icon" size={22} />
+	// 				)}
+	// 				{(!image && hrefText) && (
+	// 					<div className="card-action">
+	// 						{external ? <ExternalLink className="arrow-icon" size={16} /> : <ArrowRight className="arrow-icon" size={16} />}
+	// 						<div className="href-text">{hrefText}</div>
+	// 					</div>
+	// 				)}
+	// 			</div>
+	// 		</a>
+	// 		{fileLocation && (
+	// 			<a download href={fileLocation} className="download-section">
+	// 				<Download className="download-icon" size={22} />
+	// 				<span>{downloadText}</span>
+	// 			</a>
+	// 		)}
+	// 	</div>
+	// );
 };
 
 Card.defaultProps = {
