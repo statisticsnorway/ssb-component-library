@@ -4,34 +4,33 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [12, 14, 16]
+        node-version: [16, 18]
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        architecture: x64
-    - name: npm install, build, and test
-      run: |
-        npm ci
-        npm run build:prod
-        npm test
-      env:
-        CI: true
-    - name: lint
-      run: |
-        npm run lint:js
-        npm run lint:css
-      env:
-        CI: true
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          architecture: x64
+      - name: npm install, build, and test
+        run: |
+          npm ci
+          npm run build:prod
+          npm test
+        env:
+          CI: true
+      - name: lint
+        run: |
+          npm run lint:js
+          npm run lint:css
+        env:
+          CI: true
 
   publish:
     needs: build

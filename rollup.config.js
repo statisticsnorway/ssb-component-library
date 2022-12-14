@@ -4,7 +4,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import scss from 'rollup-plugin-scss';
 import svgr from '@svgr/rollup';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 
 const NODE_ENV = process.env.ENV || 'development';
 
