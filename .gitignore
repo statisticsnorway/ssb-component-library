@@ -7,3 +7,4 @@ lib
 .idea
 coverage
 *.iml
+.dccache
