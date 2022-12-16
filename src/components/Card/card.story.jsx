@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Globe } from 'react-feather';
@@ -103,7 +104,7 @@ storiesOf('Card', module)
 	))
 	.add('Card with ariaLabel and ariaDescribedBy', () => (
 		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
-			{/* <div style={{ marginRight: '10px', width: '380px' }}>
+			<div style={{ marginRight: '10px', width: '380px' }}>
 				<Card
 					imagePlacement="top"
 					image={<img src="/16x9.png" alt="testImage" />}
@@ -120,28 +121,56 @@ storiesOf('Card', module)
 				<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Gå til url" ariaLabel="Gå til url" ariaDescribedBy="text">
 					<Text>Explain something about something with something clever.</Text>
 				</Card>
-			</div> */}
-
+			</div>
+		</div>
+	))
+	.add('**Default/Profiled Card med tittel', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
-				<Card href=" " external title="Random">
+				<p>Uten å ha lagt noen ekstra attributter: kun Title</p>
+				<Card href=" " external title="Title">
 					<Text>Explain something about something with a title about danger.</Text>
 				</Card>
 			</div>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
-				<Card href=" " external title="Random" ariaLabel="Title is Random">
+				<p>Hvis man legger på attributt ariaLabel="Dette er arialabel":  Dette er en ariaLabel</p>
+				<Card href=" " external title="Title" ariaLabel="This is a aria label">
 					<Text>Explain something about something with a title about danger.</Text>
 				</Card>
 			</div>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
-				<Card href=" " external title="Random" ariaLabel="Title is Random" ariaDescribedBy="text">
+				<p>Hvis man legger på attributt ariaDescribedBy="text": Title + Text ( Explain something….)</p>
+				<Card href=" " external title="Title" ariaDescribedBy="text">
 					<Text>Explain something about something with a title about danger.</Text>
 				</Card>
 			</div>
-
-			{/* <div style={{ width: '380px', marginLeft: '10px' }}>
-				<Card href=" " external hrefText="Handling" ariaDescribedBy="text">
-					<Text>Explain something about something without a title.</Text>
+		</div>
+	))
+	.add('**Default/Profiled Card without title, but with hrefText', () => (
+		<div style={{ width: '1200px', display: 'flex', justifyContent: 'center' }}>
+			<div style={{ width: '380px', marginLeft: '10px' }}>
+				<p>Uten å ha lagt noen ekstra attributter: Gå til en annen side</p>
+				<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Go to external page">
+					<Text>Explain something about something with something clever.</Text>
 				</Card>
-			</div> */}
+			</div>
+			<div style={{ width: '380px', marginLeft: '10px' }}>
+				<p>Hvis man legger på attributt ariaLabel="This is aria label":  Dette er en ariaLabel</p>
+				<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Go to external page" ariaLabel="This is aria label">
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<div style={{ width: '380px', marginLeft: '10px' }}>
+				<p>Hvis man legger på attributt ariaDescribedBy="text": Gå til en annen side + Text ( Explain something….)</p>
+				<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Go to external page" ariaDescribedBy="text">
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<div style={{ width: '380px', marginLeft: '10px' }}>
+				<p>Hvis man legger på og ariaDescribedBy</p>
+				<Card title="Tittel" href=" " icon={<Globe size={120} />} profiled external ariaDescribedBy="text">
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
 		</div>
 	));
