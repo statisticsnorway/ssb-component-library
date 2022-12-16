@@ -4,9 +4,11 @@ exports[`Card component Matches the snapshot 1`] = `
 <div
   className="ssb-card"
 >
-  <a
+  <div
     className="clickable top-orientation"
-    href=""
+    onClick={[Function]}
+    role="link"
+    tabIndex={0}
   >
     <div
       className="card-content"
@@ -17,11 +19,15 @@ exports[`Card component Matches the snapshot 1`] = `
       >
         ProfileBox
       </div>
-      <ArrowRight
-        className="arrow-icon"
-        size={22}
-      />
+      <a
+        href=""
+      >
+        <ArrowRight
+          className="arrow-icon"
+          size={22}
+        />
+      </a>
     </div>
-  </a>
+  </div>
 </div>
 `;
