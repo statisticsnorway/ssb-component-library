@@ -26,6 +26,8 @@ const Card = ({
 				onClick={() => openLink()}
 				role="link"
 				tabIndex={0}
+				aria-label={!ariaLabel ? title : ariaLabel}
+				aria-describedby={ariaDescribedBy ? `${cardId}-${ariaDescribedBy}` : undefined}
 			>
 
 				{image && <div className="card-image">{image}</div>}
@@ -40,8 +42,6 @@ const Card = ({
 							className="card-title"
 							target={external ? '_blank' : undefined}
 							rel={external ? 'noreferrer' : undefined}
-							aria-label={ariaLabel || undefined}
-							aria-describedby={ariaDescribedBy ? `${cardId}-${ariaDescribedBy}` : undefined}
 						>{title}
 						</a>
 					)}
