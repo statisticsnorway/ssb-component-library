@@ -18,7 +18,7 @@ const Card = ({
 		}
 		link.click();
 	};
-	// console.log(title);
+
 	return (
 		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
 			<div
@@ -26,7 +26,6 @@ const Card = ({
 				onClick={() => openLink()}
 				role="link"
 				tabIndex={0}
-				// aria-label={ariaLabel || title ? title : (hrefText || undefined)}
 				aria-label={ariaLabel || title || hrefText || undefined}
 				aria-describedby={ariaDescribedBy ? `${cardId}-${ariaDescribedBy}` : undefined}
 			>
@@ -65,7 +64,6 @@ const Card = ({
 							href={href}
 							target={external ? '_blank' : undefined}
 							rel={external ? 'noreferrer' : undefined}
-							// aria-describedby={!title ? `${cardId}-${ariaDescribedBy}` : undefined}
 						>
 							{external ? <ExternalLink className="arrow-icon" size={16} /> : <ArrowRight className="arrow-icon" size={16} />}
 							<div className="href-text">{hrefText}</div>

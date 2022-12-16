@@ -155,7 +155,7 @@ storiesOf('Card', module)
 				</Card>
 			</div>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
-				<p>Hvis man legger på attributt ariaLabel="This is aria label":  Dette er en ariaLabel</p>
+				<p>Hvis man legger på attributt ariaLabel="This is aria label":  This is aria label</p>
 				<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Go to external page" ariaLabel="This is aria label">
 					<Text>Explain something about something with something clever.</Text>
 				</Card>
@@ -167,8 +167,52 @@ storiesOf('Card', module)
 				</Card>
 			</div>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
-				<p>Hvis man legger på og ariaDescribedBy</p>
-				<Card title="Tittel" href=" " icon={<Globe size={120} />} profiled external ariaDescribedBy="text">
+				<p>Hvis man legger på og ariaDescribedBy med titel og hrefText</p>
+				<Card title="Title" href=" " icon={<Globe size={120} />} profiled external ariaDescribedBy="text">
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+		</div>
+	))
+	.add('**Card with images', () => (
+		<div style={{ width: '800px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+			<div>
+				<p>Uten å ha lagt noen ekstra attributter: Gå til en annen side / tittel ?? </p>
+				<Card
+					imagePlacement="left"
+					image={<img src="/16x9.png" alt="testImage" />}
+					href=" "
+					subTitle="Artikkel / 11. mai 2019"
+					title="Title"
+				>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<div>
+				<p>Hvis man legger på attributt ariaLabel="This is aria label": This is aria label</p>
+				<Card
+					imagePlacement="left"
+					image={<img src="/16x9.png" alt="testImage" />}
+					href=" "
+					subTitle="Artikkel / 11. mai 2019"
+					title="Title"
+					ariaLabel="This is aria label"
+				>
+					<Text>Explain something about something with something clever.</Text>
+				</Card>
+			</div>
+			<div>
+				<p><s>Hvis man legger på attributt ariaDescribedBy="subtitle": Tittel + Artikkel / 11. mai 2019 </s> (Hvis man ønsker å
+					endre hvordan dato leses opp må man heller bruke ariaLabel til å sette sammen Tittel og subtitle slik man ønsker)
+				</p>
+				<Card
+					imagePlacement="left"
+					image={<img src="/16x9.png" alt="testImage" />}
+					href=" "
+					subTitle="Artikkel / 11. mai 2019"
+					title="Title"
+					ariaLabel="Title Artikkel / 11. mai 2019"
+				>
 					<Text>Explain something about something with something clever.</Text>
 				</Card>
 			</div>
