@@ -133,8 +133,8 @@ storiesOf('Card', module)
 				</Card>
 			</div>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
-				<p>Hvis man legger på attributt ariaLabel="Dette er arialabel":  Dette er en ariaLabel</p>
-				<Card href=" " external title="Title" ariaLabel="This is a aria label">
+				<p>Hvis man legger på attributt ariaLabel="Title":  Title</p>
+				<Card href=" " external title="Title" ariaLabel="Title">
 					<Text>Explain something about something with a title about danger.</Text>
 				</Card>
 			</div>
@@ -156,9 +156,7 @@ storiesOf('Card', module)
 			</div>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
 				<p>Hvis man legger på attributt ariaLabel="This is aria label":  This is aria label</p>
-				<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Go to external page" ariaLabel="This is aria label">
-					<Text>Explain something about something with something clever.</Text>
-				</Card>
+				<Card href=" " icon={<Globe size={120} />} title="Title" profiled external hrefText="Go to external page" ariaLabel="This is aria label" />
 			</div>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
 				<p>Hvis man legger på attributt ariaDescribedBy="text": Gå til en annen side + Text ( Explain something….)</p>

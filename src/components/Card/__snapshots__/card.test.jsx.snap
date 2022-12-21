@@ -19,14 +19,11 @@ exports[`Card component Matches the snapshot 1`] = `
       >
         ProfileBox
       </div>
-      <a
-        href=""
-      >
-        <ArrowRight
-          className="arrow-icon"
-          size={22}
-        />
-      </a>
+      <ArrowRight
+        aria-hidden="true"
+        className="arrow-icon"
+        size={22}
+      />
     </div>
   </div>
 </div>
