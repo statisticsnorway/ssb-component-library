@@ -14,7 +14,7 @@ storiesOf('Card', module)
 				</Card>
 			</div>
 			<div style={{ width: '380px' }}>
-				<Card title="Tittel" href=" " hrefText="Handling">
+				<Card href=" " hrefText="Handling">
 					<Text>Explain something about something with something clever. Men denne har mye mere tekst så den kommer til å bli lengre</Text>
 				</Card>
 			</div>

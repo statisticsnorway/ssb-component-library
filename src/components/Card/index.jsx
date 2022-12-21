@@ -49,25 +49,27 @@ const Card = ({
 					{ children && <div id={`${cardId}-text`} className="card-text">{children}</div> }
 
 					{(!image && !hrefText) && (
-						<a
-							href={href}
-							target={external ? '_blank' : undefined}
-							rel={external ? 'noreferrer' : undefined}
-						>
-							{external ? <ExternalLink className="arrow-icon" size={22} /> : <ArrowRight className="arrow-icon" size={22} />}
-						</a>
+						external ? <ExternalLink className="arrow-icon" size={22} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={22} aria-hidden="true" />
 					)}
 
-					{(!image && hrefText) && (
+					{(!title && !image && hrefText) && (
 						<a
 							className="card-action"
 							href={href}
 							target={external ? '_blank' : undefined}
 							rel={external ? 'noreferrer' : undefined}
+							tabIndex={-1}
 						>
 							{external ? <ExternalLink className="arrow-icon" size={16} /> : <ArrowRight className="arrow-icon" size={16} />}
 							<div className="href-text">{hrefText}</div>
 						</a>
+					)}
+
+					{(title && !image && hrefText) && (
+						<div className="card-action">
+							{external ? <ExternalLink className="arrow-icon" size={16} /> : <ArrowRight className="arrow-icon" size={16} />}
+							<div className="href-text">{hrefText}</div>
+						</div>
 					)}
 
 				</div>
