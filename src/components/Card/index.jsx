@@ -1,8 +1,13 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight, Download, ExternalLink } from 'react-feather';
 import { useId } from '../../utils/useId';
+import {
+	KEY_ENTER,
+	KEY_SPACE,
+} from '../../utils/keybindings';
 
 const Card = ({
 	ariaDescribedBy, ariaLabel, children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, title,
@@ -10,6 +15,7 @@ const Card = ({
 	const cardId = id || useId();
 
 	const openLink = () => {
+		console.log('im by the link');
 		const link = document.createElement('a');
 		link.href = href;
 		if (external) {
@@ -19,11 +25,25 @@ const Card = ({
 		link.click();
 	};
 
+	const handleEnterKey = e => {
+		if (e.keyCode === KEY_ENTER || e.key == 'Enter' || e.keyCode === KEY_SPACE || e.key == 'Space') {
+			console.log('im by the link');
+			const link = document.createElement('a');
+			link.href = href;
+			if (external) {
+				link.target = '_blank';
+				link.rel = 'noreferrer';
+			}
+			link.click();
+		}
+	};
+
 	return (
 		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
 			<div
 				className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
-				onClick={() => openLink()}
+				onClick={e => openLink()}
+				onKeyDown={handleEnterKey}
 				role="link"
 				tabIndex={0}
 				aria-label={ariaLabel || title || hrefText || undefined}
