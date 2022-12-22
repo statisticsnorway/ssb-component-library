@@ -156,7 +156,9 @@ storiesOf('Card', module)
 			</div>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
 				<p>Hvis man legger på attributt ariaLabel="This is aria label":  This is aria label</p>
-				<Card href=" " icon={<Globe size={120} />} title="Title" profiled external hrefText="Go to external page" ariaLabel="This is aria label" />
+				<Card href=" " icon={<Globe size={120} />} title="Title" profiled external hrefText="Go to external page" ariaLabel="This is aria label">
+					<Text>Explain something clever.</Text>
+				</Card>
 			</div>
 			<div style={{ width: '380px', marginLeft: '10px' }}>
 				<p>Hvis man legger på attributt ariaDescribedBy="text": Gå til en annen side + Text ( Explain something….)</p>
