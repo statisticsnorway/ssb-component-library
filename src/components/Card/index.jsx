@@ -1,41 +1,98 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight, Download, ExternalLink } from 'react-feather';
 import { useId } from '../../utils/useId';
+import {
+	KEY_ENTER,
+	KEY_SPACE,
+} from '../../utils/keybindings';
 
 const Card = ({
 	ariaDescribedBy, ariaLabel, children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, title,
 }) => {
 	const cardId = id || useId();
 
+	const openLink = () => {
+		const link = document.createElement('a');
+		link.href = href;
+		if (external) {
+			link.target = '_blank';
+			link.rel = 'noreferrer';
+		}
+		link.click();
+	};
+
+	const handleEnterKey = e => {
+		if (e.keyCode === KEY_ENTER || e.key == 'Enter' || e.keyCode === KEY_SPACE || e.key == 'Space') {
+			const link = document.createElement('a');
+			link.href = href;
+			if (external) {
+				link.target = '_blank';
+				link.rel = 'noreferrer';
+			}
+			link.click();
+		}
+	};
+
 	return (
 		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
-			{/* eslint-disable-next-line react/jsx-no-target-blank */}
-			<a
-				href={href}
+			<div
 				className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
-				target={external ? '_blank' : undefined}
-				rel={external ? 'noreferrer' : undefined}
-				aria-label={ariaLabel || undefined}
+				onClick={() => openLink()}
+				onKeyDown={handleEnterKey}
+				role="link"
+				tabIndex={0}
+				aria-label={ariaLabel || title || hrefText || undefined}
 				aria-describedby={ariaDescribedBy ? `${cardId}-${ariaDescribedBy}` : undefined}
 			>
+
 				{image && <div className="card-image">{image}</div>}
+
 				<div className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}>
+
 					{icon && <div className="card-icon">{icon}</div>}
 					{subTitle && <div id={`${cardId}-subtitle`} className="card-subtitle">{subTitle}</div>}
-					{title && <div className="card-title">{title}</div>}
-					{ children && <div id={`${cardId}-text`} className="card-text">{children}</div> }
-					{(!image && !hrefText) && (
-						external ? <ExternalLink className="arrow-icon" size={22} /> : <ArrowRight className="arrow-icon" size={22} />
+					{title && (
+						<a
+							href={href}
+							className="card-title"
+							target={external ? '_blank' : undefined}
+							rel={external ? 'noreferrer' : undefined}
+							tabIndex={-1}
+						>{title}
+						</a>
 					)}
-					{(!image && hrefText) && (
+
+					{ children && <div id={`${cardId}-text`} className="card-text">{children}</div> }
+
+					{(!image && !hrefText) && (
+						external ? <ExternalLink className="arrow-icon" size={22} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={22} aria-hidden="true" />
+					)}
+
+					{(!title && !image && hrefText) && (
+						<a
+							className="card-action"
+							href={href}
+							target={external ? '_blank' : undefined}
+							rel={external ? 'noreferrer' : undefined}
+							tabIndex={-1}
+						>
+							{external ? <ExternalLink className="arrow-icon" size={16} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={16} aria-hidden="true" />}
+							<div className="href-text">{hrefText}</div>
+						</a>
+					)}
+
+					{(title && !image && hrefText) && (
 						<div className="card-action">
-							{external ? <ExternalLink className="arrow-icon" size={16} /> : <ArrowRight className="arrow-icon" size={16} />}
+							{external ? <ExternalLink className="arrow-icon" size={16} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={16} aria-hidden="true" />}
 							<div className="href-text">{hrefText}</div>
 						</div>
 					)}
+
 				</div>
-			</a>
+			</div>
 			{fileLocation && (
 				<a download href={fileLocation} className="download-section">
 					<Download className="download-icon" size={22} />
