@@ -15,7 +15,6 @@ const Card = ({
 	const cardId = id || useId();
 
 	const openLink = () => {
-		console.log('im by the link');
 		const link = document.createElement('a');
 		link.href = href;
 		if (external) {
@@ -27,7 +26,6 @@ const Card = ({
 
 	const handleEnterKey = e => {
 		if (e.keyCode === KEY_ENTER || e.key == 'Enter' || e.keyCode === KEY_SPACE || e.key == 'Space') {
-			console.log('im by the link');
 			const link = document.createElement('a');
 			link.href = href;
 			if (external) {
@@ -42,7 +40,7 @@ const Card = ({
 		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
 			<div
 				className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
-				onClick={e => openLink()}
+				onClick={() => openLink()}
 				onKeyDown={handleEnterKey}
 				role="link"
 				tabIndex={0}
