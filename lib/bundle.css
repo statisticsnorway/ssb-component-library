@@ -440,6 +440,9 @@ a {
   text-align: center;
 }
 .ssb-card .card-content.profiled .card-title {
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-stretch: condensed;
+  font-weight: bold;
   font-size: 28px;
 }
 .ssb-card .card-content.profiled .card-icon {
@@ -494,6 +497,7 @@ a {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 8px;
+  color: #162327;
 }
 .ssb-card .download-section {
   font-family: "Open Sans", sans-serif !important;
@@ -1556,6 +1560,24 @@ a {
   color: #fff;
   outline: 0;
 }
+.ssb-link.stand-alone {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center !important;
+  border-bottom: none;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+.ssb-link.stand-alone .icon-wrapper {
+  margin-top: 0;
+}
+.ssb-link.stand-alone.with-icon {
+  text-decoration: none;
+}
+.ssb-link.stand-alone:hover {
+  text-decoration: none;
+}
 
 .ssb-nested-accordion {
   font-family: "Roboto", sans-serif !important;
@@ -2234,7 +2256,6 @@ h6.ssb-title {
     font-size: 44px;
     line-height: 56px;
   }
-
   h2.ssb-title {
     font-size: 28px;
     line-height: 36px;
