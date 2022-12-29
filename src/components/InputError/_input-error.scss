@@ -1,6 +1,6 @@
 .ssb-input-error {
   @include roboto;
-  background: $ssb-red-5;
+  background: $ssb-red-3;
   color: $ssb-white;
   display: flex;
   font-size: 14px;
@@ -16,7 +16,7 @@
   }
 
   &::before {
-    border-color: transparent transparent $ssb-red-5 transparent;
+    border-color: transparent transparent $ssb-red-3 transparent;
     border-style: solid;
     border-width: 8px;
     content: "";
