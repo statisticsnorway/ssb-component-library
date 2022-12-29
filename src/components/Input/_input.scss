@@ -129,14 +129,14 @@
     &.error {
 
       input {
-        border: 1px solid $ssb-red-3;
-        outline: 1px solid $ssb-red-3;
+        border: 1px solid $ssb-red-5;
+        outline: 1px solid $ssb-red-5;
       }
 
       .icon-wrapper {
 
         & > * {
-          color: $ssb-red-3;
+          color: $ssb-red-5;
         }
       }
     }
@@ -145,14 +145,14 @@
   &.error {
 
     input {
-      border: 1px solid $ssb-red-3;
-      outline: 1px solid $ssb-red-3;
+      border: 1px solid $ssb-red-5;
+      outline: 1px solid $ssb-red-5;
     }
 
     .icon-wrapper {
 
       & > * {
-        color: $ssb-red-3;
+        color: $ssb-red-5;
       }
     }
   }
