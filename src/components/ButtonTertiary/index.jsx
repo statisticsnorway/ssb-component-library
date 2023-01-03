@@ -1,41 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({
-	children, className, disabled, icon, negative, onClick, primary, type, ariaLabel,
-}) => (
-	<button
-		type={type}
-		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'}${className ? ` ${className}` : ''}`}
-		onClick={onClick}
-		disabled={disabled}
-		aria-label={ariaLabel || undefined}
-	>
-		{icon && <div className="sb-icon">{icon}</div>}
-		{children}
-	</button>
-);
+import { ChevronDown, ChevronUp } from 'react-feather';
 
-Button.defaultProps = {
-	className: '',
-	disabled: false,
-	negative: false,
-	onClick: () => {},
-	primary: false,
-	type: 'button',
-	ariaLabel: '',
+const ButtonTertiary = ({
+	id, children, className, header, openByDefault, tabIndex, onToggle,
+}) => {
+	const [isOpen, toggleOpen] = useState(openByDefault);
+	const firstUpdate = useRef(true);
+
+	useEffect(() => {
+		if (firstUpdate.current) {
+			firstUpdate.current = false;
+			return;
+		}
+		onToggle(isOpen);
+	}, [isOpen]);
+
+	return (
+		<div
+			id={id}
+			className={`ssb-btn-tertiary${className ? ` ${className}` : ''}`}
+		>
+
+			<button
+				className={`button-header ${isOpen ? 'open' : 'closed'}`}
+				aria-expanded={isOpen ? 'true' : 'false'}
+				tabIndex={tabIndex}
+				onClick={() => toggleOpen(!isOpen)}
+			>
+				<span className="button-grid">
+					<span className="header-text">{header}</span>
+					{!isOpen && <ChevronDown className="expand-icon" size={20} />}
+					{isOpen && <ChevronUp className="expand-icon" size={20} />}
+				</span>
+			</button>
+
+			<div className={`accordion-body ${isOpen ? 'open' : 'closed'}`}>
+				{children}
+			</div>
+		</div>
+	);
 };
 
-Button.propTypes = {
-	children: PropTypes.node.isRequired,
+ButtonTertiary.defaultProps = {
+	openByDefault: false,
+	tabIndex: 0,
+	onToggle: () => {},
+};
+
+ButtonTertiary.propTypes = {
+	id: PropTypes.string,
+	children: PropTypes.node,
 	className: PropTypes.string,
-	disabled: PropTypes.bool,
-	icon: PropTypes.node,
-	negative: PropTypes.bool,
-	onClick: PropTypes.func,
-	primary: PropTypes.bool,
-	type: PropTypes.string,
-	ariaLabel: PropTypes.string,
+	header: PropTypes.string,
+	openByDefault: PropTypes.bool,
+	tabIndex: PropTypes.number,
+	onToggle: PropTypes.func,
 };
 
-export default Button;
+export default ButtonTertiary;

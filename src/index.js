@@ -4,7 +4,7 @@ export { default as Accordion } from './components/Accordion';
 export { default as BlockContent } from './components/BlockContent';
 export { default as Breadcrumb } from './components/Breadcrumb';
 export { default as Button } from './components/Button';
-export { default as ButtonTertiary } from './components/ButtonTertiary';
+export { default as ButtonTertiary } from './components/ButtonTertiary'; // ?????
 export { default as Checkbox } from './components/Checkbox';
 export { default as CheckboxGroup } from './components/CheckboxGroup';
 export { default as Dialog } from './components/Dialog';
