@@ -7,7 +7,7 @@ storiesOf('ButtonTertiary', module)
 	.add('Tertiary', () => (
 		<>
 			<div style={{ width: '800px', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', background: '#F0F8F9' }}>
-				{/* <ButtonTertiary className="mr-4" header="Knapp med Content">
+				<ButtonTertiary className="mr-4" header="Knapp med Icon og Content">
 					<div style={{ display: 'flex', flexDirection: 'inline', gridColumnGap: '11px' }}>
 						<Card title="Tittel" href=" ">
 							<p>Explain something about something with something clever.</p>
@@ -19,15 +19,11 @@ storiesOf('ButtonTertiary', module)
 							<p>Explain something about something with something clever.</p>
 						</Card>
 					</div>
-				</ButtonTertiary> */}
+				</ButtonTertiary>
 
 				<ButtonTertiary className="mr-4" header="Knapp" icon={false}>
 					<p>Explain something about something with something clever.</p>
 					<p>Explain something about something with something clever.</p>
-					<p>Explain something about something with something clever.</p>
-				</ButtonTertiary>
-
-				<ButtonTertiary className="mr-4" header="Knapp med Icon" icon>
 					<p>Explain something about something with something clever.</p>
 				</ButtonTertiary>
 
