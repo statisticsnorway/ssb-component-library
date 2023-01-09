@@ -1,16 +1,10 @@
 .ssb-btn-tertiary {
-  // display: grid;
-  // width: 100%;
+  padding: 0 20px;
 
   .button-header {
     @include focus-marker;
     @include reset-button;
     @include roboto;
-    padding: 20px 0;
-    max-height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     font-family: 'Open Sans';
     font-style: normal;
@@ -18,13 +12,18 @@
     font-size: 16px;
     line-height: 20px;
 
+    &.open .button-grid .header-text {
+      color: $ssb-green-4;
+      text-decoration: underline;
+    }
+
     .button-grid {
-      align-items: center;
       cursor: pointer;
-      display: grid;
-      grid-column-gap: 11px;
-      grid-template-columns: auto 20px;
-      margin-right: 6px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      grid-column-gap: 12px;
     }
 
     .expand-icon * {
@@ -37,9 +36,39 @@
     }
 
     &:hover {
-
-      .header-text, .sub-header {
+      .header-text {
         color: $ssb-green-4;
+        text-decoration: underline;
+      }
+    }
+
+    &.icon {
+      &:disabled { 
+        .button-grid {
+          cursor: not-allowed;
+
+          .header-text {
+            color: $ssb-dark-2;
+            text-decoration: none;
+          }
+
+          .expand-icon * {
+            color: $ssb-dark-2;
+          }
+          
+        }
+      }
+    }
+
+    &.no-icon {
+      text-decoration: underline;
+      
+      &:disabled { 
+        .button-grid .header-text {
+          color: $ssb-dark-2;
+          cursor: not-allowed;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -48,13 +77,65 @@
     @include open-sans;
     color: $ssb-dark-6;
     font-size: 16px;
-    padding: $global-padding-size 50px $global-padding-size 0;
-    display: flex;
-    justify-content: space-around;
 
     &.closed {
       display: none;
       height: 0;
+    }
+  }
+
+  &.negative {
+    .button-header {
+
+      &.no-icon {
+        text-decoration: underline;
+        text-decoration-color:  $ssb-white;
+
+        .button-grid {
+          .header-text {
+            color: $ssb-white;
+          }
+        }
+
+        &:disabled { 
+          .button-grid .header-text {
+            color: $ssb-dark-4;
+            cursor: not-allowed;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &.icon {
+        .button-grid {
+          .header-text {
+            color: $ssb-white;
+          }
+
+          .expand-icon * {
+            color: $ssb-green-2;
+          }
+        }
+
+        &:disabled { 
+          .button-grid {
+            cursor: not-allowed;
+  
+            .header-text {
+              color: $ssb-dark-4!important;
+              text-decoration: none;
+            }
+  
+            .expand-icon * {
+              color: $ssb-dark-4!important;
+            }
+          }
+        }
+      }
+    }
+
+    .accordion-body {
+      color: $ssb-white;
     }
   }
 }

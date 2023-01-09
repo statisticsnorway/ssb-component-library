@@ -1,42 +1,43 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { ChevronDown, ChevronUp } from 'react-feather';
 
 const ButtonTertiary = ({
-	id, children, className, header, openByDefault, tabIndex, onToggle,
+	id, children, className, header, openByDefault, tabIndex, icon, disabled, negative,
 }) => {
 	const [isOpen, toggleOpen] = useState(openByDefault);
-	const firstUpdate = useRef(true);
-
-	useEffect(() => {
-		if (firstUpdate.current) {
-			firstUpdate.current = false;
-			return;
-		}
-		onToggle(isOpen);
-	}, [isOpen]);
 
 	return (
 		<div
 			id={id}
-			className={`ssb-btn-tertiary${className ? ` ${className}` : ''}`}
+			className={`ssb-btn-tertiary ${negative ? ' negative' : ''} ${className ? ` ${className}` : ''}`}
 		>
 
 			<button
-				className={`button-header ${isOpen ? 'open' : 'closed'}`}
+				className={`button-header ${isOpen ? 'open' : 'closed'} ${icon ? 'icon' : 'no-icon'}`}
 				aria-expanded={isOpen ? 'true' : 'false'}
 				tabIndex={tabIndex}
 				onClick={() => toggleOpen(!isOpen)}
+				disabled={disabled}
+				id="accordion-button"
 			>
 				<span className="button-grid">
 					<span className="header-text">{header}</span>
-					{!isOpen && <ChevronDown className="expand-icon" size={20} />}
-					{isOpen && <ChevronUp className="expand-icon" size={20} />}
+					{
+						icon
+							? (
+								<>
+									{!isOpen && <ChevronDown className="expand-icon" size={20} />}
+									{isOpen && <ChevronUp className="expand-icon" size={20} />}
+								</>
+							)
+							: null
+					}
 				</span>
 			</button>
 
-			<div className={`accordion-body ${isOpen ? 'open' : 'closed'}`}>
+			<div className={`accordion-body ${isOpen ? 'open' : 'closed'}`} role="region" aria-labelledby="accordion-button">
 				{children}
 			</div>
 		</div>
@@ -46,7 +47,9 @@ const ButtonTertiary = ({
 ButtonTertiary.defaultProps = {
 	openByDefault: false,
 	tabIndex: 0,
-	onToggle: () => {},
+	icon: true,
+	disabled: false,
+	negative: false,
 };
 
 ButtonTertiary.propTypes = {
@@ -56,7 +59,9 @@ ButtonTertiary.propTypes = {
 	header: PropTypes.string,
 	openByDefault: PropTypes.bool,
 	tabIndex: PropTypes.number,
-	onToggle: PropTypes.func,
+	icon: PropTypes.bool,
+	disabled: PropTypes.bool,
+	negative: PropTypes.bool,
 };
 
 export default ButtonTertiary;
