@@ -1,5 +1,5 @@
 .ssb-btn-tertiary {
-  padding: 0 20px;
+  // padding: 0 20px;
 
   .button-header {
     @include focus-marker;
@@ -23,7 +23,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      grid-column-gap: 12px;
+      grid-column-gap: 6px;
     }
 
     .expand-icon * {
@@ -42,33 +42,22 @@
       }
     }
 
-    &.icon {
-      &:disabled { 
-        .button-grid {
-          cursor: not-allowed;
-
-          .header-text {
-            color: $ssb-dark-2;
-            text-decoration: none;
-          }
-
-          .expand-icon * {
-            color: $ssb-dark-2;
-          }
-          
-        }
-      }
-    }
-
     &.no-icon {
       text-decoration: underline;
-      
-      &:disabled { 
-        .button-grid .header-text {
+    }
+
+    &:disabled { 
+      .button-grid {
+        cursor: not-allowed;
+
+        .header-text {
           color: $ssb-dark-2;
-          cursor: not-allowed;
-          text-decoration: underline;
+          text-decoration: none;
         }
+
+        .expand-icon * {
+          color: $ssb-dark-2;
+        }  
       }
     }
   }
@@ -86,49 +75,38 @@
 
   &.negative {
     .button-header {
-
       &.no-icon {
         text-decoration: underline;
         text-decoration-color:  $ssb-white;
-
-        .button-grid {
-          .header-text {
-            color: $ssb-white;
-          }
-        }
-
-        &:disabled { 
-          .button-grid .header-text {
-            color: $ssb-dark-4;
-            cursor: not-allowed;
-            text-decoration: underline;
-          }
-        }
       }
 
-      &.icon {
+      .button-grid {
+        .header-text {
+          color: $ssb-white;
+        }
+
+        .expand-icon * {
+          color: $ssb-green-2;
+        }
+      }
+      
+      &:disabled { 
         .button-grid {
+          cursor: not-allowed;
+
           .header-text {
-            color: $ssb-white;
+            color: $ssb-dark-4!important;
+            text-decoration: none;
           }
 
           .expand-icon * {
-            color: $ssb-green-2;
+            color: $ssb-dark-4!important;
           }
         }
 
-        &:disabled { 
-          .button-grid {
-            cursor: not-allowed;
-  
-            .header-text {
-              color: $ssb-dark-4!important;
-              text-decoration: none;
-            }
-  
-            .expand-icon * {
-              color: $ssb-dark-4!important;
-            }
+        &.no-icon {
+          .button-grid .header-text {
+            text-decoration: underline;
           }
         }
       }

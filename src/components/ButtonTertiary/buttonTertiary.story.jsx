@@ -6,7 +6,7 @@ import Card from '../Card';
 storiesOf('ButtonTertiary', module)
 	.add('Tertiary', () => (
 		<>
-			<div style={{ width: '800px', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', background: '#F0F8F9' }}>
+			<div style={{ width: '800px', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
 				<ButtonTertiary className="mr-4" header="Knapp med Icon og Content">
 					<div style={{ display: 'flex', flexDirection: 'inline', gridColumnGap: '11px' }}>
 						<Card title="Tittel" href=" ">
