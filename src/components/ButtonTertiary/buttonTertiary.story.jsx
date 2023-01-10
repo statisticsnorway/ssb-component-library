@@ -3,6 +3,10 @@ import { storiesOf } from '@storybook/react';
 import ButtonTertiary from './index';
 import Card from '../Card';
 
+const testOnClick = () => {
+	console.log('Im an onClick func');
+};
+
 storiesOf('ButtonTertiary', module)
 	.add('Tertiary', () => (
 		<>
@@ -21,32 +25,32 @@ storiesOf('ButtonTertiary', module)
 					</div>
 				</ButtonTertiary>
 
-				<ButtonTertiary className="mr-4" header="Knapp" icon={false}>
+				<ButtonTertiary className="mr-4" header="Knapp" accordion={false} onClick={() => testOnClick()}>
 					<p>Explain something about something with something clever.</p>
 					<p>Explain something about something with something clever.</p>
 					<p>Explain something about something with something clever.</p>
 				</ButtonTertiary>
 
-				<ButtonTertiary className="mr-4" header="Disabled Knapp" icon disabled>
+				<ButtonTertiary className="mr-4" header="Disabled Knapp" disabled>
 					<p>Explain something about something with something clever.</p>
 				</ButtonTertiary>
 			</div>
 
 			<div style={{ width: '800px', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', background: '#224742' }}>
 
-				<ButtonTertiary className="mr-4" header="Knapp negative" negative icon={false}>
+				<ButtonTertiary className="mr-4" header="Knapp negative" negative accordion={false} onClick={() => testOnClick()}>
 					<p>Explain something about something with something clever.</p>
 				</ButtonTertiary>
 
-				<ButtonTertiary className="mr-4" header="Knapp negative med Icon" icon negative>
+				<ButtonTertiary className="mr-4" header="Knapp negative med Icon" negative>
 					<p>Explain something about something with something clever.</p>
 				</ButtonTertiary>
 
-				<ButtonTertiary className="mr-4" header="Knapp negative med Icon" icon={false} negative disabled>
+				<ButtonTertiary className="mr-4" header="Knapp negative med Icon" accordion={false} negative disabled onClick={() => testOnClick()}>
 					<p>Explain something about something with something clever.</p>
 				</ButtonTertiary>
 
-				<ButtonTertiary className="mr-4" header="Knapp negative med Icon" icon negative disabled>
+				<ButtonTertiary className="mr-4" header="Knapp negative med Icon" negative disabled>
 					<p>Explain something about something with something clever.</p>
 				</ButtonTertiary>
 			</div>
