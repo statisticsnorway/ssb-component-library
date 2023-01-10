@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Tertiary component Matches the snapshot 1`] = `
+<div
+  className="ssb-btn-tertiary  "
+>
+  <button
+    aria-expanded="false"
+    className="button-header closed icon"
+    disabled={false}
+    id="accordion-button"
+    onClick={[Function]}
+    tabIndex={0}
+  >
+    <span
+      className="button-grid"
+    >
+      <span
+        className="header-text"
+      />
+      <ChevronDown
+        className="expand-icon"
+        size={20}
+      />
+    </span>
+  </button>
+  <div
+    aria-labelledby="accordion-button"
+    className="accordion-body closed"
+    role="region"
+  >
+    Button
+  </div>
+</div>
+`;

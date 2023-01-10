@@ -23,26 +23,17 @@ const ButtonTertiary = ({
 			>
 				<span className="button-grid">
 					<span className="header-text">{header}</span>
-					{
-						accordion
-							? (
-								<>
-									{!isOpen && <ChevronDown className="expand-icon" size={20} />}
-									{isOpen && <ChevronUp className="expand-icon" size={20} />}
-								</>
-							)
-							: null
-					}
+					{accordion && !isOpen && <ChevronDown className="expand-icon" size={20} />}
+					{accordion && isOpen && <ChevronUp className="expand-icon" size={20} />}
 				</span>
 			</button>
 			{
 				accordion
-					? (
-						<div className={`accordion-body ${isOpen ? 'open' : 'closed'}`} role="region" aria-labelledby="accordion-button">
-							{children}
-						</div>
-					)
-					: null
+						&& (
+							<div className={`accordion-body ${isOpen ? 'open' : 'closed'}`} role="region" aria-labelledby="accordion-button">
+								{children}
+							</div>
+						)
 			}
 		</div>
 	);
