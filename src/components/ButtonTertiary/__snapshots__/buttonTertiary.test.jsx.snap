@@ -5,6 +5,8 @@ exports[`Button Tertiary component Matches the snapshot 1`] = `
   className="ssb-btn-tertiary  "
 >
   <button
+    aria-controls="accordion-section"
+    aria-disabled={false}
     aria-expanded="false"
     className="button-header closed icon"
     disabled={false}
@@ -27,6 +29,7 @@ exports[`Button Tertiary component Matches the snapshot 1`] = `
   <div
     aria-labelledby="accordion-button"
     className="accordion-body closed"
+    id="accordion-section"
     role="region"
   >
     Button
