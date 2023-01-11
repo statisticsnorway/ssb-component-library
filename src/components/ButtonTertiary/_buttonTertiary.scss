@@ -4,8 +4,7 @@
     @include focus-marker;
     @include reset-button;
     @include roboto;
-
-    font-family: 'Open Sans';
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -35,6 +34,7 @@
     }
 
     &:hover {
+
       .header-text {
         color: $ssb-green-4;
         text-decoration: underline;
@@ -45,7 +45,8 @@
       text-decoration: underline;
     }
 
-    &:disabled { 
+    &:disabled {
+
       .button-grid {
         cursor: not-allowed;
 
@@ -56,7 +57,7 @@
 
         .expand-icon * {
           color: $ssb-dark-2;
-        }  
+        }
       }
     }
   }
@@ -73,13 +74,16 @@
   }
 
   &.negative {
+
     .button-header {
+
       &.no-icon {
         text-decoration: underline;
-        text-decoration-color:  $ssb-white;
+        text-decoration-color: $ssb-white;
       }
 
       .button-grid {
+
         .header-text {
           color: $ssb-white;
         }
@@ -88,22 +92,24 @@
           color: $ssb-green-2;
         }
       }
-      
-      &:disabled { 
+
+      &:disabled {
+
         .button-grid {
           cursor: not-allowed;
 
           .header-text {
-            color: $ssb-dark-4!important;
+            color: $ssb-dark-4 !important;
             text-decoration: none;
           }
 
           .expand-icon * {
-            color: $ssb-dark-4!important;
+            color: $ssb-dark-4 !important;
           }
         }
 
         &.no-icon {
+
           .button-grid .header-text {
             text-decoration: underline;
           }
