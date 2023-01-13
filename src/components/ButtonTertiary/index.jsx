@@ -7,11 +7,12 @@ const ButtonTertiary = ({
 	id, children, className, header, openByDefault, tabIndex, accordion, disabled, negative, onClick,
 }) => {
 	const [isOpen, toggleOpen] = useState(openByDefault);
+	const classNames = `ssb-btn-tertiary${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`;
 
 	return (
 		<div
 			id={id}
-			className={`ssb-btn-tertiary ${negative ? ' negative' : ''} ${className ? ` ${className}` : ''}`}
+			className={classNames.replace(/\s\s+/g, ' ').trim()}
 		>
 			<button
 				className={`button-header ${isOpen ? 'open' : 'closed'} ${accordion ? 'icon' : 'no-icon'}`}
