@@ -20,7 +20,7 @@ const ButtonTertiary = ({
 				tabIndex={tabIndex}
 				onClick={accordion ? () => toggleOpen(!isOpen) : onClick}
 				disabled={disabled}
-				id="accordion-button"
+				id={`accordion-button-${id}`}
 				aria-controls={accordion && 'accordion-section'}
 				aria-disabled={disabled && 'true'}
 			>
@@ -33,7 +33,7 @@ const ButtonTertiary = ({
 			{
 				accordion
 						&& (
-							<div id="accordion-section" className={`accordion-body ${isOpen ? 'open' : 'closed'}`} role="region" aria-labelledby="accordion-button">
+							<div id="accordion-section" className={`accordion-body ${isOpen ? 'open' : 'closed'}`} role="region" aria-labelledby={`accordion-button-${id}`}>
 								{children}
 							</div>
 						)

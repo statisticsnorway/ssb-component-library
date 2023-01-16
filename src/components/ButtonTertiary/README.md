@@ -1,4 +1,4 @@
-Button
+Button Tertiary
 ========
 
 > Action button
@@ -16,7 +16,7 @@ Button
             <span class="header-text">
                 Tertiary button with Icon & Accordion
             </span>
-            <svg>Icon</svg>
+            <i>{feather.chevronDown 18px}</i>
         </span>
     </button>
     <div class="accordion-body closed"></div>
@@ -33,38 +33,46 @@ Button
 </button>
 
 
-<button class="ssb-btn negative">Secondary negative button</button>
-
-<button disabled="true">Disabled button</button>
+<button class="ssb-btn-tertiary negative">
+    <button class="button-header closed no-icon" disabled>
+        <span class="button-grid">
+            <span class="header-text">
+                Tertiary button with onClick
+            </span>
+        </span>
+    </button>
+</button>
 
 ```
 
 #### React
 
 ```jsx harmony
-<Button>Secondary button</Button>
 
-<Button icon={<ChevronDown />} primary>Primary icon</Button>
+<ButtonTertiary header="Tertiary button with Icon & Accordion">
+    <p>Explain something about something with something clever.</p>
+</ButtonTertiary>
 
-<Button primary>Primary button</Button>
+<ButtonTertiary header="Tertiary button with onClick" accordion={false} onClick={() => testOnClick()} />
 
-<Button primary ariaLabel={'Button with primariy role'}>Button with aria label</Button>
+<ButtonTertiary header="Knapp negative med Icon & Accordion" negative disabled>
+	<p>Explain something about something with something clever.</p>
+</ButtonTertiary>
 
-<Button negative primary>Primary negative button</Button>
-
-<Button disabled>Disabled button</Button>
 ```
 
 Available props:
 
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
-| children | Required node | Button text or/and icon |
-| className | String | Optional container class |
-| ariaLabel | String | Optional aria-label text for screen readers |
+| id | string | Button text or/and icon |
+| children | node | Button text or/and icon |
+| className | string | Optional container class |
+| header | string | Header text |
+| openByDefault | bool | Will set the open state on init |
+| tabIndex | number | Tab index for focus |
+| accordion | bool | Will signify button & icon, with an accordion feature on initial state |
 | disabled | bool | Decides if the button is disabled |
-| icon | node | Renders an icon |
 | negative | bool | Changes design |
 | onClick | function | Callback for button click |
-| primary | bool | Changes style to represent a primary button |
-| type | string | Button type. Can be 'submit', 'reset', or 'button'. Defaults to 'button' |
+

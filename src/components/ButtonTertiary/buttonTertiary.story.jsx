@@ -25,11 +25,7 @@ storiesOf('ButtonTertiary', module)
 					</div>
 				</ButtonTertiary>
 
-				<ButtonTertiary className="mr-4" header="Knapp" accordion={false} onClick={() => testOnClick()}>
-					<p>Explain something about something with something clever.</p>
-					<p>Explain something about something with something clever.</p>
-					<p>Explain something about something with something clever.</p>
-				</ButtonTertiary>
+				<ButtonTertiary className="mr-4" header="Knapp" accordion={false} onClick={() => testOnClick()} />
 
 				<ButtonTertiary className="mr-4" header="Disabled Knapp" disabled>
 					<p>Explain something about something with something clever.</p>
