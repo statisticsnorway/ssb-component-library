@@ -301,6 +301,103 @@ a {
   margin-right: 5px;
 }
 
+.ssb-btn-tertiary .button-header {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  text-align: left;
+  font-family: "Roboto", sans-serif !important;
+  font-stretch: normal;
+  font-weight: normal;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+.ssb-btn-tertiary .button-header:focus {
+  outline: #9272fc solid 2px;
+  outline-offset: 2px;
+}
+.ssb-btn-tertiary .button-header.open .button-grid .header-text {
+  color: #00824d;
+  text-decoration: underline;
+}
+.ssb-btn-tertiary .button-header .button-grid {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  grid-column-gap: 6px;
+}
+.ssb-btn-tertiary .button-header .expand-icon * {
+  color: #00824d;
+  font-size: 20px;
+}
+.ssb-btn-tertiary .button-header .header-text {
+  color: #162327;
+}
+.ssb-btn-tertiary .button-header:hover .header-text {
+  color: #00824d;
+  text-decoration: underline;
+}
+.ssb-btn-tertiary .button-header.no-icon {
+  text-decoration: underline;
+}
+.ssb-btn-tertiary .button-header:disabled .button-grid {
+  cursor: not-allowed;
+}
+.ssb-btn-tertiary .button-header:disabled .button-grid .header-text {
+  color: #c3dcdc;
+  text-decoration: none;
+}
+.ssb-btn-tertiary .button-header:disabled .button-grid .expand-icon * {
+  color: #c3dcdc;
+}
+.ssb-btn-tertiary .accordion-body {
+  font-family: "Open Sans", sans-serif !important;
+  font-stretch: normal;
+  font-weight: normal;
+  color: #162327;
+  font-size: 16px;
+}
+.ssb-btn-tertiary .accordion-body.closed {
+  display: none;
+  height: 0;
+}
+.ssb-btn-tertiary.negative .button-header.no-icon {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+.ssb-btn-tertiary.negative .button-header .button-grid .header-text {
+  color: #fff;
+}
+.ssb-btn-tertiary.negative .button-header .button-grid .expand-icon * {
+  color: #b6e8b8;
+}
+.ssb-btn-tertiary.negative .button-header:disabled .button-grid {
+  cursor: not-allowed;
+}
+.ssb-btn-tertiary.negative .button-header:disabled .button-grid .header-text {
+  color: #2d6975 !important;
+  text-decoration: none;
+}
+.ssb-btn-tertiary.negative .button-header:disabled .button-grid .expand-icon * {
+  color: #2d6975 !important;
+}
+.ssb-btn-tertiary.negative .button-header:disabled.no-icon .button-grid .header-text {
+  text-decoration: underline;
+}
+.ssb-btn-tertiary.negative .accordion-body {
+  color: #fff;
+}
+
 .ssb-card {
   font-family: "Roboto", sans-serif !important;
   font-stretch: normal;
@@ -440,6 +537,9 @@ a {
   text-align: center;
 }
 .ssb-card .card-content.profiled .card-title {
+  font-family: "Roboto Condensed", sans-serif !important;
+  font-stretch: condensed;
+  font-weight: bold;
   font-size: 28px;
 }
 .ssb-card .card-content.profiled .card-icon {
@@ -494,6 +594,7 @@ a {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 8px;
+  color: #162327;
 }
 .ssb-card .download-section {
   font-family: "Open Sans", sans-serif !important;
@@ -644,10 +745,10 @@ a {
   margin-top: 8px;
 }
 .ssb-dialog.warning {
-  border: 2px solid #ed5935;
+  border: 2px solid #dc3400;
 }
 .ssb-dialog.warning .icon-panel {
-  background: #ed5935;
+  background: #dc3400;
 }
 .ssb-dialog.info {
   border: 2px solid #3396d2;
@@ -743,8 +844,8 @@ a {
   outline: 1px solid #00824d;
 }
 .ssb-dropdown.error input, .ssb-dropdown.error button.opener {
-  border: 1px solid #ed5935;
-  outline: 1px solid #ed5935;
+  border: 1px solid #dc3400;
+  outline: 1px solid #dc3400;
 }
 .ssb-dropdown .list-of-options {
   font-family: "Roboto", sans-serif !important;
@@ -891,8 +992,8 @@ a {
   font-stretch: normal;
   font-weight: normal;
   background: #fff;
-  border: 2px solid #ed5935;
-  border-left: 4px solid #ed5935;
+  border: 2px solid #dc3400;
+  border-left: 4px solid #dc3400;
   display: flex;
   padding: 20px 20px 20px 0;
   width: 100%;
@@ -902,7 +1003,7 @@ a {
 }
 .ssb-form-error .error-icon::before {
   align-items: center;
-  background: #ed5935;
+  background: #dc3400;
   border-radius: 2px;
   color: #fff;
   content: "!";
@@ -914,7 +1015,7 @@ a {
   width: 28px;
 }
 .ssb-form-error .error-title {
-  color: #ed5935;
+  color: #dc3400;
   font-weight: bold;
   line-height: 1.25;
 }
@@ -1204,18 +1305,18 @@ a {
   color: #274247;
 }
 .ssb-input.negative.error input {
-  border: 1px solid #ed5935;
-  outline: 1px solid #ed5935;
+  border: 1px solid #dc3400;
+  outline: 1px solid #dc3400;
 }
 .ssb-input.negative.error .icon-wrapper > * {
-  color: #ed5935;
+  color: #dc3400;
 }
 .ssb-input.error input {
-  border: 1px solid #ed5935;
-  outline: 1px solid #ed5935;
+  border: 1px solid #dc3400;
+  outline: 1px solid #dc3400;
 }
 .ssb-input.error .icon-wrapper > * {
-  color: #ed5935;
+  color: #dc3400;
 }
 .ssb-input .icon-wrapper {
   background-color: transparent;
@@ -1275,7 +1376,7 @@ a {
   font-family: "Roboto", sans-serif !important;
   font-stretch: normal;
   font-weight: normal;
-  background: #ed5935;
+  background: #dc3400;
   color: #fff;
   display: flex;
   font-size: 14px;
@@ -1290,7 +1391,7 @@ a {
   color: #274247;
 }
 .ssb-input-error::before {
-  border-color: transparent transparent #ed5935 transparent;
+  border-color: transparent transparent #dc3400 transparent;
   border-style: solid;
   border-width: 8px;
   content: "";
@@ -1555,6 +1656,24 @@ a {
 .ssb-link .link-text:hover, .ssb-link .link-text:focus {
   color: #fff;
   outline: 0;
+}
+.ssb-link.stand-alone {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center !important;
+  border-bottom: none;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+.ssb-link.stand-alone .icon-wrapper {
+  margin-top: 0;
+}
+.ssb-link.stand-alone.with-icon {
+  text-decoration: none;
+}
+.ssb-link.stand-alone:hover {
+  text-decoration: none;
 }
 
 .ssb-nested-accordion {
@@ -2160,12 +2279,12 @@ a {
   outline-offset: 0;
 }
 .ssb-text-area.negative.error textarea {
-  border: 1px solid #ed5935;
-  outline: 1px solid #ed5935;
+  border: 1px solid #dc3400;
+  outline: 1px solid #dc3400;
 }
 .ssb-text-area.error textarea {
-  border: 1px solid #ed5935;
-  outline: 1px solid #ed5935;
+  border: 1px solid #dc3400;
+  outline: 1px solid #dc3400;
 }
 
 .ssb-title {
@@ -2234,7 +2353,6 @@ h6.ssb-title {
     font-size: 44px;
     line-height: 56px;
   }
-
   h2.ssb-title {
     font-size: 28px;
     line-height: 36px;
