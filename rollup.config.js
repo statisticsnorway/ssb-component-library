@@ -20,9 +20,7 @@ export default [{
 		'uuid',
 	],
 	plugins: [
-		scss({
-			output: 'lib/bundle.css',
-		}),
+		scss({ fileName: 'bundle.css' }),
 		svgr(),
 		nodeResolve({
 			extension: ['.jsx', '.js'],
