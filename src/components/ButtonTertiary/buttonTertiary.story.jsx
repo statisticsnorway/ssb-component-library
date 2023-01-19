@@ -4,7 +4,7 @@ import ButtonTertiary from './index';
 import Card from '../Card';
 
 const testOnClick = () => {
-	console.log('Im an onClick func');
+	console.log('Im an onClick function for testing');
 };
 
 storiesOf('ButtonTertiary', module)
