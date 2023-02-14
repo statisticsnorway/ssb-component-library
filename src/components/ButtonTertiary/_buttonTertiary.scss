@@ -10,11 +10,6 @@
     font-size: 16px;
     line-height: 20px;
 
-    &.open .button-grid .header-text {
-      color: $ssb-green-4;
-      text-decoration: underline;
-    }
-
     .button-grid {
       cursor: pointer;
       min-height: 44px;
@@ -24,7 +19,7 @@
       grid-column-gap: 6px;
     }
 
-    .expand-icon * {
+    svg {
       color: $ssb-green-4;
       font-size: 20px;
     }
@@ -33,16 +28,17 @@
       color: $ssb-dark-6;
     }
 
-    &:hover {
-
+    &:hover, &:focus {
       .header-text {
         color: $ssb-green-4;
         text-decoration: underline;
+        text-underline-position: under;
       }
     }
 
     &.no-icon {
       text-decoration: underline;
+      text-underline-position: under;
     }
 
     &:disabled {
@@ -88,7 +84,7 @@
           color: $ssb-white;
         }
 
-        .expand-icon * {
+        svg {
           color: $ssb-green-2;
         }
       }
@@ -103,8 +99,12 @@
             text-decoration: none;
           }
 
+          svg {
+            color: $ssb-dark-4;
+          }
+
           .expand-icon * {
-            color: $ssb-dark-4 !important;
+            color: $ssb-dark-4;
           }
         }
 
