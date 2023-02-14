@@ -26,8 +26,8 @@ const ButtonTertiary = ({
 			>
 				<span className="button-grid">
 					<span className="header-text">{header}</span>
-					{accordion && !isOpen && <ChevronDown className="expand-icon" size={20} />}
-					{accordion && isOpen && <ChevronUp className="expand-icon" size={20} />}
+					{accordion && !isOpen && <ChevronDown className="expand-icon" size={22} />}
+					{accordion && isOpen && <ChevronUp className="expand-icon" size={22} />}
 				</span>
 			</button>
 			{
