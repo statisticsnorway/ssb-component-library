@@ -22,7 +22,7 @@ exports[`Button Tertiary component Matches the snapshot 1`] = `
       />
       <ChevronDown
         className="expand-icon"
-        size={20}
+        size={22}
       />
     </span>
   </button>
