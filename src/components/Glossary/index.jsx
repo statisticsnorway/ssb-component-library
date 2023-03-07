@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { BookOpen, XCircle } from 'react-feather';
 
@@ -14,15 +14,24 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 		setOpen(false);
 	};
 
+	const escKeyListener = useCallback(
+		event => {
+			if (event.keyCode === 27 || event.key === 'Escape') {
+				setOpen(false);
+			}
+		},
+		[],
+	);
+
 	useEffect(() => {
 		if (open) {
 			document.addEventListener('mousedown', handleClickOutside);
-		} else {
-			document.removeEventListener('mousedown', handleClickOutside);
+			document.addEventListener('keydown', escKeyListener, false);
 		}
 
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside);
+			document.removeEventListener('keydown', escKeyListener, false);
 		};
 	}, [open]);
 
@@ -34,7 +43,10 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 				<div className="content-box">
 					<span className="info-text">{explanation}</span>
 					<div className="ssb-glossary-closing">
-						<XCircle size={16} className="icon" /><span>{closeText}</span>
+						<button onClick={() => setOpen(false)}>
+							<XCircle size={16} className="icon" />
+							<span>{closeText}</span>
+						</button>
 					</div>
 				</div>
 			</div>
