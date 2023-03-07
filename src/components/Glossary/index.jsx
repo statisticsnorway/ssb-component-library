@@ -14,10 +14,16 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 		setOpen(false);
 	};
 
+	const handleCloseButton = () => {
+		setOpen(false);
+		node.current.focus();
+	};
+
 	const escKeyListener = useCallback(
-		event => {
-			if (event.keyCode === 27 || event.key === 'Escape') {
+		e => {
+			if (e.keyCode === 27 || e.key === 'Escape') {
 				setOpen(false);
+				node.current.focus();
 			}
 		},
 		[],
@@ -43,7 +49,7 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 				<div className="content-box">
 					<span className="info-text">{explanation}</span>
 					<div className="ssb-glossary-closing">
-						<button onClick={() => setOpen(false)}>
+						<button onClick={() => handleCloseButton()}>
 							<XCircle size={16} className="icon" />
 							<span>{closeText}</span>
 						</button>
