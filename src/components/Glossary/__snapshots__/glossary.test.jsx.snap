@@ -2,6 +2,8 @@
 
 exports[`Glossary Matches the snapshot 1`] = `
 <button
+  aria-expanded="false"
+  aria-label="Glossary"
   className="ssb-glossary"
   onClick={[Function]}
 >
@@ -11,6 +13,7 @@ exports[`Glossary Matches the snapshot 1`] = `
     Glossary
   </div>
   <BookOpen
+    aria-hidden="true"
     className="glossary-logo"
     size={12}
   />
@@ -28,13 +31,18 @@ exports[`Glossary Matches the snapshot 1`] = `
       <div
         className="ssb-glossary-closing"
       >
-        <XCircle
-          className="icon"
-          size={16}
-        />
-        <span>
-          Lukk
-        </span>
+        <button
+          onClick={[Function]}
+        >
+          <XCircle
+            aria-hidden="true"
+            className="icon"
+            size={16}
+          />
+          <span>
+            Lukk
+          </span>
+        </button>
       </div>
     </div>
   </div>
