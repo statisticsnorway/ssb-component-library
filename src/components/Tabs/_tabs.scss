@@ -21,6 +21,10 @@
 
     &:not(:last-of-type) {
       margin-right: 40px;
+
+      @media #{$mobile} {
+        margin-right: 0;
+      }
     }
 
     &::before {
@@ -41,6 +45,11 @@
         background: $ssb-green-3;
         height: 4px;
       }
+    }
+
+    @media #{$mobile} {
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     &:hover, &:focus {

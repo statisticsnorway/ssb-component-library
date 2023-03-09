@@ -10,12 +10,15 @@ const Tabs = ({ activeOnInit, className, items, onClick }) => {
 	};
 
 	return (
-		<div className={`ssb-tabs${className ? ` ${className}` : ''}`}>
-			{items.map(item => (
+		<div className={`ssb-tabs${className ? ` ${className}` : ''}`} role="tablist">
+			{items.map((item, i) => (
 				<button
 					className={`navigation-item ${activeItem === item.path ? 'active' : ''}`}
 					onClick={() => handleClick(item.path)}
 					key={item.path}
+					role="tab"
+					aria-selected={activeItem === item.path}
+					aria-controls={`tabpanel-${i}`}
 				><span>{item.title}</span>
 				</button>
 			))}

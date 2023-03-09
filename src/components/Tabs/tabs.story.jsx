@@ -18,10 +18,27 @@ const items = [
 	},
 ];
 
+const items2 = [
+	{
+		title: 'Get Started',
+		path: 'get-started/',
+	},
+	{
+		title: 'Components',
+		path: 'components/',
+	},
+];
+
 storiesOf('Tabs', module)
 	.add('Tabs', () => (
 		<div>
-			<Tabs items={items} />
+			<Tabs items={items} activeOnInit="get-started/" />
+			<Divider />
+		</div>
+	))
+	.add('Tabs2', () => (
+		<div>
+			<Tabs items={items2} activeOnInit="get-started/" />
 			<Divider />
 		</div>
 	));
