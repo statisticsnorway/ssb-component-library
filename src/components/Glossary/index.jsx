@@ -15,14 +15,14 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 
 	const handleCloseButton = () => {
 		setOpen(false);
-		node.current.focus();
+		if (node.current) node.current.focus();
 	};
 
 	const handleKeyDownClose = e => {
 		if (e.key === 'Enter' || e.key === ' ') {
 			e.preventDefault();
 			setOpen(false);
-			node.current.focus();
+			if (node.current) node.current.focus();
 		}
 	};
 
@@ -30,7 +30,7 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 		e => {
 			if (e.keyCode === 27 || e.key === 'Escape') {
 				setOpen(false);
-				node.current.focus();
+				if (node.current) node.current.focus();
 			}
 		},
 		[],
