@@ -31,8 +31,11 @@ exports[`Glossary Matches the snapshot 1`] = `
       <div
         className="ssb-glossary-closing"
       >
-        <button
+        <div
           onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
           <XCircle
             aria-hidden="true"
@@ -42,7 +45,7 @@ exports[`Glossary Matches the snapshot 1`] = `
           <span>
             Lukk
           </span>
-        </button>
+        </div>
       </div>
     </div>
   </div>
