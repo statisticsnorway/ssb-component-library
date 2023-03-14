@@ -4,7 +4,6 @@ import { BookOpen, XCircle } from 'react-feather';
 
 const Glossary = ({ explanation, children, className, closeText }) => {
 	const node = useRef();
-	const infoContainer = useRef();
 	const [open, setOpen] = useState(false);
 
 	const handleClickOutside = e => {
@@ -17,6 +16,14 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 	const handleCloseButton = () => {
 		setOpen(false);
 		node.current.focus();
+	};
+
+	const handleKeyDownClose = e => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			setOpen(false);
+			node.current.focus();
+		}
 	};
 
 	const escKeyListener = useCallback(
@@ -51,7 +58,7 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 		>
 			<div className="glossary-text-wrap">{children}</div>
 			<BookOpen size={12} className="glossary-logo" aria-hidden="true" />
-			<div className={`glossary-popup${open ? ' open' : ''}`} ref={infoContainer}>
+			<div className={`glossary-popup${open ? ' open' : ''}`}>
 				<div className="content-box">
 					<span
 						className="info-text"
@@ -59,10 +66,17 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 						{explanation}
 					</span>
 					<div className="ssb-glossary-closing">
-						<button onClick={() => handleCloseButton()}>
+						<div
+							role="button"
+							tabIndex={0}
+							onClick={() => {
+								handleCloseButton();
+							}}
+							onKeyDown={e => handleKeyDownClose(e)}
+						>
 							<XCircle size={16} className="icon" aria-hidden="true" />
 							<span>{closeText}</span>
-						</button>
+						</div>
 					</div>
 				</div>
 			</div>
