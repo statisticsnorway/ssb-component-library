@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({
-	children, className, disabled, icon, negative, onClick, primary, type, ariaLabel,
+	children, className, disabled, icon, negative, onClick, primary, type, ariaLabel, onKeyDown,
 }) => (
 	<button
 		type={type}
 		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'}${className ? ` ${className}` : ''}`}
 		onClick={onClick}
+		onKeyDown={onKeyDown}
 		disabled={disabled}
 		aria-label={ariaLabel || undefined}
 	>
@@ -33,6 +34,7 @@ Button.propTypes = {
 	icon: PropTypes.node,
 	negative: PropTypes.bool,
 	onClick: PropTypes.func,
+	onKeyDown: PropTypes.func,
 	primary: PropTypes.bool,
 	type: PropTypes.string,
 	ariaLabel: PropTypes.string,
