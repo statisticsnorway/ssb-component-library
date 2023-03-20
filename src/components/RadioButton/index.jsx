@@ -15,7 +15,7 @@ const RadioButton = ({
 			type="radio"
 			value={value}
 		/>
-		<label className="radio-label" htmlFor={value}>{children}</label>
+		<label className="radio-label" htmlFor={id ?? value}>{children}</label>
 	</div>
 );
 
