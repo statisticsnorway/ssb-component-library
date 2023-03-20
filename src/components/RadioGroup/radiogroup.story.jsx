@@ -4,7 +4,6 @@ import RadioGroup from './index';
 
 const radioItems = [
 	{
-		id: 'id-item-1',
 		label: 'Item 1',
 		value: 'item1',
 	}, {
