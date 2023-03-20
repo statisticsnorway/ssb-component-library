@@ -9,8 +9,8 @@ RadioButton
 
 ```html
 <div class="ssb-radio">
-    <input tabindex="0" id="item-id" type="radio" value="item">
-    <label class="radio-label" for="item">Item</label>
+    <input tabindex="0" id="id-item" type="radio" value="item">
+    <label class="radio-label" for="id-item">Item</label>
 </div>
 ```
 
@@ -23,6 +23,7 @@ RadioButton
   tabIndex="0"
   selected={false}
   value="option1"
+  id="id-item"
 >Item
 </RadioButton>
 ```
