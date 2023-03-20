@@ -22,6 +22,7 @@ Button.defaultProps = {
 	disabled: false,
 	negative: false,
 	onClick: () => {},
+	onKeyDown: () => {},
 	primary: false,
 	type: 'button',
 	ariaLabel: '',
@@ -34,10 +35,10 @@ Button.propTypes = {
 	icon: PropTypes.node,
 	negative: PropTypes.bool,
 	onClick: PropTypes.func,
-	onKeyDown: PropTypes.func,
 	primary: PropTypes.bool,
 	type: PropTypes.string,
 	ariaLabel: PropTypes.string,
+	onKeyDown: PropTypes.func,
 };
 
 export default Button;
