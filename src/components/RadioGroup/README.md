@@ -13,15 +13,15 @@ RadioGroup
 	<!-- Use flex-row If horizontal layout -->
     <div class="boxes flex-column">
         <div class="ssb-radio">
-            <input tabindex="0" id="item1" type="radio" value="item1">
+            <input tabindex="0" id="item-1" type="radio" value="item1">
             <label class="radio-label" for="item1">Item 1</label>
         </div>
         <div class="ssb-radio">
-            <input tabindex="0" id="item2" type="radio" value="item2">
+            <input tabindex="0" id="item-2" type="radio" value="item2">
             <label class="radio-label" for="item2">Item 2</label>
         </div>
         <div class="ssb-radio">
-            <input tabindex="0" id="item3" disabled="" type="radio" value="item3">
+            <input tabindex="0" id="item-3" disabled="" type="radio" value="item3">
             <label class="radio-label" for="item3">Item 3</label>
         </div>
     </div>
@@ -33,12 +33,15 @@ RadioGroup
 ```jsx harmony
 const radioItems = [
 	{
+        id: 'item-1',
 		label: 'Item 1',
 		value: 'item1',
 	}, {
+        id: 'item-2',
 		label: 'Item 2',
 		value: 'item2',
 	}, {
+        id: 'item-3',
 		label: 'Item 3',
 		value: 'item3',
 		disabled: 'true',

@@ -9,7 +9,7 @@ RadioButton
 
 ```html
 <div class="ssb-radio">
-    <input tabindex="0" id="item" type="radio" value="item">
+    <input tabindex="0" id="item-id" type="radio" value="item">
     <label class="radio-label" for="item">Item</label>
 </div>
 ```
@@ -38,3 +38,4 @@ Available props:
 | selected | bool | Selected state of checkbox |
 | tabIndex | number | Tab index for focus |
 | value | Required number or string | Input field value |
+| id | string | Optional id |
