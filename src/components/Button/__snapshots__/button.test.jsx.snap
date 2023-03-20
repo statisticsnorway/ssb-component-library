@@ -5,6 +5,7 @@ exports[`Button component Matches the snapshot 1`] = `
   className="ssb-btn secondary-btn"
   disabled={false}
   onClick={[Function]}
+  onKeyDown={[Function]}
   type="button"
 >
   Button
