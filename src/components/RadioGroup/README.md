@@ -60,7 +60,7 @@ Available props:
 | ---------- | ------------- | ----- |
 | className   | string | Optional container class|
 | header | string | Renders a h5 title |
-| items | arrayOf(label, value) | Required items for rendering radio buttons |
+| items | arrayOf(id, label, value) | Required items for rendering radio buttons |
 | onChange | func | Callback function when a value is changed |
 | orientation | 'column' or 'row' , default column| Vertical og horizontal layout|
 | selectedValue | string | Pre selected value |
