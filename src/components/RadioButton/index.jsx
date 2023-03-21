@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RadioButton = ({
-	callback, children, className, disabled, name, selected, tabIndex, value,
+	callback, children, className, disabled, name, selected, tabIndex, value, id,
 }) => (
 	<div className={`ssb-radio${className ? ` ${className}` : ''}`}>
 		<input
 			tabIndex={tabIndex}
 			checked={selected}
-			id={value}
+			id={id ?? value}
 			name={name}
 			disabled={disabled}
 			onChange={() => callback(value)}
 			type="radio"
 			value={value}
 		/>
-		<label className="radio-label" htmlFor={value}>{children}</label>
+		<label className="radio-label" htmlFor={id ?? value}>{children}</label>
 	</div>
 );
 
@@ -37,6 +37,7 @@ RadioButton.propTypes = {
 		PropTypes.string,
 		PropTypes.number,
 	]).isRequired,
+	id: PropTypes.string,
 };
 
 export default RadioButton;

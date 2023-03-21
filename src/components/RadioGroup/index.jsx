@@ -15,6 +15,7 @@ const RadioGroup = ({ className, groupName, header, items, onChange, orientation
 			<div className={`boxes flex-${orientation}`}>
 				{items.map((it, index) => (
 					<RadioButton
+						id={it.id}
 						key={it.value}
 						index={index}
 						selected={it.value === selected}
@@ -40,6 +41,7 @@ RadioGroup.propTypes = {
 	groupName: PropTypes.string,
 	header: PropTypes.string,
 	items: PropTypes.arrayOf(PropTypes.shape({
+		id: PropTypes.string,
 		label: PropTypes.string,
 		value: PropTypes.string,
 	})).isRequired,
