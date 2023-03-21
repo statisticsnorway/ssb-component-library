@@ -52,3 +52,4 @@ Available props:
 | onClick | function | Callback for button click |
 | primary | bool | Changes style to represent a primary button |
 | type | string | Button type. Can be 'submit', 'reset', or 'button'. Defaults to 'button' |
+| onKeyDown | function | Callback for keyboard button click |
