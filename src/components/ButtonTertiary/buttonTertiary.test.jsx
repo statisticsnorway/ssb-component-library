@@ -12,7 +12,7 @@ describe('Button Tertiary component', () => {
     expect(wrapper.find('.ssb-btn-tertiary').hasClass('negative')).toEqual(true);
   });
 	test('Disables button when prop is true', () => {
-    const wrapper = shallow(<ButtonTertiary id={1} disabled={true}>Button</ButtonTertiary>);
+    const wrapper = shallow(<ButtonTertiary id={'1'} disabled={true}>Button</ButtonTertiary>);
     expect(wrapper.find('button#accordion-button-1').props().disabled).toEqual(true);
   });
   test('Renders correct header text', () => {
@@ -21,7 +21,7 @@ describe('Button Tertiary component', () => {
   });
   
 	test('Manages open/close state', () => {
-    const wrapper = shallow(<ButtonTertiary id={1} openByDefault={true}>Button</ButtonTertiary>);
+    const wrapper = shallow(<ButtonTertiary id={'1'} openByDefault={true}>Button</ButtonTertiary>);
     expect(wrapper.find('.accordion-body').hasClass('open')).toEqual(true);
     
     wrapper.find('button#accordion-button-1').simulate('click');
