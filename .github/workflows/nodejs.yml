@@ -45,7 +45,7 @@ jobs:
       - run: npm ci
       - run: npm run build:prod
       - run: npm test
-      - uses: JS-DevTools/npm-publish@v1
+      - uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
           dry-run: false
