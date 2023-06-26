@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({
+const Button = forwardRef(({
 	children, className, disabled, icon, negative, onClick, primary, type, ariaLabel, onKeyDown,
 }, ref) => (
 	<button
@@ -16,7 +16,9 @@ const Button = ({
 		{icon && <div className="sb-icon">{icon}</div>}
 		{children}
 	</button>
-);
+));
+
+Button.displayName = 'Button';
 
 Button.defaultProps = {
 	className: '',
@@ -42,4 +44,4 @@ Button.propTypes = {
 	onKeyDown: PropTypes.func,
 };
 
-export default React.forwardRef(Button);
+export default Button;
