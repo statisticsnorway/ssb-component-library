@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 const Button = ({
 	children, className, disabled, icon, negative, onClick, primary, type, ariaLabel, onKeyDown,
-}) => (
+}, ref) => (
 	<button
 		type={type}
+		ref={ref}
 		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'}${className ? ` ${className}` : ''}`}
 		onClick={onClick}
 		onKeyDown={onKeyDown}
@@ -41,4 +42,4 @@ Button.propTypes = {
 	onKeyDown: PropTypes.func,
 };
 
-export default Button;
+export default React.forwardRef(Button);
