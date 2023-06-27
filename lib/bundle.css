@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap");
 @keyframes fadein {
@@ -324,10 +324,6 @@ a {
   outline: #9272fc solid 2px;
   outline-offset: 2px;
 }
-.ssb-btn-tertiary .button-header.open .button-grid .header-text {
-  color: #00824d;
-  text-decoration: underline;
-}
 .ssb-btn-tertiary .button-header .button-grid {
   cursor: pointer;
   min-height: 44px;
@@ -336,19 +332,21 @@ a {
   justify-content: flex-start;
   grid-column-gap: 6px;
 }
-.ssb-btn-tertiary .button-header .expand-icon * {
+.ssb-btn-tertiary .button-header svg {
   color: #00824d;
   font-size: 20px;
 }
 .ssb-btn-tertiary .button-header .header-text {
   color: #162327;
 }
-.ssb-btn-tertiary .button-header:hover .header-text {
+.ssb-btn-tertiary .button-header:hover .header-text, .ssb-btn-tertiary .button-header:focus .header-text {
   color: #00824d;
   text-decoration: underline;
+  text-underline-position: under;
 }
 .ssb-btn-tertiary .button-header.no-icon {
   text-decoration: underline;
+  text-underline-position: under;
 }
 .ssb-btn-tertiary .button-header:disabled .button-grid {
   cursor: not-allowed;
@@ -378,7 +376,7 @@ a {
 .ssb-btn-tertiary.negative .button-header .button-grid .header-text {
   color: #fff;
 }
-.ssb-btn-tertiary.negative .button-header .button-grid .expand-icon * {
+.ssb-btn-tertiary.negative .button-header .button-grid svg {
   color: #b6e8b8;
 }
 .ssb-btn-tertiary.negative .button-header:disabled .button-grid {
@@ -388,8 +386,11 @@ a {
   color: #2d6975 !important;
   text-decoration: none;
 }
+.ssb-btn-tertiary.negative .button-header:disabled .button-grid svg {
+  color: #2d6975;
+}
 .ssb-btn-tertiary.negative .button-header:disabled .button-grid .expand-icon * {
-  color: #2d6975 !important;
+  color: #2d6975;
 }
 .ssb-btn-tertiary.negative .button-header:disabled.no-icon .button-grid .header-text {
   text-decoration: underline;
@@ -1117,12 +1118,22 @@ a {
   user-select: none;
   width: 100%;
 }
-.ssb-glossary .glossary-popup .content-box .ssb-glossary-closing .icon {
+.ssb-glossary .glossary-popup .content-box .ssb-glossary-closing div {
+  all: unset;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.ssb-glossary .glossary-popup .content-box .ssb-glossary-closing div:focus {
+  outline: #b6e8b8 5px auto;
+  padding: 0 0.3rem;
+}
+.ssb-glossary .glossary-popup .content-box .ssb-glossary-closing div .icon {
   color: #274247;
   fill: #b6e8b8;
   font-size: 16px;
 }
-.ssb-glossary .glossary-popup .content-box .ssb-glossary-closing span {
+.ssb-glossary .glossary-popup .content-box .ssb-glossary-closing div span {
   line-height: 1.43;
   margin-left: 2px;
 }
@@ -2120,6 +2131,11 @@ a {
 .ssb-tabs .navigation-item:not(:last-of-type) {
   margin-right: 40px;
 }
+@media screen and (max-width: 767px) {
+  .ssb-tabs .navigation-item:not(:last-of-type) {
+    margin-right: 0;
+  }
+}
 .ssb-tabs .navigation-item::before {
   background: #274247;
   bottom: 0;
@@ -2134,6 +2150,12 @@ a {
 .ssb-tabs .navigation-item.active::before {
   background: #1a9d49;
   height: 4px;
+}
+@media screen and (max-width: 767px) {
+  .ssb-tabs .navigation-item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .ssb-tabs .navigation-item:hover::before, .ssb-tabs .navigation-item:focus::before {
   height: 4px;
