@@ -3,70 +3,65 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight, Download, ExternalLink } from 'react-feather';
-import { useId } from '../../utils/useId';
 
 const Card = ({
 	children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, title,
-}) => {
-	const cardId = id || useId();
+}) => (
+	<div className={`ssb-card${className ? ` ${className}` : ''}`}>
+		<div className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}>
 
-	return (
-		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
-			<div className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}>
+			{image && <div className="card-image">{image}</div>}
 
-				{image && <div className="card-image">{image}</div>}
+			<div className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}>
 
-				<div className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}>
+				{icon && <div className="card-icon">{icon}</div>}
+				{subTitle && <div className="card-subtitle">{subTitle}</div>}
+				{title && (
+					<a
+						href={href}
+						className="card-title"
+						target={external ? '_blank' : undefined}
+						rel={external ? 'noreferrer' : undefined}
+					>{title}
+					</a>
+				)}
 
-					{icon && <div className="card-icon">{icon}</div>}
-					{subTitle && <div id={`${cardId}-subtitle`} className="card-subtitle">{subTitle}</div>}
-					{title && (
-						<a
-							href={href}
-							className="card-title"
-							target={external ? '_blank' : undefined}
-							rel={external ? 'noreferrer' : undefined}
-						>{title}
-						</a>
-					)}
+				{ children && <div className="card-text">{children}</div> }
 
-					{ children && <div id={`${cardId}-text`} className="card-text">{children}</div> }
+				{(!image && !hrefText) && (
+					external ? <ExternalLink className="arrow-icon" size={22} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={22} aria-hidden="true" />
+				)}
 
-					{(!image && !hrefText) && (
-						external ? <ExternalLink className="arrow-icon" size={22} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={22} aria-hidden="true" />
-					)}
+				{(!title && !image && hrefText) && (
+					<a
+						className="card-action"
+						href={href}
+						target={external ? '_blank' : undefined}
+						rel={external ? 'noreferrer' : undefined}
+						tabIndex={-1}
+					>
+						{external ? <ExternalLink className="arrow-icon" size={16} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={16} aria-hidden="true" />}
+						<div className="href-text">{hrefText}</div>
+					</a>
+				)}
 
-					{(!title && !image && hrefText) && (
-						<a
-							className="card-action"
-							href={href}
-							target={external ? '_blank' : undefined}
-							rel={external ? 'noreferrer' : undefined}
-							tabIndex={-1}
-						>
-							{external ? <ExternalLink className="arrow-icon" size={16} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={16} aria-hidden="true" />}
-							<div className="href-text">{hrefText}</div>
-						</a>
-					)}
+				{(title && !image && hrefText) && (
+					<div className="card-action">
+						{external ? <ExternalLink className="arrow-icon" size={16} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={16} aria-hidden="true" />}
+						<div className="href-text">{hrefText}</div>
+					</div>
+				)}
 
-					{(title && !image && hrefText) && (
-						<div className="card-action">
-							{external ? <ExternalLink className="arrow-icon" size={16} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={16} aria-hidden="true" />}
-							<div className="href-text">{hrefText}</div>
-						</div>
-					)}
-
-				</div>
 			</div>
-			{fileLocation && (
-				<a download href={fileLocation} className="download-section">
-					<Download className="download-icon" size={22} />
-					<span>{downloadText}</span>
-				</a>
-			)}
 		</div>
-	);
-};
+		{fileLocation && (
+			<a download href={fileLocation} className="download-section">
+				<Download className="download-icon" size={22} />
+				<span>{downloadText}</span>
+			</a>
+		)}
+	</div>
+);
 
 Card.defaultProps = {
 	downloadText: 'Last ned',
