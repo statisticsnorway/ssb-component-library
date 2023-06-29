@@ -4,49 +4,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight, Download, ExternalLink } from 'react-feather';
 import { useId } from '../../utils/useId';
-import {
-	KEY_ENTER,
-	KEY_SPACE,
-} from '../../utils/keybindings';
 
 const Card = ({
-	ariaDescribedBy, ariaLabel, children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, title,
+	children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, title,
 }) => {
 	const cardId = id || useId();
 
-	const openLink = () => {
-		const link = document.createElement('a');
-		link.href = href;
-		if (external) {
-			link.target = '_blank';
-			link.rel = 'noreferrer';
-		}
-		link.click();
-	};
-
-	const handleEnterKey = e => {
-		if (e.keyCode === KEY_ENTER || e.key == 'Enter' || e.keyCode === KEY_SPACE || e.key == 'Space') {
-			const link = document.createElement('a');
-			link.href = href;
-			if (external) {
-				link.target = '_blank';
-				link.rel = 'noreferrer';
-			}
-			link.click();
-		}
-	};
-
 	return (
 		<div className={`ssb-card${className ? ` ${className}` : ''}`}>
-			<div
-				className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
-				onClick={() => openLink()}
-				onKeyDown={handleEnterKey}
-				role="link"
-				tabIndex={0}
-				aria-label={ariaLabel || title || hrefText || undefined}
-				aria-describedby={ariaDescribedBy ? `${cardId}-${ariaDescribedBy}` : undefined}
-			>
+			<div className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}>
 
 				{image && <div className="card-image">{image}</div>}
 
@@ -60,7 +26,6 @@ const Card = ({
 							className="card-title"
 							target={external ? '_blank' : undefined}
 							rel={external ? 'noreferrer' : undefined}
-							tabIndex={-1}
 						>{title}
 						</a>
 					)}
@@ -110,8 +75,6 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-	ariaDescribedBy: PropTypes.oneOf(['subtitle', 'text']),
-	ariaLabel: PropTypes.string,
 	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
 	downloadText: PropTypes.string,

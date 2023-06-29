@@ -3,9 +3,10 @@
   width: 100%;
 
   .clickable {
-    @include focus-marker;
+    @include focus-within-marker;
     @include reset-button;
     width: 100%;
+    position: relative;
 
     .card-image {
       display: flex;
@@ -177,6 +178,20 @@
       display: block;
       margin-top: 12px;
       padding: 4px;
+    }
+
+    .card-action, .card-title {
+      &:focus {
+        outline: none;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
     }
 
     .card-action {

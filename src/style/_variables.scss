@@ -82,3 +82,10 @@ $max-readable-width: 580px;
     @include focus-ring;
   }
 }
+
+@mixin focus-within-marker {
+
+  &:focus-within {
+    @include focus-ring;
+  }
+}
