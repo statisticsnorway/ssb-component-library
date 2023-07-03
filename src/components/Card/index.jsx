@@ -38,7 +38,6 @@ const Card = ({
 						href={href}
 						target={external ? '_blank' : undefined}
 						rel={external ? 'noreferrer' : undefined}
-						tabIndex={-1}
 					>
 						{external ? <ExternalLink className="arrow-icon" size={16} aria-hidden="true" /> : <ArrowRight className="arrow-icon" size={16} aria-hidden="true" />}
 						<div className="href-text">{hrefText}</div>
