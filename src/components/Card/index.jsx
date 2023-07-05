@@ -1,11 +1,9 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight, Download, ExternalLink } from 'react-feather';
 
 const Card = ({
-	children, className, external, downloadText, fileLocation, href, hrefText, id, icon, image, imagePlacement, profiled, subTitle, title,
+	children, className, external, downloadText, fileLocation, href, hrefText, icon, image, imagePlacement, profiled, subTitle, title,
 }) => (
 	<div className={`ssb-card${className ? ` ${className}` : ''}`}>
 		<div className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}>
@@ -77,7 +75,6 @@ Card.propTypes = {
 	href: PropTypes.string.isRequired,
 	hrefText: PropTypes.string,
 	icon: PropTypes.element,
-	id: PropTypes.string,
 	image: PropTypes.element,
 	imagePlacement: PropTypes.oneOf(['left', 'top']),
 	profiled: PropTypes.bool,
