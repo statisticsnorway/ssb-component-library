@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { Search } from 'react-feather';
 import { useId } from '../../utils/useId';
 import InputError from '../InputError';
 
-const Input = ({
+const Input = forwardRef(({
 	role, ariaLabelWrapper, ariaLabel, ariaLabelledBy, ariaLabelSearchButton,
 	className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size,
-}) => {
+}, ref) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || useId();
 	const handleInputChange = e => {
@@ -24,7 +24,7 @@ const Input = ({
 	return (
 		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}${size === 'lg' ? ' input-lg' : ''}${className ? ` ${className}` : ''}`}>
 			{label && <label htmlFor={inputId}>{label}</label>}
-			<div className="input-wrapper" role={searchField ? 'search' : role} aria-label={ariaLabelWrapper}>
+			<div ref={ref} className="input-wrapper" role={searchField ? 'search' : role} aria-label={ariaLabelWrapper}>
 				<input
 					id={inputId}
 					disabled={disabled}
@@ -51,7 +51,7 @@ const Input = ({
 			))}
 		</div>
 	);
-};
+});
 
 Input.defaultProps = {
 	className: '',
@@ -90,6 +90,7 @@ Input.propTypes = {
 	submitCallback: PropTypes.func,
 	type: PropTypes.string,
 	value: PropTypes.string,
+	ref: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
 };
 
 export default Input;
