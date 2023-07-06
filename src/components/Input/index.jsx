@@ -90,7 +90,6 @@ Input.propTypes = {
 	submitCallback: PropTypes.func,
 	type: PropTypes.string,
 	value: PropTypes.string,
-	ref: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
 };
 
 export default Input;

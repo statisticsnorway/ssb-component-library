@@ -97,7 +97,6 @@ Available props:
 | submitCallback | func | Callback for onSubmit |
 | type | string | Changes input type. Optional parameters like 'url', 'email' etc. |
 | value | string | Input value. Can be initiated with a value |
-| ref | instanceof element | Reference to an instance of the input element wrapper |
 
 __Dependencies__
  - [InputError](../InputError)
