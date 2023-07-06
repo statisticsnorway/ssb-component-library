@@ -81,7 +81,7 @@ Available props:
 | ariaLabel | string | Defines a string value that labels input element, use if label is not visible |
 | ariaLabelledBy | string |The ariaLabelledBy string identifies the id to the element (or elements) that labels the element it is applied to. |
 | ariaLabelSearchButton | string | Defines a string value that labels button element |
-| className   | string | Optional container class|
+| className | string | Optional container class|
 | disabled | bool | Toggles disabled state |
 | error | bool | Changes design |
 | errorMessage | string | Renders an error message underneath input field |
@@ -97,6 +97,7 @@ Available props:
 | submitCallback | func | Callback for onSubmit |
 | type | string | Changes input type. Optional parameters like 'url', 'email' etc. |
 | value | string | Input value. Can be initiated with a value |
+| ref | instanceof element | Reference to an instance of the input element wrapper |
 
 __Dependencies__
  - [InputError](../InputError)
