@@ -67,7 +67,7 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 					>
 						{explanation}
 					</span>
-					<div className="ssb-glossary-closing">
+					<div className="glossary-closing">
 						<div
 							role="button"
 							tabIndex={0}
