@@ -1,6 +1,4 @@
 .ssb-glossary {
-  @include focus-marker;
-  @include reset-button;
   background-image: linear-gradient(to right, $ssb-green-2 50%, $ssb-white 50%);
   background-position: right bottom;
   background-repeat: no-repeat;
@@ -10,11 +8,8 @@
   transition: all .5s ease-out;
 
   .glossary-button {
-    background: none;
-    border: 0;
-    padding: 0;
-    color: inherit;
-    font: inherit;
+    @include focus-marker;
+    @include reset-button;
   }
 
   .glossary-text-wrap {
