@@ -1,13 +1,13 @@
 .ssb-title {
   color: $ssb-dark-6;
   margin-top: 0;
+  hyphens: auto;
 
   &.negative {
     color: $ssb-white;
   }
 
   @at-root {
-
     h1#{&} {
       @include roboto-condenced;
       font-size: 56px;
@@ -51,7 +51,6 @@
     }
 
     @media #{$mobile} {
-
       h1#{&} {
         font-size: 44px;
         line-height: 56px;
