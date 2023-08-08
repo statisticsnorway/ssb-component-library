@@ -14,10 +14,11 @@ storiesOf('Title', module)
     </div>
   ))
   .add('Long words', () => (
-    <div>
+    <div style={{ maxWidth: '500px' }}>
       <p>
-        On screens with high magnification, long words would sometimes not
-        break, but flow outside the viewport. The{' '}
+        When long titles run out of space, long words would not break to the
+        next line, but flow outside the viewport. This is an example of how we
+        fix this with <code>hyphens: auto;</code>
       </p>
       <Title size={1}>
         This is a h1 title and contains the Very Long Word
