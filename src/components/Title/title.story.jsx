@@ -14,7 +14,7 @@ storiesOf('Title', module)
     </div>
   ))
   .add('Long words', () => (
-    <div style={{ maxWidth: '500px' }}>
+    <div style={{ maxWidth: '400px' }}>
       <p>
         When long titles run out of space, long words would not break to the
         next line, but flow outside the viewport. This is an example of how we
@@ -30,7 +30,7 @@ storiesOf('Title', module)
       </Title>
       <Title size={3}>
         This is a h3 title and contains the Very Long Word
-        supercalifragilisticexpialidocious
+        supercalifragilisticexpialidociousandwecanseethateventuallyitwillbreakontoanotherlinewithanicehypentoseparateonepartofthewordwithanother
       </Title>
       <Title size={4}>
         This is a h4 title and contains the Very Long Word
