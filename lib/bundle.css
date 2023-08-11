@@ -1545,8 +1545,8 @@ a {
   font-stretch: normal;
   font-weight: normal;
   color: #162327;
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 20px;
+  line-height: 32px;
   max-width: 680px;
 }
 .ssb-lead-paragraph.negative {
@@ -1883,8 +1883,8 @@ a {
   font-stretch: normal;
   font-weight: normal;
   color: #162327;
-  font-size: 1rem;
-  line-height: 1.8rem;
+  font-size: 16px;
+  line-height: 28px;
   max-width: 580px;
 }
 .ssb-paragraph.negative {
@@ -2002,7 +2002,7 @@ a {
   font-weight: normal;
   color: #162327;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.25;
 }
 
@@ -2219,15 +2219,15 @@ a {
   font-stretch: normal;
   font-weight: normal;
   color: #162327;
-  font-size: 1rem;
+  font-size: 16px;
   font-style: normal;
   letter-spacing: normal;
-  line-height: 1.7rem;
+  line-height: 1.7;
   max-width: 580px;
 }
 .ssb-text-wrapper.small-text {
-  font-size: 0.9rem;
-  line-height: 1.5rem;
+  font-size: 14px;
+  line-height: 24px;
 }
 .ssb-text-wrapper.negative {
   color: #fff;
@@ -2258,8 +2258,8 @@ a {
   border: 1px solid #274247;
   box-sizing: border-box;
   color: #162327;
-  font-size: 1rem;
-  line-height: 1.25rem;
+  font-size: 16px;
+  line-height: 1.25;
   min-height: 44px;
   min-width: 200px;
   padding: 11px 12px;
@@ -2272,7 +2272,7 @@ a {
 }
 .ssb-text-area label {
   color: #162327;
-  font-size: 0.9rem;
+  font-size: 14px;
   margin-bottom: 5px;
 }
 .ssb-text-area.negative .text-area-wrapper ::placeholder {
