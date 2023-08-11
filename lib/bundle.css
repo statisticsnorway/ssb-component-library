@@ -1083,7 +1083,7 @@ a {
   font-weight: normal;
   animation: fadein 0.2s;
   display: none;
-  font-size: 0.9rem;
+  font-size: 14px;
   left: 50%;
   margin-left: -135px;
   opacity: 0;
@@ -1133,7 +1133,7 @@ a {
 .ssb-glossary .glossary-popup .content-box .glossary-closing div .icon {
   color: #274247;
   fill: #b6e8b8;
-  font-size: 1rem;
+  font-size: 16px;
 }
 .ssb-glossary .glossary-popup .content-box .glossary-closing div span {
   line-height: 1.43;
@@ -1141,7 +1141,7 @@ a {
 }
 .ssb-glossary .glossary-popup .content-box .info-text {
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .ssb-header-wrapper {
