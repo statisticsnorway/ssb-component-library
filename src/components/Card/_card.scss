@@ -181,9 +181,11 @@
     }
 
     .card-action, .card-title {
+
       &:focus {
         outline: none;
       }
+
       &::after {
         content: "";
         position: absolute;
