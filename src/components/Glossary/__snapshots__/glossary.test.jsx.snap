@@ -1,22 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Glossary Matches the snapshot 1`] = `
-<button
-  aria-expanded="false"
-  aria-label="Glossary"
+<div
   className="ssb-glossary"
-  onClick={[Function]}
 >
-  <div
-    className="glossary-text-wrap"
+  <button
+    aria-expanded="false"
+    aria-label="Glossary"
+    className="glossary-button"
+    onClick={[Function]}
   >
-    Glossary
-  </div>
-  <BookOpen
-    aria-hidden="true"
-    className="glossary-logo"
-    size={12}
-  />
+    <span
+      className="glossary-text-wrap"
+    >
+      Glossary
+    </span>
+    <BookOpen
+      aria-hidden="true"
+      className="glossary-logo"
+      size={12}
+    />
+  </button>
   <div
     className="glossary-popup"
   >
@@ -29,7 +33,7 @@ exports[`Glossary Matches the snapshot 1`] = `
         placeholderText
       </span>
       <div
-        className="ssb-glossary-closing"
+        className="glossary-closing"
       >
         <div
           onClick={[Function]}
@@ -49,5 +53,5 @@ exports[`Glossary Matches the snapshot 1`] = `
       </div>
     </div>
   </div>
-</button>
+</div>
 `;

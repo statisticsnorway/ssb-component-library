@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({
+const Button = forwardRef(({
 	children, className, disabled, icon, negative, onClick, primary, type, ariaLabel, onKeyDown,
-}) => (
+}, ref) => (
 	<button
 		type={type}
+		ref={ref}
 		className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'}${className ? ` ${className}` : ''}`}
 		onClick={onClick}
 		onKeyDown={onKeyDown}
@@ -15,7 +16,9 @@ const Button = ({
 		{icon && <div className="sb-icon">{icon}</div>}
 		{children}
 	</button>
-);
+));
+
+Button.displayName = 'Button';
 
 Button.defaultProps = {
 	className: '',

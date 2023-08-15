@@ -10,56 +10,56 @@
 
     h1#{&} {
       @include roboto-condenced;
-      font-size: 56px;
+      font-size: 4rem;
       font-weight: bold;
-      line-height: 80px;
+      line-height: 5rem;
     }
 
     h2#{&} {
       @include roboto-condenced;
-      font-size: 28px;
+      font-size: 1.8rem;
       font-weight: bold;
-      line-height: 40px;
+      line-height: 3rem;
     }
 
     h3#{&} {
       @include roboto;
-      font-size: 20px;
+      font-size: 1.3rem;
       font-weight: bold;
-      line-height: 32px;
+      line-height: 2rem;
     }
 
     h4#{&} {
       @include roboto;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: bold;
-      line-height: 28px;
+      line-height: 1.8rem;
     }
 
     h5#{&} {
       @include roboto;
-      font-size: 18px;
+      font-size: 1.1rem;
       font-weight: bold;
-      line-height: 1.7;
+      line-height: 1.7rem;
     }
 
     h6#{&} {
       @include roboto;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: bold;
-      line-height: 1.7;
+      line-height: 1.7rem;
     }
 
     @media #{$mobile} {
 
       h1#{&} {
-        font-size: 44px;
-        line-height: 56px;
+        font-size: 3rem;
+        line-height: 4rem;
       }
 
       h2#{&} {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 1.8rem;
+        line-height: 2rem;
       }
 
       // No change for h3 and h4

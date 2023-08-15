@@ -35,20 +35,23 @@ KeyFigures
 <div class="ssb-key-figures small">
   <div class="kf-icon small"><!-- Insert icon --></div>
   <div>   
-    <button class="ssb-glossary"><!-- click to toggle 'open' class -->
-      <div class="glossary-text-wrap">Explain this</div>
-      <i>{feather.openBook 12px}</i>
-      <div class="glossary-animate-background"></div>
-      <div class="ssb-glossary-popup {open or closed}">
+    <div class="ssb-glossary">
+      <button class="glossary-button" aria-expanded="false"><!-- click to toggle 'open' class -->
+        <span class="glossary-text-wrap">Explain this</span>
+        <i className="glossary-logo" aria-hidden="true">{feather.openBook 12px}</i>
+      </button>
+      <div class="glossary-popup {open or closed}">
         <div class="content-box">
-        <span class="info-text">{insert explanation}</span>
-        <div class="ssb-glossary-closing">
-          <i class="icon">{feather.xCircle 14px}</i>
-          <span>Lukk</span>
-        </div>
+          <span class="info-text">{insert explanation}</span>
+          <div class="glossary-closing">
+            <div role="button" tabindex="0">
+              <i class="icon" aria-hidden="true">{feather.xCircle 14px}</i>
+              <span>Lukk</span>
+            </div>
+          </div>
         </div>
       </div>
-    </button>
+    </div>
     <div class="kf-time">2019</div>
     <div class="number-section">
       <div class="ssb-number large">12 345</div>

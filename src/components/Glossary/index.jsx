@@ -49,15 +49,17 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 	}, [open]);
 
 	return (
-		<button
-			ref={node}
-			onClick={() => setOpen(!open)}
-			className={`ssb-glossary${className ? ` ${className}` : ''}`}
-			aria-label={children}
-			aria-expanded={open ? 'true' : 'false'}
-		>
-			<div className="glossary-text-wrap">{children}</div>
-			<BookOpen size={12} className="glossary-logo" aria-hidden="true" />
+		<div className={`ssb-glossary${className ? ` ${className}` : ''}`}>
+			<button
+				ref={node}
+				onClick={() => setOpen(!open)}
+				className="glossary-button"
+				aria-label={children}
+				aria-expanded={open ? 'true' : 'false'}
+			>
+				<span className="glossary-text-wrap">{children}</span>
+				<BookOpen size={12} className="glossary-logo" aria-hidden="true" />
+			</button>
 			<div className={`glossary-popup${open ? ' open' : ''}`}>
 				<div className="content-box">
 					<span
@@ -65,7 +67,7 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 					>
 						{explanation}
 					</span>
-					<div className="ssb-glossary-closing">
+					<div className="glossary-closing">
 						<div
 							role="button"
 							tabIndex={0}
@@ -80,7 +82,7 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 					</div>
 				</div>
 			</div>
-		</button>
+		</div>
 	);
 };
 

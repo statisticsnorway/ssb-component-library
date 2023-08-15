@@ -1,36 +1,39 @@
 .ssb-glossary {
-  @include focus-marker;
-  @include reset-button;
-  background-image: linear-gradient(to right, $ssb-green-2 50%, $ssb-white 50%);
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-size: 200% 100%;
   display: inline-block;
   position: relative;
-  transition: all .5s ease-out;
 
-  .glossary-text-wrap {
-    border-bottom: 1px dotted $ssb-green-4;
-    display: inline;
-    line-height: inherit;
-  }
-
-  .glossary-logo {
-    color: $ssb-green-3;
-    margin: 2px;
-    transition: color .2s;
-    vertical-align: top;
-  }
-
-  &:hover, &:focus {
-    background-position: left bottom;
-
-    .glossary-logo {
-      color: $ssb-dark-6;
-    }
+  .glossary-button {
+    @include focus-marker;
+    @include reset-button;
+    background-image: linear-gradient(to right, $ssb-green-2 50%, $ssb-white 50%);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    transition: all .5s ease-out;
 
     .glossary-text-wrap {
-      border-bottom: none;
+      border-bottom: 1px dotted $ssb-green-4;
+      display: inline;
+      line-height: inherit;
+    }
+
+    .glossary-logo {
+      color: $ssb-green-3;
+      margin: 2px;
+      transition: color .2s;
+      vertical-align: top;
+    }
+
+    &:hover, &:focus {
+      background-position: left bottom;
+
+      .glossary-logo {
+        color: $ssb-dark-6;
+      }
+
+      .glossary-text-wrap {
+        border-bottom: none;
+      }
     }
   }
 
@@ -69,7 +72,7 @@
       color: $ssb-white;
       padding: 20px;
 
-      .ssb-glossary-closing {
+      .glossary-closing {
         align-items: center;
         display: flex;
         justify-content: center;

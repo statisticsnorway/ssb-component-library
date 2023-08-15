@@ -81,7 +81,7 @@ Available props:
 | ariaLabel | string | Defines a string value that labels input element, use if label is not visible |
 | ariaLabelledBy | string |The ariaLabelledBy string identifies the id to the element (or elements) that labels the element it is applied to. |
 | ariaLabelSearchButton | string | Defines a string value that labels button element |
-| className   | string | Optional container class|
+| className | string | Optional container class|
 | disabled | bool | Toggles disabled state |
 | error | bool | Changes design |
 | errorMessage | string | Renders an error message underneath input field |
