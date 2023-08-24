@@ -49,7 +49,7 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 	}, [open]);
 
 	return (
-		<div className={`ssb-glossary${className ? ` ${className}` : ''}`}>
+		<span className={`ssb-glossary${className ? ` ${className}` : ''}`}>
 			<button
 				ref={node}
 				onClick={() => setOpen(!open)}
@@ -60,29 +60,23 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 				<span className="glossary-text-wrap">{children}</span>
 				<BookOpen size={12} className="glossary-logo" aria-hidden="true" />
 			</button>
-			<div className={`glossary-popup${open ? ' open' : ''}`}>
-				<div className="content-box">
-					<span
-						className="info-text"
-					>
+			<span className={`glossary-popup${open ? ' open' : ''}`}>
+				<span className="content-box">
+					<span className="info-text">
 						{explanation}
 					</span>
-					<div className="glossary-closing">
-						<div
-							role="button"
-							tabIndex={0}
-							onClick={() => {
-								handleCloseButton();
-							}}
+					<span className="glossary-closing">
+						<button
+							onClick={() => { handleCloseButton(); }}
 							onKeyDown={e => handleKeyDownClose(e)}
 						>
 							<XCircle size={16} className="icon" aria-hidden="true" />
 							<span>{closeText}</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+						</button>
+					</span>
+				</span>
+			</span>
+		</span>
 	);
 };
 

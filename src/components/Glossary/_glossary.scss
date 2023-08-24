@@ -71,6 +71,7 @@
       background: $ssb-dark-5;
       color: $ssb-white;
       padding: 20px;
+      display: block;
 
       .glossary-closing {
         align-items: center;
@@ -80,7 +81,7 @@
         user-select: none;
         width: 100%;
 
-        div {
+        button {
           all: unset;
           display: flex;
           align-items: center;
