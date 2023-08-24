@@ -25,7 +25,7 @@ exports[`Glossary Matches the snapshot 1`] = `
     className="glossary-popup"
   >
     <span
-      className="content-box d-block"
+      className="content-box"
     >
       <span
         className="info-text"
