@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Glossary Matches the snapshot 1`] = `
-<div
+<span
   className="ssb-glossary"
 >
   <button
@@ -21,25 +21,23 @@ exports[`Glossary Matches the snapshot 1`] = `
       size={12}
     />
   </button>
-  <div
+  <span
     className="glossary-popup"
   >
-    <div
-      className="content-box"
+    <span
+      className="content-box d-block"
     >
       <span
         className="info-text"
       >
         placeholderText
       </span>
-      <div
+      <span
         className="glossary-closing"
       >
-        <div
+        <button
           onClick={[Function]}
           onKeyDown={[Function]}
-          role="button"
-          tabIndex={0}
         >
           <XCircle
             aria-hidden="true"
@@ -49,9 +47,9 @@ exports[`Glossary Matches the snapshot 1`] = `
           <span>
             Lukk
           </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </button>
+      </span>
+    </span>
+  </span>
+</span>
 `;

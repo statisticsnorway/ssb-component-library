@@ -1120,22 +1120,22 @@ a {
   user-select: none;
   width: 100%;
 }
-.ssb-glossary .glossary-popup .content-box .glossary-closing div {
+.ssb-glossary .glossary-popup .content-box .glossary-closing button {
   all: unset;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.ssb-glossary .glossary-popup .content-box .glossary-closing div:focus {
+.ssb-glossary .glossary-popup .content-box .glossary-closing button:focus {
   outline: #b6e8b8 5px auto;
   padding: 0 0.3rem;
 }
-.ssb-glossary .glossary-popup .content-box .glossary-closing div .icon {
+.ssb-glossary .glossary-popup .content-box .glossary-closing button .icon {
   color: #274247;
   fill: #b6e8b8;
   font-size: 16px;
 }
-.ssb-glossary .glossary-popup .content-box .glossary-closing div span {
+.ssb-glossary .glossary-popup .content-box .glossary-closing button span {
   line-height: 1.43;
   margin-left: 2px;
 }
