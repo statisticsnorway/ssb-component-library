@@ -162,8 +162,8 @@ Card
     <Text>Explain something about something with something clever.</Text>
 </Card>
 
-// External card with ariaLabel and ariaDescribedBy
-<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Gå til url" ariaLabel="Gå til url" ariaDescribedBy="text">
+// External card
+<Card href=" " icon={<Globe size={120} />} profiled external hrefText="Gå til url">
     <Text>Explain something about something with something clever.</Text>
 </Card>
 ```
@@ -172,8 +172,6 @@ Available props:
 
 | Name           | Type                        | Description                                                 |
 |----------------|-----------------------------|-------------------------------------------------------------|
-| ariaLabel | string                      | Defines a string value that describe the Card.              |
-| ariaDescribedBy | oneOf(['subtitle', 'text']) | If use of ariaLabel you can add more description by ariaDescribedBy from subtitle or text |
 | children       | node                        | Required. Fills box with content                            |
 | className      | string                      | Optional container class                                    |
 | downloadText   | string                      | Text download link, default "Last ned"                      |
@@ -181,7 +179,6 @@ Available props:
 | href           | string                      | Destination for navigation                                  |
 | hrefText       | string                      | Text after arrow                                            |
 | icon           | element                     | Icon element                                                |
-| id             | string                      | Optional id (default is uuid)                               | 
 | image          | element                     | Image element                                               |
 | imagePlacement | oneOf(['left', 'top'])      | Position of the image, default "top"                        |
 | profiled       | bool                        | Profiled layout                                             |

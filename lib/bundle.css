@@ -416,8 +416,9 @@ a {
   padding: 0;
   text-align: left;
   width: 100%;
+  position: relative;
 }
-.ssb-card .clickable:focus {
+.ssb-card .clickable:focus-within {
   outline: #9272fc solid 2px;
   outline-offset: 2px;
 }
@@ -559,6 +560,14 @@ a {
   display: block;
   margin-top: 12px;
   padding: 4px;
+}
+.ssb-card .card-content .card-action:focus, .ssb-card .card-content .card-title:focus {
+  outline: none;
+}
+.ssb-card .card-content .card-action::after, .ssb-card .card-content .card-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 .ssb-card .card-content .card-action {
   font-family: "Open Sans", sans-serif !important;
