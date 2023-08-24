@@ -61,7 +61,7 @@ const Glossary = ({ explanation, children, className, closeText }) => {
 				<BookOpen size={12} className="glossary-logo" aria-hidden="true" />
 			</button>
 			<span className={`glossary-popup${open ? ' open' : ''}`}>
-				<span className="content-box d-block">
+				<span className="content-box">
 					<span className="info-text">
 						{explanation}
 					</span>

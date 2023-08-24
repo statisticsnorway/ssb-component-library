@@ -1120,6 +1120,7 @@ a {
   background: #274247;
   color: #fff;
   padding: 20px;
+  display: block;
 }
 .ssb-glossary .glossary-popup .content-box .glossary-closing {
   align-items: center;
