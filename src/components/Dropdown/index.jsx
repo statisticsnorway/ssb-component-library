@@ -17,14 +17,11 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 	// all the refs we need!
 	const wrapper = useRef();
 	const node = useRef();
-	const itemRefs = items.reduce((acc, item, idx) => {
-		acc[idx] = useRef();
-		return acc;
-	}, []);
+	const itemRefs = useRef({});
 	const optionList = useRef();
 
 	const [isOpen, setOpen] = useState(open);
-	const [availableOptions, filterAvailableOptions] = useState(items);
+	const [availableOptions, filterAvailableOptions] = useState([]);
 	const [selectedOption, selectItem] = useState(selectedItem || { title: '', id: '' });
 	const [activeOption, setActiveOption] = useState(selectedItem || { title: '', id: '' });
 	const [inputFieldValue, updateInputValue] = useState('');
@@ -36,6 +33,11 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 		updateInputValue(value);
 		filterAvailableOptions(items.filter(it => it.title.toLowerCase().includes(value.toLowerCase())));
 	};
+
+	useEffect(() => {
+		selectItem(items.find((it, idx) => it.id === selectedOption.id));
+		filterAvailableOptions(items);
+	}, [items]);
 
 	const filterItems = event => {
 		filterOptions(event.target.value);
@@ -125,8 +127,8 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 	};
 
 	useEffect(() => {
-		if (isOpen && itemRefs[keyNavPosition].current) {
-			itemRefs[keyNavPosition].current.scrollIntoView({
+		if (isOpen && itemRefs.current[keyNavPosition]) {
+			itemRefs.current[keyNavPosition].scrollIntoView({
 				behavior: 'smooth',
 				block: 'nearest',
 				inline: 'start',
@@ -195,7 +197,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 						aria-describedby={error && errorMessage ? `error_${dropdownId}` : undefined}
 						aria-haspopup="listbox"
 						aria-labelledby={!header && !ariaLabel ? `button_${dropdownId}` : `label_${dropdownId} button_${dropdownId}`}
-					>{selectedOption.title !== '' ? selectedOption.title : placeholder}
+					>{selectedOption.prettyTitle || selectedOption.title || placeholder}
 					</button>
 				) }
 				{searchable && (
@@ -236,7 +238,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}${isOpen && keyNavPosition === idx ? ' active' : ''}${it.disabled ? ' disabled' : ''}`}
 								onClick={() => { handleSelection(it); }}
 								id={it.id}
-								ref={itemRefs[idx]}
+								ref={el => { itemRefs.current[idx] = el; }}
 								role="option"
 								aria-selected={isOpen && keyNavPosition === idx ? 'true' : undefined}
 								aria-disabled={it.disabled}
