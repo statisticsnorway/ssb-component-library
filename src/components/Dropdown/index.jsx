@@ -39,6 +39,10 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 		filterAvailableOptions(items);
 	}, [items]);
 
+	useEffect(() => {
+		selectItem(selectedItem);
+	}, [selectedItem]);
+
 	const filterItems = event => {
 		filterOptions(event.target.value);
 	};
