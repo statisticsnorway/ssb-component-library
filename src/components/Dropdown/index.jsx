@@ -35,12 +35,17 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 	};
 
 	useEffect(() => {
-		selectItem(items.find((it, idx) => it.id === selectedOption.id));
+		const itemToSelect = items.find(it => it.id && it.id === selectedOption.id);
+		if (itemToSelect) {
+			selectItem(selectedOption);
+		}
 		filterAvailableOptions(items);
 	}, [items]);
 
 	useEffect(() => {
-		selectItem(selectedItem);
+		if (selectedItem) {
+			selectItem(selectedItem);
+		}
 	}, [selectedItem]);
 
 	const filterItems = event => {
@@ -201,7 +206,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 						aria-describedby={error && errorMessage ? `error_${dropdownId}` : undefined}
 						aria-haspopup="listbox"
 						aria-labelledby={!header && !ariaLabel ? `button_${dropdownId}` : `label_${dropdownId} button_${dropdownId}`}
-					>{selectedOption.prettyTitle || selectedOption.title || placeholder}
+					>{selectedOption?.title ? selectedOption.title : placeholder}
 					</button>
 				) }
 				{searchable && (
@@ -239,7 +244,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 						{availableOptions.map((it, idx) => (
 							<li
 								key={it.id}
-								className={`option-list-element${selectedOption.id === it.id ? ' selected' : ''}${isOpen && keyNavPosition === idx ? ' active' : ''}${it.disabled ? ' disabled' : ''}`}
+								className={`option-list-element${selectedOption?.id === it.id ? ' selected' : ''}${isOpen && keyNavPosition === idx ? ' active' : ''}${it.disabled ? ' disabled' : ''}`}
 								onClick={() => { handleSelection(it); }}
 								id={it.id}
 								ref={el => { itemRefs.current[idx] = el; }}
