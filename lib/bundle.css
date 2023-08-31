@@ -1909,7 +1909,7 @@ a {
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 100% 50%;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-style: normal;
   letter-spacing: normal;
   line-height: 1.6;
@@ -2332,7 +2332,7 @@ h1.ssb-title {
   font-family: "Roboto Condensed", sans-serif !important;
   font-stretch: condensed;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: bold;
   line-height: 5rem;
 }
@@ -2341,16 +2341,16 @@ h2.ssb-title {
   font-family: "Roboto Condensed", sans-serif !important;
   font-stretch: condensed;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   font-weight: bold;
-  line-height: 3rem;
+  line-height: 2.5rem;
 }
 
 h3.ssb-title {
   font-family: "Roboto", sans-serif !important;
   font-stretch: normal;
   font-weight: normal;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: bold;
   line-height: 2rem;
 }
@@ -2361,14 +2361,14 @@ h4.ssb-title {
   font-weight: normal;
   font-size: 1rem;
   font-weight: bold;
-  line-height: 1.8rem;
+  line-height: 1.75rem;
 }
 
 h5.ssb-title {
   font-family: "Roboto", sans-serif !important;
   font-stretch: normal;
   font-weight: normal;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.7rem;
 }
@@ -2384,12 +2384,12 @@ h6.ssb-title {
 
 @media screen and (max-width: 767px) {
   h1.ssb-title {
-    font-size: 3rem;
-    line-height: 4rem;
+    font-size: 2.75rem;
+    line-height: 3.5rem;
   }
   h2.ssb-title {
-    font-size: 1.8rem;
-    line-height: 2rem;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
   }
 }
 
