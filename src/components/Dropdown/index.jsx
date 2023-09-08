@@ -35,18 +35,8 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 	};
 
 	useEffect(() => {
-		const itemToSelect = items.find(it => it.id && it.id === selectedOption.id);
-		if (itemToSelect) {
-			selectItem(selectedOption);
-		}
 		filterAvailableOptions(items);
 	}, [items]);
-
-	useEffect(() => {
-		if (selectedItem) {
-			selectItem(selectedItem);
-		}
-	}, [selectedItem]);
 
 	const filterItems = event => {
 		filterOptions(event.target.value);
