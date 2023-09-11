@@ -7,7 +7,7 @@ addAssignees: true
 # A list of reviewers to be added to pull requests (GitHub user name)
 reviewers:
   - ssb-cgn
-  # - Glenruben  I'll be back 😎
+  - Glenruben
   - johnnadeluy
 
 # A number of reviewers added to the pull request
@@ -17,7 +17,7 @@ numberOfReviewers: 0
 # A list of assignees, overrides reviewers if set
 assignees:
   - ssb-cgn
-  # - Glenruben  I'll be back 😎
+  - Glenruben
   - johnnadeluy
 
 # A number of assignees to add to the pull request
