@@ -6,7 +6,7 @@ exports[`Tabs component Matches the snapshot 1`] = `
   role="tablist"
 >
   <button
-    aria-controls="tabpanel-0"
+    aria-controls="tabpanel-0-"
     aria-selected={false}
     className="navigation-item "
     key="get-started/"
@@ -18,7 +18,7 @@ exports[`Tabs component Matches the snapshot 1`] = `
     </span>
   </button>
   <button
-    aria-controls="tabpanel-1"
+    aria-controls="tabpanel-1-"
     aria-selected={false}
     className="navigation-item "
     key="components/"
@@ -30,7 +30,7 @@ exports[`Tabs component Matches the snapshot 1`] = `
     </span>
   </button>
   <button
-    aria-controls="tabpanel-2"
+    aria-controls="tabpanel-2-"
     aria-selected={false}
     className="navigation-item "
     key="templates/"
