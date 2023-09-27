@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Tabs = ({ activeOnInit, className, items, onClick }) => {
+const Tabs = ({ activeOnInit, className, items, onClick, id }) => {
 	const [activeItem, changeActive] = useState(activeOnInit);
 
 	const handleClick = e => {
@@ -18,7 +18,7 @@ const Tabs = ({ activeOnInit, className, items, onClick }) => {
 					key={item.path}
 					role="tab"
 					aria-selected={activeItem === item.path}
-					aria-controls={`tabpanel-${i}`}
+					aria-controls={`tabpanel-${i}-${id || ''}`}
 				><span>{item.title}</span>
 				</button>
 			))}
@@ -39,6 +39,7 @@ Tabs.propTypes = {
 		path: PropTypes.string,
 	})),
 	onClick: PropTypes.func,
+	id: PropTypes.string,
 };
 
 export default Tabs;
