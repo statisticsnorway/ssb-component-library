@@ -561,10 +561,10 @@ a {
   margin-top: 12px;
   padding: 4px;
 }
-.ssb-card .card-content .card-action:focus, .ssb-card .card-content .card-title:focus {
+.ssb-card .card-content a.card-action:focus, .ssb-card .card-content a.card-title:focus {
   outline: none;
 }
-.ssb-card .card-content .card-action::after, .ssb-card .card-content .card-title::after {
+.ssb-card .card-content a.card-action::after, .ssb-card .card-content a.card-title::after {
   content: "";
   position: absolute;
   inset: 0;
