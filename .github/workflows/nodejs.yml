@@ -46,6 +46,10 @@ jobs:
       - run: npm run build:prod
       - run: npm test
       - uses: JS-DevTools/npm-publish@v1
+        id: publishNpm
         with:
           token: ${{ secrets.NPM_TOKEN }}
           dry-run: false
+      - run: gh release create ${{ steps.publishNpm.outputs.version }} --generate-notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
