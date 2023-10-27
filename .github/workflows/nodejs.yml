@@ -33,9 +33,9 @@ jobs:
           CI: true
 
   publish:
-    environment: production
+    # environment: production
     needs: build
-    if: github.ref == 'refs/heads/master'
+    # if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -47,11 +47,13 @@ jobs:
       - run: npm run build:prod
       - run: npm test
       - uses: JS-DevTools/npm-publish@v1
-        id: publishNpm
+        id: publish_npm
         with:
           token: ${{ secrets.NPM_TOKEN }}
           dry-run: false
-      - if: ${{ steps.publishNpm.outputs.type }}
-        run: gh release create ${{ steps.publishNpm.outputs.version }} --generate-notes
+      - run: gh release view ${{ steps.publish_npm.outputs.version }}
+        id: check_for_existing_release
+      - if: ${{ steps.check_for_existing_release.output }} == "release not found"
+        run: gh release create ${{ steps.publish_npm.outputs.version }} --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
