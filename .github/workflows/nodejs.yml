@@ -51,6 +51,6 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           dry-run: false
-      - run: gh release create ${{ steps.publishNpm.outputs.version }} --generate-notes
+      - run: gh release create ${{ steps.publishNpm.outputs.version }} --generate-notes --draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
