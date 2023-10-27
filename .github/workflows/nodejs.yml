@@ -53,6 +53,8 @@ jobs:
           dry-run: false
       - run: gh release view ${{ steps.publish_npm.outputs.version }}
         id: check_for_existing_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - if: ${{ steps.check_for_existing_release.output }} == "release not found"
         run: gh release create ${{ steps.publish_npm.outputs.version }} --generate-notes
         env:
