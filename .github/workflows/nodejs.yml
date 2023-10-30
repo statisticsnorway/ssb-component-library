@@ -46,17 +46,12 @@ jobs:
       - run: npm ci
       - run: npm run build:prod
       - run: npm test
-      # - uses: JS-DevTools/npm-publish@v1
-      #   id: publish_npm
-      #   with:
-      #     token: ${{ secrets.NPM_TOKEN }}
-      #     dry-run: false
-      # - run: gh release view ${{ steps.publish_npm.outputs.version }}
-      - run: gh release view "2.0.95"
-        id: check_for_existing_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - if: ${{ steps.check_for_existing_release.output }} == "release not found"
-        run: gh release create "2.0.95" --generate-notes
+      - uses: JS-DevTools/npm-publish@v3
+        id: publishNpm
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          dry-run: false
+      - if: ${{ steps.publishNpm.outputs.type }}
+        run: gh release create ${{ steps.publishNpm.outputs.version }} --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
