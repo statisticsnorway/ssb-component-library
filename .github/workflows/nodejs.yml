@@ -52,11 +52,11 @@ jobs:
       #     token: ${{ secrets.NPM_TOKEN }}
       #     dry-run: false
       # - run: gh release view ${{ steps.publish_npm.outputs.version }}
-      - run: gh release view 2.0.95
+      - run: gh release view "2.0.95"
         id: check_for_existing_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - if: 2.0.95 == "release not found"
-        run: gh release create 2.0.95 --generate-notes
+      - if: "2.0.95" == "release not found"
+        run: gh release create "2.0.95" --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
