@@ -56,7 +56,7 @@ jobs:
         id: check_for_existing_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - if: "2.0.95" == "release not found"
+      - if: ${{ steps.check_for_existing_release.output }} == "release not found"
         run: gh release create "2.0.95" --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
