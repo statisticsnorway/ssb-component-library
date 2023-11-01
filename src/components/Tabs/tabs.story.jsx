@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Divider from '../Divider';
 import Tabs from './index';
 
@@ -29,16 +28,24 @@ const items2 = [
 	},
 ];
 
-storiesOf('Tabs', module)
-	.add('Tabs', () => (
-		<div>
-			<Tabs items={items} activeOnInit="get-started/" />
-			<Divider />
-		</div>
-	))
-	.add('Tabs2', () => (
-		<div>
-			<Tabs items={items2} activeOnInit="get-started/" />
-			<Divider />
-		</div>
-	));
+export default {
+	title: 'Tabs',
+};
+
+export const Default = () => (
+	<div>
+		<Tabs items={items} activeOnInit="get-started/" />
+		<Divider />
+	</div>
+);
+
+export const Tabs2 = () => (
+	<div>
+		<Tabs items={items2} activeOnInit="get-started/" />
+		<Divider />
+	</div>
+);
+
+Tabs2.story = {
+	name: 'Tabs2',
+};

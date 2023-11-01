@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Breadcrumb from './index';
 
 const mockedItems = [
@@ -16,9 +15,12 @@ const mockedItems = [
 	},
 ];
 
-storiesOf('Breadcrumb', module)
-	.add('Default', () => (
-		<div>
-			<Breadcrumb items={mockedItems} />
-		</div>
-	));
+export default {
+	title: 'Breadcrumb',
+};
+
+export const Default = () => (
+	<div>
+		<Breadcrumb items={mockedItems} />
+	</div>
+);
