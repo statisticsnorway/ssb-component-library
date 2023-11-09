@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Pagination from './index';
 
 const items = [
@@ -13,21 +12,24 @@ const items = [
 	{ text: '8', path: '/8' },
 	{ text: '9', path: '/9' },
 	{ text: '10', path: '/10' },
-	{	text: '11', path: '/11'	},
-	{	text: '12', path: '/12'	},
-	{	text: '13', path: '/13'	},
-	{	text: '14', path: '/14'	},
-	{	text: '15', path: '/15'	},
-	{	text: '16', path: '/16'	},
-	{	text: '17', path: '/17'	},
-	{	text: '18', path: '/18'	},
-	{	text: '19', path: '/19'	},
-	{	text: '20', path: '/20'	},
+	{ text: '11', path: '/11' },
+	{ text: '12', path: '/12' },
+	{ text: '13', path: '/13' },
+	{ text: '14', path: '/14' },
+	{ text: '15', path: '/15' },
+	{ text: '16', path: '/16' },
+	{ text: '17', path: '/17' },
+	{ text: '18', path: '/18' },
+	{ text: '19', path: '/19' },
+	{ text: '20', path: '/20' },
 ];
 
-storiesOf('Pagination', module)
-	.add('Default', () => (
-		<div>
-			<Pagination items={items} labelNext="Neste" labelPrevious="Forrige" selectedPage={items[4]} />
-		</div>
-	));
+export default {
+	title: 'Pagination',
+};
+
+export const Default = () => (
+	<div>
+		<Pagination items={items} labelNext="Neste" labelPrevious="Forrige" selectedPage={items[4]} />
+	</div>
+);

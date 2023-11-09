@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Header from './index';
 import Tabs from '../Tabs';
 import Divider from '../Divider';
@@ -26,25 +25,31 @@ const items = [
 	},
 ];
 
-storiesOf('Header', module)
-	.add('Default', () => (
-		<div style={{ width: '1200px' }}>
-			<Header>
-				<div className="global-links" style={{ float: 'right', marginBottom: '12px', marginTop: '10px' }}>
-					<Link href=" ">top-item 3</Link>
-					<Link href=" ">top-item 2</Link>
-					<Link href=" ">top-item 1</Link>
+export default {
+	title: 'Header',
+};
+
+export const Default = () => (
+	<div style={{ width: '1200px' }}>
+		<Header>
+			<div
+				className="global-links"
+				style={{ float: 'right', marginBottom: '12px', marginTop: '10px' }}
+			>
+				<Link href=" ">top-item 3</Link>
+				<Link href=" ">top-item 2</Link>
+				<Link href=" ">top-item 1</Link>
+			</div>
+			<div className="top-row flex-row justify-space-between flex-wrap" style={{ width: '100%' }}>
+				<SsbLogo alt="ssb-logo" />
+				<div className="searchfield" style={{ width: '285px', alignSelf: 'flex-end' }}>
+					<Input ariaLabel="Input field Search" searchField placeholder="Search text" />
 				</div>
-				<div className="top-row flex-row justify-space-between flex-wrap" style={{ width: '100%' }}>
-					<SsbLogo alt="ssb-logo" />
-					<div className="searchfield" style={{ width: '285px', alignSelf: 'flex-end' }}>
-						<Input ariaLabel="Input field Search" searchField placeholder="Search text" />
-					</div>
-				</div>
-				<div className="header-content" style={{ marginBottom: '20px', marginTop: '14px' }}>
-					<Tabs items={items} />
-					<Divider />
-				</div>
-			</Header>
-		</div>
-	));
+			</div>
+			<div className="header-content" style={{ marginBottom: '20px', marginTop: '14px' }}>
+				<Tabs items={items} />
+				<Divider />
+			</div>
+		</Header>
+	</div>
+);
