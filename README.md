@@ -68,14 +68,7 @@ $ git push -u origin add-feature-x
 ```
 
 ### Publish to NPM
-Publishing should only be done, or at least be administered by one of the core developers of this project.
-To be able to publish you need to register a user at [npmjs.com](https://www.npmjs.com/), and you need to be added to the SSB organization.
-You also need to enable 2FA authentication. 
-To publish a new version to npm, run a build with ``npm run build:prod``. Make sure there are no errors.
-It is also recommended to look through the components in storybook to ensure everything is good to go.
-
-If everything looks good, bump up the version number in package.json and run ``npm publish``.
-This requires that you are logged into your NPM in your terminal.
+Merge to master will automatically publish to NPM if version number in `package.json` is updated.
 
 ## Development
 

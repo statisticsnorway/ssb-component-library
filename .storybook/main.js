@@ -1,15 +1,13 @@
 const path = require('path');
 
 module.exports = {
-    core: {
-        builder: 'webpack5',
-    },
     stories: ['../**/*.story.jsx'],
     addons: [
         '@storybook/addon-actions',
         '@storybook/addon-links'
     ],
     staticDirs: ['../src/media'],
+
     webpackFinal: config => {
         const fileLoaderRule = config.module.rules.find(
             (rule) => rule.test && rule.test.test(".svg")
@@ -39,11 +37,18 @@ module.exports = {
         );
         return config;
     },
+
     resolve: {
 		extensions: ['.jsx', '.js'],
 	},
+
     features: {
         postcss: false,
-    }
+    },
+
+    framework: {
+        name: '@storybook/react-webpack5',
+        options: {}
+    },
 };
 
