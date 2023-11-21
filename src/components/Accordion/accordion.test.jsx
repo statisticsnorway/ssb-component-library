@@ -1,11 +1,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import Accordion from './index';
 
 describe('Accordion component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Accordion header="This is a accordion title">Accordion</Accordion>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Accordion header="This is a accordion title">Accordion</Accordion>);
+		expect(asFragment()).toMatchSnapshot();
 	});
 	test('Toggles classNames correctly', () => {
 		const wrapper = shallow(<Accordion header="This is a accordion title">This is paragraph text</Accordion>);

@@ -1,11 +1,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import Checkbox from './index';
 
 describe('Checkbox component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Checkbox value="item">Item</Checkbox>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Checkbox value="item">Item</Checkbox>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 
 	test('Sets selected state by default prop', () => {

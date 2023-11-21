@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import FormError from './index';
 
 const errorMessages = [
@@ -10,8 +10,8 @@ const errorMessages = [
 
 describe('FormError component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<FormError errorMessages={errorMessages} title="Some fields are not right!" />);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<FormError errorMessages={errorMessages} title="Some fields are not right!" />);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 
 });

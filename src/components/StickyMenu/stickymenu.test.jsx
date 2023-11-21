@@ -1,10 +1,11 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import StickyMenu from './index';
 
 describe('StickyMenu component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<StickyMenu>StickyMenu</StickyMenu>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<StickyMenu>StickyMenu</StickyMenu>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 });

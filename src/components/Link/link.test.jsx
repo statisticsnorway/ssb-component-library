@@ -1,12 +1,13 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import { ArrowRight } from 'react-feather';
 import Link from './index';
 
 describe('Link component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Link href="">A regular link</Link>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Link href="">A regular link</Link>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 	test('Toggles classNames correctly', () => {
 		const wrapper = shallow(<Link className="mt-3" isExternal href="" negative linkType="profiled">Profile link</Link>);

@@ -1,11 +1,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import ButtonTertiary from './index';
 
 describe('Button Tertiary component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<ButtonTertiary>Button</ButtonTertiary>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<ButtonTertiary>Button</ButtonTertiary>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 	test('Applies negative class correctly', () => {
     const wrapper = shallow(<ButtonTertiary negative={true}>Button</ButtonTertiary>);

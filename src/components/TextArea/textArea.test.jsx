@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import {render} from '@testing-library/react'
 import TextArea from './index';
 import InputError from '../InputError';
 
@@ -9,8 +10,8 @@ jest.mock("../../utils/useId", () => {
 
 describe('Input component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<TextArea rows={5} cols={10}>Input</TextArea>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<TextArea rows={5} cols={10}>Input</TextArea>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 
 	test('Renders label if added', () => {

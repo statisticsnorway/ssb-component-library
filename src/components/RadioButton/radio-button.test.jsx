@@ -1,11 +1,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import RadioButton from './index';
 
 describe('RadioButton component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<RadioButton value="item">Item</RadioButton>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<RadioButton value="item">Item</RadioButton>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 	test('Callback is triggered', () => {
 		const callback = jest.fn();

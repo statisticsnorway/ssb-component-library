@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import {render} from '@testing-library/react'
 import { act } from 'react-dom/test-utils';
 import Pagination from './index';
 
@@ -28,8 +29,8 @@ const items = [
 
 describe('Pagination component', () => {
 	test('Matches snapshot', () => {
-		const wrapper = shallow(<Pagination items={items} />);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Pagination items={items} />);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 
 	test('Sets correct default selection', () => {

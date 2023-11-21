@@ -1,11 +1,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import Title from './index';
 
 describe('Text component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Title>Title</Title>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Title>Title</Title>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 
 	test('Renders children', () => {

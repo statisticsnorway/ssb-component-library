@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import Card from './index';
 
 jest.mock("../../utils/useId", () => {
@@ -8,8 +9,8 @@ jest.mock("../../utils/useId", () => {
 
 describe('Card component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Card href="">ProfileBox</Card>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Card href="">ProfileBox</Card>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 	test('Toggles classNames profiled correctly', () => {
 		const wrapper = shallow(<Card href="" profiled>ProfileBox</Card>);

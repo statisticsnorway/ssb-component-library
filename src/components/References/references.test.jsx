@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import References from './index';
 
 const referenceList = [
@@ -18,7 +18,7 @@ const referenceList = [
 
 describe('References component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<References title="Source" referenceList={referenceList} />);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<References title="Source" referenceList={referenceList} />);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 });

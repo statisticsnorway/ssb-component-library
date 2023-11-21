@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import Dropdown from './index';
 
 const items = [
@@ -22,8 +23,8 @@ jest.mock("../../utils/useId", () => {
 
 describe('Dropdown component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Dropdown header="Menu header" items={items} />);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Dropdown header="Menu header" items={items} />);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 
 	test('Sets pre-selected value', () => {

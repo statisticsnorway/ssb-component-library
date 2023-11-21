@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {render} from '@testing-library/react'
 import Tabs from './index';
 
 const items = [
@@ -19,8 +20,8 @@ const items = [
 
 describe('Tabs component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Tabs items={items}/>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Tabs items={items}/>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 	test('Sends callback', () => {
 		const onClick = jest.fn();

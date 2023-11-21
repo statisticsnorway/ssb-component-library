@@ -1,11 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import {render} from '@testing-library/react'
 import Divider from './index';
 
 describe('Divider component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Divider />);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Divider />);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 	test('set Light color', () => {
 		const wrapper = shallow(<Divider light />);

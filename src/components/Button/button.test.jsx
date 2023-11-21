@@ -1,11 +1,12 @@
 import React from 'react';
+import {render} from '@testing-library/react'
 import {shallow} from 'enzyme';
 import Button from './index';
 
 describe('Button component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Button>Button</Button>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Button>Button</Button>);
+		expect(asFragment()).toMatchSnapshot ();
 	});
 	test('Toggles classNames correctly', () => {
 		const wrapper = shallow(<Button primary negative>Button</Button>);
