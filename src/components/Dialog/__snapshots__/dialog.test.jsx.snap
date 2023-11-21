@@ -1,30 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dialog component Matches the snapshot 1`] = `
-<div
-  className="ssb-dialog info"
->
+<DocumentFragment>
   <div
-    className="icon-panel"
+    class="ssb-dialog info"
   >
-    <Info
-      className="icon"
-      size={45}
-    />
-  </div>
-  <div
-    className="dialog-content"
-  >
-    <span
-      className="dialog-title"
-    >
-      Dialog Title
-    </span>
     <div
-      className="content"
+      class="icon-panel"
     >
-      Dialog
+      <svg
+        class="icon"
+        fill="none"
+        height="45"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="45"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <line
+          x1="12"
+          x2="12"
+          y1="16"
+          y2="12"
+        />
+        <line
+          x1="12"
+          x2="12.01"
+          y1="8"
+          y2="8"
+        />
+      </svg>
+    </div>
+    <div
+      class="dialog-content"
+    >
+      <span
+        class="dialog-title"
+      >
+        Dialog Title
+      </span>
+      <div
+        class="content"
+      >
+        Dialog
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

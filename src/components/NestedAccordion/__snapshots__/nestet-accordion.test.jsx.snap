@@ -1,32 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NestedAccordion component Matches the snapshot 1`] = `
-<div
-  className="ssb-nested-accordion"
->
-  <button
-    aria-expanded="false"
-    className="nested-accordion-header closed"
-    onClick={[Function]}
-  >
-    <span
-      className="button-grid"
-    >
-      <ChevronDown
-        className="expand-icon"
-        size={16}
-      />
-      <span
-        className="header-text"
-      >
-        A nested accordion header
-      </span>
-    </span>
-  </button>
+<DocumentFragment>
   <div
-    className="nested-accordion-body closed"
+    class="ssb-nested-accordion"
   >
-    Nestet accordion
+    <button
+      aria-expanded="false"
+      class="nested-accordion-header closed"
+    >
+      <span
+        class="button-grid"
+      >
+        <svg
+          class="expand-icon"
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
+        <span
+          class="header-text"
+        >
+          A nested accordion header
+        </span>
+      </span>
+    </button>
+    <div
+      class="nested-accordion-body closed"
+    >
+      Nestet accordion
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

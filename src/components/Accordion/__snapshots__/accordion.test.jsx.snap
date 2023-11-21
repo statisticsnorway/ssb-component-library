@@ -1,33 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Accordion component Matches the snapshot 1`] = `
-<div
-  className="ssb-accordion"
->
-  <button
-    aria-expanded="false"
-    className="accordion-header closed"
-    onClick={[Function]}
-    tabIndex={0}
+<DocumentFragment>
+  <div
+    class="ssb-accordion"
   >
-    <span
-      className="button-grid"
+    <button
+      aria-expanded="false"
+      class="accordion-header closed"
+      tabindex="0"
     >
       <span
-        className="header-text"
+        class="button-grid"
       >
-        This is a accordion title
+        <span
+          class="header-text"
+        >
+          This is a accordion title
+        </span>
+        <svg
+          class="expand-icon"
+          fill="none"
+          height="20"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
       </span>
-      <ChevronDown
-        className="expand-icon"
-        size={20}
-      />
-    </span>
-  </button>
-  <div
-    className="accordion-body closed"
-  >
-    Accordion
+    </button>
+    <div
+      class="accordion-body closed"
+    >
+      Accordion
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -1,63 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`References component Matches the snapshot 1`] = `
-<div
-  className="ssb-references"
->
-  <span
-    className="reference-header"
-  >
-    Source
-  </span>
+<DocumentFragment>
   <div
-    key="0"
+    class="ssb-references"
   >
-    <Link
-      className=""
-      href=" "
-      isExternal={false}
-      negative={false}
-      onClick={[Function]}
+    <span
+      class="reference-header"
     >
-      Link 1
-    </Link>
-    <br />
+      Source
+    </span>
+    <div>
+      <a
+        class="ssb-link"
+        href=" "
+      >
+        <span
+          class="link-text"
+        >
+          Link 1
+        </span>
+      </a>
+      <br />
+    </div>
+    <div>
+      <a
+        class="ssb-link"
+        href=" "
+      >
+        <span
+          class="link-text"
+        >
+          Link 2
+        </span>
+      </a>
+      <br />
+    </div>
+    <div>
+      <span
+        class="ssb-text-wrapper no-margin"
+      >
+        A paragraph 
+      </span>
+      <a
+        class="ssb-link"
+        href=" "
+      >
+        <span
+          class="link-text"
+        >
+          Link 3
+        </span>
+      </a>
+      <br />
+    </div>
   </div>
-  <div
-    key="1"
-  >
-    <Link
-      className=""
-      href=" "
-      isExternal={false}
-      negative={false}
-      onClick={[Function]}
-    >
-      Link 2
-    </Link>
-    <br />
-  </div>
-  <div
-    key="2"
-  >
-    <Text
-      className="no-margin"
-      negative={false}
-      small={false}
-    >
-      A paragraph
-       
-    </Text>
-    <Link
-      className=""
-      href=" "
-      isExternal={false}
-      negative={false}
-      onClick={[Function]}
-    >
-      Link 3
-    </Link>
-    <br />
-  </div>
-</div>
+</DocumentFragment>
 `;

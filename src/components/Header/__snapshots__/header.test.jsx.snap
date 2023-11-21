@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header Matches the snapshot 1`] = `
-<div
-  className="ssb-header-wrapper"
->
-  <div>
-    Content
+<DocumentFragment>
+  <div
+    class="ssb-header-wrapper"
+  >
+    <div>
+      Content
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

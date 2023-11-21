@@ -1,48 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CheckboxGroup component Matches the snapshot 1`] = `
-<div
-  className="ssb-checkbox-group"
->
+<DocumentFragment>
   <div
-    className="checkbox-group-header"
+    class="ssb-checkbox-group"
   >
-    Header
+    <div
+      class="checkbox-group-header"
+    >
+      Header
+    </div>
+    <div
+      class="boxes flex-column"
+    >
+      <div
+        class="ssb-checkbox"
+      >
+        <input
+          id="item1"
+          tabindex="0"
+          type="checkbox"
+          value="item1"
+        />
+        <label
+          class="checkbox-label"
+          for="item1"
+        >
+          Item 1
+        </label>
+      </div>
+      <div
+        class="ssb-checkbox"
+      >
+        <input
+          id="item2"
+          tabindex="0"
+          type="checkbox"
+          value="item2"
+        />
+        <label
+          class="checkbox-label"
+          for="item2"
+        >
+          Item 2
+        </label>
+      </div>
+      <div
+        class="ssb-checkbox"
+      >
+        <input
+          disabled=""
+          id="item3"
+          tabindex="0"
+          type="checkbox"
+          value="item3"
+        />
+        <label
+          class="checkbox-label"
+          for="item3"
+        >
+          Item 3
+        </label>
+      </div>
+    </div>
   </div>
-  <div
-    className="boxes flex-column"
-  >
-    <Checkbox
-      callback={[Function]}
-      index={0}
-      key="item1"
-      selected={false}
-      tabIndex={0}
-      value="item1"
-    >
-      Item 1
-    </Checkbox>
-    <Checkbox
-      callback={[Function]}
-      index={1}
-      key="item2"
-      selected={false}
-      tabIndex={0}
-      value="item2"
-    >
-      Item 2
-    </Checkbox>
-    <Checkbox
-      callback={[Function]}
-      disabled={true}
-      index={2}
-      key="item3"
-      selected={false}
-      tabIndex={0}
-      value="item3"
-    >
-      Item 3
-    </Checkbox>
-  </div>
-</div>
+</DocumentFragment>
 `;

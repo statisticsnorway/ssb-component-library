@@ -1,45 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs component Matches the snapshot 1`] = `
-<div
-  className="ssb-tabs"
-  role="tablist"
->
-  <button
-    aria-controls="tabpanel-0-"
-    aria-selected={false}
-    className="navigation-item "
-    key="get-started/"
-    onClick={[Function]}
-    role="tab"
+<DocumentFragment>
+  <div
+    class="ssb-tabs"
+    role="tablist"
   >
-    <span>
-      Get Started
-    </span>
-  </button>
-  <button
-    aria-controls="tabpanel-1-"
-    aria-selected={false}
-    className="navigation-item "
-    key="components/"
-    onClick={[Function]}
-    role="tab"
-  >
-    <span>
-      Components
-    </span>
-  </button>
-  <button
-    aria-controls="tabpanel-2-"
-    aria-selected={false}
-    className="navigation-item "
-    key="templates/"
-    onClick={[Function]}
-    role="tab"
-  >
-    <span>
-      Templates
-    </span>
-  </button>
-</div>
+    <button
+      aria-controls="tabpanel-0-"
+      aria-selected="false"
+      class="navigation-item "
+      role="tab"
+    >
+      <span>
+        Get Started
+      </span>
+    </button>
+    <button
+      aria-controls="tabpanel-1-"
+      aria-selected="false"
+      class="navigation-item "
+      role="tab"
+    >
+      <span>
+        Components
+      </span>
+    </button>
+    <button
+      aria-controls="tabpanel-2-"
+      aria-selected="false"
+      class="navigation-item "
+      role="tab"
+    >
+      <span>
+        Templates
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
 `;

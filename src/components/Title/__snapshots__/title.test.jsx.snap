@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text component Matches the snapshot 1`] = `
-<h1
-  className="ssb-title"
->
-  Title
-</h1>
+<DocumentFragment>
+  <h1
+    class="ssb-title"
+  >
+    Title
+  </h1>
+</DocumentFragment>
 `;

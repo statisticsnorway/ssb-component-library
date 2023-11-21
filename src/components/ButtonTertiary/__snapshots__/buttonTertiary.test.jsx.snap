@@ -1,38 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button Tertiary component Matches the snapshot 1`] = `
-<div
-  className="ssb-btn-tertiary"
->
-  <button
-    aria-controls="accordion-section"
-    aria-disabled={false}
-    aria-expanded="false"
-    className="button-header closed icon"
-    disabled={false}
-    id="accordion-button-undefined"
-    onClick={[Function]}
-    tabIndex={0}
+<DocumentFragment>
+  <div
+    class="ssb-btn-tertiary"
   >
-    <span
-      className="button-grid"
+    <button
+      aria-controls="accordion-section"
+      aria-disabled="false"
+      aria-expanded="false"
+      class="button-header closed icon"
+      id="accordion-button-undefined"
+      tabindex="0"
     >
       <span
-        className="header-text"
-      />
-      <ChevronDown
-        className="expand-icon"
-        size={22}
-      />
-    </span>
-  </button>
-  <div
-    aria-labelledby="accordion-button-undefined"
-    className="accordion-body closed"
-    id="accordion-section"
-    role="region"
-  >
-    Button
+        class="button-grid"
+      >
+        <span
+          class="header-text"
+        />
+        <svg
+          class="expand-icon"
+          fill="none"
+          height="22"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      aria-labelledby="accordion-button-undefined"
+      class="accordion-body closed"
+      id="accordion-section"
+      role="region"
+    >
+      Button
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

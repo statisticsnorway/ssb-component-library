@@ -1,39 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CategoryLink component Matches the snapshot 1`] = `
-<a
-  className="ssb-category-link"
-  href=""
->
-  <div
-    className="div-wrapper"
+<DocumentFragment>
+  <a
+    class="ssb-category-link"
+    href=""
   >
     <div
-      className="text-divs title-wrapper"
+      class="div-wrapper"
     >
-      <span
-        className="link-title-text"
+      <div
+        class="text-divs title-wrapper"
       >
-        Category link with description
-      </span>
-    </div>
-    <div
-      className="text-divs sub-wrapper"
-    >
-      <span
-        className="link-sub-text"
+        <span
+          class="link-title-text"
+        >
+          Category link with description
+        </span>
+      </div>
+      <div
+        class="text-divs sub-wrapper"
       >
-        Description goes here
-      </span>
+        <span
+          class="link-sub-text"
+        >
+          Description goes here
+        </span>
+      </div>
+      <div
+        class="icon-wrapper"
+      >
+        <svg
+          class="arrow-icon"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="5"
+            x2="19"
+            y1="12"
+            y2="12"
+          />
+          <polyline
+            points="12 5 19 12 12 19"
+          />
+        </svg>
+      </div>
     </div>
-    <div
-      className="icon-wrapper"
-    >
-      <ArrowRight
-        className="arrow-icon"
-        size={24}
-      />
-    </div>
-  </div>
-</a>
+  </a>
+</DocumentFragment>
 `;

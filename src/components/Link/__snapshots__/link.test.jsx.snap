@@ -1,15 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link component Matches the snapshot 1`] = `
-<a
-  className="ssb-link"
-  href=""
-  onClick={[Function]}
->
-  <span
-    className="link-text"
+<DocumentFragment>
+  <a
+    class="ssb-link"
+    href=""
   >
-    A regular link
-  </span>
-</a>
+    <span
+      class="link-text"
+    >
+      A regular link
+    </span>
+  </a>
+</DocumentFragment>
 `;

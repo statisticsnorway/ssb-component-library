@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LeadParagraph component Matches the snapshot 1`] = `
-<p
-  className="ssb-lead-paragraph"
->
-  Leading paragraph
-</p>
+<DocumentFragment>
+  <p
+    class="ssb-lead-paragraph"
+  >
+    Leading paragraph
+  </p>
+</DocumentFragment>
 `;
