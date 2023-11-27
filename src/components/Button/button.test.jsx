@@ -1,32 +1,33 @@
 import React from 'react';
-import {render} from '@testing-library/react'
-import {shallow} from 'enzyme';
+import userEvent from '@testing-library/user-event'
+import { screen, render } from '../../utils/test'
 import Button from './index';
 
 describe('Button component', () => {
 	test('Matches the snapshot', () => {
 		const { asFragment } = render(<Button>Button</Button>);
-		expect(asFragment()).toMatchSnapshot ();
+		expect(asFragment()).toMatchSnapshot();
 	});
 	test('Toggles classNames correctly', () => {
-		const wrapper = shallow(<Button primary negative>Button</Button>);
-		expect(wrapper.find('.ssb-btn').hasClass('negative')).toEqual(true);
-		expect(wrapper.find('.ssb-btn').hasClass('primary-btn')).toEqual(true);
+		const { asFragment } = render(<Button primary negative>Button</Button>);
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Sets aria-label correctly', () => {
-		const wrapper = shallow(<Button primary ariaLabel={'test text'}>Button</Button>);
-		expect(wrapper.find('.ssb-btn').prop('aria-label')).toEqual('test text');
+	test('Sets aria-label correctly', async () => {
+		render(<Button primary ariaLabel={'test text'}>Button</Button>);
+		expect(await screen.findByLabelText('test text')).toBeVisible();
 	});
 	test('Renders icon', () => {
-		const wrapper = shallow(<Button icon={<i />}>Button</Button>);
-		expect(wrapper.find('.ssb-btn').containsMatchingElement(<i />)).toEqual(true);
+		const { asFragment } = render(<Button icon={<i />}>Button</Button>);
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Sends callback', () => {
+	test('Sends callback', async () => {
+		const user = userEvent.setup()
 		const onClick = jest.fn();
-		const wrapper = shallow(<Button onClick={onClick}>Tests</Button>);
-		wrapper.find('button').simulate('click');
+		render(<Button onClick={onClick}>Tests</Button>);
+		const button = await screen.findByRole('button', {name: 'Tests'})
+		await user.click(button)
+		await user.click(button)
 		expect(onClick).toBeCalled();
-		wrapper.find('button').simulate('click');
 		expect(onClick).toBeCalledTimes(2);
 	});
 });

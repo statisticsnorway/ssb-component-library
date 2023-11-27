@@ -69,3 +69,73 @@ exports[`RadioGroup component Matches the snapshot 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`RadioGroup component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-radio-group"
+  >
+    <div
+      class="radio-group-header"
+    >
+      Header
+    </div>
+    <div
+      class="boxes flex-row"
+    >
+      <div
+        class="ssb-radio"
+      >
+        <input
+          id="item1"
+          name="Header"
+          tabindex="0"
+          type="radio"
+          value="item1"
+        />
+        <label
+          class="radio-label"
+          for="item1"
+        >
+          Item 1
+        </label>
+      </div>
+      <div
+        class="ssb-radio"
+      >
+        <input
+          id="item2"
+          name="Header"
+          tabindex="0"
+          type="radio"
+          value="item2"
+        />
+        <label
+          class="radio-label"
+          for="item2"
+        >
+          Item 2
+        </label>
+      </div>
+      <div
+        class="ssb-radio"
+      >
+        <input
+          disabled=""
+          id="item3"
+          name="Header"
+          tabindex="0"
+          type="radio"
+          value="item3"
+        />
+        <label
+          class="radio-label"
+          for="item3"
+        >
+          Item 3
+        </label>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

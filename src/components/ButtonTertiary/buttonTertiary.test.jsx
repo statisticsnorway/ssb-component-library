@@ -1,35 +1,42 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {render} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import {expect} from '@jest/globals'
+import { screen, render } from '../../utils/test'
 import ButtonTertiary from './index';
+
+const header = 'Click Me!'
 
 describe('Button Tertiary component', () => {
 	test('Matches the snapshot', () => {
-		const { asFragment } = render(<ButtonTertiary>Button</ButtonTertiary>);
-		expect(asFragment()).toMatchSnapshot ();
+		const { asFragment } = render(<ButtonTertiary header={header}>Body</ButtonTertiary>);
+		expect(asFragment()).toMatchSnapshot();
 	});
 	test('Applies negative class correctly', () => {
-    const wrapper = shallow(<ButtonTertiary negative={true}>Button</ButtonTertiary>);
-    expect(wrapper.find('.ssb-btn-tertiary').hasClass('negative')).toEqual(true);
+    const { asFragment } = render(<ButtonTertiary header={header} negative={true}>Body</ButtonTertiary>);
+		expect(asFragment()).toMatchSnapshot();
   });
-	test('Disables button when prop is true', () => {
-    const wrapper = shallow(<ButtonTertiary id={'1'} disabled={true}>Button</ButtonTertiary>);
-    expect(wrapper.find('button#accordion-button-1').props().disabled).toEqual(true);
+	test('Disables button when prop is true', async () => {
+    render(<ButtonTertiary id={'1'} disabled={true} header={header}>Body</ButtonTertiary>);
+    const button = await screen.findByRole('button', { text: header })
+    expect(button.disabled).toEqual(true);
   });
-  test('Renders correct header text', () => {
-    const wrapper = shallow(<ButtonTertiary header='Click Me!'>Button</ButtonTertiary>);
-    expect(wrapper.find('.header-text').text()).toEqual('Click Me!');
+  test('Renders correct header text', async () => {
+    render(<ButtonTertiary header={header}>Button</ButtonTertiary>);
+    const el = await screen.findByText(header)
+    expect(el.parentElement).toBeVisible();
   });
-  
-	test('Manages open/close state', () => {
-    const wrapper = shallow(<ButtonTertiary id={'1'} openByDefault={true}>Button</ButtonTertiary>);
-    expect(wrapper.find('.accordion-body').hasClass('open')).toEqual(true);
+	test('Closes after click when starting open', async () => {
+    const user = userEvent.setup()
+    render(<ButtonTertiary id={'1'} openByDefault={true} header={header}>Body</ButtonTertiary>);
+    expect(await screen.findByText('Body')).toBeVisible();
+
+    const button = await screen.findByRole('button')
+		await user.click(button)
     
-    wrapper.find('button#accordion-button-1').simulate('click');
-    expect(wrapper.find('.accordion-body').hasClass('closed')).toEqual(true);
+    expect(await screen.findByText('Body')).not.toBeVisible();
   });
   test('Renders toggle icon when accordion prop is true', () => {
-    const wrapper = shallow(<ButtonTertiary accordion={true}>Button</ButtonTertiary>);
-    expect(wrapper.find('.expand-icon').exists()).toEqual(true);
+    const { asFragment } = render(<ButtonTertiary header={header} accordion={true}>Body</ButtonTertiary>);
+		expect(asFragment()).toMatchSnapshot();
   });
 });

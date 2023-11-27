@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from '@testing-library/react'
+import { render } from '../../utils/test'
 import References from './index';
 
 const referenceList = [
@@ -19,6 +19,6 @@ const referenceList = [
 describe('References component', () => {
 	test('Matches the snapshot', () => {
 		const { asFragment } = render(<References title="Source" referenceList={referenceList} />);
-		expect(asFragment()).toMatchSnapshot ();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

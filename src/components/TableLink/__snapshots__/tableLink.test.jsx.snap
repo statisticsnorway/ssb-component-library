@@ -1,32 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableLink component Matches the snapshot 1`] = `
-<a
-  className="ssb-table-link"
-  href=""
-  rel="noopener noreferrer"
-  target="_blank"
->
-  <div
-    className="tl-icon"
+<DocumentFragment>
+  <a
+    class="ssb-table-link"
+    href=""
+    rel="noopener noreferrer"
+    target="_blank"
   >
-    <ArrowRight
-      size={22}
-    />
-  </div>
-  <div
-    className="tl-info"
+    <div
+      class="tl-icon"
+    >
+      <svg
+        fill="none"
+        height="22"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="22"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="5"
+          x2="19"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 5 19 12 12 19"
+        />
+      </svg>
+    </div>
+    <div
+      class="tl-info"
+    >
+      <span
+        class="tl-text"
+      >
+        Tabell 1
+      </span>
+      <span
+        class="tl-description"
+      >
+        TableLink
+      </span>
+    </div>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`TableLink component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <a
+    class="ssb-table-link mb-2"
+    href=""
+    rel="noopener noreferrer"
+    target="_blank"
   >
-    <span
-      className="tl-text"
+    <div
+      class="tl-icon"
     >
-      Tabell 1
-    </span>
-    <span
-      className="tl-description"
+      <svg
+        fill="none"
+        height="22"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="22"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="5"
+          x2="19"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 5 19 12 12 19"
+        />
+      </svg>
+    </div>
+    <div
+      class="tl-info"
     >
-      TableLink
-    </span>
-  </div>
-</a>
+      <span
+        class="tl-text"
+      >
+        Tabell 1
+      </span>
+      <span
+        class="tl-description"
+      >
+        TableLink
+      </span>
+    </div>
+  </a>
+</DocumentFragment>
 `;

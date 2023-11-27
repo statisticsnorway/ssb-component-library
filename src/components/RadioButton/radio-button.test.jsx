@@ -1,17 +1,22 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {render} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import RadioButton from './index';
 
 describe('RadioButton component', () => {
 	test('Matches the snapshot', () => {
 		const { asFragment } = render(<RadioButton value="item">Item</RadioButton>);
-		expect(asFragment()).toMatchSnapshot ();
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Callback is triggered', () => {
+	test('Callback is triggered', async () => {
 		const callback = jest.fn();
-		const wrapper = shallow(<RadioButton callback={callback} value="item">Item</RadioButton>);
-		wrapper.find('input').simulate('change', { target: { checked: true}});
+		const user = userEvent.setup();
+
+		render(<RadioButton callback={callback} value="item">Item</RadioButton>);
+		const input = screen.getByRole('radio');
+		await user.click(input)
+
 		expect(callback).toBeCalled();
 	})
 });

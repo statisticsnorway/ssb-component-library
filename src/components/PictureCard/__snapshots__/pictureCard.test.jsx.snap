@@ -1,35 +1,160 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageLink component Matches the snapshot 1`] = `
-<a
-  className="ssb-picture-card vertical "
-  onClick={[Function]}
->
-  <div
-    className="image-background"
+<DocumentFragment>
+  <a
+    class="ssb-picture-card vertical "
   >
-    <img
-      alt="img alt"
-      src=""
-    />
-  </div>
-  <div
-    className="overlay"
+    <div
+      class="image-background"
+    >
+      <img
+        alt="img alt"
+        src=""
+      />
+    </div>
+    <div
+      class="overlay"
+    >
+      <span
+        class="il-type"
+      >
+        Type
+      </span>
+      <span
+        class="il-title"
+      >
+        Tittel
+      </span>
+      <svg
+        class="arrow-icon"
+        fill="none"
+        height="32"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="5"
+          x2="19"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 5 19 12 12 19"
+        />
+      </svg>
+    </div>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`ImageLink component Sets default orientation className 1`] = `
+<DocumentFragment>
+  <a
+    class="ssb-picture-card vertical "
   >
-    <span
-      className="il-type"
+    <div
+      class="image-background"
     >
-      Type
-    </span>
-    <span
-      className="il-title"
+      <img
+        alt="alt img"
+        src=""
+      />
+    </div>
+    <div
+      class="overlay"
     >
-      Tittel
-    </span>
-    <ArrowRight
-      className="arrow-icon"
-      size={32}
-    />
-  </div>
-</a>
+      <span
+        class="il-type"
+      >
+        Type
+      </span>
+      <span
+        class="il-title"
+      >
+        Tittel
+      </span>
+      <svg
+        class="arrow-icon"
+        fill="none"
+        height="32"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="5"
+          x2="19"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 5 19 12 12 19"
+        />
+      </svg>
+    </div>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`ImageLink component Switches className on orientation change 1`] = `
+<DocumentFragment>
+  <a
+    class="ssb-picture-card horizontal "
+  >
+    <div
+      class="image-background"
+    >
+      <img
+        alt="alt img"
+        src=""
+      />
+    </div>
+    <div
+      class="overlay"
+    >
+      <span
+        class="il-type"
+      >
+        Type
+      </span>
+      <span
+        class="il-title"
+      >
+        Tittel
+      </span>
+      <svg
+        class="arrow-icon"
+        fill="none"
+        height="32"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="5"
+          x2="19"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 5 19 12 12 19"
+        />
+      </svg>
+    </div>
+  </a>
+</DocumentFragment>
 `;

@@ -1,18 +1,23 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {render} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import NestedAccordion from './index';
 
 describe('NestedAccordion component', () => {
 	test('Matches the snapshot', () => {
 		const { asFragment } = render(<NestedAccordion header="A nested accordion header">Nestet accordion</NestedAccordion>);
-		expect(asFragment()).toMatchSnapshot ();
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Change classname to open on click', () => {
-		const wrapper = shallow(<NestedAccordion header="A nested accordion header">Nestet accordion</NestedAccordion>);
-		wrapper.find('.nested-accordion-header').simulate('click');
-		expect(wrapper.find('.nested-accordion-header').hasClass('open')).toEqual(true);
-		expect(wrapper.find('.nested-accordion-body').hasClass('open')).toEqual(true);
-	});
+	test('Change to open on click', async () => {
+		const user = userEvent.setup();
+		const headerText = "A nested accordion header"
+		const bodyText = "Nestet accordion"
+		render(<NestedAccordion header={headerText}>{bodyText}</NestedAccordion>);
+		const wrapper = screen.getByText(headerText);
 
+		await user.click(wrapper.parentElement);
+
+		expect(await screen.findByText(bodyText)).toBeVisible();
+	});
 });

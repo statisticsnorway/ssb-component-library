@@ -8,3 +8,21 @@ exports[`Divider component Matches the snapshot 1`] = `
   />
 </DocumentFragment>
 `;
+
+exports[`Divider component set Dark color and optional className 1`] = `
+<DocumentFragment>
+  <hr
+    aria-hidden="true"
+    class="ssb-divider mt-3 type-dark"
+  />
+</DocumentFragment>
+`;
+
+exports[`Divider component set Light color 1`] = `
+<DocumentFragment>
+  <hr
+    aria-hidden="true"
+    class="ssb-divider type-light"
+  />
+</DocumentFragment>
+`;

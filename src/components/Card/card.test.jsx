@@ -1,6 +1,6 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {render} from '@testing-library/react'
+
+import { screen, render } from '../../utils/test'
 import Card from './index';
 
 jest.mock("../../utils/useId", () => {
@@ -10,40 +10,39 @@ jest.mock("../../utils/useId", () => {
 describe('Card component', () => {
 	test('Matches the snapshot', () => {
 		const { asFragment } = render(<Card href="">ProfileBox</Card>);
-		expect(asFragment()).toMatchSnapshot ();
+		expect(asFragment()).toMatchSnapshot();
 	});
 	test('Toggles classNames profiled correctly', () => {
-		const wrapper = shallow(<Card href="" profiled>ProfileBox</Card>);
-		expect(wrapper.find('.card-content').hasClass('profiled')).toEqual(true);
+		const { asFragment } = render(<Card href="" profiled>ProfileBox</Card>);
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Toggles classNames image correctly', () => {
-		const wrapper = shallow(<Card href="" image={<img src="testImage" alt="testImage" />}>ProfileBox</Card>);
-		expect(wrapper.find('div.clickable').containsMatchingElement(<img/>)).toEqual(true);
+	test('Toggles classNames image correctly', async () => {
+		const testId = 'testId';
+		render(<Card href="" image={<img data-testid={testId} src="testImage" alt="testImage" />}>ProfileBox</Card>);
+		expect(await screen.findByTestId(testId)).toBeVisible();
 	});
 	test('Show image orientation correctly', () => {
-		const wrapper = shallow(<Card href="" image={<img src="testImage" alt="testImage" />} imagePlacement="left">ProfileBox</Card>);
-		expect(wrapper.find('div.clickable').hasClass('left-orientation')).toEqual(true);
+		const { asFragment } = render(<Card href="" image={<img src="testImage" alt="testImage" />} imagePlacement="left">ProfileBox</Card>);
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Show download link if fileLocation', () => {
-		const wrapper = shallow(<Card href="" fileLocation="./not_a_file.md" downloadText="Download">ProfileBox</Card>);
-		expect(wrapper.find('.download-section').exists()).toEqual(true);
-		expect(wrapper.containsMatchingElement(<span>Download</span>)).toEqual(true);
+	test('Show download link if fileLocation', async () => {
+		render(<Card href="" fileLocation="./not_a_file.md" downloadText="Download">ProfileBox</Card>);
+		expect(await screen.findByText('Download')).toBeVisible();
 	});
   test('Toggles classNames icon correctly', () => {
-    const wrapper = shallow(<Card href="" icon={<i src="testIcon"/>}>ProfileBox</Card>);
-    expect(wrapper.find('.card-icon').exists()).toEqual(true);
+    const { asFragment } = render(<Card href="" icon={<i src="testIcon"/>}>ProfileBox</Card>);
+    expect(asFragment()).toMatchSnapshot();
   });
-  test('Render subtitle', () => {
-    const wrapper = shallow(<Card href="" subTitle="Subtitle">ProfileBox</Card>);
-    expect(wrapper.find('.card-subtitle').render().text()).toBe('Subtitle');
+  test('Render subtitle', async () => {
+    render(<Card href="" subTitle="Subtitle">ProfileBox</Card>);
+    expect(await screen.findByText('Subtitle')).toBeVisible();
   });
-  test('Render title', () => {
-    const wrapper = shallow(<Card href="" title="Tittel">ProfileBox</Card>);
-    expect(wrapper.find('.card-title').render().text()).toBe('Tittel');
+  test('Render title', async () => {
+    render(<Card href="" title="Tittel">ProfileBox</Card>);
+    expect(await screen.findByText('Tittel')).toBeVisible();
   });
-  test('Render hrefText', () => {
-    const wrapper = shallow(<Card href="" hrefText="Handling">ProfileBox</Card>);
-    expect(wrapper.find('.card-action').find('.href-text').render().text()).toBe('Handling');
+  test('Render hrefText', async () => {
+		render(<Card href="" hrefText="Handling">ProfileBox</Card>);
+    expect(await screen.findByText('Handling')).toBeVisible();
   });
-
 });

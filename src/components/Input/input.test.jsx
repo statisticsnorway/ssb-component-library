@@ -1,8 +1,8 @@
 import React from 'react';
-import {mount, shallow} from 'enzyme';
-import {render} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import Input from './index';
-import InputError from '../InputError';
 
 jest.mock("../../utils/useId", () => {
 	return { useId: () => 1};
@@ -11,49 +11,57 @@ jest.mock("../../utils/useId", () => {
 describe('Input component', () => {
 	test('Matches the snapshot', () => {
 		const { asFragment } = render(<Input>Input</Input>);
-		expect(asFragment()).toMatchSnapshot ();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	test('Renders label if added', () => {
-		const wrapper = shallow(<Input label="Label" />);
-		expect(wrapper.find('label').exists()).toEqual(true);
+	test('Renders label if added', async () => {
+		render(<Input label="Label 123" />);
+		expect(await screen.findByText('Label 123')).toBeVisible();
 	});
 
 	test('Adds optional classes to wrapper', () => {
-		const wrapper = shallow(<Input negative error />);
-		expect(wrapper.find('.ssb-input').hasClass('negative')).toEqual(true);
-		expect(wrapper.find('.ssb-input').hasClass('error')).toEqual(true);
+		const { asFragment } = render(<Input negative error />);
+		expect(asFragment()).toMatchSnapshot();
 	});
-
-	test('Type is customizable', () => {
-		const wrapper = mount(<Input type="email" />);
-		expect(wrapper.find('input').props().type).toEqual('email');
+	
+	test('Type is customizable', async () => {
+		render(<Input type="email" />);
+		// default role of type=email input is textbox
+		const input = await screen.findByRole('textbox');
+		expect(input.type).toEqual('email');
 	});
 
 	test('Searchable input renders search icon', () => {
-		const wrapper = shallow(<Input ariaLabel="Input field Search" searchField placeholder="Search text" />);
-		expect(wrapper.find('button').hasClass('search-icon')).toEqual(true);
+		const { asFragment } = render(<Input ariaLabel="Input field Search" searchField placeholder="Search text" />);
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	test('handleInputChange', () => {
+	test('handleInputChange', async () => {
 		const handleChange = jest.fn();
-		const wrapper = shallow(<Input handleChange={handleChange} />);
-		wrapper.find('input').simulate('change', {
-			target: { value: 'hello' }
-		});
+		const user = userEvent.setup();
+
+		render(<Input handleChange={handleChange} />);
+		const input = screen.getByRole('textbox');
+		await user.click(input)
+		await user.keyboard('hello')
+
 		expect(handleChange).toBeCalledWith('hello');
 	});
 
-	test('handle submit', () => {
+	test('handle submit', async () => {
 		const handleSubmit = jest.fn();
-		const wrapper = shallow(<Input searchField submitCallback={handleSubmit} />);
-		wrapper.find('.icon-wrapper').simulate('click');
+		const user = userEvent.setup();
+
+		render(<Input searchField submitCallback={handleSubmit} />);
+		const button = await screen.findByRole('button');
+		await user.click(button)
+
 		expect(handleSubmit).toBeCalled();
 	});
 
-	test('Renders an error message on error', () => {
-		const wrapper = shallow(<Input error errorMessage="An error" />);
-		expect(wrapper.find(InputError)).toHaveLength(1);
+	test('Renders an error message on error', async () => {
+		render(<Input error errorMessage="An error" />);
+		expect(await screen.findByText('An error')).toBeVisible();
 	})
 
 });

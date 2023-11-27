@@ -9,3 +9,93 @@ exports[`Text component Matches the snapshot 1`] = `
   </h1>
 </DocumentFragment>
 `;
+
+exports[`Text component Renders correct default size 1`] = `
+<DocumentFragment>
+  <h1
+    class="ssb-title"
+  >
+    Title
+  </h1>
+</DocumentFragment>
+`;
+
+exports[`Text component Renders correct size 1`] = `
+<DocumentFragment>
+  <h1
+    class="ssb-title"
+  >
+    Title
+  </h1>
+</DocumentFragment>
+`;
+
+exports[`Text component Renders correct size 2`] = `
+<DocumentFragment>
+  <h2
+    class="ssb-title"
+  >
+    Title
+  </h2>
+</DocumentFragment>
+`;
+
+exports[`Text component Renders correct size 3`] = `
+<DocumentFragment>
+  <h3
+    class="ssb-title"
+  >
+    Title
+  </h3>
+</DocumentFragment>
+`;
+
+exports[`Text component Renders correct size 4`] = `
+<DocumentFragment>
+  <h4
+    class="ssb-title"
+  >
+    Title
+  </h4>
+</DocumentFragment>
+`;
+
+exports[`Text component Renders correct size 5`] = `
+<DocumentFragment>
+  <h5
+    class="ssb-title"
+  >
+    Title
+  </h5>
+</DocumentFragment>
+`;
+
+exports[`Text component Renders correct size 6`] = `
+<DocumentFragment>
+  <h6
+    class="ssb-title"
+  >
+    Title
+  </h6>
+</DocumentFragment>
+`;
+
+exports[`Text component Sets custom class 1`] = `
+<DocumentFragment>
+  <h1
+    class="ssb-title some-class"
+  >
+    Title
+  </h1>
+</DocumentFragment>
+`;
+
+exports[`Text component Sets negative class 1`] = `
+<DocumentFragment>
+  <h1
+    class="ssb-title negative"
+  >
+    Title
+  </h1>
+</DocumentFragment>
+`;

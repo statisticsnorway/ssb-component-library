@@ -1,41 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumb component Matches the snapshot 1`] = `
-<div
-  className="ssb-breadcrumbs"
->
+<DocumentFragment>
   <div
-    key="breadcrumb 1"
+    class="ssb-breadcrumbs"
   >
-    <Link
-      className=""
-      href=" "
-      isExternal={false}
-      negative={false}
-      onClick={[Function]}
-    >
-      breadcrumb 1
-    </Link>
-     / 
+    <div>
+      <a
+        class="ssb-link"
+        href=" "
+      >
+        <span
+          class="link-text"
+        >
+          breadcrumb 1
+        </span>
+      </a>
+       / 
+    </div>
+    <div>
+      <a
+        class="ssb-link"
+        href=" "
+      >
+        <span
+          class="link-text"
+        >
+          breadcrumb 2
+        </span>
+      </a>
+       / 
+    </div>
+    <span>
+      breadcrumb 3
+    </span>
   </div>
-  <div
-    key="breadcrumb 2"
-  >
-    <Link
-      className=""
-      href=" "
-      isExternal={false}
-      negative={false}
-      onClick={[Function]}
-    >
-      breadcrumb 2
-    </Link>
-     / 
-  </div>
-  <span
-    key="breadcrumb 3"
-  >
-    breadcrumb 3
-  </span>
-</div>
+</DocumentFragment>
 `;

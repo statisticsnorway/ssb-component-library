@@ -1,7 +1,7 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import {render} from '@testing-library/react'
-import { act } from 'react-dom/test-utils';
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import Pagination from './index';
 
 const items = [
@@ -30,48 +30,61 @@ const items = [
 describe('Pagination component', () => {
 	test('Matches snapshot', () => {
 		const { asFragment } = render(<Pagination items={items} />);
-		expect(asFragment()).toMatchSnapshot ();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	test('Sets correct default selection', () => {
-		const wrapper = shallow(<Pagination selectedPage={items[0]} items={items} />);
-		expect(wrapper.find('.nav-button-square').first().hasClass('selected')).toEqual(true);
+		render(<Pagination selectedPage={items[0]} items={items} />);
+		const first = screen.getByText('1');
+		expect(first.classList.contains('selected')).toEqual(true);
 	});
 
 	describe('handleSelection function', () => {
 		let callback;
 		let useStateSpy;
+		let user;
 
 		beforeEach(() => {
+			user = userEvent.setup();
 			callback = jest.fn();
 			useStateSpy = jest.spyOn(React, 'useState');
 			useStateSpy.mockImplementation(init => [init, callback]);
 		});
 
-		test('First direction button onClick', () => {
-			const wrapper = shallow(<Pagination onSelect={callback} items={items} />);
-			wrapper.find('.direction-button').first().props().onClick();
+		test('First direction button onClick', async () => {
+			render(<Pagination onSelect={callback} selectedPage={items[2]} items={items} />);
+			const button = screen.getByText('Previous');
+			await user.click(button.parentElement);
+
 			expect(callback).toHaveBeenCalledTimes(1);
 		});
 
-		test('Next direction button', () => {
-			const wrapper = shallow(<Pagination onSelect={callback} items={items} />);
-			wrapper.find('.direction-button').last().props().onClick();
+		test('Next direction button', async () => {
+			render(<Pagination onSelect={callback} items={items} />);
+			const button = screen.getByText('Next');
+			await user.click(button.parentElement);
+
 			expect(callback).toHaveBeenCalledTimes(1);
 		});
 
-		test('Last nav button', () => {
-			const wrapper = shallow(<Pagination onSelect={callback} items={items} />);
-			wrapper.find('.nav-button-square').last().props().onClick();
+		test('Last nav button', async () => {
+			render(<Pagination onSelect={callback} items={items} />);
+
+			const button = screen.getByText('20');
+			await user.click(button);
+			
 			expect(callback).toHaveBeenCalledTimes(1);
-			expect(wrapper.find('.nav-button-square').last().hasClass('selected')).toEqual(true);
+			expect(button.classList.contains('selected')).toEqual(true);
 		});
 
-		test('Clicking first item', () => {
-			const wrapper = shallow(<Pagination onSelect={callback} selectedPage={items[4]} items={items} />);
-			wrapper.find('.nav-button-square').first().props().onClick();
+		test('Clicking first item', async () => {
+			render(<Pagination onSelect={callback} selectedPage={items[4]} items={items} />);
+
+			const button = screen.getByText('1');
+			await user.click(button);
+			
 			expect(callback).toHaveBeenCalledTimes(1);
-			expect(wrapper.find('.nav-button-square').first().hasClass('selected')).toEqual(true);
+			expect(button.classList.contains('selected')).toEqual(true);
 		});
 	});
 });

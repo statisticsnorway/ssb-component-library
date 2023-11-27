@@ -1,46 +1,295 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`KeyFigures component Matches the snapshot 1`] = `
-<div
-  className="ssb-key-figures large"
->
+<DocumentFragment>
   <div
-    className="kf-icon large"
+    class="ssb-key-figures large"
   >
-    <Home
-      className="feather-home"
-    />
-  </div>
-  <div>
-    <Glossary
-      closeText="Lukk"
-      explanation="Explain something"
-    >
-      <span
-        className="kf-title"
-      >
-        Antall husholdninger
-      </span>
-    </Glossary>
     <div
-      className="kf-time"
+      class="kf-icon large"
     >
-      2018
+      <svg
+        class="feather-home"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+        />
+        <polyline
+          points="9 22 9 12 15 12 15 22"
+        />
+      </svg>
     </div>
-    <div
-      className="number-section"
-    >
-      <Number
-        size="large"
-      >
-        789 398
-      </Number>
+    <div>
       <span
-        className="kf-title subtitle"
+        class="ssb-glossary"
       >
-        husholdninger
+        <button
+          aria-expanded="false"
+          aria-label="[object Object]"
+          class="glossary-button"
+        >
+          <span
+            class="glossary-text-wrap"
+          >
+            <span
+              class="kf-title"
+            >
+              Antall husholdninger
+            </span>
+          </span>
+          <svg
+            aria-hidden="true"
+            class="glossary-logo"
+            fill="none"
+            height="12"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+            />
+            <path
+              d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+            />
+          </svg>
+        </button>
+        <span
+          class="glossary-popup"
+        >
+          <span
+            class="content-box"
+          >
+            <span
+              class="info-text"
+            >
+              Explain something
+            </span>
+            <span
+              class="glossary-closing"
+            >
+              <button>
+                <svg
+                  aria-hidden="true"
+                  class="icon"
+                  fill="none"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <line
+                    x1="15"
+                    x2="9"
+                    y1="9"
+                    y2="15"
+                  />
+                  <line
+                    x1="9"
+                    x2="15"
+                    y1="9"
+                    y2="15"
+                  />
+                </svg>
+                <span>
+                  Lukk
+                </span>
+              </button>
+            </span>
+          </span>
+        </span>
       </span>
+      <div
+        class="kf-time"
+      >
+        2018
+      </div>
+      <div
+        class="number-section"
+      >
+        <div
+          class="ssb-number large"
+        >
+          789 398
+        </div>
+        <span
+          class="kf-title subtitle"
+        >
+          husholdninger
+        </span>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
+`;
+
+exports[`KeyFigures component Render green box variation 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-key-figures medium green-box"
+  >
+    <div>
+      <span
+        class="kf-title"
+      >
+        Keyfigure with green box variation
+      </span>
+      <div
+        class="kf-time"
+      >
+        2018
+      </div>
+      <div
+        class="number-section"
+      >
+        <div
+          class="ssb-number medium"
+        >
+          72,6
+        </div>
+        <span
+          class="kf-title subtitle"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`KeyFigures component Renders Glossary 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-key-figures undefined"
+  >
+    <div>
+      <span
+        class="ssb-glossary"
+      >
+        <button
+          aria-expanded="false"
+          aria-label="[object Object]"
+          class="glossary-button"
+        >
+          <span
+            class="glossary-text-wrap"
+          >
+            <span
+              class="kf-title"
+            />
+          </span>
+          <svg
+            aria-hidden="true"
+            class="glossary-logo"
+            fill="none"
+            height="12"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+            />
+            <path
+              d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+            />
+          </svg>
+        </button>
+        <span
+          class="glossary-popup"
+        >
+          <span
+            class="content-box"
+          >
+            <span
+              class="info-text"
+            >
+              Explain something
+            </span>
+            <span
+              class="glossary-closing"
+            >
+              <button>
+                <svg
+                  aria-hidden="true"
+                  class="icon"
+                  fill="none"
+                  height="16"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                  />
+                  <line
+                    x1="15"
+                    x2="9"
+                    y1="9"
+                    y2="15"
+                  />
+                  <line
+                    x1="9"
+                    x2="15"
+                    y1="9"
+                    y2="15"
+                  />
+                </svg>
+                <span>
+                  Lukk
+                </span>
+              </button>
+            </span>
+          </span>
+        </span>
+      </span>
+      <div
+        class="kf-time"
+      />
+      <div
+        class="number-section"
+      >
+        <div
+          class="ssb-number small"
+        >
+          789 398
+        </div>
+        <span
+          class="kf-title subtitle"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;

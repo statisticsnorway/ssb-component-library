@@ -9,3 +9,13 @@ exports[`Highlight component Matches the snapshot 1`] = `
   </mark>
 </DocumentFragment>
 `;
+
+exports[`Highlight component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <mark
+    class="ssb-mark negative"
+  >
+     «Highlight» 
+  </mark>
+</DocumentFragment>
+`;

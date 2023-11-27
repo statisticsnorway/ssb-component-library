@@ -1,27 +1,31 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {render} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import Tag from './index';
 
 describe('Tag component', () => {
 	test('Matches the snapshot', () => {
 		const { asFragment } = render(<Tag>Tag</Tag>);
-		expect(asFragment()).toMatchSnapshot ();
+		expect(asFragment()).toMatchSnapshot();
 	});
 	test('Toggles classNames correctly', () => {
-		const wrapper = shallow(<Tag className="mr-4">Tag</Tag>);
-		expect(wrapper.find('.ssb-tag').hasClass('mr-4')).toEqual(true);
+		const { asFragment } = render(<Tag className="mr-4">Tag</Tag>);
+		expect(asFragment()).toMatchSnapshot();
 	});
 	test('Renders icon', () => {
-		const wrapper = shallow(<Tag icon={<i />}>Tag</Tag>);
-		expect(wrapper.find('.ssb-tag').containsMatchingElement(<i />)).toEqual(true);
+		const { asFragment } = render(<Tag icon={<i />}>Tag</Tag>);
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Sends callback', () => {
+	test('Sends callback', async () => {
 		const onClick = jest.fn();
-		const wrapper = shallow(<Tag onClick={onClick}>Tests</Tag>);
-		wrapper.find('button').simulate('click');
+		const user = userEvent.setup();
+
+		render(<Tag onClick={onClick}>Tests</Tag>);
+		const button = screen.getByText('Tests');
+		await user.click(button);
 		expect(onClick).toBeCalled();
-		wrapper.find('button').simulate('click');
+		await user.click(button);
 		expect(onClick).toBeCalledTimes(2);
 	});
 });

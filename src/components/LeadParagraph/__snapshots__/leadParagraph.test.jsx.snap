@@ -9,3 +9,13 @@ exports[`LeadParagraph component Matches the snapshot 1`] = `
   </p>
 </DocumentFragment>
 `;
+
+exports[`LeadParagraph component Toggles className correctly 1`] = `
+<DocumentFragment>
+  <p
+    class="ssb-lead-paragraph negative"
+  >
+    Leading paragraph
+  </p>
+</DocumentFragment>
+`;

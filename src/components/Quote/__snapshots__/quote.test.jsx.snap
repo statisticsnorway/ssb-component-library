@@ -9,3 +9,13 @@ exports[`Quote component Matches the snapshot 1`] = `
   </span>
 </DocumentFragment>
 `;
+
+exports[`Quote component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="ssb-quote negative"
+  >
+    «Quote»
+  </span>
+</DocumentFragment>
+`;

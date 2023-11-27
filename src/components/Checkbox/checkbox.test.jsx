@@ -1,23 +1,28 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {render} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import Checkbox from './index';
 
 describe('Checkbox component', () => {
 	test('Matches the snapshot', () => {
 		const { asFragment } = render(<Checkbox value="item">Item</Checkbox>);
-		expect(asFragment()).toMatchSnapshot ();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	test('Sets selected state by default prop', () => {
-		const wrapper = shallow(<Checkbox value="item" selected>Item</Checkbox>);
-		expect(wrapper.find('input').props().checked).toEqual(true);
+	test('Sets selected state by default prop', async () => {
+		render(<Checkbox value="item" selected>Item</Checkbox>);
+		expect(await screen.getByRole('checkbox')).toBeChecked();
 	});
 
-	test('Sends callback', () => {
+	test('Sends callback', async () => {
 		const onClick = jest.fn();
-		const wrapper = shallow(<Checkbox callback={onClick} value="item">Item</Checkbox>);
-		wrapper.find('input').simulate('change', {target: {checked: true}});
+		const user = userEvent.setup()
+
+		render(<Checkbox callback={onClick} value="item">Item</Checkbox>);
+
+		const checkbox = await screen.getByRole('checkbox');
+		await user.click(checkbox)
 		expect(onClick).toBeCalled();
 	});
 });

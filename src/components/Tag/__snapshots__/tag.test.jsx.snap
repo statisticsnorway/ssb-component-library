@@ -9,3 +9,28 @@ exports[`Tag component Matches the snapshot 1`] = `
   </button>
 </DocumentFragment>
 `;
+
+exports[`Tag component Renders icon 1`] = `
+<DocumentFragment>
+  <button
+    class="ssb-tag"
+  >
+    <div
+      class="st-icon"
+    >
+      <i />
+    </div>
+    Tag
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Tag component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="ssb-tag mr-4"
+  >
+    Tag
+  </button>
+</DocumentFragment>
+`;
