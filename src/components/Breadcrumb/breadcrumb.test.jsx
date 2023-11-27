@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { screen, render } from '../../utils/test'
 import Breadcrumb from './index';
 
 const items = [
@@ -18,7 +18,13 @@ const items = [
 
 describe('Breadcrumb component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Breadcrumb items={items} />);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Breadcrumb items={items} />);
+		expect(asFragment()).toMatchSnapshot();
 	});
+	test('Renders all items', async () => {
+		render(<Breadcrumb items={items} />);
+		expect(await screen.findByText(items[0].text)).toBeVisible();
+		expect(await screen.findByText(items[1].text)).toBeVisible();
+		expect(await screen.findByText(items[2].text)).toBeVisible();
+	})
 });

@@ -1,22 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component Matches the snapshot 1`] = `
-<div
-  className="ssb-input"
->
+exports[`Input component Adds optional classes to wrapper 1`] = `
+<DocumentFragment>
   <div
-    className="input-wrapper"
+    class="ssb-input negative error"
   >
-    <input
-      className=""
-      disabled={false}
-      id={1}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      type="text"
-      value=""
-    />
+    <div
+      class="input-wrapper"
+    >
+      <input
+        class=" with-icon"
+        id="1"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
+`;
+
+exports[`Input component Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-input"
+  >
+    <div
+      class="input-wrapper"
+    >
+      <input
+        class=""
+        id="1"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Input component Searchable input renders search icon 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-input"
+  >
+    <div
+      class="input-wrapper"
+      role="search"
+    >
+      <input
+        aria-label="Input field Search"
+        class=" with-icon"
+        id="1"
+        placeholder="Search text"
+        type="text"
+        value=""
+      />
+      <button
+        aria-label="search"
+        class="icon-wrapper search-icon"
+      >
+        <svg
+          fill="none"
+          height="18"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+          <line
+            x1="21"
+            x2="16.65"
+            y1="21"
+            y2="16.65"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
 `;

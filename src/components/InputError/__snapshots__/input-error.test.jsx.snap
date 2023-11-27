@@ -1,13 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InputError component Matches the snapshot 1`] = `
-<div
-  className="ssb-input-error"
->
-  <span
-    aria-live="assertive"
+<DocumentFragment>
+  <div
+    class="ssb-input-error"
   >
-    Insert error message
-  </span>
-</div>
+    <span
+      aria-live="assertive"
+    >
+      Insert error message
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`InputError component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-input-error negative"
+  >
+    <span
+      aria-live="assertive"
+    >
+      Insert error message
+    </span>
+  </div>
+</DocumentFragment>
 `;

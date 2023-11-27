@@ -1,15 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link component Matches the snapshot 1`] = `
-<a
-  className="ssb-link"
-  href=""
-  onClick={[Function]}
->
-  <span
-    className="link-text"
+<DocumentFragment>
+  <a
+    class="ssb-link"
+    href=""
   >
-    A regular link
-  </span>
-</a>
+    <span
+      class="link-text"
+    >
+      A regular link
+    </span>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Link component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <a
+    class="ssb-link profiled negative mt-3"
+    href=""
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      class="link-text"
+    >
+      Profile link
+    </span>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Link component render icon 1`] = `
+<DocumentFragment>
+  <a
+    class="ssb-link profiled with-icon"
+    href=" "
+  >
+    <div
+      class="icon-wrapper"
+    >
+      <svg
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="5"
+          x2="19"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 5 19 12 12 19"
+        />
+      </svg>
+    </div>
+    <span
+      class="link-text"
+    >
+      A profiled link with icon
+    </span>
+  </a>
+</DocumentFragment>
 `;

@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '../../utils/test'
 import Glossary from './index';
 
 describe('Glossary', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Glossary explanation="placeholderText">Glossary</Glossary>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Glossary explanation="placeholderText">Glossary</Glossary>);
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

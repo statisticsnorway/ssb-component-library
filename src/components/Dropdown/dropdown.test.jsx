@@ -1,5 +1,7 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import Dropdown from './index';
 
 const items = [
@@ -22,43 +24,66 @@ jest.mock("../../utils/useId", () => {
 
 describe('Dropdown component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Dropdown header="Menu header" items={items} />);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Dropdown header="Menu header" items={items} />);
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	test('Sets pre-selected value', () => {
-		const wrapper = shallow(<Dropdown header="Menu header" selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />);
-		expect(wrapper.find('.dropdown-interactive-area').find('button').text()).toEqual('Ocean');
+	test('Sets pre-selected value', async () => {
+		render(<Dropdown header="Menu header" selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />);
+		expect((await screen.findByRole('button')).textContent).toEqual('Ocean');
 	});
 
-	test('Searchable dropdown', () => {
-		const wrapper = shallow(<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" />);
-		expect(wrapper.find('.dropdown-interactive-area').find('input').props().disabled).toEqual(false);
+	test('Searchable dropdown', async () => {
+		render(<Dropdown header="Menu header" searchable items={items} placeholder="Search and select" />);
+		expect(await screen.findByPlaceholderText('Search and select')).toBeVisible();
+		expect((await screen.findByRole('combobox')).disabled).toEqual(false);
 	});
 
-	test('Change classname to open on click', () => {
-		const wrapper = shallow(<Dropdown header="Menu header" items={items} />);
-		wrapper.find('button').first().simulate('click');
-		expect(wrapper.find('button').first().hasClass('focused')).toEqual(true);
-		expect(wrapper.exists('.list-of-options')).toEqual(true);
+	test('Change classname to open on click', async () => {
+		const user = userEvent.setup();
+		render(<Dropdown header="Menu header" items={items} />);
+
+		const button = await screen.findByRole('button');
+		await user.click(button);
+
+		expect(await screen.findByRole('listbox')).toBeVisible();
+		expect(await screen.findByText(items[0].title)).toBeVisible();
+		expect(await screen.findByText(items[1].title)).toBeVisible();
+		expect(await screen.findByText(items[2].title)).toBeVisible();
 	});
 
-	test('Choose first item', () => {
-		const wrapper = shallow(<Dropdown header="Menu header" items={items} open />);
-		wrapper.find('.list-of-options').find('li').first().simulate('click');
-		expect(wrapper.find('.dropdown-interactive-area').find('button').text()).toEqual('Apples');
+	test('Choose first item', async () => {
+		const user = userEvent.setup();
+		Element.prototype.scrollIntoView = jest.fn();
+
+		render(<Dropdown header="Menu header" items={items} open />);
+
+		const option = await screen.findByRole('option', {name: items[0].title});
+		await user.click(option);
+		expect((await screen.findByRole('button')).textContent).toEqual(items[0].title);
 	});
 
-	test('Verify disabled item', () => {
-		const wrapper = shallow(<Dropdown header="Menu header" items={items} open />);
-		expect(wrapper.find('.list-of-options').find('li').find({ id: 'item2' }).hasClass('disabled')).toBe(true);
+	test('Verify disabled item', async () => {
+		render(<Dropdown header="Menu header" items={items} open />);
+		const option = await screen.findByRole('option', {name: items[1].title});
+		expect(option.getAttribute("aria-disabled")).toEqual('true');
 	});
 
-	test('Triggers filter function on search', () => {
-		const wrapper = shallow(<Dropdown searchField searchable items={items} open />);
-		expect(wrapper.find('.option-list-element')).toHaveLength(3);
-		wrapper.find('input').simulate('change', {target: {value: 'oc'}});
-		expect(wrapper.find('.option-list-element')).toHaveLength(1);
+	test('Triggers filter function on search', async () => {
+		const user = userEvent.setup();
+		render(<Dropdown searchField searchable items={items} open />);
+
+		expect(await screen.findByText(items[0].title)).toBeVisible();
+		expect(await screen.findByText(items[1].title)).toBeVisible();
+		expect(await screen.findByText(items[2].title)).toBeVisible();
+
+		const input = await screen.findByRole('combobox');
+		await user.click(input);
+		await user.keyboard('oc')
+
+		expect(await screen.queryByText(items[0].title)).toBeNull();
+		expect(await screen.queryByText(items[1].title)).toBeNull();
+		expect(await screen.queryByText(items[2].title)).toBeVisible();
 	});
 
 });

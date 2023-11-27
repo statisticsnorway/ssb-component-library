@@ -1,7 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import TextArea from './index';
-import InputError from '../InputError';
 
 jest.mock("../../utils/useId", () => {
 	return { useId: () => 1};
@@ -9,41 +10,42 @@ jest.mock("../../utils/useId", () => {
 
 describe('Input component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<TextArea rows={5} cols={10}>Input</TextArea>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<TextArea rows={5} cols={10}>Input</TextArea>);
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	test('Renders label if added', () => {
-		const wrapper = shallow(<TextArea label="Label" />);
-		expect(wrapper.find('label').exists()).toEqual(true);
+		render(<TextArea label="Label 123" />);
+		expect(screen.getByText('Label 123')).toBeVisible();
 	});
 
 	test('Adds optional classes to wrapper', () => {
-		const wrapper = shallow(<TextArea negative error />);
-		expect(wrapper.find('.ssb-text-area').hasClass('negative')).toEqual(true);
-		expect(wrapper.find('.ssb-text-area').hasClass('error')).toEqual(true);
+		const { asFragment } = render(<TextArea negative error />);
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	test('handleInputChange', () => {
+	test('handleInputChange', async () => {
 		const handleChange = jest.fn();
-		const wrapper = shallow(<TextArea handleChange={handleChange} />);
-		wrapper.find('textarea').simulate('change', {
-			target: { value: 'hello' }
-		});
+		const user = userEvent.setup();
+
+		render(<TextArea handleChange={handleChange} />);
+		const input = screen.getByRole('textbox');
+		await user.click(input);
+		await user.keyboard('hello');
+
 		expect(handleChange).toBeCalledWith('hello');
 	});
 
 	test('respects rows and cols', () => {
-		const wrapper = mount(<TextArea rows={5} cols={25} />);
-		const textArea = wrapper.find('textarea');
+		render(<TextArea rows={5} cols={25} />);
+		const textArea = screen.getByRole('textbox');
 
-		expect(textArea.props().rows).toEqual(5);
-		expect(textArea.props().cols).toEqual(25);
+		expect(textArea.getAttribute('rows')).toEqual("5");
+		expect(textArea.getAttribute('cols')).toEqual("25");
 	});
 
 	test('Renders an error message on error', () => {
-		const wrapper = shallow(<TextArea error errorMessage="An error" />);
-		expect(wrapper.find(InputError)).toHaveLength(1);
+		render(<TextArea error errorMessage="An error" />);
+		expect(screen.getByText('An error')).toBeVisible();
 	})
-
 });

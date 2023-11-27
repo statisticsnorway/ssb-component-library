@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Quote component Matches the snapshot 1`] = `
-<span
-  className="ssb-quote"
->
-  «Quote»
-</span>
+<DocumentFragment>
+  <span
+    class="ssb-quote"
+  >
+    «Quote»
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Quote component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="ssb-quote negative"
+  >
+    «Quote»
+  </span>
+</DocumentFragment>
 `;

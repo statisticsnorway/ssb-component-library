@@ -1,5 +1,7 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import Tabs from './index';
 
 const items = [
@@ -19,17 +21,23 @@ const items = [
 
 describe('Tabs component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Tabs items={items}/>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Tabs items={items}/>);
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Sends callback', () => {
+	test('Sends callback', async () => {
 		const onClick = jest.fn();
-		const wrapper = shallow(<Tabs onClick={onClick} items={items}/>);
-		wrapper.find('.navigation-item').first().simulate('click');
+		const user = userEvent.setup();
+
+		render(<Tabs onClick={onClick} items={items}/>);
+		const tabButton = screen.getByText(items[0].title);
+		await user.click(tabButton);
+
 		expect(onClick).toBeCalled();
 	});
 	test('Sets correct init state', () => {
-		const wrapper = shallow(<Tabs items={items} activeOnInit={items[2].path}/>);
-		expect(wrapper.find('.navigation-item').last().hasClass('active')).toEqual(true);
+		render(<Tabs items={items} activeOnInit={items[2].path}/>);
+
+		const buttonSpan = screen.getByText(items[2].title);
+		expect(buttonSpan.parentElement.getAttribute('aria-selected')).toEqual('true');
 	});
 });

@@ -1,26 +1,173 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card component Matches the snapshot 1`] = `
-<div
-  className="ssb-card"
->
+<DocumentFragment>
   <div
-    className="clickable top-orientation"
+    class="ssb-card"
   >
     <div
-      className="card-content"
+      class="clickable top-orientation"
     >
       <div
-        className="card-text"
+        class="card-content"
       >
-        ProfileBox
+        <div
+          class="card-text"
+        >
+          ProfileBox
+        </div>
+        <svg
+          aria-hidden="true"
+          class="arrow-icon"
+          fill="none"
+          height="22"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="5"
+            x2="19"
+            y1="12"
+            y2="12"
+          />
+          <polyline
+            points="12 5 19 12 12 19"
+          />
+        </svg>
       </div>
-      <ArrowRight
-        aria-hidden="true"
-        className="arrow-icon"
-        size={22}
-      />
     </div>
   </div>
-</div>
+</DocumentFragment>
+`;
+
+exports[`Card component Show image orientation correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-card"
+  >
+    <div
+      class="clickable left-orientation"
+    >
+      <div
+        class="card-image"
+      >
+        <img
+          alt="testImage"
+          src="testImage"
+        />
+      </div>
+      <div
+        class="card-content with-image"
+      >
+        <div
+          class="card-text"
+        >
+          ProfileBox
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Card component Toggles classNames icon correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-card"
+  >
+    <div
+      class="clickable top-orientation"
+    >
+      <div
+        class="card-content"
+      >
+        <div
+          class="card-icon"
+        >
+          <i
+            src="testIcon"
+          />
+        </div>
+        <div
+          class="card-text"
+        >
+          ProfileBox
+        </div>
+        <svg
+          aria-hidden="true"
+          class="arrow-icon"
+          fill="none"
+          height="22"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="5"
+            x2="19"
+            y1="12"
+            y2="12"
+          />
+          <polyline
+            points="12 5 19 12 12 19"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Card component Toggles classNames profiled correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-card"
+  >
+    <div
+      class="clickable top-orientation"
+    >
+      <div
+        class="card-content profiled"
+      >
+        <div
+          class="card-text"
+        >
+          ProfileBox
+        </div>
+        <svg
+          aria-hidden="true"
+          class="arrow-icon"
+          fill="none"
+          height="22"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="5"
+            x2="19"
+            y1="12"
+            y2="12"
+          />
+          <polyline
+            points="12 5 19 12 12 19"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;

@@ -1,55 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Glossary Matches the snapshot 1`] = `
-<span
-  className="ssb-glossary"
->
-  <button
-    aria-expanded="false"
-    aria-label="Glossary"
-    className="glossary-button"
-    onClick={[Function]}
-  >
-    <span
-      className="glossary-text-wrap"
-    >
-      Glossary
-    </span>
-    <BookOpen
-      aria-hidden="true"
-      className="glossary-logo"
-      size={12}
-    />
-  </button>
+<DocumentFragment>
   <span
-    className="glossary-popup"
+    class="ssb-glossary"
   >
-    <span
-      className="content-box"
+    <button
+      aria-expanded="false"
+      aria-label="Glossary"
+      class="glossary-button"
     >
       <span
-        className="info-text"
+        class="glossary-text-wrap"
       >
-        placeholderText
+        Glossary
       </span>
-      <span
-        className="glossary-closing"
+      <svg
+        aria-hidden="true"
+        class="glossary-logo"
+        fill="none"
+        height="12"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <button
-          onClick={[Function]}
-          onKeyDown={[Function]}
+        <path
+          d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+        />
+        <path
+          d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+        />
+      </svg>
+    </button>
+    <span
+      class="glossary-popup"
+    >
+      <span
+        class="content-box"
+      >
+        <span
+          class="info-text"
         >
-          <XCircle
-            aria-hidden="true"
-            className="icon"
-            size={16}
-          />
-          <span>
-            Lukk
-          </span>
-        </button>
+          placeholderText
+        </span>
+        <span
+          class="glossary-closing"
+        >
+          <button>
+            <svg
+              aria-hidden="true"
+              class="icon"
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+              />
+              <line
+                x1="15"
+                x2="9"
+                y1="9"
+                y2="15"
+              />
+              <line
+                x1="9"
+                x2="15"
+                y1="9"
+                y2="15"
+              />
+            </svg>
+            <span>
+              Lukk
+            </span>
+          </button>
+        </span>
       </span>
     </span>
   </span>
-</span>
+</DocumentFragment>
 `;

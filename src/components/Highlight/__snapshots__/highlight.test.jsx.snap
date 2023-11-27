@@ -1,11 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Highlight component Matches the snapshot 1`] = `
-<mark
-  className="ssb-mark"
->
-   
-  «Highlight»
-   
-</mark>
+<DocumentFragment>
+  <mark
+    class="ssb-mark"
+  >
+     «Highlight» 
+  </mark>
+</DocumentFragment>
+`;
+
+exports[`Highlight component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <mark
+    class="ssb-mark negative"
+  >
+     «Highlight» 
+  </mark>
+</DocumentFragment>
 `;

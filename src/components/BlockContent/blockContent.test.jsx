@@ -1,14 +1,19 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { screen, render } from '../../utils/test'
 import BlockContent from './index';
 
 describe('BlockContent component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<BlockContent>BlockContent</BlockContent>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<BlockContent>BlockContent</BlockContent>);
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Toggles classNames correctly', () => {
-		const wrapper = shallow(<BlockContent sectionNumber={1}>BlockContent</BlockContent>);
-		expect(wrapper.find('.section-number').length).toBe(1);
+	test('Add 0 infront of sectionnumbers under 10', async () => {
+		render(<BlockContent sectionNumber={5}>BlockContent</BlockContent>);
+		expect(await screen.findByText('05')).toBeVisible();
+	});
+	test('Not add 0 infront of sectionnumbers above 9', async () => {
+		render(<BlockContent sectionNumber={22}>BlockContent</BlockContent>);
+		expect(await screen.queryByText('022')).toBeNull()
+		expect(await screen.findByText('22')).toBeVisible();
 	});
 });

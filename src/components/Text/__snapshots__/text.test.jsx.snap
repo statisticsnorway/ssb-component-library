@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text component Matches the snapshot 1`] = `
-<span
-  className="ssb-text-wrapper"
->
-  Text
-</span>
+<DocumentFragment>
+  <span
+    class="ssb-text-wrapper"
+  >
+    Text
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Text component Toggles className correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="ssb-text-wrapper small-text negative"
+  >
+    Text
+  </span>
+</DocumentFragment>
 `;

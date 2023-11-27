@@ -1,21 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component Matches the snapshot 1`] = `
-<div
-  className="ssb-text-area"
->
+exports[`Input component Adds optional classes to wrapper 1`] = `
+<DocumentFragment>
   <div
-    className="text-area-wrapper"
+    class="ssb-text-area negative error"
   >
-    <textarea
-      cols={10}
-      disabled={false}
-      id={1}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      rows={5}
-    />
+    <div
+      class="text-area-wrapper"
+    >
+      <textarea
+        id="1"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
+`;
+
+exports[`Input component Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-text-area"
+  >
+    <div
+      class="text-area-wrapper"
+    >
+      <textarea
+        cols="10"
+        id="1"
+        rows="5"
+      />
+    </div>
+  </div>
+</DocumentFragment>
 `;

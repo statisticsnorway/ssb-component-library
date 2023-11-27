@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Paragraph component Matches the snapshot 1`] = `
-<p
-  className="ssb-paragraph"
->
-  Paragraph
-</p>
+<DocumentFragment>
+  <p
+    class="ssb-paragraph"
+  >
+    Paragraph
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Paragraph component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <p
+    class="ssb-paragraph negative mt-3"
+  >
+    Paragraph
+  </p>
+</DocumentFragment>
 `;

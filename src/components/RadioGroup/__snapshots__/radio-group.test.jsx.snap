@@ -1,53 +1,141 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioGroup component Matches the snapshot 1`] = `
-<div
-  className="ssb-radio-group"
->
+<DocumentFragment>
   <div
-    className="radio-group-header"
+    class="ssb-radio-group"
   >
-    Header
+    <div
+      class="radio-group-header"
+    >
+      Header
+    </div>
+    <div
+      class="boxes flex-column"
+    >
+      <div
+        class="ssb-radio"
+      >
+        <input
+          id="item1"
+          name="Header"
+          tabindex="0"
+          type="radio"
+          value="item1"
+        />
+        <label
+          class="radio-label"
+          for="item1"
+        >
+          Item 1
+        </label>
+      </div>
+      <div
+        class="ssb-radio"
+      >
+        <input
+          id="item2"
+          name="Header"
+          tabindex="0"
+          type="radio"
+          value="item2"
+        />
+        <label
+          class="radio-label"
+          for="item2"
+        >
+          Item 2
+        </label>
+      </div>
+      <div
+        class="ssb-radio"
+      >
+        <input
+          disabled=""
+          id="item3"
+          name="Header"
+          tabindex="0"
+          type="radio"
+          value="item3"
+        />
+        <label
+          class="radio-label"
+          for="item3"
+        >
+          Item 3
+        </label>
+      </div>
+    </div>
   </div>
+</DocumentFragment>
+`;
+
+exports[`RadioGroup component Toggles classNames correctly 1`] = `
+<DocumentFragment>
   <div
-    className="boxes flex-column"
+    class="ssb-radio-group"
   >
-    <RadioButton
-      callback={[Function]}
-      disabled={false}
-      index={0}
-      key="item1"
-      name="Header"
-      selected={false}
-      tabIndex={0}
-      value="item1"
+    <div
+      class="radio-group-header"
     >
-      Item 1
-    </RadioButton>
-    <RadioButton
-      callback={[Function]}
-      disabled={false}
-      index={1}
-      key="item2"
-      name="Header"
-      selected={false}
-      tabIndex={0}
-      value="item2"
+      Header
+    </div>
+    <div
+      class="boxes flex-row"
     >
-      Item 2
-    </RadioButton>
-    <RadioButton
-      callback={[Function]}
-      disabled={true}
-      index={2}
-      key="item3"
-      name="Header"
-      selected={false}
-      tabIndex={0}
-      value="item3"
-    >
-      Item 3
-    </RadioButton>
+      <div
+        class="ssb-radio"
+      >
+        <input
+          id="item1"
+          name="Header"
+          tabindex="0"
+          type="radio"
+          value="item1"
+        />
+        <label
+          class="radio-label"
+          for="item1"
+        >
+          Item 1
+        </label>
+      </div>
+      <div
+        class="ssb-radio"
+      >
+        <input
+          id="item2"
+          name="Header"
+          tabindex="0"
+          type="radio"
+          value="item2"
+        />
+        <label
+          class="radio-label"
+          for="item2"
+        >
+          Item 2
+        </label>
+      </div>
+      <div
+        class="ssb-radio"
+      >
+        <input
+          disabled=""
+          id="item3"
+          name="Header"
+          tabindex="0"
+          type="radio"
+          value="item3"
+        />
+        <label
+          class="radio-label"
+          for="item3"
+        >
+          Item 3
+        </label>
+      </div>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

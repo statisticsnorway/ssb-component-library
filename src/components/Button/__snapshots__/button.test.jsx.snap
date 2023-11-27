@@ -1,13 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button component Matches the snapshot 1`] = `
-<button
-  className="ssb-btn secondary-btn"
-  disabled={false}
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  type="button"
->
-  Button
-</button>
+<DocumentFragment>
+  <button
+    class="ssb-btn secondary-btn"
+    type="button"
+  >
+    Button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button component Renders icon 1`] = `
+<DocumentFragment>
+  <button
+    class="ssb-btn secondary-btn"
+    type="button"
+  >
+    <div
+      class="sb-icon"
+    >
+      <i />
+    </div>
+    Button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="ssb-btn negative primary-btn"
+    type="button"
+  >
+    Button
+  </button>
+</DocumentFragment>
 `;

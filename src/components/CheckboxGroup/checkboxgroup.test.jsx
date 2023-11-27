@@ -1,7 +1,8 @@
 import React from 'react';
-import {mount, shallow} from 'enzyme';
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import CheckboxGroup from './index';
-import Checkbox from '../Checkbox';
 
 const items = [
 	{
@@ -19,14 +20,18 @@ const items = [
 
 describe('CheckboxGroup component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<CheckboxGroup header="Header" items={items} />);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<CheckboxGroup header="Header" items={items} />);
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	test('OnChange in child triggers parent', () => {
+	test('OnChange in child triggers parent', async () => {
 		const onChange = jest.fn();
-		const wrapper = mount(<CheckboxGroup header="Header" onChange={onChange} items={items} />);
-		wrapper.find(Checkbox).first().find('input').simulate('change', {target: {checked: true}});
+		const user = userEvent.setup();
+
+		render(<CheckboxGroup header="Header" onChange={onChange} items={items} />);
+		const checkbox = await screen.findByRole('checkbox', {name: 'Item 1'});
+
+		await user.click(checkbox);
 		expect(onChange).toBeCalled();
 	});
 });

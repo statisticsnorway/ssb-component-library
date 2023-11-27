@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '../../utils/test'
 import Header from './index';
 
 describe('Header', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Header><div>Content</div></Header>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Header><div>Content</div></Header>);
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

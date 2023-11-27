@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Number component Matches the snapshot 1`] = `
-<div
-  className="ssb-number small"
->
-  599 246 391
-</div>
+<DocumentFragment>
+  <div
+    class="ssb-number small"
+  >
+    599 246 391
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Number component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-number small"
+  >
+    599 246 391
+  </div>
+</DocumentFragment>
 `;

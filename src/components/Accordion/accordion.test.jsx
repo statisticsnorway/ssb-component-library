@@ -1,30 +1,33 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import userEvent from '@testing-library/user-event'
+
+import { screen, render } from '../../utils/test'
 import Accordion from './index';
+
+const headerText = "This is a accordion title"
+const bodyText = "This is paragraph text"
 
 describe('Accordion component', () => {
 	test('Matches the snapshot', () => {
-		const wrapper = shallow(<Accordion header="This is a accordion title">Accordion</Accordion>);
-		expect(wrapper).toMatchSnapshot();
+		const { asFragment } = render(<Accordion header={headerText}>Accordion</Accordion>);
+		expect(asFragment()).toMatchSnapshot();
 	});
-	test('Toggles classNames correctly', () => {
-		const wrapper = shallow(<Accordion header="This is a accordion title">This is paragraph text</Accordion>);
-		expect(wrapper.find('.accordion-header').hasClass('closed')).toEqual(true);
-		expect(wrapper.find('.accordion-body').hasClass('closed')).toEqual(true);
+	test('Starts closed', async () => {
+		render(<Accordion header={headerText}>{bodyText}</Accordion>);
+		expect(await screen.findByText(bodyText)).not.toBeVisible();
 	});
-	test('Change classname to open on click', () => {
-		const wrapper = shallow(<Accordion header="This is a accordion title">This is paragraph text</Accordion>);
-		wrapper.find('.accordion-header').simulate('click');
-		expect(wrapper.find('.accordion-header').hasClass('open')).toEqual(true);
-		expect(wrapper.find('.accordion-body').hasClass('open')).toEqual(true);
+	test('Open on click when starting closed', async () => {
+		const user = userEvent.setup();
+		render(<Accordion header={headerText}>{bodyText}</Accordion>);
+
+		const button = await screen.findByText(headerText)
+		await user.click(button.parentElement)
+
+		expect(await screen.findByText(bodyText)).toBeVisible();
 	});
-	test('Accordion with sub-header', () => {
-		const wrapper = shallow(<Accordion header="This is a accordion title" subHeader="Subheader">This is paragraph text</Accordion>);
-		expect(wrapper.hasClass('with-sub-header')).toEqual(true);
-		expect(wrapper.find('.sub-header').length).toBe(1);
-	});
-	test('Accordion with id', () => {
-		const wrapper = shallow(<Accordion id="test-id" header="This is a accordion title">This is paragraph text</Accordion>);
-		expect(wrapper.prop('id')).toEqual('test-id');
+	test('Accordion with sub-header', async () => {
+		const subheader = "Subheader"
+		render(<Accordion header={headerText} subHeader={subheader}>{bodyText}</Accordion>);
+		expect(await screen.findByText(subheader)).toBeVisible();
 	});
 });
