@@ -23,7 +23,7 @@ const Input = forwardRef(({
 
 	return (
 		<div className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}${size === 'lg' ? ' input-lg' : ''}${className ? ` ${className}` : ''}`}>
-			{label && <label htmlFor={inputId}>{label}</label>}
+			{label && <label aria-hidden={ariaLabel ? true : undefined} htmlFor={inputId}>{label}</label>}
 			<div ref={ref} className="input-wrapper" role={searchField ? 'search' : role} aria-label={ariaLabelWrapper}>
 				<input
 					id={inputId}
