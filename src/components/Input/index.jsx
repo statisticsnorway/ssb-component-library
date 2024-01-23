@@ -6,7 +6,7 @@ import InputError from '../InputError';
 
 const Input = forwardRef(({
 	role, ariaLabelWrapper, ariaLabel, ariaLabelledBy, ariaLabelSearchButton,
-	className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size,
+	name, className, disabled, error, errorMessage, handleChange, id, label, negative, placeholder, searchField, submitCallback, type, value, onFocus, onBlur, size,
 }, ref) => {
 	const [inputValue, setValue] = useState(value);
 	const inputId = id || useId();
@@ -27,6 +27,7 @@ const Input = forwardRef(({
 			<div ref={ref} className="input-wrapper" role={searchField ? 'search' : role} aria-label={ariaLabelWrapper}>
 				<input
 					id={inputId}
+					name={name}
 					disabled={disabled}
 					type={type}
 					value={inputValue}
@@ -74,6 +75,7 @@ Input.propTypes = {
 	ariaLabel: PropTypes.string,
 	ariaLabelledBy: PropTypes.string,
 	ariaLabelSearchButton: PropTypes.string,
+	name: PropTypes.string,
 	className: PropTypes.string,
 	disabled: PropTypes.bool,
 	error: PropTypes.bool,
