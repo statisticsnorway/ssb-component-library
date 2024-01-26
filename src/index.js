@@ -1,8 +1,8 @@
 import './main.scss';
 
-export { default as Accordion } from './components/Accordion';
-export { default as BlockContent } from './components/BlockContent';
-export { default as Breadcrumb } from './components/Breadcrumb';
+export { default as Accordion } from './components/Accordion/Accordion';
+export { default as BlockContent } from './components/BlockContent/BlockContent';
+export { default as Breadcrumb } from './components/Breadcrumb/Breadcrumb';
 export { default as Button } from './components/Button';
 export { default as ButtonTertiary } from './components/ButtonTertiary';
 export { default as Checkbox } from './components/Checkbox';
