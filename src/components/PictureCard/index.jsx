@@ -77,3 +77,21 @@ PictureCard.propTypes = {
 };
 
 export default PictureCard;
+
+/*
+ref={element => {
+	// Using ref for multiple purposes, so need to set it manually
+	if (typeof ref === 'function') ref(element);
+	// eslint-disable-next-line no-param-reassign
+	else if (ref) { ref.current = element; }
+	hoverRef.current = element;
+}}
+
+The ref is set in this way so it can be both used by a parent component with useRef and the internal hoverRef hook.
+The 'if (typeof ref === 'function')'  is used so a parent can use the two commonly used syntaxes for setting refs
+
+Both of these will now work:
+ <PictureCard ref={(element) => (cards.current[index] = element)}
+ <PictureCard ref={myRef}
+The first example is the most used way to set refs on components in .map functions.
+*/
