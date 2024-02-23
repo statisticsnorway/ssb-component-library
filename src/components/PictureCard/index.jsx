@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { forwardRef, useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight, ArrowRightCircle } from 'react-feather';
 
@@ -6,7 +6,6 @@ export function useHover() {
 	const [value, setValue] = useState(false);
 
 	const hoverRef = useRef(null);
-
 	useEffect(
 		// eslint-disable-next-line consistent-return
 		() => {
@@ -29,14 +28,22 @@ export function useHover() {
 	return [hoverRef, value];
 }
 
-const PictureCard = ({ className, imageSrc, altText, link, onClick, orientation, title, type }) => {
+const PictureCard = forwardRef(({
+	className, imageSrc, altText, link, onClick, orientation, title, type,
+}, ref) => {
 	const [hoverRef, hovered] = useHover();
 	return (
 		<a
 			className={`ssb-picture-card ${orientation} ${className || ''}`}
 			href={link}
 			onClick={onClick}
-			ref={hoverRef}
+			ref={element => {
+				// Using ref for multiple purposes, so need to set it manually
+				if (typeof ref === 'function') ref(element);
+				// eslint-disable-next-line no-param-reassign
+				else if (ref) { ref.current = element; }
+				hoverRef.current = element;
+			}}
 		>
 			<div className="image-background">
 				<img src={imageSrc} alt={altText} />
@@ -50,7 +57,7 @@ const PictureCard = ({ className, imageSrc, altText, link, onClick, orientation,
 			</div>
 		</a>
 	);
-};
+});
 
 PictureCard.defaultProps = {
 	onClick: () => {
