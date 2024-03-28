@@ -41,7 +41,7 @@
     "webpack": "^5.89.0"
   },
   "devDependencies": {
-    "@babel/cli": "~7.23.0",
+    "@babel/cli": "~7.24.1",
     "@babel/core": "~7.23.2",
     "@babel/eslint-parser": "^7.23.3",
     "@babel/preset-env": "~7.23.2",
