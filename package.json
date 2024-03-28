@@ -54,7 +54,7 @@
     "@storybook/addon-links": "^7.5.3",
     "@storybook/addons": "^7.5.3",
     "@storybook/react": "^7.5.3",
-    "@storybook/react-webpack5": "^7.5.3",
+    "@storybook/react-webpack5": "^8.0.5",
     "@svgr/rollup": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.1.4",
