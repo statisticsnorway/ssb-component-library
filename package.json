@@ -35,7 +35,7 @@
   "sideEffects": false,
   "homepage": "https://statisticsnorway.github.io/design-system/",
   "peerDependencies": {
-    "react": "~18.0.0"
+    "react": "^18.0.0"
   },
   "overrides": {
     "webpack": "~5.91.0"
