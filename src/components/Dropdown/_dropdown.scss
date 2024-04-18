@@ -86,7 +86,7 @@
     overflow-y: auto;
     padding-left: 0;
     position: absolute;
-    scrollbar-color: $scrollbar-color $scrollbar-color; // Firefox experimental property
+    scrollbar-color: $scrollbar-color $ssb-white; // Not implemented on all browsers
     scrollbar-width: thin;
     top: $input-field-height;
     z-index: 9999;
