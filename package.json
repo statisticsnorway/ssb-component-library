@@ -81,7 +81,7 @@
     "prop-types": "~15.8.1",
     "react": "~18.2.0",
     "react-dom": "~18.2.0",
-    "rollup": "~4.14.0",
+    "rollup": "~4.16.1",
     "rollup-plugin-scss": "~4.0.0",
     "sass-loader": "~14.1.1",
     "storybook": "~8.0.5",
