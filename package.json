@@ -85,7 +85,7 @@
     "rollup-plugin-scss": "~4.0.0",
     "sass-loader": "~14.2.1",
     "storybook": "~8.0.5",
-    "style-loader": "~3.3.4",
+    "style-loader": "~4.0.0",
     "stylelint": "~16.3.1",
     "stylelint-config-standard-scss": "~13.1.0",
     "webpack": "~5.91.0",
