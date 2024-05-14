@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO:
+// * React hooks e.g. useRef
+// * WAI-ARIA
+
 const Table = ({ tableClass, caption, thead, tbody, tfoot }) => (
 	<div className="ssb-table">
 		<table className={`${tableClass ?? ''}`}>
@@ -14,11 +18,17 @@ const Table = ({ tableClass, caption, thead, tbody, tfoot }) => (
 			{thead?.length && (
 				<thead>
 					{thead.map(() => (
-						<tr>
-							<th />
-							<th>Header 2</th>
-							<th>Header 3</th>
-						</tr>
+						<>
+							<tr>
+								<th rowSpan={2} />
+								<th colSpan={2}>Header 1</th>
+							</tr>
+							<tr>
+								<th>Header 2</th>
+								<th>Header 3
+								</th>
+							</tr>
+						</>
 					))}
 				</thead>
 			)}
@@ -44,7 +54,7 @@ const Table = ({ tableClass, caption, thead, tbody, tfoot }) => (
 				<tfoot>
 					{tfoot.map(() => (
 						<tr>
-							<td>Footer 1</td>
+							<td colSpan="100%"><sup>1</sup>&nbsp;Footer 1</td>
 						</tr>
 					))}
 				</tfoot>
