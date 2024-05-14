@@ -1,0 +1,32 @@
+.ssb-table {
+  table {
+    border-collapse: collapse;
+    border: 1px solid $ssb-dark-5;
+
+    caption {
+      padding: 1rem .5rem;
+      border: 1px solid $ssb-dark-5;
+      border-bottom: transparent;
+
+      text-align: start;
+    }
+
+    thead {
+      th {
+        border: 1px solid $ssb-dark-5;
+        border-bottom: 2px solid $ssb-dark-5;
+      }
+    }
+
+    tbody {
+      td {
+        border: 1px solid $ssb-dark-2;
+        border-bottom: transparent;
+      }
+    }
+
+    tfoot {
+      border-top: 1px solid $ssb-dark-5;
+    }
+  }
+}
