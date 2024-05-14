@@ -6,7 +6,7 @@ export default {
 };
 
 export const TableExample = () => (
-	<Table caption="This is a table" thead={['1']} tbody={['2']} tfoot={['3']} />
+	<Table caption="Tabellens tittel skal inn her, ofte ganske lang og over i hvert fall to linjer. Kanskje lengre. Ofte en del lengre og kan være over flere linjer" thead={['1']} tbody={['2']} tfoot={['3']} />
 );
 
 TableExample.story = {

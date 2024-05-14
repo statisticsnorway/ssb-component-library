@@ -1,8 +1,9 @@
 .ssb-table {
-  // TODO: Responsive view
-
+  width: 100%;
+  overflow-x: auto;
+  
   table {
-    min-width: 800px; // TODO: Example only
+    min-width: 1100px; // TODO: Example
     border-collapse: collapse;
     border: 1px solid $ssb-dark-5;
 
@@ -14,8 +15,12 @@
       border-bottom: transparent;
     }
 
-    caption, tfoot td {
+    .caption-text-wrapper, tfoot td {
       padding: 1.75rem 1rem;
+
+      @media #{$desktop} {
+        max-width: 780px;
+      }
     }
 
     th, td {
@@ -23,15 +28,14 @@
     }
 
     caption {
+      text-align: left;
+      
       .caption-text-wrapper {
         // TODO: Mix-match of h3 and h4 styling
         @include roboto;
         font-size: 1rem;
         font-weight: bold;
         line-height: 1.75rem;
-        text-align: start;
-        
-        max-width: 780px;
       }
     }
   

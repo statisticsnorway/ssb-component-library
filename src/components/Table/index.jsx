@@ -8,14 +8,14 @@ import PropTypes from 'prop-types';
 const Table = ({ tableClass, caption, thead, tbody, tfoot }) => (
 	<div className="ssb-table">
 		<table className={`${tableClass ?? ''}`}>
-			{caption && (
+			{caption ? (
 				<caption>
 					<div className="caption-text-wrapper">
 						{caption}
 					</div>
 				</caption>
-			)}
-			{thead?.length && (
+			) : null}
+			{thead?.length ? (
 				<thead>
 					{thead.map(() => (
 						<>
@@ -31,8 +31,8 @@ const Table = ({ tableClass, caption, thead, tbody, tfoot }) => (
 						</>
 					))}
 				</thead>
-			)}
-			{tbody?.length && (
+			) : null}
+			{tbody?.length ? (
 				<tbody>
 					{tbody.map(() => (
 						<>
@@ -49,8 +49,8 @@ const Table = ({ tableClass, caption, thead, tbody, tfoot }) => (
 						</>
 					))}
 				</tbody>
-			)}
-			{tfoot?.length && (
+			) : null}
+			{tfoot?.length ? (
 				<tfoot>
 					{tfoot.map(() => (
 						<tr>
@@ -58,7 +58,7 @@ const Table = ({ tableClass, caption, thead, tbody, tfoot }) => (
 						</tr>
 					))}
 				</tfoot>
-			)}
+			) : null}
 		</table>
 	</div>
 );
