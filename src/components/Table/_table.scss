@@ -26,6 +26,38 @@
     th, td {
       padding: .5rem 2.5rem .5rem 1rem;
     }
+    
+    thead, tbody {
+      th {
+        &.level1 {
+          padding-left: 1.75em;
+        }
+    
+        &.level2 {
+          padding-left: 2.50em;
+        }
+    
+        &.level3 {
+          padding-left: 3.25em;
+        }
+      }
+    }
+
+    thead, tbody tr.head { // TODO: Look over e.g. usage
+      th, td {
+        text-align: right;
+        padding-left: 2.5rem;
+        padding-right: 1rem;
+      }
+
+      th {
+        vertical-align: bottom;
+
+        &[colspan] {
+          text-align: center;
+        }
+      }
+    }
 
     caption {
       text-align: left;
@@ -44,19 +76,39 @@
     }
 
     tbody {      
+      td {
+        text-align: right;
+        padding-left: 2.5rem;
+        padding-right: 1rem;
+      }
+
+      th {
+        font-weight: normal;
+        border-bottom: transparent;
+
+        &:first-child, &.colspan {
+          text-align: left;
+        }
+      }
+
       tr {
-        &:last-child td {
-          border-top-color: $ssb-dark-2;
+        &:not(:first-child) {
+          th, td {
+            border-top-color: $ssb-dark-2;
+          }
         }
   
         &:nth-child(odd) {
           background-color: $ssb-green-1;
         }
   
-        &:hover,
-        &:nth-child(odd):hover {
+        &:hover, &:nth-child(odd):hover {
           background-color: $ssb-purple-1;
         }
+      }
+
+      .sum {
+        font-weight: bold;
       }
     }
 
