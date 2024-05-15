@@ -3,7 +3,7 @@
   overflow-x: auto;
   
   table {
-    min-width: 1100px; // TODO: Example
+    width: 100%;
     border-collapse: collapse;
     border: 1px solid $ssb-dark-5;
 
@@ -31,7 +31,7 @@
       text-align: left;
       
       .caption-text-wrapper {
-        // TODO: Mix-match of h3 and h4 styling
+        // h4 styling
         @include roboto;
         font-size: 1rem;
         font-weight: bold;
