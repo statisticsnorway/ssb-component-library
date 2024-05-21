@@ -46,6 +46,7 @@
     "@babel/eslint-parser": "~7.24.1",
     "@babel/preset-env": "~7.24.4",
     "@babel/preset-react": "~7.24.1",
+    "@babel/preset-typescript": "^7.24.1",
     "@rollup/plugin-babel": "~6.0.4",
     "@rollup/plugin-commonjs": "~25.0.7",
     "@rollup/plugin-node-resolve": "~15.2.3",
@@ -92,6 +93,7 @@
     "webpack-cli": "~5.1.4"
   },
   "dependencies": {
+    "@typescript-eslint/parser": "^7.10.0",
     "prismjs": "~1.29.0",
     "react-feather": "~2.0.10",
     "sass": "~1.75.0",

@@ -34,8 +34,7 @@ export const Default = () => (
 			tfoot={(
 				<tr>
 					<td colSpan="100%">
-						<sup>1</sup>&nbsp;
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
+						<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
 					</td>
 				</tr>
 			)}
@@ -77,8 +76,7 @@ export const TableExample = () => (
 			tfoot={(
 				<tr>
 					<td colSpan="100%">
-						<sup>1</sup>&nbsp;
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
+						<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
 					</td>
 				</tr>
 			)}
@@ -124,13 +122,32 @@ export const WithIndentation = () => (
 						<td>500</td>
 						<td>200</td>
 					</tr>
+					<tr>
+						<th className="sum">Total (with numbers)</th>
+						<td className="sum">1 000</td>
+						<td className="sum">2 000</td>
+					</tr>
+					<tr>
+						<th className="level1">First level</th>
+						<td>50</td>
+						<td>100</td>
+					</tr>
+					<tr>
+						<th className="level2">Second level</th>
+						<td>200</td>
+						<td>650</td>
+					</tr>
+					<tr>
+						<th className="level3">Third level</th>
+						<td>500</td>
+						<td>200</td>
+					</tr>
 				</>
 			)}
 			tfoot={(
 				<tr>
 					<td colSpan="100%">
-						<sup>1</sup>&nbsp;
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
+						<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
 					</td>
 				</tr>
 			)}

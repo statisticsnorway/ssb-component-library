@@ -1,119 +1,163 @@
 .ssb-table {
   width: 100%;
   overflow-x: auto;
+  border-collapse: collapse;
+  border: 1px solid $ssb-dark-5;
   
-  table {
-    width: 100%;
-    border-collapse: collapse;
+  caption, th, td {
     border: 1px solid $ssb-dark-5;
+  }
 
-    caption, th, td {
-      border: 1px solid $ssb-dark-5;
+  caption, td {
+    border-bottom: transparent;
+  }
+  
+  .caption-text-wrapper, tfoot td {   
+    padding: 1.75rem 1rem;
+    
+    @media #{$desktop} {
+      max-width: 780px;
     }
+  }
 
-    caption, td {
-      border-bottom: transparent;
-    }
-
-    .caption-text-wrapper, tfoot td {
-      padding: 1.75rem 1rem;
-
-      @media #{$desktop} {
-        max-width: 780px;
+  th, td {
+    padding: .5rem 2.5rem .5rem 1rem;
+  }
+  
+  thead, tbody {
+    th {
+      &.level1 {
+        padding-left: 1.75em;
+      }
+  
+      &.level2 {
+        padding-left: 2.50em;
+      }
+  
+      &.level3 {
+        padding-left: 3.25em;
       }
     }
+  }
 
+  thead, tbody tr.head { // TODO: Look over e.g. usage
     th, td {
-      padding: .5rem 2.5rem .5rem 1rem;
-    }
-    
-    thead, tbody {
-      th {
-        &.level1 {
-          padding-left: 1.75em;
-        }
-    
-        &.level2 {
-          padding-left: 2.50em;
-        }
-    
-        &.level3 {
-          padding-left: 3.25em;
-        }
-      }
+      text-align: right;
+      padding-left: 2.5rem;
+      padding-right: 1rem;
     }
 
-    thead, tbody tr.head { // TODO: Look over e.g. usage
-      th, td {
-        text-align: right;
-        padding-left: 2.5rem;
-        padding-right: 1rem;
-      }
+    th {
+      vertical-align: bottom;
 
-      th {
-        vertical-align: bottom;
-
-        &[colspan] {
-          text-align: center;
-        }
+      &[colspan] {
+        text-align: center;
       }
     }
+  }
 
-    caption {
-      text-align: left;
-      
+  caption {
+    text-align: left;
+
+    .caption-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      // h4 styling
       .caption-text-wrapper {
-        // h4 styling
         @include roboto;
         font-size: 1rem;
         font-weight: bold;
         line-height: 1.75rem;
       }
-    }
-  
-    thead {
-      border-bottom: 2px solid $ssb-dark-5;
-    }
 
-    tbody {      
-      td {
-        text-align: right;
-        padding-left: 2.5rem;
-        padding-right: 1rem;
-      }
+      .scoll-icons-wrapper {
+        display: grid;
+        grid-auto-flow: column;
+        grid-column-gap: 1.25em;
+        padding: 0 2.5em 0 1.5em; // padding-left with caption-text-wrapper padding-left is a total of 2.5em
 
-      th {
-        font-weight: normal;
-        border-bottom: transparent;
-
-        &:first-child, &.colspan {
-          text-align: left;
+        &.hide {
+          display: none !important;
         }
-      }
 
-      tr {
-        &:not(:first-child) {
-          th, td {
-            border-top-color: $ssb-dark-2;
+        .scroll-icon-left, .scroll-icon-right {
+          height: 32px; // icon height 
+          cursor: pointer;
+
+          &:focus, &:hover {
+            @include focus-ring;
+          }
+
+          &.disabled {
+            color: $ssb-dark-2;
+            cursor: default;
+          }
+
+          svg {
+            color: $ssb-green-4;
           }
         }
-  
-        &:nth-child(odd) {
-          background-color: $ssb-green-1;
-        }
-  
-        &:hover, &:nth-child(odd):hover {
-          background-color: $ssb-purple-1;
-        }
       }
 
-      .sum {
-        font-weight: bold;
+      @media #{$mobile} {
+        flex-direction: column-reverse;
+        align-items: start;
+
+        .caption-text-wrapper, .scoll-icons-wrapper {
+          padding-top: 1rem;
+        }
+
+        .scoll-icons-wrapper {
+          // TODO: Sticky and to the right
+        }
+      }
+    }
+  }
+
+  thead {
+    border-bottom: 2px solid $ssb-dark-5;
+  }
+
+  tbody {      
+    td {
+      text-align: right;
+      padding-left: 2.5rem;
+      padding-right: 1rem;
+    }
+
+    th {
+      font-weight: normal;
+      border-bottom: transparent;
+
+      &:first-child, &.colspan {
+        text-align: left;
       }
     }
 
-    tfoot {
-      border-top: 1px solid $ssb-dark-5;
+    tr {
+      &:not(:first-child) {
+        th, td {
+          border-top-color: $ssb-dark-2;
+        }
+      }
+
+      &:nth-child(odd) {
+        background-color: $ssb-green-1;
+      }
+
+      &:hover, &:nth-child(odd):hover {
+        background-color: $ssb-purple-1;
+      }
     }
+
+    .sum {
+      font-weight: bold;
+    }
+  }
+
+  tfoot {
+    border-top: 1px solid $ssb-dark-5;
   }
 }
