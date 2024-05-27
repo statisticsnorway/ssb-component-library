@@ -1,44 +1,52 @@
 import React from 'react';
 import Table from './index';
+import TableHead from '../TableHead';
+import TableBody from '../TableBody';
+import TableFooter from '../TableFooter';
+import TableRow from '../TableRow';
+import TableCell from '../TableCell';
 
 export default {
 	title: 'Table',
+	type: Table,
+	parameters: {
+		layout: 'fullscreen',
+	},
 };
 
 export const Default = () => (
-	<div style={{ width: '1400px' }}>
+	<div style={{ width: '120%' }}>
 		<Table
 			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
-			thead={(
-				<tr>
-					{/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-					<th>&nbsp;</th>
-					<th>Header</th>
-					<th>Header</th>
-				</tr>
-			)}
-			tbody={(
-				<>
-					<tr>
-						<th>Title</th>
-						<td>1 000</td>
-						<td>2 000</td>
-					</tr>
-					<tr>
-						<th>Title</th>
-						<td>50</td>
-						<td>100</td>
-					</tr>
-				</>
-			)}
-			tfoot={(
-				<tr>
-					<td colSpan="100%">
+			>
+			<TableHead>
+				<TableRow>
+					{/* eslint-disable-next-line jsx-a11y/conTableRowol-has-associated-label */}
+					<TableCell type="th">&nbsp;</TableCell>
+					<TableCell type="th">Header</TableCell>
+					<TableCell type="th">Header</TableCell>
+				</TableRow>
+			</TableHead>
+			<TableBody>
+				<TableRow>
+					<TableCell type="th">Title</TableCell>
+						<TableCell type="td">1 000</TableCell>
+						<TableCell type="td">2 000</TableCell>
+					</TableRow>
+					<TableRow>
+						<TableCell type="th">Title</TableCell>
+						<TableCell type="td">50</TableCell>
+						<TableCell type="td">100</TableCell>
+			</TableRow>
+			</TableBody>
+			<TableFooter>
+				<TableRow>
+					<TableCell type="td" colSpan={3}>
 						<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
-					</td>
-				</tr>
-			)}
-		/>
+					</TableCell>
+				</TableRow>
+			</TableFooter>
+		</Table>
 	</div>
 );
 
@@ -46,41 +54,38 @@ export const TableExample = () => (
 	<div style={{ width: '1400px' }}>
 		<Table
 			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
-			thead={(
-				<>
-					<tr>
-						{/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-						<th rowSpan={2}>&nbsp;</th>
-						<th colSpan={2}>Header 1</th>
-					</tr>
-					<tr>
-						<th>First level</th>
-						<th>First level</th>
-					</tr>
-				</>
-			)}
-			tbody={(
-				<>
-					<tr>
-						<th>Title</th>
-						<td>1 000</td>
-						<td>2 000</td>
-					</tr>
-					<tr>
-						<th>Title</th>
-						<td>50</td>
-						<td>100</td>
-					</tr>
-				</>
-			)}
-			tfoot={(
-				<tr>
-					<td colSpan="100%">
+			>
+			<TableHead>
+				<TableRow>
+					{/* eslint-disable-next-line jsx-a11y/conTableRowol-has-associated-label */}
+					<TableCell type="th" rowSpan={2}>&nbsp;</TableCell>
+					<TableCell type="th" colSpan={2}>Header 1</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th">First level</TableCell>
+					<TableCell type="th">First level</TableCell>
+				</TableRow>
+			</TableHead>
+			<TableBody>
+				<TableRow>
+					<TableCell type="th">Title</TableCell>
+					<TableCell type="td">1 000</TableCell>
+					<TableCell type="td">2 000</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th">Title</TableCell>
+					<TableCell type="td">50</TableCell>
+					<TableCell type="td">100</TableCell>
+				</TableRow>
+			</TableBody>
+			<TableFooter>
+				<TableRow>
+					<TableCell type="td" colSpan={3}>
 						<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
-					</td>
-				</tr>
-			)}
-		/>
+					</TableCell>
+				</TableRow>
+			</TableFooter>
+		</Table>
 	</div>
 );
 
@@ -88,70 +93,67 @@ export const WithIndentation = () => (
 	<div style={{ width: '1400px' }}>
 		<Table
 			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
-			thead={(
-				<>
-					<tr>
-						<th rowSpan={2}>2020</th>
-						<th colSpan={2}>Second level</th>
-					</tr>
-					<tr>
-						<th>First level</th>
-						<th>First level</th>
-					</tr>
-				</>
-			)}
-			tbody={(
-				<>
-					<tr>
-						<th className="sum">Total (with numbers)</th>
-						<td className="sum">1 000</td>
-						<td className="sum">2 000</td>
-					</tr>
-					<tr>
-						<th className="level1">First level</th>
-						<td>50</td>
-						<td>100</td>
-					</tr>
-					<tr>
-						<th className="level2">Second level</th>
-						<td>200</td>
-						<td>650</td>
-					</tr>
-					<tr>
-						<th className="level3">Third level</th>
-						<td>500</td>
-						<td>200</td>
-					</tr>
-					<tr>
-						<th className="sum">Total (with numbers)</th>
-						<td className="sum">1 000</td>
-						<td className="sum">2 000</td>
-					</tr>
-					<tr>
-						<th className="level1">First level</th>
-						<td>50</td>
-						<td>100</td>
-					</tr>
-					<tr>
-						<th className="level2">Second level</th>
-						<td>200</td>
-						<td>650</td>
-					</tr>
-					<tr>
-						<th className="level3">Third level</th>
-						<td>500</td>
-						<td>200</td>
-					</tr>
-				</>
-			)}
-			tfoot={(
-				<tr>
-					<td colSpan="100%">
+			>
+			<TableHead>
+				<TableRow>
+					<TableCell type="th" rowSpan={2}>2020</TableCell>
+					<TableCell type="th" colSpan={2}>Second level</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th">First level</TableCell>
+					<TableCell type="th">First level</TableCell>
+				</TableRow>
+			</TableHead>
+			<TableBody>
+				<TableRow>
+					<TableCell type="th">Total (with numbers)</TableCell>
+					<TableCell type="td">1 000</TableCell>
+					<TableCell type="td">2 000</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th" level={1}>First level</TableCell>
+					<TableCell type="td">50</TableCell>
+					<TableCell type="td">100</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th" level={2}>Second level</TableCell>
+					<TableCell type="td">200</TableCell>
+					<TableCell type="td">650</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th" level={3}>Third level</TableCell>
+					<TableCell type="td">500</TableCell>
+					<TableCell type="td">200</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th">Total (with numbers)</TableCell>
+					<TableCell type="td">1 000</TableCell>
+					<TableCell type="td">2 000</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th" level={1}>First level</TableCell>
+					<TableCell type="td">50</TableCell>
+					<TableCell type="td">100</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th" level={2}>Second level</TableCell>
+					<TableCell type="td">200</TableCell>
+					<TableCell type="td">650</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th" level={3}>Third level</TableCell>
+					<TableCell type="td">500</TableCell>
+					<TableCell type="td">200</TableCell>
+				</TableRow>
+			</TableBody>
+			<TableFooter>
+				<TableRow>
+					<TableCell type="td" colSpan={3}>
 						<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
-					</td>
-				</tr>
-			)}
-		/>
+					</TableCell>
+				</TableRow>
+			</TableFooter>
+		</Table>
 	</div>
 );
 
@@ -159,28 +161,27 @@ export const NoFooter = () => (
 	<div style={{ width: '1400px' }}>
 		<Table
 			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
-			thead={(
-				<tr>
-					{/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-					<th>&nbsp;</th>
-					<th>Header</th>
-					<th>Header</th>
-				</tr>
-			)}
-			tbody={(
-				<>
-					<tr>
-						<th>Title</th>
-						<td>1 000</td>
-						<td>2 000</td>
-					</tr>
-					<tr>
-						<th>Title</th>
-						<td>50</td>
-						<td>100</td>
-					</tr>
-				</>
-			)}
-		/>
+			>
+			<TableHead>
+				<TableRow>
+					{/* eslint-disable-next-line jsx-a11y/conTableRowol-has-associated-label */}
+					<TableCell type="th">&nbsp;</TableCell>
+					<TableCell type="th">Header</TableCell>
+					<TableCell type="th">Header</TableCell>
+				</TableRow>
+			</TableHead>
+			<TableBody>
+				<TableRow>
+					<TableCell type="th">Title</TableCell>
+					<TableCell type="td">1 000</TableCell>
+					<TableCell type="td">2 000</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="th">Title</TableCell>
+					<TableCell type="td">50</TableCell>
+					<TableCell type="td">100</TableCell>
+				</TableRow>
+			</TableBody>
+		</Table>
 	</div>
 );

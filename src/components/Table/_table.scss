@@ -21,7 +21,7 @@
   }
 
   th, td {
-    padding: .5rem 2.5rem .5rem 1rem;
+    padding: .5rem 1rem;
   }
   
   thead, tbody {
@@ -40,11 +40,9 @@
     }
   }
 
-  thead, tbody tr.head { // TODO: Look over e.g. usage
+  thead, tbody tr.head {
     th, td {
       text-align: right;
-      padding-left: 2.5rem;
-      padding-right: 1rem;
     }
 
     th {
@@ -78,13 +76,17 @@
         grid-column-gap: 1.25em;
         padding: 0 2.5em 0 1.5em; // padding-left with caption-text-wrapper padding-left is a total of 2.5em
 
-        &.hide {
-          display: none !important;
-        }
-
         .scroll-icon-left, .scroll-icon-right {
           height: 32px; // icon height 
+
+          // remove default styling for button
+          background: none;
+          color: inherit;
+          border: none;
+          padding: 0;
+          font: inherit;
           cursor: pointer;
+          outline: inherit;
 
           &:focus, &:hover {
             @include focus-ring;
@@ -123,8 +125,6 @@
   tbody {      
     td {
       text-align: right;
-      padding-left: 2.5rem;
-      padding-right: 1rem;
     }
 
     th {
@@ -151,13 +151,21 @@
         background-color: $ssb-purple-1;
       }
     }
-
-    .sum {
-      font-weight: bold;
-    }
   }
-
+  
   tfoot {
     border-top: 1px solid $ssb-dark-5;
+  }
+  
+  .align-right {
+    text-align: right;
+  }
+
+  .align-left {
+    text-align: left;
+  }
+  
+  .align-center {
+    text-align: center;
   }
 }
