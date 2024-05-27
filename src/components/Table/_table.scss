@@ -42,15 +42,14 @@
 
   thead, tbody tr.head {
     th, td {
-      text-align: right;
+      text-align: left;
     }
 
     th {
-      vertical-align: bottom;
-
       &[colspan] {
         text-align: center;
       }
+      vertical-align: bottom;
     }
   }
 
@@ -122,18 +121,11 @@
     border-bottom: 2px solid $ssb-dark-5;
   }
 
-  tbody {      
-    td {
-      text-align: right;
-    }
-
+  tbody {
     th {
+      text-align: left;
       font-weight: normal;
       border-bottom: transparent;
-
-      &:first-child, &.colspan {
-        text-align: left;
-      }
     }
 
     tr {
@@ -156,7 +148,7 @@
   tfoot {
     border-top: 1px solid $ssb-dark-5;
   }
-  
+
   .align-right {
     text-align: right;
   }
@@ -167,5 +159,25 @@
   
   .align-center {
     text-align: center;
+  }
+}
+
+.ssb-table.statistics {
+  thead, tbody tr.head {
+    th:not([colspan]), td {
+      text-align: right;
+    }
+  }
+
+  tbody {
+    th {
+      &:first-child, &.colspan {
+        text-align: left;
+      }
+    }
+
+    td {
+      text-align: right;
+    }
   }
 }

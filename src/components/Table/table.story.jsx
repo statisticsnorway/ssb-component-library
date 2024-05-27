@@ -93,6 +93,7 @@ export const WithIndentation = () => (
 	<div style={{ width: '1400px' }}>
 		<Table
 			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
+			statistics
 			>
 			<TableHead>
 				<TableRow>

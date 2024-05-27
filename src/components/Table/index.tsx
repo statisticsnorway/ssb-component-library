@@ -8,6 +8,7 @@ interface TableProps {
 	tabIndex?: number,
 	ariaLabelScrollLeftIcon?: string,
 	ariaLabelScrollRightIcon?: string,
+	statistics?: boolean,
 };
 
 const Table = forwardRef(({
@@ -16,13 +17,15 @@ const Table = forwardRef(({
 	children,
 	tabIndex,
 	ariaLabelScrollLeftIcon,
-	ariaLabelScrollRightIcon }: TableProps, ref) => {
+	ariaLabelScrollRightIcon,
+	statistics
+	}: TableProps, ref) => {
 	const [prevClientWidth, setPrevClientWidth] = useState(0)
 	const [hideScrollIcons, setHideScrollIcons] = useState(false)
 	const [disableLeftScrollIcon, setDisableLeftScrollIcon] = useState(false)
 	const [disableRightScrollIcon, setDisableRightScrollIcon] = useState(false)
 
-	const tableContainerRef = useRef<HTMLDivElement>(null)
+	const tableWrapperRef = useRef<HTMLDivElement>(null)
 	const captionRef = useRef<HTMLTableCaptionElement>(null)
 	const tableControlsRef = useRef<HTMLDivElement>(null)
 
@@ -40,22 +43,22 @@ const Table = forwardRef(({
 	}, []);
 
 	const widthCheck = () => {
-		if (tableContainerRef.current?.clientWidth !== prevClientWidth) {
-      setPrevClientWidth(tableContainerRef.current!.clientWidth)
+		if (tableWrapperRef.current?.clientWidth !== prevClientWidth) {
+      setPrevClientWidth(tableWrapperRef.current!.clientWidth)
       updateTableControlsDesktop()
     }
 	};
 
 	const updateTableControlsDesktop = () => {
     if (
-      !tableContainerRef.current ||
+      !tableWrapperRef.current ||
       !tableControlsRef.current ||
       !captionRef.current
     )
     return
 
     const controls = tableControlsRef.current
-    const tableWrapper = tableContainerRef.current
+    const tableWrapper = tableWrapperRef.current
     const left = controls.children.item(0)! as HTMLElement
     const right = controls.children.item(1)! as HTMLElement
 
@@ -87,17 +90,17 @@ const Table = forwardRef(({
   }; 
 
 	const scrollLeft = () => {
-		tableContainerRef.current!.scrollLeft -= 100
+		tableWrapperRef.current!.scrollLeft -= 100
 		updateTableControlsDesktop()
 	};
 	const scrollRight = () => {
-		tableContainerRef.current!.scrollLeft += 100
+		tableWrapperRef.current!.scrollLeft += 100
 		updateTableControlsDesktop()
 	};
 
 	return (
-		<div className="ssb-table-container" ref={tableContainerRef}>
-			<table className={`ssb-table ${className ?? ''}`} onScroll={updateTableControlsDesktop} ref={ref}>
+		<div className="ssb-table-wrapper" onScroll={updateTableControlsDesktop} ref={tableWrapperRef}>
+			<table className={`ssb-table${statistics ? ' statistics' : ''}${className ? ` ${className}` : ''}`} ref={ref}>
 				{caption && (
 					<caption ref={captionRef}>
 						<div className="caption-wrapper">
