@@ -16,13 +16,10 @@ export default {
 
 export const Default = () => (
 	<div style={{ width: '120%' }}>
-		<Table
-			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
-			>
+		<Table>
 			<TableHead>
 				<TableRow>
-					{/* eslint-disable-next-line jsx-a11y/conTableRowol-has-associated-label */}
-					<TableCell type="th">&nbsp;</TableCell>
+					<TableCell type="th">Header</TableCell>
 					<TableCell type="th">Header</TableCell>
 					<TableCell type="th">Header</TableCell>
 				</TableRow>
@@ -30,66 +27,20 @@ export const Default = () => (
 			<TableBody>
 				<TableRow>
 					<TableCell type="th">Title</TableCell>
-						<TableCell type="td">1 000</TableCell>
-						<TableCell type="td">2 000</TableCell>
+						<TableCell type="td">Value</TableCell>
+						<TableCell type="td">Value</TableCell>
 					</TableRow>
 					<TableRow>
 						<TableCell type="th">Title</TableCell>
-						<TableCell type="td">50</TableCell>
-						<TableCell type="td">100</TableCell>
+						<TableCell type="td">Value</TableCell>
+						<TableCell type="td">Value</TableCell>
 			</TableRow>
 			</TableBody>
-			<TableFooter>
-				<TableRow>
-					<TableCell type="td" colSpan={3}>
-						<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
-					</TableCell>
-				</TableRow>
-			</TableFooter>
 		</Table>
 	</div>
 );
 
-export const TableExample = () => (
-	<div style={{ width: '1400px' }}>
-		<Table
-			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
-			>
-			<TableHead>
-				<TableRow>
-					{/* eslint-disable-next-line jsx-a11y/conTableRowol-has-associated-label */}
-					<TableCell type="th" rowSpan={2}>&nbsp;</TableCell>
-					<TableCell type="th" colSpan={2}>Header 1</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell type="th">First level</TableCell>
-					<TableCell type="th">First level</TableCell>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell type="th">Title</TableCell>
-					<TableCell type="td">1 000</TableCell>
-					<TableCell type="td">2 000</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell type="th">Title</TableCell>
-					<TableCell type="td">50</TableCell>
-					<TableCell type="td">100</TableCell>
-				</TableRow>
-			</TableBody>
-			<TableFooter>
-				<TableRow>
-					<TableCell type="td" colSpan={3}>
-						<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
-					</TableCell>
-				</TableRow>
-			</TableFooter>
-		</Table>
-	</div>
-);
-
-export const WithIndentation = () => (
+export const Statistics = () => (
 	<div style={{ width: '1400px' }}>
 		<Table
 			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
@@ -154,35 +105,6 @@ export const WithIndentation = () => (
 					</TableCell>
 				</TableRow>
 			</TableFooter>
-		</Table>
-	</div>
-);
-
-export const NoFooter = () => (
-	<div style={{ width: '1400px' }}>
-		<Table
-			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
-			>
-			<TableHead>
-				<TableRow>
-					{/* eslint-disable-next-line jsx-a11y/conTableRowol-has-associated-label */}
-					<TableCell type="th">&nbsp;</TableCell>
-					<TableCell type="th">Header</TableCell>
-					<TableCell type="th">Header</TableCell>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				<TableRow>
-					<TableCell type="th">Title</TableCell>
-					<TableCell type="td">1 000</TableCell>
-					<TableCell type="td">2 000</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell type="th">Title</TableCell>
-					<TableCell type="td">50</TableCell>
-					<TableCell type="td">100</TableCell>
-				</TableRow>
-			</TableBody>
 		</Table>
 	</div>
 );
