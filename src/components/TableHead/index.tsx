@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const TableHead = ({ className, children }) => <thead className={className}>{children}</thead>;
+interface TableHead {
+  className?: string,
+  children:  ReactNode
+}
+
+const TableHead = ({ className, children }: TableHead) => <thead className={className}>{children}</thead>;
 
 export default TableHead;

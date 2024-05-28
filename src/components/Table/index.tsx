@@ -11,7 +11,7 @@ interface TableProps {
 	statistics?: boolean,
 };
 
-const Table = forwardRef(({
+const Table = forwardRef<HTMLTableElement, TableProps>(({
 	className,
 	caption,
 	children,
@@ -19,7 +19,7 @@ const Table = forwardRef(({
 	ariaLabelScrollLeftIcon,
 	ariaLabelScrollRightIcon,
 	statistics
-	}: TableProps, ref) => {
+	}, ref) => {
 	const [prevClientWidth, setPrevClientWidth] = useState(0)
 	const [hideScrollIcons, setHideScrollIcons] = useState(false)
 	const [disableLeftScrollIcon, setDisableLeftScrollIcon] = useState(false)
@@ -110,10 +110,10 @@ const Table = forwardRef(({
 							{hideScrollIcons && (
 								<div className="scoll-icons-wrapper" ref={tableControlsRef}>
 									<button className={`scroll-icon-left${disableLeftScrollIcon ? ' disabled' : ''}`} aria-label={ariaLabelScrollLeftIcon} tabIndex={tabIndex} onClick={scrollLeft}>
-										<ArrowLeftCircle size={32} />
+										<ArrowLeftCircle size={32} aria-hidden="true" />
 									</button>
 									<button className={`scroll-icon-right${disableRightScrollIcon ? ' disabled' : ''}`} aria-label={ariaLabelScrollRightIcon} tabIndex={tabIndex} onClick={scrollRight}>
-										<ArrowRightCircle size={32} />
+										<ArrowRightCircle size={32} aria-hidden="true" />
 									</button>
 								</div>
 						)}

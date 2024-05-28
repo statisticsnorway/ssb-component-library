@@ -15,25 +15,25 @@ export default {
 };
 
 export const Default = () => (
-	<div style={{ width: '120%' }}>
+	<div style={{ padding: '4rem' }}>
 		<Table>
 			<TableHead>
 				<TableRow>
 					<TableCell type="th">Header</TableCell>
-					<TableCell type="th">Header</TableCell>
-					<TableCell type="th">Header</TableCell>
+					<TableCell type="th" align="right">Header</TableCell>
+					<TableCell type="th"></TableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
 				<TableRow>
-					<TableCell type="th">Title</TableCell>
-						<TableCell type="td">Value</TableCell>
-						<TableCell type="td">Value</TableCell>
+					<TableCell type="td">Example</TableCell>
+					<TableCell type="td" align="right">1000</TableCell>
+					<TableCell type="td" align="center">Center</TableCell>
 					</TableRow>
-					<TableRow>
-						<TableCell type="th">Title</TableCell>
-						<TableCell type="td">Value</TableCell>
-						<TableCell type="td">Value</TableCell>
+				<TableRow>
+					<TableCell type="td">Example</TableCell>
+					<TableCell type="td" align="right">500</TableCell>
+					<TableCell type="td" align="center">Center</TableCell>
 			</TableRow>
 			</TableBody>
 		</Table>
@@ -41,7 +41,7 @@ export const Default = () => (
 );
 
 export const Statistics = () => (
-	<div style={{ width: '1400px' }}>
+	<div style={{ width: '1400px', padding: '4rem' }}>
 		<Table
 			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
 			statistics
@@ -58,9 +58,9 @@ export const Statistics = () => (
 			</TableHead>
 			<TableBody>
 				<TableRow>
-					<TableCell type="th">Total (with numbers)</TableCell>
-					<TableCell type="td">1 000</TableCell>
-					<TableCell type="td">2 000</TableCell>
+					<TableCell type="th" className="sum">Total (with numbers)</TableCell>
+					<TableCell type="td" className="sum">1 000</TableCell>
+					<TableCell type="td" className="sum">2 000</TableCell>
 				</TableRow>
 				<TableRow>
 					<TableCell type="th" level={1}>First level</TableCell>
@@ -78,9 +78,9 @@ export const Statistics = () => (
 					<TableCell type="td">200</TableCell>
 				</TableRow>
 				<TableRow>
-					<TableCell type="th">Total (with numbers)</TableCell>
-					<TableCell type="td">1 000</TableCell>
-					<TableCell type="td">2 000</TableCell>
+					<TableCell type="th" className="sum">Total (with numbers)</TableCell>
+					<TableCell type="td" className="sum">1 000</TableCell>
+					<TableCell type="td" className="sum">2 000</TableCell>
 				</TableRow>
 				<TableRow>
 					<TableCell type="th" level={1}>First level</TableCell>

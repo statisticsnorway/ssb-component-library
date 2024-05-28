@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const TableRow = ({ className, children }) => <tr className={className}>{children}</tr>;
+interface TableRowProps {
+  className?: string,
+  children:  ReactNode
+};
+
+const TableRow = ({ className, children }: TableRowProps) => <tr className={className}>{children}</tr>;
 
 export default TableRow;

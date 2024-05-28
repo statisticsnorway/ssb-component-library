@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const TableBody = ({ className, children }) => <tbody className={className}>{children}</tbody>;
+interface TableBodyProps {
+  className?: string,
+  children:  ReactNode
+};
+
+const TableBody = ({ className, children }: TableBodyProps) => <tbody className={className}>{children}</tbody>;
 
 export default TableBody;

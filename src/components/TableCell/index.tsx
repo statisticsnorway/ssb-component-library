@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from 'react';
 
 interface TableCellProps {
   type: 'th' | 'td',
@@ -10,7 +10,7 @@ interface TableCellProps {
   align?: 'left' | 'center' | 'right',
   level?: '1' | '2' | '3'
   headers?: string,
-}
+};
 
 const TableCell = ({ className, children, type, rowSpan, colSpan, scope, headers, align, level }: TableCellProps) => {
   const tableCellProps = {
@@ -25,8 +25,4 @@ const TableCell = ({ className, children, type, rowSpan, colSpan, scope, headers
   if (type === 'td') return <td {...tableCellProps}>{children}</td>
 };
 
-TableCell.defaultProps = {
-  type: 'td',
-}
-
-export default TableCell
+export default TableCell;

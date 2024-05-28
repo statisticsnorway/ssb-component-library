@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const TableFooter = ({ className, children }) => <tfoot className={className}>{children}</tfoot>;
+interface TableFooterProps {
+  className?: string,
+  children:  ReactNode
+};
+
+const TableFooter = ({ className, children }: TableFooterProps) => <tfoot className={className}>{children}</tfoot>;
 
 export default TableFooter;
