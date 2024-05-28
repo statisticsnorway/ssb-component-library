@@ -43,54 +43,54 @@ export const Statistics = () => (
 			>
 			<TableHead>
 				<TableRow>
-					<TableCell type="th" rowSpan={2}>2020</TableCell>
+					<TableCell type="th" rowSpan={2} align="right">2020</TableCell>
 					<TableCell type="th" colSpan={2}>Second level</TableCell>
 				</TableRow>
 				<TableRow>
-					<TableCell type="th">First level</TableCell>
-					<TableCell type="th">First level</TableCell>
+					<TableCell type="th" align="right">First level</TableCell>
+					<TableCell type="th" align="right">First level</TableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
 				<TableRow>
-					<TableCell type="th" className="sum">Total (with numbers)</TableCell>
-					<TableCell type="td" className="sum">1 000</TableCell>
-					<TableCell type="td" className="sum">2 000</TableCell>
+					<TableCell type="th">Total (with numbers)</TableCell>
+					<TableCell type="td" align="right">1 000</TableCell>
+					<TableCell type="td" align="right">2 000</TableCell>
 				</TableRow>
 				<TableRow>
 					<TableCell type="th" level={1}>First level</TableCell>
-					<TableCell type="td">50</TableCell>
-					<TableCell type="td">100</TableCell>
+					<TableCell type="td" align="right">50</TableCell>
+					<TableCell type="td" align="right">100</TableCell>
 				</TableRow>
 				<TableRow>
 					<TableCell type="th" level={2}>Second level</TableCell>
-					<TableCell type="td">200</TableCell>
-					<TableCell type="td">650</TableCell>
+					<TableCell type="td" align="right">200</TableCell>
+					<TableCell type="td" align="right">650</TableCell>
 				</TableRow>
 				<TableRow>
 					<TableCell type="th" level={3}>Third level</TableCell>
-					<TableCell type="td">500</TableCell>
-					<TableCell type="td">200</TableCell>
+					<TableCell type="td" align="right">500</TableCell>
+					<TableCell type="td" align="right">200</TableCell>
 				</TableRow>
 				<TableRow>
-					<TableCell type="th" className="sum">Total (with numbers)</TableCell>
-					<TableCell type="td" className="sum">1 000</TableCell>
-					<TableCell type="td" className="sum">2 000</TableCell>
+					<TableCell type="th">Total (with numbers)</TableCell>
+					<TableCell type="td" align="right">1 000</TableCell>
+					<TableCell type="td" align="right">2 000</TableCell>
 				</TableRow>
 				<TableRow>
 					<TableCell type="th" level={1}>First level</TableCell>
-					<TableCell type="td">50</TableCell>
-					<TableCell type="td">100</TableCell>
+					<TableCell type="td" align="right">50</TableCell>
+					<TableCell type="td" align="right">100</TableCell>
 				</TableRow>
 				<TableRow>
 					<TableCell type="th" level={2}>Second level</TableCell>
-					<TableCell type="td">200</TableCell>
-					<TableCell type="td">650</TableCell>
+					<TableCell type="td" align="right">200</TableCell>
+					<TableCell type="td" align="right">650</TableCell>
 				</TableRow>
 				<TableRow>
 					<TableCell type="th" level={3}>Third level</TableCell>
-					<TableCell type="td">500</TableCell>
-					<TableCell type="td">200</TableCell>
+					<TableCell type="td" align="right">500</TableCell>
+					<TableCell type="td" align="right">200</TableCell>
 				</TableRow>
 			</TableBody>
 			<TableFooter>
