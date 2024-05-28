@@ -1,10 +1,5 @@
 import React from 'react';
-import Table from './index';
-import TableHead from '../TableHead';
-import TableBody from '../TableBody';
-import TableFooter from '../TableFooter';
-import TableRow from '../TableRow';
-import TableCell from '../TableCell';
+import Table, { TableHead, TableBody, TableFooter, TableRow, TableCell } from './index';
 
 export default {
 	title: 'Table',
@@ -26,14 +21,14 @@ export const Default = () => (
 			</TableHead>
 			<TableBody>
 				<TableRow>
-					<TableCell type="td">Example</TableCell>
-					<TableCell type="td" align="right">1000</TableCell>
-					<TableCell type="td" align="center">Center</TableCell>
+					<TableCell>Example</TableCell>
+					<TableCell align="right">1000</TableCell>
+					<TableCell align="center">Center</TableCell>
 					</TableRow>
 				<TableRow>
-					<TableCell type="td">Example</TableCell>
-					<TableCell type="td" align="right">500</TableCell>
-					<TableCell type="td" align="center">Center</TableCell>
+					<TableCell>Example</TableCell>
+					<TableCell align="right">500</TableCell>
+					<TableCell align="center">Center</TableCell>
 			</TableRow>
 			</TableBody>
 		</Table>

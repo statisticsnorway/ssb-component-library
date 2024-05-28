@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef, useState, useEffect, ReactNode } from 'react';
 import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather';
 
-interface TableProps {
+export interface TableProps {
 	className?: string,
 	caption?: string,
 	children: ReactNode,
@@ -10,6 +10,48 @@ interface TableProps {
 	ariaLabelScrollRightIcon?: string,
 	statistics?: boolean,
 };
+
+interface TableCellProps {
+  type?: 'th' | 'td',
+  className?: string,
+  children: ReactNode,
+  rowSpan?: number,
+  colSpan?: number,
+  headers?: string,
+  scope?: 'col' | 'colgroup' | 'row' | 'rowgroup',
+  align?: 'left' | 'center' | 'right',
+  level?: '1' | '2' | '3'
+};
+
+interface TableElementProps {
+	className?: string,
+  children:  ReactNode
+}
+
+export const TableHead = ({ className, children }: TableElementProps) => <thead className={className}>{children}</thead>;
+
+export const TableBody = ({ className, children }: TableElementProps) => <tbody className={className}>{children}</tbody>;
+
+export const TableFooter = ({ className, children }: TableElementProps) => <tfoot className={className}>{children}</tfoot>;
+
+export const TableRow = ({ className, children }: TableElementProps) => <tr className={className}>{children}</tr>;
+
+export const TableCell = ({ className, children, type, rowSpan, colSpan, scope, headers, align, level }: TableCellProps) => {
+  const tableCellProps = {
+    className: `${className ?? ''}${level ? ` level${level}`: ''}${align ? ` align-${align}` : ''}`,
+    rowSpan,
+    colSpan,
+    scope,
+    headers
+  }
+
+  if (type === 'th') return <th {...tableCellProps}>{children}</th>
+  if (type === 'td') return <td {...tableCellProps}>{children}</td>
+};
+
+TableCell.defaultProps = {
+  type: 'td'
+}
 
 const Table = forwardRef<HTMLTableElement, TableProps>(({
 	className,
