@@ -47,7 +47,7 @@ export const Statistics = () => (
 				</TableRow>
 				<TableRow>
 					<TableCell type="th" align="right">First level</TableCell>
-					<TableCell type="th" align="right">First level</TableCell>
+					<TableCell type="th" align="right">First level<sup>1</sup></TableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
