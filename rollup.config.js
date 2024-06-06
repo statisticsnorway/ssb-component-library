@@ -39,6 +39,8 @@ export default [{
 			extensions: ['js', '.jsx', '.tsx', '.ts'],
 		}),
 		terser(),
-		typescript(),
+		typescript({
+			tsconfig: "./tsconfig.json"
+		}),
 	],
 }];
