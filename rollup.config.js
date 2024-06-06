@@ -39,8 +39,6 @@ export default [{
 			extensions: ['js', '.jsx', '.tsx', '.ts'],
 		}),
 		terser(),
-		typescript({
-			jsx: 'React'
-		})
+		typescript(),
 	],
 }];

@@ -16,7 +16,7 @@ export const Default = () => (
 				<TableRow>
 					<TableCell type="th">Header</TableCell>
 					<TableCell type="th" align="right">Header</TableCell>
-					<TableCell type="th"></TableCell>
+					<TableCell type="th" />
 				</TableRow>
 			</TableHead>
 			<TableBody>
@@ -24,12 +24,12 @@ export const Default = () => (
 					<TableCell>Example</TableCell>
 					<TableCell align="right">1000</TableCell>
 					<TableCell align="center">Center</TableCell>
-					</TableRow>
+				</TableRow>
 				<TableRow>
 					<TableCell>Example</TableCell>
 					<TableCell align="right">500</TableCell>
 					<TableCell align="center">Center</TableCell>
-			</TableRow>
+				</TableRow>
 			</TableBody>
 		</Table>
 	</div>
@@ -39,7 +39,7 @@ export const Statistics = () => (
 	<div style={{ width: '1400px', padding: '4rem' }}>
 		<Table
 			caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit."
-			>
+		>
 			<TableHead>
 				<TableRow>
 					<TableCell type="th" rowSpan={2} align="right">2020</TableCell>

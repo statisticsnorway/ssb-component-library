@@ -2,13 +2,13 @@ import React, { forwardRef, ReactNode } from 'react';
 
 interface TableElementProps {
 	className?: string,
-  children:  ReactNode
+  children: ReactNode
 }
 
 export interface TableProps extends TableElementProps {
 	caption?: string,
 	dataNoteRefs?: string,
-};
+}
 
 interface TableCellProps {
 	className?: string,
@@ -20,7 +20,7 @@ interface TableCellProps {
 	align?: 'left' | 'center' | 'right',
 	indentationLevel?: '1' | '2' | '3'
 	children?: ReactNode | string | number,
-};
+}
 
 export const TableHead = forwardRef<HTMLTableSectionElement, TableElementProps>(({ className, children }, ref) => <thead className={className} ref={ref}>{children}</thead>);
 
@@ -31,45 +31,63 @@ export const TableFooter = forwardRef<HTMLTableSectionElement, TableElementProps
 export const TableRow = forwardRef<HTMLTableRowElement, TableElementProps>(({ className, children }, ref) => <tr className={className} ref={ref}>{children}</tr>);
 
 export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(({ className, children, type, rowSpan, colSpan, scope, headers, align, indentationLevel }, ref) => {
-	const tableCellProps: TableCellProps = {
-    className: `${className ?? ''}${indentationLevel ? ` level${indentationLevel}`: ''}${align ? ` align-${align}` : ''}`,
-    rowSpan,
-    colSpan,
-    scope,
-    headers,
-  };
+	const tableCellClasses: string = `${className ?? ''}${indentationLevel ? ` level${indentationLevel}` : ''}${align ? ` align-${align}` : ''}`;
 
-  if (type === 'th') return <th {...tableCellProps} ref={ref}>{children}</th>
-  if (type === 'td') return <td {...tableCellProps} ref={ref}>{children}</td>
+	if (type === 'th') {
+		return (
+			<th
+				className={tableCellClasses}
+				colSpan={colSpan}
+				rowSpan={rowSpan}
+				scope={scope}
+				headers={headers}
+				ref={ref}
+			>
+				{children}
+			</th>
+		);
+	}
+
+	if (type === 'td') {
+		return (
+			<td
+				className={tableCellClasses}
+				colSpan={colSpan}
+				rowSpan={rowSpan}
+				headers={headers}
+				ref={ref}
+			>
+				{children}
+			</td>
+		);
+	}
+	return undefined;
 });
 
 TableCell.defaultProps = {
-  type: "td"
-}
+	type: 'td',
+};
 
 const Table = forwardRef<HTMLTableElement, TableProps>(({
 	className,
 	caption,
 	dataNoteRefs,
 	children,
-	}, ref) => {
-
-	return (
-		<div className="ssb-table-wrapper">
-			<table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
-				{caption && (
-					<caption data-noterefs={dataNoteRefs}>
-						<div className="caption-wrapper">
-							<div className="caption-text-wrapper">
-								{caption}
-							</div>
+}, ref) => (
+	<div className="ssb-table-wrapper">
+		<table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
+			{caption && (
+				<caption data-noterefs={dataNoteRefs}>
+					<div className="caption-wrapper">
+						<div className="caption-text-wrapper">
+							{caption}
 						</div>
-					</caption>
-				)}
-				{children}
-			</table>
-		</div>
-	);
-});
+					</div>
+				</caption>
+			)}
+			{children}
+		</table>
+	</div>
+));
 
 export default Table;

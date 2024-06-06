@@ -11,7 +11,9 @@
       {
         "extensions": [
           ".js",
-          ".jsx"
+          ".jsx",
+          ".ts",
+          ".tsx"
         ],
         "root": [
           "./src"
