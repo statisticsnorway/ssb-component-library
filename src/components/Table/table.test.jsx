@@ -9,20 +9,20 @@ describe('Table component', () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell type="th">Header</TableCell>
-                <TableCell type="th" align="right">Header</TableCell>
+                <TableCell type="th">Header 1</TableCell>
+                <TableCell type="th" align="right">Header 2</TableCell>
                 <TableCell type="th"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell>Example</TableCell>
-                <TableCell align="right">1000</TableCell>
+                <TableCell>Left</TableCell>
+                <TableCell align="right">Right</TableCell>
                 <TableCell align="center">Center</TableCell>
                 </TableRow>
               <TableRow>
-                <TableCell>Example</TableCell>
-                <TableCell align="right">500</TableCell>
+                <TableCell>Left</TableCell>
+                <TableCell align="right">Right</TableCell>
                 <TableCell align="center">Center</TableCell>
             </TableRow>
             </TableBody>
