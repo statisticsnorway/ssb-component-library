@@ -93,6 +93,7 @@
     "webpack-cli": "~5.1.4"
   },
   "dependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
     "@typescript-eslint/parser": "^7.10.0",
     "prismjs": "~1.29.0",
     "react-feather": "~2.0.10",
