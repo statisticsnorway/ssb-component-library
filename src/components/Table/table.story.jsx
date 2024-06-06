@@ -57,17 +57,17 @@ export const Statistics = () => (
 					<TableCell type="td" align="right">2 000</TableCell>
 				</TableRow>
 				<TableRow>
-					<TableCell type="th" level={1}>First level</TableCell>
+					<TableCell type="th" indentationLevel={1}>First level</TableCell>
 					<TableCell type="td" align="right">50</TableCell>
 					<TableCell type="td" align="right">100</TableCell>
 				</TableRow>
 				<TableRow>
-					<TableCell type="th" level={2}>Second level</TableCell>
+					<TableCell type="th" indentationLevel={2}>Second level</TableCell>
 					<TableCell type="td" align="right">200</TableCell>
 					<TableCell type="td" align="right">650</TableCell>
 				</TableRow>
 				<TableRow>
-					<TableCell type="th" level={3}>Third level</TableCell>
+					<TableCell type="th" indentationLevel={3}>Third level</TableCell>
 					<TableCell type="td" align="right">500</TableCell>
 					<TableCell type="td" align="right">200</TableCell>
 				</TableRow>

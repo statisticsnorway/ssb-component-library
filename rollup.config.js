@@ -5,7 +5,6 @@ import replace from '@rollup/plugin-replace';
 import scss from 'rollup-plugin-scss';
 import svgr from '@svgr/rollup';
 import terser from '@rollup/plugin-terser';
-import typescript from '@rollup/plugin-typescript';
 
 const NODE_ENV = process.env.ENV || 'development';
 
@@ -39,8 +38,5 @@ export default [{
 			extensions: ['js', '.jsx', '.tsx', '.ts'],
 		}),
 		terser(),
-		typescript({
-			jsx: "react"
-		}),
 	],
 }];

@@ -105,4 +105,4 @@ Available props:
 | headers | string | id attributes that provide the headers for the cell |
 | scope | 'col', 'colgroup', 'row', or 'rowgroup' | Define the cells that the table cell element relates to |
 | align | 'left', 'center', or 'right' ||
-| level | '1', '2', or '3' | Add indentation to cell value |
+| indentationLevel | '1', '2', or '3' | Add indentation to cell value |
