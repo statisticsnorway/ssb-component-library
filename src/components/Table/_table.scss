@@ -7,7 +7,6 @@
   .ssb-table {
     @include roboto;
     line-height: 1.75rem;
-    
     width: 100%;
     border-collapse: collapse;
     border: 1px solid variables.$ssb-dark-5;
@@ -34,6 +33,7 @@
     }
     
     thead, tbody {
+
       th {
         vertical-align: bottom;
 
@@ -117,13 +117,16 @@
     }
   
     tbody {
+
       th {
         font-weight: normal;
         border-bottom: transparent;
       }
 
       tr {
+
         &:not(:first-child) {
+
           th, td {
             border-top-color: variables.$ssb-dark-2;
           }
