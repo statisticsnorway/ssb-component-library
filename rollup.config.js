@@ -23,7 +23,7 @@ export default [{
 		scss({ fileName: 'bundle.css' }),
 		svgr(),
 		nodeResolve({
-			extension: ['.jsx', '.js'],
+			extension: ['.jsx', '.js', '.tsx'],
 		}),
 		replace({
 			'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
@@ -35,7 +35,7 @@ export default [{
 		}),
 		commonjs({
 			include: ['node_modules/**'],
-			extensions: ['js', '.jsx'],
+			extensions: ['js', '.jsx', '.tsx'],
 		}),
 		terser(),
 	],
