@@ -21,7 +21,7 @@
       }
     ],
     ["prismjs", {
-      "languages": ["javascript", "html", "css", "jsx"],
+      "languages": ["javascript", "html", "css", "jsx", "typescript", "tsx"],
       "plugins": ["line-numbers"],
       "theme": "coy",
       "css": true
