@@ -22,6 +22,35 @@ interface TableCellProps {
 	children?: ReactNode | string | number,
 }
 
+const Table = forwardRef<HTMLTableElement, TableProps>(({
+	className,
+	caption,
+	dataNoteRefs,
+	children,
+}, ref) => {
+	if (children) {
+		return (
+			<div className="ssb-table-wrapper">
+				<table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
+					{caption && (
+						<caption data-noterefs={dataNoteRefs}>
+							<div className="caption-wrapper">
+								<div className="caption-text-wrapper">
+									{caption}
+								</div>
+							</div>
+						</caption>
+					)}
+					{children}
+				</table>
+			</div>
+		);
+	}
+	return null;
+});
+
+export default Table;
+
 export const TableHead = forwardRef<HTMLTableSectionElement, TableElementProps>(({ className, children }, ref) => {
 	if (children) {
 		return (
@@ -115,32 +144,3 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(({ cla
 TableCell.defaultProps = {
 	type: 'td',
 };
-
-const Table = forwardRef<HTMLTableElement, TableProps>(({
-	className,
-	caption,
-	dataNoteRefs,
-	children,
-}, ref) => {
-	if (children) {
-		return (
-			<div className="ssb-table-wrapper">
-				<table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
-					{caption && (
-						<caption data-noterefs={dataNoteRefs}>
-							<div className="caption-wrapper">
-								<div className="caption-text-wrapper">
-									{caption}
-								</div>
-							</div>
-						</caption>
-					)}
-					{children}
-				</table>
-			</div>
-		);
-	}
-	return null;
-});
-
-export default Table;
