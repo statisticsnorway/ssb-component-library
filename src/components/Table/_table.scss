@@ -34,8 +34,7 @@
     
     thead, tbody {
 
-      th {
-        vertical-align: bottom;
+      th, td {
 
         &.level1 {
           padding-left: 1.75rem;
@@ -48,6 +47,10 @@
         &.level3 {
           padding-left: 3.25rem;
         }
+      }
+
+      th {
+        vertical-align: bottom;       
       }
     }
   
