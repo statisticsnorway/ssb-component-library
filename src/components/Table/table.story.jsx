@@ -75,7 +75,22 @@ export const Statistics = () => (
 			<TableFooter>
 				<TableRow>
 					<TableCell type="td" colSpan={3}>
-						<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
+						<div>
+							<sup>1</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Mauris lacinia massa ut velit pulvinar, a ullamcorper odio pulvinar.
+							Nulla vulputate congue justo a bibendum. Maecenas aliquet volutpat urna ac bibendum.
+							Morbi at pharetra massa. Sed ornare diam eleifend, semper ipsum sed, feugiat purus.
+						</div>
+					</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="td" colSpan={3}>
+						<sup>2</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis.
+					</TableCell>
+				</TableRow>
+				<TableRow>
+					<TableCell type="td" colSpan={3}>
+						<sup>3</sup> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					</TableCell>
 				</TableRow>
 			</TableFooter>

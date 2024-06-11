@@ -1,6 +1,6 @@
 import React, { forwardRef, ReactNode } from 'react';
 
-interface TableElementProps {
+export interface TableElementProps {
 	className?: string,
   children: ReactNode
 }
@@ -10,7 +10,7 @@ export interface TableProps extends TableElementProps {
 	dataNoteRefs?: string,
 }
 
-interface TableCellProps {
+export interface TableCellProps {
 	className?: string,
 	type?: 'th' | 'td',
 	rowSpan?: number,

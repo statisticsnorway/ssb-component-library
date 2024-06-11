@@ -18,24 +18,22 @@
     caption, td {
       border-bottom: transparent;
     }
-    
-    .caption-text-wrapper, tfoot td {   
-      padding: 1.75rem 1rem;
-      
+
+    .caption-text-wrapper, tfoot td > * {
       @media #{$desktop} {
         max-width: 780px;
       }
     }
-  
+    
     th, td {
-      padding: .5rem 1rem;
       text-align: left;
     }
     
     thead, tbody {
 
       th, td {
-
+        padding: .5rem 1rem;
+        
         &.level1 {
           padding-left: 1.75rem;
         }
@@ -61,6 +59,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 1.75rem 1rem;
   
         .caption-text-wrapper {
           font-weight: bold;
@@ -151,19 +150,27 @@
     
     tfoot {
       border-top: 1px solid variables.$ssb-dark-5;
-      line-height: 1.5rem;
+      
+      tr {
 
+        &:first-of-type > td {
+          padding-top: 1.75rem;
+        }
+        
+        &:last-of-type > td {
+          padding-bottom: 1.75rem;
+        }
+      }
+      
       td {
+        border: none;
+        padding: 0 1rem .5rem;
         word-wrap: break-word;
       }
     }
 
     sup {
       font-size: xx-small;
-
-      &:last-child {
-        padding-left: .25rem;
-      }
     }
   
     .align-right {
