@@ -104,4 +104,4 @@ Available props:
 | headers | string | id attributes that provide the headers for the cell. Optional |
 | scope | 'col', 'colgroup', 'row', or 'rowgroup' | Define the cells that the th element relates to. Optional |
 | align | 'left', 'center', or 'right' | Optional lign table cell content to left, center, or right side |
-| indentationLevel | '1', '2', or '3' | Optional indentation to cell value |
+| indentationLevel | '1', '2', or '3' | Optional indentation to cell value. Only applies to table content cells that are left aligned |

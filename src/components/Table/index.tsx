@@ -108,7 +108,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableElementProps>(({ cl
 });
 
 export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(({ className, children, type, rowSpan, colSpan, scope, headers, align, indentationLevel }, ref) => {
-	const tableCellClasses: string = `${className ?? ''}${indentationLevel ? ` level${indentationLevel}` : ''}${align ? ` align-${align}` : ''}`;
+	const tableCellClasses: string = `${className ?? ''}${indentationLevel && (!align || align === 'left') ? ` level${indentationLevel}` : ''}${align ? ` align-${align}` : ''}`;
 
 	if (type === 'th') {
 		return (
