@@ -5,6 +5,7 @@ import replace from '@rollup/plugin-replace';
 import scss from 'rollup-plugin-scss';
 import svgr from '@svgr/rollup';
 import terser from '@rollup/plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 
 const NODE_ENV = process.env.ENV || 'development';
 
@@ -23,7 +24,7 @@ export default [{
 		scss({ fileName: 'bundle.css' }),
 		svgr(),
 		nodeResolve({
-			extension: ['.jsx', '.js'],
+			extension: ['.jsx', '.js', '.tsx', '.ts'],
 		}),
 		replace({
 			'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
@@ -35,8 +36,11 @@ export default [{
 		}),
 		commonjs({
 			include: ['node_modules/**'],
-			extensions: ['js', '.jsx'],
+			extensions: ['js', '.jsx', '.tsx', '.ts'],
 		}),
 		terser(),
+		typescript({
+			tsconfig: "./tsconfig.json"
+		}),
 	],
 }];

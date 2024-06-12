@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDirs": [
+      "./src/components"
+    ],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": false
+  }
+}

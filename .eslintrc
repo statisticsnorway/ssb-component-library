@@ -1,11 +1,26 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "import"
+  ],
   "env": {
     "browser": true,
     "es6": true,
     "jest": true
   },
-  "parser": "@babel/eslint-parser",
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "rules": {
     "arrow-parens": ["error", "as-needed"],
     "func-names": ["error", "never"],
@@ -28,6 +43,7 @@
     "react/jsx-indent": [1, "tab"],
     "react/jsx-indent-props": [1, "tab"],
     "react/jsx-one-expression-per-line": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
     "react/require-default-props": 0,
     "react/sort-comp": [1, {
       "order": [
@@ -37,7 +53,6 @@
         "everything-else"
       ]}
     ],
-
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-static-element-interactions": 1,
     "jsx-a11y/label-has-associated-control": ["error", {
@@ -45,7 +60,17 @@
         "some": ["nesting", "id"]
       }
     }],
-    "no-use-before-define": ["error", { "functions": false, "classes": true }]
+    "no-use-before-define": ["error", { "functions": false, "classes": true }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "globals": {
     "document": false,

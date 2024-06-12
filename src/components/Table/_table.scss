@@ -1,0 +1,188 @@
+@use '../../style/variables' as variables;
+
+.ssb-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  .ssb-table {
+    @include roboto;
+    line-height: 1.75rem;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid variables.$ssb-dark-5;
+    
+    caption, th, td {
+      border: 1px solid variables.$ssb-dark-5;
+    }
+  
+    caption, td {
+      border-bottom: transparent;
+    }
+
+    .caption-text-wrapper, tfoot td > * {
+      @media #{$desktop} {
+        max-width: 780px;
+      }
+    }
+    
+    th, td {
+      text-align: left;
+    }
+    
+    thead, tbody {
+
+      th, td {
+        padding: .5rem 1rem;
+        
+        &.level1 {
+          padding-left: 1.75rem;
+        }
+    
+        &.level2 {
+          padding-left: 2.50rem;
+        }
+    
+        &.level3 {
+          padding-left: 3.25rem;
+        }
+      }
+
+      th {
+        vertical-align: bottom;       
+      }
+    }
+  
+    caption {
+      text-align: left;
+  
+      .caption-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.75rem 1rem;
+  
+        .caption-text-wrapper {
+          font-weight: bold;
+        }
+
+        // TODO: Can be reused (partly?) for later implementation of scroll functionality
+        // .scoll-icons-wrapper {
+        //   display: grid;
+        //   grid-auto-flow: column;
+        //   grid-column-gap: 1.25em;
+        //   padding: 0 2.5em 0 1.5em; // padding-left with caption-text-wrapper padding-left is a total of 2.5em
+  
+        //   .scroll-icon-left, .scroll-icon-right {
+        //     height: 32px; // icon height 
+  
+        //     // remove default styling for button
+        //     background: none;
+        //     color: inherit;
+        //     border: none;
+        //     padding: 0;
+        //     font: inherit;
+        //     cursor: pointer;
+        //     outline: inherit;
+  
+        //     &:focus, &:hover {
+        //       @include focus-ring;
+        //     }
+  
+        //     &.disabled {
+        //       color: $ssb-dark-2;
+        //       cursor: default;
+        //     }
+  
+        //     svg {
+        //       color: $ssb-green-4;
+        //     }
+        //   }
+        // }
+  
+        // @media #{$mobile} {
+        //   flex-direction: column-reverse;
+        //   align-items: start;
+  
+        //   .caption-text-wrapper, .scoll-icons-wrapper {
+        //     padding-top: 1rem;
+        //   }
+        // }
+      }
+    }
+  
+    thead {
+      border-bottom: 2px solid variables.$ssb-dark-5;
+
+      th[colspan] {
+        text-align: center;
+      }
+    }
+  
+    tbody {
+
+      th {
+        font-weight: normal;
+        border-bottom: transparent;
+      }
+
+      tr {
+
+        &:not(:first-child) {
+
+          th, td {
+            border-top-color: variables.$ssb-dark-2;
+          }
+        }
+  
+        &:nth-child(odd) {
+          background-color: variables.$ssb-green-1;
+        }
+  
+        &:hover, &:nth-child(odd):hover {
+          background-color: variables.$ssb-purple-1;
+        }
+      }
+
+      td {
+        white-space: nowrap;
+      }
+    }
+    
+    tfoot {
+      border-top: 1px solid variables.$ssb-dark-5;
+      
+      tr {
+
+        &:first-of-type > td {
+          padding-top: 1.75rem;
+        }
+        
+        &:last-of-type > td {
+          padding-bottom: 1.75rem;
+        }
+      }
+      
+      td {
+        border: none;
+        padding: 0 1rem .5rem;
+        word-wrap: break-word;
+      }
+    }
+
+    sup {
+      font-size: xx-small;
+    }
+  
+    .align-right {
+      text-align: right;
+    }
+  
+    .align-left {
+      text-align: left;
+    }
+    
+    .align-center {
+      text-align: center;
+    }
+  }
+}

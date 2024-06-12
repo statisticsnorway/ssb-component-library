@@ -3,14 +3,17 @@
     ["@babel/preset-env", {
       "modules": false
     }],
-    "@babel/preset-react"
+    "@babel/preset-react",
+    "@babel/preset-typescript"
   ],
   "plugins": [
     ["module-resolver",
       {
         "extensions": [
           ".js",
-          ".jsx"
+          ".jsx",
+          ".ts",
+          ".tsx"
         ],
         "root": [
           "./src"
@@ -18,7 +21,7 @@
       }
     ],
     ["prismjs", {
-      "languages": ["javascript", "html", "css", "jsx"],
+      "languages": ["javascript", "html", "css", "jsx", "typescript", "tsx"],
       "plugins": ["line-numbers"],
       "theme": "coy",
       "css": true
