@@ -4,7 +4,8 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDirs": [
-      "./src/components"
+      "./src/components",
+      "./src/utils"
     ],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

@@ -1,9 +1,9 @@
 module.exports = {
 	collectCoverageFrom: [
-		'src/**/index.jsx',
-		'!<rootDir>/src/index.jsx',
-		'!<rootDir>/src/App.jsx',
-		'!<rootDir>/src/**/*stories.jsx',
+		'src/**/index.[tj]s?(x)',
+		'!<rootDir>/src/index.[tj]s?(x)',
+		'!<rootDir>/src/App.[tj]s?(x)',
+		'!<rootDir>/src/**/*stories.[tj]s?(x)',
 		'!<rootDir>/node_modules/',
 		'!<rootDir>/path/to/dir/',
 	],
@@ -21,9 +21,12 @@ module.exports = {
 	modulePaths: [
 		'<rootDir>/src/scripts/atoms',
 	],
-	setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
-	testMatch: ['**/*.test.jsx'],
-	transform: { '^.+\\.jsx?$': 'babel-jest' },
+	setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+	testMatch: ['**/*.test.[tj]s?(x)'],
+	transform: {
+		'^.+\\.jsx?$': 'babel-jest',
+		'^.+\\.tsx?$': 'ts-jest',
+	},
 	transformIgnorePatterns: ['<rootDir>/node_modules/'],
 	testEnvironment: 'jsdom',
 };
