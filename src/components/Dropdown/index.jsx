@@ -29,6 +29,12 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 
 	const dropdownId = id || useId();
 
+	// ensure reactivity of 'selectedItem' prop is preserved
+	useEffect(() => {
+		selectItem(selectedItem || { title: '', id: '' });
+		setActiveOption(selectedItem || { title: '', id: '' });
+	}, [selectedItem]);
+
 	const filterOptions = value => {
 		updateInputValue(value);
 		filterAvailableOptions(items.filter(it => it.title.toLowerCase().includes(value.toLowerCase())));
