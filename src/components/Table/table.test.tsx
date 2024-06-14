@@ -3,25 +3,7 @@ import { render } from '../../utils/test'
 import Table, { TableHead, TableBody, TableFooter, TableRow, TableCell } from './index';
 
 describe('Render Table component', () => {
-	test('Table without caption and footer', () => {
-		const { asFragment } = render (
-			<Table>
-				<TableHead>
-					<TableRow>
-						<TableCell type="th">Header</TableCell>
-					</TableRow>
-				</TableHead>
-				<TableBody>
-					<TableRow>
-						<TableCell>Value</TableCell>
-					</TableRow>
-				</TableBody>
-			</Table>
-		)
-		expect(asFragment()).toMatchSnapshot();
-	})
-
-	test('Table with caption and footer', () => {
+	test('Matches the snapshot', () => {
 		const { asFragment } = render(
       <Table caption="Table caption">
 				<TableHead>
@@ -31,7 +13,7 @@ describe('Render Table component', () => {
 					</TableRow>
 					<TableRow>
 						<TableCell type="th" scope="col" align="right">Header right</TableCell>
-						<TableCell type="th" scope="col"align="center">Header center</TableCell>
+						<TableCell type="th" scope="col" align="center">Header center</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
@@ -52,4 +34,22 @@ describe('Render Table component', () => {
     );
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	test('Simple table without caption and footer', () => {
+		const { asFragment } = render (
+			<Table>
+				<TableHead>
+					<TableRow>
+						<TableCell type="th">Header</TableCell>
+					</TableRow>
+				</TableHead>
+				<TableBody>
+					<TableRow>
+						<TableCell>Value</TableCell>
+					</TableRow>
+				</TableBody>
+			</Table>
+		)
+		expect(asFragment()).toMatchSnapshot();
+	})
 });
