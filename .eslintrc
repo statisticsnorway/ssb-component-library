@@ -3,11 +3,13 @@
     "airbnb",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/errors"
+    "plugin:import/errors",
+    "prettier"
   ],
   "plugins": [
     "@typescript-eslint",
-    "import"
+    "import",
+    "prettier"
   ],
   "env": {
     "browser": true,
@@ -70,7 +72,8 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "prettier/prettier": ["warn"]
   },
   "globals": {
     "document": false,

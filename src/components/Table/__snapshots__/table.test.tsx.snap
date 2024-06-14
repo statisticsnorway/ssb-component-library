@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Table component Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-table-wrapper"
+  >
+    <table
+      class="ssb-table"
+    >
+      <caption>
+        <div
+          class="caption-wrapper"
+        >
+          <div
+            class="caption-text-wrapper"
+          >
+            Table caption
+          </div>
+        </div>
+      </caption>
+      <thead>
+        <tr>
+          <th
+            class=" align-right"
+            rowspan="2"
+          >
+            Header with footnote 
+            <sup>
+              1
+            </sup>
+          </th>
+          <th
+            class=""
+            scope="colgroup"
+          >
+            Alignment
+          </th>
+        </tr>
+        <tr>
+          <th
+            class=" align-right"
+            scope="col"
+          >
+            Header right
+          </th>
+          <th
+            class=" align-center"
+            scope="col"
+          >
+            Header center
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th
+            class=""
+            scope="row"
+          >
+            Value
+          </th>
+          <td
+            class=" align-right"
+          >
+            500
+          </td>
+          <td
+            class=" align-center"
+          >
+            Center
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td
+            class=""
+            colspan="3"
+          >
+            <sup>
+              1
+            </sup>
+             Footnote description
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Render Table component Simple table without caption and footer 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-table-wrapper"
+  >
+    <table
+      class="ssb-table"
+    >
+      <thead>
+        <tr>
+          <th
+            class=""
+          >
+            Header
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            class=""
+          >
+            Value
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
