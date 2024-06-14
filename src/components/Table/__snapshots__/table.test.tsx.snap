@@ -1,54 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Table component Table cell alignment 1`] = `
-<DocumentFragment>
-  <div
-    class="ssb-table-wrapper"
-  >
-    <table
-      class="ssb-table"
-    >
-      <thead>
-        <tr>
-          <th
-            class=""
-          >
-            Header value
-          </th>
-          <th
-            class=" align-right"
-          >
-            Header right
-          </th>
-          <th
-            class=""
-          />
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td
-            class=""
-          >
-            Value
-          </td>
-          <td
-            class=" align-right"
-          >
-            500
-          </td>
-          <td
-            class=" align-center"
-          >
-            Center
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Render Table component Table with caption and footer 1`] = `
 <DocumentFragment>
   <div
@@ -71,21 +22,49 @@ exports[`Render Table component Table with caption and footer 1`] = `
       <thead>
         <tr>
           <th
-            class=""
+            class=" align-right"
+            rowspan="2"
           >
             Header with footnote 
             <sup>
               1
             </sup>
           </th>
+          <th
+            class=""
+          >
+            Alignment
+          </th>
+        </tr>
+        <tr>
+          <th
+            class=" align-right"
+          >
+            Header right
+          </th>
+          <th
+            class=" align-center"
+          >
+            Header center
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td
+          <th
             class=""
           >
             Value
+          </th>
+          <td
+            class=" align-right"
+          >
+            500
+          </td>
+          <td
+            class=" align-center"
+          >
+            Center
           </td>
         </tr>
       </tbody>
@@ -93,6 +72,7 @@ exports[`Render Table component Table with caption and footer 1`] = `
         <tr>
           <td
             class=""
+            colspan="3"
           >
             <sup>
               1
