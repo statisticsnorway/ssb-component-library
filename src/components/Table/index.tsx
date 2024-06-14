@@ -107,7 +107,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableElementProps>(({ cl
 	return null;
 });
 
-export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(({ className, children, type, rowSpan, colSpan, scope, headers, align, indentationLevel }, ref) => {
+export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(({ className, children, type = 'td', rowSpan, colSpan, scope, headers, align, indentationLevel }, ref) => {
 	const tableCellClasses: string = `${className ?? ''}${indentationLevel && (!align || align === 'left') ? ` level${indentationLevel}` : ''}${align ? ` align-${align}` : ''}`;
 
 	if (type === 'th') {
@@ -140,7 +140,3 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(({ cla
 	}
 	return null;
 });
-
-TableCell.defaultProps = {
-	type: 'td',
-};
