@@ -32,6 +32,7 @@ exports[`Render Table component Table with caption and footer 1`] = `
           </th>
           <th
             class=""
+            scope="colgroup"
           >
             Alignment
           </th>
@@ -39,11 +40,13 @@ exports[`Render Table component Table with caption and footer 1`] = `
         <tr>
           <th
             class=" align-right"
+            scope="col"
           >
             Header right
           </th>
           <th
             class=" align-center"
+            scope="col"
           >
             Header center
           </th>
@@ -53,6 +56,7 @@ exports[`Render Table component Table with caption and footer 1`] = `
         <tr>
           <th
             class=""
+            scope="row"
           >
             Value
           </th>

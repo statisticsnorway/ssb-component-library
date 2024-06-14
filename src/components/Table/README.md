@@ -96,6 +96,7 @@ Available props:
 ##### Table Cell
 | Name       | Type           | Description  |
 | ---------- | ------------- | ----- |
+| id | string | Optional id for the th element. Used by headers attribute etc |
 | className |  string | Optional styling classes |
 | type | 'th' or 'td' | Define what type of element your table cell is. Optional and defaults to td |
 | rowSpan | number | Define how many rows the table cell spans. Optional |
