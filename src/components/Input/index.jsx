@@ -15,7 +15,7 @@ const Input = forwardRef(({
 		handleChange(e.target.value);
 	};
 
-        useEffect(() => setValue(value), [value]);
+	useEffect(() => setValue(value), [value]);
 
 	const handleKeyDown = e => {
 		if (e.key === 'Enter') {
