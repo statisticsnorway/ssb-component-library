@@ -16,14 +16,18 @@
   padding: 12px 20px;
   text-align: center;
   text-underline-position: under;
-  transition: background .18s, color .18s;
+  transition:
+    background 0.18s,
+    color 0.18s;
   white-space: nowrap;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     cursor: pointer;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: $ssb-green-4;
     color: $ssb-white;
     text-decoration: underline;
@@ -42,7 +46,8 @@
     cursor: not-allowed;
     font-weight: normal;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       text-decoration: none;
     }
   }
@@ -52,7 +57,8 @@
     color: $ssb-green-2;
     border-color: $ssb-green-2;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: $ssb-green-2;
       color: $ssb-dark-5;
     }
@@ -68,7 +74,8 @@
       color: $ssb-dark-4;
       font-weight: normal;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         text-decoration: none;
       }
     }
@@ -79,7 +86,9 @@
     border: 2px solid $ssb-green-4;
     color: $ssb-white;
 
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       background: $ssb-dark-5;
       border: 2px solid $ssb-dark-5;
       text-decoration: underline;
@@ -92,7 +101,8 @@
       cursor: not-allowed;
       font-weight: normal;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         text-decoration: none;
       }
     }
@@ -102,7 +112,9 @@
       border: 2px solid $ssb-green-2;
       color: $ssb-dark-5;
 
-      &:hover, &:active, &:focus {
+      &:hover,
+      &:active,
+      &:focus {
         background: $ssb-white;
         border: 2px solid $ssb-white;
       }

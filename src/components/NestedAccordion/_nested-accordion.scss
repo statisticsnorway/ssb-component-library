@@ -31,15 +31,14 @@
     }
 
     &:hover {
-
       .header-text {
         color: $ssb-green-4;
       }
     }
 
     &.open {
-
-      .header-text, .sub-header {
+      .header-text,
+      .sub-header {
         color: $ssb-green-4;
       }
     }

@@ -8,7 +8,6 @@
   width: 100%;
 
   &:hover {
-
     input {
       border: 1px solid $ssb-green-4;
       outline: 1px solid $ssb-green-4;
@@ -66,9 +65,7 @@
   }
 
   &.negative {
-
     .input-wrapper {
-
       ::placeholder {
         color: $ssb-white;
         opacity: 1;
@@ -76,7 +73,6 @@
     }
 
     &:hover {
-
       input {
         border: 1px solid $ssb-green-2;
         outline: 1px solid $ssb-green-2;
@@ -108,7 +104,6 @@
     }
 
     .icon-wrapper {
-
       & > * {
         color: $ssb-green-2;
       }
@@ -116,7 +111,8 @@
       &.search-icon {
         cursor: pointer;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background: $ssb-white;
 
           & > * {
@@ -127,14 +123,12 @@
     }
 
     &.error {
-
       input {
         border: 1px solid $ssb-red-3;
         outline: 1px solid $ssb-red-3;
       }
 
       .icon-wrapper {
-
         & > * {
           color: $ssb-red-3;
         }
@@ -143,14 +137,12 @@
   }
 
   &.error {
-
     input {
       border: 1px solid $ssb-red-3;
       outline: 1px solid $ssb-red-3;
     }
 
     .icon-wrapper {
-
       & > * {
         color: $ssb-red-3;
       }
@@ -175,7 +167,8 @@
     &.search-icon {
       cursor: pointer;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background: $ssb-green-4;
 
         & > * {

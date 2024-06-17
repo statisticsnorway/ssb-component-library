@@ -1,39 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-const Checkbox = ({
-	callback, children, className, disabled, selected, tabIndex, value,
-}) => (
-	<div className={`ssb-checkbox${className ? ` ${className}` : ''}`}>
-		<input
-			tabIndex={tabIndex}
-			disabled={disabled}
-			id={value}
-			checked={selected}
-			onChange={() => callback(value)}
-			type="checkbox"
-			value={value}
-		/>
-		<label className="checkbox-label" htmlFor={value}>{children}</label>
-	</div>
-);
+const Checkbox = ({ callback, children, className, disabled, selected, tabIndex, value }) => (
+  <div className={`ssb-checkbox${className ? ` ${className}` : ''}`}>
+    <input
+      tabIndex={tabIndex}
+      disabled={disabled}
+      id={value}
+      checked={selected}
+      onChange={() => callback(value)}
+      type='checkbox'
+      value={value}
+    />
+    <label className='checkbox-label' htmlFor={value}>
+      {children}
+    </label>
+  </div>
+)
 
 Checkbox.defaultProps = {
-	callback: () => {},
-	tabIndex: 0,
-};
+  callback: () => {},
+  tabIndex: 0,
+}
 
 Checkbox.propTypes = {
-	callback: PropTypes.func,
-	children: PropTypes.node,
-	className: PropTypes.string,
-	disabled: PropTypes.bool,
-	selected: PropTypes.bool,
-	tabIndex: PropTypes.number,
-	value: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.number,
-	]).isRequired,
-};
+  callback: PropTypes.func,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  selected: PropTypes.bool,
+  tabIndex: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+}
 
-export default Checkbox;
+export default Checkbox

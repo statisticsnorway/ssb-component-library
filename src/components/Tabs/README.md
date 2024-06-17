@@ -1,5 +1,4 @@
-Tabs
-========
+# Tabs
 
 > A tab selector component
 
@@ -9,15 +8,15 @@ Tabs
 
 ```html
 <div class="ssb-tabs">
-    <button class="navigation-item ">
-        <span>Item 1</span>
-    </button>
-    <button class="navigation-item ">
-        <span>Item 2</span>
-    </button>
-    <button class="navigation-item ">
-        <span>Item 3</span>
-    </button>
+  <button class="navigation-item ">
+    <span>Item 1</span>
+  </button>
+  <button class="navigation-item ">
+    <span>Item 2</span>
+  </button>
+  <button class="navigation-item ">
+    <span>Item 3</span>
+  </button>
 </div>
 ```
 
@@ -37,16 +36,16 @@ const items = [
     title: 'Item 3',
     path: 'item3/',
   },
-];
+]
 
-<Tabs items={items} />
+;<Tabs items={items} />
 ```
 
 Available props:
 
-| Name       | Type          | Description  |
-| ---------- | ------------- | ----- |
-| activeOnInit | string | Will set an item to be active on init |
-| className   | string | Optional container class|
-| items | arrayOf({title, path}) | Sets label and path of buttons |
-| onClick | func | Callback function |
+| Name         | Type                   | Description                           |
+| ------------ | ---------------------- | ------------------------------------- |
+| activeOnInit | string                 | Will set an item to be active on init |
+| className    | string                 | Optional container class              |
+| items        | arrayOf({title, path}) | Sets label and path of buttons        |
+| onClick      | func                   | Callback function                     |

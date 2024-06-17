@@ -10,23 +10,21 @@
   text-align: left;
   user-select: none;
 
-  &:hover, &:focus {
-
+  &:hover,
+  &:focus {
     .radio-label {
-
       &::before {
         border: 2px solid $ssb-green-4;
       }
     }
   }
 
-  input[type="radio"] {
+  input[type='radio'] {
     cursor: pointer;
     opacity: 0;
     position: absolute;
 
     &:focus + .radio-label {
-
       &::before {
         border: 2px solid $ssb-green-4;
       }
@@ -39,7 +37,7 @@
       &::after {
         background: $ssb-dark-5;
         border-radius: 50%;
-        content: "";
+        content: '';
         display: block;
         height: 12px;
         left: 4px;
@@ -73,7 +71,7 @@
       border: 1px solid $ssb-dark-5;
       border-radius: 50%;
       box-sizing: border-box;
-      content: "";
+      content: '';
       display: block;
       height: 20px;
       margin-right: 12px;

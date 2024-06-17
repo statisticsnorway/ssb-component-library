@@ -1,82 +1,83 @@
-import React, { forwardRef, useRef, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { ArrowRight, ArrowRightCircle } from 'react-feather';
+import React, { forwardRef, useRef, useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { ArrowRight, ArrowRightCircle } from 'react-feather'
 
 export function useHover() {
-	const [value, setValue] = useState(false);
+  const [value, setValue] = useState(false)
 
-	const hoverRef = useRef(null);
-	useEffect(
-		// eslint-disable-next-line consistent-return
-		() => {
-			const handleMouseOver = () => setValue(true);
-			const handleMouseOut = () => setValue(false);
-			const element = hoverRef && hoverRef.current;
+  const hoverRef = useRef(null)
+  useEffect(
+    // eslint-disable-next-line consistent-return
+    () => {
+      const handleMouseOver = () => setValue(true)
+      const handleMouseOut = () => setValue(false)
+      const element = hoverRef && hoverRef.current
 
-			if (element) {
-				element.addEventListener('mouseover', handleMouseOver);
-				element.addEventListener('mouseout', handleMouseOut);
-				return () => {
-					element.removeEventListener('mouseover', handleMouseOver);
-					element.removeEventListener('mouseout', handleMouseOut);
-				};
-			}
-		},
-		[hoverRef],
-	);
+      if (element) {
+        element.addEventListener('mouseover', handleMouseOver)
+        element.addEventListener('mouseout', handleMouseOut)
+        return () => {
+          element.removeEventListener('mouseover', handleMouseOver)
+          element.removeEventListener('mouseout', handleMouseOut)
+        }
+      }
+    },
+    [hoverRef]
+  )
 
-	return [hoverRef, value];
+  return [hoverRef, value]
 }
 
-const PictureCard = forwardRef(({
-	className, imageSrc, altText, link, onClick, orientation, title, type,
-}, ref) => {
-	const [hoverRef, hovered] = useHover();
-	return (
-		<a
-			className={`ssb-picture-card ${orientation} ${className || ''}`}
-			href={link}
-			onClick={onClick}
-			ref={element => {
-				// Using ref for multiple purposes, so need to set it manually
-				if (typeof ref === 'function') ref(element);
-				// eslint-disable-next-line no-param-reassign
-				else if (ref) { ref.current = element; }
-				hoverRef.current = element;
-			}}
-		>
-			<div className="image-background">
-				<img src={imageSrc} alt={altText} />
-			</div>
-			<div className="overlay">
-				<span className="il-type">{type}</span>
-				<span className="il-title">{title}</span>
-				{hovered
-					? <ArrowRightCircle className="arrow-icon" size={32} />
-					: <ArrowRight className="arrow-icon" size={32} />}
-			</div>
-		</a>
-	);
-});
+const PictureCard = forwardRef(({ className, imageSrc, altText, link, onClick, orientation, title, type }, ref) => {
+  const [hoverRef, hovered] = useHover()
+  return (
+    <a
+      className={`ssb-picture-card ${orientation} ${className || ''}`}
+      href={link}
+      onClick={onClick}
+      ref={(element) => {
+        // Using ref for multiple purposes, so need to set it manually
+        if (typeof ref === 'function') ref(element)
+        else if (ref) {
+          // eslint-disable-next-line no-param-reassign
+          ref.current = element
+        }
+        hoverRef.current = element
+      }}
+    >
+      <div className='image-background'>
+        <img src={imageSrc} alt={altText} />
+      </div>
+      <div className='overlay'>
+        <span className='il-type'>{type}</span>
+        <span className='il-title'>{title}</span>
+        {hovered ? (
+          <ArrowRightCircle className='arrow-icon' size={32} />
+        ) : (
+          <ArrowRight className='arrow-icon' size={32} />
+        )}
+      </div>
+    </a>
+  )
+})
 
 PictureCard.defaultProps = {
-	onClick: () => {
-	},
-	orientation: 'vertical',
-};
+  onClick: () => {},
+  orientation: 'vertical',
+}
 
 PictureCard.propTypes = {
-	className: PropTypes.string,
-	imageSrc: PropTypes.string.isRequired,
-	altText: PropTypes.string.isRequired,
-	link: PropTypes.string,
-	onClick: PropTypes.func,
-	orientation: PropTypes.oneOf(['horizontal', 'vertical']),
-	title: PropTypes.string,
-	type: PropTypes.string,
-};
+  className: PropTypes.string,
+  imageSrc: PropTypes.string.isRequired,
+  altText: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  onClick: PropTypes.func,
+  orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  title: PropTypes.string,
+  type: PropTypes.string,
+}
 
-export default PictureCard;
+export default PictureCard
 
 /*
 ref={element => {

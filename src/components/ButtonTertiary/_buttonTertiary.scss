@@ -1,10 +1,9 @@
 .ssb-btn-tertiary {
-
   .button-header {
     @include focus-marker;
     @include reset-button;
     @include roboto;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -28,8 +27,8 @@
       color: $ssb-dark-6;
     }
 
-    &:hover, &:focus {
-
+    &:hover,
+    &:focus {
       .header-text {
         color: $ssb-green-4;
         text-decoration: underline;
@@ -43,7 +42,6 @@
     }
 
     &:disabled {
-
       .button-grid {
         cursor: not-allowed;
 
@@ -71,16 +69,13 @@
   }
 
   &.negative {
-
     .button-header {
-
       &.no-icon {
         text-decoration: underline;
         text-decoration-color: $ssb-white;
       }
 
       .button-grid {
-
         .header-text {
           color: $ssb-white;
         }
@@ -91,7 +86,6 @@
       }
 
       &:disabled {
-
         .button-grid {
           cursor: not-allowed;
 
@@ -110,7 +104,6 @@
         }
 
         &.no-icon {
-
           .button-grid .header-text {
             text-decoration: underline;
           }

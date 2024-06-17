@@ -21,7 +21,9 @@ $icon-padding: 8px;
   line-height: 1.7;
   position: relative;
   text-decoration: none;
-  transition: background-size .2s ease-in, color .1s;
+  transition:
+    background-size 0.2s ease-in,
+    color 0.1s;
   width: 100%;
   box-sizing: border-box;
 
@@ -30,7 +32,7 @@ $icon-padding: 8px;
   }
 
   .div-wrapper::after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -70,22 +72,25 @@ $icon-padding: 8px;
     color: $ssb-dark-6;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-size: 100% 100%;
     color: $ssb-white;
     outline: 0;
     text-decoration: none;
 
-    .link-title-text, .link-sub-text {
+    .link-title-text,
+    .link-sub-text {
       color: $ssb-white;
     }
   }
 
   .link-text {
     color: $ssb-green-4;
-    transition: color .1s;
+    transition: color 0.1s;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $ssb-white;
       outline: 0;
     }

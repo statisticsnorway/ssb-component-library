@@ -24,17 +24,22 @@
     }
   },
   "rules": {
-    "arrow-parens": ["error", "as-needed"],
+    "@typescript-eslint/no-unused-vars": "error",
+    "prettier/prettier": ["warn"],
+    "no-unused-vars": "off", // https://github.com/typescript-eslint/typescript-eslint/issues/2621
+    "no-use-before-define": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
     "func-names": ["error", "never"],
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0, // because the project uses aliases
-    "indent": ["warn", "tab"],
     "linebreak-style": 0,
     "max-len": ["warn", {"code": 200}],
     "no-console": 0,
     "no-irregular-whitespace": 0,
     "no-tabs": 0,
-    "no-unused-vars": 1,
     "object-curly-newline": "off",
     "react/destructuring-assignment": [1, "always", {
       "ignoreClassFields": true
@@ -42,8 +47,6 @@
     "react/button-has-type": 0,
     "react/forbid-prop-types": 0,
     "react/function-component-definition": 0,
-    "react/jsx-indent": [1, "tab"],
-    "react/jsx-indent-props": [1, "tab"],
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
     "react/require-default-props": 0,
@@ -62,7 +65,6 @@
         "some": ["nesting", "id"]
       }
     }],
-    "no-use-before-define": ["error", { "functions": false, "classes": true }],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -72,8 +74,7 @@
         "ts": "never",
         "tsx": "never"
       }
-    ],
-    "prettier/prettier": ["warn"]
+    ]
   },
   "globals": {
     "document": false,

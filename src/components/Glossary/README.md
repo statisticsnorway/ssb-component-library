@@ -1,15 +1,17 @@
-Glossary
-========
+# Glossary
 
 > Pop-up box for explaining a word
 
 ### Usage
 
 #### HTML
+
 Toggle the class "open" and aria-expanded "true" using javascript
+
 ```html
 <div class="ssb-glossary">
-  <button class="glossary-button" aria-expanded="false"><!-- click to toggle 'open' class -->
+  <button class="glossary-button" aria-expanded="false">
+    <!-- click to toggle 'open' class -->
     <span class="glossary-text-wrap">Explain this</span>
     <i className="glossary-logo" aria-hidden="true">{feather.openBook 12px}</i>
   </button>
@@ -35,9 +37,9 @@ Toggle the class "open" and aria-expanded "true" using javascript
 
 Available props:
 
-| Name       | Type           | Description  |
-| ---------- | ------------- | ----- |
-| children | node | Something to wrap the click event around |
-| className   | string | Optional container class|
-| closeText | string | Close button text, default "Lukk"  |
-| explanation | required string | Text to be inside popup |
+| Name        | Type            | Description                              |
+| ----------- | --------------- | ---------------------------------------- |
+| children    | node            | Something to wrap the click event around |
+| className   | string          | Optional container class                 |
+| closeText   | string          | Close button text, default "Lukk"        |
+| explanation | required string | Text to be inside popup                  |

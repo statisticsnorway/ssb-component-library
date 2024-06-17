@@ -1,7 +1,7 @@
-Paragraph
-========
+# Paragraph
 
 > A component for showing a paragraph
+
 ### Usage
 
 #### HTML
@@ -22,8 +22,8 @@ Paragraph
 
 Available props:
 
-| Name       | Type           | Description  |
-| ---------- | ------------- | ----- |
-| children   | Required node | Content within the wrapper |
-| className  | String| Optional container class |
-| negative | Optional boolean | Toggles text color |
+| Name      | Type             | Description                |
+| --------- | ---------------- | -------------------------- |
+| children  | Required node    | Content within the wrapper |
+| className | String           | Optional container class   |
+| negative  | Optional boolean | Toggles text color         |

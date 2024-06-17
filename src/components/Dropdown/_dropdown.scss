@@ -2,12 +2,13 @@
   @include roboto;
   display: flex;
   flex-direction: column;
-  transition: all .25s ease-in-out;
+  transition: all 0.25s ease-in-out;
   max-width: 350px;
   min-width: 230px;
   position: relative;
 
-  label, .dropdown-label {
+  label,
+  .dropdown-label {
     font-size: 14px;
     line-height: normal;
     margin-bottom: 5px;
@@ -29,7 +30,8 @@
       padding: 4px $input-field-height 4px 12px;
       text-overflow: ellipsis;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         border: 1px solid $ssb-green-4;
         outline: 1px solid $ssb-green-4;
       }
@@ -59,7 +61,8 @@
         color: $ssb-dark-4;
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         border: 1px solid $ssb-green-4;
         outline: 1px solid $ssb-green-4;
       }
@@ -67,8 +70,8 @@
   }
 
   &.error {
-
-    input, button.opener {
+    input,
+    button.opener {
       border: 1px solid $ssb-red-3;
       outline: 1px solid $ssb-red-3;
     }
@@ -103,11 +106,13 @@
       overflow: hidden;
       padding: 12px;
       text-overflow: ellipsis;
-      transition: all .18s;
+      transition: all 0.18s;
       box-sizing: border-box;
       width: 100%;
 
-      &:hover, &:focus, &.active {
+      &:hover,
+      &:focus,
+      &.active {
         background: $ssb-dark-5;
         color: $ssb-white;
         z-index: 2;
@@ -120,7 +125,8 @@
         font-weight: normal;
         pointer-events: none;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           text-decoration: none;
           background: none;
         }
@@ -153,7 +159,6 @@
     width: 100%;
 
     .dropdown-interactive-area {
-
       button {
         max-width: 100%;
         padding: 29px 40px;

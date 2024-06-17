@@ -1,5 +1,4 @@
-Number
-========
+# Number
 
 > A component for showing number in different size
 > The number should be properly formatted
@@ -28,8 +27,8 @@ Number
 
 Available props:
 
-| Name       | Type           | Description  |
-| ---------- | ------------- | ----- |
-| children | node | Renders a node |
-| className   | string | Optional container class|
-| size | 'small', 'medium' or 'large' | Change size on number |
+| Name      | Type                         | Description              |
+| --------- | ---------------------------- | ------------------------ |
+| children  | node                         | Renders a node           |
+| className | string                       | Optional container class |
+| size      | 'small', 'medium' or 'large' | Change size on number    |

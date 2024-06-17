@@ -9,8 +9,7 @@
     "declaration-empty-line-before": "never",
     "length-zero-no-unit": true,
     "no-descending-specificity": null,
-    "rule-empty-line-before": "always-multi-line",
     "selector-type-case": "lower",
-    "selector-type-no-unknown": [true, {"ignore":  ["default-namespace"]}],
+    "selector-type-no-unknown": [true, { "ignore": ["default-namespace"] }]
   }
 }
