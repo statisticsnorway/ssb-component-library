@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import React, { useEffect, useState, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { Search } from 'react-feather';
 import { useId } from '../../utils/useId';
@@ -14,6 +14,8 @@ const Input = forwardRef(({
 		setValue(e.target.value);
 		handleChange(e.target.value);
 	};
+
+        useEffect(() => setValue(value), [value]);
 
 	const handleKeyDown = e => {
 		if (e.key === 'Enter') {
