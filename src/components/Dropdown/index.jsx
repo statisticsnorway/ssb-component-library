@@ -22,7 +22,7 @@ const Dropdown = ({ className, header, icon, items, onSelect, open, placeholder,
 
 	const [isOpen, setOpen] = useState(open);
 	const [availableOptions, filterAvailableOptions] = useState(items || []);
-        const DEFAULT_ITEM = { title: '', id: '' }
+	const DEFAULT_ITEM = { title: '', id: '' };
 	const [selectedOption, selectItem] = useState(selectedItem || DEFAULT_ITEM);
 	const [activeOption, setActiveOption] = useState(selectedItem || DEFAULT_ITEM);
 	const [inputFieldValue, updateInputValue] = useState('');
