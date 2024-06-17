@@ -39,7 +39,6 @@ If your project uses React, just use the module as you usually would use an exte
 
 ```jsx harmony
 import { Button } from '@statisticsnorway/ssb-component-library'
-
 ;<Button onClick={callback} primary>
   Click me!
 </Button>

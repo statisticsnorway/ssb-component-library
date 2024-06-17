@@ -15,9 +15,7 @@
     &nbsp;/&nbsp;
   </div>
   <div>
-    <a class="ssb-link" href=" ">
-      <span class="link-text">breadcrumb 2</span> </a
-    >&nbsp;/&nbsp;
+    <a class="ssb-link" href=" "> <span class="link-text">breadcrumb 2</span> </a>&nbsp;/&nbsp;
   </div>
   <span>breadcrumb 3</span>
 </div>
