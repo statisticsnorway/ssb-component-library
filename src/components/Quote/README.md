@@ -1,9 +1,8 @@
-Quote
-========
+# Quote
 
 > A component for highlighting quoted text.
-### Usage
 
+### Usage
 
 #### HTML
 
@@ -25,8 +24,8 @@ Quote
 
 Available props:
 
-| Name       | Type           | Description  |
-| ---------- | ------------- | ----- |
-| children   | Required node | Content within the wrapper |
-| className   | string | Optional container class|
-| negative | Optional boolean | Styling for dark theme |
+| Name      | Type             | Description                |
+| --------- | ---------------- | -------------------------- |
+| children  | Required node    | Content within the wrapper |
+| className | string           | Optional container class   |
+| negative  | Optional boolean | Styling for dark theme     |

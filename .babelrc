@@ -1,38 +1,35 @@
 {
   "presets": [
-    ["@babel/preset-env", {
-      "modules": false
-    }],
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ],
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
   "plugins": [
-    ["module-resolver",
+    [
+      "module-resolver",
       {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ],
-        "root": [
-          "./src"
-        ]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "root": ["./src"]
       }
     ],
-    ["prismjs", {
-      "languages": ["javascript", "html", "css", "jsx", "typescript", "tsx"],
-      "plugins": ["line-numbers"],
-      "theme": "coy",
-      "css": true
-  }]
+    [
+      "prismjs",
+      {
+        "languages": ["javascript", "html", "css", "jsx", "typescript", "tsx"],
+        "plugins": ["line-numbers"],
+        "theme": "coy",
+        "css": true
+      }
+    ]
   ],
   "env": {
     "test": {
-      "plugins": [
-        ["@babel/plugin-transform-modules-commonjs", {}],
-        "transform-es2015-modules-commonjs"
-      ]
+      "plugins": [["@babel/plugin-transform-modules-commonjs", {}], "transform-es2015-modules-commonjs"]
     }
   }
 }

@@ -33,37 +33,34 @@
     }
 
     &:hover {
-
-      .header-text, .sub-header {
+      .header-text,
+      .sub-header {
         color: $ssb-green-4;
       }
     }
   }
 
   &:not(.without-borders) {
-
     &::before {
       border-top: 1px solid $ssb-dark-2;
-      content: "";
+      content: '';
       height: 2px;
     }
 
     &::after {
       border-bottom: 1px solid $ssb-dark-2;
-      content: "";
+      content: '';
       height: 2px;
       margin-bottom: -1px;
     }
   }
 
   &.with-sub-header {
-
     .button-grid {
       grid-template-columns: fit-content(100px) auto 20px;
     }
 
     .accordion-header {
-
       .header-text {
         grid-column-start: 2;
       }

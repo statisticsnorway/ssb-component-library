@@ -1,5 +1,4 @@
-Title
-========
+# Title
 
 > A component handling header elements
 
@@ -23,9 +22,9 @@ Title
 
 Available props:
 
-| Name       | Type          | Description  |
-| ---------- | ------------- | ----- |
-| children | Required node | Child nodes |
-| className | string | Optional container class |
-| negative | bool | Toggles text color |
-| size | 1, 2, 3, 4, 5 or 6 | Changes header element size |
+| Name      | Type               | Description                 |
+| --------- | ------------------ | --------------------------- |
+| children  | Required node      | Child nodes                 |
+| className | string             | Optional container class    |
+| negative  | bool               | Toggles text color          |
+| size      | 1, 2, 3, 4, 5 or 6 | Changes header element size |

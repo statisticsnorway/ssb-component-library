@@ -3,10 +3,7 @@
     "target": "es2020",
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDirs": [
-      "./src/components",
-      "./src/utils"
-    ],
+    "rootDirs": ["./src/components", "./src/utils"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,

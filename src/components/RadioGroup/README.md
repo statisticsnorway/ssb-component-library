@@ -1,5 +1,4 @@
-RadioGroup
-========
+# RadioGroup
 
 > A wrapper for multiple radio buttons
 
@@ -9,22 +8,22 @@ RadioGroup
 
 ```html
 <div class="ssb-radio-group">
-	<div class="radio-group-header">Header</div>
-	<!-- Use flex-row If horizontal layout -->
-    <div class="boxes flex-column">
-        <div class="ssb-radio">
-            <input tabindex="0" id="id-item1" type="radio" value="item1">
-            <label class="radio-label" for="id-item1">Item 1</label>
-        </div>
-        <div class="ssb-radio">
-            <input tabindex="0" id="id-item2" type="radio" value="item2">
-            <label class="radio-label" for="id-item2">Item 2</label>
-        </div>
-        <div class="ssb-radio">
-            <input tabindex="0" id="id-item3" disabled="" type="radio" value="item3">
-            <label class="radio-label" for="id-item3">Item 3</label>
-        </div>
+  <div class="radio-group-header">Header</div>
+  <!-- Use flex-row If horizontal layout -->
+  <div class="boxes flex-column">
+    <div class="ssb-radio">
+      <input tabindex="0" id="id-item1" type="radio" value="item1" />
+      <label class="radio-label" for="id-item1">Item 1</label>
     </div>
+    <div class="ssb-radio">
+      <input tabindex="0" id="id-item2" type="radio" value="item2" />
+      <label class="radio-label" for="id-item2">Item 2</label>
+    </div>
+    <div class="ssb-radio">
+      <input tabindex="0" id="id-item3" disabled="" type="radio" value="item3" />
+      <label class="radio-label" for="id-item3">Item 3</label>
+    </div>
+  </div>
 </div>
 ```
 
@@ -56,15 +55,16 @@ const radioItems = [
 
 Available props:
 
-| Name       | Type           | Description  |
-| ---------- | ------------- | ----- |
-| className   | string | Optional container class|
-| header | string | Renders a h5 title |
-| items | arrayOf(id, label, value) | Required items for rendering radio buttons |
-| onChange | func | Callback function when a value is changed |
-| orientation | 'column' or 'row' , default column| Vertical og horizontal layout|
-| selectedValue | string | Pre selected value |
+| Name          | Type                               | Description                                |
+| ------------- | ---------------------------------- | ------------------------------------------ |
+| className     | string                             | Optional container class                   |
+| header        | string                             | Renders a h5 title                         |
+| items         | arrayOf(id, label, value)          | Required items for rendering radio buttons |
+| onChange      | func                               | Callback function when a value is changed  |
+| orientation   | 'column' or 'row' , default column | Vertical og horizontal layout              |
+| selectedValue | string                             | Pre selected value                         |
 
-__Dependencies__
- - [RadioButton](../RadioButton)
- - [Title](../Title)
+**Dependencies**
+
+- [RadioButton](../RadioButton)
+- [Title](../Title)

@@ -53,7 +53,6 @@
       text-decoration: none;
 
       &.left-orientation {
-
         .card-content {
           border-left: 5px solid $ssb-green-4;
           padding-left: 16px;
@@ -72,7 +71,6 @@
       }
 
       &.top-orientation {
-
         .card-content {
           border-top: 5px solid $ssb-green-4;
 
@@ -90,7 +88,6 @@
         }
 
         &.with-image {
-
           .card-title {
             background-color: $ssb-green-4;
             border-bottom: none;
@@ -180,14 +177,14 @@
       padding: 4px;
     }
 
-    a.card-action, a.card-title {
-      
+    a.card-action,
+    a.card-title {
       &:focus {
         outline: none;
       }
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         inset: 0;
       }

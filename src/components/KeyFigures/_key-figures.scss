@@ -36,7 +36,6 @@ $small-size: 108px;
   }
 
   &.large {
-
     .kf-icon {
       margin-right: 36px;
       max-height: $large-size;
@@ -55,7 +54,6 @@ $small-size: 108px;
   }
 
   &.medium {
-
     .kf-icon {
       margin-right: 28px;
       max-height: $medium-size;
@@ -74,7 +72,6 @@ $small-size: 108px;
   }
 
   &.small {
-
     .kf-icon {
       margin-right: 20px;
       max-height: $small-size;
@@ -89,7 +86,6 @@ $small-size: 108px;
   }
 
   @media #{$mobile} {
-
     .kf-icon {
       display: none;
     }
@@ -137,7 +133,7 @@ $small-size: 108px;
       top: 100%;
       left: 50%;
       border: solid transparent;
-      content: " ";
+      content: ' ';
       height: 0;
       width: 0;
       position: absolute;

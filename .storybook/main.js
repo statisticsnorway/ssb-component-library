@@ -1,20 +1,15 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   stories: ['../**/*.story.@(jsx|tsx)'],
 
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-webpack5-compiler-babel',
-  ],
+  addons: ['@storybook/addon-links', '@storybook/addon-webpack5-compiler-babel'],
 
   staticDirs: ['../src/media'],
 
   webpackFinal: (config) => {
-    const fileLoaderRule = config.module.rules.find(
-      (rule) => rule.test && rule.test.test('.svg')
-    );
-    fileLoaderRule.exclude = /\.svg$/;
+    const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test('.svg'))
+    fileLoaderRule.exclude = /\.svg$/
     config.module.rules.push(
       {
         include: path.resolve(__dirname, '../'),
@@ -30,8 +25,8 @@ module.exports = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       }
-    );
-    return config;
+    )
+    return config
   },
 
   resolve: {
@@ -46,4 +41,4 @@ module.exports = {
     name: '@storybook/react-webpack5',
     options: {},
   },
-};
+}

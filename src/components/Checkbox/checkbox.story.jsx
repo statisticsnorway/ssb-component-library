@@ -1,12 +1,12 @@
-import React from 'react';
-import Checkbox from './index';
+import React from 'react'
+import Checkbox from './index'
 
 export default {
-	title: 'Checkbox',
-};
+  title: 'Checkbox',
+}
 
 export const Default = () => (
-	<div style={{ display: 'flex' }}>
-		<Checkbox value="item">Item</Checkbox>
-	</div>
-);
+  <div style={{ display: 'flex' }}>
+    <Checkbox value='item'>Item</Checkbox>
+  </div>
+)

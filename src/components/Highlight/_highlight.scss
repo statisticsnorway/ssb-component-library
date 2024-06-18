@@ -14,7 +14,8 @@
 // code below is added for screen reader support and makes the screen readers announce where highlight starts and ends.
 // Todo: remove when support for <mark> is more widespread among screenreaders
 
-mark::before, mark::after {
+mark::before,
+mark::after {
   clip-path: inset(100%);
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -25,9 +26,9 @@ mark::before, mark::after {
 }
 
 mark::before {
-  content: " [highlight start] ";
+  content: ' [highlight start] ';
 }
 
 mark::after {
-  content: " [highlight end] ";
+  content: ' [highlight end] ';
 }
