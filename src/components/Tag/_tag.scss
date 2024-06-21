@@ -15,14 +15,18 @@
   min-height: 26px;
   padding: 8px 16px;
   text-align: center;
-  transition: background .18s, color .18s;
+  transition:
+    background 0.18s,
+    color 0.18s;
   white-space: nowrap;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     cursor: pointer;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: $ssb-green-4;
     color: $ssb-white;
   }

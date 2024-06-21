@@ -21,7 +21,9 @@ $icon-padding: 8px;
   padding: 0 1px 2px;
   position: relative;
   text-decoration: none;
-  transition: background-size .2s ease-in, color .1s;
+  transition:
+    background-size 0.2s ease-in,
+    color 0.1s;
 
   .icon-wrapper {
     display: flex;
@@ -40,7 +42,8 @@ $icon-padding: 8px;
     }
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-size: 100% 100%;
     color: $ssb-white;
     outline: 0;
@@ -82,7 +85,8 @@ $icon-padding: 8px;
         color: $ssb-white;
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: $ssb-dark-5;
 
         .link-text {
@@ -91,7 +95,8 @@ $icon-padding: 8px;
       }
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $ssb-dark-5;
       outline: 0;
 
@@ -121,7 +126,8 @@ $icon-padding: 8px;
       color: $ssb-dark-6;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $ssb-white;
 
       .link-text {
@@ -132,9 +138,10 @@ $icon-padding: 8px;
 
   .link-text {
     color: $ssb-green-4;
-    transition: color .1s;
+    transition: color 0.1s;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $ssb-white;
       outline: 0;
     }
@@ -147,7 +154,7 @@ $icon-padding: 8px;
     align-items: center !important;
     border-bottom: none;
     text-decoration: underline;
-    text-underline-offset: .3em;
+    text-underline-offset: 0.3em;
 
     .icon-wrapper {
       margin-top: 0;

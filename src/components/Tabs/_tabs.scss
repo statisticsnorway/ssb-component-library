@@ -17,7 +17,7 @@
     position: relative;
     text-align: center;
     text-decoration: none;
-    transition: background .2s;
+    transition: background 0.2s;
 
     &:not(:last-of-type) {
       margin-right: 40px;
@@ -30,17 +30,16 @@
     &::before {
       background: $ssb-dark-5;
       bottom: 0;
-      content: "";
+      content: '';
       display: block;
       height: 0;
       left: 0;
       position: absolute;
-      transition: all .2s;
+      transition: all 0.2s;
       width: 100%;
     }
 
     &.active {
-
       &::before {
         background: $ssb-green-3;
         height: 4px;
@@ -52,8 +51,8 @@
       padding-right: 20px;
     }
 
-    &:hover, &:focus {
-
+    &:hover,
+    &:focus {
       &::before {
         height: 4px;
       }

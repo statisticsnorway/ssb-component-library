@@ -1,5 +1,4 @@
-Divider
-========
+# Divider
 
 > A way of separating content
 
@@ -21,8 +20,8 @@ Divider
 
 Available props:
 
-| Name       | Type           | Description  |
-| ---------- | ------------- | ----- |
+| Name      | Type   | Description      |
+| --------- | ------ | ---------------- |
 | className | string | Custom className |
-| dark | bool | For dark color |
-| light | bool | For light color |
+| dark      | bool   | For dark color   |
+| light     | bool   | For light color  |

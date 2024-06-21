@@ -1,12 +1,12 @@
-import React from 'react';
-import RadioButton from './index';
+import React from 'react'
+import RadioButton from './index'
 
 export default {
-	title: 'RadioButton',
-};
+  title: 'RadioButton',
+}
 
 export const Default = () => (
-	<div>
-		<RadioButton value="item">Item</RadioButton>
-	</div>
-);
+  <div>
+    <RadioButton value='item'>Item</RadioButton>
+  </div>
+)

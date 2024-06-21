@@ -1,9 +1,8 @@
-Text
-========
+# Text
 
 > A component for showing Text
-### Usage
 
+### Usage
 
 #### HTML
 
@@ -29,9 +28,9 @@ Text
 
 Available props:
 
-| Name       | Type           | Description  |
-| ---------- | ------------- | ----- |
-| children   | Required node | Content within the wrapper |
-| className   | string | Optional container class|
-| negative | Optional boolean | Styling for dark theme |
-| small | Optional boolean | Style textsize |
+| Name      | Type             | Description                |
+| --------- | ---------------- | -------------------------- |
+| children  | Required node    | Content within the wrapper |
+| className | string           | Optional container class   |
+| negative  | Optional boolean | Styling for dark theme     |
+| small     | Optional boolean | Style textsize             |

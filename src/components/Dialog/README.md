@@ -1,5 +1,4 @@
-Dialog
-========
+# Dialog
 
 > A component for showing messages to the user
 
@@ -14,9 +13,7 @@ Dialog
   </div>
   <div class="dialog-content">
     <span class="dialog-title">A fitting title</span>
-    <div class="content">
-      Insert content here
-    </div>
+    <div class="content">Insert content here</div>
   </div>
 </div>
 
@@ -26,9 +23,7 @@ Dialog
   </div>
   <div class="dialog-content">
     <span class="dialog-title">A fitting title</span>
-    <div class="content">
-      Insert content here
-    </div>
+    <div class="content">Insert content here</div>
   </div>
 </div>
 ```
@@ -38,21 +33,22 @@ Dialog
 ```jsx harmony
 <Dialog title="A fitting title Info dialog">
   Insert content here
-</Dialog> 
+</Dialog>
 
 <Dialog type='warning' title="A fitting title Warning dialog">
   Insert content here
-</Dialog> 
+</Dialog>
 ```
 
 Available props:
 
-| Name       | Type           | Description  |
-| ---------- | ------------- | ----- |
-| children   | Required node | Content within the wrapper |
-| className   | string | Optional container class|
-| title | Required string | Bold text as a title |
-| type | 'info' or 'warning' | Changes color and icon |
+| Name      | Type                | Description                |
+| --------- | ------------------- | -------------------------- |
+| children  | Required node       | Content within the wrapper |
+| className | string              | Optional container class   |
+| title     | Required string     | Bold text as a title       |
+| type      | 'info' or 'warning' | Changes color and icon     |
 
-__Dependencies__
- - [Paragraph](../Paragraph)
+**Dependencies**
+
+- [Paragraph](../Paragraph)
