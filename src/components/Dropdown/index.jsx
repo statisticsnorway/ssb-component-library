@@ -30,12 +30,19 @@ const Dropdown = ({
 
   const [isOpen, setOpen] = useState(open)
   const [availableOptions, filterAvailableOptions] = useState(items || [])
-  const [selectedOption, selectItem] = useState(selectedItem || { title: '', id: '' })
-  const [activeOption, setActiveOption] = useState(selectedItem || { title: '', id: '' })
+  const DEFAULT_ITEM = { title: '', id: '' }
+  const [selectedOption, selectItem] = useState(selectedItem || DEFAULT_ITEM)
+  const [activeOption, setActiveOption] = useState(selectedItem || DEFAULT_ITEM)
   const [inputFieldValue, updateInputValue] = useState('')
   const [keyNavPosition, setKeyNavPosition] = useState(0)
 
   const dropdownId = id || useId()
+
+  // ensure reactivity of 'selectedItem' prop is preserved
+  useEffect(() => {
+    selectItem(selectedItem || DEFAULT_ITEM)
+    setActiveOption(selectedItem || DEFAULT_ITEM)
+  }, [selectedItem])
 
   const filterOptions = (value) => {
     updateInputValue(value)
