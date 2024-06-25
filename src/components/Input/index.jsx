@@ -1,8 +1,8 @@
-import React, { useEffect, useState, forwardRef } from 'react'
-import PropTypes from 'prop-types'
-import { Search } from 'react-feather'
-import { useId } from '../../utils/useId'
-import InputError from '../InputError'
+import React, { useState, forwardRef } from 'react';
+import PropTypes from 'prop-types';
+import { Search } from 'react-feather';
+import { useId } from '../../utils/useId';
+import InputError from '../InputError';
 
 const Input = forwardRef(
   (
@@ -39,13 +39,11 @@ const Input = forwardRef(
       handleChange(e.target.value)
     }
 
-    useEffect(() => setValue(value), [value])
-
-    const handleKeyDown = (e) => {
-      if (e.key === 'Enter') {
-        submitCallback(inputValue)
-      }
-    }
+	const handleKeyDown = e => {
+		if (e.key === 'Enter') {
+			submitCallback(inputValue);
+		}
+	};
 
     return (
       <div
