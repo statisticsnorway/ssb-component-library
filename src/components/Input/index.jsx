@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react'
+import React, { useState, forwardRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Search } from 'react-feather'
 import { useId } from '../../utils/useId'
@@ -11,29 +11,32 @@ const Input = forwardRef(
       ariaLabelWrapper,
       ariaLabel,
       ariaLabelledBy,
-      ariaLabelSearchButton,
+      ariaLabelSearchButton = 'search',
       name,
-      className,
-      disabled,
-      error,
+      className = '',
+      disabled = false,
+      error = false,
       errorMessage,
-      handleChange,
+      handleChange = () => {},
       id,
       label,
-      negative,
+      negative = false,
       placeholder,
-      searchField,
-      submitCallback,
-      type,
-      value,
-      onFocus,
-      onBlur,
+      searchField = false,
+      submitCallback = () => {},
+      type = 'text',
+      value = '',
+      onFocus = () => {},
+      onBlur = () => {},
       size,
     },
     ref
   ) => {
     const [inputValue, setValue] = useState(value)
     const inputId = id || useId()
+
+    useEffect(() => setValue(value), [value])
+
     const handleInputChange = (e) => {
       setValue(e.target.value)
       handleChange(e.target.value)
@@ -88,21 +91,6 @@ const Input = forwardRef(
     )
   }
 )
-
-Input.defaultProps = {
-  className: '',
-  disabled: false,
-  error: false,
-  handleChange: () => {},
-  onFocus: () => {},
-  onBlur: () => {},
-  negative: false,
-  searchField: false,
-  submitCallback: () => {},
-  type: 'text',
-  ariaLabelSearchButton: 'search',
-  value: '',
-}
 
 Input.propTypes = {
   role: PropTypes.string,
