@@ -53,7 +53,7 @@
     z-index: 999;
 
     &::after {
-      border-color: transparent transparent $ssb-dark-5 transparent;
+      border-color: transparent transparent $ssb-dark-5;
       border-style: solid;
       border-width: 12px;
       content: '';
