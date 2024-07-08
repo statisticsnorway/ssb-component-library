@@ -7,7 +7,7 @@
   .ssb-table {
     @include roboto;
     line-height: 1.75rem;
-    width: 100%;
+    min-width: 1400px; // We need a fixed width for overflow-x to work
     border-collapse: collapse;
     border: 1px solid variables.$ssb-dark-5;
 
@@ -32,25 +32,18 @@
     th,
     td {
       text-align: left;
-    }
+      padding: 0.5rem 1rem;
 
-    thead,
-    tbody {
-      th,
-      td {
-        padding: 0.5rem 1rem;
+      &.level1 {
+        padding-left: 1.75rem;
+      }
 
-        &.level1 {
-          padding-left: 1.75rem;
-        }
+      &.level2 {
+        padding-left: 2.5rem;
+      }
 
-        &.level2 {
-          padding-left: 2.5rem;
-        }
-
-        &.level3 {
-          padding-left: 3.25rem;
-        }
+      &.level3 {
+        padding-left: 3.25rem;
       }
 
       th {
@@ -60,59 +53,114 @@
 
     caption {
       text-align: left;
+      position: relative;
+      padding: 1.75rem 1rem;
+
+      @media (width <=1060px) {
+        padding-top: 55px;
+
+        .scroll-icon-wrapper {
+          margin-top: -100px;
+        }
+      }
+
+      .icon-container {
+        padding: 0 1rem;
+      }
 
       .caption-wrapper {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        padding: 1.75rem 1rem;
+        position: relative;
 
         .caption-text-wrapper {
           font-weight: bold;
+          text-align: left;
+          width: 998px;
         }
 
-        // TODO: Can be reused (partly?) for later implementation of scroll functionality
-        // .scoll-icons-wrapper {
-        //   display: grid;
-        //   grid-auto-flow: column;
-        //   grid-column-gap: 1.25em;
-        //   padding: 0 2.5em 0 1.5em; // padding-left with caption-text-wrapper padding-left is a total of 2.5em
+        .scroll-icon-wrapper {
+          display: flex;
+          align-items: center;
+          position: sticky;
+          right: 40px;
+          left: 40px;
+          visibility: hidden;
 
-        //   .scroll-icon-left, .scroll-icon-right {
-        //     height: 32px; // icon height
+          &.visible {
+            visibility: visible;
+          }
+        }
 
-        //     // remove default styling for button
-        //     background: none;
-        //     color: inherit;
-        //     border: none;
-        //     padding: 0;
-        //     font: inherit;
-        //     cursor: pointer;
-        //     outline: inherit;
+        .scroll-icon {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 44px;
+          height: 44px;
+          overflow: hidden;
+          background: transparent;
 
-        //     &:focus, &:hover {
-        //       @include focus-ring;
-        //     }
+          &:focus {
+            svg {
+              fill: variables.$ssb-green-4;
+              transition: fill 0.18s;
+            }
 
-        //     &.disabled {
-        //       color: $ssb-dark-2;
-        //       cursor: default;
-        //     }
+            svg line,
+            svg polyline {
+              stroke: variables.$ssb-white;
+            }
 
-        //     svg {
-        //       color: $ssb-green-4;
-        //     }
-        //   }
-        // }
+            svg circle {
+              stroke: variables.$ssb-green-4;
+              transition: stroke 0.16s;
+            }
+          }
 
-        // @media #{$mobile} {
-        //   flex-direction: column-reverse;
-        //   align-items: start;
+          &:hover {
+            svg {
+              fill: variables.$ssb-green-4;
+              transition: fill 0.18s;
+            }
 
-        //   .caption-text-wrapper, .scoll-icons-wrapper {
-        //     padding-top: 1rem;
-        //   }
-        // }
+            svg line,
+            svg polyline {
+              stroke: variables.$ssb-white;
+            }
+
+            svg circle {
+              stroke: variables.$ssb-green-4;
+              transition: stroke 0.16s;
+            }
+          }
+
+          &:active {
+            svg {
+              fill: variables.$ssb-dark-5;
+              transition: fill 0.18s;
+            }
+
+            svg line,
+            svg polyline {
+              stroke: variables.$ssb-white;
+            }
+            
+            svg circle {
+              stroke: variables.$ssb-dark-5;
+              transition: stroke 0.16s;
+            }
+          }
+        }
+
+        .scroll-icon svg {
+          width: 32px;
+          height: 32px;
+          color: variables.$ssb-green-4;
+          stroke-width: 1px;
+        }
+
       }
     }
 
@@ -188,5 +236,23 @@
     .align-center {
       text-align: center;
     }
+  }
+}
+
+.scroll-icon-active,
+.scroll-icon:active {
+  svg {
+    fill: var(--ssb-dark-5);
+    transition: fill 0.18s;
+  }
+
+  svg line,
+  svg polyline {
+    stroke: var(--ssb-white);
+  }
+
+  svg circle {
+    stroke: var(--ssb-dark-5);
+    transition: stroke 0.16s;
   }
 }
