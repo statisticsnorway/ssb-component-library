@@ -32,19 +32,11 @@ export const SearchField = () => (
   </div>
 )
 
-SearchField.story = {
-  name: 'Search field',
-}
-
 export const WithValue = () => (
   <div style={{ width: '280px' }}>
     <Input label='Input field' value='Already filled' />
   </div>
 )
-
-WithValue.story = {
-  name: 'With value',
-}
 
 export const Disabled = () => (
   <div style={{ width: '280px' }}>
@@ -91,7 +83,3 @@ export const LargeInput = () => (
     <Input searchField size='lg' placeholder='Søk' />
   </div>
 )
-
-LargeInput.story = {
-  name: 'Large input',
-}
