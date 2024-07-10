@@ -1,28 +1,21 @@
 .ssb-expansion-box {
   display: grid;
-  width: 740px;  
-  border: 1px solid $ssb-green-3;
-  border-radius: 8px;  
-  padding: 30px 40px;
-
-  &:focus-within {
-    outline: $ssb-purple-3 solid 2px;
-    outline-offset: 2px;
-    border-radius: 8px;
-  }
+  width: 740px;
+  border: 1px solid $ssb-green-4;
+  border-radius: 8px;
 
   &:hover {
-    border: 2px solid $ssb-green-4;
+    box-shadow: 0 0 0 1px $ssb-green-4;
 
     .icon-wrapper::before {
-      width: 50px; 
-      height: 50px; 
+      width: 50px;
+      height: 50px;
     }
 
     .icon-wrapper .expand-icon {
-        color: $ssb-white;
-    } 
-  } 
+      color: $ssb-white;
+    }
+  }
 
   .icon-wrapper {
     position: relative;
@@ -34,23 +27,21 @@
       color: $ssb-green-4;
       position: relative;
       z-index: 1;
+    }
   }
-  }
-
-  
 
   .icon-wrapper::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background-color:$ssb-green-4;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 0; 
-  } 
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: $ssb-green-4;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
 
   .header-content {
     @include reset-button;
@@ -58,6 +49,13 @@
     color: $ssb-dark-6;
     font-size: 20px;
     font-weight: bold;
+    padding: 30px 40px;
+
+    &:focus-visible {
+      outline: $ssb-purple-3 solid 2px;
+      outline-offset: 2px;
+      border-radius: 8px;
+    }
 
     .button-grid {
       align-items: center;
@@ -72,15 +70,16 @@
     @include open-sans;
     color: $ssb-dark-6;
     font-size: 16px;
-    padding: 20px 0;
+    padding: 0 40px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .5s ease-out, opacity .5s ease-out;
 
-    &.closed {
-      display: none;
-      height: 0;
+    &.open {
+      padding: 0 40px 30px;
+      max-height: 500px;
+      opacity: 1;
     }
   }
-
- 
 }
-  
-  
