@@ -72,26 +72,6 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
     }
   }, [])
 
-  useEffect(() => {
-    const updateIconPosition = () => {
-      if (!iconWrapperRef.current || !tableWrapperRef.current) return
-
-      const viewportWidth = window.innerWidth
-      if (viewportWidth > 1070) {
-        iconWrapperRef.current.style.top = '' // Clear any inline style above 1070px
-      }
-    }
-
-    updateIconPosition()
-    window.addEventListener('scroll', updateIconPosition)
-    window.addEventListener('resize', updateIconPosition)
-
-    return () => {
-      window.removeEventListener('scroll', updateIconPosition)
-      window.removeEventListener('resize', updateIconPosition)
-    }
-  }, [])
-
   return (
     <div className={`ssb-table-wrapper${isOverflowing ? ' overflowing' : ''}`} ref={tableWrapperRef}>
       <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
