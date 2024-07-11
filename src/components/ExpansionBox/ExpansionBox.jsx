@@ -2,7 +2,15 @@ import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import { ChevronDown, ChevronUp } from 'react-feather'
 
-const ExpansionBox = ({ className = '', header = '', onToggle = () => {}, openByDefault = false, text = '' }) => {
+const ExpansionBox = ({
+  className = '',
+  header = '',
+  icon,
+  onToggle = () => {},
+  openByDefault = false,
+  sneakPeek,
+  text = '',
+}) => {
   const [isOpen, toggleOpen] = useState(openByDefault)
   const firstUpdate = useRef(true)
   useEffect(() => {
@@ -13,13 +21,14 @@ const ExpansionBox = ({ className = '', header = '', onToggle = () => {}, openBy
     onToggle(isOpen)
   }, [isOpen])
   return (
-    <div className={`ssb-expansion-box${className ? ` ${className}` : ''}`}>
+    <div className={`ssb-expansion-box${className ? ` ${className}` : ''}${sneakPeek ? ` sneak-peek` : ''}`}>
       <button
-        className={`header-content ${isOpen ? 'open' : 'closed'}`}
+        className={`header ${isOpen ? 'open' : 'closed'}`}
         aria-expanded={isOpen ? 'true' : 'false'}
         onClick={() => toggleOpen(!isOpen)}
       >
         <span className='button-grid'>
+          {icon && <div className='icon'>{icon}</div>}
           <span className='header-text'>{header}</span>
           <div className='icon-wrapper'>
             {!isOpen && <ChevronDown className='expand-icon' size={24} />}
@@ -27,7 +36,7 @@ const ExpansionBox = ({ className = '', header = '', onToggle = () => {}, openBy
           </div>
         </span>
       </button>
-      <div className={`body-content ${isOpen ? 'open' : 'closed'}`}>{text}</div>
+      <div className={`content ${isOpen ? 'open' : 'closed'}`}>{text}</div>
     </div>
   )
 }
@@ -35,8 +44,10 @@ const ExpansionBox = ({ className = '', header = '', onToggle = () => {}, openBy
 ExpansionBox.propTypes = {
   className: PropTypes.string,
   header: PropTypes.string.isRequired,
+  icon: PropTypes.node,
   onToggle: PropTypes.func,
   openByDefault: PropTypes.bool,
+  sneakPeek: PropTypes.bool,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
 }
 
