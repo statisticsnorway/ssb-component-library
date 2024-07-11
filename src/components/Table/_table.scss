@@ -7,7 +7,7 @@
   .ssb-table {
     @include roboto;
     line-height: 1.75rem;
-    min-width: $desktop-screen; // We need a fixed width for overflow-x to work
+    min-width: $desktop; // We need a fixed width for overflow-x to work
     border-collapse: collapse;
     border: 1px solid variables.$ssb-dark-5;
 
@@ -24,7 +24,7 @@
 
     .caption-text-wrapper,
     tfoot td > * {
-      @media #{$desktop-screen} {
+      @media #{$desktop} {
         max-width: 780px;
       }
     }
