@@ -1,46 +1,21 @@
 .ssb-expansion-box {
-  display: grid;
-  width: 740px;
   border: 1px solid $ssb-green-4;
   border-radius: 8px;
+  display: grid;
+  width: 100%;
 
   &:hover {
     box-shadow: 0 0 0 1px $ssb-green-4;
 
-    .icon-wrapper::before {
-      width: 50px;
-      height: 50px;
-    }
+    .header .button-grid .icon-wrapper {
+      &::before {
+        height: 50px;
+        width: 50px;
+      }
 
-    .icon-wrapper .expand-icon {
-      color: $ssb-white;
-    }
-  }
-
-  .icon-wrapper {
-    position: relative;
-    display: inline-block;
-    margin-left: auto;
-    width: 24px;
-    height: 24px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background-color: $ssb-green-4;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-    }
-
-    .expand-icon {
-      color: $ssb-green-4;
-      position: relative;
-      z-index: 1;
+      .expand-icon {
+        color: $ssb-white;
+      }
     }
   }
 
@@ -48,45 +23,72 @@
     @include reset-button;
     padding: 30px 40px;
 
-    .header-text {
-      @include roboto;
-      color: $ssb-dark-6;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
     .button-grid {
       align-items: center;
       cursor: pointer;
       display: flex;
       grid-column-gap: 28px;
       grid-template-columns: auto 20px;
-    }
 
-    .icon {
-      display: inline-flex;
-      font-size: 18px;
-      margin-right: 5px;
+      .header-text {
+        @include roboto;
+        color: $ssb-dark-6;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .icon-wrapper {
+        display: inline-block;
+        margin-left: auto;
+        position: relative;
+        height: 24px;
+        width: 24px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background-color: $ssb-green-4;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 0;
+        }
+
+        .expand-icon {
+          color: $ssb-green-4;
+          position: relative;
+          z-index: 1;
+        }
+      }
+
+      .icon {
+        display: inline-flex;
+        font-size: 18px;
+        margin-right: 5px;
+      }
     }
 
     .sneak-peek-content {
-      position: relative;
       max-height: 70px;
       opacity: 1;
       overflow: hidden;
+      position: relative;
 
       &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
         background-image: linear-gradient(to bottom, rgba(255 255 255 / 0%) 50%, rgba(255 255 255) 100%);
+        content: '';
+        inset: 0;
+        position: absolute;
       }
     }
 
     &:focus-visible {
+      border-radius: 8px;
       outline: $ssb-purple-3 solid 2px;
       outline-offset: 2px;
-      border-radius: 8px;
     }
   }
 
@@ -94,18 +96,18 @@
     @include open-sans;
     color: $ssb-dark-6;
     font-size: 16px;
-    padding: 0 40px;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+    padding: 0 40px;
     transition:
       max-height 0.5s ease-out,
       opacity 0.5s ease-out;
 
     &.open {
-      padding: 0 40px 30px;
       max-height: 500px;
       opacity: 1;
+      padding: 0 40px 30px;
     }
   }
 }
