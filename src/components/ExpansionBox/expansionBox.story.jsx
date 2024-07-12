@@ -38,7 +38,7 @@ export default {
 }
 
 export const Default = () => (
-  <div style={{ height: '950px' }}>
+  <div style={{ width: '450px' }}>
     <ExpansionBox header={mockedHeader} text={mockedContent} />
   </div>
 )

@@ -21,7 +21,7 @@ const ExpansionBox = ({
     onToggle(isOpen)
   }, [isOpen])
   return (
-    <div className={`ssb-expansion-box${className ? ` ${className}` : ''}${sneakPeek ? ` sneak-peek` : ''}`}>
+    <div className={`ssb-expansion-box${className ? ` ${className}` : ''}`}>
       <button
         className={`header ${isOpen ? 'open' : 'closed'}`}
         aria-expanded={isOpen ? 'true' : 'false'}
@@ -35,6 +35,7 @@ const ExpansionBox = ({
             {isOpen && <ChevronUp className='expand-icon' size={24} />}
           </div>
         </span>
+        {sneakPeek && !isOpen && <div className='sneak-peek-content'>{text}</div>}
       </button>
       <div className={`content ${isOpen ? 'open' : 'closed'}`}>{text}</div>
     </div>
