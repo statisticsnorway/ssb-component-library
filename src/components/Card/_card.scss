@@ -3,7 +3,6 @@
   width: 100%;
 
   .clickable {
-    @include focus-within-marker;
     @include reset-button;
     width: 100%;
     position: relative;
@@ -123,6 +122,10 @@
           }
         }
       }
+    }
+
+    &:focus-within {
+      @include focus-ring;
     }
   }
 

@@ -3,7 +3,6 @@
   width: 100%;
 
   .accordion-header {
-    @include focus-marker;
     @include reset-button;
     @include roboto;
     font-size: 20px;
@@ -37,6 +36,10 @@
       .sub-header {
         color: $ssb-green-4;
       }
+    }
+
+    &:focus {
+      @include focus-ring;
     }
   }
 

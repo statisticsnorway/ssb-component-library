@@ -1,7 +1,5 @@
 .ssb-table-link {
   display: flex;
-
-  @include focus-marker;
   text-decoration: none;
 
   .tl-icon {
@@ -39,6 +37,7 @@
 
   &:hover,
   &:focus {
+    @include focus-ring;
     text-decoration: none;
 
     .tl-icon {
