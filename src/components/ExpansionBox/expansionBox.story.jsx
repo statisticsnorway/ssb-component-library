@@ -3,6 +3,9 @@ import { Sun } from 'react-feather'
 import ExpansionBox from './ExpansionBox'
 
 const mockedHeader = 'This is a expansion box header'
+const mockedText =
+  // eslint-disable-next-line max-len
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 
 const mockedContent = (
   <div>
@@ -40,14 +43,29 @@ export default {
 export const Default = () => <ExpansionBox header={mockedHeader} text={mockedContent} />
 
 export const DefaultOpen = () => (
-  <div style={{ width: '450px' }}>
+  <div style={{ width: '750px' }}>
     <ExpansionBox header={mockedHeader} text={mockedContent} openByDefault />
   </div>
 )
 
 export const SneakPeek = () => (
-  <div style={{ width: '750px' }}>
-    <ExpansionBox header={mockedHeader} text={mockedContent} icon={<Sun size={32} />} sneakPeek />
+  <div style={{ width: '1800px', display: 'flex', justifyContent: 'center' }}>
+    <div style={{ width: '740px', marginRight: '10px' }}>
+      <ExpansionBox
+        header='ExpansionBox with icon and sneakpeek text'
+        text={mockedText}
+        icon={<Sun size={32} />}
+        sneakPeek
+      />
+    </div>
+    <div style={{ width: '740px' }}>
+      <ExpansionBox
+        header='ExpansionBox with icon and sneakpeek content'
+        text={mockedContent}
+        icon={<Sun size={32} />}
+        sneakPeek
+      />
+    </div>
   </div>
 )
 

@@ -4,24 +4,13 @@
   display: grid;
   width: 100%;
 
-  &:hover {
-    box-shadow: 0 0 0 1px $ssb-green-4;
-
-    .header .button-grid .icon-wrapper {
-      &::before {
-        height: 50px;
-        width: 50px;
-      }
-
-      .expand-icon {
-        color: $ssb-white;
-      }
-    }
-  }
-
   .header {
     @include reset-button;
     padding: 30px 40px;
+
+    &:focus-visible {
+      outline: none;
+    }
 
     .button-grid {
       align-items: center;
@@ -70,44 +59,77 @@
         margin-right: 5px;
       }
     }
-
-    .sneak-peek-content {
-      max-height: 70px;
-      opacity: 1;
-      overflow: hidden;
-      position: relative;
-
-      &::after {
-        background-image: linear-gradient(to bottom, rgba(255 255 255 / 0%) 50%, rgba(255 255 255) 100%);
-        content: '';
-        inset: 0;
-        position: absolute;
-      }
-    }
-
-    &:focus-visible {
-      border-radius: 8px;
-      outline: $ssb-purple-3 solid 2px;
-      outline-offset: 2px;
-    }
   }
 
   .content {
     @include open-sans;
     color: $ssb-dark-6;
     font-size: 16px;
-    max-height: 0;
     overflow: hidden;
-    opacity: 0;
     padding: 0 40px;
+    max-height: 0;
+    opacity: 0;
     transition:
       max-height 0.5s ease-out,
       opacity 0.5s ease-out;
+  }
 
-    &.open {
-      max-height: 500px;
+  &:hover {
+    box-shadow: 0 0 0 1px $ssb-green-4;
+
+    .header .button-grid .icon-wrapper {
+      &::before {
+        height: 50px;
+        width: 50px;
+      }
+
+      .expand-icon {
+        color: $ssb-white;
+      }
+    }
+  }
+
+  &:focus-within {
+    border-radius: 8px;
+    outline: $ssb-purple-3 solid 2px;
+    outline-offset: 2px;
+  }
+
+  &.open {
+    &:focus-within {
+      outline: none;
+    }
+
+    .header:focus-visible {
+      border-radius: 8px;
+      outline: $ssb-purple-3 solid 2px;
+      outline-offset: 2px;
+    }
+
+    .content {
+      max-height: 1000px;
       opacity: 1;
       padding: 0 40px 30px;
+    }
+  }
+
+  &.sneak-peek {
+    .header {
+      padding: 30px 40px 20px;
+    }
+
+    .content.closed {
+      position: relative;
+      max-height: 70px;
+      opacity: 1;
+      margin-bottom: 30px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to bottom, rgba(255 255 255 / 0%) 50%, rgba(255 255 255) 100%);
+      }
     }
   }
 }

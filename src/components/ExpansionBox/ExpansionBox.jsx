@@ -6,7 +6,9 @@ const ExpansionBox = ({ className = '', header = '', icon, openByDefault = false
   const [isOpen, toggleOpen] = useState(openByDefault)
 
   return (
-    <div className={`ssb-expansion-box${className ? ` ${className}` : ''}`}>
+    <div
+      className={`ssb-expansion-box${className ? ` ${className}` : ''}${isOpen ? ' open' : ''}${sneakPeek ? ` sneak-peek` : ''}`}
+    >
       <button className='header' aria-expanded={isOpen ? 'true' : 'false'} onClick={() => toggleOpen(!isOpen)}>
         <span className='button-grid'>
           {icon && <div className='icon'>{icon}</div>}
@@ -16,9 +18,8 @@ const ExpansionBox = ({ className = '', header = '', icon, openByDefault = false
             {isOpen && <ChevronUp className='expand-icon' size={24} />}
           </div>
         </span>
-        {sneakPeek && !isOpen && <div className='sneak-peek-content'>{text}</div>}
       </button>
-      <div className={`content ${isOpen ? 'open' : 'closed'}`}>{text}</div>
+      <div className={`content ${!isOpen ? 'closed' : ''}`}>{text}</div>
     </div>
   )
 }
