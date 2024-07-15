@@ -59,6 +59,10 @@
         margin-right: 5px;
       }
     }
+
+    @media #{$mobile} {
+      padding: 20px;
+    }
   }
 
   .content {
@@ -110,6 +114,10 @@
       max-height: 1000px;
       opacity: 1;
       padding: 0 40px 30px;
+
+      @media #{$mobile} {
+        padding: 0 20px 20px;
+      }
     }
   }
 
