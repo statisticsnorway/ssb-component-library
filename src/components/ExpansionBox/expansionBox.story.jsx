@@ -40,7 +40,11 @@ export default {
   title: 'ExpansionBox',
 }
 
-export const Default = () => <ExpansionBox header={mockedHeader} text={mockedContent} />
+export const Default = () => (
+  <div style={{ width: '750px' }}>
+    <ExpansionBox header={mockedHeader} text={mockedContent} />
+  </div>
+)
 
 export const DefaultOpen = () => (
   <div style={{ width: '750px' }}>

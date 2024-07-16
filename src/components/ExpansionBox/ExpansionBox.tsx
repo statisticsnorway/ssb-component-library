@@ -1,8 +1,22 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, ReactNode } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
 
-const ExpansionBox = ({ className = '', header = '', icon, openByDefault = false, sneakPeek, text = '' }) => {
+export interface ExpansionBoxProps {
+  className?: string
+  header: string
+  icon?: ReactNode
+  openByDefault?: boolean
+  sneakPeek?: boolean
+  text: string | ReactNode
+}
+const ExpansionBox: React.FC<ExpansionBoxProps> = ({
+  className = '',
+  header = '',
+  icon,
+  openByDefault = false,
+  sneakPeek,
+  text = '',
+}) => {
   const [isOpen, toggleOpen] = useState(openByDefault)
 
   return (
@@ -22,15 +36,6 @@ const ExpansionBox = ({ className = '', header = '', icon, openByDefault = false
       <div className={`content ${!isOpen ? 'closed' : ''}`}>{text}</div>
     </div>
   )
-}
-
-ExpansionBox.propTypes = {
-  className: PropTypes.string,
-  header: PropTypes.string.isRequired,
-  icon: PropTypes.node,
-  openByDefault: PropTypes.bool,
-  sneakPeek: PropTypes.bool,
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
 }
 
 export default ExpansionBox
