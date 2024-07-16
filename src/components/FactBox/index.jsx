@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Accordion from '../Accordion'
 
+console.warn('Warning: FactBox is deprecated and will be removed in a future release. Please use ExpansionBox instead.')
+
 const FactBox = ({ className, header, openByDefault, text }) => (
   <div className={`ssb-fact-box${className ? ` ${className}` : ''}`}>
     <Accordion header={header} openByDefault={openByDefault} withoutBorders>
