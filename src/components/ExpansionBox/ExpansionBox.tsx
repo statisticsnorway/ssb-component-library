@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react'
+import React, { useEffect, useRef, useState, ReactNode } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
 
 export interface ExpansionBoxProps {
@@ -18,6 +18,16 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
   text = '',
 }) => {
   const [isOpen, toggleOpen] = useState(openByDefault)
+  const [maxHeight, setMaxHeight] = useState('')
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (contentRef.current) {
+      const contentHeight = contentRef.current.scrollHeight
+      const maxHeightValue = contentHeight <= 1000 ? contentHeight : 1000
+      setMaxHeight(isOpen ? `${maxHeightValue}px` : '')
+    }
+  }, [isOpen])
 
   return (
     <div
@@ -31,7 +41,9 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
           {isOpen && <ChevronUp className='expand-icon' size={24} />}
         </div>
       </button>
-      <div className={`content ${!isOpen ? 'closed' : ''}`}>{text}</div>
+      <div className={`content ${!isOpen ? 'closed' : ''}`} ref={contentRef} style={{ maxHeight }}>
+        {text}
+      </div>
     </div>
   )
 }
