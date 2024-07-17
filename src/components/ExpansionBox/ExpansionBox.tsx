@@ -24,14 +24,12 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
       className={`ssb-expansion-box${className ? ` ${className}` : ''}${isOpen ? ' open' : ''}${sneakPeek ? ` sneak-peek` : ''}`}
     >
       <button className='header' aria-expanded={isOpen ? 'true' : 'false'} onClick={() => toggleOpen(!isOpen)}>
-        <span className='button-grid'>
-          {icon && <div className='icon'>{icon}</div>}
-          <span className='header-text'>{header}</span>
-          <div className='icon-wrapper'>
-            {!isOpen && <ChevronDown className='expand-icon' size={24} />}
-            {isOpen && <ChevronUp className='expand-icon' size={24} />}
-          </div>
-        </span>
+        {icon && <div className='icon'>{icon}</div>}
+        <span className='header-text'>{header}</span>
+        <div className='icon-wrapper'>
+          {!isOpen && <ChevronDown className='expand-icon' size={24} />}
+          {isOpen && <ChevronUp className='expand-icon' size={24} />}
+        </div>
       </button>
       <div className={`content ${!isOpen ? 'closed' : ''}`}>{text}</div>
     </div>

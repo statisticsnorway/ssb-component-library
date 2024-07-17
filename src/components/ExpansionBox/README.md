@@ -6,17 +6,32 @@
 
 #### HTML
 
-```html
-<div className='ssb-expansion-box'>
-    <button aria-expanded='false' className='header'>
-        <span className='button-grid'>
-        <span className='header-text'>{header}</span>
-        <div className='icon-wrapper'>
-            <i class="expand-icon">{feather.chevronDown 20px}</i>
-        </div>
-        </span>
-    </button>
-    <div className='content closed'>{content}</div>
+```html Default
+<div class='ssb-expansion-box'>
+  <button aria-expanded='false' class='header'>
+    <span class='header-text'>This is a ExpansionBox title</span>
+    <div class='icon-wrapper'>
+      <i class="expand-icon">{feather.chevronDown 20px}</i>
+    </div>
+  </button>
+  <div class='content closed'>This is paragraph text</div>
+</div>
+```
+
+```html SneakPeek and icon
+<div class="ssb-expansion-box sneak-peek">
+   <button class="header" aria-expanded="false">
+      <div class="icon">
+        <i>{feather.sun 32px}</i>
+      </div>
+      <span class="header-text">ExpansionBox with icon and sneakpeek content</span>
+      <div class="icon-wrapper">
+         <i class="expand-icon">{feather.chevronDown 20px}</i>
+      </div>
+   </button>
+   <div class="content closed">
+      {content}
+   </div>
 </div>
 ```
 

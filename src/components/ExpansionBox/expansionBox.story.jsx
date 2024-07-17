@@ -9,12 +9,12 @@ const mockedText =
 
 const mockedContent = (
   <div>
-    <p>
+    <span>
       This is a normal paragraph text where the explanation of the fact is written. Here you can write a concise and
       descriptive text that helps the user understand the content. This is a normal paragraph text where the explanation
       of the fact is written. Here you can write a concise and descriptive text that helps the user understand the
       content.
-    </p>
+    </span>
 
     <h3>Mulighet for tittel i boksen</h3>
     <ul>
