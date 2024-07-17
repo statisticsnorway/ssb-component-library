@@ -1,0 +1,150 @@
+.ssb-expansion-box {
+  border: 1px solid $ssb-green-4;
+  border-radius: 8px;
+  display: grid;
+  width: 100%;
+
+  .header {
+    @include reset-button;
+    padding: 1.7rem 2.5rem;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+
+    .header-text {
+      @include roboto;
+      color: $ssb-dark-6;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+
+    .icon-wrapper {
+      display: inline-block;
+      margin-left: auto;
+      position: relative;
+      height: 1.5rem;
+      width: 1.5rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background-color: $ssb-green-4;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+      }
+
+      .expand-icon {
+        color: $ssb-green-4;
+        position: relative;
+        z-index: 1;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+
+    .icon {
+      align-items: center;
+      display: inline-flex;
+      margin-right: 1rem;
+      height: 2rem;
+      width: 2rem;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    @media #{$mobile} {
+      padding: 1.25rem;
+    }
+  }
+
+  .content {
+    @include open-sans;
+    color: $ssb-dark-6;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    overflow: hidden;
+    padding: 0 2.5rem;
+
+    &.closed {
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.5s;
+    }
+  }
+
+  &.open {
+    &:focus-within {
+      outline: none;
+    }
+
+    .header:focus-visible {
+      @include focus-ring;
+      border-radius: 8px;
+    }
+
+    .content {
+      max-height: 1000px;
+      opacity: 1;
+      overflow-y: auto;
+      padding: 0 2.5rem 2.5rem;
+      transition: max-height 0.5s;
+
+      @media #{$mobile} {
+        padding: 0 1.25rem 1.25rem;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px $ssb-green-4;
+
+    .header .icon-wrapper {
+      &::before {
+        height: 3rem;
+        width: 3rem;
+      }
+
+      .expand-icon {
+        color: $ssb-white;
+      }
+    }
+  }
+
+  &:focus-within {
+    @include focus-ring;
+    border-radius: 8px;
+  }
+
+  &.sneak-peek {
+    .header {
+      padding-bottom: 0.5rem;
+    }
+
+    &.open .header {
+      padding-bottom: 2.5rem;
+      transition: padding-bottom 0.5s;
+    }
+
+    .content.closed {
+      position: relative;
+      max-height: 4.3rem;
+      opacity: 1;
+      margin-bottom: 1.8rem;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to bottom, rgba(255 255 255 / 0%) 50%, rgba(255 255 255) 100%);
+      }
+    }
+  }
+}

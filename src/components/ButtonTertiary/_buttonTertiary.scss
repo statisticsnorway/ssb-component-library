@@ -1,6 +1,5 @@
 .ssb-btn-tertiary {
   .button-header {
-    @include focus-marker;
     @include reset-button;
     @include roboto;
     font-family: 'Open Sans', sans-serif;
@@ -29,6 +28,8 @@
 
     &:hover,
     &:focus {
+      @include focus-ring;
+
       .header-text {
         color: $ssb-green-4;
         text-decoration: underline;

@@ -6,7 +6,6 @@
   width: 100%;
 
   .nested-accordion-header {
-    @include focus-marker;
     @include reset-button;
 
     .button-grid {
@@ -41,6 +40,10 @@
       .sub-header {
         color: $ssb-green-4;
       }
+    }
+
+    &:focus {
+      @include focus-ring;
     }
   }
 

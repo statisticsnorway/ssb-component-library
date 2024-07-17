@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpansionBox component Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ssb-expansion-box"
+  >
+    <button
+      aria-expanded="false"
+      class="header"
+    >
+      <span
+        class="header-text"
+      >
+        This is a ExpansionBox title
+      </span>
+      <div
+        class="icon-wrapper"
+      >
+        <svg
+          class="expand-icon"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
+      </div>
+    </button>
+    <div
+      class="content closed"
+    >
+      This is paragraph text
+    </div>
+  </div>
+</DocumentFragment>
+`;

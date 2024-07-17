@@ -79,15 +79,3 @@ $max-readable-width: 580px;
   padding: 0;
   text-align: left;
 }
-
-@mixin focus-marker {
-  &:focus {
-    @include focus-ring;
-  }
-}
-
-@mixin focus-within-marker {
-  &:focus-within {
-    @include focus-ring;
-  }
-}
