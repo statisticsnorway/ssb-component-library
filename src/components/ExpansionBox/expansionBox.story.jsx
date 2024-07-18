@@ -29,10 +29,10 @@ const mockedContent = (
       descriptive text that helps the user understand the content.
     </p>
 
-    <p>
+    <span>
       This is a normal paragraph text <a href='https://www.ssb.no'>lenke i løpende tekst</a> where the explanation of
       the fact is written. Here you can write a concise and descriptive text that helps the user understand the content.
-    </p>
+    </span>
   </div>
 )
 
