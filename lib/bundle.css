@@ -1036,7 +1036,7 @@ a {
   font-size: 1rem;
   line-height: 1.75rem;
   overflow: hidden;
-  padding: 0 2.5rem;
+  padding: 0 4rem 0 2.5rem;
 }
 .ssb-expansion-box .content.closed {
   max-height: 0;
@@ -1055,7 +1055,7 @@ a {
   max-height: 1000px;
   opacity: 1;
   overflow-y: auto;
-  padding: 0 2.5rem 2.5rem;
+  padding: 0 4rem 0 2.5rem;
   transition: max-height 0.5s;
 }
 @media screen and (max-width: 767px) {
@@ -1087,9 +1087,9 @@ a {
 }
 .ssb-expansion-box.sneak-peek .content.closed {
   position: relative;
-  max-height: 4.3rem;
+  max-height: 5.5rem;
   opacity: 1;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 .ssb-expansion-box.sneak-peek .content.closed::after {
   content: "";
