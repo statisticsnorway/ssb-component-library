@@ -99,7 +99,7 @@
     "style-loader": "~4.0.0",
     "stylelint": "~16.6.1",
     "stylelint-config-standard-scss": "~13.1.0",
-    "ts-jest": "~29.2.2",
+    "ts-jest": "~29.2.3",
     "typescript": "~5.5.3",
     "typescript-eslint": "~7.16.1",
     "webpack": "~5.92.1",
