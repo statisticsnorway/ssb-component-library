@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { BookOpen, XCircle } from 'react-feather'
 
-const Glossary = ({ explanation, children, className, closeText }) => {
+const Glossary = ({ explanation, children, className, closeText, ariaLabel }) => {
   const node = useRef()
   const [open, setOpen] = useState(false)
 
@@ -51,7 +51,7 @@ const Glossary = ({ explanation, children, className, closeText }) => {
         ref={node}
         onClick={() => setOpen(!open)}
         className='glossary-button'
-        aria-label={children}
+        aria-label={ariaLabel || children}
         aria-expanded={open ? 'true' : 'false'}
       >
         <span className='glossary-text-wrap'>{children}</span>
@@ -86,6 +86,7 @@ Glossary.propTypes = {
   className: PropTypes.string,
   closeText: PropTypes.string,
   explanation: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string,
 }
 
 export default Glossary

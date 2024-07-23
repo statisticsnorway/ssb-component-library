@@ -43,3 +43,4 @@ Available props:
 | className   | string          | Optional container class                 |
 | closeText   | string          | Close button text, default "Lukk"        |
 | explanation | required string | Text to be inside popup                  |
+| ariaLabel | string | Defines a string value that describes the glossary  |

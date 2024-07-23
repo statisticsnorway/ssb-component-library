@@ -19,7 +19,7 @@ export const Large = () => (
       numberDescription='husholdninger'
       time='2018'
       size='large'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
       glossary={placeholderText}
     />
   </div>
@@ -33,7 +33,7 @@ export const Medium = () => (
       numberDescription='husholdninger'
       time='2018'
       size='medium'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
     />
   </div>
 )
@@ -46,7 +46,7 @@ export const Small = () => (
       numberDescription='plasser'
       time='2018'
       size='small'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
     />
   </div>
 )
@@ -86,7 +86,7 @@ export const WithoutNumber = () => (
     numberDescription='plasser'
     time='2018'
     size='small'
-    icon={<HouseIcon alt='house' />}
+    icon={<HouseIcon />}
   />
 )
 
@@ -102,7 +102,7 @@ export const WithChanges = () => (
       numberDescription='husholdninger'
       time='2018'
       size='large'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
       glossary={placeholderText}
       changes={{
         changeDirection: 'up',
@@ -120,7 +120,7 @@ export const WithChanges = () => (
       numberDescription='husholdninger'
       time='2018'
       size='medium'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
       changes={{
         changeDirection: 'same',
         changeText: 'Ingen endring',
@@ -137,7 +137,7 @@ export const WithChanges = () => (
       numberDescription='plasser'
       time='2018'
       size='small'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
       changes={{
         changeDirection: 'down',
         changeText: 'Ned 1 prosentpoeng',
