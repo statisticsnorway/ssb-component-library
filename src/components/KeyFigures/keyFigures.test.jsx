@@ -58,15 +58,15 @@ describe('KeyFigures component', () => {
         time='2018'
         changes={{
           changeDirection: 'up',
-          changeText: '30 999 kroner',
+          changeText: '1,5%',
           changePeriod: 'fra året før',
-          srChangeText: 'Oppgang 30 999 kroner fra året før'
+          srChangeText: 'Oppgang 1,5% fra året før',
         }}
       />
     )
-    expect(getByText('30 999 kroner')).toBeVisible()
+    expect(getByText('1,5%')).toBeVisible()
     expect(asFragment().querySelector('.changes-text')).toHaveAttribute('aria-hidden', 'true')
-    expect(getByText('Oppgang 30 999 kroner fra året før')).toHaveClass('sr-only')
+    expect(getByText('Oppgang 1,5% fra året før')).toHaveClass('sr-only')
   })
   test('Render green box variation', () => {
     const { asFragment } = render(

@@ -139,6 +139,26 @@ export const WithChanges = () => (
   </div>
 )
 
+export const WithChangesAndScreenReaderOnlyText = () => (
+  <div>
+    <KeyFigures
+      number='789 398'
+      title={title}
+      numberDescription='husholdninger'
+      time='2018'
+      size='large'
+      icon={<HouseIcon />}
+      glossary={placeholderText}
+      changes={{
+        changeDirection: 'up',
+        changeText: '1,5%',
+        changePeriod: 'fra året før',
+        srChangeText: 'Oppgang 1,5% fra året før',
+      }}
+    />
+  </div>
+)
+
 export const GreenboxVariasjonMedium = () => (
   <KeyFigures
     title='Valgdeltagelse ved stortingsvalg'
