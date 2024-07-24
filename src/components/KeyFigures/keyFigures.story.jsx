@@ -132,9 +132,8 @@ export const WithChanges = () => (
       icon={<HouseIcon />}
       changes={{
         changeDirection: 'down',
-        changeText: '1 %',
+        changeText: 'Ned 1 prosentpoeng',
         changePeriod: 'fra året før',
-        srChangeText: 'Ned 1 % fra året før',
       }}
     />
   </div>
