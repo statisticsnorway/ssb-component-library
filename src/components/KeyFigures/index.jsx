@@ -22,7 +22,7 @@ const KeyFigures = ({
     <div className={`ssb-key-figures ${size}${greenBox ? ' green-box' : ''}${className ? ` ${className}` : ''}`}>
       {icon && <div className={`kf-icon ${size}`}>{icon}</div>}
       <div>
-        {glossary ? (
+        {glossary && title ? (
           <Glossary explanation={glossary} ariaLabel={title}>
             <span className='kf-title'>{title}</span>
           </Glossary>

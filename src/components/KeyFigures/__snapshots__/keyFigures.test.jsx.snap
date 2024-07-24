@@ -215,7 +215,7 @@ exports[`KeyFigures component Renders Glossary 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-label="[object Object]"
+          aria-label="Antall husholdninger"
           class="glossary-button"
         >
           <span
@@ -223,7 +223,9 @@ exports[`KeyFigures component Renders Glossary 1`] = `
           >
             <span
               class="kf-title"
-            />
+            >
+              Antall husholdninger
+            </span>
           </span>
           <svg
             aria-hidden="true"

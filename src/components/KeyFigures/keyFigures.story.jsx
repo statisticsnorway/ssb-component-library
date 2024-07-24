@@ -76,10 +76,6 @@ export const WithoutIcon = () => (
   </div>
 )
 
-WithoutIcon.story = {
-  name: 'Without icon',
-}
-
 export const WithoutNumber = () => (
   <KeyFigures
     title='Antall plasser i helse- og omsorgsinstitusjoner'
@@ -89,10 +85,6 @@ export const WithoutNumber = () => (
     icon={<HouseIcon />}
   />
 )
-
-WithoutNumber.story = {
-  name: 'Without number',
-}
 
 export const WithChanges = () => (
   <div>
@@ -140,16 +132,13 @@ export const WithChanges = () => (
       icon={<HouseIcon />}
       changes={{
         changeDirection: 'down',
-        changeText: 'Ned 1 prosentpoeng',
+        changeText: '1 %',
         changePeriod: 'fra året før',
+        srChangeText: 'Ned 1 % fra året før',
       }}
     />
   </div>
 )
-
-WithChanges.story = {
-  name: 'With changes',
-}
 
 export const GreenboxVariasjonMedium = () => (
   <KeyFigures
@@ -162,10 +151,6 @@ export const GreenboxVariasjonMedium = () => (
   />
 )
 
-GreenboxVariasjonMedium.story = {
-  name: 'Greenbox variasjon medium',
-}
-
 export const GreenboxVariasjonStor = () => (
   <KeyFigures
     title='Valgdeltagelse ved stortingsvalg'
@@ -176,7 +161,3 @@ export const GreenboxVariasjonStor = () => (
     greenBox
   />
 )
-
-GreenboxVariasjonStor.story = {
-  name: 'Greenbox variasjon stor',
-}
