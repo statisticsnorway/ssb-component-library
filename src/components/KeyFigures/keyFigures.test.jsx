@@ -1,5 +1,5 @@
 import React from 'react'
-import { screen, render } from '../../utils/test'
+import { render } from '../../utils/test'
 import { Home } from 'react-feather'
 import KeyFigures from './index'
 
