@@ -34,7 +34,7 @@ exports[`KeyFigures component Matches the snapshot 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-label="[object Object]"
+          aria-label="Antall husholdninger"
           class="glossary-button"
         >
           <span
@@ -140,6 +140,19 @@ exports[`KeyFigures component Matches the snapshot 1`] = `
           husholdninger
         </span>
       </div>
+      <div
+        class="kf-changes"
+      >
+        <span
+          aria-hidden="false"
+          class="changes-text"
+        />
+         
+        <span
+          aria-hidden="false"
+          class="changes-periode"
+        />
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -173,6 +186,19 @@ exports[`KeyFigures component Render green box variation 1`] = `
           class="kf-title subtitle"
         />
       </div>
+      <div
+        class="kf-changes"
+      >
+        <span
+          aria-hidden="false"
+          class="changes-text"
+        />
+         
+        <span
+          aria-hidden="false"
+          class="changes-periode"
+        />
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -189,7 +215,7 @@ exports[`KeyFigures component Renders Glossary 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-label="[object Object]"
+          aria-label="Antall husholdninger"
           class="glossary-button"
         >
           <span
@@ -197,7 +223,9 @@ exports[`KeyFigures component Renders Glossary 1`] = `
           >
             <span
               class="kf-title"
-            />
+            >
+              Antall husholdninger
+            </span>
           </span>
           <svg
             aria-hidden="true"
@@ -287,6 +315,19 @@ exports[`KeyFigures component Renders Glossary 1`] = `
         </div>
         <span
           class="kf-title subtitle"
+        />
+      </div>
+      <div
+        class="kf-changes"
+      >
+        <span
+          aria-hidden="false"
+          class="changes-text"
+        />
+         
+        <span
+          aria-hidden="false"
+          class="changes-periode"
         />
       </div>
     </div>

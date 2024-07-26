@@ -1,5 +1,5 @@
 import React from 'react'
-import { screen, render } from '../../utils/test'
+import { render } from '../../utils/test'
 import { Home } from 'react-feather'
 import KeyFigures from './index'
 
@@ -15,27 +15,27 @@ describe('KeyFigures component', () => {
         time='2018'
         size='large'
         icon={<Home className='feather-home' />}
-        glossary={'Explain something'}
+        glossary='Explain something'
       />
     )
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('Renders Glossary', () => {
-    const { asFragment } = render(<KeyFigures number='789 398' glossary={'Explain something'} />)
+    const { asFragment } = render(<KeyFigures title={title} number='789 398' glossary='Explain something' />)
     expect(asFragment()).toMatchSnapshot()
   })
   test('Renders time and number', async () => {
-    render(<KeyFigures number='789 398' time='2018' />)
-    expect(screen.getByText('2018')).toBeVisible()
-    expect(screen.getByText('789 398')).toBeVisible()
+    const { getByText } = render(<KeyFigures number='789 398' time='2018' />)
+    expect(getByText('2018')).toBeVisible()
+    expect(getByText('789 398')).toBeVisible()
   })
   test('Render no number text', () => {
-    render(<KeyFigures title='KeyFigure without number' time='2018' noNumberText='Ingen tall' />)
-    expect(screen.getByText('Ingen tall')).toBeVisible()
+    const { getByText } = render(<KeyFigures title='KeyFigure without number' time='2018' noNumberText='Ingen tall' />)
+    expect(getByText('Ingen tall')).toBeVisible()
   })
   test('Render changes', () => {
-    render(
+    const { asFragment, getByText } = render(
       <KeyFigures
         title='KeyFigure without number'
         time='2018'
@@ -46,8 +46,27 @@ describe('KeyFigures component', () => {
         }}
       />
     )
-    expect(screen.getByText('Ned 1 prosentpoeng')).toBeVisible()
-    expect(screen.getByText('fra året før')).toBeVisible()
+    expect(getByText('Ned 1 prosentpoeng')).toBeVisible()
+    expect(asFragment().querySelector('.changes-text')).toHaveAttribute('aria-hidden', 'false')
+    expect(getByText('fra året før')).toBeVisible()
+    expect(asFragment().querySelector('.changes-periode')).toHaveAttribute('aria-hidden', 'false')
+  })
+  test('Render changes with screen reader text', () => {
+    const { asFragment, getByText } = render(
+      <KeyFigures
+        title='KeyFigure without number'
+        time='2018'
+        changes={{
+          changeDirection: 'up',
+          changeText: '1,5%',
+          changePeriod: 'fra året før',
+          srChangeText: 'Oppgang 1,5% fra året før',
+        }}
+      />
+    )
+    expect(getByText('1,5%')).toBeVisible()
+    expect(asFragment().querySelector('.changes-text')).toHaveAttribute('aria-hidden', 'true')
+    expect(getByText('Oppgang 1,5% fra året før')).toHaveClass('sr-only')
   })
   test('Render green box variation', () => {
     const { asFragment } = render(

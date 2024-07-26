@@ -134,7 +134,7 @@ Available props:
 
 | Name              | Type                                                                  | Description                                              |
 | ----------------- | --------------------------------------------------------------------- | -------------------------------------------------------- |
-| changes           | object (changeDirection [up, down or same], changeText, changePeriod) | Renders changetext with icon                             |
+| changes           | object (changeDirection [up, down or same], changeText, changePeriod, srChangeText) | Renders changetext with icon                             |
 | className         | string                                                                | Optional container class                                 |
 | icon              | node                                                                  | Renders an icon                                          |
 | number            | string or number                                                      | Large number to be displayed                             |

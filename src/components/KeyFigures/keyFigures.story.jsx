@@ -19,7 +19,7 @@ export const Large = () => (
       numberDescription='husholdninger'
       time='2018'
       size='large'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
       glossary={placeholderText}
     />
   </div>
@@ -33,7 +33,7 @@ export const Medium = () => (
       numberDescription='husholdninger'
       time='2018'
       size='medium'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
     />
   </div>
 )
@@ -46,7 +46,7 @@ export const Small = () => (
       numberDescription='plasser'
       time='2018'
       size='small'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
     />
   </div>
 )
@@ -76,23 +76,15 @@ export const WithoutIcon = () => (
   </div>
 )
 
-WithoutIcon.story = {
-  name: 'Without icon',
-}
-
 export const WithoutNumber = () => (
   <KeyFigures
     title='Antall plasser i helse- og omsorgsinstitusjoner'
     numberDescription='plasser'
     time='2018'
     size='small'
-    icon={<HouseIcon alt='house' />}
+    icon={<HouseIcon />}
   />
 )
-
-WithoutNumber.story = {
-  name: 'Without number',
-}
 
 export const WithChanges = () => (
   <div>
@@ -102,7 +94,7 @@ export const WithChanges = () => (
       numberDescription='husholdninger'
       time='2018'
       size='large'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
       glossary={placeholderText}
       changes={{
         changeDirection: 'up',
@@ -120,7 +112,7 @@ export const WithChanges = () => (
       numberDescription='husholdninger'
       time='2018'
       size='medium'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
       changes={{
         changeDirection: 'same',
         changeText: 'Ingen endring',
@@ -137,7 +129,7 @@ export const WithChanges = () => (
       numberDescription='plasser'
       time='2018'
       size='small'
-      icon={<HouseIcon alt='house' />}
+      icon={<HouseIcon />}
       changes={{
         changeDirection: 'down',
         changeText: 'Ned 1 prosentpoeng',
@@ -147,9 +139,25 @@ export const WithChanges = () => (
   </div>
 )
 
-WithChanges.story = {
-  name: 'With changes',
-}
+export const WithChangesAndScreenReaderOnlyText = () => (
+  <div>
+    <KeyFigures
+      number='789 398'
+      title={title}
+      numberDescription='husholdninger'
+      time='2018'
+      size='large'
+      icon={<HouseIcon />}
+      glossary={placeholderText}
+      changes={{
+        changeDirection: 'up',
+        changeText: '1,5%',
+        changePeriod: 'fra året før',
+        srChangeText: 'Oppgang 1,5% fra året før',
+      }}
+    />
+  </div>
+)
 
 export const GreenboxVariasjonMedium = () => (
   <KeyFigures
@@ -162,10 +170,6 @@ export const GreenboxVariasjonMedium = () => (
   />
 )
 
-GreenboxVariasjonMedium.story = {
-  name: 'Greenbox variasjon medium',
-}
-
 export const GreenboxVariasjonStor = () => (
   <KeyFigures
     title='Valgdeltagelse ved stortingsvalg'
@@ -176,7 +180,3 @@ export const GreenboxVariasjonStor = () => (
     greenBox
   />
 )
-
-GreenboxVariasjonStor.story = {
-  name: 'Greenbox variasjon stor',
-}
