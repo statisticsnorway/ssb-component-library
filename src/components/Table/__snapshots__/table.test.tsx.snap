@@ -10,7 +10,7 @@ exports[`Render Table component Matches the snapshot 1`] = `
     >
       <caption>
         <div
-          class="caption-wrapper"
+          class="caption-wrapper single-line"
           style="position: relative;"
         >
           <div

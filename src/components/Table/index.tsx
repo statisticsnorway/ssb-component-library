@@ -27,6 +27,7 @@ export interface TableCellProps {
 const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, dataNoteRefs, children }, ref) => {
   const tableWrapperRef = useRef<HTMLDivElement | null>(null)
   const iconWrapperRef = useRef<HTMLDivElement | null>(null)
+  const captionRef = useRef<HTMLDivElement | null>(null)
   const [isOverflowing, setIsOverflowing] = useState(false)
   const [isActive, setIsActive] = useState<{ left: boolean; right: boolean }>({ left: false, right: false })
 
@@ -64,11 +65,31 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
       }
     }
 
+    const checkCaptionHeight = () => {
+      if (captionRef.current) {
+        const computedStyle = window.getComputedStyle(captionRef.current)
+        const lineHeight = parseFloat(computedStyle.lineHeight)
+        const captionHeight = captionRef.current.clientHeight
+        const lines = Math.round(captionHeight / lineHeight)
+        const parentElement = captionRef.current.parentElement as HTMLElement | null
+        if (parentElement) {
+          if (lines > 1) {
+            parentElement.classList.remove('single-line')
+          } else {
+            parentElement.classList.add('single-line')
+          }
+        }
+      }
+    }
+
     checkOverflow()
+    checkCaptionHeight()
     window.addEventListener('resize', checkOverflow)
+    window.addEventListener('resize', checkCaptionHeight)
 
     return () => {
       window.removeEventListener('resize', checkOverflow)
+      window.removeEventListener('resize', checkCaptionHeight)
     }
   }, [])
 
@@ -78,7 +99,9 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
         {caption && (
           <caption data-noterefs={dataNoteRefs}>
             <div className='caption-wrapper' style={{ position: 'relative' }}>
-              <div className='caption-text-wrapper'>{caption}</div>
+              <div className='caption-text-wrapper' ref={captionRef}>
+                {caption}
+              </div>
               <div className={`scroll-icon-wrapper ${isOverflowing ? 'visible' : ''}`} ref={iconWrapperRef}>
                 <div
                   className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}

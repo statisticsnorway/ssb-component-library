@@ -56,13 +56,17 @@
       position: relative;
       padding: 1.75rem 1rem;
 
-      @media (width <= $desktop-screen) {
-        padding-top: 55px;
+      @media (max-width: $desktop-screen) {
+          padding-top: 55px;
 
-        .scroll-icon-wrapper {
-          margin-top: -100px;
+          .caption-wrapper .scroll-icon-wrapper {
+            margin-top: -100px;
+          }
+
+          .caption-wrapper.single-line .scroll-icon-wrapper {
+            margin-top: -50px;
+          }
         }
-      }
 
       .icon-container {
         padding: 0 1rem;
