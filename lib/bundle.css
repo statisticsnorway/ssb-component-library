@@ -2259,12 +2259,15 @@ a {
   position: relative;
   padding: 1.75rem 1rem;
 }
-@media (width <= 992px) {
+@media (max-width: 992px) {
   .ssb-table-wrapper .ssb-table caption {
     padding-top: 55px;
   }
-  .ssb-table-wrapper .ssb-table caption .scroll-icon-wrapper {
+  .ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon-wrapper {
     margin-top: -100px;
+  }
+  .ssb-table-wrapper .ssb-table caption .caption-wrapper.single-line .scroll-icon-wrapper {
+    margin-top: -70px;
   }
 }
 .ssb-table-wrapper .ssb-table caption .icon-container {
