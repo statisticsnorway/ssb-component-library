@@ -57,7 +57,7 @@
       padding: 1.75rem 1rem;
 
       @media (max-width: $desktop-screen) {
-          padding-top: 55px;
+          padding-top: 47px;
 
           .caption-wrapper .scroll-icon-wrapper {
             margin-top: -100px;
@@ -81,6 +81,7 @@
           font-weight: bold;
           text-align: left;
           width: 998px;
+          margin-top:10px;
         }
 
         .scroll-icon-wrapper {
