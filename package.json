@@ -39,7 +39,8 @@
   "sideEffects": false,
   "homepage": "https://statisticsnorway.github.io/design-system/",
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/cli": "~7.24.8",
