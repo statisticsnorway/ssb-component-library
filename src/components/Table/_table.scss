@@ -54,19 +54,19 @@
     caption {
       text-align: left;
       position: relative;
-      padding: 1.75rem 1rem;
+      padding: 1.25rem 1rem;
 
       @media (max-width: $desktop-screen) {
-          padding-top: 47px;
+        padding-top: 47px;
 
-          .caption-wrapper .scroll-icon-wrapper {
-            margin-top: -100px;
-          }
-
-          .caption-wrapper.single-line .scroll-icon-wrapper {
-            margin-top: -70px;
-          }
+        .caption-wrapper .scroll-icon-wrapper {
+          margin-top: -100px;
         }
+
+        .caption-wrapper.single-line .scroll-icon-wrapper {
+          margin-top: -70px;
+        }
+      }
 
       .icon-container {
         padding: 0 1rem;
@@ -81,7 +81,7 @@
           font-weight: bold;
           text-align: left;
           width: 998px;
-          margin-top:10px;
+          padding-top: 10px;
         }
 
         .scroll-icon-wrapper {
@@ -151,7 +151,7 @@
             svg polyline {
               stroke: variables.$ssb-white;
             }
-            
+
             svg circle {
               stroke: variables.$ssb-dark-5;
               transition: stroke 0.16s;
@@ -165,7 +165,6 @@
           color: variables.$ssb-green-4;
           stroke-width: 1.5px;
         }
-
       }
     }
 
