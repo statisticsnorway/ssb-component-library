@@ -2257,11 +2257,11 @@ a {
 .ssb-table-wrapper .ssb-table caption {
   text-align: left;
   position: relative;
-  padding: 1.75rem 1rem;
+  padding: 1.25rem 1rem;
 }
 @media (max-width: 992px) {
   .ssb-table-wrapper .ssb-table caption {
-    padding-top: 55px;
+    padding-top: 47px;
   }
   .ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon-wrapper {
     margin-top: -100px;
@@ -2282,6 +2282,7 @@ a {
   font-weight: bold;
   text-align: left;
   width: 998px;
+  padding-top: 10px;
 }
 .ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon-wrapper {
   display: flex;
@@ -2344,7 +2345,7 @@ a {
   width: 32px;
   height: 32px;
   color: #00824d;
-  stroke-width: 1px;
+  stroke-width: 1.5px;
 }
 .ssb-table-wrapper .ssb-table thead {
   border-bottom: 2px solid #274247;
