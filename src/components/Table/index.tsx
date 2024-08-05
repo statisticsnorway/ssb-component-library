@@ -69,7 +69,9 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
       if (captionRef.current) {
         const computedStyle = window.getComputedStyle(captionRef.current)
         const lineHeight = parseFloat(computedStyle.lineHeight)
-        const captionHeight = captionRef.current.clientHeight
+        const paddingTop = parseFloat(computedStyle.paddingTop)
+        const paddingBottom = parseFloat(computedStyle.paddingBottom)
+        const captionHeight = captionRef.current.clientHeight - paddingTop - paddingBottom
         const lines = Math.round(captionHeight / lineHeight)
         const parentElement = captionRef.current.parentElement as HTMLElement | null
         if (parentElement) {
@@ -85,11 +87,9 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
     checkOverflow()
     checkCaptionHeight()
     window.addEventListener('resize', checkOverflow)
-    window.addEventListener('resize', checkCaptionHeight)
 
     return () => {
       window.removeEventListener('resize', checkOverflow)
-      window.removeEventListener('resize', checkCaptionHeight)
     }
   }, [])
 
