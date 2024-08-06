@@ -48,12 +48,13 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
   }
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>, direction: Direction) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
       setIsActive((prev) => ({ ...prev, [direction]: true }))
       handleScroll(direction)
       setTimeout(() => {
         setIsActive((prev) => ({ ...prev, [direction]: false }))
-      }, 150) // Reset active state after a short delay
+      }, 150)
     }
   }
 
