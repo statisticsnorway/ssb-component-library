@@ -77,4 +77,12 @@ describe('Card component', () => {
     )
     expect(await screen.findByText('Handling')).toBeVisible()
   })
+  test('Has aria-label', async () => {
+    render (
+      <Card href='' ariaLabel="Alternative profiledBox screen reader text">
+        ProfiledBox
+      </Card>
+    )
+    expect(await screen.findByLabelText('Alternative profiledBox screen reader text')).toBeVisible()
+  })
 })
