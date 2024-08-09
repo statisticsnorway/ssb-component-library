@@ -29,12 +29,6 @@
       }
     }
 
-    .caption-text-wrapper{
-      @media #{$desktop} {
-        max-width: 998px;
-      }
-    }
-
     th,
     td {
       text-align: left;
