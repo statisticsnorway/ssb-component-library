@@ -107,7 +107,7 @@
   </a>
 </div>
 
-<!-- External card with ariaLabel and ariaDescribedBy -->
+<!-- External card with ariaLabel -->
 <div class="ssb-card">
   <a
     href=" "
@@ -115,7 +115,6 @@
     target="_blank"
     rel="noreferrer"
     aria-label="Gå til url"
-    aria-describedby="ssb-card-text"
   >
     <div class="card-content profiled external">
       <div class="card-icon">
@@ -190,3 +189,4 @@ Available props:
 | subTitle       | string                 | Smaller text over title                           |
 | title          | string                 | Card title                                        |
 | external       | bool                   | Change icon from ArrowRight to ExternalLink       |
+| ariaLabel      | string                 | Optional aria-label text for screen readers       |

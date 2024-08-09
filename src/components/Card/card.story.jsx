@@ -48,10 +48,6 @@ export const DefaultWithIcon = () => (
   </div>
 )
 
-DefaultWithIcon.story = {
-  name: 'Default with icon',
-}
-
 export const Profiled = () => (
   <div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
     <div style={{ marginRight: '10px', width: '400px' }}>
@@ -82,10 +78,6 @@ export const ProfiledWithIcon = () => (
   </div>
 )
 
-ProfiledWithIcon.story = {
-  name: 'Profiled with icon',
-}
-
 export const ExternalWithIcon = () => (
   <div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
     <div style={{ marginRight: '10px', width: '400px' }}>
@@ -101,10 +93,6 @@ export const ExternalWithIcon = () => (
   </div>
 )
 
-ExternalWithIcon.story = {
-  name: 'External with icon',
-}
-
 export const WithImagesLeft = () => (
   <div>
     <Card
@@ -118,10 +106,6 @@ export const WithImagesLeft = () => (
     </Card>
   </div>
 )
-
-WithImagesLeft.story = {
-  name: 'With images left',
-}
 
 export const WithImagesTop = () => (
   <div style={{ width: '380px' }}>
@@ -137,43 +121,37 @@ export const WithImagesTop = () => (
   </div>
 )
 
-WithImagesTop.story = {
-  name: 'With images top',
-}
-
-export const CardWithAriaLabelAndAriaDescribedBy = () => (
-  <div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
-    <div style={{ marginRight: '10px', width: '380px' }}>
-      <Card
-        imagePlacement='top'
-        image={<img src='/16x9.png' alt='testImage' />}
-        href=' '
-        subTitle='Artikkel / 11. mai 2019'
-        title='Dangerous Children'
-        ariaLabel='Tittel - Artikkel 11. mai 2019'
-        ariaDescribedBy='text'
-      >
-        <Text>Explain something about something with something clever.</Text>
-      </Card>
+export const CardWithAriaLabel = () => {
+  const title = 'Dangerous Children'
+  const subTitle = 'Artikkel / 11. mai 2019'
+  return (
+    <div style={{ width: '800px', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ marginRight: '10px', width: '380px' }}>
+        <Card
+          imagePlacement='top'
+          image={<img src='/16x9.png' alt='testImage' aria-hidden='true' />}
+          href=' '
+          subTitle={subTitle}
+          title={title}
+          ariaLabel={`${title}, ${subTitle.replace(' /', ',')}`}
+        >
+          <Text>Explain something about something with something clever.</Text>
+        </Card>
+      </div>
+      <div style={{ width: '400px' }}>
+        <Card
+          href=' '
+          icon={<Globe size={120} aria-hidden='true' />}
+          profiled
+          external
+          hrefText='Gå til url'
+          ariaLabel='Gå til url'
+        >
+          <Text>Explain something about something with something clever.</Text>
+        </Card>
+      </div>
     </div>
-    <div style={{ width: '400px' }}>
-      <Card
-        href=' '
-        icon={<Globe size={120} />}
-        profiled
-        external
-        hrefText='Gå til url'
-        ariaLabel='Gå til url'
-        ariaDescribedBy='text'
-      >
-        <Text>Explain something about something with something clever.</Text>
-      </Card>
-    </div>
-  </div>
-)
-
-CardWithAriaLabelAndAriaDescribedBy.story = {
-  name: 'Card with ariaLabel and ariaDescribedBy',
+  )
 }
 
 export const DefaultProfiledCardMedTittel = () => (
@@ -198,10 +176,6 @@ export const DefaultProfiledCardMedTittel = () => (
     </div>
   </div>
 )
-
-DefaultProfiledCardMedTittel.story = {
-  name: '**Default/Profiled Card med tittel',
-}
 
 export const DefaultProfiledCardWithoutTitleButWithHrefText = () => (
   <div style={{ width: '1200px', display: 'flex', justifyContent: 'center' }}>
@@ -246,10 +220,6 @@ export const DefaultProfiledCardWithoutTitleButWithHrefText = () => (
     </div>
   </div>
 )
-
-DefaultProfiledCardWithoutTitleButWithHrefText.story = {
-  name: '**Default/Profiled Card without title, but with hrefText',
-}
 
 export const CardWithImages = () => (
   <div style={{ width: '800px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
@@ -297,7 +267,3 @@ export const CardWithImages = () => (
     </div>
   </div>
 )
-
-CardWithImages.story = {
-  name: '**Card with images',
-}

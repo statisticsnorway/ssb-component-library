@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { ArrowRight, Download, ExternalLink } from 'react-feather'
 
 const Card = ({
+  ariaLabel,
   children,
   className,
   external,
@@ -18,7 +19,10 @@ const Card = ({
   title,
 }) => (
   <div className={`ssb-card${className ? ` ${className}` : ''}`}>
-    <div className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}>
+    <div
+      className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
+      aria-label={ariaLabel}
+    >
       {image && <div className='card-image'>{image}</div>}
 
       <div
@@ -91,6 +95,7 @@ Card.defaultProps = {
 }
 
 Card.propTypes = {
+  ariaLabel: PropTypes.string,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   downloadText: PropTypes.string,
