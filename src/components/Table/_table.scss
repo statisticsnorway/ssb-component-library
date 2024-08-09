@@ -22,10 +22,15 @@
       border-bottom: transparent;
     }
 
-    .caption-text-wrapper,
     tfoot td > * {
       @media #{$desktop} {
         max-width: 780px;
+      }
+    }
+
+    .caption-text-wrapper{
+      @media #{$desktop} {
+        max-width: 998px;
       }
     }
 
