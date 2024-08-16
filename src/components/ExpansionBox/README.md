@@ -18,11 +18,11 @@
 </div>
 ```
 
-```html SneakPeek and icon
+```html SneakPeek and sparklesIcon
 <div class="ssb-expansion-box sneak-peek">
    <button class="header" aria-expanded="false">
       <div class="icon">
-        <i>{feather.sun 32px}</i>
+        <i>{SparklesIcon 32px}</i>
       </div>
       <span class="header-text">ExpansionBox with icon and sneakpeek content</span>
       <div class="icon-wrapper">
@@ -47,13 +47,14 @@
 
 Available props:
 
-| Name          | Type              | Description                           |
-| ------------- | ----------------- | ------------------------------------- |
-| className     | string            | Optional container class              |
-| header        | string            | Header text                           |
-| icon          | node              | Renders an icon to the left of header |
-| sneakPeek     | bool              | Show a sneakpeek of the text          |
-| openByDefault | bool              | Open when rendered. Defaults to false |
-| text          | string or element | Content in expansionBox                   |
+| Name          | Type              | Description                                                    |
+| ------------- | ----------------- | -------------------------------------------------------------  |
+| className     | string            | Optional container class                                       |
+| header        | string            | Header text                                                    |
+| icon          | node              | Renders an icon to the left of header                          |
+| sneakPeek     | bool              | Show a sneakpeek of the text                                   |
+| sparkleIcon   | bool              | Show a sparkle icon to the left of header, used in summary box |
+| openByDefault | bool              | Open when rendered. Defaults to false                          |
+| text          | string or element | Content in expansionBox                                        |
 
 

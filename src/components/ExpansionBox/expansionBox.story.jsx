@@ -1,5 +1,4 @@
 import React from 'react'
-import { Sun } from 'react-feather'
 import ExpansionBox from './ExpansionBox'
 
 const mockedHeader = 'This is a expansion box header'
@@ -55,26 +54,10 @@ export const DefaultOpen = () => (
 export const SneakPeek = () => (
   <div style={{ width: '1800px', display: 'flex', justifyContent: 'center' }}>
     <div style={{ width: '740px', marginRight: '10px' }}>
-      <ExpansionBox
-        header='ExpansionBox with icon and sneakpeek text'
-        text={mockedText}
-        icon={<Sun size={32} />}
-        sneakPeek
-      />
+      <ExpansionBox header='ExpansionBox with sneakpeek text' text={mockedText} sneakPeek />
     </div>
     <div style={{ width: '740px' }}>
-      <ExpansionBox
-        header='ExpansionBox with icon and sneakpeek content'
-        text={mockedContent}
-        icon={<Sun size={32} />}
-        sneakPeek
-      />
+      <ExpansionBox header='ExpansionBox with icon and sneakpeek content' text={mockedContent} sparkleIcon sneakPeek />
     </div>
-  </div>
-)
-
-export const Icon = () => (
-  <div style={{ width: '450px' }}>
-    <ExpansionBox header={mockedHeader} text={mockedContent} icon={<Sun size={32} />} />
   </div>
 )
