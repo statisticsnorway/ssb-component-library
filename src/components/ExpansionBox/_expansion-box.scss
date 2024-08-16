@@ -4,12 +4,29 @@
   display: grid;
   width: 100%;
 
+  &:has(.header:hover) {
+    box-shadow: 0 0 0 1px $ssb-green-4;
+  }
+
   .header {
     @include reset-button;
     padding: 1.7rem 2.5rem;
     align-items: center;
     cursor: pointer;
     display: flex;
+
+    &:hover {
+      .icon-wrapper {
+        &::before {
+          height: 3rem;
+          width: 3rem;
+        }
+
+        .expand-icon {
+          color: $ssb-white;
+        }
+      }
+    }
 
     .header-text {
       @include roboto;
@@ -104,21 +121,6 @@
 
       @media #{$mobile} {
         padding: 0 1.25rem 1.25rem;
-      }
-    }
-  }
-
-  &:hover {
-    box-shadow: 0 0 0 1px $ssb-green-4;
-
-    .header .icon-wrapper {
-      &::before {
-        height: 3rem;
-        width: 3rem;
-      }
-
-      .expand-icon {
-        color: $ssb-white;
       }
     }
   }

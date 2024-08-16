@@ -3,19 +3,19 @@ import { ChevronDown, ChevronUp } from 'react-feather'
 import SparklesIcon from '../../media/icons/sparkles.svg'
 
 export interface ExpansionBoxProps {
+  aiIcon?: boolean
   className?: string
   header: string
   openByDefault?: boolean
   sneakPeek?: boolean
-  sparkleIcon?: boolean
   text: string | ReactNode
 }
 const ExpansionBox: React.FC<ExpansionBoxProps> = ({
+  aiIcon = false,
   className = '',
   header = '',
   openByDefault = false,
   sneakPeek,
-  sparkleIcon = false,
   text = '',
 }) => {
   const [isOpen, toggleOpen] = useState(openByDefault)
@@ -35,7 +35,7 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
       className={`ssb-expansion-box${className ? ` ${className}` : ''}${isOpen ? ' open' : ''}${sneakPeek ? ` sneak-peek` : ''}`}
     >
       <button className='header' aria-expanded={isOpen ? 'true' : 'false'} onClick={() => toggleOpen(!isOpen)}>
-        {sparkleIcon && (
+        {aiIcon && (
           <div className='icon'>
             <SparklesIcon />
           </div>

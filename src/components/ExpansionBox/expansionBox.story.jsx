@@ -52,12 +52,13 @@ export const DefaultOpen = () => (
 )
 
 export const SneakPeek = () => (
-  <div style={{ width: '1800px', display: 'flex', justifyContent: 'center' }}>
-    <div style={{ width: '740px', marginRight: '10px' }}>
-      <ExpansionBox header='ExpansionBox with sneakpeek text' text={mockedText} sneakPeek />
-    </div>
-    <div style={{ width: '740px' }}>
-      <ExpansionBox header='ExpansionBox with icon and sneakpeek content' text={mockedContent} sparkleIcon sneakPeek />
-    </div>
+  <div style={{ width: '740px', marginRight: '10px' }}>
+    <ExpansionBox header='ExpansionBox with sneakpeek text' text={mockedText} sneakPeek />
+  </div>
+)
+
+export const SneakpeekWithAiIcon = () => (
+  <div style={{ width: '740px' }}>
+    <ExpansionBox header='ExpansionBox with sneakpeek text and AI icon' text={mockedContent} aiIcon sneakPeek />
   </div>
 )
