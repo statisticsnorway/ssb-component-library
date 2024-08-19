@@ -131,6 +131,17 @@
   }
 
   &.sneak-peek {
+    &:not(&.open) {
+      position: relative;
+
+      .header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
+    }
+
     .header {
       padding-bottom: 0.5rem;
       transition: padding-bottom 0.5s;
