@@ -25,7 +25,7 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
   useEffect(() => {
     if (contentRef.current) {
       const contentHeight = contentRef.current.scrollHeight
-      const maxHeightValue = contentHeight <= 1000 ? contentHeight : 1000
+      const maxHeightValue = contentHeight <= 1000 ? contentHeight + 10 : 1000
       setMaxHeight(isOpen ? `${maxHeightValue}px` : '')
     }
   }, [isOpen])
