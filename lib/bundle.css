@@ -1080,6 +1080,15 @@ a {
   outline-offset: 2px;
   border-radius: 8px;
 }
+.ssb-expansion-box.sneak-peek:not(.ssb-expansion-box.sneak-peek.open) {
+  position: relative;
+}
+.ssb-expansion-box.sneak-peek:not(.ssb-expansion-box.sneak-peek.open) .header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
 .ssb-expansion-box.sneak-peek .header {
   padding-bottom: 0.5rem;
   transition: padding-bottom 0.5s;

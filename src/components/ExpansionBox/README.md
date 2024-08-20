@@ -42,7 +42,7 @@
 
 <ExpansionBox header='ExpansionBox open by default' text='This is paragraph text which explains the expansionBox' openByDefault />
 
-<ExpansionBox header='ExpansionBox with icon and sneakpeek text' text='This is paragraph text which explains the expansionBox' aiIcon sneakPeek />
+<ExpansionBox header='ExpansionBox with AI icon and sneakpeek text' text='This is paragraph text which explains the expansionBox' aiIcon sneakPeek />
 ```
 
 Available props:
