@@ -10,6 +10,7 @@
     "strictNullChecks": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
-    "skipLibCheck": false
+    "skipLibCheck": false,
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
   }
 }
