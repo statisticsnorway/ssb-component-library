@@ -963,6 +963,9 @@ a {
   display: grid;
   width: 100%;
 }
+.ssb-expansion-box:has(.header:hover) {
+  box-shadow: 0 0 0 1px #00824d;
+}
 .ssb-expansion-box .header {
   background-color: transparent;
   border: none;
@@ -977,6 +980,13 @@ a {
   align-items: center;
   cursor: pointer;
   display: flex;
+}
+.ssb-expansion-box .header:hover .icon-wrapper::before {
+  height: 3rem;
+  width: 3rem;
+}
+.ssb-expansion-box .header:hover .icon-wrapper .expand-icon {
+  color: #fff;
 }
 .ssb-expansion-box .header .header-text {
   font-family: "Roboto", sans-serif !important;
@@ -1017,6 +1027,8 @@ a {
   align-items: center;
   display: inline-flex;
   margin-right: 1rem;
+}
+.ssb-expansion-box .header .icon svg {
   height: 2rem;
   width: 2rem;
 }
@@ -1063,20 +1075,19 @@ a {
     padding: 0 1.25rem 1.25rem;
   }
 }
-.ssb-expansion-box:hover {
-  box-shadow: 0 0 0 1px #00824d;
-}
-.ssb-expansion-box:hover .header .icon-wrapper::before {
-  height: 3rem;
-  width: 3rem;
-}
-.ssb-expansion-box:hover .header .icon-wrapper .expand-icon {
-  color: #fff;
-}
 .ssb-expansion-box:focus-within {
   outline: #9272fc solid 2px;
   outline-offset: 2px;
   border-radius: 8px;
+}
+.ssb-expansion-box.sneak-peek:not(.ssb-expansion-box.sneak-peek.open) {
+  position: relative;
+}
+.ssb-expansion-box.sneak-peek:not(.ssb-expansion-box.sneak-peek.open) .header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 .ssb-expansion-box.sneak-peek .header {
   padding-bottom: 0.5rem;
@@ -2228,9 +2239,13 @@ a {
   border-bottom: transparent;
 }
 @media screen and (min-width: 992px) {
-  .ssb-table-wrapper .ssb-table .caption-text-wrapper,
   .ssb-table-wrapper .ssb-table tfoot td > * {
     max-width: 780px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .ssb-table-wrapper .ssb-table .caption-text-wrapper {
+    max-width: 998px;
   }
 }
 .ssb-table-wrapper .ssb-table th,
@@ -2282,7 +2297,8 @@ a {
   font-weight: bold;
   text-align: left;
   width: 998px;
-  padding-top: 10px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon-wrapper {
   display: flex;

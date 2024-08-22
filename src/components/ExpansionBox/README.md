@@ -18,11 +18,11 @@
 </div>
 ```
 
-```html SneakPeek and icon
+```html SneakPeek and aiIcon
 <div class="ssb-expansion-box sneak-peek">
    <button class="header" aria-expanded="false">
       <div class="icon">
-        <i>{feather.sun 32px}</i>
+        <i>{SparklesIcon 32px}</i>
       </div>
       <span class="header-text">ExpansionBox with icon and sneakpeek content</span>
       <div class="icon-wrapper">
@@ -42,18 +42,18 @@
 
 <ExpansionBox header='ExpansionBox open by default' text='This is paragraph text which explains the expansionBox' openByDefault />
 
-<ExpansionBox header='ExpansionBox with icon and sneakpeek text' text='This is paragraph text which explains the expansionBox' icon={<Sun size={32} />} sneakPeek />
+<ExpansionBox header='ExpansionBox with AI icon and sneakpeek text' text='This is paragraph text which explains the expansionBox' aiIcon sneakPeek />
 ```
 
 Available props:
 
-| Name          | Type              | Description                           |
-| ------------- | ----------------- | ------------------------------------- |
-| className     | string            | Optional container class              |
-| header        | string            | Header text                           |
-| icon          | node              | Renders an icon to the left of header |
-| sneakPeek     | bool              | Show a sneakpeek of the text          |
-| openByDefault | bool              | Open when rendered. Defaults to false |
-| text          | string or element | Content in expansionBox                   |
+| Name          | Type              | Description                                                    |
+| ------------- | ----------------- | -------------------------------------------------------------  |
+| aiIcon        | bool              | Show a AI icon to the left of header                           |
+| className     | string            | Optional container class                                       |
+| header        | string            | Header text                                                    |
+| sneakPeek     | bool              | Show a sneakpeek of the text                                   |
+| openByDefault | bool              | Open when rendered. Defaults to false                          |
+| text          | string or element | Content in expansionBox                                        |
 
 
