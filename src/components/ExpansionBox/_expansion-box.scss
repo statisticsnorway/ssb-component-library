@@ -8,6 +8,11 @@
     box-shadow: 0 0 0 1px $ssb-green-4;
   }
 
+  &:has(.header:focus-visible) {
+    @include focus-ring;
+    border-radius: 8px;
+  }
+
   .header {
     @include reset-button;
     padding: 1.7rem 2.5rem;
@@ -131,11 +136,6 @@
         padding: 0 1.25rem;
       }
     }
-  }
-
-  &:focus-within {
-    @include focus-ring;
-    border-radius: 8px;
   }
 
   &.sneak-peek {
