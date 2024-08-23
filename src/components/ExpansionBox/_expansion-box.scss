@@ -68,7 +68,7 @@
     .icon {
       align-items: center;
       display: inline-flex;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
 
       svg {
         height: 2rem;
@@ -100,6 +100,10 @@
         max-height 0.5s,
         opacity 0.5s;
     }
+
+    @media #{$mobile} {
+      padding: 0 1.25rem;
+    }
   }
 
   &.open {
@@ -120,7 +124,7 @@
       transition: max-height 0.5s;
 
       @media #{$mobile} {
-        padding: 0 1.25rem 1.25rem;
+        padding: 0 1.25rem;
       }
     }
   }
@@ -148,7 +152,7 @@
     }
 
     &.open .header {
-      padding-bottom: 2.5rem;
+      padding-bottom: 1.7rem;
       transition: padding-bottom 0.5s;
     }
 
