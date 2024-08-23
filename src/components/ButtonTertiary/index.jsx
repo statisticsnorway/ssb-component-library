@@ -8,12 +8,12 @@ const ButtonTertiary = ({
   children,
   className,
   header,
-  openByDefault,
-  tabIndex,
-  accordion,
-  disabled,
-  negative,
-  onClick,
+  openByDefault = false,
+  tabIndex = 0,
+  accordion = true,
+  disabled = false,
+  negative = false,
+  onClick = () => {},
 }) => {
   const [isOpen, toggleOpen] = useState(openByDefault)
   const classNames = `ssb-btn-tertiary${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`
@@ -48,15 +48,6 @@ const ButtonTertiary = ({
       )}
     </div>
   )
-}
-
-ButtonTertiary.defaultProps = {
-  openByDefault: false,
-  tabIndex: 0,
-  accordion: true,
-  disabled: false,
-  negative: false,
-  onClick: () => {},
 }
 
 ButtonTertiary.propTypes = {

@@ -4,18 +4,13 @@ import Accordion from '../Accordion'
 
 console.warn('Warning: FactBox is deprecated and will be removed in a future release. Please use ExpansionBox instead.')
 
-const FactBox = ({ className, header, openByDefault, text }) => (
+const FactBox = ({ className, header, openByDefault = false, text }) => (
   <div className={`ssb-fact-box${className ? ` ${className}` : ''}`}>
     <Accordion header={header} openByDefault={openByDefault} withoutBorders>
       {text}
     </Accordion>
   </div>
 )
-
-FactBox.defaultProps = {
-  className: '',
-  openByDefault: false,
-}
 
 FactBox.propTypes = {
   className: PropTypes.string,

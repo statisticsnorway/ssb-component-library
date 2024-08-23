@@ -6,19 +6,19 @@ import InputError from '../InputError'
 const TextArea = ({
   ariaLabel,
   className,
-  disabled,
-  error,
+  disabled = false,
+  error = false,
   errorMessage,
-  handleChange,
+  handleChange = () => {},
   id,
   label,
-  negative,
+  negative = false,
   placeholder,
   value,
   rows,
   cols,
-  onBlur,
-  onFocus,
+  onBlur = () => {},
+  onFocus = () => {},
 }) => {
   const [inputValue, setValue] = useState(value)
   const inputId = id || useId()
@@ -50,16 +50,6 @@ const TextArea = ({
       {error && errorMessage && <InputError errorMessage={errorMessage} negative={negative} id={`error_${inputId}`} />}
     </div>
   )
-}
-
-TextArea.defaultProps = {
-  className: '',
-  disabled: false,
-  error: false,
-  handleChange: () => {},
-  onFocus: () => {},
-  onBlur: () => {},
-  negative: false,
 }
 
 TextArea.propTypes = {

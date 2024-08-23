@@ -24,10 +24,6 @@ const CategoryLink = ({ ariaLabel, titleText, subText, className, href, tabIndex
   )
 }
 
-CategoryLink.defaultProps = {
-  className: '',
-}
-
 CategoryLink.propTypes = {
   ariaLabel: PropTypes.string,
   titleText: PropTypes.string,

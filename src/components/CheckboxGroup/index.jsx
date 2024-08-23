@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Checkbox from '../Checkbox'
 
-const CheckboxGroup = ({ className, header, items, onChange, orientation, selectedValues }) => {
+const CheckboxGroup = ({
+  className,
+  header,
+  items,
+  onChange = () => {},
+  orientation = 'column',
+  selectedValues = [''],
+}) => {
   const [selected, updateSelected] = useState(selectedValues)
 
   useEffect(() => {
@@ -38,12 +45,6 @@ const CheckboxGroup = ({ className, header, items, onChange, orientation, select
       </div>
     </div>
   )
-}
-
-CheckboxGroup.defaultProps = {
-  onChange: () => {},
-  orientation: 'column',
-  selectedValues: [''],
 }
 
 CheckboxGroup.propTypes = {

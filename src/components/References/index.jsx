@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Link from '../Link'
 import Text from '../Text'
 
-const References = ({ className, referenceList, title }) => (
+const References = ({ className, referenceList, title = 'Kilder' }) => (
   <div className={`ssb-references${className ? ` ${className}` : ''}`}>
     <span className='reference-header'>{title}</span>
     {referenceList.map((ref, index) => (
@@ -16,10 +16,6 @@ const References = ({ className, referenceList, title }) => (
     ))}
   </div>
 )
-
-References.defaultProps = {
-  title: 'Kilder',
-}
 
 References.propTypes = {
   className: PropTypes.string,

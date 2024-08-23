@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import { ChevronDown, ChevronUp } from 'react-feather'
 
-const NestedAccordion = ({ children, className, header, openByDefault, onToggle }) => {
+const NestedAccordion = ({ children, className, header, openByDefault = false, onToggle = () => {} }) => {
   const [isOpen, toggleOpen] = useState(openByDefault)
   const firstUpdate = useRef(true)
   useEffect(() => {
@@ -28,11 +28,6 @@ const NestedAccordion = ({ children, className, header, openByDefault, onToggle 
       <div className={`nested-accordion-body ${isOpen ? 'open' : 'closed'}`}>{children}</div>
     </div>
   )
-}
-
-NestedAccordion.defaultProps = {
-  openByDefault: false,
-  onToggle: () => {},
 }
 
 NestedAccordion.propTypes = {

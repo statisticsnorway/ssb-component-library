@@ -1,7 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const RadioButton = ({ callback, children, className, disabled, name, selected, tabIndex, value, id }) => (
+const RadioButton = ({
+  callback = () => {},
+  children,
+  className,
+  disabled = false,
+  name,
+  selected,
+  tabIndex = 0,
+  value,
+  id,
+}) => (
   <div className={`ssb-radio${className ? ` ${className}` : ''}`}>
     <input
       tabIndex={tabIndex}
@@ -18,12 +28,6 @@ const RadioButton = ({ callback, children, className, disabled, name, selected, 
     </label>
   </div>
 )
-
-RadioButton.defaultProps = {
-  callback: () => {},
-  disabled: false,
-  tabIndex: 0,
-}
 
 RadioButton.propTypes = {
   callback: PropTypes.func,

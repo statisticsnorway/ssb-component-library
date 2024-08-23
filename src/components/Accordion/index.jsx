@@ -7,11 +7,11 @@ const Accordion = ({
   children,
   className,
   header,
-  openByDefault,
+  openByDefault = false,
   subHeader,
-  tabIndex,
+  tabIndex = 0,
   withoutBorders,
-  onToggle,
+  onToggle = () => {},
 }) => {
   const [isOpen, toggleOpen] = useState(openByDefault)
   const firstUpdate = useRef(true)
@@ -43,12 +43,6 @@ const Accordion = ({
       <div className={`accordion-body ${isOpen ? 'open' : 'closed'}`}>{children}</div>
     </div>
   )
-}
-
-Accordion.defaultProps = {
-  openByDefault: false,
-  tabIndex: 0,
-  onToggle: () => {},
 }
 
 Accordion.propTypes = {
