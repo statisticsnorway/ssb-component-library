@@ -981,6 +981,10 @@ a {
   cursor: pointer;
   display: flex;
 }
+.ssb-expansion-box .header:hover .icon-wrapper {
+  display: grid;
+  place-content: center;
+}
 .ssb-expansion-box .header:hover .icon-wrapper::before {
   height: 3rem;
   width: 3rem;
@@ -1026,7 +1030,7 @@ a {
 .ssb-expansion-box .header .icon {
   align-items: center;
   display: inline-flex;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 .ssb-expansion-box .header .icon svg {
   height: 2rem;
@@ -1051,9 +1055,15 @@ a {
   padding: 0 4rem 0 2.5rem;
 }
 .ssb-expansion-box .content.closed {
+  display: none;
   max-height: 0;
   opacity: 0;
   transition: max-height 0.5s, opacity 0.5s;
+}
+@media screen and (max-width: 767px) {
+  .ssb-expansion-box .content {
+    padding: 0 1.25rem;
+  }
 }
 .ssb-expansion-box.open:focus-within {
   outline: none;
@@ -1072,7 +1082,7 @@ a {
 }
 @media screen and (max-width: 767px) {
   .ssb-expansion-box.open .content {
-    padding: 0 1.25rem 1.25rem;
+    padding: 0 1.25rem;
   }
 }
 .ssb-expansion-box:focus-within {
@@ -1094,10 +1104,11 @@ a {
   transition: padding-bottom 0.5s;
 }
 .ssb-expansion-box.sneak-peek.open .header {
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.7rem;
   transition: padding-bottom 0.5s;
 }
 .ssb-expansion-box.sneak-peek .content.closed {
+  display: block;
   position: relative;
   max-height: 5.5rem;
   opacity: 1;
