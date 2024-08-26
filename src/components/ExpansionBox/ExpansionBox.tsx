@@ -31,11 +31,11 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
   useEffect(() => {
     if (contentRef.current) {
       const contentHeight = contentRef.current.scrollHeight
-      const maxHeightValue = contentHeight <= 1000 ? contentHeight + 10 : 1000
+      const maxHeightValue = contentHeight + 10
       setMaxHeight(isOpen ? `${maxHeightValue}px` : '')
       const focusableElements = contentRef.current.querySelectorAll('button, a')
 
-      if (!isOpen && sneakPeek) {
+      if (!isOpen) {
         focusableElements.forEach((el) => {
           el.setAttribute('tabindex', '-1')
         })

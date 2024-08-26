@@ -1060,7 +1060,6 @@ a {
   padding: 0 4rem 0 2.5rem;
 }
 .ssb-expansion-box .content.closed {
-  display: none;
   max-height: 0;
   opacity: 0;
   transition: max-height 0.5s, opacity 0.5s;
