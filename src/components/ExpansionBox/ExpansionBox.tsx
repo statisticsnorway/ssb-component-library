@@ -12,15 +12,21 @@ export interface ExpansionBoxProps {
 }
 const ExpansionBox: React.FC<ExpansionBoxProps> = ({
   aiIcon = false,
-  className = '',
+  className,
   header = '',
   openByDefault = false,
   sneakPeek,
   text = '',
 }) => {
-  const [isOpen, toggleOpen] = useState(openByDefault)
+  const [isOpen, setIsOpen] = useState(openByDefault)
   const [maxHeight, setMaxHeight] = useState('')
   const contentRef = useRef<HTMLDivElement>(null)
+  const classNameList: string[] = [
+    'ssb-expansion-box',
+    className ?? '',
+    isOpen ? 'open' : '',
+    sneakPeek ? 'sneak-peek' : '',
+  ].filter(Boolean)
 
   useEffect(() => {
     if (contentRef.current) {
@@ -42,10 +48,8 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
   }, [isOpen])
 
   return (
-    <div
-      className={`ssb-expansion-box${className ? ` ${className}` : ''}${isOpen ? ' open' : ''}${sneakPeek ? ` sneak-peek` : ''}`}
-    >
-      <button className='header' aria-expanded={isOpen ? 'true' : 'false'} onClick={() => toggleOpen(!isOpen)}>
+    <div className={classNameList.join(' ')}>
+      <button className='header' aria-expanded={isOpen ? 'true' : 'false'} onClick={() => setIsOpen(!isOpen)}>
         {aiIcon && (
           <div className='icon'>
             <SparklesIcon />
