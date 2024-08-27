@@ -8,6 +8,11 @@
     box-shadow: 0 0 0 1px $ssb-green-4;
   }
 
+  &:has(.header:focus-visible) {
+    @include focus-ring;
+    border-radius: 8px;
+  }
+
   .header {
     @include reset-button;
     padding: 1.7rem 2.5rem;
@@ -17,6 +22,9 @@
 
     &:hover {
       .icon-wrapper {
+        display: grid;
+        place-content: center;
+
         &::before {
           height: 3rem;
           width: 3rem;
@@ -68,7 +76,7 @@
     .icon {
       align-items: center;
       display: inline-flex;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
 
       svg {
         height: 2rem;
@@ -100,6 +108,10 @@
         max-height 0.5s,
         opacity 0.5s;
     }
+
+    @media #{$mobile} {
+      padding: 0 1.25rem;
+    }
   }
 
   &.open {
@@ -115,19 +127,13 @@
     .content {
       max-height: 1000px;
       opacity: 1;
-      overflow-y: auto;
       padding: 0 4rem 2rem 2.5rem;
       transition: max-height 0.5s;
 
       @media #{$mobile} {
-        padding: 0 1.25rem 1.25rem;
+        padding: 0 1.25rem;
       }
     }
-  }
-
-  &:focus-within {
-    @include focus-ring;
-    border-radius: 8px;
   }
 
   &.sneak-peek {
@@ -148,11 +154,12 @@
     }
 
     &.open .header {
-      padding-bottom: 2.5rem;
+      padding-bottom: 1.7rem;
       transition: padding-bottom 0.5s;
     }
 
     .content.closed {
+      display: block;
       position: relative;
       max-height: 5.5rem;
       opacity: 1;
