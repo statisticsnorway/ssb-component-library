@@ -1080,7 +1080,6 @@ a {
 .ssb-expansion-box.open .content {
   max-height: 1000px;
   opacity: 1;
-  overflow-y: auto;
   padding: 0 4rem 2rem 2.5rem;
   transition: max-height 0.5s;
 }
