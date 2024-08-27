@@ -2279,6 +2279,8 @@ a {
   vertical-align: bottom;
 }
 .ssb-table-wrapper .ssb-table caption {
+  caption-side: top;
+  color: #162327;
   text-align: left;
   position: relative;
   padding: 1.25rem 1rem;
