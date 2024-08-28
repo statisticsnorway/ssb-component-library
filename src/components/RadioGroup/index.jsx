@@ -2,7 +2,15 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import RadioButton from '../RadioButton'
 
-const RadioGroup = ({ className, groupName, header, items, onChange, orientation, selectedValue }) => {
+const RadioGroup = ({
+  className,
+  groupName,
+  header,
+  items,
+  onChange = () => {},
+  orientation = 'column',
+  selectedValue,
+}) => {
   const [selected, updateSelected] = useState(selectedValue)
 
   useEffect(() => {
@@ -30,11 +38,6 @@ const RadioGroup = ({ className, groupName, header, items, onChange, orientation
       </div>
     </div>
   )
-}
-
-RadioGroup.defaultProps = {
-  onChange: () => {},
-  orientation: 'column',
 }
 
 RadioGroup.propTypes = {

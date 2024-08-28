@@ -1,13 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Highlight = ({ children, className, negative }) => (
+const Highlight = ({ children, className, negative = false }) => (
   <mark className={`ssb-mark${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}> {children} </mark>
 )
-
-Highlight.defaultProps = {
-  negative: false,
-}
 
 Highlight.propTypes = {
   children: PropTypes.node.isRequired,

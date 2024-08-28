@@ -7,13 +7,13 @@ import { useId } from '../../utils/useId'
 
 const Dropdown = ({
   className,
-  header,
+  header = '',
   icon,
-  items,
-  onSelect,
-  open,
-  placeholder,
-  searchable,
+  items = [{ id: '', title: '' }],
+  onSelect = () => {},
+  open = false,
+  placeholder = '-- Select --',
+  searchable = false,
   selectedItem,
   tabIndex,
   error,
@@ -290,15 +290,6 @@ const Dropdown = ({
       </div>
     </div>
   )
-}
-
-Dropdown.defaultProps = {
-  header: '',
-  items: [{ id: '', title: '' }],
-  onSelect: () => {},
-  open: false,
-  searchable: false,
-  placeholder: '-- Select --',
 }
 
 Dropdown.propTypes = {

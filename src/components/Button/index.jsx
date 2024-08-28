@@ -2,7 +2,21 @@ import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
 const Button = forwardRef(
-  ({ children, className, disabled, icon, negative, onClick, primary, type, ariaLabel, onKeyDown }, ref) => (
+  (
+    {
+      children,
+      className,
+      disabled = false,
+      icon,
+      negative = false,
+      onClick = () => {},
+      primary = false,
+      type = 'button',
+      ariaLabel,
+      onKeyDown = () => {},
+    },
+    ref
+  ) => (
     <button
       type={type}
       ref={ref}
@@ -19,17 +33,6 @@ const Button = forwardRef(
 )
 
 Button.displayName = 'Button'
-
-Button.defaultProps = {
-  className: '',
-  disabled: false,
-  negative: false,
-  onClick: () => {},
-  onKeyDown: () => {},
-  primary: false,
-  type: 'button',
-  ariaLabel: '',
-}
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,

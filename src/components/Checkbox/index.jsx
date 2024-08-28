@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Checkbox = ({ callback, children, className, disabled, selected, tabIndex, value }) => (
+const Checkbox = ({ callback = () => {}, children, className, disabled, selected, tabIndex = 0, value }) => (
   <div className={`ssb-checkbox${className ? ` ${className}` : ''}`}>
     <input
       tabIndex={tabIndex}
@@ -17,11 +17,6 @@ const Checkbox = ({ callback, children, className, disabled, selected, tabIndex,
     </label>
   </div>
 )
-
-Checkbox.defaultProps = {
-  callback: () => {},
-  tabIndex: 0,
-}
 
 Checkbox.propTypes = {
   callback: PropTypes.func,

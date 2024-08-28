@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { AlertTriangle, Info } from 'react-feather'
 
-const Dialog = ({ children, className, title, type }) => (
+const Dialog = ({ children, className, title, type = 'info' }) => (
   <div className={`ssb-dialog ${type}${className ? ` ${className}` : ''}`}>
     <div className='icon-panel'>
       {type === 'warning' && <AlertTriangle size={45} className='icon' />}
@@ -14,11 +14,6 @@ const Dialog = ({ children, className, title, type }) => (
     </div>
   </div>
 )
-
-Dialog.defaultProps = {
-  className: '',
-  type: 'info',
-}
 
 Dialog.propTypes = {
   children: PropTypes.node.isRequired,

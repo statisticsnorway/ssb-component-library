@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ArrowRight } from 'react-feather'
 
-const TableLink = ({ className, description, href, isExternal, tabIndex, text, title }) => (
+const TableLink = ({ className, description, href, isExternal = true, tabIndex, text, title }) => (
   // eslint-disable-next-line react/jsx-no-target-blank
   <a
     className={`ssb-table-link${className ? ` ${className}` : ''}`}
@@ -21,10 +21,6 @@ const TableLink = ({ className, description, href, isExternal, tabIndex, text, t
     </div>
   </a>
 )
-
-TableLink.defaultProps = {
-  isExternal: true,
-}
 
 TableLink.propTypes = {
   className: PropTypes.string,

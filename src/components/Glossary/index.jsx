@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { BookOpen, XCircle } from 'react-feather'
 
-const Glossary = ({ explanation, children, className, closeText, ariaLabel }) => {
+const Glossary = ({ explanation, children, className, closeText = 'Lukk', ariaLabel }) => {
   const node = useRef()
   const [open, setOpen] = useState(false)
 
@@ -75,10 +75,6 @@ const Glossary = ({ explanation, children, className, closeText, ariaLabel }) =>
       </span>
     </span>
   )
-}
-
-Glossary.defaultProps = {
-  closeText: 'Lukk',
 }
 
 Glossary.propTypes = {

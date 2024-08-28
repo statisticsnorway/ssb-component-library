@@ -1,14 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const LeadParagraph = ({ children, className, negative }) => (
+const LeadParagraph = ({ children, className, negative = false }) => (
   <p className={`ssb-lead-paragraph${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{children}</p>
 )
-
-LeadParagraph.defaultProps = {
-  className: '',
-  negative: false,
-}
 
 LeadParagraph.propTypes = {
   children: PropTypes.node,

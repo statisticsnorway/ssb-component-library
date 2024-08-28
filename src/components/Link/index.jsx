@@ -7,12 +7,12 @@ const Link = ({
   className,
   href,
   icon,
-  isExternal,
+  isExternal = false,
   linkType,
-  negative,
+  negative = false,
   tabIndex,
   title,
-  onClick,
+  onClick = () => {},
   standAlone,
 }) => {
   const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${standAlone ? ' stand-alone' : ''}
@@ -34,13 +34,6 @@ const Link = ({
       {children && <span className='link-text'>{children}</span>}
     </a>
   )
-}
-
-Link.defaultProps = {
-  className: '',
-  isExternal: false,
-  negative: false,
-  onClick: () => {},
 }
 
 Link.propTypes = {

@@ -28,43 +28,40 @@ export function useHover() {
   return [hoverRef, value]
 }
 
-const PictureCard = forwardRef(({ className, imageSrc, altText, link, onClick, orientation, title, type }, ref) => {
-  const [hoverRef, hovered] = useHover()
-  return (
-    <a
-      className={`ssb-picture-card ${orientation} ${className || ''}`}
-      href={link}
-      onClick={onClick}
-      ref={(element) => {
-        // Using ref for multiple purposes, so need to set it manually
-        if (typeof ref === 'function') ref(element)
-        else if (ref) {
-          // eslint-disable-next-line no-param-reassign
-          ref.current = element
-        }
-        hoverRef.current = element
-      }}
-    >
-      <div className='image-background'>
-        <img src={imageSrc} alt={altText} />
-      </div>
-      <div className='overlay'>
-        <span className='il-type'>{type}</span>
-        <span className='il-title'>{title}</span>
-        {hovered ? (
-          <ArrowRightCircle className='arrow-icon' size={32} />
-        ) : (
-          <ArrowRight className='arrow-icon' size={32} />
-        )}
-      </div>
-    </a>
-  )
-})
-
-PictureCard.defaultProps = {
-  onClick: () => {},
-  orientation: 'vertical',
-}
+const PictureCard = forwardRef(
+  ({ className, imageSrc, altText, link, onClick = () => {}, orientation = 'vertical', title, type }, ref) => {
+    const [hoverRef, hovered] = useHover()
+    return (
+      <a
+        className={`ssb-picture-card ${orientation} ${className || ''}`}
+        href={link}
+        onClick={onClick}
+        ref={(element) => {
+          // Using ref for multiple purposes, so need to set it manually
+          if (typeof ref === 'function') ref(element)
+          else if (ref) {
+            // eslint-disable-next-line no-param-reassign
+            ref.current = element
+          }
+          hoverRef.current = element
+        }}
+      >
+        <div className='image-background'>
+          <img src={imageSrc} alt={altText} />
+        </div>
+        <div className='overlay'>
+          <span className='il-type'>{type}</span>
+          <span className='il-title'>{title}</span>
+          {hovered ? (
+            <ArrowRightCircle className='arrow-icon' size={32} />
+          ) : (
+            <ArrowRight className='arrow-icon' size={32} />
+          )}
+        </div>
+      </a>
+    )
+  }
+)
 
 PictureCard.propTypes = {
   className: PropTypes.string,

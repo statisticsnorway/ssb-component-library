@@ -7,8 +7,6 @@ const StickyMenu = ({ children, className }) => (
   </div>
 )
 
-StickyMenu.defaultProps = {}
-
 StickyMenu.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,

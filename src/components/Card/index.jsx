@@ -7,14 +7,14 @@ const Card = ({
   children,
   className,
   external,
-  downloadText,
+  downloadText = 'Last ned',
   fileLocation,
   href,
   hrefText,
   icon,
   image,
-  imagePlacement,
-  profiled,
+  imagePlacement = 'top',
+  profiled = false,
   subTitle,
   title,
 }) => (
@@ -87,12 +87,6 @@ const Card = ({
     )}
   </div>
 )
-
-Card.defaultProps = {
-  downloadText: 'Last ned',
-  imagePlacement: 'top',
-  profiled: false,
-}
 
 Card.propTypes = {
   ariaLabel: PropTypes.string,
