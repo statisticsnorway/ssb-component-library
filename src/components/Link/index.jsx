@@ -51,6 +51,7 @@ Link.propTypes = {
   title: PropTypes.string,
   onClick: PropTypes.func,
   standAlone: PropTypes.bool,
+  ref: PropTypes.object,
 }
 
 export default Link
