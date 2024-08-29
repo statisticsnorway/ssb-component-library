@@ -14,6 +14,7 @@ const Link = ({
   title,
   onClick = () => {},
   standAlone,
+  ref,
 }) => {
   const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${standAlone ? ' stand-alone' : ''}
 		${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`
@@ -29,6 +30,7 @@ const Link = ({
       aria-label={ariaLabel}
       title={title}
       onClick={onClick}
+      ref={ref}
     >
       {icon && <div className='icon-wrapper'>{icon}</div>}
       {children && <span className='link-text'>{children}</span>}
