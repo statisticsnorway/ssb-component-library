@@ -10,7 +10,7 @@ export default {
 }
 
 export const Default = () => (
-  <div style={{ padding: '4rem' }}>
+  <div style={{ width: '740px', padding: '4rem' }}>
     <Table>
       <TableHead>
         <TableRow>
@@ -38,7 +38,7 @@ export const Default = () => (
 )
 
 export const Statistics = () => (
-  <div style={{ padding: '4rem' }}>
+  <div style={{ width: '740px', padding: '4rem' }}>
     <Table caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit.'>
       <TableHead>
         <TableRow>
