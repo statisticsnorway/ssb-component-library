@@ -2321,10 +2321,6 @@ a {
   position: sticky;
   right: 40px;
   left: 40px;
-  visibility: hidden;
-}
-.ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon-wrapper.visible {
-  visibility: visible;
 }
 .ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon {
   cursor: pointer;

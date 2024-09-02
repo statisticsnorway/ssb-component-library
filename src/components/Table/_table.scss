@@ -101,11 +101,6 @@
           position: sticky;
           right: 40px;
           left: 40px;
-          visibility: hidden;
-
-          &.visible {
-            visibility: visible;
-          }
         }
 
         .scroll-icon {
