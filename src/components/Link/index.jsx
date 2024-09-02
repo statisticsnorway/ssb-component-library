@@ -1,40 +1,46 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
-const Link = ({
-  ariaLabel,
-  children,
-  className,
-  href,
-  icon,
-  isExternal = false,
-  linkType,
-  negative = false,
-  tabIndex,
-  title,
-  onClick = () => {},
-  standAlone,
-}) => {
-  const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${standAlone ? ' stand-alone' : ''}
-		${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`
+const Link = forwardRef(
+  (
+    {
+      ariaLabel,
+      children,
+      className,
+      href,
+      icon,
+      isExternal = false,
+      linkType,
+      negative = false,
+      tabIndex,
+      title,
+      onClick = () => {},
+      standAlone,
+    },
+    ref
+  ) => {
+    const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${standAlone ? ' stand-alone' : ''}
+    ${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`
 
-  return (
-    // eslint-disable-next-line react/jsx-no-target-blank
-    <a
-      className={classNames.replace(/\s\s+/g, ' ').trim()}
-      href={href}
-      target={isExternal ? '_blank' : undefined}
-      rel={isExternal ? 'noopener noreferrer' : undefined}
-      tabIndex={tabIndex}
-      aria-label={ariaLabel}
-      title={title}
-      onClick={onClick}
-    >
-      {icon && <div className='icon-wrapper'>{icon}</div>}
-      {children && <span className='link-text'>{children}</span>}
-    </a>
-  )
-}
+    return (
+      // eslint-disable-next-line react/jsx-no-target-blank
+      <a
+        className={classNames.replace(/\s\s+/g, ' ').trim()}
+        href={href}
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+        tabIndex={tabIndex}
+        aria-label={ariaLabel}
+        title={title}
+        onClick={onClick}
+        ref={ref}
+      >
+        {icon && <div className='icon-wrapper'>{icon}</div>}
+        {children && <span className='link-text'>{children}</span>}
+      </a>
+    )
+  }
+)
 
 Link.propTypes = {
   ariaLabel: PropTypes.string,
