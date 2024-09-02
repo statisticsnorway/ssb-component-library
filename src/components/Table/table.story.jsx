@@ -39,7 +39,7 @@ export const Default = () => (
 
 export const Statistics = () => (
   <div style={{ padding: '4rem' }}>
-    <Table caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. '>
+    <Table caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' className='statistikk'>
       <TableHead>
         <TableRow>
           <TableCell type='th' rowSpan={2} align='right'>
