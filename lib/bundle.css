@@ -2234,7 +2234,7 @@ a {
   font-stretch: normal;
   font-weight: normal;
   line-height: 1.75rem;
-  min-width: 992px;
+  width: 100%;
   border-collapse: collapse;
   border: 1px solid #274247;
 }
@@ -2255,6 +2255,11 @@ a {
 @media screen and (min-width: 992px) {
   .ssb-table-wrapper .ssb-table .caption-text-wrapper {
     max-width: 998px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .ssb-table-wrapper .ssb-table .caption-text-wrapper {
+    max-width: none;
   }
 }
 .ssb-table-wrapper .ssb-table th,
@@ -2307,7 +2312,6 @@ a {
 .ssb-table-wrapper .ssb-table caption .caption-wrapper .caption-text-wrapper {
   font-weight: bold;
   text-align: left;
-  width: 998px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -2317,10 +2321,6 @@ a {
   position: sticky;
   right: 40px;
   left: 40px;
-  visibility: hidden;
-}
-.ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon-wrapper.visible {
-  visibility: visible;
 }
 .ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon {
   cursor: pointer;

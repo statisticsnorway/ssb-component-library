@@ -96,35 +96,37 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
 
   return (
     <div className={`ssb-table-wrapper${isOverflowing ? ' overflowing' : ''}`} ref={tableWrapperRef}>
-      <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
+      <table className={`ssb-table${className ?? ''}`} ref={ref}>
         {caption && (
           <caption data-noterefs={dataNoteRefs}>
             <div className='caption-wrapper' style={{ position: 'relative' }}>
               <div className='caption-text-wrapper' ref={captionRef}>
                 {caption}
               </div>
-              <div className={`scroll-icon-wrapper ${isOverflowing ? 'visible' : ''}`} ref={iconWrapperRef}>
-                <div
-                  className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
-                  role='button'
-                  aria-label='Scroll left'
-                  tabIndex={isOverflowing ? 0 : -1}
-                  onClick={() => handleMouseClick('left')}
-                  onKeyDown={(event) => handleKeyPress(event, 'left')}
-                >
-                  <ArrowLeftCircle />
+              {isOverflowing && (
+                <div className='scroll-icon-wrapper' ref={iconWrapperRef}>
+                  <div
+                    className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
+                    role='button'
+                    aria-label='Scroll left'
+                    tabIndex={0}
+                    onClick={() => handleMouseClick('left')}
+                    onKeyDown={(event) => handleKeyPress(event, 'left')}
+                  >
+                    <ArrowLeftCircle />
+                  </div>
+                  <div
+                    className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
+                    role='button'
+                    aria-label='Scroll right'
+                    tabIndex={0}
+                    onClick={() => handleMouseClick('right')}
+                    onKeyDown={(event) => handleKeyPress(event, 'right')}
+                  >
+                    <ArrowRightCircle />
+                  </div>
                 </div>
-                <div
-                  className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
-                  role='button'
-                  aria-label='Scroll right'
-                  tabIndex={isOverflowing ? 0 : -1}
-                  onClick={() => handleMouseClick('right')}
-                  onKeyDown={(event) => handleKeyPress(event, 'right')}
-                >
-                  <ArrowRightCircle />
-                </div>
-              </div>
+              )}
             </div>
           </caption>
         )}

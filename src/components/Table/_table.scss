@@ -7,7 +7,7 @@
   .ssb-table {
     @include roboto;
     line-height: 1.75rem;
-    min-width: $desktop-screen; // We need a fixed width for overflow-x to work
+    width: 100%;
     border-collapse: collapse;
     border: 1px solid variables.$ssb-dark-5;
 
@@ -28,9 +28,13 @@
       }
     }
 
-    .caption-text-wrapper{
+    .caption-text-wrapper {
       @media #{$desktop} {
         max-width: 998px;
+      }
+
+      @media #{$mobile} {
+        max-width: none;
       }
     }
 
@@ -87,7 +91,6 @@
         .caption-text-wrapper {
           font-weight: bold;
           text-align: left;
-          width: 998px;
           padding-top: 0.5rem;
           padding-bottom: 0.5rem;
         }
@@ -98,11 +101,6 @@
           position: sticky;
           right: 40px;
           left: 40px;
-          visibility: hidden;
-
-          &.visible {
-            visibility: visible;
-          }
         }
 
         .scroll-icon {
