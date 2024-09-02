@@ -38,8 +38,8 @@ export const Default = () => (
 )
 
 export const Statistics = () => (
-  <div style={{ width: '740px', padding: '4rem' }}>
-    <Table caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non pretium felis. Aenean eu ipsum in magna auctor porta. Donec vestibulum nulla vel laoreet blandit.'>
+  <div style={{ padding: '4rem' }}>
+    <Table caption='Lorem ipsum dolor sit amet, consectetur adipiscing elit. '>
       <TableHead>
         <TableRow>
           <TableCell type='th' rowSpan={2} align='right'>
@@ -56,6 +56,12 @@ export const Statistics = () => (
           <TableCell type='th' scope='col' align='right'>
             First level<sup>1</sup>
           </TableCell>
+          <TableCell type='th' scope='col' align='right'>
+            First level
+          </TableCell>
+          <TableCell type='th' scope='col' align='right'>
+            First level
+          </TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -65,6 +71,8 @@ export const Statistics = () => (
           </TableCell>
           <TableCell align='right'>1 000</TableCell>
           <TableCell align='right'>2 000</TableCell>
+          <TableCell align='right'>3 000</TableCell>
+          <TableCell align='right'>4 000</TableCell>
         </TableRow>
         <TableRow>
           <TableCell type='th' scope='row' indentationLevel={1}>
@@ -72,6 +80,8 @@ export const Statistics = () => (
           </TableCell>
           <TableCell align='right'>50</TableCell>
           <TableCell align='right'>100</TableCell>
+          <TableCell align='right'>150</TableCell>
+          <TableCell align='right'>200</TableCell>
         </TableRow>
         <TableRow>
           <TableCell type='th' scope='row' indentationLevel={2}>
@@ -79,6 +89,8 @@ export const Statistics = () => (
           </TableCell>
           <TableCell align='right'>200</TableCell>
           <TableCell align='right'>650</TableCell>
+          <TableCell align='right'>800</TableCell>
+          <TableCell align='right'>1050</TableCell>
         </TableRow>
         <TableRow>
           <TableCell type='th' scope='row' indentationLevel={3}>
@@ -86,6 +98,8 @@ export const Statistics = () => (
           </TableCell>
           <TableCell align='right'>500</TableCell>
           <TableCell align='right'>200</TableCell>
+          <TableCell align='right'>700</TableCell>
+          <TableCell align='right'>900</TableCell>
         </TableRow>
       </TableBody>
       <TableFooter>
