@@ -96,7 +96,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
 
   return (
     <div className={`ssb-table-wrapper${isOverflowing ? ' overflowing' : ''}`} ref={tableWrapperRef}>
-      <table className={`ssb-table${className ?? ''}`} ref={ref}>
+      <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
         {caption && (
           <caption data-noterefs={dataNoteRefs}>
             <div className='caption-wrapper' style={{ position: 'relative' }}>
