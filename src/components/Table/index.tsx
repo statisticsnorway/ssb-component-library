@@ -58,35 +58,38 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
     }
   }
 
+  const checkOverflow = () => {
+    if (tableWrapperRef.current) {
+      const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
+      setIsOverflowing(hasOverflow)
+
+      if (iconWrapperRef.current) {
+        iconWrapperRef.current.style.visibility = hasOverflow ? 'visible' : 'hidden'
+      }
+    }
+  }
+
   useEffect(() => {
-    const checkOverflow = () => {
-      if (tableWrapperRef.current) {
-        const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
-        setIsOverflowing(hasOverflow)
+    const accordionButton = tableWrapperRef.current?.closest('.ssb-accordion')?.querySelector('.accordion-header')
+
+    if (accordionButton) {
+      const handleAccordionToggle = () => {
+        // Give time for the accordion to open and content to settle
+        setTimeout(checkOverflow, 100)
+      }
+
+      accordionButton.addEventListener('click', handleAccordionToggle)
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+        accordionButton.removeEventListener('click', handleAccordionToggle)
       }
     }
+    return () => {}
+  }, [])
 
-    const checkCaptionHeight = () => {
-      if (captionRef.current) {
-        const computedStyle = window.getComputedStyle(captionRef.current)
-        const lineHeight = parseFloat(computedStyle.lineHeight)
-        const paddingTop = parseFloat(computedStyle.paddingTop)
-        const paddingBottom = parseFloat(computedStyle.paddingBottom)
-        const captionHeight = captionRef.current.clientHeight - paddingTop - paddingBottom
-        const lines = Math.round(captionHeight / lineHeight)
-        const parentElement = captionRef.current.parentElement as HTMLElement | null
-        if (parentElement) {
-          if (lines > 1) {
-            parentElement.classList.remove('single-line')
-          } else {
-            parentElement.classList.add('single-line')
-          }
-        }
-      }
-    }
-
+  useEffect(() => {
     checkOverflow()
-    checkCaptionHeight()
     window.addEventListener('resize', checkOverflow)
 
     return () => {
@@ -103,30 +106,28 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
               <div className='caption-text-wrapper' ref={captionRef}>
                 {caption}
               </div>
-              {isOverflowing && (
-                <div className='scroll-icon-wrapper' ref={iconWrapperRef}>
-                  <div
-                    className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
-                    role='button'
-                    aria-label='Scroll left'
-                    tabIndex={0}
-                    onClick={() => handleMouseClick('left')}
-                    onKeyDown={(event) => handleKeyPress(event, 'left')}
-                  >
-                    <ArrowLeftCircle />
-                  </div>
-                  <div
-                    className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
-                    role='button'
-                    aria-label='Scroll right'
-                    tabIndex={0}
-                    onClick={() => handleMouseClick('right')}
-                    onKeyDown={(event) => handleKeyPress(event, 'right')}
-                  >
-                    <ArrowRightCircle />
-                  </div>
+              <div className={`scroll-icon-wrapper ${isOverflowing ? 'visible' : ''}`} ref={iconWrapperRef}>
+                <div
+                  className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
+                  role='button'
+                  aria-label='Scroll left'
+                  tabIndex={isOverflowing ? 0 : -1}
+                  onClick={() => handleMouseClick('left')}
+                  onKeyDown={(event) => handleKeyPress(event, 'left')}
+                >
+                  <ArrowLeftCircle />
                 </div>
-              )}
+                <div
+                  className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
+                  role='button'
+                  aria-label='Scroll right'
+                  tabIndex={isOverflowing ? 0 : -1}
+                  onClick={() => handleMouseClick('right')}
+                  onKeyDown={(event) => handleKeyPress(event, 'right')}
+                >
+                  <ArrowRightCircle />
+                </div>
+              </div>
             </div>
           </caption>
         )}
