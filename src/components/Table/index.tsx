@@ -63,30 +63,16 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
       if (tableWrapperRef.current) {
         const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
         setIsOverflowing(hasOverflow)
-      }
-    }
 
-    const checkCaptionHeight = () => {
-      if (captionRef.current) {
-        const computedStyle = window.getComputedStyle(captionRef.current)
-        const lineHeight = parseFloat(computedStyle.lineHeight)
-        const paddingTop = parseFloat(computedStyle.paddingTop)
-        const paddingBottom = parseFloat(computedStyle.paddingBottom)
-        const captionHeight = captionRef.current.clientHeight - paddingTop - paddingBottom
-        const lines = Math.round(captionHeight / lineHeight)
-        const parentElement = captionRef.current.parentElement as HTMLElement | null
-        if (parentElement) {
-          if (lines > 1) {
-            parentElement.classList.remove('single-line')
-          } else {
-            parentElement.classList.add('single-line')
-          }
+        if (iconWrapperRef.current) {
+          console.log(`is overflowing: ${hasOverflow}`)
+          console.log(`tableWrapperRef scrollWidth: ${tableWrapperRef.current.scrollWidth}`)
+          console.log(`tableWrapperRef clientWidth: ${tableWrapperRef.current.clientWidth}`)
+          iconWrapperRef.current.style.visibility = hasOverflow ? 'visible' : 'hidden'
         }
       }
     }
-
     checkOverflow()
-    checkCaptionHeight()
     window.addEventListener('resize', checkOverflow)
 
     return () => {
@@ -95,38 +81,36 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
   }, [])
 
   return (
-    <div className={`ssb-table-wrapper${isOverflowing ? ' overflowing' : ''}`} ref={tableWrapperRef}>
-      <table className={`ssb-table${className ?? ''}`} ref={ref}>
+    <div className='ssb-table-wrapper' ref={tableWrapperRef}>
+      <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
         {caption && (
           <caption data-noterefs={dataNoteRefs}>
             <div className='caption-wrapper' style={{ position: 'relative' }}>
               <div className='caption-text-wrapper' ref={captionRef}>
                 {caption}
               </div>
-              {isOverflowing && (
-                <div className='scroll-icon-wrapper' ref={iconWrapperRef}>
-                  <div
-                    className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
-                    role='button'
-                    aria-label='Scroll left'
-                    tabIndex={0}
-                    onClick={() => handleMouseClick('left')}
-                    onKeyDown={(event) => handleKeyPress(event, 'left')}
-                  >
-                    <ArrowLeftCircle />
-                  </div>
-                  <div
-                    className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
-                    role='button'
-                    aria-label='Scroll right'
-                    tabIndex={0}
-                    onClick={() => handleMouseClick('right')}
-                    onKeyDown={(event) => handleKeyPress(event, 'right')}
-                  >
-                    <ArrowRightCircle />
-                  </div>
+              <div className={`scroll-icon-wrapper ${isOverflowing ? 'visible' : ''}`} ref={iconWrapperRef}>
+                <div
+                  className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
+                  role='button'
+                  aria-label='Scroll left'
+                  tabIndex={0}
+                  onClick={() => handleMouseClick('left')}
+                  onKeyDown={(event) => handleKeyPress(event, 'left')}
+                >
+                  <ArrowLeftCircle />
                 </div>
-              )}
+                <div
+                  className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
+                  role='button'
+                  aria-label='Scroll right'
+                  tabIndex={0}
+                  onClick={() => handleMouseClick('right')}
+                  onKeyDown={(event) => handleKeyPress(event, 'right')}
+                >
+                  <ArrowRightCircle />
+                </div>
+              </div>
             </div>
           </caption>
         )}

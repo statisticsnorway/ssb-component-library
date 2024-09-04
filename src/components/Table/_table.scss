@@ -68,14 +68,12 @@
       padding: 1.25rem 1rem;
 
       @media (max-width: $desktop-screen) {
-        padding-top: 47px;
+        &:has(.visible){
+          padding-top: 3rem;
+        }
 
         .caption-wrapper .scroll-icon-wrapper {
           margin-top: -100px;
-        }
-
-        .caption-wrapper.single-line .scroll-icon-wrapper {
-          margin-top: -70px;
         }
       }
 
