@@ -81,12 +81,14 @@ Available props:
 
 ##### Table
 
-| Name         | Type          | Description                                                      |
-| ------------ | ------------- | ---------------------------------------------------------------- |
-| className    | string        | Optional styling classes                                         |
-| caption      | string        | Optional caption text                                            |
-| dataNoteRefs | string        | Optional caption text for data-noterefs attribute                |
-| children     | Required node | Table content (TableHead, TableBody, and TableFooter components) |
+| Name               | Type          | Description                                                      |
+| ------------------ | ------------- | ---------------------------------------------------------------- |
+| id                 | string        | Optional id                                                      |
+| className          | string        | Optional styling classes                                         |
+| caption            | string        | Optional caption text                                            |
+| dataNoteRefs       | string        | Optional caption text for data-noterefs attribute                |
+| children           | Required node | Table content (TableHead, TableBody, and TableFooter components) |
+| checkIsOverflowing | boolean       | Optional boolean that fires checkOverflow function in useEffect  |
 
 ##### TableHead, TableBody, TableFooter, and TableRow
 

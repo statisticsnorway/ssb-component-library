@@ -4,9 +4,11 @@ import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
 export interface TableElementProps {
   className?: string
   children: ReactNode
+  checkIsOverflowing?: boolean
 }
 
 export interface TableProps extends TableElementProps {
+  id?: string
   caption?: string
   dataNoteRefs?: string
 }
@@ -24,101 +26,101 @@ export interface TableCellProps {
   children?: ReactNode | string | number
 }
 
-const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, dataNoteRefs, children }, ref) => {
-  const tableWrapperRef = useRef<HTMLDivElement | null>(null)
-  const iconWrapperRef = useRef<HTMLDivElement | null>(null)
-  const captionRef = useRef<HTMLDivElement | null>(null)
-  const [isOverflowing, setIsOverflowing] = useState(false)
-  const [isActive, setIsActive] = useState<{ left: boolean; right: boolean }>({ left: false, right: false })
+const Table = forwardRef<HTMLTableElement, TableProps>(
+  ({ id, className, caption, dataNoteRefs, children, checkIsOverflowing }, ref) => {
+    const tableWrapperRef = useRef<HTMLDivElement | null>(null)
+    const iconWrapperRef = useRef<HTMLDivElement | null>(null)
+    const captionRef = useRef<HTMLDivElement | null>(null)
+    const [isOverflowing, setIsOverflowing] = useState(false)
+    const [isActive, setIsActive] = useState<{ left: boolean; right: boolean }>({ left: false, right: false })
 
-  type Direction = 'left' | 'right'
+    type Direction = 'left' | 'right'
 
-  const handleScroll = (direction: Direction) => {
-    if (tableWrapperRef.current) {
-      const scrollAmount = direction === 'left' ? -380 : 380
-      tableWrapperRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
-    }
-  }
-
-  const handleMouseClick = (direction: Direction) => {
-    handleScroll(direction)
-    if (document.activeElement instanceof HTMLElement) {
-      document.activeElement.blur() // Force blur to remove hover styles
-    }
-  }
-
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>, direction: Direction) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault()
-      setIsActive((prev) => ({ ...prev, [direction]: true }))
-      handleScroll(direction)
-      setTimeout(() => {
-        setIsActive((prev) => ({ ...prev, [direction]: false }))
-      }, 150)
-    }
-  }
-
-  useEffect(() => {
-    const checkOverflow = () => {
+    const handleScroll = (direction: Direction) => {
       if (tableWrapperRef.current) {
-        const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
-        setIsOverflowing(hasOverflow)
-
-        if (iconWrapperRef.current) {
-          console.log(`is overflowing: ${hasOverflow}`)
-          console.log(`tableWrapperRef scrollWidth: ${tableWrapperRef.current.scrollWidth}`)
-          console.log(`tableWrapperRef clientWidth: ${tableWrapperRef.current.clientWidth}`)
-          iconWrapperRef.current.style.visibility = hasOverflow ? 'visible' : 'hidden'
-        }
+        const scrollAmount = direction === 'left' ? -380 : 380
+        tableWrapperRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
       }
     }
-    checkOverflow()
-    window.addEventListener('resize', checkOverflow)
 
-    return () => {
-      window.removeEventListener('resize', checkOverflow)
+    const handleMouseClick = (direction: Direction) => {
+      handleScroll(direction)
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur() // Force blur to remove hover styles
+      }
     }
-  }, [])
 
-  return (
-    <div className='ssb-table-wrapper' ref={tableWrapperRef}>
-      <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
-        {caption && (
-          <caption data-noterefs={dataNoteRefs}>
-            <div className='caption-wrapper' style={{ position: 'relative' }}>
-              <div className='caption-text-wrapper' ref={captionRef}>
-                {caption}
-              </div>
-              <div className={`scroll-icon-wrapper ${isOverflowing ? 'visible' : ''}`} ref={iconWrapperRef}>
-                <div
-                  className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
-                  role='button'
-                  aria-label='Scroll left'
-                  tabIndex={0}
-                  onClick={() => handleMouseClick('left')}
-                  onKeyDown={(event) => handleKeyPress(event, 'left')}
-                >
-                  <ArrowLeftCircle />
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>, direction: Direction) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault()
+        setIsActive((prev) => ({ ...prev, [direction]: true }))
+        handleScroll(direction)
+        setTimeout(() => {
+          setIsActive((prev) => ({ ...prev, [direction]: false }))
+        }, 150)
+      }
+    }
+
+    useEffect(() => {
+      const checkOverflow = () => {
+        console.log('is in checkOverflow function')
+        if (tableWrapperRef.current) {
+          const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
+          setIsOverflowing(hasOverflow)
+
+          if (iconWrapperRef.current) {
+            iconWrapperRef.current.style.visibility = hasOverflow ? 'visible' : 'hidden'
+          }
+        }
+      }
+      checkOverflow()
+      window.addEventListener('resize', checkOverflow)
+
+      return () => {
+        window.removeEventListener('resize', checkOverflow)
+      }
+    }, [checkIsOverflowing])
+
+    return (
+      <div id={id ?? ''} className='ssb-table-wrapper' ref={tableWrapperRef}>
+        <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
+          {caption && (
+            <caption data-noterefs={dataNoteRefs}>
+              <div className='caption-wrapper' style={{ position: 'relative' }}>
+                <div className='caption-text-wrapper' ref={captionRef}>
+                  {caption}
                 </div>
-                <div
-                  className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
-                  role='button'
-                  aria-label='Scroll right'
-                  tabIndex={0}
-                  onClick={() => handleMouseClick('right')}
-                  onKeyDown={(event) => handleKeyPress(event, 'right')}
-                >
-                  <ArrowRightCircle />
+                <div className={`scroll-icon-wrapper ${isOverflowing ? 'visible' : ''}`} ref={iconWrapperRef}>
+                  <div
+                    className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
+                    role='button'
+                    aria-label='Scroll left'
+                    tabIndex={0}
+                    onClick={() => handleMouseClick('left')}
+                    onKeyDown={(event) => handleKeyPress(event, 'left')}
+                  >
+                    <ArrowLeftCircle />
+                  </div>
+                  <div
+                    className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
+                    role='button'
+                    aria-label='Scroll right'
+                    tabIndex={0}
+                    onClick={() => handleMouseClick('right')}
+                    onKeyDown={(event) => handleKeyPress(event, 'right')}
+                  >
+                    <ArrowRightCircle />
+                  </div>
                 </div>
               </div>
-            </div>
-          </caption>
-        )}
-        {children}
-      </table>
-    </div>
-  )
-})
+            </caption>
+          )}
+          {children}
+        </table>
+      </div>
+    )
+  }
+)
 
 export default Table
 

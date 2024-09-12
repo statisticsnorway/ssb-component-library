@@ -2291,14 +2291,11 @@ a {
   padding: 1.25rem 1rem;
 }
 @media (max-width: 992px) {
-  .ssb-table-wrapper .ssb-table caption {
-    padding-top: 47px;
+  .ssb-table-wrapper .ssb-table caption:has(.visible) {
+    padding-top: 3rem;
   }
   .ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon-wrapper {
     margin-top: -100px;
-  }
-  .ssb-table-wrapper .ssb-table caption .caption-wrapper.single-line .scroll-icon-wrapper {
-    margin-top: -70px;
   }
 }
 .ssb-table-wrapper .ssb-table caption .icon-container {
