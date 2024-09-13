@@ -127,6 +127,7 @@ a {
   grid-column-start: 1;
 }
 .ssb-accordion .accordion-body {
+  overflow: auto;
   font-family: "Open Sans", sans-serif !important;
   font-stretch: normal;
   font-weight: normal;
@@ -2420,20 +2421,19 @@ a {
 .ssb-table-wrapper .ssb-table .align-center {
   text-align: center;
 }
-
-.scroll-icon-active svg,
-.scroll-icon:active svg {
+.ssb-table-wrapper .scroll-icon-active svg,
+.ssb-table-wrapper .scroll-icon:active svg {
   fill: var(--ssb-dark-5);
   transition: fill 0.18s;
 }
-.scroll-icon-active svg line,
-.scroll-icon-active svg polyline,
-.scroll-icon:active svg line,
-.scroll-icon:active svg polyline {
+.ssb-table-wrapper .scroll-icon-active svg line,
+.ssb-table-wrapper .scroll-icon-active svg polyline,
+.ssb-table-wrapper .scroll-icon:active svg line,
+.ssb-table-wrapper .scroll-icon:active svg polyline {
   stroke: var(--ssb-white);
 }
-.scroll-icon-active svg circle,
-.scroll-icon:active svg circle {
+.ssb-table-wrapper .scroll-icon-active svg circle,
+.ssb-table-wrapper .scroll-icon:active svg circle {
   stroke: var(--ssb-dark-5);
   transition: stroke 0.16s;
 }
