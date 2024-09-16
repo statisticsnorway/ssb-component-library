@@ -76,7 +76,7 @@
   }
 
   .accordion-body {
-    overflow: auto;
+    overflow-x: auto;
 
     @include open-sans;
     color: $ssb-dark-6;
