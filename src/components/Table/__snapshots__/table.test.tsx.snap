@@ -4,7 +4,6 @@ exports[`Render Table component Matches the snapshot 1`] = `
 <DocumentFragment>
   <div
     class="ssb-table-wrapper"
-    id=""
   >
     <table
       class="ssb-table"
@@ -167,7 +166,6 @@ exports[`Render Table component Simple table without caption and footer 1`] = `
 <DocumentFragment>
   <div
     class="ssb-table-wrapper"
-    id=""
   >
     <table
       class="ssb-table"

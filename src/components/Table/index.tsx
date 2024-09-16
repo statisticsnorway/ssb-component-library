@@ -4,13 +4,13 @@ import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
 export interface TableElementProps {
   className?: string
   children: ReactNode
-  checkIsOverflowing?: boolean
 }
 
 export interface TableProps extends TableElementProps {
   id?: string
   caption?: string
   dataNoteRefs?: string
+  checkIsOverflowing?: boolean
 }
 
 export interface TableCellProps {
@@ -81,7 +81,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
     }, [checkIsOverflowing])
 
     return (
-      <div id={id ?? ''} className='ssb-table-wrapper' ref={tableWrapperRef}>
+      <div id={id} className='ssb-table-wrapper' ref={tableWrapperRef}>
         <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
           {caption && (
             <caption data-noterefs={dataNoteRefs}>
