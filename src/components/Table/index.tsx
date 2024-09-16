@@ -63,7 +63,6 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
 
     useEffect(() => {
       const checkOverflow = () => {
-        console.log('is in checkOverflow function') // TODO: Remove this after debugging
         if (tableWrapperRef.current) {
           const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
           setIsOverflowing(hasOverflow)
