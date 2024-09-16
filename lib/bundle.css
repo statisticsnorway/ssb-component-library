@@ -127,7 +127,7 @@ a {
   grid-column-start: 1;
 }
 .ssb-accordion .accordion-body {
-  overflow: auto;
+  overflow-x: auto;
   font-family: "Open Sans", sans-serif !important;
   font-stretch: normal;
   font-weight: normal;
