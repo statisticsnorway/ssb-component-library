@@ -7,8 +7,10 @@ export interface TableElementProps {
 }
 
 export interface TableProps extends TableElementProps {
+  id?: string
   caption?: string
   dataNoteRefs?: string
+  checkIsOverflowing?: boolean
 }
 
 export interface TableCellProps {
@@ -24,87 +26,70 @@ export interface TableCellProps {
   children?: ReactNode | string | number
 }
 
-const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, dataNoteRefs, children }, ref) => {
-  const tableWrapperRef = useRef<HTMLDivElement | null>(null)
-  const iconWrapperRef = useRef<HTMLDivElement | null>(null)
-  const captionRef = useRef<HTMLDivElement | null>(null)
-  const [isOverflowing, setIsOverflowing] = useState(false)
-  const [isActive, setIsActive] = useState<{ left: boolean; right: boolean }>({ left: false, right: false })
+const Table = forwardRef<HTMLTableElement, TableProps>(
+  ({ id, className, caption, dataNoteRefs, children, checkIsOverflowing }, ref) => {
+    const tableWrapperRef = useRef<HTMLDivElement | null>(null)
+    const iconWrapperRef = useRef<HTMLDivElement | null>(null)
+    const captionRef = useRef<HTMLDivElement | null>(null)
+    const [isOverflowing, setIsOverflowing] = useState(false)
+    const [isActive, setIsActive] = useState<{ left: boolean; right: boolean }>({ left: false, right: false })
 
-  type Direction = 'left' | 'right'
+    type Direction = 'left' | 'right'
 
-  const handleScroll = (direction: Direction) => {
-    if (tableWrapperRef.current) {
-      const scrollAmount = direction === 'left' ? -380 : 380
-      tableWrapperRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
-    }
-  }
-
-  const handleMouseClick = (direction: Direction) => {
-    handleScroll(direction)
-    if (document.activeElement instanceof HTMLElement) {
-      document.activeElement.blur() // Force blur to remove hover styles
-    }
-  }
-
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>, direction: Direction) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault()
-      setIsActive((prev) => ({ ...prev, [direction]: true }))
-      handleScroll(direction)
-      setTimeout(() => {
-        setIsActive((prev) => ({ ...prev, [direction]: false }))
-      }, 150)
-    }
-  }
-
-  useEffect(() => {
-    const checkOverflow = () => {
+    const handleScroll = (direction: Direction) => {
       if (tableWrapperRef.current) {
-        const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
-        setIsOverflowing(hasOverflow)
+        const scrollAmount = direction === 'left' ? -380 : 380
+        tableWrapperRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
       }
     }
 
-    const checkCaptionHeight = () => {
-      if (captionRef.current) {
-        const computedStyle = window.getComputedStyle(captionRef.current)
-        const lineHeight = parseFloat(computedStyle.lineHeight)
-        const paddingTop = parseFloat(computedStyle.paddingTop)
-        const paddingBottom = parseFloat(computedStyle.paddingBottom)
-        const captionHeight = captionRef.current.clientHeight - paddingTop - paddingBottom
-        const lines = Math.round(captionHeight / lineHeight)
-        const parentElement = captionRef.current.parentElement as HTMLElement | null
-        if (parentElement) {
-          if (lines > 1) {
-            parentElement.classList.remove('single-line')
-          } else {
-            parentElement.classList.add('single-line')
+    const handleMouseClick = (direction: Direction) => {
+      handleScroll(direction)
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur() // Force blur to remove hover styles
+      }
+    }
+
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>, direction: Direction) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault()
+        setIsActive((prev) => ({ ...prev, [direction]: true }))
+        handleScroll(direction)
+        setTimeout(() => {
+          setIsActive((prev) => ({ ...prev, [direction]: false }))
+        }, 150)
+      }
+    }
+
+    useEffect(() => {
+      const checkOverflow = () => {
+        if (tableWrapperRef.current) {
+          const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
+          setIsOverflowing(hasOverflow)
+
+          if (iconWrapperRef.current) {
+            iconWrapperRef.current.style.visibility = hasOverflow ? 'visible' : 'hidden'
           }
         }
       }
-    }
+      checkOverflow()
+      window.addEventListener('resize', checkOverflow)
 
-    checkOverflow()
-    checkCaptionHeight()
-    window.addEventListener('resize', checkOverflow)
+      return () => {
+        window.removeEventListener('resize', checkOverflow)
+      }
+    }, [checkIsOverflowing])
 
-    return () => {
-      window.removeEventListener('resize', checkOverflow)
-    }
-  }, [])
-
-  return (
-    <div className={`ssb-table-wrapper${isOverflowing ? ' overflowing' : ''}`} ref={tableWrapperRef}>
-      <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
-        {caption && (
-          <caption data-noterefs={dataNoteRefs}>
-            <div className='caption-wrapper' style={{ position: 'relative' }}>
-              <div className='caption-text-wrapper' ref={captionRef}>
-                {caption}
-              </div>
-              {isOverflowing && (
-                <div className='scroll-icon-wrapper' ref={iconWrapperRef}>
+    return (
+      <div id={id} className='ssb-table-wrapper' ref={tableWrapperRef}>
+        <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
+          {caption && (
+            <caption data-noterefs={dataNoteRefs}>
+              <div className='caption-wrapper' style={{ position: 'relative' }}>
+                <div className='caption-text-wrapper' ref={captionRef}>
+                  {caption}
+                </div>
+                <div className={`scroll-icon-wrapper ${isOverflowing ? 'visible' : ''}`} ref={iconWrapperRef}>
                   <div
                     className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
                     role='button'
@@ -126,15 +111,15 @@ const Table = forwardRef<HTMLTableElement, TableProps>(({ className, caption, da
                     <ArrowRightCircle />
                   </div>
                 </div>
-              )}
-            </div>
-          </caption>
-        )}
-        {children}
-      </table>
-    </div>
-  )
-})
+              </div>
+            </caption>
+          )}
+          {children}
+        </table>
+      </div>
+    )
+  }
+)
 
 export default Table
 

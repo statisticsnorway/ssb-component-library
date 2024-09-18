@@ -10,7 +10,7 @@
     width: 100%;
     border-collapse: collapse;
     border: 1px solid variables.$ssb-dark-5;
-
+    
     caption,
     th,
     td {
@@ -68,14 +68,12 @@
       padding: 1.25rem 1rem;
 
       @media (max-width: $desktop-screen) {
-        padding-top: 47px;
+        &:has(.visible){
+          padding-top: 3rem;
+        }
 
         .caption-wrapper .scroll-icon-wrapper {
           margin-top: -100px;
-        }
-
-        .caption-wrapper.single-line .scroll-icon-wrapper {
-          margin-top: -70px;
         }
       }
 
@@ -247,22 +245,22 @@
       text-align: center;
     }
   }
-}
 
-.scroll-icon-active,
-.scroll-icon:active {
-  svg {
-    fill: var(--ssb-dark-5);
-    transition: fill 0.18s;
-  }
-
-  svg line,
-  svg polyline {
-    stroke: var(--ssb-white);
-  }
-
-  svg circle {
-    stroke: var(--ssb-dark-5);
-    transition: stroke 0.16s;
+  .scroll-icon-active,
+  .scroll-icon:active {
+    svg {
+      fill: var(--ssb-dark-5);
+      transition: fill 0.18s;
+    }
+  
+    svg line,
+    svg polyline {
+      stroke: var(--ssb-white);
+    }
+  
+    svg circle {
+      stroke: var(--ssb-dark-5);
+      transition: stroke 0.16s;
+    }
   }
 }
