@@ -68,7 +68,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
           const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
           setIsOverflowing(hasOverflow)
 
-          const widthValue = tableWrapperRef.current.clientWidth - 16
+          const widthValue = tableWrapperRef.current.clientWidth - 24
           setWidthScrollWrapper(`${widthValue}px`)
         }
       }
