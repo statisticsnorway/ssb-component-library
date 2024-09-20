@@ -1921,6 +1921,7 @@ a {
   color: #162327;
   font-size: 16px;
   padding: 10px 10px 10px 30px;
+  overflow-x: auto;
 }
 .ssb-nested-accordion .nested-accordion-body.closed {
   display: none;
@@ -2377,7 +2378,6 @@ a {
     display: grid;
   }
   .ssb-table-wrapper .ssb-table caption .caption-wrapper.overflow .caption-text-wrapper {
-    width: 100%;
     order: 2;
   }
   .ssb-table-wrapper .ssb-table caption .caption-wrapper.overflow .scroll-icon-wrapper {
@@ -2385,6 +2385,7 @@ a {
     position: sticky;
     justify-content: end;
     left: 0;
+    right: 0;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
