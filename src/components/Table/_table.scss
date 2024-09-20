@@ -181,6 +181,20 @@
             .caption-text-wrapper {
               max-width: 500px;
             }
+
+            .scroll-icon-wrapper {
+              width: auto !important;
+            }
+          }
+
+          @media #{$desktop} {
+            .caption-text-wrapper {
+              max-width: 700px;
+            }
+
+            .scroll-icon-wrapper {
+              width: auto !important;
+            }
           }
         }
       }

@@ -33,7 +33,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
     const captionRef = useRef<HTMLDivElement | null>(null)
     const [isOverflowing, setIsOverflowing] = useState(false)
     const [isActive, setIsActive] = useState<{ left: boolean; right: boolean }>({ left: false, right: false })
-    const [maxWidth, setMaxWidth] = useState('')
+    const [widthScrollWrapper, setWidthScrollWrapper] = useState('')
 
     type Direction = 'left' | 'right'
 
@@ -68,12 +68,8 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
           const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
           setIsOverflowing(hasOverflow)
 
-          const maxWidthValue = tableWrapperRef.current.clientWidth - 16
-          setMaxWidth(`${maxWidthValue}px`)
-
-          if (iconWrapperRef.current) {
-            iconWrapperRef.current.style.visibility = hasOverflow ? 'visible' : 'hidden'
-          }
+          const widthValue = tableWrapperRef.current.clientWidth - 16
+          setWidthScrollWrapper(`${widthValue}px`)
         }
       }
       checkOverflow()
@@ -94,7 +90,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
                   {caption}
                 </div>
                 {isOverflowing && (
-                  <div className='scroll-icon-wrapper' ref={iconWrapperRef} style={{ maxWidth: `${maxWidth}` }}>
+                  <div className='scroll-icon-wrapper' ref={iconWrapperRef} style={{ width: `${widthScrollWrapper}` }}>
                     <button
                       className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
                       aria-label='Scroll left'
