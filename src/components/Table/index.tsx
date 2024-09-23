@@ -33,6 +33,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
     const captionRef = useRef<HTMLDivElement | null>(null)
     const [isOverflowing, setIsOverflowing] = useState(false)
     const [isActive, setIsActive] = useState<{ left: boolean; right: boolean }>({ left: false, right: false })
+    const [widthScrollWrapper, setWidthScrollWrapper] = useState('')
 
     type Direction = 'left' | 'right'
 
@@ -50,7 +51,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
       }
     }
 
-    const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>, direction: Direction) => {
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLButtonElement>, direction: Direction) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault()
         setIsActive((prev) => ({ ...prev, [direction]: true }))
@@ -67,9 +68,8 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
           const hasOverflow = tableWrapperRef.current.scrollWidth > tableWrapperRef.current.clientWidth
           setIsOverflowing(hasOverflow)
 
-          if (iconWrapperRef.current) {
-            iconWrapperRef.current.style.visibility = hasOverflow ? 'visible' : 'hidden'
-          }
+          const widthValue = tableWrapperRef.current.clientWidth - 24
+          setWidthScrollWrapper(`${widthValue}px`)
         }
       }
       checkOverflow()
@@ -82,35 +82,34 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
 
     return (
       <div id={id} className='ssb-table-wrapper' ref={tableWrapperRef}>
-        <table className={`ssb-table${className ? ` ${className}` : ''}`} ref={ref}>
+        <table className={['ssb-table', className ?? ''].filter(Boolean).join(' ')} ref={ref}>
           {caption && (
             <caption data-noterefs={dataNoteRefs}>
-              <div className='caption-wrapper' style={{ position: 'relative' }}>
+              <div className={`caption-wrapper ${isOverflowing ? 'overflow' : ''}`}>
                 <div className='caption-text-wrapper' ref={captionRef}>
                   {caption}
                 </div>
-                <div className={`scroll-icon-wrapper ${isOverflowing ? 'visible' : ''}`} ref={iconWrapperRef}>
-                  <div
-                    className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
-                    role='button'
-                    aria-label='Scroll left'
-                    tabIndex={0}
-                    onClick={() => handleMouseClick('left')}
-                    onKeyDown={(event) => handleKeyPress(event, 'left')}
-                  >
-                    <ArrowLeftCircle />
+                {isOverflowing && (
+                  <div className='scroll-icon-wrapper' ref={iconWrapperRef} style={{ width: `${widthScrollWrapper}` }}>
+                    <button
+                      className={`scroll-icon ${isActive.left ? 'scroll-icon-active' : ''}`}
+                      aria-label='Scroll left'
+                      onClick={() => handleMouseClick('left')}
+                      onKeyDown={(event) => handleKeyPress(event, 'left')}
+                    >
+                      <ArrowLeftCircle />
+                    </button>
+                    <button
+                      className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
+                      aria-label='Scroll right'
+                      tabIndex={0}
+                      onClick={() => handleMouseClick('right')}
+                      onKeyDown={(event) => handleKeyPress(event, 'right')}
+                    >
+                      <ArrowRightCircle />
+                    </button>
                   </div>
-                  <div
-                    className={`scroll-icon ${isActive.right ? 'scroll-icon-active' : ''}`}
-                    role='button'
-                    aria-label='Scroll right'
-                    tabIndex={0}
-                    onClick={() => handleMouseClick('right')}
-                    onKeyDown={(event) => handleKeyPress(event, 'right')}
-                  >
-                    <ArrowRightCircle />
-                  </div>
-                </div>
+                )}
               </div>
             </caption>
           )}

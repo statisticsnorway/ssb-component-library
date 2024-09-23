@@ -10,7 +10,7 @@
     width: 100%;
     border-collapse: collapse;
     border: 1px solid variables.$ssb-dark-5;
-    
+
     caption,
     th,
     td {
@@ -67,16 +67,6 @@
       position: relative;
       padding: 1.25rem 1rem;
 
-      @media (max-width: $desktop-screen) {
-        &:has(.visible){
-          padding-top: 3rem;
-        }
-
-        .caption-wrapper .scroll-icon-wrapper {
-          margin-top: -100px;
-        }
-      }
-
       .icon-container {
         padding: 0 1rem;
       }
@@ -98,10 +88,10 @@
           align-items: center;
           position: sticky;
           right: 40px;
-          left: 40px;
         }
 
         .scroll-icon {
+          @include reset-button;
           cursor: pointer;
           display: flex;
           justify-content: center;
@@ -168,6 +158,44 @@
           height: 32px;
           color: variables.$ssb-green-4;
           stroke-width: 1.5px;
+        }
+
+        &.overflow {
+          @media #{$mobile} {
+            display: grid;
+
+            .caption-text-wrapper {
+              order: 2;
+            }
+
+            .scroll-icon-wrapper {
+              order: 1;
+              position: sticky;
+              justify-content: end;
+              left: 0;
+              right: 0;
+            }
+          }
+
+          @media #{$tablet} {
+            .caption-text-wrapper {
+              max-width: 500px;
+            }
+
+            .scroll-icon-wrapper {
+              width: auto !important;
+            }
+          }
+
+          @media #{$desktop} {
+            .caption-text-wrapper {
+              max-width: 700px;
+            }
+
+            .scroll-icon-wrapper {
+              width: auto !important;
+            }
+          }
         }
       }
     }
@@ -252,12 +280,12 @@
       fill: var(--ssb-dark-5);
       transition: fill 0.18s;
     }
-  
+
     svg line,
     svg polyline {
       stroke: var(--ssb-white);
     }
-  
+
     svg circle {
       stroke: var(--ssb-dark-5);
       transition: stroke 0.16s;

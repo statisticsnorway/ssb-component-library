@@ -1921,6 +1921,7 @@ a {
   color: #162327;
   font-size: 16px;
   padding: 10px 10px 10px 30px;
+  overflow-x: auto;
 }
 .ssb-nested-accordion .nested-accordion-body.closed {
   display: none;
@@ -2291,14 +2292,6 @@ a {
   position: relative;
   padding: 1.25rem 1rem;
 }
-@media (max-width: 992px) {
-  .ssb-table-wrapper .ssb-table caption:has(.visible) {
-    padding-top: 3rem;
-  }
-  .ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon-wrapper {
-    margin-top: -100px;
-  }
-}
 .ssb-table-wrapper .ssb-table caption .icon-container {
   padding: 0 1rem;
 }
@@ -2318,9 +2311,17 @@ a {
   align-items: center;
   position: sticky;
   right: 40px;
-  left: 40px;
 }
 .ssb-table-wrapper .ssb-table caption .caption-wrapper .scroll-icon {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  text-align: left;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -2371,6 +2372,37 @@ a {
   height: 32px;
   color: #00824d;
   stroke-width: 1.5px;
+}
+@media screen and (max-width: 767px) {
+  .ssb-table-wrapper .ssb-table caption .caption-wrapper.overflow {
+    display: grid;
+  }
+  .ssb-table-wrapper .ssb-table caption .caption-wrapper.overflow .caption-text-wrapper {
+    order: 2;
+  }
+  .ssb-table-wrapper .ssb-table caption .caption-wrapper.overflow .scroll-icon-wrapper {
+    order: 1;
+    position: sticky;
+    justify-content: end;
+    left: 0;
+    right: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .ssb-table-wrapper .ssb-table caption .caption-wrapper.overflow .caption-text-wrapper {
+    max-width: 500px;
+  }
+  .ssb-table-wrapper .ssb-table caption .caption-wrapper.overflow .scroll-icon-wrapper {
+    width: auto !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  .ssb-table-wrapper .ssb-table caption .caption-wrapper.overflow .caption-text-wrapper {
+    max-width: 700px;
+  }
+  .ssb-table-wrapper .ssb-table caption .caption-wrapper.overflow .scroll-icon-wrapper {
+    width: auto !important;
+  }
 }
 .ssb-table-wrapper .ssb-table thead {
   border-bottom: 2px solid #274247;
