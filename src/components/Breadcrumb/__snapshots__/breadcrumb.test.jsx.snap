@@ -7,7 +7,7 @@ exports[`Breadcrumb component Matches the snapshot 1`] = `
   >
     <div>
       <a
-        class="ssb-link"
+        class="ssb-link stand-alone"
         href=" "
       >
         <span
@@ -20,7 +20,7 @@ exports[`Breadcrumb component Matches the snapshot 1`] = `
     </div>
     <div>
       <a
-        class="ssb-link"
+        class="ssb-link stand-alone"
         href=" "
       >
         <span

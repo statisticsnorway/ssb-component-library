@@ -7,7 +7,9 @@ const Breadcrumb = ({ className, items }) => (
     {items.map((item) =>
       item.link ? (
         <div key={item.text}>
-          <Link href={item.link}>{item.text}</Link>
+          <Link className='stand-alone' href={item.link}>
+            {item.text}
+          </Link>
           &nbsp;/&nbsp;
         </div>
       ) : (
