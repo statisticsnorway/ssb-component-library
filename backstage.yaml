@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: component-library
+  title: Component Library for SSB
+  description: |
+    React component library for SSB, for use in web applications
+  tags:
+    - typescript
+    - javascript
+    - react
+    - frontend
+    - storybook
+  annotations:
+    github.com/project-slug: statisticsnorway/ssbno-component-library
+  links:
+    https://design.ssb.no
+spec:
+  type: library
+  system: SSBNO
+  owner: ssbno-developers
+  lifecycle: production
+---
