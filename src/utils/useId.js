@@ -1,5 +1,4 @@
 import { useLayoutEffect, useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 
 const canUseDOM = () =>
   typeof window !== 'undefined' &&
@@ -12,7 +11,7 @@ export const useId = () => {
   const [newId, setNewId] = useState('')
 
   useClientLayoutEffect(() => {
-    setNewId(uuidv4())
+    setNewId(crypto.randomUUID())
   }, [])
 
   return newId || ''
