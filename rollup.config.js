@@ -16,7 +16,7 @@ export default [
       file: 'lib/bundle.js',
       format: 'cjs',
     },
-    external: ['react', 'prop-types', 'uuid'],
+    external: ['react', 'prop-types'],
     plugins: [
       scss({ fileName: 'bundle.css' }),
       svgr(),
