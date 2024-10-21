@@ -58,7 +58,7 @@
     "@storybook/addon-links": "~8.3.6",
     "@storybook/addon-webpack5-compiler-babel": "~3.0.3",
     "@storybook/react": "~8.3.6",
-    "@storybook/react-webpack5": "~8.3.5",
+    "@storybook/react-webpack5": "~8.3.6",
     "@svgr/rollup": "~8.1.0",
     "@svgr/webpack": "~8.1.0",
     "@testing-library/dom": "~10.4.0",
