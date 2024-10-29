@@ -39,7 +39,12 @@ export const Header = () => (
   <div>
     <p>
       <Link href=' ' linkType='header'>
-        A header link
+        A header link with default span
+      </Link>
+    </p>
+    <p>
+      <Link href=' ' linkType='header' headerSize={2}>
+        A header link with heading 2
       </Link>
     </p>
   </div>
