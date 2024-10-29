@@ -1,5 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Link component Header link 1`] = `
+<DocumentFragment>
+  <a
+    class="ssb-link header"
+    href=" "
+  >
+    <span
+      class="link-text"
+    >
+      A header link with default span
+    </span>
+  </a>
+  <a
+    class="ssb-link header"
+    href=" "
+  >
+    <h2
+      class="link-text"
+    >
+      A header link with heading 2
+    </h2>
+  </a>
+</DocumentFragment>
+`;
+
 exports[`Link component Matches the snapshot 1`] = `
 <DocumentFragment>
   <a
@@ -15,24 +40,7 @@ exports[`Link component Matches the snapshot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Link component Toggles classNames correctly 1`] = `
-<DocumentFragment>
-  <a
-    class="ssb-link profiled negative mt-3"
-    href=""
-    rel="noopener noreferrer"
-    target="_blank"
-  >
-    <span
-      class="link-text"
-    >
-      Profile link
-    </span>
-  </a>
-</DocumentFragment>
-`;
-
-exports[`Link component render icon 1`] = `
+exports[`Link component Render icon 1`] = `
 <DocumentFragment>
   <a
     class="ssb-link profiled with-icon"
@@ -67,6 +75,23 @@ exports[`Link component render icon 1`] = `
       class="link-text"
     >
       A profiled link with icon
+    </span>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Link component Toggles classNames correctly 1`] = `
+<DocumentFragment>
+  <a
+    class="ssb-link profiled negative mt-3"
+    href=""
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      class="link-text"
+    >
+      Profile link
     </span>
   </a>
 </DocumentFragment>
