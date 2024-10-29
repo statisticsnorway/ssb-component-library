@@ -1,5 +1,15 @@
-import React, { forwardRef } from 'react'
+import React, { createElement, forwardRef } from 'react'
 import PropTypes from 'prop-types'
+
+const renderLinkText = (children, linkType, size) => {
+  if (children) {
+    if (linkType === 'header' && size) {
+      return createElement(`h${size}`, { className: 'link-text' }, children)
+    }
+    return <span className='link-text'>{children}</span>
+  }
+  return null
+}
 
 const Link = forwardRef(
   (
@@ -16,6 +26,7 @@ const Link = forwardRef(
       title,
       onClick = () => {},
       standAlone,
+      size,
     },
     ref
   ) => {
@@ -36,7 +47,7 @@ const Link = forwardRef(
         ref={ref}
       >
         {icon && <div className='icon-wrapper'>{icon}</div>}
-        {children && <span className='link-text'>{children}</span>}
+        {renderLinkText(children, linkType, size)}
       </a>
     )
   }
@@ -55,6 +66,7 @@ Link.propTypes = {
   title: PropTypes.string,
   onClick: PropTypes.func,
   standAlone: PropTypes.bool,
+  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
 }
 
 export default Link

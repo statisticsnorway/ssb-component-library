@@ -78,3 +78,4 @@ Available props:
 | title      | string           | The title attribute is used to provide additional information                       |
 | onClick    | function         | Callback for anchor click                                                           |
 | standAlone | Optional boolean | Resizing of a stand alone link to meet accessibility requirements                   |
+| size | Optional oneOf | Changes header element size (1, 2, 3, 4, 5 or 6) for header link type |
