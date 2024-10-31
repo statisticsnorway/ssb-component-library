@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { createElement, forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
 const Link = forwardRef(
@@ -16,11 +16,22 @@ const Link = forwardRef(
       title,
       onClick = () => {},
       standAlone,
+      headingSize,
     },
     ref
   ) => {
     const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${standAlone ? ' stand-alone' : ''}
     ${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`
+
+    const renderLinkText = () => {
+      if (children) {
+        if (linkType === 'header' && headingSize) {
+          return createElement(`h${headingSize}`, { className: 'link-text' }, children)
+        }
+        return <span className='link-text'>{children}</span>
+      }
+      return null
+    }
 
     return (
       // eslint-disable-next-line react/jsx-no-target-blank
@@ -36,7 +47,7 @@ const Link = forwardRef(
         ref={ref}
       >
         {icon && <div className='icon-wrapper'>{icon}</div>}
-        {children && <span className='link-text'>{children}</span>}
+        {renderLinkText()}
       </a>
     )
   }
@@ -55,6 +66,7 @@ Link.propTypes = {
   title: PropTypes.string,
   onClick: PropTypes.func,
   standAlone: PropTypes.bool,
+  headingSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
 }
 
 export default Link

@@ -1762,6 +1762,10 @@ a {
   font-size: 20px;
   font-weight: bold;
 }
+.ssb-link.header h1, .ssb-link.header h2, .ssb-link.header h3, .ssb-link.header h4, .ssb-link.header h5, .ssb-link.header h6 {
+  display: inherit;
+  font-size: inherit;
+}
 .ssb-link.header .link-text {
   color: #162327;
 }

@@ -16,11 +16,24 @@ describe('Link component', () => {
     )
     expect(asFragment()).toMatchSnapshot()
   })
-  test('render icon', () => {
+  test('Render icon', () => {
     const { asFragment } = render(
       <Link href=' ' linkType='profiled' icon={<ArrowRight />}>
         A profiled link with icon
       </Link>
+    )
+    expect(asFragment()).toMatchSnapshot()
+  })
+  test('Header link', () => {
+    const { asFragment } = render(
+      <>
+        <Link href=' ' linkType='header'>
+          A header link with default span
+        </Link>
+        <Link href=' ' linkType='header' headingSize={2}>
+          A header link with heading 2
+        </Link>
+      </>
     )
     expect(asFragment()).toMatchSnapshot()
   })
