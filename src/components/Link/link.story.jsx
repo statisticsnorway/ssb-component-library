@@ -43,7 +43,7 @@ export const Header = () => (
       </Link>
     </p>
     <p>
-      <Link href=' ' linkType='header' headerSize={2}>
+      <Link href=' ' linkType='header' headingSize={2}>
         A header link with heading 2
       </Link>
     </p>
