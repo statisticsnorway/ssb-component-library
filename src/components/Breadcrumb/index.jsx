@@ -22,18 +22,11 @@ const Breadcrumb = ({ className, items, mobileCompressedView = false }) => {
   return (
     <div className={`ssb-breadcrumbs${className ? ` ${className}` : ''}`}>
       {shouldShowCompressed ? (
-        <div className='breadcrumb-item compressed' style={{ display: 'flex', alignItems: 'center' }}>
+        <div className='breadcrumb-item' style={{ display: 'flex', alignItems: 'center' }}>
           <ArrowLeft style={{ color: '#00824d', marginRight: '10px' }} />
-          <span
-            role='button'
-            tabIndex='0'
-            onClick={() => handleNavigation(items[items.length - 2].link)}
-            onKeyDown={(e) => e.key === 'Enter' && handleNavigation(items[items.length - 2].link)}
-            className='breadcrumb-link compressed focus-outline'
-            style={{ cursor: 'pointer', color: 'inherit', textDecoration: 'none' }}
-          >
+          <button onClick={() => handleNavigation(items[items.length - 2].link)} className='breadcrumb-button'>
             {items[items.length - 2].text}
-          </span>
+          </button>
         </div>
       ) : (
         <>
