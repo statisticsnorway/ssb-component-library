@@ -22,8 +22,11 @@ export default {
 export const Default = () => (
   <div>
     <Breadcrumb items={mockedItems} />
-    <br />
-    <p>mobileCompressedView :</p>
+  </div>
+)
+
+export const mobileCompressedView = () => (
+  <div>
     <Breadcrumb mobileCompressedView items={mockedItems} />
   </div>
 )
