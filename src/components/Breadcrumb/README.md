@@ -43,10 +43,11 @@ const items = [
 
 Available props:
 
-| Name      | Type                      | Description                                                      |
-| --------- | ------------------------- | ---------------------------------------------------------------- |
-| className | string                    | Optional container class                                         |
-| items     | Required array of objects | A list of objects. Object key text is required, link is optional |
+| Name                 | Type                      | Description                                                      |
+| -------------------- | ------------------------- | ---------------------------------------------------------------- |
+| className            | string                    | Optional container class                                         |
+| items                | Required array of objects | A list of objects. Object key text is required, link is optional |
+| mobileCompressedView | boolean                   | A prop that makes the breadcrumb compressed on mobile view       |
 
 **Dependencies**
 
