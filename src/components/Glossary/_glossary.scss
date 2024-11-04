@@ -25,7 +25,6 @@
 
     &:hover,
     &:focus {
-      @include focus-ring;
       background-position: left bottom;
 
       .glossary-logo {
@@ -35,6 +34,10 @@
       .glossary-text-wrap {
         border-bottom: none;
       }
+    }
+
+    &:focus {
+      @include focus-ring;
     }
   }
 

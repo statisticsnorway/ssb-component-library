@@ -37,7 +37,6 @@
 
   &:hover,
   &:focus {
-    @include focus-ring;
     text-decoration: none;
 
     .tl-icon {
@@ -52,5 +51,9 @@
     .tl-description {
       color: $ssb-green-4;
     }
+  }
+
+  &:focus {
+    @include focus-ring;
   }
 }
