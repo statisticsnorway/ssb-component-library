@@ -28,13 +28,15 @@
 
     &:hover,
     &:focus {
-      @include focus-ring;
-
       .header-text {
         color: $ssb-green-4;
         text-decoration: underline;
         text-underline-position: under;
       }
+    }
+
+    &:focus {
+      @include focus-ring;
     }
 
     &.no-icon {
