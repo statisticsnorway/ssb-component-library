@@ -27,10 +27,13 @@
 
   &:hover,
   &:focus {
-    @include focus-ring;
     background: $ssb-green-4;
     color: $ssb-white;
     text-decoration: underline;
+  }
+
+  &:focus {
+    @include focus-ring;
   }
 
   &:active {

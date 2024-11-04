@@ -223,11 +223,13 @@ a {
   cursor: pointer;
 }
 .ssb-btn:hover, .ssb-btn:focus {
-  outline: #9272fc solid 2px;
-  outline-offset: 2px;
   background: #00824d;
   color: #fff;
   text-decoration: underline;
+}
+.ssb-btn:focus {
+  outline: #9272fc solid 2px;
+  outline-offset: 2px;
 }
 .ssb-btn:active {
   background: #274247;
@@ -341,14 +343,14 @@ a {
 .ssb-btn-tertiary .button-header .header-text {
   color: #162327;
 }
-.ssb-btn-tertiary .button-header:hover, .ssb-btn-tertiary .button-header:focus {
-  outline: #9272fc solid 2px;
-  outline-offset: 2px;
-}
 .ssb-btn-tertiary .button-header:hover .header-text, .ssb-btn-tertiary .button-header:focus .header-text {
   color: #00824d;
   text-decoration: underline;
   text-underline-position: under;
+}
+.ssb-btn-tertiary .button-header:focus {
+  outline: #9272fc solid 2px;
+  outline-offset: 2px;
 }
 .ssb-btn-tertiary .button-header.no-icon {
   text-decoration: underline;
@@ -1246,8 +1248,6 @@ a {
   vertical-align: top;
 }
 .ssb-glossary .glossary-button:hover, .ssb-glossary .glossary-button:focus {
-  outline: #9272fc solid 2px;
-  outline-offset: 2px;
   background-position: left bottom;
 }
 .ssb-glossary .glossary-button:hover .glossary-logo, .ssb-glossary .glossary-button:focus .glossary-logo {
@@ -1255,6 +1255,10 @@ a {
 }
 .ssb-glossary .glossary-button:hover .glossary-text-wrap, .ssb-glossary .glossary-button:focus .glossary-text-wrap {
   border-bottom: none;
+}
+.ssb-glossary .glossary-button:focus {
+  outline: #9272fc solid 2px;
+  outline-offset: 2px;
 }
 .ssb-glossary .glossary-popup {
   font-family: "Open Sans", sans-serif !important;
@@ -2519,8 +2523,6 @@ a {
   margin-top: 4px;
 }
 .ssb-table-link:hover, .ssb-table-link:focus {
-  outline: #9272fc solid 2px;
-  outline-offset: 2px;
   text-decoration: none;
 }
 .ssb-table-link:hover .tl-icon, .ssb-table-link:focus .tl-icon {
@@ -2533,6 +2535,10 @@ a {
 }
 .ssb-table-link:hover .tl-description, .ssb-table-link:focus .tl-description {
   color: #00824d;
+}
+.ssb-table-link:focus {
+  outline: #9272fc solid 2px;
+  outline-offset: 2px;
 }
 
 .ssb-tabs {
@@ -2632,10 +2638,12 @@ a {
   cursor: pointer;
 }
 .ssb-tag:hover, .ssb-tag:focus {
-  outline: #9272fc solid 2px;
-  outline-offset: 2px;
   background: #00824d;
   color: #fff;
+}
+.ssb-tag:focus {
+  outline: #9272fc solid 2px;
+  outline-offset: 2px;
 }
 .ssb-tag:active {
   background: #274247;
