@@ -5,9 +5,11 @@ exports[`Breadcrumb component Matches the snapshot 1`] = `
   <div
     class="ssb-breadcrumbs"
   >
-    <div>
+    <div
+      class="breadcrumb-item"
+    >
       <a
-        class="ssb-link"
+        class="ssb-link breadcrumb-link"
         href=" "
       >
         <span
@@ -18,9 +20,11 @@ exports[`Breadcrumb component Matches the snapshot 1`] = `
       </a>
        / 
     </div>
-    <div>
+    <div
+      class="breadcrumb-item"
+    >
       <a
-        class="ssb-link"
+        class="ssb-link breadcrumb-link"
         href=" "
       >
         <span
@@ -31,7 +35,9 @@ exports[`Breadcrumb component Matches the snapshot 1`] = `
       </a>
        / 
     </div>
-    <span>
+    <span
+      class="breadcrumb-text"
+    >
       breadcrumb 3
     </span>
   </div>

@@ -7,3 +7,9 @@
   font-stretch: normal;
   line-height: 1.25;
 }
+
+.focus-outline:focus {
+  outline: 1px solid rgba(146, 114, 252, 1);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
