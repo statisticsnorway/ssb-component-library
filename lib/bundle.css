@@ -189,6 +189,10 @@ a {
   border-radius: 2px;
 }
 
+.ssb-breadcrumbs .breadcrumb-item + .breadcrumb-item::before {
+  content: none !important;
+}
+
 .ssb-btn {
   font-family: "Roboto", sans-serif !important;
   font-stretch: normal;

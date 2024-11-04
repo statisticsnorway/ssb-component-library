@@ -13,3 +13,7 @@
   outline-offset: 4px;
   border-radius: 2px;
 }
+
+.ssb-breadcrumbs .breadcrumb-item + .breadcrumb-item::before {
+  content: none !important;
+}
