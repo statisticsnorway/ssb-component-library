@@ -183,6 +183,12 @@ a {
   line-height: 1.25;
 }
 
+.focus-outline:focus {
+  outline: 1px solid rgb(146, 114, 252);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
 .ssb-btn {
   font-family: "Roboto", sans-serif !important;
   font-stretch: normal;
