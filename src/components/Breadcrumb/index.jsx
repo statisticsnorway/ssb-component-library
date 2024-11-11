@@ -15,19 +15,12 @@ const Breadcrumb = ({ className, items, mobileCompressedView = false }) => {
 
   const shouldShowCompressed = isMobile && mobileCompressedView && items.length > 1
 
-  const handleNavigation = (link) => {
-    window.location.href = link
-  }
-
   return (
     <div className={`ssb-breadcrumbs${className ? ` ${className}` : ''}`}>
       {shouldShowCompressed ? (
-        <div className='breadcrumb-item' style={{ display: 'flex', alignItems: 'center' }}>
-          <ArrowLeft style={{ color: '#00824d', marginRight: '10px' }} />
-          <button onClick={() => handleNavigation(items[items.length - 2].link)} className='breadcrumb-button'>
-            {items[items.length - 2].text}
-          </button>
-        </div>
+        <Link href={items[items.length - 2].link} icon={<ArrowLeft size={20} />}>
+          {items[items.length - 2].text}
+        </Link>
       ) : (
         <>
           {items.slice(0, -1).map((item) => (
