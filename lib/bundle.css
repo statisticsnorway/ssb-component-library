@@ -183,26 +183,6 @@ a {
   line-height: 1.25;
 }
 
-.ssb-breadcrumbs .breadcrumb-item + .breadcrumb-item::before {
-  content: none !important;
-}
-
-.breadcrumb-button {
-  cursor: pointer;
-  color: inherit;
-  text-decoration: none;
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
-}
-.breadcrumb-button:focus {
-  outline: 2px solid rgb(146, 114, 252);
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-
 .ssb-btn {
   font-family: "Roboto", sans-serif !important;
   font-stretch: normal;
