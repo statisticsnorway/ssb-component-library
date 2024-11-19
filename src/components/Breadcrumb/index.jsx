@@ -24,14 +24,12 @@ const Breadcrumb = ({ className, items, mobileCompressedView = false }) => {
       ) : (
         <>
           {items.slice(0, -1).map((item) => (
-            <div key={item.text} className='breadcrumb-item'>
-              <Link href={item.link} className='breadcrumb-link'>
-                {item.text}
-              </Link>
+            <div key={item.text}>
+              <Link href={item.link}>{item.text}</Link>
               &nbsp;/&nbsp;
             </div>
           ))}
-          <span className='breadcrumb-text'>{items[items.length - 1].text}</span>
+          <span>{items[items.length - 1].text}</span>
         </>
       )}
     </div>
