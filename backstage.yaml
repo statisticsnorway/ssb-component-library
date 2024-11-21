@@ -14,7 +14,8 @@ metadata:
     - frontend
     - storybook
   links:
-    https://design.ssb.no
+    - title: SSB Component Library
+      url: https://design.ssb.no
 spec:
   type: library
   system: SSBNO
