@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { ArrowLeft } from 'react-feather'
 import Link from '../Link'
 
 const Breadcrumb = ({ className, items, mobileCompressedView = false }) => {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 767)
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  const shouldShowCompressed = isMobile && mobileCompressedView && items.length > 1
+  const shouldShowCompressed = mobileCompressedView && items.length > 1
 
   return (
     <div className={`ssb-breadcrumbs${className ? ` ${className}` : ''}`}>
