@@ -20,14 +20,14 @@ export default {
 }
 
 export const Default = () => (
-  <div className='d-md-none'>
+  <div>
     <Breadcrumb items={mockedItems} />
   </div>
 )
 
 export const mobileCompressedView = () => (
 
-      <div className='d-none d-md-block'>
+      <div>
         <Breadcrumb items={mockedItems} mobileCompressedView />
       </div>
 )
