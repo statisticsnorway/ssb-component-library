@@ -48,7 +48,6 @@ const Glossary = ({ explanation, children, className, closeText = 'Lukk', ariaLa
   return (
     <span className={`ssb-glossary${className ? ` ${className}` : ''}`}>
       <button
-        ref={node}
         onClick={() => setOpen(!open)}
         className='glossary-button'
         aria-label={ariaLabel || children}
@@ -57,7 +56,7 @@ const Glossary = ({ explanation, children, className, closeText = 'Lukk', ariaLa
         <span className='glossary-text-wrap'>{children}</span>
         <BookOpen size={12} className='glossary-logo' aria-hidden='true' />
       </button>
-      <span className={`glossary-popup${open ? ' open' : ''}`}>
+      <span className={`glossary-popup${open ? ' open' : ''}`} ref={node}>
         <span className='content-box'>
           <span className='info-text'>{explanation}</span>
           <span className='glossary-closing'>
