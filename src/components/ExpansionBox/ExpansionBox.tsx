@@ -45,7 +45,7 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
         })
       }
     }
-  }, [isOpen])
+  }, [isOpen, text])
 
   return (
     <div className={classNameList.join(' ')}>
