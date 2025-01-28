@@ -25,7 +25,8 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     background: $ssb-green-4;
     color: $ssb-white;
   }
