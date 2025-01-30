@@ -2633,7 +2633,7 @@ a {
 .ssb-tag:hover, .ssb-tag:active {
   cursor: pointer;
 }
-.ssb-tag:hover, .ssb-tag:focus {
+.ssb-tag:hover, .ssb-tag:focus, .ssb-tag.active {
   background: #00824d;
   color: #fff;
 }
