@@ -979,6 +979,7 @@ a {
 .ssb-expansion-box {
   border: 1px solid #00824d;
   border-radius: 8px;
+  background-color: #fff;
   display: grid;
   width: 100%;
 }
