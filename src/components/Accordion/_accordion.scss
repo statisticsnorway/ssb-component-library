@@ -72,6 +72,24 @@
         align-self: start;
         grid-column-start: 1;
       }
+
+      @media #{$mobile} {
+        .button-grid {
+          grid-template-columns: auto 20px;
+          grid-column-gap: 0;
+        }
+
+        .sub-header {
+          grid-column-start: 1;
+          grid-row-start: 1;
+        }
+
+        .header-text {
+          margin-top: 8px;
+          grid-column-start: 1;
+          grid-row-start: 2;
+        }
+      }
     }
   }
 

@@ -126,6 +126,21 @@ a {
   align-self: start;
   grid-column-start: 1;
 }
+@media screen and (max-width: 767px) {
+  .ssb-accordion.with-sub-header .accordion-header .button-grid {
+    grid-template-columns: auto 20px;
+    grid-column-gap: 0;
+  }
+  .ssb-accordion.with-sub-header .accordion-header .sub-header {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+  .ssb-accordion.with-sub-header .accordion-header .header-text {
+    margin-top: 8px;
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+}
 .ssb-accordion .accordion-body {
   overflow-x: auto;
   font-family: "Open Sans", sans-serif !important;
