@@ -765,6 +765,7 @@ a {
   font-size: 40px;
 }
 .ssb-dialog .dialog-content {
+  font-size: 16px;
   padding: 16px;
 }
 .ssb-dialog .dialog-content .dialog-title {
@@ -978,6 +979,7 @@ a {
 .ssb-expansion-box {
   border: 1px solid #00824d;
   border-radius: 8px;
+  background-color: #fff;
   display: grid;
   width: 100%;
 }
