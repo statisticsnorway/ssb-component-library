@@ -41,7 +41,6 @@ describe('Pagination component', () => {
 
   describe('handleSelection function', () => {
     let callback
-    let useStateSpy
     let user
 
     beforeEach(() => {
