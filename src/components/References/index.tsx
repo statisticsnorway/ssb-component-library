@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from '../Link'
 import Text from '../Text'
+import classNames from '../../utils/utils'
 
 interface Item {
   href: string
@@ -14,7 +15,7 @@ interface ReferencesProps {
 }
 
 const References: React.FC<ReferencesProps> = ({ className, referenceList, title = 'Kilder' }) => (
-  <div className={`ssb-references${className ? ` ${className}` : ''}`}>
+  <div className={classNames('ssb-references', className)}>
     <span className='reference-header'>{title}</span>
     {referenceList.map((ref, index) => (
       // eslint-disable-next-line react/no-array-index-key

@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface ParagraphProps {
   children?: ReactNode
@@ -7,7 +8,7 @@ interface ParagraphProps {
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({ children, className, negative }) => (
-  <p className={`ssb-paragraph${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>{children}</p>
+  <p className={classNames('ssb-paragraph', negative && 'negative', className)}>{children}</p>
 )
 
 export default Paragraph

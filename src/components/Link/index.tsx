@@ -1,4 +1,5 @@
 import React, { createElement, forwardRef, type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface LinkProps {
   ariaLabel?: string
@@ -35,9 +36,6 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     },
     ref
   ) => {
-    const classNames = `ssb-link${linkType ? ` ${linkType}` : ''}${standAlone ? ' stand-alone' : ''}
-    ${negative ? ' negative' : ''}${icon ? ' with-icon' : ''}${className ? ` ${className}` : ''}`
-
     const renderLinkText = () => {
       if (children) {
         if (linkType === 'header' && headingSize) {
@@ -50,7 +48,14 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(
 
     return (
       <a
-        className={classNames.replace(/\s\s+/g, ' ').trim()}
+        className={classNames(
+          'ssb-link',
+          linkType,
+          standAlone && 'stand-alone',
+          negative && 'negative',
+          icon ? 'with-icon' : '',
+          className
+        )}
         href={href}
         target={isExternal ? '_blank' : undefined}
         rel={isExternal ? 'noopener noreferrer' : undefined}

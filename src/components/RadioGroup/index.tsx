@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import RadioButton from '../RadioButton'
+import classNames from '../../utils/utils'
 
 interface Item {
   id?: string
@@ -34,7 +35,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
   }, [selected])
 
   return (
-    <div className={`ssb-radio-group${className ? ` ${className}` : ''}`}>
+    <div className={classNames('ssb-radio-group', className)}>
       {header && <div className='radio-group-header'>{header}</div>}
       <div className={`boxes flex-${orientation}`}>
         {items.map((it: Item) => (

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'react-feather'
+import classNames from '../../utils/utils'
 
 interface Item {
   text: string
@@ -56,7 +57,7 @@ const Pagination: React.FC<PaginationProps> = ({
   }
 
   return (
-    <nav className={`ssb-pagination${className ? ` ${className}` : ''}`}>
+    <nav className={classNames('ssb-pagination', className)}>
       <button
         className='direction-button previous'
         onClick={() => handleSelection(items[items.indexOf(selected) - 1])}

@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface TagProps {
   children: ReactNode
@@ -8,7 +9,7 @@ interface TagProps {
 }
 
 const Tag: React.FC<TagProps> = ({ children, className, icon, onClick = () => {} }) => (
-  <button className={`ssb-tag${className ? ` ${className}` : ''}`} onClick={onClick}>
+  <button className={classNames('ssb-tag', className)} onClick={onClick}>
     {icon && <div className='st-icon'>{icon}</div>}
     {children}
   </button>

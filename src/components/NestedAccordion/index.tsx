@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, type ReactNode } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
+import classNames from '../../utils/utils'
 
 interface NestedAccordionProps {
   children?: ReactNode
@@ -26,7 +27,7 @@ const NestedAccordion: React.FC<NestedAccordionProps> = ({
     onToggle(isOpen)
   }, [isOpen])
   return (
-    <div className={`ssb-nested-accordion${className ? ` ${className}` : ''}`}>
+    <div className={classNames('ssb-nested-accordion', className)}>
       <button
         className={`nested-accordion-header ${isOpen ? 'open' : 'closed'}`}
         aria-expanded={isOpen ? 'true' : 'false'}

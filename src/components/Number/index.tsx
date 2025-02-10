@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface NumberProps {
   children?: ReactNode
@@ -7,7 +8,7 @@ interface NumberProps {
 }
 
 const Number: React.FC<NumberProps> = ({ children, className, size = 'small' }) => (
-  <div className={`ssb-number ${size}${className ? ` ${className}` : ''}`}>{children}</div>
+  <div className={classNames('ssb-number', size, className)}>{children}</div>
 )
 
 export default Number

@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface StickyMenuProps {
   children: ReactNode
@@ -6,7 +7,7 @@ interface StickyMenuProps {
 }
 
 const StickyMenu: React.FC<StickyMenuProps> = ({ children, className }) => (
-  <div className={`ssb-sticky-menu${className ? ` ${className}` : ''}`}>
+  <div className={classNames('ssb-sticky-menu', className)}>
     <div className='menu-content'>{children}</div>
   </div>
 )

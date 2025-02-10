@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface HighlightProps {
   children: ReactNode
@@ -7,7 +8,7 @@ interface HighlightProps {
 }
 
 const Highlight: React.FC<HighlightProps> = ({ children, className, negative = false }) => (
-  <mark className={`ssb-mark${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}> {children} </mark>
+  <mark className={classNames('ssb-mark', negative && 'negative', className)}> {children} </mark>
 )
 
 export default Highlight

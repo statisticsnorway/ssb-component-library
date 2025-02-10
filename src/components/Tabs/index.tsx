@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import classNames from '../../utils/utils'
 
 interface TabItem {
   title: string
@@ -22,7 +23,7 @@ const Tabs: React.FC<TabsProps> = ({ activeOnInit = '', className, items, onClic
   }
 
   return (
-    <div className={`ssb-tabs${className ? ` ${className}` : ''}`} role='tablist'>
+    <div className={classNames('ssb-tabs', className)} role='tablist'>
       {items.map((item, i) => (
         <button
           className={`navigation-item ${activeItem === item.path ? 'active' : ''}`}

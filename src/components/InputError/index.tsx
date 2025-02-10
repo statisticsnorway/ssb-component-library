@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from '../../utils/utils'
 
 interface InputErrorProps {
   className?: string
@@ -8,7 +9,7 @@ interface InputErrorProps {
 }
 
 const InputError: React.FC<InputErrorProps> = ({ className, errorMessage, negative = false, id }) => (
-  <div className={`ssb-input-error${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`} id={id}>
+  <div className={classNames('ssb-input-error', negative && 'negative', className)} id={id}>
     <span aria-live='assertive'>{errorMessage}</span>
   </div>
 )

@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface TextProps {
   children: ReactNode
@@ -8,9 +9,7 @@ interface TextProps {
 }
 
 const Text: React.FC<TextProps> = ({ children, className, negative = false, small = false }) => (
-  <span
-    className={`ssb-text-wrapper${small ? ' small-text' : ''}${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}
-  >
+  <span className={classNames('ssb-text-wrapper', small && 'small-text', negative && 'negative', className)}>
     {children}
   </span>
 )

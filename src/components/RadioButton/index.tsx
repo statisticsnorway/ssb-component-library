@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface RadioButtonProps {
   callback?: (value: string | number) => void
@@ -23,7 +24,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   value,
   id,
 }) => (
-  <div className={`ssb-radio${className ? ` ${className}` : ''}`}>
+  <div className={classNames('ssb-radio', className)}>
     <input
       tabIndex={tabIndex}
       checked={selected}

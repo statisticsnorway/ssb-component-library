@@ -2,6 +2,7 @@ import React, { useState, forwardRef, useEffect } from 'react'
 import { Search } from 'react-feather'
 import { useId } from '../../utils/useId'
 import InputError from '../InputError'
+import classNames from '../../utils/utils'
 
 interface InputProps {
   role?: string
@@ -74,7 +75,13 @@ const Input = forwardRef<HTMLDivElement, InputProps>(
 
     return (
       <div
-        className={`ssb-input${negative ? ' negative' : ''}${error ? ' error' : ''}${size === 'lg' ? ' input-lg' : ''}${className ? ` ${className}` : ''}`}
+        className={classNames(
+          'ssb-input',
+          negative && 'negative',
+          error && 'error',
+          size === 'lg' && 'input-lg',
+          className
+        )}
       >
         {label && (
           <label aria-hidden={ariaLabel ? true : undefined} htmlFor={inputId}>

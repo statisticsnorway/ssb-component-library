@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight } from 'react-feather'
+import classNames from '../../utils/utils'
 
 interface TableLinkProps {
   className?: string
@@ -21,7 +22,7 @@ const TableLink: React.FC<TableLinkProps> = ({
   title,
 }) => (
   <a
-    className={`ssb-table-link${className ? ` ${className}` : ''}`}
+    className={classNames('ssb-table-link', className)}
     href={href}
     tabIndex={tabIndex}
     target={isExternal ? '_blank' : undefined}

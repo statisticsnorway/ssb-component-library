@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface HeaderProps {
   children?: ReactNode
@@ -6,7 +7,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => (
-  <div className={`ssb-header-wrapper${className ? ` ${className}` : ''}`}>{children}</div>
+  <div className={classNames('ssb-header-wrapper', className)}>{children}</div>
 )
 
 export default Header

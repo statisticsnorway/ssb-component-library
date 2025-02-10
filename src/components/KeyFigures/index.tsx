@@ -2,6 +2,7 @@ import React, { type ReactNode } from 'react'
 import { ArrowDown, ArrowUp, Minus } from 'react-feather'
 import Number from '../Number'
 import Glossary from '../Glossary'
+import classNames from '../../utils/utils'
 
 interface Changes {
   changeDirection?: 'up' | 'down' | 'same'
@@ -38,7 +39,7 @@ const KeyFigures: React.FC<KeyFiguresProps> = ({
 }) => {
   const { changeDirection, changeText, changePeriod, srChangeText } = changes
   return (
-    <div className={`ssb-key-figures ${size}${greenBox ? ' green-box' : ''}${className ? ` ${className}` : ''}`}>
+    <div className={classNames('ssb-key-figures', size, greenBox && 'green-box', className)}>
       {icon && <div className={`kf-icon ${size}`}>{icon}</div>}
       <div>
         {glossary && title ? (

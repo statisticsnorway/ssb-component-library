@@ -1,5 +1,6 @@
 import React, { forwardRef, useRef, useState, useEffect, type MutableRefObject } from 'react'
 import { ArrowRight, ArrowRightCircle } from 'react-feather'
+import classNames from '../../utils/utils'
 
 interface PictureCardProps {
   className?: string
@@ -52,7 +53,7 @@ const PictureCard = forwardRef<HTMLAnchorElement, PictureCardProps>(
     }
 
     return (
-      <a className={`ssb-picture-card ${orientation} ${className || ''}`} href={link} onClick={onClick} ref={setRefs}>
+      <a className={classNames('ssb-picture-card', orientation, className)} href={link} onClick={onClick} ref={setRefs}>
         <div className='image-background'>
           <img src={imageSrc} alt={altText} />
         </div>

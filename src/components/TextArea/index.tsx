@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react'
 import { useId } from '../../utils/useId'
 import InputError from '../InputError'
+import classNames from '../../utils/utils'
 
 interface TextAreaProps {
   ariaLabel?: string
@@ -45,9 +46,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   }
 
   return (
-    <div
-      className={`ssb-text-area${negative ? ' negative' : ''}${error ? ' error' : ''}${className ? ` ${className}` : ''}`}
-    >
+    <div className={classNames('ssb-text-area', negative && 'negative', error && 'error', className)}>
       {label && <label htmlFor={inputId}>{label}</label>}
       <div className='text-area-wrapper'>
         <textarea
