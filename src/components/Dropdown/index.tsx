@@ -3,6 +3,7 @@ import { ChevronDown, ChevronUp } from 'react-feather'
 import { useId } from '../../utils/useId'
 import { KEY_ARROW_DOWN, KEY_ARROW_UP, KEY_ENTER, KEY_ESCAPE, KEY_SPACE, KEY_TAB } from '../../utils/keybindings'
 import InputError from '../InputError'
+import classNames from '../../utils/utils'
 
 interface Item {
   id: string
@@ -222,7 +223,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div
       id={`dropdown_${dropdownId}`}
-      className={`ssb-dropdown${className ? ` ${className}` : ''}${error ? ' error' : ''}${largeSize ? ' large' : ''}`}
+      className={classNames('ssb-dropdown', className, error && ' error', largeSize && ' large')}
     >
       {searchable ? renderHeaderSearchable() : renderHeader()}
       <div className='dropdown-interactive-area' ref={wrapper} tabIndex={tabIndex}>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback, type ReactNode } from 'react'
 import { BookOpen, XCircle } from 'react-feather'
+import classNames from '../../utils/utils'
 
 interface GlossaryProps {
   children?: ReactNode
@@ -53,7 +54,7 @@ const Glossary: React.FC<GlossaryProps> = ({ explanation, children, className, c
   }, [open])
 
   return (
-    <span className={`ssb-glossary${className ? ` ${className}` : ''}`}>
+    <span className={classNames('ssb-glossary', className)}>
       <button
         onClick={() => setOpen(!open)}
         className='glossary-button'
@@ -63,7 +64,7 @@ const Glossary: React.FC<GlossaryProps> = ({ explanation, children, className, c
         <span className='glossary-text-wrap'>{children}</span>
         <BookOpen size={12} className='glossary-logo' aria-hidden='true' />
       </button>
-      <span className={`glossary-popup${open ? ' open' : ''}`} ref={node}>
+      <span className={classNames('glossary-popup', open && 'open')} ref={node}>
         <span className='content-box'>
           <span className='info-text'>{explanation}</span>
           <span className='glossary-closing'>

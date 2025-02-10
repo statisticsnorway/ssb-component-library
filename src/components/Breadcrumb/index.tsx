@@ -1,6 +1,7 @@
 import React from 'react'
 import { ArrowLeft } from 'react-feather'
 import Link from '../Link'
+import classNames from '../../utils/utils'
 
 interface Item {
   link: string
@@ -16,7 +17,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ className, items, mobileCompres
   const shouldShowCompressed = mobileCompressedView && items.length > 1
 
   return (
-    <div className={`ssb-breadcrumbs${className ? ` ${className}` : ''}`}>
+    <div className={classNames('ssb-breadcrumbs', className)}>
       {shouldShowCompressed ? (
         <Link href={items[items.length - 2].link} icon={<ArrowLeft size={20} />}>
           {items[items.length - 2].text}

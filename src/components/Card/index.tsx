@@ -1,5 +1,6 @@
 import React, { type ReactNode } from 'react'
 import { ArrowRight, Download, ExternalLink } from 'react-feather'
+import classNames from '../../utils/utils'
 
 interface CardProps {
   ariaLabel?: string
@@ -34,15 +35,20 @@ const Card: React.FC<CardProps> = ({
   subTitle,
   title,
 }) => (
-  <div className={`ssb-card${className ? ` ${className}` : ''}`}>
+  <div className={classNames('ssb-card', className)}>
     <div
-      className={`clickable ${imagePlacement === 'left' ? 'left-orientation' : 'top-orientation'}`}
+      className={classNames('clickable', imagePlacement === 'left' ? 'left-orientation' : 'top-orientation')}
       aria-label={ariaLabel}
     >
       {image && <div className='card-image'>{image}</div>}
 
       <div
-        className={`card-content${image ? ' with-image' : ''}${profiled ? ' profiled' : ''}${external ? ' external' : ''}`}
+        className={classNames(
+          'card-content',
+          image ? 'with-image' : '',
+          profiled && 'profiled',
+          external && 'external'
+        )}
       >
         {icon && <div className='card-icon'>{icon}</div>}
         {subTitle && <div className='card-subtitle'>{subTitle}</div>}

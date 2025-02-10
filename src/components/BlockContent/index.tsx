@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface BlockContentProps {
   children: ReactNode
@@ -7,7 +8,7 @@ interface BlockContentProps {
 }
 
 const BlockContent: React.FC<BlockContentProps> = ({ children, className, sectionNumber }) => (
-  <div className={`ssb-block-content${className ? ` ${className}` : ''}`}>
+  <div className={classNames('ssb-block-content', className)}>
     {sectionNumber && (
       <div className='section-number'>
         {(typeof sectionNumber === 'string' && sectionNumber.length === 1) ||

@@ -1,4 +1,5 @@
 import React, { forwardRef, type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface ButtonProps {
   children: ReactNode
@@ -32,7 +33,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     <button
       type={type}
       ref={ref}
-      className={`ssb-btn${negative ? ' negative' : ''} ${primary ? 'primary-btn' : 'secondary-btn'}${className ? ` ${className}` : ''}`}
+      className={classNames('ssb-btn', negative && 'negative', primary ? 'primary-btn' : 'secondary-btn', className)}
       onClick={onClick}
       onKeyDown={onKeyDown}
       disabled={disabled}

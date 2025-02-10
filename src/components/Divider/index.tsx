@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from '../../utils/utils'
 
 interface DividerProps {
   className?: string
@@ -7,10 +8,7 @@ interface DividerProps {
 }
 
 const Divider: React.FC<DividerProps> = ({ className, dark = false, light = false }) => (
-  <hr
-    className={`ssb-divider${className ? ` ${className}` : ''}${dark ? ' type-dark' : ''}${light ? ' type-light' : ''}`}
-    aria-hidden='true'
-  />
+  <hr className={classNames('ssb-divider', className, dark && 'type-dark', light && 'type-light')} aria-hidden='true' />
 )
 
 export default Divider

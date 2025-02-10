@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from '../../utils/utils'
 
 interface FormErrorProps {
   className?: string
@@ -8,7 +9,7 @@ interface FormErrorProps {
 }
 
 const FormError: React.FC<FormErrorProps> = ({ className, errorMessages, negative, title = '' }) => (
-  <div className={`ssb-form-error${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`}>
+  <div className={classNames('ssb-form-error', negative && ' negative', className)}>
     <span className='error-icon' />
     <div>
       <span className='error-title'>{title}</span>

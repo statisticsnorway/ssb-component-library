@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight } from 'react-feather'
+import classNames from '../../utils/utils'
 
 interface CategoryLinkProps {
   ariaLabel?: string
@@ -19,26 +20,28 @@ const CategoryLink: React.FC<CategoryLinkProps> = ({
   href,
   tabIndex,
   title,
-}) => {
-  const classNames = `ssb-category-link${className ? ` ${className}` : ''}`
-
-  return (
-    <a className={classNames} href={href} tabIndex={tabIndex} aria-label={ariaLabel} title={title}>
-      {titleText && (
-        <div className='div-wrapper'>
-          <div className='text-divs title-wrapper'>
-            <span className='link-title-text'>{titleText}</span>
-          </div>
-          <div className='text-divs sub-wrapper'>
-            <span className='link-sub-text'>{subText}</span>
-          </div>
-          <div className='icon-wrapper'>
-            <ArrowRight className='arrow-icon' size={24} />
-          </div>
+}) => (
+  <a
+    className={classNames('ssb-category-link', className)}
+    href={href}
+    tabIndex={tabIndex}
+    aria-label={ariaLabel}
+    title={title}
+  >
+    {titleText && (
+      <div className='div-wrapper'>
+        <div className='text-divs title-wrapper'>
+          <span className='link-title-text'>{titleText}</span>
         </div>
-      )}
-    </a>
-  )
-}
+        <div className='text-divs sub-wrapper'>
+          <span className='link-sub-text'>{subText}</span>
+        </div>
+        <div className='icon-wrapper'>
+          <ArrowRight className='arrow-icon' size={24} />
+        </div>
+      </div>
+    )}
+  </a>
+)
 
 export default CategoryLink

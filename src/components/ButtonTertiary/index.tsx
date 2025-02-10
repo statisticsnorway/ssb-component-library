@@ -1,5 +1,6 @@
 import React, { useState, type ReactNode } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
+import classNames from '../../utils/utils'
 
 interface ButtonTertiaryProps {
   id?: string
@@ -27,10 +28,9 @@ const ButtonTertiary: React.FC<ButtonTertiaryProps> = ({
   onClick = () => {},
 }) => {
   const [isOpen, toggleOpen] = useState(openByDefault)
-  const classNames = `ssb-btn-tertiary${negative ? ' negative' : ''}${className ? ` ${className}` : ''}`
 
   return (
-    <div id={id} className={classNames.replace(/\s\s+/g, ' ').trim()}>
+    <div id={id} className={classNames('ssb-btn-tertiary', negative && 'negative', className)}>
       <button
         className={`button-header ${isOpen ? 'open' : 'closed'} ${accordion ? 'icon' : 'no-icon'}`}
         aria-expanded={isOpen ? 'true' : 'false'}

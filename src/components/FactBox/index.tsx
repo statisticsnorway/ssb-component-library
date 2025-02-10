@@ -1,5 +1,6 @@
 import React, { useEffect, type ReactNode } from 'react'
 import Accordion from '../Accordion'
+import classNames from '../../utils/utils'
 
 interface FactBoxProps {
   className?: string
@@ -16,7 +17,7 @@ const FactBox: React.FC<FactBoxProps> = ({ className, header, openByDefault = fa
   }, [])
 
   return (
-    <div className={`ssb-fact-box${className ? ` ${className}` : ''}`}>
+    <div className={classNames('ssb-fact-box', className)}>
       <Accordion header={header} openByDefault={openByDefault} withoutBorders>
         {text}
       </Accordion>

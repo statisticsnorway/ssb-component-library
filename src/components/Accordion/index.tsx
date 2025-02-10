@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, type ReactNode } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
+import classNames from '../../utils/utils'
 
 interface AccordionProps {
   id?: string
@@ -24,7 +25,7 @@ const Accordion: React.FC<AccordionProps> = ({
   withoutBorders,
   onToggle = () => {},
 }) => {
-  const [isOpen, toggleOpen] = useState(openByDefault)
+  const [isOpen, setIsOpen] = useState(openByDefault)
   const firstUpdate = useRef(true)
   useEffect(() => {
     if (firstUpdate.current) {
@@ -36,13 +37,18 @@ const Accordion: React.FC<AccordionProps> = ({
   return (
     <div
       id={id}
-      className={`ssb-accordion${subHeader ? ' with-sub-header' : ''}${withoutBorders ? ' without-borders' : ''}${className ? ` ${className}` : ''}`}
+      className={classNames(
+        'ssb-accordion',
+        subHeader && 'with-sub-header',
+        withoutBorders && 'without-borders',
+        className
+      )}
     >
       <button
-        className={`accordion-header ${isOpen ? 'open' : 'closed'}`}
+        className={classNames('accordion-header', isOpen ? 'open' : 'closed')}
         aria-expanded={isOpen ? 'true' : 'false'}
         tabIndex={tabIndex}
-        onClick={() => toggleOpen(!isOpen)}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <span className='button-grid'>
           {subHeader && <span className='sub-header'>{subHeader}</span>}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Checkbox from '../Checkbox'
+import classNames from '../../utils/utils'
 
 interface Item {
   label: string
@@ -41,7 +42,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   }
 
   return (
-    <div className={`ssb-checkbox-group${className ? ` ${className}` : ''}`}>
+    <div className={classNames('ssb-checkbox-group', className)}>
       {header && <div className='checkbox-group-header'>{header}</div>}
       <div className={`boxes flex-${orientation}`}>
         {items.map((it) => (

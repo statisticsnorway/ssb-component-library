@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface FooterProps {
   children?: ReactNode
@@ -6,7 +7,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ children, className }) => (
-  <div className={`ssb-footer-wrapper${className ? ` ${className}` : ''}`}>{children}</div>
+  <div className={classNames('ssb-footer-wrapper', className)}>{children}</div>
 )
 
 export default Footer

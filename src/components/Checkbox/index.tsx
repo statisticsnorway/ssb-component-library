@@ -1,4 +1,5 @@
 import React, { type ReactNode } from 'react'
+import classNames from '../../utils/utils'
 
 interface CheckboxProps {
   callback?: (value: string | number) => void
@@ -19,7 +20,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   tabIndex = 0,
   value,
 }) => (
-  <div className={`ssb-checkbox${className ? ` ${className}` : ''}`}>
+  <div className={classNames('ssb-checkbox', className)}>
     <input
       tabIndex={tabIndex}
       disabled={disabled}
