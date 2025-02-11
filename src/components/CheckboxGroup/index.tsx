@@ -25,20 +25,20 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   orientation = 'column',
   selectedValues = [''],
 }) => {
-  const [selected, updateSelected] = useState(selectedValues)
+  const [selected, setSelected] = useState(selectedValues)
 
   useEffect(() => {
     onChange(selected)
   }, [selected])
 
-  const setSelected = (sel: string) => {
+  const setSelectedValue = (sel: string) => {
     const newArr = [...selected]
     if (selected.includes(sel)) {
       newArr.splice(selected.indexOf(sel), 1)
     } else {
       newArr.push(sel)
     }
-    updateSelected(newArr)
+    setSelected(newArr)
   }
 
   return (
@@ -50,7 +50,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
             key={it.value}
             selected={selected.includes(it.value)}
             value={it.value}
-            callback={setSelected}
+            callback={setSelectedValue}
             disabled={it.disabled}
           >
             {it.label}

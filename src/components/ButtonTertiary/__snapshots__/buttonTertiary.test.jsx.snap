@@ -38,14 +38,13 @@ exports[`Button Tertiary component Applies negative class correctly 1`] = `
         </svg>
       </span>
     </button>
-    <div
+    <section
       aria-labelledby="accordion-button-undefined"
       class="accordion-body closed"
       id="accordion-section"
-      role="region"
     >
       Body
-    </div>
+    </section>
   </div>
 </DocumentFragment>
 `;
@@ -88,14 +87,13 @@ exports[`Button Tertiary component Matches the snapshot 1`] = `
         </svg>
       </span>
     </button>
-    <div
+    <section
       aria-labelledby="accordion-button-undefined"
       class="accordion-body closed"
       id="accordion-section"
-      role="region"
     >
       Body
-    </div>
+    </section>
   </div>
 </DocumentFragment>
 `;
@@ -138,14 +136,13 @@ exports[`Button Tertiary component Renders toggle icon when accordion prop is tr
         </svg>
       </span>
     </button>
-    <div
+    <section
       aria-labelledby="accordion-button-undefined"
       class="accordion-body closed"
       id="accordion-section"
-      role="region"
     >
       Body
-    </div>
+    </section>
   </div>
 </DocumentFragment>
 `;

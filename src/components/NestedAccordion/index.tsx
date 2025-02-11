@@ -17,7 +17,7 @@ const NestedAccordion: React.FC<NestedAccordionProps> = ({
   openByDefault = false,
   onToggle = () => {},
 }) => {
-  const [isOpen, toggleOpen] = useState(openByDefault)
+  const [isOpen, setIsOpen] = useState(openByDefault)
   const firstUpdate = useRef(true)
   useEffect(() => {
     if (firstUpdate.current) {
@@ -31,7 +31,7 @@ const NestedAccordion: React.FC<NestedAccordionProps> = ({
       <button
         className={`nested-accordion-header ${isOpen ? 'open' : 'closed'}`}
         aria-expanded={isOpen ? 'true' : 'false'}
-        onClick={() => toggleOpen(!isOpen)}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <span className='button-grid'>
           {!isOpen && <ChevronDown className='expand-icon' size={16} />}

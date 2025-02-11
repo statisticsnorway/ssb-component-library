@@ -27,7 +27,7 @@ const ButtonTertiary: React.FC<ButtonTertiaryProps> = ({
   negative = false,
   onClick = () => {},
 }) => {
-  const [isOpen, toggleOpen] = useState(openByDefault)
+  const [isOpen, setIsOpen] = useState(openByDefault)
 
   return (
     <div id={id} className={classNames('ssb-btn-tertiary', negative && 'negative', className)}>
@@ -35,7 +35,7 @@ const ButtonTertiary: React.FC<ButtonTertiaryProps> = ({
         className={`button-header ${isOpen ? 'open' : 'closed'} ${accordion ? 'icon' : 'no-icon'}`}
         aria-expanded={isOpen ? 'true' : 'false'}
         tabIndex={tabIndex}
-        onClick={accordion ? () => toggleOpen(!isOpen) : onClick}
+        onClick={accordion ? () => setIsOpen(!isOpen) : onClick}
         disabled={disabled}
         id={`accordion-button-${id}`}
         aria-controls={accordion ? 'accordion-section' : undefined}
@@ -48,14 +48,13 @@ const ButtonTertiary: React.FC<ButtonTertiaryProps> = ({
         </span>
       </button>
       {accordion && (
-        <div
+        <section
           id='accordion-section'
           className={`accordion-body ${isOpen ? 'open' : 'closed'}`}
-          role='region'
           aria-labelledby={`accordion-button-${id}`}
         >
           {children}
-        </div>
+        </section>
       )}
     </div>
   )

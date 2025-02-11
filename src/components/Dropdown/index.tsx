@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState, type ReactNode } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { useId } from '../../utils/useId'
-import { KEY_ARROW_DOWN, KEY_ARROW_UP, KEY_ENTER, KEY_ESCAPE, KEY_SPACE, KEY_TAB } from '../../utils/keybindings'
 import InputError from '../InputError'
 import classNames from '../../utils/utils'
 
@@ -51,28 +50,28 @@ const Dropdown: React.FC<DropdownProps> = ({
   const itemRefs = useRef<{ [key: number]: HTMLLIElement | null }>({})
   const optionList = useRef<HTMLUListElement>(null)
 
-  const [isOpen, setOpen] = useState(open)
-  const [availableOptions, filterAvailableOptions] = useState(items || [])
+  const [isOpen, setIsOpen] = useState(open)
+  const [availableOptions, setAvailableOptions] = useState(items || [])
   const DEFAULT_ITEM = { title: '', id: '' }
-  const [selectedOption, selectItem] = useState(selectedItem || DEFAULT_ITEM)
+  const [selectedOption, setSelectedOption] = useState(selectedItem || DEFAULT_ITEM)
   const [activeOption, setActiveOption] = useState(selectedItem || DEFAULT_ITEM)
-  const [inputFieldValue, updateInputValue] = useState('')
+  const [inputFieldValue, setInputFieldValue] = useState('')
   const [keyNavPosition, setKeyNavPosition] = useState(0)
 
-  const dropdownId = id || useId()
+  const dropdownId = id ?? useId()
 
   useEffect(() => {
-    selectItem(selectedItem || DEFAULT_ITEM)
+    setSelectedOption(selectedItem || DEFAULT_ITEM)
     setActiveOption(selectedItem || DEFAULT_ITEM)
   }, [selectedItem])
 
   const filterOptions = (value: string) => {
-    updateInputValue(value)
-    filterAvailableOptions(items.filter((it) => it.title.toLowerCase().includes(value.toLowerCase())))
+    setInputFieldValue(value)
+    setAvailableOptions(items.filter((it) => it.title.toLowerCase().includes(value.toLowerCase())))
   }
 
   useEffect(() => {
-    filterAvailableOptions(items)
+    setAvailableOptions(items)
   }, [items])
 
   const filterItems = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,9 +80,9 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   const handleSelection = (item: Item) => {
     if (!item.disabled) {
-      selectItem({ title: item.title, id: item.id })
+      setSelectedOption({ title: item.title, id: item.id })
       onSelect(item)
-      setOpen(false)
+      setIsOpen(false)
     }
 
     if (items[keyNavPosition].id !== item.id) {
@@ -92,8 +91,8 @@ const Dropdown: React.FC<DropdownProps> = ({
     }
 
     if (searchable) {
-      filterAvailableOptions(items)
-      updateInputValue('')
+      setAvailableOptions(items)
+      setInputFieldValue('')
     }
 
     if (node.current) {
@@ -104,51 +103,51 @@ const Dropdown: React.FC<DropdownProps> = ({
   const handleClickOutside = (e: MouseEvent) => {
     if (wrapper.current && !wrapper.current.contains(e.target as Node)) {
       setTimeout(() => {
-        setOpen(false)
+        setIsOpen(false)
         if (searchable) {
-          updateInputValue('')
+          setInputFieldValue('')
         }
       }, 100)
     }
   }
 
   const handleKeyboardNav = (e: React.KeyboardEvent) => {
-    if (e.keyCode === KEY_ARROW_UP && keyNavPosition > 0) {
+    if (e.key === 'ArrowUp' && keyNavPosition > 0) {
       e.preventDefault()
       setKeyNavPosition(keyNavPosition - 1)
-    } else if (e.keyCode === KEY_ARROW_DOWN && keyNavPosition < items.length - 1) {
+    } else if (e.key === 'ArrowDown' && keyNavPosition < items.length - 1) {
       e.preventDefault()
       setKeyNavPosition(keyNavPosition + 1)
-    } else if (e.keyCode === KEY_ENTER) {
+    } else if (e.key === 'Enter') {
       e.preventDefault()
       if (isOpen) {
         handleSelection(items[keyNavPosition])
       } else {
-        setOpen(true)
+        setIsOpen(true)
       }
-    } else if (e.keyCode === KEY_ESCAPE) {
+    } else if (e.key === 'Escape') {
       if (!searchable) {
         e.preventDefault()
-        setOpen(false)
+        setIsOpen(false)
       }
     }
   }
 
   const handleSearchSpecialKeys = (e: React.KeyboardEvent) => {
-    if (e.keyCode === KEY_ESCAPE) {
-      setOpen(false)
-    } else if (e.keyCode === KEY_TAB) {
-      setOpen(false)
-    } else if (e.keyCode === KEY_ARROW_DOWN && keyNavPosition < availableOptions.length - 1) {
+    if (e.key === 'Escape') {
+      setIsOpen(false)
+    } else if (e.key === 'Tab') {
+      setIsOpen(false)
+    } else if (e.key === 'ArrowDown' && keyNavPosition < availableOptions.length - 1) {
       setKeyNavPosition(keyNavPosition + 1)
-    } else if (e.keyCode === KEY_ARROW_UP && keyNavPosition > 0) {
+    } else if (e.key === 'ArrowUp' && keyNavPosition > 0) {
       setKeyNavPosition(keyNavPosition - 1)
-    } else if (e.keyCode === KEY_ENTER && isOpen) {
+    } else if (e.key === 'Enter' && isOpen) {
       e.preventDefault()
       handleSelection(availableOptions[keyNavPosition])
     } else {
-      setOpen(true)
-      if (e.keyCode === KEY_SPACE) {
+      setIsOpen(true)
+      if (e.key === ' ') {
         if (searchable) {
           e.preventDefault()
           filterOptions(`${(e.currentTarget as HTMLInputElement).value} `)
@@ -234,7 +233,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             ref={node}
             tabIndex={0}
             onClick={() => {
-              setOpen(!isOpen)
+              setIsOpen(!isOpen)
             }}
             onKeyDown={(e) => {
               handleKeyboardNav(e)
@@ -256,7 +255,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             id={`input_${dropdownId}`}
             onKeyDown={handleSearchSpecialKeys}
             onChange={filterItems}
-            onFocus={() => setOpen(!isOpen)}
+            onFocus={() => setIsOpen(!isOpen)}
             disabled={!searchable}
             placeholder={selectedOption.title ? selectedOption.title : placeholder}
             value={inputFieldValue}
