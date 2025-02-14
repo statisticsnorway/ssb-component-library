@@ -1,13 +1,13 @@
 import { useLayoutEffect, useState } from 'react'
 
-const canUseDOM = () =>
+const canUseDOM = (): boolean =>
   typeof window !== 'undefined' &&
   typeof window.document !== 'undefined' &&
-  typeof window.document.createElement !== 'undefined'
+  typeof window.document.createElement === 'function'
 
 export const useClientLayoutEffect = canUseDOM() ? useLayoutEffect : () => {}
 
-export const useId = () => {
+export const useId = (): string => {
   const [newId, setNewId] = useState('')
 
   useClientLayoutEffect(() => {
