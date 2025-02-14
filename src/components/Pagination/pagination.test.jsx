@@ -41,14 +41,11 @@ describe('Pagination component', () => {
 
   describe('handleSelection function', () => {
     let callback
-    let useStateSpy
     let user
 
     beforeEach(() => {
       user = userEvent.setup()
       callback = jest.fn()
-      useStateSpy = jest.spyOn(React, 'useState')
-      useStateSpy.mockImplementation((init) => [init, callback])
     })
 
     test('First direction button onClick', async () => {
