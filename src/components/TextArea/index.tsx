@@ -39,7 +39,8 @@ const TextArea: React.FC<TextAreaProps> = ({
   onFocus = () => {},
 }) => {
   const [inputValue, setInputValue] = useState(value)
-  const inputId = id || useId()
+  const generatedId = useId()
+  const inputId = id || generatedId
   const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(e.target.value)
     handleChange(e.target.value)
