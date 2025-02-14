@@ -58,7 +58,8 @@ const Input = forwardRef<HTMLDivElement, InputProps>(
     ref
   ) => {
     const [inputValue, setInputValue] = useState(value)
-    const inputId = id || useId()
+    const generatedId = useId()
+    const inputId = id || generatedId
 
     useEffect(() => setInputValue(value), [value])
 
