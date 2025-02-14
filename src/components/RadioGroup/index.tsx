@@ -28,7 +28,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
   orientation = 'column',
   selectedValue,
 }) => {
-  const [selected, updateSelected] = useState<string | number>(selectedValue || '')
+  const [selected, setSelected] = useState<string | number>(selectedValue || '')
 
   useEffect(() => {
     onChange(selected.toString())
@@ -45,7 +45,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
             selected={it.value === selected}
             value={it.value}
             name={groupName || header}
-            callback={updateSelected}
+            callback={setSelected}
             disabled={it.disabled}
           >
             {it.label}

@@ -57,13 +57,13 @@ const Input = forwardRef<HTMLDivElement, InputProps>(
     },
     ref
   ) => {
-    const [inputValue, setValue] = useState(value)
+    const [inputValue, setInputValue] = useState(value)
     const inputId = id || useId()
 
-    useEffect(() => setValue(value), [value])
+    useEffect(() => setInputValue(value), [value])
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value)
+      setInputValue(e.target.value)
       handleChange(e.target.value)
     }
 

@@ -15,7 +15,7 @@ const Glossary: React.FC<GlossaryProps> = ({ explanation, children, className, c
   const [open, setOpen] = useState(false)
 
   const handleClickOutside = (e: MouseEvent) => {
-    if (node.current && node.current.contains(e.target as Node)) {
+    if (node.current?.contains(e.target as Node)) {
       return
     }
     setOpen(false)
@@ -35,7 +35,7 @@ const Glossary: React.FC<GlossaryProps> = ({ explanation, children, className, c
   }
 
   const escKeyListener = useCallback((e: KeyboardEvent) => {
-    if (e.keyCode === 27 || e.key === 'Escape') {
+    if (e.key === 'Escape') {
       setOpen(false)
       node.current?.focus()
     }

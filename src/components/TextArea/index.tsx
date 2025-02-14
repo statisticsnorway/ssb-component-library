@@ -38,10 +38,10 @@ const TextArea: React.FC<TextAreaProps> = ({
   onBlur = () => {},
   onFocus = () => {},
 }) => {
-  const [inputValue, setValue] = useState(value)
+  const [inputValue, setInputValue] = useState(value)
   const inputId = id || useId()
   const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setValue(e.target.value)
+    setInputValue(e.target.value)
     handleChange(e.target.value)
   }
 

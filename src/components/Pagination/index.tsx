@@ -24,30 +24,30 @@ const Pagination: React.FC<PaginationProps> = ({
   selectedPage,
 }) => {
   const [selected, setSelected] = useState(selectedPage || items[0])
-  const [currentButtons, updateCurrentButtons] = useState([{}])
-  const [showLeftDots, updateLeftDots] = useState(false)
-  const [showRightDots, updateRightDots] = useState(true)
+  const [currentButtons, setCurrentButtons] = useState([{}])
+  const [showLeftDots, setShowLeftDots] = useState(false)
+  const [showRightDots, setShowRightDots] = useState(true)
 
   useEffect(() => {
     const showItems = items
     if (items.length < 8) {
-      updateLeftDots(false)
-      updateRightDots(false)
-      updateCurrentButtons(items)
+      setShowLeftDots(false)
+      setShowRightDots(false)
+      setCurrentButtons(items)
     } else if (items.indexOf(selected) < 7) {
-      updateLeftDots(false)
-      updateCurrentButtons(showItems.slice(0, 8))
+      setShowLeftDots(false)
+      setCurrentButtons(showItems.slice(0, 8))
       if (items.length > currentButtons.length) {
-        updateRightDots(true)
+        setShowRightDots(true)
       }
     } else if (items.indexOf(selected) > items.length - 7) {
-      updateCurrentButtons(showItems.slice(showItems.length - 8, showItems.length))
-      updateRightDots(false)
-      updateLeftDots(true)
+      setCurrentButtons(showItems.slice(showItems.length - 8, showItems.length))
+      setShowRightDots(false)
+      setShowLeftDots(true)
     } else {
-      updateCurrentButtons(showItems.slice(showItems.indexOf(selected) - 3, showItems.indexOf(selected) + 3))
-      updateLeftDots(true)
-      updateRightDots(true)
+      setCurrentButtons(showItems.slice(showItems.indexOf(selected) - 3, showItems.indexOf(selected) + 3))
+      setShowLeftDots(true)
+      setShowRightDots(true)
     }
   }, [selected])
 
@@ -74,20 +74,19 @@ const Pagination: React.FC<PaginationProps> = ({
         {items[0].text}
       </button>
       {showLeftDots && <div className='dotted-indicator'>...</div>}
-      {currentButtons &&
-        currentButtons.map(
-          (item: Item) =>
-            item !== items[0] &&
-            item !== items[items.length - 1] && (
-              <button
-                className={`nav-button-square ${item.text}${item === selected ? ' selected' : ''}`}
-                onClick={() => handleSelection(item)}
-                key={`${item.path}`}
-              >
-                {item.text}
-              </button>
-            )
-        )}
+      {currentButtons?.map(
+        (item: Item) =>
+          item !== items[0] &&
+          item !== items[items.length - 1] && (
+            <button
+              className={`nav-button-square ${item.text}${item === selected ? ' selected' : ''}`}
+              onClick={() => handleSelection(item)}
+              key={`${item.path}`}
+            >
+              {item.text}
+            </button>
+          )
+      )}
       {showRightDots && <div className='dotted-indicator'>...</div>}
       <button
         className={`nav-button-square${items[items.length - 1] === selected ? ' selected' : ''}`}

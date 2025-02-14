@@ -15,11 +15,11 @@ interface TabsProps {
 }
 
 const Tabs: React.FC<TabsProps> = ({ activeOnInit = '', className, items, onClick = () => {}, id }) => {
-  const [activeItem, changeActive] = useState(activeOnInit)
+  const [activeItem, setActiveItem] = useState(activeOnInit)
 
   const handleClick = (path: string) => {
     onClick(path)
-    changeActive(path)
+    setActiveItem(path)
   }
 
   return (
