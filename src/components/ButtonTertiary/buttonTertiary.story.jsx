@@ -62,7 +62,7 @@ export const Tertiary = () => (
 
       <ButtonTertiary
         className='mr-4'
-        header='Knapp negative med Icon'
+        header='Disabled Knapp negative'
         accordion={false}
         negative
         disabled
@@ -71,7 +71,7 @@ export const Tertiary = () => (
         <p>Explain something about something with something clever.</p>
       </ButtonTertiary>
 
-      <ButtonTertiary className='mr-4' header='Knapp negative med Icon' negative disabled>
+      <ButtonTertiary className='mr-4' header='Disabled Knapp negative med Icon' negative disabled>
         <p>Explain something about something with something clever.</p>
       </ButtonTertiary>
     </div>

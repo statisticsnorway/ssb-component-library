@@ -3,7 +3,7 @@
 exports[`ImageLink component Matches the snapshot 1`] = `
 <DocumentFragment>
   <a
-    class="ssb-picture-card vertical "
+    class="ssb-picture-card vertical"
   >
     <div
       class="image-background"
@@ -56,7 +56,7 @@ exports[`ImageLink component Matches the snapshot 1`] = `
 exports[`ImageLink component Sets default orientation className 1`] = `
 <DocumentFragment>
   <a
-    class="ssb-picture-card vertical "
+    class="ssb-picture-card vertical"
   >
     <div
       class="image-background"
@@ -109,7 +109,7 @@ exports[`ImageLink component Sets default orientation className 1`] = `
 exports[`ImageLink component Switches className on orientation change 1`] = `
 <DocumentFragment>
   <a
-    class="ssb-picture-card horizontal "
+    class="ssb-picture-card horizontal"
   >
     <div
       class="image-background"

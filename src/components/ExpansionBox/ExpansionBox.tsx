@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, ReactNode } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import SparklesIcon from '../../media/icons/sparkles.svg'
+import classNames from '../../utils/utils'
 
 export interface ExpansionBoxProps {
   aiIcon?: boolean
@@ -21,12 +22,6 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
   const [isOpen, setIsOpen] = useState(openByDefault)
   const [maxHeight, setMaxHeight] = useState('')
   const contentRef = useRef<HTMLDivElement>(null)
-  const classNameList: string[] = [
-    'ssb-expansion-box',
-    className ?? '',
-    isOpen ? 'open' : '',
-    sneakPeek ? 'sneak-peek' : '',
-  ].filter(Boolean)
 
   useEffect(() => {
     if (contentRef.current) {
@@ -48,7 +43,7 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
   }, [isOpen, text])
 
   return (
-    <div className={classNameList.join(' ')}>
+    <div className={classNames('ssb-expansion-box', className, isOpen && 'open', sneakPeek && 'sneak-peek')}>
       <button className='header' aria-expanded={isOpen ? 'true' : 'false'} onClick={() => setIsOpen(!isOpen)}>
         {aiIcon && (
           <div className='icon'>
