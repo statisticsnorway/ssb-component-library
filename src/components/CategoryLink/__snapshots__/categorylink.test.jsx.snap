@@ -31,6 +31,7 @@ exports[`CategoryLink component Matches the snapshot 1`] = `
         class="icon-wrapper"
       >
         <svg
+          aria-hidden="true"
           class="arrow-icon"
           fill="none"
           height="24"

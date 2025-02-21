@@ -49,3 +49,4 @@ Available props:
 | subText   | string          | text string below the title to describe the link              |
 | tabIndex  | number          | Tab index for focus                                           |
 | title     | string          | The title attribute is used to provide additional information |
+| external  | bool            | Change icon from ArrowRight to ExternalLink                   |
