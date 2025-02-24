@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowRight } from 'react-feather'
+import { ArrowRight, ExternalLink } from 'react-feather'
 import classNames from '../../utils/utils'
 
 interface CategoryLinkProps {
@@ -10,6 +10,7 @@ interface CategoryLinkProps {
   href: string
   tabIndex?: number
   title?: string
+  external?: boolean
 }
 
 const CategoryLink: React.FC<CategoryLinkProps> = ({
@@ -20,10 +21,13 @@ const CategoryLink: React.FC<CategoryLinkProps> = ({
   href,
   tabIndex,
   title,
+  external,
 }) => (
   <a
     className={classNames('ssb-category-link', className)}
     href={href}
+    target={external ? '_blank' : undefined}
+    rel={external ? 'noreferrer' : undefined}
     tabIndex={tabIndex}
     aria-label={ariaLabel}
     title={title}
@@ -37,7 +41,11 @@ const CategoryLink: React.FC<CategoryLinkProps> = ({
           <span className='link-sub-text'>{subText}</span>
         </div>
         <div className='icon-wrapper'>
-          <ArrowRight className='arrow-icon' size={24} />
+          {external ? (
+            <ExternalLink className='arrow-icon' size={24} aria-hidden='true' />
+          ) : (
+            <ArrowRight className='arrow-icon' size={24} aria-hidden='true' />
+          )}
         </div>
       </div>
     )}

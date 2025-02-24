@@ -11,7 +11,12 @@ export const Default = () => (
       <CategoryLink href=' ' titleText='Category link with description' subText='Description goes here' />
     </div>
     <div style={{ width: '580px' }}>
-      <CategoryLink href=' ' titleText='Category link with description' subText='Description goes here' />
+      <CategoryLink
+        href=' '
+        external
+        titleText='Category link with description External link'
+        subText='Description goes here'
+      />
     </div>
   </div>
 )
