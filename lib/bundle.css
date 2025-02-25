@@ -2660,7 +2660,7 @@ a {
 }
 .ssb-tag:active {
   background: #274247;
-  border: 2px solid #274247;
+  outline: 2px solid #274247;
   color: #fff;
 }
 .ssb-tag .st-icon {
