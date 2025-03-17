@@ -98,7 +98,7 @@
     "sass-loader": "~16.0.5",
     "storybook": "^8.5.8",
     "style-loader": "~4.0.0",
-    "stylelint": "~16.14.1",
+    "stylelint": "~16.16.0",
     "stylelint-config-standard-scss": "~14.0.0",
     "ts-jest": "~29.2.6",
     "typescript": "~5.7.3",
