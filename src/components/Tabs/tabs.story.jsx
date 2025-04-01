@@ -46,6 +46,4 @@ export const Tabs2 = () => (
   </div>
 )
 
-Tabs2.story = {
-  name: 'Tabs2',
-}
+Tabs2.storyName = 'Tabs2';

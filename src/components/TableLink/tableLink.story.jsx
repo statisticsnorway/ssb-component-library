@@ -22,6 +22,4 @@ export const Default = () => (
   </div>
 )
 
-Default.story = {
-  name: 'default',
-}
+Default.storyName = 'default';

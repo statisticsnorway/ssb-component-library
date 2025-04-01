@@ -46,6 +46,4 @@ export const RowsCols = () => (
   </div>
 )
 
-RowsCols.story = {
-  name: 'Rows/Cols',
-}
+RowsCols.storyName = 'Rows/Cols';

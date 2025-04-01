@@ -27,9 +27,7 @@ export const WithSubHeader = () => (
   </div>
 )
 
-WithSubHeader.story = {
-  name: 'With sub-header',
-}
+WithSubHeader.storyName = 'With sub-header';
 
 export const WithNestedAccordions = () => (
   <div style={{ display: 'flex', width: '500px' }}>
@@ -43,9 +41,7 @@ export const WithNestedAccordions = () => (
   </div>
 )
 
-WithNestedAccordions.story = {
-  name: 'With nested accordions',
-}
+WithNestedAccordions.storyName = 'With nested accordions';
 
 export const WithoutBorders = () => (
   <div style={{ display: 'flex', width: '500px' }}>
@@ -56,9 +52,7 @@ export const WithoutBorders = () => (
   </div>
 )
 
-WithoutBorders.story = {
-  name: 'Without borders',
-}
+WithoutBorders.storyName = 'Without borders';
 
 export const MultipleWSubHeader = () => (
   <div style={{ display: 'flex', flexDirection: 'column', width: '500px' }}>
@@ -82,6 +76,4 @@ export const MultipleWSubHeader = () => (
   </div>
 )
 
-MultipleWSubHeader.story = {
-  name: 'Multiple w/ sub-header',
-}
+MultipleWSubHeader.storyName = 'Multiple w/ sub-header';
