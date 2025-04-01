@@ -46,4 +46,4 @@ export const RowsCols = () => (
   </div>
 )
 
-RowsCols.storyName = 'Rows/Cols';
+RowsCols.storyName = 'Rows/Cols'

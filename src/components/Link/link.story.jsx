@@ -100,11 +100,11 @@ export const LongLinks = () => (
   </div>
 )
 
-LongLinks.storyName = 'Long links';
+LongLinks.storyName = 'Long links'
 
 export const AllLinkWithAccessibiltyAdded = () => linksWithUU()
 
-AllLinkWithAccessibiltyAdded.storyName = 'All link with Accessibilty added';
+AllLinkWithAccessibiltyAdded.storyName = 'All link with Accessibilty added'
 
 function linksWithUU() {
   return (

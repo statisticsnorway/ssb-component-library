@@ -40,7 +40,7 @@ export const PrimaryWithDescription = () => (
   </div>
 )
 
-PrimaryWithDescription.storyName = 'Primary with description';
+PrimaryWithDescription.storyName = 'Primary with description'
 
 export const Secondary = () => (
   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, auto)', gridColumnGap: '20px' }}>
@@ -66,7 +66,7 @@ export const PrimaryNegative = () => (
   </div>
 )
 
-PrimaryNegative.storyName = 'Primary - Negative';
+PrimaryNegative.storyName = 'Primary - Negative'
 
 export const SecondaryNegative = () => (
   <div style={negativeStyle}>
@@ -82,4 +82,4 @@ export const SecondaryNegative = () => (
   </div>
 )
 
-SecondaryNegative.storyName = 'Secondary - Negative';
+SecondaryNegative.storyName = 'Secondary - Negative'

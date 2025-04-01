@@ -40,4 +40,4 @@ export const Regular = () => <References title='Source' referenceList={reference
 
 export const WithParagraph = () => <References title='Source' referenceList={referenceList} />
 
-WithParagraph.storyName = 'With paragraph';
+WithParagraph.storyName = 'With paragraph'

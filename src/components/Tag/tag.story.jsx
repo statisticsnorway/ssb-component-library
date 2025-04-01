@@ -18,4 +18,4 @@ export const TagWithIcon = () => (
   </div>
 )
 
-TagWithIcon.storyName = 'Tag with icon';
+TagWithIcon.storyName = 'Tag with icon'
