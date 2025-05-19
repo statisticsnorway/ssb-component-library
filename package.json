@@ -96,7 +96,7 @@
     "rollup": "~4.40.2",
     "rollup-plugin-scss": "~4.0.1",
     "sass-loader": "~16.0.5",
-    "storybook": "^8.6.12",
+    "storybook": "^8.6.14",
     "style-loader": "~4.0.0",
     "stylelint": "~16.19.1",
     "stylelint-config-standard-scss": "~14.0.0",
