@@ -19,6 +19,4 @@ export const AsAWrapper = () => (
   </Text>
 )
 
-AsAWrapper.story = {
-  name: 'As a wrapper',
-}
+AsAWrapper.storyName = 'As a wrapper'

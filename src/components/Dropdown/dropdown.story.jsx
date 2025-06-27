@@ -48,15 +48,11 @@ export const PreSelectedValue = () => (
   <Dropdown header='Menu header' selectedItem={{ title: 'Ocean', id: 'item3' }} items={items} />
 )
 
-PreSelectedValue.story = {
-  name: 'Pre-selected value',
-}
+PreSelectedValue.storyName = 'Pre-selected value'
 
 export const OpenedByDefault = () => <Dropdown header='Menu header' items={items} open />
 
-OpenedByDefault.story = {
-  name: 'Opened by default',
-}
+OpenedByDefault.storyName = 'Opened by default'
 
 export const Searchable = () => (
   <Dropdown header='Menu header' searchable items={items} placeholder='Search and select' />
@@ -72,17 +68,13 @@ export const StandardWithError = () => (
   />
 )
 
-StandardWithError.story = {
-  name: 'Standard with error',
-}
+StandardWithError.storyName = 'Standard with error'
 
 export const CustomIcon = () => (
   <Dropdown header='Menu header' searchable items={items} placeholder='Search and select' icon={<Search />} />
 )
 
-CustomIcon.story = {
-  name: 'Custom icon',
-}
+CustomIcon.storyName = 'Custom icon'
 
 export const LargeStandard = () => (
   <div
