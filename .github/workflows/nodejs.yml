@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Use Node.js 20
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 20
       - name: npm install, build, and test
@@ -32,13 +32,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
       - run: npm ci
       - run: npm run build:prod
       - run: npm test
-      - uses: JS-DevTools/npm-publish@v3
+      - uses: JS-DevTools/npm-publish@v4
         id: publishNpm
         with:
           token: ${{ secrets.NPM_TOKEN }}
