@@ -51,7 +51,7 @@
     "@babel/preset-typescript": "~7.27.1",
     "@rollup/plugin-babel": "~6.0.4",
     "@rollup/plugin-commonjs": "~28.0.6",
-    "@rollup/plugin-node-resolve": "~16.0.2",
+    "@rollup/plugin-node-resolve": "~16.0.3",
     "@rollup/plugin-replace": "~6.0.2",
     "@rollup/plugin-terser": "~0.4.4",
     "@rollup/plugin-typescript": "~12.1.4",
@@ -101,7 +101,7 @@
     "stylelint-config-standard-scss": "~15.0.1",
     "ts-jest": "~29.4.5",
     "typescript": "~5.9.3",
-    "typescript-eslint": "~8.46.0",
+    "typescript-eslint": "~8.46.1",
     "webpack": "~5.102.1",
     "webpack-cli": "~6.0.1"
   },
