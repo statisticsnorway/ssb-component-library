@@ -8,10 +8,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - name: Use Node.js 20
-        uses: actions/setup-node@v5
+      - name: Use Node.js 22
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 22
       - name: npm install, build, and test
         run: |
           npm ci
@@ -32,9 +32,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 22
       - run: npm ci
       - run: npm run build:prod
       - run: npm test
