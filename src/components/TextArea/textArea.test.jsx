@@ -37,7 +37,7 @@ describe('Input component', () => {
     await user.click(input)
     await user.keyboard('hello')
 
-    expect(handleChange).toBeCalledWith('hello')
+    expect(handleChange).toHaveBeenCalledWith('hello')
   })
 
   test('respects rows and cols', () => {

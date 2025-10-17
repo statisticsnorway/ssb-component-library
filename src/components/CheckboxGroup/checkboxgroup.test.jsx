@@ -34,6 +34,6 @@ describe('CheckboxGroup component', () => {
     const checkbox = await screen.findByRole('checkbox', { name: 'Item 1' })
 
     await user.click(checkbox)
-    expect(onChange).toBeCalled()
+    expect(onChange).toHaveBeenCalled()
   })
 })
