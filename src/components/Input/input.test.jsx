@@ -45,7 +45,7 @@ describe('Input component', () => {
     await user.click(input)
     await user.keyboard('hello')
 
-    expect(handleChange).toBeCalledWith('hello')
+    expect(handleChange).toHaveBeenCalledWith('hello')
   })
 
   test('handle submit', async () => {
@@ -56,7 +56,7 @@ describe('Input component', () => {
     const button = await screen.findByRole('button')
     await user.click(button)
 
-    expect(handleSubmit).toBeCalled()
+    expect(handleSubmit).toHaveBeenCalled()
   })
 
   test('Renders an error message on error', async () => {

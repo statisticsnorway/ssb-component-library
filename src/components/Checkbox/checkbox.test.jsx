@@ -31,6 +31,6 @@ describe('Checkbox component', () => {
 
     const checkbox = await screen.getByRole('checkbox')
     await user.click(checkbox)
-    expect(onClick).toBeCalled()
+    expect(onClick).toHaveBeenCalled()
   })
 })

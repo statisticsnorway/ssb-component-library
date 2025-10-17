@@ -32,7 +32,7 @@ describe('Tabs component', () => {
     const tabButton = screen.getByText(items[0].title)
     await user.click(tabButton)
 
-    expect(onClick).toBeCalled()
+    expect(onClick).toHaveBeenCalled()
   })
   test('Sets correct init state', () => {
     render(<Tabs items={items} activeOnInit={items[2].path} />)

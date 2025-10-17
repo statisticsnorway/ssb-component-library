@@ -21,6 +21,6 @@ describe('RadioButton component', () => {
     const input = screen.getByRole('radio')
     await user.click(input)
 
-    expect(callback).toBeCalled()
+    expect(callback).toHaveBeenCalled()
   })
 })
