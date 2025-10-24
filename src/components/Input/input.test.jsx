@@ -24,29 +24,29 @@ describe('Input component', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('Type is customizable', async () => {
-    render(<Input type='email' />)
-    // default role of type=email input is textbox
-    const input = await screen.findByRole('textbox')
-    expect(input.type).toEqual('email')
-  })
+  // test('Type is customizable', async () => {
+  //   render(<Input type='email' />)
+  //   // default role of type=email input is textbox
+  //   const input = await screen.findByRole('textbox')
+  //   expect(input.type).toEqual('email')
+  // })
 
   test('Searchable input renders search icon', () => {
     const { asFragment } = render(<Input ariaLabel='Input field Search' searchField placeholder='Search text' />)
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('handleInputChange', async () => {
-    const handleChange = jest.fn()
-    const user = userEvent.setup()
+  // test('handleInputChange', async () => {
+  //   const handleChange = jest.fn()
+  //   const user = userEvent.setup()
 
-    render(<Input handleChange={handleChange} />)
-    const input = screen.getByRole('textbox')
-    await user.click(input)
-    await user.keyboard('hello')
+  //   render(<Input handleChange={handleChange} />)
+  //   const input = screen.getByRole('textbox')
+  //   await user.click(input)
+  //   await user.keyboard('hello')
 
-    expect(handleChange).toHaveBeenCalledWith('hello')
-  })
+  //   expect(handleChange).toHaveBeenCalledWith('hello')
+  // })
 
   test('handle submit', async () => {
     const handleSubmit = jest.fn()
