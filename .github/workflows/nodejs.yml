@@ -2,6 +2,10 @@ name: Node CI
 
 on: [push]
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   build:
     runs-on: 'ubuntu-latest'
@@ -35,13 +39,15 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22
+      # Ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        run: npm install -g npm@latest
       - run: npm ci
       - run: npm run build:prod
       - run: npm test
       - uses: JS-DevTools/npm-publish@v4
         id: publishNpm
         with:
-          token: ${{ secrets.NPM_TOKEN }}
           dry-run: false
       - if: ${{ steps.publishNpm.outputs.type }}
         run: gh release create ${{ steps.publishNpm.outputs.version }} --generate-notes
