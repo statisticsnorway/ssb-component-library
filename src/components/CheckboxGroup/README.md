@@ -39,23 +39,29 @@ const checkboxItems = [
       label: 'Item 2',
       value: 'item2',
     },
+    {
+      label: 'Item 3',
+      value: 'item3',
+    },
 ];
 
 <CheckboxGroup header="Header" items={checkboxItems} onChange={() => callback} />
 
 <CheckboxGroup header="Header" items={checkboxItems} onChange={() => callback} orientation="row" />
+
+<CheckboxGroup header="Header" items={checkboxItems} onChange={() => callback} selectedValues={["item1","item2"]} />
 ```
 
 Available props:
 
-| Name          | Type                               | Description                                |
-| ------------- | ---------------------------------- | ------------------------------------------ |
-| className     | string                             | Optional container class                   |
-| header        | string                             | Renders a h5 title                         |
-| items         | arrayOf(label, value)              | Required items for rendering radio buttons |
-| onChange      | func                               | Callback function when a value is changed  |
-| orientation   | 'column' or 'row' , default column | Vertical og horizontal layout              |
-| selectedValue | string                             | Pre selected value                         |
+| Name           | Type                               | Description                                |
+| -------------- | ---------------------------------- | ------------------------------------------ |
+| className      | string                             | Optional container class                   |
+| header         | string                             | Renders a h5 title                         |
+| items          | arrayOf(label, value)              | Required items for rendering radio buttons |
+| onChange       | func                               | Callback function when a value is changed  |
+| orientation    | 'column' or 'row' , default column | Vertical og horizontal layout              |
+| selectedValues | arrayOf(string)                   | Pre selected values                        |
 
 **Dependencies**
 
