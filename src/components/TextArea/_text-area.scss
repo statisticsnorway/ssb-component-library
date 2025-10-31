@@ -1,5 +1,7 @@
+@use '../../style/variables';
+
 .ssb-text-area {
-  @include roboto;
+  @include variables.roboto;
   cursor: text;
   display: flex;
   flex-direction: column;
@@ -8,37 +10,37 @@
 
   &:hover {
     textarea {
-      border: 1px solid $ssb-green-4;
-      outline: 1px solid $ssb-green-4;
+      border: 1px solid variables.$ssb-green-4;
+      outline: 1px solid variables.$ssb-green-4;
 
       &:disabled {
-        border: 1px solid $ssb-dark-5;
+        border: 1px solid variables.$ssb-dark-5;
       }
     }
   }
 
   textarea {
-    @include roboto;
-    background: $ssb-white;
-    border: 1px solid $ssb-dark-5;
+    @include variables.roboto;
+    background: variables.$ssb-white;
+    border: 1px solid variables.$ssb-dark-5;
     box-sizing: border-box;
-    color: $ssb-dark-6;
+    color: variables.$ssb-dark-6;
     font-size: 16px;
     line-height: 1.25;
-    min-height: $input-field-height;
+    min-height: variables.$input-field-height;
     min-width: 200px;
     padding: 11px 12px;
     width: 100%;
 
     &:focus {
-      border: 1px solid $ssb-green-4;
-      outline: 1px solid $ssb-green-4;
+      border: 1px solid variables.$ssb-green-4;
+      outline: 1px solid variables.$ssb-green-4;
       outline-offset: 0;
     }
   }
 
   label {
-    color: $ssb-dark-6;
+    color: variables.$ssb-dark-6;
     font-size: 14px;
     margin-bottom: 5px;
   }
@@ -46,54 +48,54 @@
   &.negative {
     .text-area-wrapper {
       ::placeholder {
-        color: $ssb-white;
+        color: variables.$ssb-white;
         opacity: 1;
       }
     }
 
     &:hover {
       textarea {
-        border: 1px solid $ssb-green-2;
-        outline: 1px solid $ssb-green-2;
+        border: 1px solid variables.$ssb-green-2;
+        outline: 1px solid variables.$ssb-green-2;
 
         &:disabled {
-          border: 1px solid $ssb-white;
+          border: 1px solid variables.$ssb-white;
         }
       }
     }
 
     label {
-      color: $ssb-white;
+      color: variables.$ssb-white;
     }
 
     textarea {
       background: transparent;
-      border: 1px solid $ssb-white;
-      color: $ssb-white;
+      border: 1px solid variables.$ssb-white;
+      color: variables.$ssb-white;
 
       &:disabled {
-        border: 1px solid $ssb-white;
+        border: 1px solid variables.$ssb-white;
       }
 
       &:focus {
-        border: 1px solid $ssb-green-2;
-        outline: 1px solid $ssb-green-2;
+        border: 1px solid variables.$ssb-green-2;
+        outline: 1px solid variables.$ssb-green-2;
         outline-offset: 0;
       }
     }
 
     &.error {
       textarea {
-        border: 1px solid $ssb-red-3;
-        outline: 1px solid $ssb-red-3;
+        border: 1px solid variables.$ssb-red-3;
+        outline: 1px solid variables.$ssb-red-3;
       }
     }
   }
 
   &.error {
     textarea {
-      border: 1px solid $ssb-red-3;
-      outline: 1px solid $ssb-red-3;
+      border: 1px solid variables.$ssb-red-3;
+      outline: 1px solid variables.$ssb-red-3;
     }
   }
 }

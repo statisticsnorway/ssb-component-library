@@ -5,7 +5,7 @@
   overflow-x: auto;
 
   .ssb-table {
-    @include roboto;
+    @include variables.roboto;
     line-height: 1.75rem;
     width: 100%;
     border-collapse: collapse;
@@ -23,17 +23,17 @@
     }
 
     tfoot td > * {
-      @media #{$desktop} {
+      @media #{variables.$desktop} {
         max-width: 780px;
       }
     }
 
     .caption-text-wrapper {
-      @media #{$desktop} {
+      @media #{variables.$desktop} {
         max-width: 998px;
       }
 
-      @media #{$mobile} {
+      @media #{variables.$mobile} {
         max-width: none;
       }
     }
@@ -62,7 +62,7 @@
 
     caption {
       caption-side: top;
-      color: $ssb-dark-6;
+      color: variables.$ssb-dark-6;
       text-align: left;
       position: relative;
       padding: 1.25rem 1rem;
@@ -91,7 +91,7 @@
         }
 
         .scroll-icon {
-          @include reset-button;
+          @include variables.reset-button;
           cursor: pointer;
           display: flex;
           justify-content: center;
@@ -161,7 +161,7 @@
         }
 
         &.overflow {
-          @media #{$mobile} {
+          @media #{variables.$mobile} {
             display: grid;
 
             .caption-text-wrapper {
@@ -177,7 +177,7 @@
             }
           }
 
-          @media #{$tablet} {
+          @media #{variables.$tablet} {
             .caption-text-wrapper {
               max-width: 500px;
             }
@@ -187,7 +187,7 @@
             }
           }
 
-          @media #{$desktop} {
+          @media #{variables.$desktop} {
             .caption-text-wrapper {
               max-width: 700px;
             }

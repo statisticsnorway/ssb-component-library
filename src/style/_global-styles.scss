@@ -1,6 +1,8 @@
+@use 'variables';
+
 body {
-  @include open-sans;
-  color: $ssb-dark-6;
+  @include variables.open-sans;
+  color: variables.$ssb-dark-6;
 }
 
 a {

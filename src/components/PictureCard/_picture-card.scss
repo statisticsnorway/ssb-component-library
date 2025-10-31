@@ -1,3 +1,5 @@
+@use '../../style/variables';
+
 .ssb-picture-card {
   overflow: hidden;
   position: relative;
@@ -5,7 +7,7 @@
   align-items: flex-end;
   width: 280px;
   height: 400px;
-  color: $ssb-white !important;
+  color: variables.$ssb-white !important;
   cursor: pointer;
 
   .image-background {
@@ -27,7 +29,7 @@
   }
 
   &:focus {
-    @include focus-ring;
+    @include variables.focus-ring;
   }
 
   .overlay {
@@ -41,14 +43,14 @@
     background-image: linear-gradient(0deg, rgb(39 66 71 / 75%), rgb(39 66 71 / 50%), transparent);
 
     .il-type {
-      @include roboto;
+      @include variables.roboto;
       font-size: 16px;
       line-height: 1.25;
       margin-bottom: 12px;
     }
 
     .il-title {
-      @include roboto-condenced;
+      @include variables.roboto-condenced;
       font-size: 28px;
       font-weight: bold;
       line-height: 1.43;

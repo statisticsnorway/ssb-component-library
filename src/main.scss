@@ -1,50 +1,50 @@
+// Global imports
+@use './style/variables';
+@use './style/global-styles';
+
+// Component imports
+@use './components/Accordion/accordion';
+@use './components/BlockContent/block-content';
+@use './components/Breadcrumb/breadcrumb';
+@use './components/Button/button';
+@use './components/ButtonTertiary/buttonTertiary';
+@use './components/Card/card';
+@use './components/CategoryLink/category-link';
+@use './components/Checkbox/checkbox';
+@use './components/CheckboxGroup/checkbox-group';
+@use './components/Dialog/dialog';
+@use './components/Divider/divider';
+@use './components/Dropdown/dropdown';
+@use './components/ExpansionBox/expansion-box';
+@use './components/FactBox/factbox';
+@use './components/Footer/footer';
+@use './components/FormError/form-error';
+@use './components/Glossary/glossary';
+@use './components/Header/header';
+@use './components/Highlight/highlight';
+@use './components/Input/input';
+@use './components/InputError/input-error';
+@use './components/KeyFigures/key-figures';
+@use './components/LeadParagraph/lead-paragraph';
+@use './components/Link/link';
+@use './components/NestedAccordion/nested-accordion';
+@use './components/Number/number';
+@use './components/Pagination/pagination';
+@use './components/Paragraph/paragraph';
+@use './components/PictureCard/picture-card';
+@use './components/Quote/quote';
+@use './components/RadioButton/radio-button';
+@use './components/RadioGroup/radio-group';
+@use './components/References/references';
+@use './components/StickyMenu/sticky-menu';
+@use './components/Table/table';
+@use './components/TableLink/tableLink';
+@use './components/Tabs/tabs';
+@use './components/Tag/tag';
+@use './components/Text/text';
+@use './components/TextArea/text-area';
+@use './components/Title/title';
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
-
-// Global imports
-@import './style/variables';
-@import './style/global-styles';
-
-// Component imports
-@import './components/Accordion/accordion';
-@import './components/BlockContent/block-content';
-@import './components/Breadcrumb/breadcrumb';
-@import './components/Button/button';
-@import './components/ButtonTertiary/buttonTertiary';
-@import './components/Card/card';
-@import './components/Checkbox/checkbox';
-@import './components/CheckboxGroup/checkbox-group';
-@import './components/Dialog/dialog';
-@import './components/Divider/divider';
-@import './components/Dropdown/dropdown';
-@import './components/ExpansionBox/expansion-box';
-@import './components/FactBox/factbox';
-@import './components/Footer/footer';
-@import './components/FormError/form-error';
-@import './components/Glossary/glossary';
-@import './components/Header/header';
-@import './components/PictureCard/picture-card';
-@import './components/Input/input';
-@import './components/InputError/input-error';
-@import './components/KeyFigures/key-figures';
-@import './components/LeadParagraph/lead-paragraph';
-@import './components/Link/link';
-@import './components/NestedAccordion/nested-accordion';
-@import './components/Number/number';
-@import './components/Pagination/pagination';
-@import './components/Paragraph/paragraph';
-@import './components/Quote/quote';
-@import './components/RadioButton/radio-button';
-@import './components/RadioGroup/radio-group';
-@import './components/References/references';
-@import './components/StickyMenu/sticky-menu';
-@import './components/Table/table';
-@import './components/TableLink/tableLink';
-@import './components/Tabs/tabs';
-@import './components/Tag/tag';
-@import './components/Text/text';
-@import './components/TextArea/text-area';
-@import './components/Title/title';
-@import './components/Highlight/highlight';
-@import './components/CategoryLink/category-link';

@@ -1,7 +1,9 @@
+@use '../../style/variables';
+
 .ssb-input-error {
-  @include roboto;
-  background: $ssb-red-3;
-  color: $ssb-white;
+  @include variables.roboto;
+  background: variables.$ssb-red-3;
+  color: variables.$ssb-white;
   display: flex;
   font-size: 14px;
   font-weight: bold;
@@ -12,11 +14,11 @@
   position: relative;
 
   &.negative {
-    color: $ssb-dark-5;
+    color: variables.$ssb-dark-5;
   }
 
   &::before {
-    border-color: transparent transparent $ssb-red-3;
+    border-color: transparent transparent variables.$ssb-red-3;
     border-style: solid;
     border-width: 8px;
     content: '';

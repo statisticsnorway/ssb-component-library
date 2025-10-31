@@ -1,10 +1,12 @@
+@use '../../style/variables';
+
 .ssb-table-link {
   display: flex;
   text-decoration: none;
 
   .tl-icon {
     box-sizing: initial;
-    color: $ssb-green-4;
+    color: variables.$ssb-green-4;
     display: inline-flex;
     float: left;
     height: 22px;
@@ -19,15 +21,15 @@
   }
 
   .tl-text {
-    @include roboto;
-    color: $ssb-green-4;
+    @include variables.roboto;
+    color: variables.$ssb-green-4;
     font-weight: bold;
     font-size: 20px;
   }
 
   .tl-description {
-    @include roboto;
-    color: $ssb-dark-6;
+    @include variables.roboto;
+    color: variables.$ssb-dark-6;
     display: block;
     font-weight: bold;
     font-size: 20px;
@@ -40,7 +42,7 @@
     text-decoration: none;
 
     .tl-icon {
-      border: 2px solid $ssb-green-4;
+      border: 2px solid variables.$ssb-green-4;
       border-radius: 50%;
       margin-top: 0;
       margin-left: 0;
@@ -49,11 +51,11 @@
     }
 
     .tl-description {
-      color: $ssb-green-4;
+      color: variables.$ssb-green-4;
     }
   }
 
   &:focus {
-    @include focus-ring;
+    @include variables.focus-ring;
   }
 }

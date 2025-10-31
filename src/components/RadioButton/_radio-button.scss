@@ -1,6 +1,8 @@
+@use '../../style/variables';
+
 .ssb-radio {
-  @include roboto;
-  color: $ssb-dark-6;
+  @include variables.roboto;
+  color: variables.$ssb-dark-6;
   cursor: pointer;
   display: block;
   font-size: 16px;
@@ -14,7 +16,7 @@
   &:focus {
     .radio-label {
       &::before {
-        border: 2px solid $ssb-green-4;
+        border: 2px solid variables.$ssb-green-4;
       }
     }
   }
@@ -26,7 +28,7 @@
 
     &:focus + .radio-label {
       &::before {
-        border: 2px solid $ssb-green-4;
+        border: 2px solid variables.$ssb-green-4;
       }
     }
 
@@ -35,7 +37,7 @@
       color-adjust: exact;
 
       &::after {
-        background: $ssb-dark-5;
+        background: variables.$ssb-dark-5;
         border-radius: 50%;
         content: '';
         display: block;
@@ -49,12 +51,12 @@
     }
 
     &:disabled + .radio-label {
-      background: $ssb-white;
-      color: $ssb-dark-2;
+      background: variables.$ssb-white;
+      color: variables.$ssb-dark-2;
       cursor: default;
 
       &::before {
-        border: 1px solid $ssb-dark-2;
+        border: 1px solid variables.$ssb-dark-2;
       }
     }
   }
@@ -67,8 +69,8 @@
     position: relative;
 
     &::before {
-      background: $ssb-white;
-      border: 1px solid $ssb-dark-5;
+      background: variables.$ssb-white;
+      border: 1px solid variables.$ssb-dark-5;
       border-radius: 50%;
       box-sizing: border-box;
       content: '';

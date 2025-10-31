@@ -1,5 +1,7 @@
+@use '../../style/variables';
+
 .ssb-radio-group {
-  @include roboto;
+  @include variables.roboto;
   display: inline-block;
 
   .boxes {

@@ -1,6 +1,8 @@
+@use '../../style/variables';
+
 .ssb-checkbox {
-  @include roboto;
-  color: $ssb-dark-6;
+  @include variables.roboto;
+  color: variables.$ssb-dark-6;
   cursor: pointer;
   display: block;
   font-size: 16px;
@@ -14,7 +16,7 @@
   &:focus {
     .checkbox-label {
       &::before {
-        border: 2px solid $ssb-green-4;
+        border: 2px solid variables.$ssb-green-4;
       }
     }
   }
@@ -26,7 +28,7 @@
 
     &:focus + .checkbox-label {
       &::before {
-        border: 2px solid $ssb-green-4;
+        border: 2px solid variables.$ssb-green-4;
       }
     }
 
@@ -35,11 +37,11 @@
       color-adjust: exact;
 
       &::before {
-        background: $ssb-dark-5;
+        background: variables.$ssb-dark-5;
       }
 
       &::after {
-        border: solid $ssb-white;
+        border: solid variables.$ssb-white;
         border-width: 0 2px 2px 0;
         box-sizing: initial;
         content: '';
@@ -54,12 +56,12 @@
     }
 
     &:disabled + .checkbox-label {
-      background: $ssb-white;
-      color: $ssb-dark-2;
+      background: variables.$ssb-white;
+      color: variables.$ssb-dark-2;
       cursor: default;
 
       &::before {
-        border: 1px solid $ssb-dark-2;
+        border: 1px solid variables.$ssb-dark-2;
       }
     }
   }
@@ -72,8 +74,8 @@
     position: relative;
 
     &::before {
-      background: $ssb-white;
-      border: 1px solid $ssb-dark-5;
+      background: variables.$ssb-white;
+      border: 1px solid variables.$ssb-dark-5;
       border-radius: 2px;
       box-sizing: border-box;
       content: '';

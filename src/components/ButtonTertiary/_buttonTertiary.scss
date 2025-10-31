@@ -1,7 +1,9 @@
+@use '../../style/variables';
+
 .ssb-btn-tertiary {
   .button-header {
-    @include reset-button;
-    @include roboto;
+    @include variables.reset-button;
+    @include variables.roboto;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -18,25 +20,25 @@
     }
 
     svg {
-      color: $ssb-green-4;
+      color: variables.$ssb-green-4;
       font-size: 20px;
     }
 
     .header-text {
-      color: $ssb-dark-6;
+      color: variables.$ssb-dark-6;
     }
 
     &:hover,
     &:focus {
       .header-text {
-        color: $ssb-green-4;
+        color: variables.$ssb-green-4;
         text-decoration: underline;
         text-underline-position: under;
       }
     }
 
     &:focus {
-      @include focus-ring;
+      @include variables.focus-ring;
     }
 
     &.no-icon {
@@ -49,20 +51,20 @@
         cursor: not-allowed;
 
         .header-text {
-          color: $ssb-dark-2;
+          color: variables.$ssb-dark-2;
           text-decoration: none;
         }
 
         .expand-icon * {
-          color: $ssb-dark-2;
+          color: variables.$ssb-dark-2;
         }
       }
     }
   }
 
   .accordion-body {
-    @include open-sans;
-    color: $ssb-dark-6;
+    @include variables.open-sans;
+    color: variables.$ssb-dark-6;
     font-size: 16px;
 
     &.closed {
@@ -75,16 +77,16 @@
     .button-header {
       &.no-icon {
         text-decoration: underline;
-        text-decoration-color: $ssb-white;
+        text-decoration-color: variables.$ssb-white;
       }
 
       .button-grid {
         .header-text {
-          color: $ssb-white;
+          color: variables.$ssb-white;
         }
 
         svg {
-          color: $ssb-green-2;
+          color: variables.$ssb-green-2;
         }
       }
 
@@ -93,16 +95,16 @@
           cursor: not-allowed;
 
           .header-text {
-            color: $ssb-dark-4 !important;
+            color: variables.$ssb-dark-4 !important;
             text-decoration: none;
           }
 
           svg {
-            color: $ssb-dark-4;
+            color: variables.$ssb-dark-4;
           }
 
           .expand-icon * {
-            color: $ssb-dark-4;
+            color: variables.$ssb-dark-4;
           }
         }
 
@@ -115,7 +117,7 @@
     }
 
     .accordion-body {
-      color: $ssb-white;
+      color: variables.$ssb-white;
     }
   }
 }

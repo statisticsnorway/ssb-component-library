@@ -1,14 +1,16 @@
+@use '../../style/variables';
+
 $large-size: 195px;
 $medium-size: 150px;
 $small-size: 108px;
 
 .ssb-key-figures {
-  @include roboto;
-  color: $ssb-dark-5;
+  @include variables.roboto;
+  color: variables.$ssb-dark-5;
   display: flex;
 
   .kf-icon {
-    color: $ssb-dark-5;
+    color: variables.$ssb-dark-5;
     display: inline-flex;
 
     & > * {
@@ -47,7 +49,7 @@ $small-size: 108px;
       margin-bottom: 30px;
       margin-left: 4px;
 
-      @media #{$mobile} {
+      @media #{variables.$mobile} {
         margin-bottom: 14px;
       }
     }
@@ -65,7 +67,7 @@ $small-size: 108px;
       margin-bottom: 19px;
       margin-left: 4px;
 
-      @media #{$mobile} {
+      @media #{variables.$mobile} {
         margin-bottom: 8px;
       }
     }
@@ -85,7 +87,7 @@ $small-size: 108px;
     }
   }
 
-  @media #{$mobile} {
+  @media #{variables.$mobile} {
     .kf-icon {
       display: none;
     }
@@ -98,33 +100,33 @@ $small-size: 108px;
   }
 
   .kf-time {
-    @include open-sans;
+    @include variables.open-sans;
     font-size: 16px;
     margin-top: 4px;
   }
 
   .kf-title {
-    @include roboto;
+    @include variables.roboto;
     font-size: 20px;
     font-weight: bold;
     line-height: normal;
     margin: 0;
 
     &.subtitle {
-      color: $ssb-dark-5;
+      color: variables.$ssb-dark-5;
     }
   }
 
   .no-number {
-    @include roboto;
-    color: $ssb-dark-3;
+    @include variables.roboto;
+    color: variables.$ssb-dark-3;
     font-size: 20px;
     font-weight: bold;
   }
 
   &.green-box {
     position: relative;
-    background: $ssb-green-1;
+    background: variables.$ssb-green-1;
     padding: 38px 40px;
     border-radius: 2px;
     width: 100%;
@@ -139,7 +141,7 @@ $small-size: 108px;
       position: absolute;
       pointer-events: none;
       border-color: rgb(229 254 230 / 0%);
-      border-top-color: $ssb-green-1;
+      border-top-color: variables.$ssb-green-1;
       border-width: 42px;
       margin-left: -42px;
     }

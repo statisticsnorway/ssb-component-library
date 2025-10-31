@@ -1,23 +1,25 @@
+@use '../../style/variables';
+
 .ssb-glossary {
   display: inline-block;
   position: relative;
 
   .glossary-button {
-    @include reset-button;
-    background-image: linear-gradient(to right, $ssb-green-2 50%, $ssb-white 50%);
+    @include variables.reset-button;
+    background-image: linear-gradient(to right, variables.$ssb-green-2 50%, variables.$ssb-white 50%);
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: 200% 100%;
     transition: all 0.5s ease-out;
 
     .glossary-text-wrap {
-      border-bottom: 1px dotted $ssb-green-4;
+      border-bottom: 1px dotted variables.$ssb-green-4;
       display: inline;
       line-height: inherit;
     }
 
     .glossary-logo {
-      color: $ssb-green-3;
+      color: variables.$ssb-green-3;
       margin: 2px;
       transition: color 0.2s;
       vertical-align: top;
@@ -28,7 +30,7 @@
       background-position: left bottom;
 
       .glossary-logo {
-        color: $ssb-dark-6;
+        color: variables.$ssb-dark-6;
       }
 
       .glossary-text-wrap {
@@ -37,12 +39,12 @@
     }
 
     &:focus {
-      @include focus-ring;
+      @include variables.focus-ring;
     }
   }
 
   .glossary-popup {
-    @include open-sans;
+    @include variables.open-sans;
     animation: fadein 0.2s;
     display: none;
     font-size: 14px;
@@ -56,7 +58,7 @@
     z-index: 999;
 
     &::after {
-      border-color: transparent transparent $ssb-dark-5;
+      border-color: transparent transparent variables.$ssb-dark-5;
       border-style: solid;
       border-width: 12px;
       content: '';
@@ -72,8 +74,8 @@
     }
 
     .content-box {
-      background: $ssb-dark-5;
-      color: $ssb-white;
+      background: variables.$ssb-dark-5;
+      color: variables.$ssb-white;
       padding: 20px;
       padding-top: 25px;
       display: block;
@@ -94,12 +96,12 @@
           height: 44px;
 
           &:focus {
-            outline: $ssb-green-2 5px auto;
+            outline: variables.$ssb-green-2 5px auto;
           }
 
           .icon {
-            color: $ssb-dark-5;
-            fill: $ssb-green-2;
+            color: variables.$ssb-dark-5;
+            fill: variables.$ssb-green-2;
             font-size: 16px;
           }
 
@@ -111,7 +113,7 @@
       }
 
       .info-text {
-        color: $ssb-white;
+        color: variables.$ssb-white;
         font-size: 14px;
       }
     }
