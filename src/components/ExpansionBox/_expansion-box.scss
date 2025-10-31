@@ -1,21 +1,23 @@
+@use '../../style/variables';
+
 .ssb-expansion-box {
-  border: 1px solid $ssb-green-4;
+  border: 1px solid variables.$ssb-green-4;
   border-radius: 8px;
-  background-color: $ssb-white;
+  background-color: variables.$ssb-white;
   display: grid;
   width: 100%;
 
   &:has(.header:hover) {
-    box-shadow: 0 0 0 1px $ssb-green-4;
+    box-shadow: 0 0 0 1px variables.$ssb-green-4;
   }
 
   &:has(.header:focus-visible) {
-    @include focus-ring;
+    @include variables.focus-ring;
     border-radius: 8px;
   }
 
   .header {
-    @include reset-button;
+    @include variables.reset-button;
     padding: 1.7rem 2.5rem;
     align-items: center;
     cursor: pointer;
@@ -32,14 +34,14 @@
         }
 
         .expand-icon {
-          color: $ssb-white;
+          color: variables.$ssb-white;
         }
       }
     }
 
     .header-text {
-      @include roboto;
-      color: $ssb-dark-6;
+      @include variables.roboto;
+      color: variables.$ssb-dark-6;
       font-size: 1.25rem;
       font-weight: bold;
       margin-right: 1rem;
@@ -59,14 +61,14 @@
         left: 50%;
         width: 0;
         height: 0;
-        background-color: $ssb-green-4;
+        background-color: variables.$ssb-green-4;
         border-radius: 50%;
         transform: translate(-50%, -50%);
         z-index: 0;
       }
 
       .expand-icon {
-        color: $ssb-green-4;
+        color: variables.$ssb-green-4;
         position: relative;
         z-index: 1;
         height: 1.5rem;
@@ -89,14 +91,14 @@
       outline: none;
     }
 
-    @media #{$mobile} {
+    @media #{variables.$mobile} {
       padding: 1.25rem;
     }
   }
 
   .content {
-    @include open-sans;
-    color: $ssb-dark-6;
+    @include variables.open-sans;
+    color: variables.$ssb-dark-6;
     font-size: 1rem;
     line-height: 1.75rem;
     overflow: hidden;
@@ -110,7 +112,7 @@
         opacity 0.5s;
     }
 
-    @media #{$mobile} {
+    @media #{variables.$mobile} {
       padding: 0 1.25rem;
     }
   }
@@ -121,7 +123,7 @@
     }
 
     .header:focus-visible {
-      @include focus-ring;
+      @include variables.focus-ring;
       border-radius: 8px;
     }
 
@@ -131,7 +133,7 @@
       padding: 0 4rem 2rem 2.5rem;
       transition: max-height 0.5s;
 
-      @media #{$mobile} {
+      @media #{variables.$mobile} {
         padding: 0 1.25rem;
       }
     }

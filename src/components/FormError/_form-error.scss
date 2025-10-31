@@ -1,8 +1,10 @@
+@use '../../style/variables';
+
 .ssb-form-error {
-  @include roboto;
-  background: $ssb-white;
-  border: 2px solid $ssb-red-3;
-  border-left: 4px solid $ssb-red-3;
+  @include variables.roboto;
+  background: variables.$ssb-white;
+  border: 2px solid variables.$ssb-red-3;
+  border-left: 4px solid variables.$ssb-red-3;
   display: flex;
   padding: 20px 20px 20px 0;
   width: 100%;
@@ -12,9 +14,9 @@
 
     &::before {
       align-items: center;
-      background: $ssb-red-3;
+      background: variables.$ssb-red-3;
       border-radius: 2px;
-      color: $ssb-white;
+      color: variables.$ssb-white;
       content: '!';
       display: inline-flex;
       font-size: 18px;
@@ -26,23 +28,23 @@
   }
 
   .error-title {
-    color: $ssb-red-3;
+    color: variables.$ssb-red-3;
     font-weight: bold;
     line-height: 1.25;
   }
 
   ul {
-    color: $ssb-dark-6;
+    color: variables.$ssb-dark-6;
     margin-bottom: 0;
     margin-top: 15px;
     padding-left: 18px;
   }
 
   &.negative {
-    background: $ssb-dark-5;
+    background: variables.$ssb-dark-5;
 
     ul {
-      color: $ssb-white;
+      color: variables.$ssb-white;
     }
   }
 }

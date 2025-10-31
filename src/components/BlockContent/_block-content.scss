@@ -1,7 +1,9 @@
+@use '../../style/variables';
+
 .ssb-block-content {
-  @include open-sans;
-  background: $ssb-white;
-  border-top: 4px solid $ssb-green-3;
+  @include variables.open-sans;
+  background: variables.$ssb-white;
+  border-top: 4px solid variables.$ssb-green-3;
   box-shadow: 0 2px 4px 1px rgb(200 200 200 / 50%);
   box-sizing: border-box;
   margin-bottom: 80px;
@@ -11,13 +13,13 @@
   width: 100%;
 
   .section-number {
-    @include roboto;
-    color: $ssb-dark-3;
+    @include variables.roboto;
+    color: variables.$ssb-dark-3;
     font-size: 30px;
     margin-top: -35px;
 
     &::before {
-      background: $ssb-green-3;
+      background: variables.$ssb-green-3;
       content: '';
       display: inline-block;
       height: 22px;

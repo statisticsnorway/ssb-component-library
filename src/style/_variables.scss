@@ -29,7 +29,7 @@ $tablet: 'screen and (min-width: 768px) and (max-width: 991px)';
 $desktop: 'screen and (min-width: 992px)';
 
 // Use media queries like this:
-//@media #{$mobile} { @content }
+//@media #{variables.$mobile} { @content }
 
 $input-field-height: 44px;
 $global-padding-size: 8px;

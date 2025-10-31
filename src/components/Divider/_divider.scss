@@ -1,3 +1,5 @@
+@use '../../style/variables';
+
 .ssb-divider {
   border: 0;
   border-top: 1px solid;
@@ -8,10 +10,10 @@
   width: 100%;
 
   &.type-dark {
-    border-top-color: $ssb-dark-5;
+    border-top-color: variables.$ssb-dark-5;
   }
 
   &.type-light {
-    border-top-color: $ssb-dark-2;
+    border-top-color: variables.$ssb-dark-2;
   }
 }

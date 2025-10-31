@@ -1,5 +1,7 @@
+@use '../../style/variables';
+
 .ssb-checkbox-group {
-  @include roboto;
+  @include variables.roboto;
   display: inline-block;
 
   .boxes {

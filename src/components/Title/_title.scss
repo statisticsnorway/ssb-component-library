@@ -1,55 +1,57 @@
+@use '../../style/variables';
+
 .ssb-title {
-  color: $ssb-dark-6;
+  color: variables.$ssb-dark-6;
   margin-top: 0;
 
   &.negative {
-    color: $ssb-white;
+    color: variables.$ssb-white;
   }
 
   @at-root {
     h1#{&} {
-      @include roboto-condenced;
+      @include variables.roboto-condenced;
       font-size: 3.5rem;
       font-weight: bold;
       line-height: 5rem;
     }
 
     h2#{&} {
-      @include roboto-condenced;
+      @include variables.roboto-condenced;
       font-size: 1.75rem;
       font-weight: bold;
       line-height: 2.5rem;
     }
 
     h3#{&} {
-      @include roboto;
+      @include variables.roboto;
       font-size: 1.25rem;
       font-weight: bold;
       line-height: 2rem;
     }
 
     h4#{&} {
-      @include roboto;
+      @include variables.roboto;
       font-size: 1rem;
       font-weight: bold;
       line-height: 1.75rem;
     }
 
     h5#{&} {
-      @include roboto;
+      @include variables.roboto;
       font-size: 1.125rem;
       font-weight: bold;
       line-height: 1.7rem;
     }
 
     h6#{&} {
-      @include roboto;
+      @include variables.roboto;
       font-size: 1rem;
       font-weight: bold;
       line-height: 1.7rem;
     }
 
-    @media #{$mobile} {
+    @media #{variables.$mobile} {
       h1#{&} {
         font-size: 2.75rem;
         line-height: 3.5rem;

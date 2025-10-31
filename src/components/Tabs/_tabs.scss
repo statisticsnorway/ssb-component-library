@@ -1,10 +1,12 @@
+@use '../../style/variables';
+
 .ssb-tabs {
   display: flex;
   flex-direction: row;
 
   .navigation-item {
-    @include reset-button;
-    @include roboto;
+    @include variables.reset-button;
+    @include variables.roboto;
     align-items: center;
     cursor: pointer;
     display: flex;
@@ -22,13 +24,13 @@
     &:not(:last-of-type) {
       margin-right: 40px;
 
-      @media #{$mobile} {
+      @media #{variables.$mobile} {
         margin-right: 0;
       }
     }
 
     &::before {
-      background: $ssb-dark-5;
+      background: variables.$ssb-dark-5;
       bottom: 0;
       content: '';
       display: block;
@@ -41,12 +43,12 @@
 
     &.active {
       &::before {
-        background: $ssb-green-3;
+        background: variables.$ssb-green-3;
         height: 4px;
       }
     }
 
-    @media #{$mobile} {
+    @media #{variables.$mobile} {
       padding-left: 20px;
       padding-right: 20px;
     }

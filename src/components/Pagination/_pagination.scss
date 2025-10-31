@@ -1,18 +1,20 @@
+@use '../../style/variables';
+
 $direction-button-height: 30px;
 $direction-button-width: 80px;
 
 .ssb-pagination {
-  @include roboto;
+  @include variables.roboto;
   align-items: center;
   display: flex;
   line-height: 1.25;
 
   .nav-button-square {
-    @include reset-button;
+    @include variables.reset-button;
     align-items: center;
     border: 1px solid transparent;
     border-radius: 2px;
-    color: $ssb-green-4;
+    color: variables.$ssb-green-4;
     cursor: pointer;
     display: flex;
     height: 30px;
@@ -21,19 +23,19 @@ $direction-button-width: 80px;
     width: 30px;
 
     &.selected {
-      background: $ssb-green-4;
-      color: $ssb-white;
+      background: variables.$ssb-green-4;
+      color: variables.$ssb-white;
       font-weight: bold;
     }
 
     &:hover {
-      border: 1px solid $ssb-green-4;
+      border: 1px solid variables.$ssb-green-4;
       border-radius: 2px;
       font-weight: bold;
     }
 
     &:focus {
-      @include focus-ring;
+      @include variables.focus-ring;
     }
   }
 
@@ -46,7 +48,7 @@ $direction-button-width: 80px;
   }
 
   .direction-button {
-    @include reset-button;
+    @include variables.reset-button;
     align-items: center;
     border: 1px solid transparent;
     cursor: pointer;
@@ -61,19 +63,19 @@ $direction-button-width: 80px;
     }
 
     .chevron-icon {
-      color: $ssb-green-4;
+      color: variables.$ssb-green-4;
       font-size: 16px;
     }
 
     &:hover {
       border-radius: 2px;
-      color: $ssb-green-4;
+      color: variables.$ssb-green-4;
       font-weight: bold;
-      border: 1px solid $ssb-green-4;
+      border: 1px solid variables.$ssb-green-4;
     }
 
     &:focus {
-      @include focus-ring;
+      @include variables.focus-ring;
     }
 
     &.previous {

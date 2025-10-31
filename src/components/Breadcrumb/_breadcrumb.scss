@@ -1,5 +1,7 @@
+@use '../../style/variables';
+
 .ssb-breadcrumbs {
-  @include open-sans;
+  @include variables.open-sans;
   align-items: center;
   display: flex;
   flex-wrap: wrap;

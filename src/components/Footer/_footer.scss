@@ -1,12 +1,14 @@
+@use '../../style/variables';
+
 .ssb-footer-wrapper {
-  background: $ssb-dark-5;
+  background: variables.$ssb-dark-5;
   box-sizing: border-box;
-  color: $ssb-white;
+  color: variables.$ssb-white;
   padding: 36px 112px 58px;
   width: 100%;
 
   .top-row {
-    border-bottom: 1px solid $ssb-white;
+    border-bottom: 1px solid variables.$ssb-white;
     margin-bottom: 36px;
 
     > * {

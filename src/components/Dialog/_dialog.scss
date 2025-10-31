@@ -1,5 +1,7 @@
+@use '../../style/variables';
+
 .ssb-dialog {
-  @include open-sans;
+  @include variables.open-sans;
   display: flex;
   max-width: 1180px;
   min-width: 100%;
@@ -7,7 +9,7 @@
   width: 100%;
 
   .icon-panel {
-    color: $ssb-white;
+    color: variables.$ssb-white;
     display: flex;
     flex-shrink: 0;
     font-size: 36px;
@@ -34,18 +36,18 @@
   }
 
   &.warning {
-    border: 2px solid $ssb-red-3;
+    border: 2px solid variables.$ssb-red-3;
 
     .icon-panel {
-      background: $ssb-red-3;
+      background: variables.$ssb-red-3;
     }
   }
 
   &.info {
-    border: 2px solid $ssb-blue-3;
+    border: 2px solid variables.$ssb-blue-3;
 
     .icon-panel {
-      background: $ssb-blue-3;
+      background: variables.$ssb-blue-3;
     }
   }
 }

@@ -1,11 +1,13 @@
+@use '../../style/variables';
+
 .ssb-fact-box {
-  border: 1px solid $ssb-green-3;
+  border: 1px solid variables.$ssb-green-3;
   margin: 16px 0;
   padding: 20px 16px;
   width: 100%;
 
   &:focus-within {
-    outline: $ssb-purple-3 solid 2px;
+    outline: variables.$ssb-purple-3 solid 2px;
   }
 
   .accordion-header:focus {
@@ -13,6 +15,6 @@
   }
 
   &:hover {
-    border: 1px solid $ssb-green-4;
+    border: 1px solid variables.$ssb-green-4;
   }
 }

@@ -1,5 +1,7 @@
+@use '../../style/variables';
+
 .ssb-input {
-  @include roboto;
+  @include variables.roboto;
   cursor: text;
   display: flex;
   flex-direction: column;
@@ -9,11 +11,11 @@
 
   &:hover {
     input {
-      border: 1px solid $ssb-green-4;
-      outline: 1px solid $ssb-green-4;
+      border: 1px solid variables.$ssb-green-4;
+      outline: 1px solid variables.$ssb-green-4;
 
       &:disabled {
-        border: 1px solid $ssb-dark-5;
+        border: 1px solid variables.$ssb-dark-5;
       }
     }
   }
@@ -22,14 +24,14 @@
     display: flex;
 
     ::placeholder {
-      color: $ssb-dark-4;
+      color: variables.$ssb-dark-4;
       font-size: 14px;
       opacity: 1;
     }
   }
 
   label {
-    color: $ssb-dark-6;
+    color: variables.$ssb-dark-6;
     cursor: text;
     font-size: 14px;
     margin-bottom: 5px;
@@ -37,29 +39,29 @@
   }
 
   input {
-    @include roboto;
-    background: $ssb-white;
-    border: 1px solid $ssb-dark-5;
+    @include variables.roboto;
+    background: variables.$ssb-white;
+    border: 1px solid variables.$ssb-dark-5;
     box-sizing: border-box;
-    color: $ssb-dark-6;
+    color: variables.$ssb-dark-6;
     font-size: 16px;
-    height: $input-field-height;
+    height: variables.$input-field-height;
     padding: 12px;
     text-overflow: ellipsis;
     width: 100%;
 
     &.with-icon {
-      padding: 4px $input-field-height 4px 10px;
+      padding: 4px variables.$input-field-height 4px 10px;
     }
 
     &:disabled {
-      border: 1px solid $ssb-dark-5;
+      border: 1px solid variables.$ssb-dark-5;
       cursor: not-allowed;
     }
 
     &:focus {
-      border: 1px solid $ssb-green-4;
-      outline: 1px solid $ssb-green-4;
+      border: 1px solid variables.$ssb-green-4;
+      outline: 1px solid variables.$ssb-green-4;
       outline-offset: 0;
     }
   }
@@ -67,45 +69,45 @@
   &.negative {
     .input-wrapper {
       ::placeholder {
-        color: $ssb-white;
+        color: variables.$ssb-white;
         opacity: 1;
       }
     }
 
     &:hover {
       input {
-        border: 1px solid $ssb-green-2;
-        outline: 1px solid $ssb-green-2;
+        border: 1px solid variables.$ssb-green-2;
+        outline: 1px solid variables.$ssb-green-2;
 
         &:disabled {
-          border: 1px solid $ssb-white;
+          border: 1px solid variables.$ssb-white;
         }
       }
     }
 
     label {
-      color: $ssb-white;
+      color: variables.$ssb-white;
     }
 
     input {
       background: transparent;
-      border: 1px solid $ssb-white;
-      color: $ssb-white;
+      border: 1px solid variables.$ssb-white;
+      color: variables.$ssb-white;
 
       &:disabled {
-        border: 1px solid $ssb-white;
+        border: 1px solid variables.$ssb-white;
       }
 
       &:focus {
-        border: 1px solid $ssb-green-2;
-        outline: 1px solid $ssb-green-2;
+        border: 1px solid variables.$ssb-green-2;
+        outline: 1px solid variables.$ssb-green-2;
         outline-offset: 0;
       }
     }
 
     .icon-wrapper {
       & > * {
-        color: $ssb-green-2;
+        color: variables.$ssb-green-2;
       }
 
       &.search-icon {
@@ -113,10 +115,10 @@
 
         &:hover,
         &:focus {
-          background: $ssb-white;
+          background: variables.$ssb-white;
 
           & > * {
-            color: $ssb-dark-5;
+            color: variables.$ssb-dark-5;
           }
         }
       }
@@ -124,13 +126,13 @@
 
     &.error {
       input {
-        border: 1px solid $ssb-red-3;
-        outline: 1px solid $ssb-red-3;
+        border: 1px solid variables.$ssb-red-3;
+        outline: 1px solid variables.$ssb-red-3;
       }
 
       .icon-wrapper {
         & > * {
-          color: $ssb-red-3;
+          color: variables.$ssb-red-3;
         }
       }
     }
@@ -138,29 +140,29 @@
 
   &.error {
     input {
-      border: 1px solid $ssb-red-3;
-      outline: 1px solid $ssb-red-3;
+      border: 1px solid variables.$ssb-red-3;
+      outline: 1px solid variables.$ssb-red-3;
     }
 
     .icon-wrapper {
       & > * {
-        color: $ssb-red-3;
+        color: variables.$ssb-red-3;
       }
     }
   }
 
   .icon-wrapper {
-    @include reset-button;
+    @include variables.reset-button;
     align-items: center;
     display: flex;
     font-size: 18px;
-    height: $input-field-height;
+    height: variables.$input-field-height;
     justify-content: center;
-    margin-left: -$input-field-height;
-    width: $input-field-height;
+    margin-left: -(variables.$input-field-height);
+    width: variables.$input-field-height;
 
     & > * {
-      color: $ssb-green-4;
+      color: variables.$ssb-green-4;
     }
 
     &.search-icon {
@@ -168,16 +170,16 @@
 
       &:hover,
       &:focus {
-        background: $ssb-green-4;
+        background: variables.$ssb-green-4;
 
         & > * {
-          color: $ssb-white;
+          color: variables.$ssb-white;
         }
       }
     }
 
     &:focus {
-      @include focus-ring;
+      @include variables.focus-ring;
     }
   }
 

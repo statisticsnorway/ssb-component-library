@@ -1,17 +1,19 @@
+@use '../../style/variables';
+
 $large-number-size: 148px;
 $medium-number-size: 100px;
 $small-number-size: 56px;
 
 .ssb-number {
-  @include roboto-condenced;
-  color: $ssb-dark-5;
+  @include variables.roboto-condenced;
+  color: variables.$ssb-dark-5;
   line-height: normal;
   white-space: nowrap;
 
   &.small {
     font-size: $small-number-size;
 
-    @media #{$mobile} {
+    @media #{variables.$mobile} {
       font-size: 56px;
     }
   }
@@ -19,7 +21,7 @@ $small-number-size: 56px;
   &.medium {
     font-size: $medium-number-size;
 
-    @media #{$mobile} {
+    @media #{variables.$mobile} {
       font-size: 56px;
     }
   }
@@ -27,7 +29,7 @@ $small-number-size: 56px;
   &.large {
     font-size: $large-number-size;
 
-    @media #{$mobile} {
+    @media #{variables.$mobile} {
       font-size: 77px;
     }
   }

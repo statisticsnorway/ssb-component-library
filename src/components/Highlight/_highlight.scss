@@ -1,13 +1,15 @@
+@use '../../style/variables';
+
 .ssb-mark {
-  @include open-sans;
-  background-color: $ssb-green-1;
+  @include variables.open-sans;
+  background-color: variables.$ssb-green-1;
   font-style: normal;
   letter-spacing: normal;
   line-height: 1.6;
 
   &.negative {
-    background-color: $ssb-green-5;
-    color: $ssb-white;
+    background-color: variables.$ssb-green-5;
+    color: variables.$ssb-white;
   }
 }
 

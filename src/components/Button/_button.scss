@@ -1,11 +1,13 @@
+@use '../../style/variables';
+
 .ssb-btn {
-  @include roboto;
-  @include reset-button;
+  @include variables.roboto;
+  @include variables.reset-button;
   align-items: center;
-  background: $ssb-white;
-  border: 2px solid $ssb-green-4;
+  background: variables.$ssb-white;
+  border: 2px solid variables.$ssb-green-4;
   border-radius: 2px;
-  color: $ssb-green-4;
+  color: variables.$ssb-green-4;
   display: flex;
   font-size: 16px;
   font-weight: bold;
@@ -27,25 +29,25 @@
 
   &:hover,
   &:focus {
-    background: $ssb-green-4;
-    color: $ssb-white;
+    background: variables.$ssb-green-4;
+    color: variables.$ssb-white;
     text-decoration: underline;
   }
 
   &:focus {
-    @include focus-ring;
+    @include variables.focus-ring;
   }
 
   &:active {
-    background: $ssb-dark-5;
-    border: 2px solid $ssb-dark-5;
-    color: $ssb-white;
+    background: variables.$ssb-dark-5;
+    border: 2px solid variables.$ssb-dark-5;
+    color: variables.$ssb-white;
   }
 
   &:disabled {
-    background: $ssb-white;
-    border-color: $ssb-dark-2;
-    color: $ssb-dark-2;
+    background: variables.$ssb-white;
+    border-color: variables.$ssb-dark-2;
+    color: variables.$ssb-dark-2;
     cursor: not-allowed;
     font-weight: normal;
 
@@ -56,25 +58,25 @@
   }
 
   &.negative {
-    background: $ssb-dark-5;
-    color: $ssb-green-2;
-    border-color: $ssb-green-2;
+    background: variables.$ssb-dark-5;
+    color: variables.$ssb-green-2;
+    border-color: variables.$ssb-green-2;
 
     &:hover,
     &:focus {
-      background: $ssb-green-2;
-      color: $ssb-dark-5;
+      background: variables.$ssb-green-2;
+      color: variables.$ssb-dark-5;
     }
 
     &:active {
-      background: $ssb-white;
-      color: $ssb-dark-5;
+      background: variables.$ssb-white;
+      color: variables.$ssb-dark-5;
     }
 
     &:disabled {
-      background: $ssb-dark-5;
-      border-color: $ssb-dark-4;
-      color: $ssb-dark-4;
+      background: variables.$ssb-dark-5;
+      border-color: variables.$ssb-dark-4;
+      color: variables.$ssb-dark-4;
       font-weight: normal;
 
       &:hover,
@@ -85,22 +87,22 @@
   }
 
   &.primary-btn {
-    background: $ssb-green-4;
-    border: 2px solid $ssb-green-4;
-    color: $ssb-white;
+    background: variables.$ssb-green-4;
+    border: 2px solid variables.$ssb-green-4;
+    color: variables.$ssb-white;
 
     &:hover,
     &:active,
     &:focus {
-      background: $ssb-dark-5;
-      border: 2px solid $ssb-dark-5;
+      background: variables.$ssb-dark-5;
+      border: 2px solid variables.$ssb-dark-5;
       text-decoration: underline;
     }
 
     &:disabled {
-      background: $ssb-dark-2;
-      border: 2px solid $ssb-dark-2;
-      color: $ssb-white;
+      background: variables.$ssb-dark-2;
+      border: 2px solid variables.$ssb-dark-2;
+      color: variables.$ssb-white;
       cursor: not-allowed;
       font-weight: normal;
 
@@ -111,21 +113,21 @@
     }
 
     &.negative {
-      background: $ssb-green-2;
-      border: 2px solid $ssb-green-2;
-      color: $ssb-dark-5;
+      background: variables.$ssb-green-2;
+      border: 2px solid variables.$ssb-green-2;
+      color: variables.$ssb-dark-5;
 
       &:hover,
       &:active,
       &:focus {
-        background: $ssb-white;
-        border: 2px solid $ssb-white;
+        background: variables.$ssb-white;
+        border: 2px solid variables.$ssb-white;
       }
 
       &:disabled {
-        background: $ssb-dark-4;
-        border-color: $ssb-dark-4;
-        color: $ssb-dark-5;
+        background: variables.$ssb-dark-4;
+        border-color: variables.$ssb-dark-4;
+        color: variables.$ssb-dark-5;
         font-weight: normal;
       }
     }
