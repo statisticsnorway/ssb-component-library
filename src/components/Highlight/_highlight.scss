@@ -17,6 +17,7 @@
 mark::before,
 mark::after {
   clip-path: inset(100%);
+  /* stylelint-disable-next-line property-no-deprecated */
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   overflow: hidden;
