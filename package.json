@@ -57,7 +57,7 @@
     "@rollup/plugin-typescript": "~12.3.0",
     "@storybook/addon-links": "^9.1.13",
     "@storybook/addon-webpack5-compiler-babel": "~3.0.6",
-    "@storybook/react-webpack5": "^9.1.13",
+    "@storybook/react-webpack5": "^10.0.6",
     "@svgr/rollup": "~8.1.0",
     "@svgr/webpack": "~8.1.0",
     "@testing-library/dom": "~10.4.1",
