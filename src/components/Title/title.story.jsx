@@ -12,6 +12,6 @@ export const Default = () => (
     <Title size={3}>This is a h3 title</Title>
     <Title size={4}>This is a h4 title</Title>
     <Title size={5}>This is a h5 title</Title>
-    <Title size={6}>This is a h6 title</Title>
+    <Title size={5} className='semibold'>This is a h5 semibold title</Title>
   </div>
 )

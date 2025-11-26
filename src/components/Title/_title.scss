@@ -8,6 +8,10 @@
     color: variables.$ssb-white;
   }
 
+  &.semibold {
+    font-weight: 600;
+  }
+
   @at-root {
     h1#{&} {
       @include variables.roboto-condenced;
@@ -39,9 +43,9 @@
 
     h5#{&} {
       @include variables.roboto;
-      font-size: 1.125rem;
-      font-weight: bold;
-      line-height: 1.7rem;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1rem;
     }
 
     h6#{&} {
