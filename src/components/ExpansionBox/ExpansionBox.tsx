@@ -21,24 +21,25 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(openByDefault)
   const [maxHeight, setMaxHeight] = useState('')
+  const [allowOverflow, setAllowOverflow] = useState(openByDefault)
   const contentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (contentRef.current) {
-      const contentHeight = contentRef.current.scrollHeight
-      const maxHeightValue = contentHeight + 10
-      setMaxHeight(isOpen ? `${maxHeightValue}px` : '')
-      const focusableElements = contentRef.current.querySelectorAll('button, a')
+    if (!contentRef.current) return
+    const contentHeight = contentRef.current.scrollHeight
+    const maxHeightValue = contentHeight + 10
+    setMaxHeight(isOpen ? `${maxHeightValue}px` : '')
+    const focusableElements = contentRef.current.querySelectorAll('button, a')
 
-      if (!isOpen) {
-        focusableElements.forEach((el) => {
-          el.setAttribute('tabindex', '-1')
-        })
-      } else {
-        focusableElements.forEach((el) => {
-          el.removeAttribute('tabindex')
-        })
-      }
+    if (!isOpen) {
+      setAllowOverflow(false)
+      focusableElements.forEach((el) => {
+        el.setAttribute('tabindex', '-1')
+      })
+    } else {
+      focusableElements.forEach((el) => {
+        el.removeAttribute('tabindex')
+      })
     }
   }, [isOpen, text])
 
@@ -56,7 +57,16 @@ const ExpansionBox: React.FC<ExpansionBoxProps> = ({
           {isOpen && <ChevronUp className='expand-icon' size={24} />}
         </div>
       </button>
-      <div className={`content ${!isOpen ? 'closed' : ''}`} ref={contentRef} style={{ maxHeight }}>
+      <div
+        className={classNames('content', !isOpen && 'closed', allowOverflow && 'allow-overflow')}
+        ref={contentRef}
+        style={{ maxHeight }}
+        onTransitionEnd={(e) => {
+          if (e.propertyName === 'max-height' && isOpen) {
+            setAllowOverflow(true)
+          }
+        }}
+      >
         {text}
       </div>
     </div>

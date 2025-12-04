@@ -1,5 +1,6 @@
 import React from 'react'
 import ExpansionBox from './ExpansionBox'
+import Glossary from '../Glossary'
 
 const mockedHeader = 'This is a expansion box header'
 const mockedText =
@@ -10,9 +11,12 @@ const mockedContent = (
   <div>
     <span>
       This is a normal paragraph text where the explanation of the fact is written. Here you can write a concise and
-      descriptive text that helps the user understand the content. This is a normal paragraph text where the explanation
-      of the fact is written. Here you can write a concise and descriptive text that helps the user understand the
-      content.
+      descriptive text that helps the user understand the content.{' '}
+      <Glossary explanation={mockedText} closeText='Lukk'>
+        word
+      </Glossary>
+      This is a normal paragraph text where the explanation of the fact is written. Here you can write a concise and
+      descriptive text that helps the user understand the content.
     </span>
 
     <h3>Mulighet for tittel i boksen</h3>

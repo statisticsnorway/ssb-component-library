@@ -112,6 +112,10 @@
         opacity 0.5s;
     }
 
+    &.allow-overflow {
+      overflow: visible;
+    }
+
     @media #{variables.$mobile} {
       padding: 0 1.25rem;
     }
@@ -132,10 +136,6 @@
       opacity: 1;
       padding: 0 4rem 2rem 2.5rem;
       transition: max-height 0.5s;
-
-      @media #{variables.$mobile} {
-        padding: 0 1.25rem;
-      }
     }
   }
 
