@@ -14,16 +14,24 @@ describe('Accordion component', () => {
   })
   test('Starts closed', async () => {
     render(<Accordion header={headerText}>{bodyText}</Accordion>)
-    expect(await screen.findByText(bodyText)).not.toBeVisible()
+    const button = await screen.findByRole('button', { name: headerText })
+    expect(button).toHaveAttribute('aria-expanded', 'false')
+    const bodyNode = screen.getByText(bodyText)
+    const bodyWrapper = bodyNode.closest('.accordion-body')
+    expect(bodyWrapper).toHaveClass('closed')
   })
   test('Open on click when starting closed', async () => {
     const user = userEvent.setup()
     render(<Accordion header={headerText}>{bodyText}</Accordion>)
 
-    const button = await screen.findByText(headerText)
-    await user.click(button.parentElement)
-
-    expect(await screen.findByText(bodyText)).toBeVisible()
+    const button = await screen.findByRole('button', { name: headerText })
+    const bodyNode = screen.getByText(bodyText)
+    const bodyWrapper = bodyNode.closest('.accordion-body')
+    expect(button).toHaveAttribute('aria-expanded', 'false')
+    expect(bodyWrapper).toHaveClass('closed')
+    await user.click(button)
+    expect(button).toHaveAttribute('aria-expanded', 'true')
+    expect(bodyWrapper).toHaveClass('open')
   })
   test('Accordion with sub-header', async () => {
     const subheader = 'Subheader'

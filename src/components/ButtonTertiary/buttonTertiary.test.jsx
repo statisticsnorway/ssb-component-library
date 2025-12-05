@@ -40,12 +40,16 @@ describe('Button Tertiary component', () => {
         Body
       </ButtonTertiary>
     )
-    expect(await screen.findByText('Body')).toBeVisible()
 
-    const button = await screen.findByRole('button')
+    const button = await screen.findByRole('button', { name: header })
+    const bodyNode = screen.getByText('Body')
+    const section = bodyNode.closest('section')
+    expect(button).toHaveAttribute('aria-expanded', 'true')
+    expect(section).toHaveClass('accordion-body', 'open')
+
     await user.click(button)
-
-    expect(await screen.findByText('Body')).not.toBeVisible()
+    expect(button).toHaveAttribute('aria-expanded', 'false')
+    expect(section).toHaveClass('accordion-body', 'closed')
   })
   test('Renders toggle icon when accordion prop is true', () => {
     const { asFragment } = render(
