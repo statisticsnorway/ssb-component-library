@@ -111,7 +111,8 @@
     "sass": "~1.94.2"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.53.3"
+    "@rollup/rollup-linux-x64-gnu": "4.53.3",
+    "@rollup/rollup-darwin-arm64": "4.53.3"
   },
   "directories": {
     "lib": "lib"
