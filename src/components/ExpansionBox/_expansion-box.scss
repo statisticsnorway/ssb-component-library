@@ -4,7 +4,8 @@
   border: 1px solid variables.$ssb-green-4;
   border-radius: 8px;
   background-color: variables.$ssb-white;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 
   &:has(.header:hover) {
