@@ -56,7 +56,7 @@
     "@rollup/plugin-terser": "~0.4.4",
     "@rollup/plugin-typescript": "~12.3.0",
     "@storybook/addon-links": "^9.1.13",
-    "@storybook/addon-webpack5-compiler-babel": "~3.0.6",
+    "@storybook/addon-webpack5-compiler-babel": "~4.0.0",
     "@storybook/react-webpack5": "^9.1.13",
     "@svgr/rollup": "~8.1.0",
     "@svgr/webpack": "~8.1.0",
