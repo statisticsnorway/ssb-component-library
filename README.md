@@ -1,6 +1,6 @@
 # SSB Component Library
 
-[![npm version](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library.svg)](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library)
+[![pnpm version](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library.svg)](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library)
 
 The SSB component library is developed mainly for developers at SSB.
 Visit the [documentation page](https://github.com/statisticsnorway/design-system) to see all available components and how to use them.
@@ -11,7 +11,7 @@ Visit the [documentation page](https://github.com/statisticsnorway/design-system
 - [Contributing](#contributing)
   - [Run project locally](#run-project-locally)
   - [How to start working on a feature](#how-to-start-working-on-a-feature)
-  - [Publish to NPM](#publish-to-npm)
+  - [Publish to NPM](#publish-to-pnpm)
   - [Development](#development)
     - [Components](#components)
     - [Storybook](#storybook)
@@ -24,9 +24,9 @@ Visit the [documentation page](https://github.com/statisticsnorway/design-system
 
 ### Installing library
 
-If you want to use the component library in your project, simply install it from npm.
+If you want to use the component library in your project, simply install it from pnpm.
 
-`$ npm install @statisticsnorway/ssb-component-library --save`
+`$ pnpm install @statisticsnorway/ssb-component-library --save`
 
 ### Use components
 
@@ -60,8 +60,8 @@ You can also find this at the [website](https://statisticsnorway.github.io/desig
 
 ```
 ... clone repository ...
-$ npm install
-$ npm start
+$ pnpm install
+$ pnpm start
 ```
 
 This will open [storybook](#storybook) where you can develop components in an isolated environment.
@@ -92,7 +92,7 @@ Components are written in [React](https://reactjs.org/) using the [JSX](https://
 Components should be written as functions, as opposed to classes, and if a local state or event handler is needed you should
 take use of the [Hooks API](https://reactjs.org/docs/hooks-intro.html).
 
-As a way to ensure that our components are being used they way we intended, we use [PropTypes](https://www.npmjs.com/package/prop-types)
+As a way to ensure that our components are being used they way we intended, we use [PropTypes](https://www.pnpmjs.com/package/prop-types)
 to check properties being passed to components. _All_ components with props available should have this.
 
 One of the requirements for the components is that they should be able to render with the desired design using only HTML.
@@ -128,8 +128,8 @@ a sub menu.
 #### Testing
 
 Testing is done with [Jest](https://jestjs.io/en/) and React testing library. Write unit tests for all components and aim for a 100% test coverage. [Do no test component internals and state. Test on actual ouput on what user experiences.](https://testing-library.com/docs/guiding-principles)
-To run the tests, simply run `npm test`. To run tests without using any cache, run `npm run clean-test`.
-If you need to replace outdated screenshots, run `npm run clear-tests`.
+To run the tests, simply run `pnpm test`. To run tests without using any cache, run `pnpm run clean-test`.
+If you need to replace outdated screenshots, run `pnpm run clear-tests`.
 
 [Here is a cheat sheet for Jest](https://github.com/sapegin/jest-cheat-sheet).
 
