@@ -92,7 +92,7 @@ Components are written in [React](https://reactjs.org/) using the [JSX](https://
 Components should be written as functions, as opposed to classes, and if a local state or event handler is needed you should
 take use of the [Hooks API](https://reactjs.org/docs/hooks-intro.html).
 
-As a way to ensure that our components are being used they way we intended, we use [PropTypes](https://www.pnpmjs.com/package/prop-types)
+As a way to ensure that our components are being used they way we intended, we use [PropTypes](https://www.npmjs.com/package/prop-types)
 to check properties being passed to components. _All_ components with props available should have this.
 
 One of the requirements for the components is that they should be able to render with the desired design using only HTML.
