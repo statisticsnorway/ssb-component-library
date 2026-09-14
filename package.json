@@ -4,6 +4,7 @@
   "description": "Component library for SSB (Statistics Norway)",
   "main": "lib/bundle.js",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "prebuild": "rimraf lib",
     "build:prod": "cross-env ENV=production rollup -c --bundleConfigAsCjs",
     "start": "cross-env ENV=development storybook dev -p 6006",
@@ -15,10 +16,10 @@
     "lint:js:fix": "eslint --fix src/**/*.{jsx,tsx}",
     "lint:css": "stylelint src/components/**/*.scss",
     "lint:css:fix": "stylelint --fix src/components/**/*.scss",
-    "lint": "npm run lint:js && npm run lint:css",
-    "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
-    "format:fix": "npx prettier -w .",
-    "deploy": "npm publish",
+    "lint": "pnpm run lint:js && pnpm run lint:css",
+    "lint:fix": "pnpm run lint:js:fix && pnpm run lint:css:fix",
+    "format:fix": "pnpm run prettier -w .",
+    "deploy": "pnpm publish",
     "prepare": "husky"
   },
   "repository": {
@@ -65,6 +66,7 @@
     "@testing-library/react": "16.3.1",
     "@testing-library/user-event": "14.6.1",
     "@types/jest": "30.0.0",
+    "@types/node": "22.10.0",
     "@types/react": "18.3.20",
     "@types/react-dom": "18.3.5",
     "babel-jest": "30.2.0",
@@ -109,9 +111,6 @@
     "prismjs": "1.30.0",
     "react-feather": "2.0.10",
     "sass": "1.93.2"
-  },
-  "overrides": {
-    "brace-expansion": "2.1.4"
   },
   "directories": {
     "lib": "lib"
