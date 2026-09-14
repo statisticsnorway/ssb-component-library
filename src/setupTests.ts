@@ -5,8 +5,6 @@ import { TextEncoder as NodeTextEncoder } from 'util'
 if (!globalThis.TextEncoder) {
   Object.defineProperty(globalThis, 'TextEncoder', {
     value: NodeTextEncoder,
-    configurable: true,
-    writable: true,
   })
 }
 

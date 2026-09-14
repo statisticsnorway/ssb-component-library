@@ -1,6 +1,6 @@
 # SSB Component Library
 
-[![pnpm version](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library.svg)](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library)
+[![npm version](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library.svg)](https://badge.fury.io/js/%40statisticsnorway%2Fssb-component-library)
 
 The SSB component library is developed mainly for developers at SSB.
 Visit the [documentation page](https://github.com/statisticsnorway/design-system) to see all available components and how to use them.
@@ -69,9 +69,9 @@ This will open [storybook](#storybook) where you can develop components in an is
 ### How to start working on a feature
 
 ```
-$ git checkout master
+$ git switch master
 $ git pull
-$ git checkout -b add-feature-x
+$ git switch -c add-feature-x
 ... do changes ...
 $ git commit -a -m "detailed commit message"
 $ git status
