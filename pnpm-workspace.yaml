@@ -1,7 +1,4 @@
-allowBuilds:
-  '@parcel/watcher': false
-  esbuild: false
-  unrs-resolver: false
+ignoreScripts: true
 overrides: 
     brace-expansion: 2.1.4
 minimumReleaseAge: 4320 # 3 days
