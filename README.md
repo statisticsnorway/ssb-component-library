@@ -11,7 +11,7 @@ Visit the [documentation page](https://github.com/statisticsnorway/design-system
 - [Contributing](#contributing)
   - [Run project locally](#run-project-locally)
   - [How to start working on a feature](#how-to-start-working-on-a-feature)
-  - [Publish to NPM](#publish-to-pnpm)
+  - [Publish to NPM](#publish-to-npm)
   - [Development](#development)
     - [Components](#components)
     - [Storybook](#storybook)
