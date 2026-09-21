@@ -24,9 +24,9 @@ Visit the [documentation page](https://github.com/statisticsnorway/design-system
 
 ### Installing library
 
-If you want to use the component library in your project, simply install it from npm.
+If you want to use the component library in your project, simply install it from pnpm.
 
-`$ npm install @statisticsnorway/ssb-component-library --save`
+`$ pnpm install @statisticsnorway/ssb-component-library --save`
 
 ### Use components
 
@@ -60,8 +60,8 @@ You can also find this at the [website](https://statisticsnorway.github.io/desig
 
 ```
 ... clone repository ...
-$ npm install
-$ npm start
+$ pnpm install
+$ pnpm start
 ```
 
 This will open [storybook](#storybook) where you can develop components in an isolated environment.
@@ -69,9 +69,9 @@ This will open [storybook](#storybook) where you can develop components in an is
 ### How to start working on a feature
 
 ```
-$ git checkout master
+$ git switch master
 $ git pull
-$ git checkout -b add-feature-x
+$ git switch -c add-feature-x
 ... do changes ...
 $ git commit -a -m "detailed commit message"
 $ git status
@@ -128,8 +128,8 @@ a sub menu.
 #### Testing
 
 Testing is done with [Jest](https://jestjs.io/en/) and React testing library. Write unit tests for all components and aim for a 100% test coverage. [Do no test component internals and state. Test on actual ouput on what user experiences.](https://testing-library.com/docs/guiding-principles)
-To run the tests, simply run `npm test`. To run tests without using any cache, run `npm run clean-test`.
-If you need to replace outdated screenshots, run `npm run clear-tests`.
+To run the tests, simply run `pnpm test`. To run tests without using any cache, run `pnpm run clean-test`.
+If you need to replace outdated screenshots, run `pnpm run clear-tests`.
 
 [Here is a cheat sheet for Jest](https://github.com/sapegin/jest-cheat-sheet).
 
